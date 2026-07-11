@@ -265,12 +265,6 @@ export default function ServicosPage() {
             </div>
           </AnimatedSection>
         </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20 animate-bounce">
-          <span className="text-[10px] font-mono tracking-widest uppercase">Scroll</span>
-          <ArrowRight className="w-3 h-3 rotate-90" />
-        </div>
       </div>
 
       {/* ════════════════════════════════════════
