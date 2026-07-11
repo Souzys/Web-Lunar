@@ -301,7 +301,7 @@ export default function ServicosPage() {
         <section className="pb-32 bg-[#F8F9FA] border-t border-neutral-100 relative overflow-hidden">
 
           {/* Section Header - Sticky top */}
-          <div className="sticky top-[80px] z-20 w-full bg-[#F8F9FA]/90 backdrop-blur-md pt-20 pb-10 border-b border-neutral-200/60 mb-16">
+          <div className="sticky top-[80px] z-20 w-full bg-[#F8F9FA]/90 backdrop-blur-md pt-10 pb-6 border-b border-neutral-200/60 mb-10">
             <div className="w-full max-w-[92%] mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6">
               <div>
                 <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-3 font-bold">[ Serviços ]</p>
