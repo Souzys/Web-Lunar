@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: web-lunar-db
+    restart: always
+    environment:
+      POSTGRES_USER: lunar_user
+      POSTGRES_PASSWORD: lunar_password
+      POSTGRES_DB: web_lunar
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: web-lunar-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web-lunar-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://lunar_user:lunar_password@db:5432/web_lunar?schema=public
+      - REDIS_URL=redis://redis:6379
+      - NEXTAUTH_SECRET=lunar_secret_321_next_level_key
+      - NEXTAUTH_URL=http://localhost:3000
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  pgdata:
+  redisdata:
