@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useLenis } from '@/hooks/useLenis';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { Footer } from '@/components/layout/Footer';
 import { getServiceIcon } from '@/components/ui/ServiceIcons';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -472,8 +471,6 @@ export default function ServicosPage() {
             </AnimatedSection>
           </div>
         </section>
-
-        <Footer />
       </div>
     </div>
   );
