@@ -201,21 +201,44 @@ export default function ServicosPage() {
 
     const cards = gsap.utils.toArray('.service-card-scroll');
     const ctx = gsap.context(() => {
+      // Cria a timeline principal acoplada ao scroll
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".cards-trigger-area",
+          start: "top 200px", // Inicia quando a área dos cards atinge a altura de parada
+          end: "+=" + (cards.length * 450), // Duração do scroll proporcional ao número de cards
+          pin: true, // Trava a seção na tela
+          scrub: true,
+          markers: false,
+        }
+      });
+
+      // Define que os cards após o primeiro começam abaixo da tela
       cards.forEach((card: any, index: number) => {
-        if (index === cards.length - 1) return;
-        
-        gsap.to(card, {
-          scale: 0.95 - (cards.length - 1 - index) * 0.005,
+        if (index > 0) {
+          gsap.set(card, { yPercent: 120 });
+        }
+      });
+
+      // Anima cada card subindo e encolhendo o anterior
+      cards.forEach((card: any, index: number) => {
+        if (index === 0) return;
+
+        // Slide up do card atual
+        tl.to(card, {
+          yPercent: 0,
+          ease: "none",
+          duration: 1,
+        }, index - 1);
+
+        // Encolhe o card anterior
+        tl.to(cards[index - 1] as HTMLElement, {
+          scale: 0.95,
           opacity: 0.5,
           transformOrigin: "top center",
           ease: "none",
-          scrollTrigger: {
-            trigger: cards[index + 1] as HTMLElement,
-            start: "top 320px",
-            end: "top 200px",
-            scrub: true,
-          }
-        });
+          duration: 1,
+        }, index - 1);
       });
     });
 
@@ -315,15 +338,14 @@ export default function ServicosPage() {
             </div>
           </div>
           {/* Services — stacking layout */}
-          <div className="w-full max-w-[92%] mx-auto relative flex flex-col gap-12 pt-8">
+          <div className="cards-trigger-area w-full max-w-[92%] mx-auto relative h-[780px] sm:h-[650px] lg:h-[550px] mt-8">
             {SERVICES.map((service, i) => {
               const Icon = service.icon;
               return (
                 <div
                   key={service.num}
-                  className="service-card-scroll sticky w-full bg-white border border-neutral-200/80 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center min-h-[500px]"
+                  className="service-card-scroll absolute top-0 left-0 w-full bg-white border border-neutral-200/80 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center min-h-[500px]"
                   style={{
-                    top: `200px`,
                     zIndex: 10 + i,
                   }}
                 >
