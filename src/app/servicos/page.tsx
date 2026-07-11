@@ -198,7 +198,31 @@ export default function ServicosPage() {
       gsap.to(glow, { x: e.clientX - 400, y: e.clientY - 400, duration: 1.5, ease: 'power2.out', overwrite: 'auto' });
     };
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+
+    const cards = gsap.utils.toArray('.service-card-scroll');
+    const ctx = gsap.context(() => {
+      cards.forEach((card: any, index: number) => {
+        if (index === cards.length - 1) return;
+        
+        gsap.to(card, {
+          scale: 0.95 - (cards.length - 1 - index) * 0.005,
+          opacity: 0.5,
+          transformOrigin: "top center",
+          ease: "none",
+          scrollTrigger: {
+            trigger: cards[index + 1] as HTMLElement,
+            start: "top 350px",
+            end: "top 220px",
+            scrub: true,
+          }
+        });
+      });
+    });
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -272,13 +296,13 @@ export default function ServicosPage() {
       <div className="relative z-10 bg-bg w-full mt-[100vh]">
 
         {/* ─────────────────────────────────────
-            BLOCO 01 — SERVIÇOS (EDITORIAL GRID)
+            BLOCO 01 — SERVIÇOS (STACKING CARDS)
         ───────────────────────────────────── */}
-        <section className="py-0 bg-white border-t border-neutral-100 relative overflow-hidden">
+        <section className="pb-32 bg-[#F8F9FA] border-t border-neutral-100 relative overflow-hidden">
 
-          {/* Section Header */}
-          <div className="w-full max-w-[92%] mx-auto pt-28 pb-16">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-0 pb-8 border-b border-neutral-100">
+          {/* Section Header - Sticky top */}
+          <div className="sticky top-[80px] z-20 w-full bg-[#F8F9FA]/90 backdrop-blur-md pt-20 pb-10 border-b border-neutral-200/60 mb-16">
+            <div className="w-full max-w-[92%] mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6">
               <div>
                 <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-3 font-bold">[ Serviços ]</p>
                 <h2 className="font-display text-5xl md:text-7xl lg:text-[80px] font-semibold tracking-tighter text-neutral-950 leading-[0.9]">
@@ -291,18 +315,21 @@ export default function ServicosPage() {
             </div>
           </div>
 
-          {/* Services — alternating layout */}
-          <div className="w-full divide-y divide-neutral-100">
+          {/* Services — stacking layout */}
+          <div className="w-full max-w-[92%] mx-auto relative flex flex-col gap-12 pt-8">
             {SERVICES.map((service, i) => {
               const Icon = service.icon;
-              const isEven = i % 2 === 0;
               return (
                 <div
                   key={service.num}
-                  className={`w-full max-w-[92%] mx-auto py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start ${isEven ? '' : 'lg:direction-rtl'}`}
+                  className="service-card-scroll sticky w-full bg-white border border-neutral-200/80 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center min-h-[500px]"
+                  style={{
+                    top: `220px`,
+                    zIndex: 10 + i,
+                  }}
                 >
                   {/* Left: Service info */}
-                  <div className={`lg:col-span-7 flex flex-col ${isEven ? '' : 'lg:order-2'}`}>
+                  <div className="lg:col-span-7 flex flex-col">
                     <AnimatedSection>
                       <div className="flex items-center gap-4 mb-8">
                         <span className="font-mono text-sm text-neutral-300 tracking-widest">{service.num}</span>
@@ -342,11 +369,17 @@ export default function ServicosPage() {
                   </div>
 
                   {/* Right: Details card */}
-                  <div className={`lg:col-span-5 flex flex-col gap-6 ${isEven ? 'lg:order-2' : ''}`}>
+                  <div className="lg:col-span-5 flex flex-col gap-6">
                     <AnimatedSection options={{ delay: 0.15 }}>
-                      <div className="bg-neutral-950 text-white rounded-3xl p-8 lg:p-10">
+                      <div className="bg-neutral-950 text-white rounded-3xl p-8 lg:p-10 relative overflow-hidden">
+                        
+                        {/* Background Watermark inside Card */}
+                        <div className="absolute right-0 bottom-0 translate-x-4 translate-y-4 w-40 h-40 opacity-[0.03] text-white pointer-events-none z-0">
+                          {getServiceIcon(service.num, "w-full h-full")}
+                        </div>
+                        
                         {/* Deliverables */}
-                        <div className="mb-8">
+                        <div className="mb-8 relative z-10">
                           <p className="text-[10px] uppercase font-mono tracking-widest text-white/40 mb-4">O que você recebe</p>
                           <div className="flex flex-col gap-3">
                             {service.deliverables.map((d, j) => (
@@ -359,7 +392,7 @@ export default function ServicosPage() {
                         </div>
 
                         {/* Divider */}
-                        <div className="border-t border-white/5 pt-8 flex items-center justify-between">
+                        <div className="border-t border-white/5 pt-8 flex items-center justify-between relative z-10">
                           <div>
                             <p className="text-[10px] uppercase font-mono tracking-widest text-white/30 mb-1">Prazo estimado</p>
                             <p className="font-display text-2xl font-bold text-white">{service.timeRange}</p>
@@ -369,8 +402,8 @@ export default function ServicosPage() {
                           </span>
                         </div>
 
-                        {/* Large number watermark */}
-                        <div className="mt-8 pt-8 border-t border-white/5">
+                        {/* Link */}
+                        <div className="mt-8 pt-8 border-t border-white/5 relative z-10">
                           <Link
                             href="#contato"
                             className="group w-full flex items-center justify-between text-sm font-mono uppercase tracking-widest text-white/50 hover:text-white transition-colors duration-300"
@@ -379,15 +412,6 @@ export default function ServicosPage() {
                             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                           </Link>
                         </div>
-                      </div>
-                    </AnimatedSection>
-
-                    {/* Service number watermark */}
-                    <AnimatedSection options={{ delay: 0.2 }}>
-                      <div className="hidden lg:flex items-center gap-4 px-2">
-                        <span className="font-display text-[120px] font-black text-neutral-100 leading-none select-none">
-                          {service.num}
-                        </span>
                       </div>
                     </AnimatedSection>
                   </div>
