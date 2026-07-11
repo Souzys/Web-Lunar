@@ -211,8 +211,8 @@ export default function ServicosPage() {
           ease: "none",
           scrollTrigger: {
             trigger: cards[index + 1] as HTMLElement,
-            start: "top 280px",
-            end: "top 160px",
+            start: "top 320px",
+            end: "top 200px",
             scrub: true,
           }
         });
@@ -301,7 +301,7 @@ export default function ServicosPage() {
         <section className="pb-32 bg-[#F8F9FA] border-t border-neutral-100 relative overflow-hidden">
 
           {/* Section Header - Sticky top */}
-          <div className="sticky top-[0px] z-20 w-full bg-[#F8F9FA]/90 backdrop-blur-md pt-10 pb-6 border-b border-neutral-200/60 mb-10">
+          <div className="sticky top-[20px] z-20 w-full bg-[#F8F9FA]/90 backdrop-blur-md pt-12 pb-12 border-b border-neutral-200/60 mb-10">
             <div className="w-full max-w-[92%] mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6">
               <div>
                 <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-3 font-bold">[ Serviços ]</p>
@@ -323,7 +323,7 @@ export default function ServicosPage() {
                   key={service.num}
                   className="service-card-scroll sticky w-full bg-white border border-neutral-200/80 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center min-h-[500px]"
                   style={{
-                    top: `160px`,
+                    top: `200px`,
                     zIndex: 10 + i,
                   }}
                 >
