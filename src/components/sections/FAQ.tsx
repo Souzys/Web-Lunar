@@ -9,10 +9,10 @@ export function FAQ() {
   const { faq } = siteContent;
 
   return (
-    <section className="py-24 px-6 bg-[#FAFAFA] text-neutral-900 border-y border-black/5 relative overflow-hidden">
+    <section className="py-24 bg-[#FAFAFA] border-y border-black/5 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
       
-      <div className="container mx-auto max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div className="container mx-auto max-w-7xl px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
         <div className="lg:col-span-5">
           <AnimatedSection>
             <div className="mb-6">

@@ -8,8 +8,8 @@ export function Testimonials() {
   const { testimonials } = siteContent;
 
   return (
-    <section className="py-20 px-6 bg-[#FAFAFA] text-neutral-900 overflow-hidden relative border-t border-black/5">
-      <div className="container mx-auto max-w-6xl relative z-10">
+    <section className="py-20 bg-[#FAFAFA] text-neutral-900 overflow-hidden relative border-t border-black/5">
+      <div className="container mx-auto max-w-7xl px-6 relative z-10">
         
         {/* Header */}
         <div className="mb-12">

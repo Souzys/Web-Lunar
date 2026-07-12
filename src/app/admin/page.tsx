@@ -117,7 +117,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#030307] py-28 px-6 max-w-7xl mx-auto z-10">
+    <div className="min-h-screen w-full bg-[#030307] py-28 px-6 max-w-[1440px] mx-auto z-10">
       <div className="flex items-center justify-between mb-12 border-b border-white/[0.05] pb-6">
         <div>
           <h1 className="text-3xl font-bold text-white tracking-tight">Painel Admin</h1>

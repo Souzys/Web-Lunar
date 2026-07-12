@@ -183,8 +183,32 @@ export default function ServicosPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [activeService, setActiveService] = useState(0);
+  const [activeService, setActiveService] = useState(-1);
   const [hoveredService, setHoveredService] = useState<number | null>(null);
+ 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const serviceParam = params.get('service');
+      if (serviceParam !== null) {
+        if ('scrollRestoration' in window.history) {
+          window.history.scrollRestoration = 'manual';
+        }
+        const index = parseInt(serviceParam, 10);
+        if (!isNaN(index) && index >= 0 && index < SERVICES.length) {
+          setActiveService(index);
+          
+          // Pulo instantâneo sem animação de scroll
+          setTimeout(() => {
+            const rows = document.querySelectorAll('.accordion-row');
+            if (rows && rows[index]) {
+              rows[index].scrollIntoView({ behavior: 'auto', block: 'start' });
+            }
+          }, 80); // Delay baixíssimo apenas para garantir que o DOM e os tamanhos dos elementos estejam prontos
+        }
+      }
+    }
+  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -202,8 +226,8 @@ export default function ServicosPage() {
     
     if (cursorRef.current) {
       gsap.set(cursorRef.current, { xPercent: -50, yPercent: -50 });
-      xToCursor = gsap.quickTo(cursorRef.current, "x", { duration: 0.1, ease: "power3" });
-      yToCursor = gsap.quickTo(cursorRef.current, "y", { duration: 0.1, ease: "power3" });
+      xToCursor = gsap.quickTo(cursorRef.current, "x", { duration: 0.05, ease: "power2.out" });
+      yToCursor = gsap.quickTo(cursorRef.current, "y", { duration: 0.05, ease: "power2.out" });
     }
 
     const xToGlow = gsap.quickTo(glow, "x", { duration: 1.5, ease: "power2.out" });
@@ -242,6 +266,30 @@ export default function ServicosPage() {
           }
         );
       }
+
+      // Efeito parallax do hero (desce um pouco enquanto a seção sobe)
+      gsap.to(hero, {
+        yPercent: 30, // Efeito parallax
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".services-accordion-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        }
+      });
+
+      // KILL SWITCH: Desliga completamente a renderização do hero quando ele não é mais visível.
+      ScrollTrigger.create({
+        trigger: ".services-accordion-section",
+        start: "top top", // Quando o topo do acordeão bater no topo da tela (hero 100% coberto)
+        end: "max",       // Garante que continue ativado (escondido) até o final da página
+        onToggle: self => {
+          if (hero) {
+            hero.style.visibility = self.isActive ? 'hidden' : 'visible';
+          }
+        }
+      });
     });
 
     return () => {
@@ -266,7 +314,7 @@ export default function ServicosPage() {
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-        <div className="container mx-auto px-6 max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="container mx-auto px-6 max-w-[1440px] relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Esquerda: Conteúdo de Texto */}
           <div className="flex flex-col items-start text-left">
             <AnimatedSection>
@@ -322,7 +370,7 @@ export default function ServicosPage() {
             BLOCO 01 — SERVIÇOS (ACCORDION INTERATIVO)
         ───────────────────────────────────── */}
         <section className="services-accordion-section bg-white py-24 md:py-32 border-t border-neutral-100 relative cursor-default">
-          <div className="container mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="container mx-auto max-w-[1440px] px-6">
               
             {/* Header - Sem margens artificiais, alinhado com o container */}
             <div className="flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-0 justify-between mb-16 md:mb-20 relative">
@@ -457,11 +505,11 @@ export default function ServicosPage() {
           <div 
             ref={cursorRef} 
             className="fixed top-0 left-0 w-24 h-24 pointer-events-none z-[100] hidden lg:flex items-center justify-center"
-            style={{ opacity: hoveredService !== null ? 1 : 0, transition: 'opacity 0.3s ease', willChange: 'transform' }}
+            style={{ opacity: hoveredService !== null ? 1 : 0, transition: 'opacity 0.15s ease-out', willChange: 'transform' }}
           >
             {/* O bg-neutral-950 garante contraste, e o rounded-full garante que a forma seja um círculo perfeito (sem quadrados). */}
             <div 
-              className="relative w-[80%] h-[80%] bg-neutral-950 rounded-full flex items-center justify-center transition-transform duration-500 ease-out shadow-[0_0_20px_rgba(0,0,0,0.1)]"
+              className="relative w-[80%] h-[80%] bg-neutral-950 rounded-full flex items-center justify-center transition-transform duration-200 ease-out shadow-[0_0_20px_rgba(0,0,0,0.1)]"
               style={{ transform: hoveredService !== null ? 'scale(1)' : 'scale(0)' }}
             >
                {hoveredService !== null && React.createElement(SERVICES[hoveredService].icon, { 
@@ -475,15 +523,15 @@ export default function ServicosPage() {
         {/* ─────────────────────────────────────
             BLOCO 02 — DIFERENCIAIS
         ───────────────────────────────────── */}
-        <section className="py-28 px-6 bg-[#05070B] border-t border-white/5 relative overflow-hidden">
+        <section className="py-28 bg-[#05070B] border-t border-white/5 relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-          <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20 pb-8 border-b border-white/5">
               <div>
                 <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-3 font-bold">[ Por que a Web Lunar ]</p>
                 <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter text-white leading-[0.95]">
-                  Diferenciais<br />técnicos
+                  Diferenciais técnicos
                 </h2>
               </div>
               <p className="text-text-muted font-light text-lg max-w-sm leading-relaxed hidden md:block">

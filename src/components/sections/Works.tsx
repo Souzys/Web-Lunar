@@ -77,7 +77,7 @@ export default function Works() {
     : projects.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="works" className="relative py-32 px-6 w-full max-w-7xl mx-auto z-10">
+    <section id="works" className="relative py-32 px-6 w-full max-w-[1440px] mx-auto z-10">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
         <div>
           <h2 className="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-3">Estudos & Projetos</h2>

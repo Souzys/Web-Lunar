@@ -42,8 +42,8 @@ export function IndustryCircles() {
   const { industryCircles } = siteContent;
 
   return (
-    <section className="w-full h-full flex flex-col justify-center px-6 bg-bg text-text overflow-hidden">
-      <div className="container mx-auto max-w-6xl">
+    <section className="w-full h-full flex flex-col justify-center bg-bg text-text overflow-hidden">
+      <div className="container mx-auto max-w-[1440px] px-6">
         <AnimatedSection>
           <div className="mb-16">
             <span className="text-primary font-mono text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-primary/30 bg-primary/10">

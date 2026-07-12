@@ -28,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${spaceGrotesk.variable} font-sans h-full antialiased overflow-x-hidden`}>
-      <body className="min-h-full flex flex-col bg-bg text-text selection:bg-primary selection:text-white overflow-x-hidden">
+    <html lang="pt-BR" className={`${inter.variable} ${spaceGrotesk.variable} font-sans h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-bg text-text selection:bg-primary selection:text-white">
         <TRPCProvider>
           <Navbar />
           <main className="flex-1 w-full flex flex-col">{children}</main>

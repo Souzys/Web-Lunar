@@ -16,8 +16,8 @@ export function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-32 px-6 bg-white text-neutral-900 relative overflow-hidden border-t border-black/5">
-      <div className="container mx-auto max-w-6xl">
+    <section id="pricing" className="py-32 bg-white text-neutral-900 relative overflow-hidden border-t border-black/5">
+      <div className="container mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-center text-center mb-20">
           <AnimatedSection>
             <div className="mb-6">

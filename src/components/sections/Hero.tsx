@@ -85,7 +85,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 flex-grow grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mt-12 md:mt-0">
+      <div className="relative z-10 container mx-auto max-w-[1440px] px-6 flex-grow grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mt-12 md:mt-0">
         
         {/* Coluna da Esquerda: Textos e CTAs */}
         <div className="lg:col-span-7 flex flex-col justify-center items-start text-left">

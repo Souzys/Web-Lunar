@@ -36,7 +36,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-32 px-6 w-full max-w-7xl mx-auto z-10">
+    <section id="about" className="relative py-32 px-6 w-full max-w-[1440px] mx-auto z-10">
       <div className="text-center mb-20">
         <h2 className="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-3">Conceito e Filosofia</h2>
         <p className="text-3xl md:text-5xl font-bold text-white text-glow tracking-tight">

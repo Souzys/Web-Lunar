@@ -98,7 +98,7 @@ export function Navbar() {
     <>
       {/* Header Fixo contendo apenas a Logo */}
       <header className="absolute top-0 left-0 w-full z-50 py-6 mix-blend-difference text-white will-change-[transform] translate-z-0 pointer-events-none">
-        <div className="container mx-auto px-6 flex items-center justify-between w-full">
+        <div className="container mx-auto max-w-[1440px] px-6 flex items-center justify-between w-full">
           <Link href="/" className="relative z-50 flex items-center pointer-events-auto">
             <img src="/logo-web-lunar-light.png" alt="Web Lunar" width={320} height={80} className="h-20 w-auto" />
           </Link>

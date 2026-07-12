@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 border-b border-white/[0.05] bg-[#030307]/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
         <Link 
           href="/" 
           onClick={handleNavClick}

@@ -42,9 +42,9 @@ export function Footer() {
 
       {/* === CTA SECTION — "WORK WITH WEB LUNAR" === (Modo Claro) */}
       <div className="pt-32 pb-24 relative bg-[#FAFAFA] text-neutral-900 border-t border-black/5">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-[#FAFAFA] to-[#FAFAFA] pointer-events-none opacity-80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(29,77,255,0.05)_0%,transparent_70%)] pointer-events-none" />
         
-        <div className="container mx-auto px-6 max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-6 max-w-[1440px] relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Form (order-2 lg:order-1) */}
           <div className="w-full order-2 lg:order-1 bg-white border border-black/5 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden text-left">
@@ -157,7 +157,7 @@ export function Footer() {
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2">
             {/* Dot + label */}
             <div className="flex items-center gap-3 mb-8">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(29,77,255,0.4)]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
               <span className="text-sm font-mono uppercase tracking-widest text-neutral-500">
                 Disponível para novos projetos
               </span>
@@ -182,7 +182,7 @@ export function Footer() {
 
       {/* === FOOTER LINKS === (Modo Escuro) */}
       <div className="bg-[#05070B] text-white">
-        <div className="container mx-auto px-6 py-20 grid grid-cols-2 md:grid-cols-5 gap-12 border-b border-white/5">
+        <div className="container mx-auto max-w-[1440px] px-6 py-20 grid grid-cols-2 md:grid-cols-5 gap-12 border-b border-white/5">
           {/* Brand */}
           <div className="col-span-2 md:col-span-2 pr-12">
             <div className="mb-8">
@@ -248,7 +248,7 @@ export function Footer() {
       </div>
 
         {/* Bottom bar */}
-        <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-500 tracking-widest">
+        <div className="container mx-auto max-w-[1440px] px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-500 tracking-widest">
           <p>© {new Date().getFullYear()} WEB LUNAR. TODOS OS DIREITOS RESERVADOS.</p>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-white transition-colors">PRIVACIDADE</Link>

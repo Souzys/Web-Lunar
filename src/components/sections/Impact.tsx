@@ -13,8 +13,8 @@ export function Impact() {
     <section className="bg-white text-black overflow-hidden border-t border-black/5">
 
       {/* === IMPACT STATS === */}
-      <div className="py-20 px-6 border-b border-black/5">
-        <div className="container mx-auto flex flex-col items-center text-center">
+      <div className="py-20 border-b border-black/5">
+        <div className="container mx-auto max-w-[1440px] px-6 flex flex-col items-center text-center">
 
           {/* Tag */}
           <AnimatedSection as="div">

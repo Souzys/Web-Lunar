@@ -156,7 +156,7 @@ export function Portfolio() {
   return (
     <section id="project" className="bg-[#FAFAFA] text-neutral-900 py-10 relative z-10 border-t border-black/5 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
       {/* ── Header ── */}
-      <div ref={headerRef} className="container mx-auto px-6 pt-16 pb-6 max-w-7xl" style={{ opacity: 0 }}>
+      <div ref={headerRef} className="container mx-auto px-6 pt-16 pb-6 max-w-[1440px]" style={{ opacity: 0 }}>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
           <div>
             <div className="mb-6">
@@ -177,17 +177,16 @@ export function Portfolio() {
         </div>
 
         {/* ── Category Filters ── */}
-        <div className="flex flex-wrap gap-2 border-b border-black/5 pb-8">
+        <div className="flex flex-wrap justify-between gap-y-3 pb-8 border-b border-black/5 w-full">
           {CATEGORIES.map(cat => (
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
-              className="px-5 py-2 text-xs font-sans font-bold uppercase tracking-wider rounded-full transition-all duration-300"
-              style={{
-                background: activeFilter === cat ? '#1D4DFF' : 'rgba(0,0,0,0.03)',
-                color: activeFilter === cat ? '#fff' : '#555',
-                border: activeFilter === cat ? '1px solid #1D4DFF' : '1px solid rgba(0,0,0,0.05)',
-              }}
+              className={`px-5 py-2 text-xs font-sans font-bold uppercase tracking-wider rounded-full transition-all duration-300 ease-out border hover:scale-105 active:scale-95 ${
+                activeFilter === cat
+                  ? 'bg-primary text-white border-primary shadow-md'
+                  : 'bg-black/[0.03] text-neutral-500 border-black/5 hover:bg-black/[0.08] hover:text-neutral-900 hover:border-black/10 hover:shadow-sm'
+              }`}
             >
               {cat}
             </button>
@@ -196,7 +195,7 @@ export function Portfolio() {
       </div>
 
       {/* ── Strict 3-Column Grid ── */}
-      <div className="container mx-auto px-6 pb-12 max-w-7xl">
+      <div className="container mx-auto px-6 pb-12 max-w-[1440px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 mt-8">
           {filtered.map((project, index) => (
             <ProjectCard

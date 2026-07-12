@@ -10,8 +10,8 @@ export function Blog() {
   const { blog } = siteContent;
 
   return (
-    <section id="blog" className="py-24 px-6 bg-white text-neutral-900 border-t border-black/5 relative overflow-hidden">
-      <div className="container mx-auto max-w-7xl">
+    <section id="blog" className="py-24 bg-white text-neutral-900 border-t border-black/5 relative overflow-hidden">
+      <div className="container mx-auto max-w-7xl px-6">
         
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
           <div className="max-w-3xl">

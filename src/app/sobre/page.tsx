@@ -128,7 +128,7 @@ export default function SobrePage() {
         {/* Floating background grids for deep perspective */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-        <div className="container mx-auto px-6 max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="container mx-auto px-6 max-w-[1440px] relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Esquerda: Conteúdo de Texto */}
           <div className="flex flex-col items-start text-left">
             <AnimatedSection>
@@ -168,11 +168,11 @@ export default function SobrePage() {
       {/* =========================================
           BLOCO 01: MANIFESTO CORPORATIVO
       ========================================= */}
-      <section className="py-32 px-6 border-y border-white/5 bg-[#05070B] relative overflow-hidden">
+      <section className="py-32 border-y border-white/5 bg-[#05070B] relative overflow-hidden">
         {/* Subtle grid background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
         
-        <div className="container mx-auto max-w-5xl relative z-10">
+        <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
           {/* Main text in full width with Typewriter Effect */}
           <div className="mb-16 max-w-5xl">
             <h2 className="text-xs uppercase font-mono tracking-widest text-white/40 mb-6 font-bold">[ O MANIFESTO CORPORATIVO ]</h2>
@@ -193,8 +193,8 @@ export default function SobrePage() {
             {/* Left: sub-text */}
             <div>
               <AnimatedSection options={{ delay: 0.15 }}>
-                <p className="text-lg md:text-xl text-neutral-400 font-light leading-relaxed">
-                  A WEB LUNAR opera estritamente nos bastidores da tecnologia de ponta. Afastamos o clichê das biografias tradicionais para entregar o que empresas sérias e agências de software houses procuram: previsibilidade, velocidade brutal e arquitetura modular. Atuamos de forma cirúrgica na intersecção entre o design estritamente minimalista e a engenharia bruta de software.
+                <p className="text-base md:text-lg text-white font-light leading-relaxed max-w-xl border-l border-primary/30 pl-5 text-balance font-sans">
+                  Na WEB LUNAR unimos design minimalista e engenharia de software de elite. Desenvolvemos sistemas rápidos, modulares e blindados contra picos de tráfego, prontos para converter acessos em faturamento previsível.
                 </p>
               </AnimatedSection>
             </div>
@@ -213,7 +213,7 @@ export default function SobrePage() {
           BLOCO 02: OS QUATRO PILARES
       ========================================= */}
       <section className="py-28 w-full bg-white border-y border-neutral-100 relative overflow-hidden">
-        <div className="w-full max-w-[92%] mx-auto relative z-10">
+        <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
 
           {/* Header — left-aligned, editorial style */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20 pb-8 border-b border-neutral-100">
@@ -281,8 +281,8 @@ export default function SobrePage() {
       {/* =========================================
           BLOCO 03: MANIFESTO DE VELOCIDADE
       ========================================= */}
-      <section className="py-28 px-6 bg-[#FAFAFA] border-b border-neutral-100 relative overflow-hidden">
-        <div className="container mx-auto max-w-7xl relative z-10">
+      <section className="py-28 bg-[#FAFAFA] border-b border-neutral-100 relative overflow-hidden">
+        <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end mb-24 pb-8 border-b border-neutral-200">
             <AnimatedSection>
@@ -336,7 +336,7 @@ export default function SobrePage() {
           BLOCO 04 E 05: CORE STACK & ENGAJAMENTO
       ========================================= */}
       <section 
-        className="py-24 px-6 border-t border-white/5 bg-[#020408] relative overflow-hidden"
+        className="py-24 border-t border-white/5 bg-[#020408] relative overflow-hidden"
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
           const x = e.clientX - rect.left - 400;
@@ -364,7 +364,7 @@ export default function SobrePage() {
         {/* Glow interativo que segue o mouse para toda a seção */}
         <div ref={glowCombinedRef} className="absolute w-[800px] h-[800px] bg-primary/15 rounded-full blur-[100px] opacity-0 pointer-events-none top-0 left-0 will-change-transform" />
         
-        <div className="w-full max-w-7xl mx-auto flex flex-col gap-32">
+        <div className="container mx-auto max-w-[1440px] px-6 flex flex-col gap-32">
           
           {/* MURAL DE AUTORIDADE TÉCNICA */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
@@ -471,33 +471,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* =========================================
-          TEASER DE SERVIÇOS
-      ========================================= */}
-      <section className="py-24 lg:py-32 px-6 border-t border-white/5 bg-[#05070B] relative overflow-hidden flex flex-col items-center justify-center text-center">
-        <div className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary/10 blur-[120px] rounded-full w-full max-w-4xl h-[400px] pointer-events-none" />
-        <div className="container mx-auto max-w-4xl relative z-10 flex flex-col items-center">
-          <AnimatedSection>
-            <h2 className="text-xs uppercase tracking-widest text-primary font-mono mb-6 font-bold">[ Nossas Especialidades ]</h2>
-            <p className="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tighter text-white/95 mb-8">
-              Sites e sistemas <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400 italic pr-1">planejados</span> para gerar resultados reais.
-            </p>
-            <p className="text-neutral-400 font-light leading-relaxed text-lg md:text-xl text-balance mb-12 max-w-2xl mx-auto">
-              Descubra como nossa engenharia digital atua em Landing Pages, E-commerce, Integrações e Arquiteturas de Alta Performance.
-            </p>
-          </AnimatedSection>
-          
-          <AnimatedSection options={{ delay: 0.2 }}>
-            <Link 
-              href="/servicos"
-              className="group relative inline-flex items-center justify-center gap-3 bg-white text-bg px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase overflow-hidden hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)]"
-            >
-              <span className="relative z-10">Explorar Especialidades</span>
-              <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
+
 
       </div> {/* END OF SCROLLING OVERLAY */}
     </div>
