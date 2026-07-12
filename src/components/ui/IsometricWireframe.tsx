@@ -39,8 +39,32 @@ export function IsometricWireframe() {
       return { x: x1, y: y2 };
     };
 
+    // Timeline de Montagem/Desmontagem
+    const tl = gsap.timeline({ repeat: -1 });
+
+    let isVisible = true;
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          cancelAnimationFrame(animationFrame);
+          animate();
+          tl.play();
+        } else {
+          tl.pause();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    
+    if (svgRef.current) {
+      observer.observe(svgRef.current);
+    }
+
     // Atualização super rápida direto no DOM (bypassa o React e não causa re-renders de 60fps)
     const animate = () => {
+      if (!isVisible) return;
       const time = Date.now() / 2500;
       const currentAngleY = Math.PI / 4 + Math.sin(time) * 0.15;
       const currentAngleX = Math.PI / 6 + Math.cos(time * 0.8) * 0.1;
@@ -70,9 +94,7 @@ export function IsometricWireframe() {
     
     animate();
 
-    // Timeline de Montagem/Desmontagem
-    const tl = gsap.timeline({ repeat: -1 });
-
+    // Timeline configurada abaixo
     tl.fromTo(lines,
       { strokeDasharray: 400, strokeDashoffset: 400 },
       { strokeDashoffset: 0, duration: 2, stagger: 0.1, ease: "power2.out" }
@@ -84,6 +106,7 @@ export function IsometricWireframe() {
 
     return () => {
       cancelAnimationFrame(animationFrame);
+      observer.disconnect();
       tl.kill();
     };
   }, []);

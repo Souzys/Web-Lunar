@@ -36,7 +36,21 @@ export function Marquee({ children, speed = 1, direction = 'left', className, ..
       ease: "none"
     });
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          tl.play();
+        } else {
+          tl.pause();
+        }
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(container);
+
     return () => {
+      observer.disconnect();
       tl.kill();
       if (container.contains(clone)) {
         container.removeChild(clone);

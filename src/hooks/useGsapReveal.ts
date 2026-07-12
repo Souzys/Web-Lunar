@@ -41,12 +41,10 @@ export function useGsapReveal(
         {
           y: y,
           opacity: 0,
-          filter: `blur(${blur}px)`,
         },
         {
           y: 0,
           opacity: 1,
-          filter: 'blur(0px)',
           duration: duration,
           ease: ease,
           stagger: stagger,

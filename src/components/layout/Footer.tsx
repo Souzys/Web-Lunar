@@ -38,10 +38,10 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative z-10 bg-[#FAFAFA] text-neutral-900 overflow-hidden border-t border-black/5" id="contact">
+    <footer className="relative z-10 overflow-hidden" id="contact">
 
-      {/* === CTA SECTION — "WORK WITH WEB LUNAR" === */}
-      <div className="pt-32 pb-24 relative">
+      {/* === CTA SECTION — "WORK WITH WEB LUNAR" === (Modo Claro) */}
+      <div className="pt-32 pb-24 relative bg-[#FAFAFA] text-neutral-900 border-t border-black/5">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-[#FAFAFA] to-[#FAFAFA] pointer-events-none opacity-80" />
         
         <div className="container mx-auto px-6 max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -180,22 +180,23 @@ export function Footer() {
 
 
 
-      {/* === FOOTER LINKS === */}
-      <div className="container mx-auto px-6 py-20 grid grid-cols-2 md:grid-cols-5 gap-12 border-b border-black/5">
-        {/* Brand */}
-        <div className="col-span-2 md:col-span-2 pr-12">
-          <div className="mb-8">
-            <img src="/logo-web-lunar-dark.png" alt="Web Lunar" className="h-10 md:h-14 w-auto object-contain" />
-          </div>
-          <p className="text-sm font-light text-neutral-500 leading-relaxed max-w-sm mb-8">
+      {/* === FOOTER LINKS === (Modo Escuro) */}
+      <div className="bg-[#05070B] text-white">
+        <div className="container mx-auto px-6 py-20 grid grid-cols-2 md:grid-cols-5 gap-12 border-b border-white/5">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-2 pr-12">
+            <div className="mb-8">
+              <img src="/logo-web-lunar-light.png" alt="Web Lunar" className="h-10 md:h-14 w-auto object-contain" />
+            </div>
+          <p className="text-sm font-light text-neutral-400 leading-relaxed max-w-sm mb-8">
             Estúdio de design e engenharia focado em criar produtos digitais premium de alta performance e valor percebido.
           </p>
-          <p className="text-sm font-mono text-neutral-400">{siteContent.footer.contact.phone}</p>
+          <p className="text-sm font-mono text-neutral-500">{siteContent.footer.contact.phone}</p>
         </div>
 
         {/* Studio */}
         <div>
-          <h4 className="text-neutral-900 text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">STUDIO</h4>
+          <h4 className="text-white text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">STUDIO</h4>
           <ul className="flex flex-col gap-4">
             {siteContent.footer.links.pages.map(link => {
               let href = '#';
@@ -207,7 +208,7 @@ export function Footer() {
               
               return (
                 <li key={link}>
-                  <Link href={href} className="text-sm text-neutral-500 hover:text-primary transition-colors duration-300">
+                  <Link href={href} className="text-sm text-neutral-400 hover:text-primary transition-colors duration-300">
                     {link}
                   </Link>
                 </li>
@@ -218,11 +219,11 @@ export function Footer() {
 
         {/* Services */}
         <div>
-          <h4 className="text-neutral-900 text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">SERVIÇOS</h4>
+          <h4 className="text-white text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">SERVIÇOS</h4>
           <ul className="flex flex-col gap-4">
             {siteContent.footer.links.single.map(link => (
               <li key={link}>
-                <Link href="/servicos" className="text-sm text-neutral-500 hover:text-primary transition-colors duration-300">
+                <Link href="/servicos" className="text-sm text-neutral-400 hover:text-primary transition-colors duration-300">
                   {link}
                 </Link>
               </li>
@@ -232,11 +233,11 @@ export function Footer() {
 
         {/* Social */}
         <div>
-          <h4 className="text-neutral-900 text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">SOCIAL</h4>
+          <h4 className="text-white text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">SOCIAL</h4>
           <ul className="flex flex-col gap-4">
             {siteContent.footer.social.map(social => (
               <li key={social}>
-                <a href="#" className="text-sm text-neutral-500 hover:text-primary transition-colors duration-300 flex items-center gap-2 group">
+                <a href="#" className="text-sm text-neutral-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group">
                   {social}
                   <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 text-primary" />
                 </a>
@@ -246,12 +247,13 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-400 tracking-widest">
-        <p>© {new Date().getFullYear()} WEB LUNAR. TODOS OS DIREITOS RESERVADOS.</p>
-        <div className="flex gap-8">
-          <Link href="#" className="hover:text-neutral-900 transition-colors">PRIVACIDADE</Link>
-          <Link href="#" className="hover:text-neutral-900 transition-colors">TERMOS</Link>
+        {/* Bottom bar */}
+        <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-500 tracking-widest">
+          <p>© {new Date().getFullYear()} WEB LUNAR. TODOS OS DIREITOS RESERVADOS.</p>
+          <div className="flex gap-8">
+            <Link href="#" className="hover:text-white transition-colors">PRIVACIDADE</Link>
+            <Link href="#" className="hover:text-white transition-colors">TERMOS</Link>
+          </div>
         </div>
       </div>
     </footer>

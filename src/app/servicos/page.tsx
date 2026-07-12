@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useLenis } from '@/hooks/useLenis';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
+import { IsometricOctahedron } from '@/components/ui/IsometricOctahedron';
 import { getServiceIcon } from '@/components/ui/ServiceIcons';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -181,7 +182,9 @@ export default function ServicosPage() {
   useLenis();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
   const [activeService, setActiveService] = useState(0);
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -193,53 +196,52 @@ export default function ServicosPage() {
       x: typeof window !== 'undefined' ? window.innerWidth / 2 - 400 : 0,
       y: typeof window !== 'undefined' ? window.innerHeight / 4 - 400 : 0,
     });
+    
+    let xToCursor: gsap.QuickToFunc | null = null;
+    let yToCursor: gsap.QuickToFunc | null = null;
+    
+    if (cursorRef.current) {
+      gsap.set(cursorRef.current, { xPercent: -50, yPercent: -50 });
+      xToCursor = gsap.quickTo(cursorRef.current, "x", { duration: 0.1, ease: "power3" });
+      yToCursor = gsap.quickTo(cursorRef.current, "y", { duration: 0.1, ease: "power3" });
+    }
+
+    const xToGlow = gsap.quickTo(glow, "x", { duration: 1.5, ease: "power2.out" });
+    const yToGlow = gsap.quickTo(glow, "y", { duration: 1.5, ease: "power2.out" });
 
     const handleMouseMove = (e: MouseEvent) => {
-      gsap.to(glow, { x: e.clientX - 400, y: e.clientY - 400, duration: 1.5, ease: 'power2.out', overwrite: 'auto' });
+      // Desliga o cálculo do glow pesado se a Hero não estiver mais visível
+      if (window.scrollY < (window.innerHeight || 800)) {
+        xToGlow(e.clientX - 400);
+        yToGlow(e.clientY - 400);
+      }
+      
+      if (xToCursor && yToCursor) {
+        xToCursor(e.clientX);
+        yToCursor(e.clientY);
+      }
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
-    const cards = gsap.utils.toArray('.service-card-scroll');
     const ctx = gsap.context(() => {
-      // Cria a timeline principal acoplada ao scroll
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".cards-trigger-area",
-          start: "top 200px", // Inicia quando a área dos cards atinge a altura de parada
-          end: "+=" + (cards.length * 450), // Duração do scroll proporcional ao número de cards
-          pin: true, // Trava a seção na tela
-          scrub: true,
-          markers: false,
-        }
-      });
-
-      // Define que os cards após o primeiro começam abaixo da tela
-      cards.forEach((card: any, index: number) => {
-        if (index > 0) {
-          gsap.set(card, { yPercent: 120 });
-        }
-      });
-
-      // Anima cada card subindo e encolhendo o anterior
-      cards.forEach((card: any, index: number) => {
-        if (index === 0) return;
-
-        // Slide up do card atual
-        tl.to(card, {
-          yPercent: 0,
-          ease: "none",
-          duration: 1,
-        }, index - 1);
-
-        // Encolhe o card anterior
-        tl.to(cards[index - 1] as HTMLElement, {
-          scale: 0.95,
-          opacity: 0.5,
-          transformOrigin: "top center",
-          ease: "none",
-          duration: 1,
-        }, index - 1);
-      });
+      // Entrada elegante do accordion ao chegar na viewport
+      const rows = gsap.utils.toArray('.accordion-row') as HTMLElement[];
+      if (rows.length > 0) {
+        gsap.fromTo(rows,
+          { opacity: 0, y: 24 },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.08,
+            duration: 0.7,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".services-accordion-section",
+              start: "top 75%",
+            }
+          }
+        );
+      }
     });
 
     return () => {
@@ -305,10 +307,8 @@ export default function ServicosPage() {
           </div>
 
           {/* Direita: Espaço para SVG */}
-          <AnimatedSection options={{ delay: 0.4 }} className="flex items-center justify-center lg:justify-end w-full h-[400px] lg:h-[500px]">
-            <div className="w-full h-full border border-dashed border-white/20 rounded-3xl flex items-center justify-center bg-white/[0.02]">
-               <span className="text-white/40 font-mono text-sm tracking-widest uppercase text-center px-4">[ Espaço para Arte SVG ]</span>
-            </div>
+          <AnimatedSection options={{ delay: 0.4 }} className="flex items-center justify-center lg:justify-end w-full">
+            <IsometricOctahedron />
           </AnimatedSection>
         </div>
       </div>
@@ -319,126 +319,156 @@ export default function ServicosPage() {
       <div className="relative z-10 bg-bg w-full mt-[100vh]">
 
         {/* ─────────────────────────────────────
-            BLOCO 01 — SERVIÇOS (STACKING CARDS)
+            BLOCO 01 — SERVIÇOS (ACCORDION INTERATIVO)
         ───────────────────────────────────── */}
-        <section className="pb-32 bg-[#F8F9FA] border-t border-neutral-100 relative overflow-hidden">
-
-          {/* Section Header - Sticky top */}
-          <div className="sticky top-[20px] z-20 w-full bg-[#F8F9FA]/90 backdrop-blur-md pt-12 pb-12 border-b border-neutral-200/60 mb-10">
-            <div className="w-full max-w-[92%] mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <section className="services-accordion-section bg-white py-24 md:py-32 border-t border-neutral-100 relative cursor-default">
+          <div className="container mx-auto max-w-7xl px-6 lg:px-12">
+              
+            {/* Header - Sem margens artificiais, alinhado com o container */}
+            <div className="flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-0 justify-between mb-16 md:mb-20 relative">
               <div>
-                <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-3 font-bold">[ Serviços ]</p>
-                <h2 className="font-display text-5xl md:text-7xl lg:text-[80px] font-semibold tracking-tighter text-neutral-950 leading-[0.9]">
+                <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-4 font-bold">[ Serviços ]</p>
+                <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tighter text-neutral-950 leading-[0.95]">
                   O que desenvolvemos
                 </h2>
               </div>
-              <p className="text-lg text-neutral-500 font-light max-w-sm leading-relaxed hidden md:block">
-                Seis especialidades técnicas construídas para empresas que levam resultado a sério.
+              <p className="text-base text-neutral-950 font-light leading-relaxed lg:text-right lg:pb-2 mt-4 lg:mt-0">
+                Seis especialidades técnicas construídas para<br className="hidden lg:block" /> empresas que levam resultado a sério.
               </p>
             </div>
-          </div>
-          {/* Services — stacking layout */}
-          <div className="cards-trigger-area w-full max-w-[92%] mx-auto relative h-[780px] sm:h-[650px] lg:h-[550px] mt-8">
-            {SERVICES.map((service, i) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={service.num}
-                  className="service-card-scroll absolute top-0 left-0 w-full bg-white border border-neutral-200/80 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center min-h-[500px]"
-                  style={{
-                    zIndex: 10 + i,
-                  }}
-                >
-                  {/* Left: Service info */}
-                  <div className="lg:col-span-7 flex flex-col">
-                    <AnimatedSection>
-                      <div className="flex items-center gap-4 mb-8">
-                        <span className="font-mono text-sm text-neutral-300 tracking-widest">{service.num}</span>
-                        <span className="h-px flex-1 max-w-12 bg-neutral-200" />
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-primary font-bold border border-primary/30 bg-primary/5 px-3 py-1 rounded-full">
-                          {service.tag}
-                        </span>
-                      </div>
-                    </AnimatedSection>
 
-                    <AnimatedSection options={{ delay: 0.05 }}>
-                      <div className="w-12 h-12 rounded-2xl bg-neutral-100 flex items-center justify-center text-neutral-700 mb-6">
-                        <Icon size={22} strokeWidth={1.5} />
-                      </div>
-                      <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter text-neutral-950 leading-[0.95] mb-4">
-                        {service.title}
-                      </h3>
-                      <p className="text-primary font-medium text-lg mb-6">{service.tagline}</p>
-                      <p className="text-neutral-500 font-light text-lg leading-relaxed max-w-xl mb-10 text-balance">
-                        {service.description}
-                      </p>
-                    </AnimatedSection>
-
-                    {/* Highlights */}
-                    <AnimatedSection options={{ delay: 0.1 }}>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {service.highlights.map((h, j) => (
-                          <div key={j} className="flex items-center gap-3 text-sm text-neutral-600">
-                            <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                              <Check className="w-3 h-3 text-primary" />
-                            </div>
-                            {h}
-                          </div>
-                        ))}
-                      </div>
-                    </AnimatedSection>
-                  </div>
-
-                  {/* Right: Details card */}
-                  <div className="lg:col-span-5 flex flex-col gap-6">
-                    <AnimatedSection options={{ delay: 0.15 }}>
-                      <div className="bg-neutral-950 text-white rounded-3xl p-8 lg:p-10 relative overflow-hidden">
-                        
-                        {/* Background Watermark inside Card */}
-                        <div className="absolute right-0 bottom-0 translate-x-4 translate-y-4 w-40 h-40 opacity-[0.03] text-white pointer-events-none z-0">
-                          {getServiceIcon(service.num, "w-full h-full")}
-                        </div>
-                        
-                        {/* Deliverables */}
-                        <div className="mb-8 relative z-10">
-                          <p className="text-[10px] uppercase font-mono tracking-widest text-white/40 mb-4">O que você recebe</p>
-                          <div className="flex flex-col gap-3">
-                            {service.deliverables.map((d, j) => (
-                              <div key={j} className="flex items-center gap-3 text-sm text-white/70">
-                                <ArrowRight className="w-3 h-3 text-primary flex-shrink-0" />
-                                {d}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Divider */}
-                        <div className="border-t border-white/5 pt-8 flex items-center justify-between relative z-10">
-                          <div>
-                            <p className="text-[10px] uppercase font-mono tracking-widest text-white/30 mb-1">Prazo estimado</p>
-                            <p className="font-display text-2xl font-bold text-white">{service.timeRange}</p>
-                          </div>
-                          <span className="text-[10px] font-mono uppercase tracking-widest text-primary border border-primary/30 px-3 py-1.5 rounded-full bg-primary/10">
-                            {service.tag2}
+            {/* Accordion List */}
+            <div className="divide-y divide-neutral-100">
+              {SERVICES.map((service, i) => {
+                const Icon = service.icon;
+                const isOpen = activeService === i;
+                return (
+                  <div
+                    key={service.num}
+                    className="accordion-row group relative"
+                  >
+                    {/* Row trigger */}
+                    <div className="w-full flex items-center justify-between py-7 md:py-8 text-left transition-colors duration-300">
+                      
+                      {/* Lado Esquerdo: Título (que alinha com o Header) e Itens Pendurados (em xl) */}
+                      <div className="relative flex items-center shrink-0">
+                        {/* 
+                          Número 'Chique' (Editorial/Minimalista)
+                          Fica pendurado em Desktop.
+                        */}
+                        <div className="hidden xl:flex absolute right-full mr-12 items-center justify-end">
+                          <span className={`font-display text-2xl md:text-3xl font-light tracking-wide tabular-nums transition-colors duration-500 ${isOpen ? 'text-primary' : 'text-neutral-300 group-hover:text-neutral-500'}`}>
+                            {service.num}<span className="text-primary opacity-50">.</span>
                           </span>
                         </div>
 
-                        {/* Link */}
-                        <div className="mt-8 pt-8 border-t border-white/5 relative z-10">
-                          <Link
-                            href="#contato"
-                            className="group w-full flex items-center justify-between text-sm font-mono uppercase tracking-widest text-white/50 hover:text-white transition-colors duration-300"
-                          >
-                            <span>Solicitar orçamento</span>
-                            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                          </Link>
+                        {/* Versão Mobile/Tablet (Normal Inline) */}
+                        <div className="xl:hidden flex items-center shrink-0 mr-6">
+                          <span className={`font-display text-xl font-light tracking-wide tabular-nums transition-colors duration-500 ${isOpen ? 'text-primary' : 'text-neutral-300'}`}>
+                            {service.num}<span className="text-primary opacity-50">.</span>
+                          </span>
+                        </div>
+
+                        {/* Title (Starts exactly at the alignment line of the container) */}
+                        <button onClick={() => setActiveService(isOpen ? -1 : i)} className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight transition-all duration-300 text-left text-neutral-950 group-hover:translate-x-3">
+                          {service.title}
+                        </button>
+                      </div>
+
+                      {/* Espaço Vazio Central: Único lugar que ativa o cursor customizado animado */}
+                      <div 
+                        className="flex-1 h-12 lg:hover:cursor-none"
+                        onClick={() => setActiveService(isOpen ? -1 : i)}
+                        onMouseEnter={() => setHoveredService(i)}
+                        onMouseLeave={() => setHoveredService(null)}
+                      />
+
+                      {/* Lado Direito: Tagline & Chevron */}
+                      <button onClick={() => setActiveService(isOpen ? -1 : i)} className="flex items-center gap-6 shrink-0 ml-4">
+                        <span className={`hidden xl:block text-sm font-light italic max-w-[260px] text-right leading-snug transition-colors duration-300 ${
+                          isOpen ? 'text-primary' : 'text-neutral-950'
+                        }`}>
+                          {service.tagline}
+                        </span>
+                        <span className={`w-9 h-9 shrink-0 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                          isOpen
+                            ? 'bg-primary border-primary text-white rotate-45'
+                            : 'border-neutral-200 text-neutral-400 group-hover:border-primary/50'
+                        }`}>
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <path d="M7 1v12M1 7h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+
+                    {/* Expandable content */}
+                    <div
+                      className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="pl-0 sm:pl-[140px] xl:pl-[0px] pb-10 pt-4 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+
+                          {/* Description */}
+                          <div className="md:col-span-2">
+                            <p className="text-neutral-500 font-light text-base leading-relaxed mb-6">
+                              {service.description}
+                            </p>
+                            {/* Highlights */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                              {service.highlights.map((h, j) => (
+                                <div key={j} className="flex items-center gap-3 text-sm text-neutral-600">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-primary/20 shrink-0 flex items-center justify-center">
+                                    <span className="w-1 h-1 rounded-full bg-primary" />
+                                  </span>
+                                  {h}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Right side: time + CTA */}
+                          <div className="flex flex-col gap-5 md:items-end justify-between">
+                            {/* Time badge */}
+                            <div className="text-left md:text-right mt-2">
+                              <p className="text-[10px] uppercase font-mono tracking-widest text-neutral-400 mb-1">Prazo estimado</p>
+                              <p className="font-display text-2xl font-semibold text-neutral-900">{service.timeRange}</p>
+                            </div>
+
+                            {/* CTA */}
+                            <Link
+                              href="/#contato"
+                              className="group/btn inline-flex items-center gap-2 text-sm font-semibold text-primary border border-primary/20 bg-primary/5 hover:bg-primary hover:text-white px-5 py-2.5 rounded-full transition-all duration-300"
+                            >
+                              Solicitar orçamento
+                              <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                            </Link>
+                          </div>
                         </div>
                       </div>
-                    </AnimatedSection>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+          </div>
+
+          {/* CUSTOM CURSOR (Apenas Desktop, ativado no espaço vazio) */}
+          <div 
+            ref={cursorRef} 
+            className="fixed top-0 left-0 w-24 h-24 pointer-events-none z-[100] hidden lg:flex items-center justify-center"
+            style={{ opacity: hoveredService !== null ? 1 : 0, transition: 'opacity 0.3s ease', willChange: 'transform' }}
+          >
+            {/* O bg-neutral-950 garante contraste, e o rounded-full garante que a forma seja um círculo perfeito (sem quadrados). */}
+            <div 
+              className="relative w-[80%] h-[80%] bg-neutral-950 rounded-full flex items-center justify-center transition-transform duration-500 ease-out shadow-[0_0_20px_rgba(0,0,0,0.1)]"
+              style={{ transform: hoveredService !== null ? 'scale(1)' : 'scale(0)' }}
+            >
+               {hoveredService !== null && React.createElement(SERVICES[hoveredService].icon, { 
+                 className: "w-8 h-8 text-white animate-[pulse_2s_ease-in-out_infinite]", 
+                 strokeWidth: 1.5 
+               })}
+            </div>
           </div>
         </section>
 
@@ -481,41 +511,7 @@ export default function ServicosPage() {
           </div>
         </section>
 
-        {/* ─────────────────────────────────────
-            BLOCO 03 — CTA FINAL
-        ───────────────────────────────────── */}
-        <section className="py-32 px-6 bg-white border-t border-neutral-100 relative overflow-hidden">
-          <div className="container mx-auto max-w-5xl relative z-10 text-center flex flex-col items-center">
-            <AnimatedSection>
-              <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-6 font-bold">[ Próximos Passos ]</p>
-              <h2 className="font-display text-5xl md:text-7xl font-semibold tracking-tighter text-neutral-950 leading-[0.9] mb-8">
-                Pronto para<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500 italic pr-2">construir?</span>
-              </h2>
-              <p className="text-neutral-500 font-light text-lg md:text-xl leading-relaxed max-w-2xl mb-12 text-balance">
-                Conte-nos sobre o seu projeto e receba uma análise técnica honesta do que é necessário para atingir seus objetivos — sem enrolação.
-              </p>
-            </AnimatedSection>
 
-            <AnimatedSection options={{ delay: 0.15 }}>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/#contato"
-                  className="group inline-flex items-center justify-center gap-3 bg-neutral-950 text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide uppercase hover:scale-105 transition-all duration-300 shadow-xl"
-                >
-                  <span>Solicitar orçamento</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  href="/sobre"
-                  className="group inline-flex items-center justify-center gap-3 bg-transparent text-neutral-700 border border-neutral-200 px-8 py-4 rounded-full font-bold text-sm tracking-wide uppercase hover:border-primary/40 hover:text-primary hover:scale-105 transition-all duration-300"
-                >
-                  <span>Conheça a empresa</span>
-                </Link>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
       </div>
     </div>
   );

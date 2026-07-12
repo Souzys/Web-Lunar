@@ -90,13 +90,18 @@ export default function SobrePage() {
       y: typeof window !== 'undefined' ? window.innerHeight / 4 - 400 : 0,
     });
 
+    const xTo = gsap.quickTo(glow, "x", { duration: 1.5, ease: "power2.out" });
+    const yTo = gsap.quickTo(glow, "y", { duration: 1.5, ease: "power2.out" });
+
     const handleMouseMove = (e: MouseEvent) => {
-      const x = e.clientX - 400;
-      const y = e.clientY - 400;
-      gsap.to(glow, { x, y, duration: 1.5, ease: 'power2.out', overwrite: 'auto' });
+      // Desliga o cálculo pesado se já rolou pra fora da Hero
+      if (window.scrollY < (window.innerHeight || 800)) {
+        xTo(e.clientX - 400);
+        yTo(e.clientY - 400);
+      }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
@@ -111,7 +116,7 @@ export default function SobrePage() {
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div 
             ref={glowRef}
-            className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 mix-blend-screen pointer-events-none"
+            className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 pointer-events-none"
             style={{
               left: 0,
               top: 0,
