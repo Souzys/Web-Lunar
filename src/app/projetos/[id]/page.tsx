@@ -181,154 +181,165 @@ export default function ProjetoDetalhePage() {
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-        <div className="h-[calc(50vh-80px)] w-full flex flex-col justify-center relative z-10 text-left">
-          <div className="container mx-auto px-6 max-w-[1440px]">
-            <AnimatedSection>
-              <div className="mb-6">
-                <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-mono">
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                  <span>Voltar para Projetos</span>
-                </Link>
+        <div className="h-[calc(100vh-80px)] w-full flex items-center justify-center relative z-10 text-left">
+          <div className="container mx-auto px-6 max-w-[1440px] w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              
+              {/* Coluna Esquerda: Informações do Case */}
+              <div className="lg:col-span-5 flex flex-col items-start justify-center">
+                <AnimatedSection>
+                  <div className="mb-6">
+                    <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-mono">
+                      <ArrowLeft className="w-3.5 h-3.5" />
+                      <span>Voltar para Projetos</span>
+                    </Link>
+                  </div>
+                  <span className="text-xs font-mono uppercase tracking-widest text-primary font-semibold block mb-4">// {caseStudy.category}</span>
+                  <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-[1.05]">
+                    {caseStudy.title}
+                  </h1>
+                  <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed max-w-md border-l border-primary/30 pl-5 text-balance">
+                    {caseStudy.tagline}
+                  </p>
+                </AnimatedSection>
               </div>
-              <span className="text-xs font-mono uppercase tracking-widest text-primary font-semibold block mb-4">// {caseStudy.category}</span>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-tight">
-                {caseStudy.title}
-              </h1>
-            </AnimatedSection>
+
+              {/* Coluna Direita: Showcase Responsivo com Monitor + Tablet + Celular */}
+              <div className="lg:col-span-7 relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] md:min-h-[520px] w-full select-none pt-12 lg:pt-0">
+                <style>{`
+                  @keyframes float-monitor {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-8px); }
+                  }
+                  @keyframes float-tablet {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(8px); }
+                  }
+                  @keyframes float-phone {
+                    0%, 100% { transform: translateY(0px) translateX(0px); }
+                    50% { transform: translateY(-12px) translateX(2px); }
+                  }
+                  @keyframes pulse-glow {
+                    0%, 100% { transform: scale(1); opacity: 0.5; }
+                    50% { transform: scale(1.05); opacity: 0.8; }
+                  }
+                  .monitor-animate {
+                    animation: float-monitor 8s ease-in-out infinite;
+                  }
+                  .tablet-animate {
+                    animation: float-tablet 8s ease-in-out infinite;
+                    animation-delay: 2s;
+                  }
+                  .phone-animate {
+                    animation: float-phone 8s ease-in-out infinite;
+                    animation-delay: 4s;
+                  }
+                  .glow-pulse {
+                    animation: pulse-glow 4s ease-in-out infinite;
+                  }
+                `}</style>
+
+                {/* 1. MONITOR MOCKUP */}
+                <div className="monitor-animate w-[240px] h-[150px] sm:w-[350px] sm:h-[220px] md:w-[460px] md:h-[285px] bg-[#1e2330] rounded-xl p-1.5 sm:p-2.5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 flex flex-col relative">
+                  {/* Screen */}
+                  <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 flex flex-col relative text-white font-sans">
+                    {/* Mock Navbar */}
+                    <div className="w-full h-4 sm:h-6 border-b border-white/5 px-2 flex items-center justify-between bg-[#0a0d14]/80 backdrop-blur-sm relative z-20">
+                      <div className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                        <span className="text-[5px] sm:text-[7px] font-mono tracking-widest text-white/60">LUNAR</span>
+                      </div>
+                      <div className="flex gap-1.5">
+                        <span className="w-2.5 h-0.5 rounded-full bg-white/10" />
+                        <span className="w-2.5 h-0.5 rounded-full bg-white/10" />
+                      </div>
+                    </div>
+
+                    {/* Mock Content */}
+                    <div className="flex-1 flex flex-col justify-center items-center p-3 relative z-10 text-center">
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:12px_12px] pointer-events-none" />
+                      
+                      {/* Hero Title */}
+                      <h4 className="text-[7px] sm:text-[9px] font-mono uppercase tracking-widest text-primary/80 mb-1">
+                        [ Showcase Responsivo ]
+                      </h4>
+                      <h2 className="font-display text-[9px] sm:text-lg md:text-xl font-bold leading-tight tracking-tight max-w-[280px] mb-1.5">
+                        {caseStudy.showcaseHeroTitle}
+                      </h2>
+                      <p className="text-[6px] sm:text-[10px] text-neutral-400 font-light leading-relaxed max-w-[180px] mb-2">
+                        Design premium e alta performance.
+                      </p>
+
+                      {/* CTA button */}
+                      <div className="px-2 py-0.5 sm:px-3 sm:py-1 text-[5px] sm:text-[8px] font-bold tracking-widest uppercase rounded-full bg-primary text-white shadow-[0_0_10px_rgba(29,77,255,0.4)] flex items-center gap-0.5">
+                        <span>Ver Projeto</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Base stand */}
+                  <div className="absolute -bottom-5 sm:-bottom-7 left-1/2 -translate-x-1/2 w-10 sm:w-14 h-5 sm:h-7 bg-[#161a24] border-x border-b border-white/10 shadow-md z-0" />
+                  <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 w-20 sm:w-28 h-0.5 sm:h-1 bg-[#1e2330] rounded-full shadow-md border border-white/10 z-0" />
+                </div>
+
+                {/* 2. TABLET MOCKUP */}
+                <div className="tablet-animate absolute bottom-6 left-0 sm:left-4 md:left-8 w-[120px] h-[80px] sm:w-[170px] sm:h-[110px] md:w-[220px] md:h-[145px] bg-[#1e2330] rounded-xl p-1 shadow-[0_20px_45px_rgba(0,0,0,0.75)] border border-white/10 z-20 flex flex-col">
+                  {/* Screen */}
+                  <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 relative flex flex-col justify-between p-1.5 sm:p-2 text-white font-sans text-left">
+                    {/* Header */}
+                    <div className="flex justify-between items-center w-full relative z-20 border-b border-white/5 pb-1">
+                      <span className="text-[4px] sm:text-[6px] font-mono tracking-widest text-white/50">LUNAR</span>
+                      <span className="w-1 h-1 rounded-full bg-white/20" />
+                    </div>
+
+                    {/* Tablet Content */}
+                    <div className="flex-1 flex flex-col justify-center items-start relative z-10 py-1">
+                      <h3 className="font-display text-[6px] sm:text-[9px] font-bold leading-tight mb-1 text-left w-full">
+                        {caseStudy.showcaseHeroTitle}
+                      </h3>
+                      <p className="text-[4px] sm:text-[6px] text-neutral-400 font-light max-w-[100px]">
+                        Experiência e consistência modular.
+                      </p>
+                    </div>
+
+                    {/* Footer bar */}
+                    <div className="w-8 h-0.5 bg-white/20 rounded-full mx-auto" />
+                  </div>
+                </div>
+
+                {/* 3. SMARTPHONE MOCKUP */}
+                <div className="phone-animate absolute -bottom-6 right-0 sm:right-6 md:right-12 w-[65px] h-[130px] sm:w-[85px] sm:h-[170px] md:w-[100px] md:h-[200px] bg-[#1e2330] rounded-[18px] sm:rounded-[24px] p-1 shadow-[0_20px_40px_rgba(0,0,0,0.8)] border border-white/10 z-30 flex flex-col">
+                  {/* Notch */}
+                  <div className="absolute top-1 left-1/2 -translate-x-1/2 w-6 sm:w-8 h-1.5 bg-black rounded-full z-40" />
+                  
+                  {/* Screen */}
+                  <div className="w-full h-full bg-[#050505] rounded-[14px] sm:rounded-[20px] overflow-hidden border border-white/5 relative flex flex-col justify-between p-1.5 sm:p-2.5 text-white font-sans text-left">
+                    <span className="text-[4px] sm:text-[5px] font-mono text-white/40">LUNAR</span>
+
+                    {/* Mobile Mock Content */}
+                    <div className="flex-1 flex flex-col justify-center items-start relative z-10 select-none">
+                      <h2 className="font-display text-[5px] sm:text-[8px] font-bold leading-tight mb-0.5 w-full break-words">
+                        {caseStudy.showcaseHeroTitle}
+                      </h2>
+                      <p className="text-[4px] sm:text-[5px] text-neutral-400 font-light max-w-[60px]">
+                        Design responsivo.
+                      </p>
+                    </div>
+
+                    <div className="w-6 h-0.5 bg-white/20 rounded-full mx-auto" />
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
 
       {/* Scrolling Content */}
-      <div className="relative z-10 bg-white text-neutral-900 w-full mt-[50vh] border-t border-neutral-100">
+      <div className="relative z-10 bg-white text-neutral-900 w-full mt-[100vh] border-t border-neutral-100">
         
-        {/* Showcase Responsivo (Monitor + Smartphone Mockup) */}
-        <div className="w-full min-h-[480px] sm:min-h-[550px] md:min-h-[620px] bg-[#07090e] bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:32px_32px] border-b border-neutral-100 relative flex items-center justify-center overflow-hidden py-12 select-none">
-          <style>{`
-            @keyframes float-monitor {
-              0%, 100% { transform: translateY(0px); }
-              50% { transform: translateY(-8px); }
-            }
-            @keyframes float-phone {
-              0%, 100% { transform: translateY(0px) translateX(0px); }
-              50% { transform: translateY(-12px) translateX(2px); }
-            }
-            @keyframes pulse-glow {
-              0%, 100% { transform: scale(1); opacity: 0.5; }
-              50% { transform: scale(1.05); opacity: 0.8; }
-            }
-            .monitor-animate {
-              animation: float-monitor 8s ease-in-out infinite;
-            }
-            .phone-animate {
-              animation: float-phone 8s ease-in-out infinite;
-              animation-delay: 1.5s;
-            }
-            .glow-pulse {
-              animation: pulse-glow 4s ease-in-out infinite;
-            }
-          `}</style>
-
-          {/* Background Ambient Glows */}
-          <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-primary/10 blur-[80px] pointer-events-none" />
-          <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[100px] pointer-events-none" />
-
-          {/* Interactive Showcase Area */}
-          <div className="relative flex flex-col items-center w-full max-w-[900px] px-6">
-            
-            {/* 1. MONITOR MOCKUP */}
-            <div className="monitor-animate w-[320px] h-[200px] sm:w-[480px] sm:h-[300px] md:w-[620px] md:h-[380px] bg-[#1e2330] rounded-2xl p-2 sm:p-3.5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 flex flex-col relative">
-              {/* Screen */}
-              <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 flex flex-col relative text-white font-sans">
-                {/* Mock Navbar */}
-                <div className="w-full h-5 sm:h-8 border-b border-white/5 px-3 flex items-center justify-between bg-[#0a0d14]/80 backdrop-blur-sm relative z-20">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span className="text-[7px] sm:text-[9px] font-mono tracking-widest text-white/60">LUNAR</span>
-                  </div>
-                  <div className="flex gap-2.5">
-                    <span className="w-4 h-1 rounded-full bg-white/10" />
-                    <span className="w-4 h-1 rounded-full bg-white/10" />
-                    <span className="w-4 h-1 rounded-full bg-white/10" />
-                  </div>
-                </div>
-
-                {/* Mock Content */}
-                <div className="flex-1 flex flex-col justify-center items-center p-4 relative z-10 text-center select-none">
-                  {/* Subtle abstract grid background on screen */}
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-                  <div className="absolute -top-12 -left-12 w-24 h-24 rounded-full bg-primary/10 blur-xl glow-pulse" />
-                  <div className="absolute -bottom-16 -right-16 w-32 h-32 rounded-full bg-blue-500/10 blur-2xl" />
-
-                  {/* Hero Title */}
-                  <h4 className="font-display text-[10px] sm:text-xs font-mono uppercase tracking-widest text-primary/80 mb-1.5 sm:mb-3">
-                    [ Showcase Responsivo ]
-                  </h4>
-                  <h2 className="font-display text-sm sm:text-2xl md:text-3xl font-bold leading-tight tracking-tight max-w-[400px] mb-2 sm:mb-4">
-                    {caseStudy.showcaseHeroTitle}
-                  </h2>
-                  <p className="text-[8px] sm:text-xs text-neutral-400 font-light leading-relaxed max-w-[280px] mb-3 sm:mb-6">
-                    Design premium e performance absoluta desenvolvidos sob medida.
-                  </p>
-
-                  {/* CTA button inside screen */}
-                  <div className="px-3.5 py-1.5 text-[7px] sm:text-[10px] font-bold tracking-widest uppercase rounded-full bg-primary text-white shadow-[0_0_15px_rgba(29,77,255,0.4)] flex items-center gap-1">
-                    <span>Acessar Projeto</span>
-                    <svg className="w-2 h-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Interactive cursor pointer visual */}
-                <div className="absolute bottom-6 left-1/3 w-3 h-3 rounded-full bg-white/10 border border-white/20 animate-ping z-20" />
-                <div className="absolute bottom-6 left-1/3 w-1.5 h-1.5 rounded-full bg-white z-20" />
-              </div>
-
-              {/* Base stand */}
-              <div className="absolute -bottom-7 sm:-bottom-10 left-1/2 -translate-x-1/2 w-14 sm:w-20 h-7 sm:h-10 bg-[#161a24] border-x border-b border-white/10 shadow-md z-0" />
-              <div className="absolute -bottom-8 sm:-bottom-11 left-1/2 -translate-x-1/2 w-28 sm:w-40 h-1 sm:h-2 bg-[#1e2330] rounded-full shadow-md border border-white/10 z-0" />
-            </div>
-
-            {/* 2. SMARTPHONE MOCKUP */}
-            <div className="phone-animate absolute -bottom-4 right-1/4 translate-x-20 sm:translate-x-32 md:translate-x-44 w-[85px] h-[170px] sm:w-[115px] sm:h-[230px] md:w-[130px] md:h-[260px] bg-[#1e2330] rounded-[24px] sm:rounded-[32px] p-1.5 sm:p-2 shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 z-30 flex flex-col">
-              {/* Dynamic Island / Notch */}
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 sm:w-12 h-2 sm:h-3 bg-black rounded-full z-40" />
-              
-              {/* Screen */}
-              <div className="w-full h-full bg-[#050505] rounded-[18px] sm:rounded-[26px] overflow-hidden border border-white/5 relative flex flex-col justify-between p-2.5 sm:p-4 text-white font-sans text-left">
-                {/* Header */}
-                <div className="flex justify-between items-center w-full relative z-20">
-                  <span className="text-[5px] sm:text-[7px] font-mono tracking-widest text-white/50">LUNAR</span>
-                  <div className="flex gap-0.5 sm:gap-1">
-                    <span className="w-1.5 h-0.5 rounded-full bg-white/20" />
-                    <span className="w-1.5 h-0.5 rounded-full bg-white/20" />
-                  </div>
-                </div>
-
-                {/* Mobile Mock Content */}
-                <div className="flex-1 flex flex-col justify-center items-start relative z-10 py-1.5 select-none">
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-[size:10px_10px] pointer-events-none" />
-                  
-                  <h2 className="font-display text-[7px] sm:text-[11px] font-bold leading-tight tracking-tight mb-1 sm:mb-2 text-left w-full break-words">
-                    {caseStudy.showcaseHeroTitle}
-                  </h2>
-                  <p className="text-[5px] sm:text-[8px] text-neutral-400 font-light leading-relaxed max-w-[80px] mb-2 sm:mb-3">
-                    Experiência tátil e design responsivo.
-                  </p>
-                  
-                  <div className="px-2 py-0.5 sm:py-1 text-[5px] sm:text-[7px] font-bold tracking-widest uppercase rounded-full bg-primary text-white">
-                    Ver site
-                  </div>
-                </div>
-
-                {/* Footer bar */}
-                <div className="w-8 sm:w-12 h-0.5 sm:h-1 bg-white/20 rounded-full mx-auto relative z-20" />
-              </div>
-            </div>
-
-          </div>
-        </div>
 
         <div className="container mx-auto max-w-[1440px] px-6 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
