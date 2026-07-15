@@ -169,7 +169,7 @@ export default function ProjetoDetalhePage() {
   }
 
   const scrollDurations = caseStudy.id === 'volk' 
-    ? { desktop: '45s', tablet: '20s', mobile: '18s' }
+    ? { desktop: '45s', tablet: '45s', mobile: '55s' }
     : { desktop: '16s', tablet: '20s', mobile: '18s' };
 
   return (
