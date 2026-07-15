@@ -205,7 +205,7 @@ export default function ProjetoDetalhePage() {
               </div>
 
               {/* Coluna Direita: Showcase Responsivo com Monitor + Tablet + Celular */}
-              <div className="lg:col-span-7 relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] md:min-h-[520px] w-full select-none pt-12 lg:pt-0">
+              <div className="lg:col-span-7 relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] md:min-h-[520px] w-full select-none pt-12 lg:pt-0 -translate-y-8 lg:-translate-y-12">
                 <style>{`
                   @keyframes float-monitor {
                     0%, 100% { transform: translateY(0px); }
@@ -240,41 +240,14 @@ export default function ProjetoDetalhePage() {
                 `}</style>
 
                 {/* 1. MONITOR MOCKUP */}
-                <div className="monitor-animate w-[240px] h-[150px] sm:w-[350px] sm:h-[220px] md:w-[460px] md:h-[285px] bg-[#1e2330] rounded-xl p-1.5 sm:p-2.5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 flex flex-col relative">
+                <div className="monitor-animate w-[240px] h-[150px] sm:w-[350px] sm:h-[220px] md:w-[460px] md:h-[285px] bg-[#1e2330] rounded-xl p-1.5 sm:p-2 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 flex flex-col relative z-10">
                   {/* Screen */}
-                  <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 flex flex-col relative text-white font-sans">
-                    {/* Mock Navbar */}
-                    <div className="w-full h-4 sm:h-6 border-b border-white/5 px-2 flex items-center justify-between bg-[#0a0d14]/80 backdrop-blur-sm relative z-20">
-                      <div className="flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                        <span className="text-[5px] sm:text-[7px] font-mono tracking-widest text-white/60">LUNAR</span>
-                      </div>
-                      <div className="flex gap-1.5">
-                        <span className="w-2.5 h-0.5 rounded-full bg-white/10" />
-                        <span className="w-2.5 h-0.5 rounded-full bg-white/10" />
-                      </div>
-                    </div>
-
-                    {/* Mock Content */}
-                    <div className="flex-1 flex flex-col justify-center items-center p-3 relative z-10 text-center">
-                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:12px_12px] pointer-events-none" />
-                      
-                      {/* Hero Title */}
-                      <h4 className="text-[7px] sm:text-[9px] font-mono uppercase tracking-widest text-primary/80 mb-1">
-                        [ Showcase Responsivo ]
-                      </h4>
-                      <h2 className="font-display text-[9px] sm:text-lg md:text-xl font-bold leading-tight tracking-tight max-w-[280px] mb-1.5">
-                        {caseStudy.showcaseHeroTitle}
-                      </h2>
-                      <p className="text-[6px] sm:text-[10px] text-neutral-400 font-light leading-relaxed max-w-[180px] mb-2">
-                        Design premium e alta performance.
-                      </p>
-
-                      {/* CTA button */}
-                      <div className="px-2 py-0.5 sm:px-3 sm:py-1 text-[5px] sm:text-[8px] font-bold tracking-widest uppercase rounded-full bg-primary text-white shadow-[0_0_10px_rgba(29,77,255,0.4)] flex items-center gap-0.5">
-                        <span>Ver Projeto</span>
-                      </div>
-                    </div>
+                  <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 relative flex flex-col">
+                    <img 
+                      src={`/${caseStudy.id}-desktop.png`}
+                      alt="Desktop View"
+                      className="w-full h-full object-cover object-top select-none pointer-events-none"
+                    />
                   </div>
 
                   {/* Base stand */}
@@ -283,50 +256,29 @@ export default function ProjetoDetalhePage() {
                 </div>
 
                 {/* 2. TABLET MOCKUP */}
-                <div className="tablet-animate absolute bottom-6 left-0 sm:left-4 md:left-8 w-[120px] h-[80px] sm:w-[170px] sm:h-[110px] md:w-[220px] md:h-[145px] bg-[#1e2330] rounded-xl p-1 shadow-[0_20px_45px_rgba(0,0,0,0.75)] border border-white/10 z-20 flex flex-col">
+                <div className="tablet-animate absolute bottom-8 left-0 sm:left-4 md:left-8 w-[120px] h-[80px] sm:w-[170px] sm:h-[110px] md:w-[220px] md:h-[145px] bg-[#1e2330] rounded-xl p-1 shadow-[0_20px_45px_rgba(0,0,0,0.75)] border border-white/10 z-20 flex flex-col">
                   {/* Screen */}
-                  <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 relative flex flex-col justify-between p-1.5 sm:p-2 text-white font-sans text-left">
-                    {/* Header */}
-                    <div className="flex justify-between items-center w-full relative z-20 border-b border-white/5 pb-1">
-                      <span className="text-[4px] sm:text-[6px] font-mono tracking-widest text-white/50">LUNAR</span>
-                      <span className="w-1 h-1 rounded-full bg-white/20" />
-                    </div>
-
-                    {/* Tablet Content */}
-                    <div className="flex-1 flex flex-col justify-center items-start relative z-10 py-1">
-                      <h3 className="font-display text-[6px] sm:text-[9px] font-bold leading-tight mb-1 text-left w-full">
-                        {caseStudy.showcaseHeroTitle}
-                      </h3>
-                      <p className="text-[4px] sm:text-[6px] text-neutral-400 font-light max-w-[100px]">
-                        Experiência e consistência modular.
-                      </p>
-                    </div>
-
-                    {/* Footer bar */}
-                    <div className="w-8 h-0.5 bg-white/20 rounded-full mx-auto" />
+                  <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 relative flex flex-col">
+                    <img 
+                      src={`/${caseStudy.id}-tablet.png`}
+                      alt="Tablet View"
+                      className="w-full h-full object-cover object-top select-none pointer-events-none"
+                    />
                   </div>
                 </div>
 
                 {/* 3. SMARTPHONE MOCKUP */}
-                <div className="phone-animate absolute -bottom-6 right-0 sm:right-6 md:right-12 w-[65px] h-[130px] sm:w-[85px] sm:h-[170px] md:w-[100px] md:h-[200px] bg-[#1e2330] rounded-[18px] sm:rounded-[24px] p-1 shadow-[0_20px_40px_rgba(0,0,0,0.8)] border border-white/10 z-30 flex flex-col">
+                <div className="phone-animate absolute -bottom-2 right-0 sm:right-6 md:right-12 w-[65px] h-[130px] sm:w-[85px] sm:h-[170px] md:w-[100px] md:h-[200px] bg-[#1e2330] rounded-[18px] sm:rounded-[24px] p-1 shadow-[0_20px_40px_rgba(0,0,0,0.8)] border border-white/10 z-30 flex flex-col">
                   {/* Notch */}
                   <div className="absolute top-1 left-1/2 -translate-x-1/2 w-6 sm:w-8 h-1.5 bg-black rounded-full z-40" />
                   
                   {/* Screen */}
-                  <div className="w-full h-full bg-[#050505] rounded-[14px] sm:rounded-[20px] overflow-hidden border border-white/5 relative flex flex-col justify-between p-1.5 sm:p-2.5 text-white font-sans text-left">
-                    <span className="text-[4px] sm:text-[5px] font-mono text-white/40">LUNAR</span>
-
-                    {/* Mobile Mock Content */}
-                    <div className="flex-1 flex flex-col justify-center items-start relative z-10 select-none">
-                      <h2 className="font-display text-[5px] sm:text-[8px] font-bold leading-tight mb-0.5 w-full break-words">
-                        {caseStudy.showcaseHeroTitle}
-                      </h2>
-                      <p className="text-[4px] sm:text-[5px] text-neutral-400 font-light max-w-[60px]">
-                        Design responsivo.
-                      </p>
-                    </div>
-
-                    <div className="w-6 h-0.5 bg-white/20 rounded-full mx-auto" />
+                  <div className="w-full h-full bg-[#050505] rounded-[14px] sm:rounded-[20px] overflow-hidden border border-white/5 relative flex flex-col">
+                    <img 
+                      src={`/${caseStudy.id}-mobile.png`}
+                      alt="Mobile View"
+                      className="w-full h-full object-cover object-top select-none pointer-events-none"
+                    />
                   </div>
                 </div>
 
