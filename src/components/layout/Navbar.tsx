@@ -143,8 +143,9 @@ export function Navbar() {
               if (link.toLowerCase() === 'início') href = '/';
               if (link.toLowerCase() === 'sobre') href = '/sobre';
               if (link.toLowerCase() === 'serviços') href = '/servicos';
-              if (link.toLowerCase() === 'projetos') href = '/#projetos';
-              if (link.toLowerCase() === 'contato') href = '/#contato';
+              if (link.toLowerCase() === 'projetos') href = '/projetos';
+              if (link.toLowerCase() === 'blog') href = '/blog';
+              if (link.toLowerCase() === 'contato') href = '/contato';
               
               return (
                 <div key={link} className="overflow-hidden">

@@ -19,19 +19,19 @@ export function useGsapReveal(
     blur?: number;
   } = {}
 ) {
+  const {
+    y = 40,
+    delay = 0,
+    stagger = 0,
+    duration = 0.8,
+    ease = 'power2.out',
+    start = 'top 80%',
+    markers = false,
+    blur = 5,
+  } = options;
+
   useEffect(() => {
     let ctx = gsap.context(() => {
-      const {
-        y = 40,
-        delay = 0,
-        stagger = 0,
-        duration = 0.8,
-        ease = 'power2.out',
-        start = 'top 80%',
-        markers = false,
-        blur = 5,
-      } = options;
-
       const elements = typeof selector === 'string' ? gsap.utils.toArray(selector) : selector.current;
 
       if (!elements || (Array.isArray(elements) && elements.length === 0)) return;
@@ -61,5 +61,6 @@ export function useGsapReveal(
     });
 
     return () => ctx.revert();
-  }, [selector, options]);
+  }, [selector, y, delay, stagger, duration, ease, start, markers, blur]);
 }
+

@@ -398,25 +398,8 @@ export default function ServicosPage() {
                     {/* Row trigger */}
                     <div className="w-full flex items-center justify-between py-7 md:py-8 text-left transition-colors duration-300">
                       
-                      {/* Lado Esquerdo: Título (que alinha com o Header) e Itens Pendurados (em xl) */}
+                      {/* Lado Esquerdo: Título (que alinha com o Header) */}
                       <div className="relative flex items-center shrink-0">
-                        {/* 
-                          Número 'Chique' (Editorial/Minimalista)
-                          Fica pendurado em Desktop.
-                        */}
-                        <div className="hidden xl:flex absolute right-full mr-12 items-center justify-end">
-                          <span className={`font-display text-2xl md:text-3xl font-light tracking-wide tabular-nums transition-colors duration-500 ${isOpen ? 'text-primary' : 'text-neutral-300 group-hover:text-neutral-500'}`}>
-                            {service.num}<span className="text-primary opacity-50">.</span>
-                          </span>
-                        </div>
-
-                        {/* Versão Mobile/Tablet (Normal Inline) */}
-                        <div className="xl:hidden flex items-center shrink-0 mr-6">
-                          <span className={`font-display text-xl font-light tracking-wide tabular-nums transition-colors duration-500 ${isOpen ? 'text-primary' : 'text-neutral-300'}`}>
-                            {service.num}<span className="text-primary opacity-50">.</span>
-                          </span>
-                        </div>
-
                         {/* Title (Starts exactly at the alignment line of the container) */}
                         <button onClick={() => setActiveService(isOpen ? -1 : i)} className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight transition-all duration-300 text-left text-neutral-950 group-hover:translate-x-3">
                           {service.title}
@@ -485,7 +468,7 @@ export default function ServicosPage() {
 
                             {/* CTA */}
                             <Link
-                              href="/#contato"
+                              href={`/contato?subject=${encodeURIComponent('Orçamento: ' + service.title)}`}
                               className="group/btn inline-flex items-center gap-2 text-sm font-semibold text-primary border border-primary/20 bg-primary/5 hover:bg-primary hover:text-white px-5 py-2.5 rounded-full transition-all duration-300"
                             >
                               Solicitar orçamento

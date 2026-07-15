@@ -11,7 +11,7 @@ export const siteContent = {
     ],
     ctaBox: {
       text: "Sites e sistemas que geram leads, vendas e resultados reais — não só visual bonito.",
-      buttonText: "Me Chama",
+      buttonText: "Fale Conosco",
     },
     bottomText: "Unimos design visual refinado e engenharia de software de alta performance para criar produtos digitais que geram resultados de verdade.",
     socialButtons: [
@@ -23,8 +23,8 @@ export const siteContent = {
   },
 
   industryCircles: {
-    tag: "SOBRE MIM",
-    title: "Desenvolvo sites e sistemas que unem design moderno, estratégia de conversão e tecnologia sólida — desde 2021 transformando ideias em soluções digitais que funcionam.",
+    tag: "SOBRE NÓS",
+    title: "Desenvolvemos sites e sistemas que unem design moderno, estratégia de conversão e tecnologia sólida — transformando ideias em soluções digitais que funcionam.",
     period: "2021–Now",
   },
 
@@ -103,7 +103,7 @@ export const siteContent = {
 
   impact: {
     tag: "AQUI VOCÊ ENCONTRA",
-    descriptionBold: "Desenvolvimento full stack especializado em criar sites e sistemas que geram resultados reais: mais leads, mais vendas, mais reservas. Uno as tecnologias mais modernas e design estratégico",
+    descriptionBold: "Desenvolvimento full stack especializado em criar sites e sistemas que geram resultados reais: mais leads, mais vendas, mais reservas. Unimos as tecnologias mais modernas e design estratégico",
     descriptionFade: " para transformar ideias em soluções digitais funcionais, rápidas e otimizadas — do wireframe ao deploy em produção.",
     stats: [
       { value: 40, prefix: "+", suffix: "", label: "Projetos entregues" },
@@ -119,38 +119,38 @@ export const siteContent = {
 
   testimonials: {
     tag: "DEPOIMENTOS",
-    title: "O QUE DIZEM SOBRE MIM",
-    titleHighlight: "SOBRE MIM",
+    title: "O QUE DIZEM SOBRE NÓS",
+    titleHighlight: "SOBRE NÓS",
     items: [
       {
         badge: "DESENVOLVIMENTO WEB",
-        text: "O Lucas foi o dev responsável pelo front de um site que fizemos juntos. Ele implementou o design com fidelidade, ajustou o que precisava e o resultado ficou bem feito. É fácil trabalhar com ele e o prazo foi cumprido direitinho.",
-        highlight: "o resultado ficou bem feito",
-        author: "Fernando Teles",
+        text: "A Web Lunar foi a responsável pelo front-end de um site que fizemos juntos. Eles implementaram o design com fidelidade, ajustaram o que precisava e o resultado ficou muito bem feito. É fácil trabalhar com a equipe e o prazo foi cumprido direitinho.",
+        highlight: "resultado ficou muito bem feito",
+        author: "Fernando Silva",
         role: "Front End UI / UX Developer",
         color: "white",
       },
       {
         badge: "INTEGRAÇÃO DE SISTEMAS",
-        text: "Contratamos o Lucas para desenvolver uma integração com nosso sistema de pagamentos e ele entregou tudo funcionando certinho. Tirou dúvidas rápido, testou bem e deixou a documentação organizada. Trabalho sólido e sem dor de cabeça.",
+        text: "Contratamos a Web Lunar para desenvolver uma integração com nosso sistema de pagamentos e a equipe entregou tudo funcionando certinho. Tiraram dúvidas rápido, testaram bem e deixaram a documentação organizada. Trabalho sólido e sem dor de cabeça.",
         highlight: "Trabalho sólido e sem dor de cabeça",
-        author: "Pedro Almeida",
+        author: "Pedro Santos",
         role: "Coordenador de TI",
         color: "yellow",
       },
       {
-        badge: "TRAJETÓRIA PROFISSIONAL",
-        text: "Tive a oportunidade de participar do início da carreira do Lucas e desde o início, sempre foi perceptível o seu grande potencial como desenvolvedor e resolvedor de problemas. É um profissional disposto, participativo e que entrega demandas com agilidade.",
-        highlight: "resolvedor de problemas",
-        author: "Mateus Brito",
+        badge: "PARCERIA ESTRATÉGICA",
+        text: "Tive a oportunidade de acompanhar o início da Web Lunar e, desde o começo, sempre foi perceptível o grande potencial da equipe em resolver problemas complexos. É um time extremamente disposto, participativo e que entrega demandas com agilidade.",
+        highlight: "resolver problemas complexos",
+        author: "Mateus Oliveira",
         role: "Coordenador de Marketing e Conteúdo",
         color: "white",
       },
       {
         badge: "MARKETING & GROWTH",
-        text: "Lucas foi um colega de trabalho super dedicado, determinado e sempre buscava aprimorar seus conhecimentos e entregar um resultado acima do esperado. Foi ótimo ter trabalhado com ele.",
+        text: "A Web Lunar se mostrou uma parceira super dedicada, determinada e sempre buscou aprimorar os sistemas para entregar um resultado acima do esperado. Foi ótimo trabalhar em conjunto.",
         highlight: "resultado acima do esperado",
-        author: "Luiza Wallentin",
+        author: "Luiza Souza",
         role: "Especialista em Marketing de Crescimento",
         color: "blue",
       },
@@ -217,24 +217,24 @@ export const siteContent = {
     title: "Perguntas frequentes",
     questions: [
       {
-        q: "Você trabalha com clientes de outros estados ou países?",
-        a: "Sim! Atendo clientes de todo o Brasil e também internacionalmente. Todo o processo é feito de forma remota — reuniões por vídeo, entregas via plataformas colaborativas e comunicação ágil pelo WhatsApp ou Slack.",
+        q: "A Web Lunar trabalha com clientes de outros estados ou países?",
+        a: "Sim! Atendemos clientes de todo o Brasil e também internacionalmente. Todo o processo é feito de forma remota — reuniões por vídeo, entregas via plataformas colaborativas e comunicação ágil pelo WhatsApp ou Slack.",
       },
       {
-        q: "Com que tipo de cliente você costuma trabalhar?",
-        a: "Trabalho com empreendedores, profissionais autônomos, startups e PMEs que precisam de presença digital estratégica. Se você quer um site que converte — não só um site bonito — provavelmente temos sinergia.",
+        q: "Com que tipo de cliente vocês costumam trabalhar?",
+        a: "Trabalhamos com empreendedores, startups e PMEs que precisam de presença digital estratégica. Se você quer um site que converte — não só um site bonito — provavelmente temos sinergia.",
       },
       {
         q: "Qual é o prazo médio de entrega de um projeto?",
         a: "Depende do escopo: landing pages ficam prontas em 7–14 dias, sites completos em 3–5 semanas, e-commerces e sistemas em 4–8 semanas. O prazo exato é definido no briefing inicial.",
       },
       {
-        q: "Você usa WordPress ou tecnologias mais modernas?",
-        a: "Ambos. Uso WordPress para projetos que precisam de CMS simples e gestão de conteúdo fácil. Para projetos que exigem performance máxima, escalabilidade e animações ricas, desenvolvo com React, Next.js e Node.js.",
+        q: "Vocês usam WordPress ou tecnologias mais modernas?",
+        a: "Ambos. Usamos WordPress para projetos que precisam de CMS simples e gestão de conteúdo fácil. Para projetos que exigem performance máxima, escalabilidade e animações ricas, desenvolvemos com React, Next.js e Node.js.",
       },
       {
         q: "Como funciona o processo depois que fecho o projeto?",
-        a: "Após o contrato, faço o briefing detalhado, apresento a proposta visual, refinamos juntos e entrego com todas as instruções de uso. Após o go-live, ofereço 30 dias de suporte gratuito para ajustes.",
+        a: "Após o contrato, fazemos o briefing detalhado, apresentamos a proposta visual, refinamos juntos e entregamos com todas as instruções de uso. Após o go-live, oferecemos 30 dias de suporte gratuito para ajustes.",
       },
     ],
   },
@@ -254,7 +254,7 @@ export const siteContent = {
       {
         date: "Abr 22, 2024",
         title: "React vs WordPress em 2024: qual usar no seu projeto?",
-        excerpt: "A resposta honesta de quem desenvolve com os dois. Quando cada tecnologia faz sentido (e quando não faz).",
+        excerpt: "A resposta honesta de quem desenvolve projetos em larga escala. Quando cada tecnologia faz sentido (e quando não faz).",
         image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80",
       },
       {
@@ -268,7 +268,7 @@ export const siteContent = {
 
   footer: {
     scrollingText: "TRABALHE COM A WEB LUNAR",
-    ctaButton: "Me Chama",
+    ctaButton: "Fale Conosco",
     contact: {
       address: "Brasil · Atendimento Remoto",
       phone: "contato@weblunar.com.br",

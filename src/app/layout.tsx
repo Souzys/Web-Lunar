@@ -4,6 +4,7 @@ import "./globals.css";
 import { TRPCProvider } from "./trpc-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1 w-full flex flex-col">{children}</main>
           <Footer />
+          <WhatsAppFloat />
         </TRPCProvider>
       </body>
     </html>

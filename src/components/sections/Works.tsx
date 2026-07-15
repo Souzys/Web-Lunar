@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { trpc } from "@/utils/trpc";
 import { useAudio } from "@/hooks/useAudio";
 import { ExternalLink, Loader2 } from "lucide-react";
+import Link from "next/link";
 
 interface LocalProject {
   id: string;
@@ -56,7 +57,10 @@ export default function Works() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
 
   // Fetch projects from tRPC
-  const { data: dbProjects, isLoading } = trpc.getProjects.useQuery();
+  const { data: dbProjects, isLoading } = trpc.getProjects.useQuery(undefined, {
+    retry: false,
+    refetchOnWindowFocus: false
+  });
 
   // Combine database projects and defaults
   const projects: LocalProject[] = dbProjects && dbProjects.length > 0 
@@ -128,23 +132,27 @@ export default function Works() {
                 className="glow-card overflow-hidden group flex flex-col justify-between"
               >
                 {/* Thumbnail */}
-                <div className="relative aspect-video w-full overflow-hidden border-b border-white/[0.05]">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] uppercase font-semibold tracking-wider bg-black/60 border border-white/10 text-indigo-300 backdrop-blur-sm">
-                    {project.category}
+                <Link href={`/projetos/${project.id}`} className="block">
+                  <div className="relative aspect-video w-full overflow-hidden border-b border-white/[0.05]">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] uppercase font-semibold tracking-wider bg-black/60 border border-white/10 text-indigo-300 backdrop-blur-sm">
+                      {project.category}
+                    </div>
                   </div>
-                </div>
+                </Link>
 
                 {/* Details */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2 tracking-tight">
-                      {project.title}
-                    </h3>
+                    <Link href={`/projetos/${project.id}`} className="block hover:text-indigo-300 transition-colors mb-2">
+                      <h3 className="text-lg font-bold text-white tracking-tight">
+                        {project.title}
+                      </h3>
+                    </Link>
                     <p className="text-xs text-neutral-400 leading-relaxed font-light mb-6">
                       {project.description}
                     </p>

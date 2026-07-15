@@ -6,6 +6,7 @@ import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { siteContent } from '@/content';
 import { cn } from '@/lib/utils';
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 
 export function Pricing() {
   const { pricing } = siteContent;
@@ -113,15 +114,17 @@ export function Pricing() {
                   </div>
                 </div>
 
-                <PrimaryButton 
-                  className={cn(
-                    "w-full py-4 text-xs font-mono uppercase tracking-widest font-bold transition-all duration-300 rounded-full relative z-10 border", 
-                    isMiddle ? "bg-primary text-white border-transparent hover:bg-primary-hover shadow-[0_0_20px_rgba(29,77,255,0.2)]" : "bg-transparent text-neutral-900 border-black/10 hover:bg-neutral-100"
-                  )}
-                  icon={false}
-                >
-                  {plan.buttonText}
-                </PrimaryButton>
+                <Link href={`/contato?plan=${plan.name}`} className="w-full relative z-10">
+                  <PrimaryButton 
+                    className={cn(
+                      "w-full py-4 text-xs font-mono uppercase tracking-widest font-bold transition-all duration-300 rounded-full border", 
+                      isMiddle ? "bg-primary text-white border-transparent hover:bg-primary-hover shadow-[0_0_20px_rgba(29,77,255,0.2)]" : "bg-transparent text-neutral-900 border-black/10 hover:bg-neutral-100"
+                    )}
+                    icon={false}
+                  >
+                    {plan.buttonText}
+                  </PrimaryButton>
+                </Link>
               </AnimatedSection>
             );
           })}

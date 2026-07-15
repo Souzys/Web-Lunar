@@ -6,6 +6,7 @@ import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { IdeaToCodeAnimation } from '@/components/ui/IdeaToCodeAnimation';
 import { siteContent } from '@/content';
 import gsap from 'gsap';
+import Link from 'next/link';
 
 export function Hero() {
   const { hero } = siteContent;
@@ -112,13 +113,15 @@ export function Hero() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <PrimaryButton className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white px-8 py-4 text-sm tracking-widest rounded-full transition-transform hover:scale-105 active:scale-95">
-                {hero.ctaBox.buttonText}
-              </PrimaryButton>
-              <a href="#work" className="group flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/10 bg-transparent hover:bg-white/5 transition-all text-sm font-medium tracking-widest uppercase">
+              <Link href="/contato" className="w-full sm:w-auto">
+                <PrimaryButton className="w-full bg-primary hover:bg-primary-hover text-white px-8 py-4 text-sm tracking-widest rounded-full transition-transform hover:scale-105 active:scale-95">
+                  {hero.ctaBox.buttonText}
+                </PrimaryButton>
+              </Link>
+              <Link href="/projetos" className="group flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/10 bg-transparent hover:bg-white/5 transition-all text-sm font-medium tracking-widest uppercase">
                 Ver Projetos
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
+              </Link>
             </div>
           </AnimatedSection>
         </div>

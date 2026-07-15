@@ -7,8 +7,12 @@ import { siteContent } from '@/content';
 import { ArrowUpRight, CheckCircle2, Loader2, Send } from 'lucide-react';
 import { trpc } from '@/utils/trpc';
 import { useAudio } from '@/hooks/useAudio';
+import { usePathname } from 'next/navigation';
 
 export function Footer() {
+  const pathname = usePathname();
+  const isContactPage = pathname === '/contato';
+
   const { playHover, playClick } = useAudio();
   const [formData, setFormData] = useState({
     name: "",
@@ -41,7 +45,8 @@ export function Footer() {
     <footer className="relative z-10 overflow-hidden" id="contact">
 
       {/* === CTA SECTION — "WORK WITH WEB LUNAR" === (Modo Claro) */}
-      <div className="pt-32 pb-24 relative bg-[#FAFAFA] text-neutral-900 border-t border-black/5">
+      {!isContactPage && (
+        <div className="pt-32 pb-24 relative bg-[#FAFAFA] text-neutral-900 border-t border-black/5">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(29,77,255,0.05)_0%,transparent_70%)] pointer-events-none" />
         
         <div className="container mx-auto px-6 max-w-[1440px] relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -163,20 +168,27 @@ export function Footer() {
               </span>
             </div>
             
-            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-neutral-900 mb-8 drop-shadow-sm leading-none">
+            <h2 
+              className="font-sans font-semibold tracking-tighter mb-8 text-left"
+              style={{
+                fontSize: '60px',
+                lineHeight: '57px',
+                color: 'lab(7.78201 -0.0000149012 0)'
+              }}
+            >
               Vamos Criar Algo <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
                 Incrível
               </span>{" "}
               Juntos.
             </h2>
-
             <p className="text-neutral-500 text-base md:text-lg font-light leading-relaxed max-w-md">
               Tem um projeto em mente ou quer bater um papo sobre design e tecnologia? Preencha o formulário e vamos transformar suas ideias em realidade.
             </p>
           </div>
         </div>
       </div>
+      )}
 
 
 

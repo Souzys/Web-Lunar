@@ -20,7 +20,7 @@ export function Testimonials() {
               </span>
             </div>
             <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 max-w-xl">
-              Não acredite apenas na minha palavra.
+              Quem já trabalhou conosco.
             </h2>
           </AnimatedSection>
         </div>

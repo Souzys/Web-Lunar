@@ -9,6 +9,7 @@ import { siteContent } from '@/content';
 import gsap from 'gsap';
 import Link from 'next/link';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { PrimaryButton } from '@/components/ui/PrimaryButton';
 
 // Generates a random latency-like SVG path with 15 points
 function generateLatencyPath() {
@@ -174,15 +175,15 @@ export default function SobrePage() {
         
         <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
           {/* Main text in full width with Typewriter Effect */}
-          <div className="mb-16 max-w-5xl">
+          <div className="mb-16 w-full">
             <h2 className="text-xs uppercase font-mono tracking-widest text-white/40 mb-6 font-bold">[ O MANIFESTO CORPORATIVO ]</h2>
-            <div className="text-xl md:text-3xl text-neutral-300 font-light leading-relaxed">
+            <div className="text-xl md:text-3xl text-neutral-300 font-light leading-relaxed w-full">
               <TypewriterRichText
                 speed={25}
                 delay={400}
                 parts={[
-                  { text: "No mercado digital de alta performance, a infraestrutura tecnológica é a linha divisória entre a escala previsível e o colapso. Quando campanhas de tráfego pago tracionam e ecossistemas enfrentam picos severos de acessos, arquiteturas genéricas não suportam a carga. Nesse nível de operation, " },
-                  { text: "milissegundos de latência destroem taxas de conversão e queimam capital.", className: "text-white font-medium" }
+                  { text: "No mercado de alta performance, a infraestrutura tecnológica divide a escala previsível do colapso. Sob picos severos de tráfego, arquiteturas genéricas falham. Nesse nível de operação, " },
+                  { text: "milissegundos de latência destroem conversões e queimam capital.", className: "text-white font-medium" }
                 ]}
               />
             </div>
@@ -196,6 +197,11 @@ export default function SobrePage() {
                 <p className="text-base md:text-lg text-white font-light leading-relaxed max-w-xl border-l border-primary/30 pl-5 text-balance font-sans">
                   Na WEB LUNAR unimos design minimalista e engenharia de software de elite. Desenvolvemos sistemas rápidos, modulares e blindados contra picos de tráfego, prontos para converter acessos em faturamento previsível.
                 </p>
+                <div className="mt-8 pl-5">
+                  <Link href="/contato">
+                    <PrimaryButton>Solicitar Orçamento</PrimaryButton>
+                  </Link>
+                </div>
               </AnimatedSection>
             </div>
             
@@ -626,37 +632,41 @@ function TypewriterRichText({ parts, delay = 0, speed = 20 }: { parts: TextPart[
   let typewriterCount = 0;
 
   return (
-    <div ref={containerRef} className="relative w-full">
-      {/* Invisible Ghost layer to reserve exact wrapping height */}
-      <div className="invisible pointer-events-none select-none opacity-0" aria-hidden="true">
-        {parts.map((part, i) => (
-          <span key={i} className={part.className}>
-            {part.text}
-          </span>
-        ))}
-      </div>
+    <div ref={containerRef} className="w-full">
+      {parts.map((part, i) => {
+        const startIdx = typewriterCount;
+        const endIdx = startIdx + part.text.length;
+        typewriterCount = endIdx;
 
-      {/* Actual typewriter overlay */}
-      <div className="absolute inset-0 w-full h-full">
-        {parts.map((part, i) => {
-          const startIdx = typewriterCount;
-          const endIdx = startIdx + part.text.length;
-          typewriterCount = endIdx;
-
-          if (charCount <= startIdx) return null;
-
-          let displayStr = part.text;
-          if (charCount < endIdx) {
-            displayStr = part.text.slice(0, charCount - startIdx);
-          }
-
+        if (charCount <= startIdx) {
+          // Entirely untyped: render with opacity 0 and hidden visibility to reserve space
           return (
-            <span key={i} className={part.className}>
-              {displayStr}
+            <span key={i} className={part.className} style={{ opacity: 0, visibility: 'hidden' }}>
+              {part.text}
             </span>
           );
-        })}
-      </div>
+        }
+
+        if (charCount >= endIdx) {
+          // Entirely typed
+          return (
+            <span key={i} className={part.className}>
+              {part.text}
+            </span>
+          );
+        }
+
+        // Partially typed: split and hide the untyped portion inline
+        const typedStr = part.text.slice(0, charCount - startIdx);
+        const untypedStr = part.text.slice(charCount - startIdx);
+
+        return (
+          <span key={i} className={part.className}>
+            <span>{typedStr}</span>
+            <span style={{ opacity: 0, visibility: 'hidden' }}>{untypedStr}</span>
+          </span>
+        );
+      })}
     </div>
   );
 }

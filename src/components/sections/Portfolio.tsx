@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
 import { siteContent } from '@/content';
+import Link from 'next/link';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -168,12 +169,12 @@ export function Portfolio() {
               {portfolio.title}
             </h2>
           </div>
-          <a
-            href="#contact"
+          <Link
+            href="/projetos"
             className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest border border-black/10 px-6 py-4 hover:bg-black hover:text-white transition-all duration-300 self-start md:self-auto rounded-full text-neutral-900"
           >
             Ver todos <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
 
         {/* ── Category Filters ── */}
@@ -211,13 +212,13 @@ export function Portfolio() {
           <p className="text-neutral-800 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
             Quer ver o processo criativo por trás de cada projeto? Cada case inclui estratégia, wireframes e resultados reais.
           </p>
-          <a
-            href="#contact"
+          <Link
+            href="/contato"
             className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 text-sm font-mono uppercase tracking-widest hover:bg-primary-hover transition-all duration-300 rounded-full shadow-lg hover:shadow-xl"
           >
             Iniciar um Projeto
             <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

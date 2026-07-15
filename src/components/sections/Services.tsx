@@ -66,7 +66,10 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
         {/* LADO DA FRENTE */}
         <div 
           className="absolute inset-0 w-full h-full group bg-white/75 hover:bg-white border border-black/[0.04] hover:border-primary/20 p-8 md:p-10 flex flex-col justify-between rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(29,77,255,0.06)] overflow-hidden"
-          style={{ backfaceVisibility: 'hidden' }}
+          style={{ 
+            backfaceVisibility: 'hidden',
+            pointerEvents: isFlipped ? 'none' : 'auto'
+          }}
         >
           {/* Glow Effect inside Card */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -104,7 +107,8 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
           className="absolute inset-0 w-full h-full bg-white border border-primary/20 p-8 md:p-10 flex flex-col justify-between rounded-2xl shadow-[0_20px_50px_rgba(29,77,255,0.06)] overflow-hidden"
           style={{ 
             backfaceVisibility: 'hidden',
-            transform: 'rotateY(180deg)'
+            transform: 'rotateY(180deg)',
+            pointerEvents: isFlipped ? 'auto' : 'none'
           }}
         >
           {/* Decorative Glow */}
@@ -140,8 +144,8 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
 
           {/* Button CTA */}
           <div className="relative z-10 w-full mt-4">
-            <a 
-              href="#contact"
+            <Link 
+              href={`/contato?subject=${encodeURIComponent('Orçamento: ' + service.title)}`}
               onClick={(e) => {
                 e.stopPropagation(); // Previne o flip de disparar de novo ao clicar no botão
               }}
@@ -151,7 +155,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -189,8 +193,9 @@ export function Services() {
                 [ Nossas Especialidades ]
               </span>
             </div>
-            <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] text-neutral-900">
-              Sites e sistemas planejados para gerar resultados reais.
+            <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] text-neutral-900 w-full">
+              <span className="block text-left">Sites e sistemas planejados para gerar <span className="italic">resultados</span></span>
+              <span className="block text-center italic mt-2">reais.</span>
             </h2>
           </AnimatedSection>
         </div>
