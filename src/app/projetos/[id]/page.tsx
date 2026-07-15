@@ -168,6 +168,10 @@ export default function ProjetoDetalhePage() {
     );
   }
 
+  const scrollDurations = caseStudy.id === 'volk' 
+    ? { desktop: '45s', tablet: '20s', mobile: '18s' }
+    : { desktop: '16s', tablet: '20s', mobile: '18s' };
+
   return (
     <div className="bg-bg text-text min-h-screen font-sans selection:bg-primary selection:text-white">
       {/* Hero Header (Fixed Background) */}
@@ -183,7 +187,7 @@ export default function ProjetoDetalhePage() {
 
         <div className="h-[calc(100vh-80px)] w-full flex items-center justify-center relative z-10 text-left">
           <div className="container mx-auto px-6 max-w-[1440px] w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
               
               {/* Coluna Esquerda: Informações do Case */}
               <div className="lg:col-span-5 flex flex-col items-start justify-center">
@@ -223,6 +227,10 @@ export default function ProjetoDetalhePage() {
                     0%, 100% { transform: scale(1); opacity: 0.5; }
                     50% { transform: scale(1.05); opacity: 0.8; }
                   }
+                  @keyframes scroll-device {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(calc(-100% + var(--device-h))); }
+                  }
                   .monitor-animate {
                     animation: float-monitor 8s ease-in-out infinite;
                   }
@@ -237,16 +245,59 @@ export default function ProjetoDetalhePage() {
                   .glow-pulse {
                     animation: pulse-glow 4s ease-in-out infinite;
                   }
+                  .monitor-container {
+                    --device-h: 150px;
+                  }
+                  @media (min-width: 640px) {
+                    .monitor-container {
+                      --device-h: 220px;
+                    }
+                  }
+                  @media (min-width: 768px) {
+                    .monitor-container {
+                      --device-h: 285px;
+                    }
+                  }
+                  .tablet-container {
+                    --device-h: 80px;
+                  }
+                  @media (min-width: 640px) {
+                    .tablet-container {
+                      --device-h: 110px;
+                    }
+                  }
+                  @media (min-width: 768px) {
+                    .tablet-container {
+                      --device-h: 145px;
+                    }
+                  }
+                  .phone-container {
+                    --device-h: 130px;
+                  }
+                  @media (min-width: 640px) {
+                    .phone-container {
+                      --device-h: 170px;
+                    }
+                  }
+                  @media (min-width: 768px) {
+                    .phone-container {
+                      --device-h: 200px;
+                    }
+                  }
+                  .scroll-animate {
+                    animation: scroll-device var(--scroll-duration, 15s) ease-in-out infinite;
+                  }
                 `}</style>
 
                 {/* 1. MONITOR MOCKUP */}
-                <div className="monitor-animate w-[240px] h-[150px] sm:w-[350px] sm:h-[220px] md:w-[460px] md:h-[285px] bg-[#1e2330] rounded-xl p-1.5 sm:p-2 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 flex flex-col relative z-10">
+                <div className="monitor-animate w-[240px] h-[150px] sm:w-[350px] sm:h-[220px] md:w-[460px] md:h-[285px] bg-[#1e2330] rounded-xl p-1.5 sm:p-2 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 flex flex-col relative z-10 monitor-container">
                   {/* Screen */}
                   <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 relative flex flex-col">
                     <img 
                       src={`/${caseStudy.id}-desktop.png`}
                       alt="Desktop View"
-                      className="w-full h-full object-cover object-top select-none pointer-events-none"
+                      className="w-full h-auto object-cover object-top select-none pointer-events-none scroll-animate"
+                      style={{ '--scroll-duration': scrollDurations.desktop } as React.CSSProperties}
                     />
                   </div>
 
@@ -256,19 +307,20 @@ export default function ProjetoDetalhePage() {
                 </div>
 
                 {/* 2. TABLET MOCKUP */}
-                <div className="tablet-animate absolute bottom-8 left-0 sm:left-4 md:left-8 w-[120px] h-[80px] sm:w-[170px] sm:h-[110px] md:w-[220px] md:h-[145px] bg-[#1e2330] rounded-xl p-1 shadow-[0_20px_45px_rgba(0,0,0,0.75)] border border-white/10 z-20 flex flex-col">
+                <div className="tablet-animate absolute bottom-8 left-0 sm:left-4 md:left-8 w-[120px] h-[80px] sm:w-[170px] sm:h-[110px] md:w-[220px] md:h-[145px] bg-[#1e2330] rounded-xl p-1 shadow-[0_20px_45px_rgba(0,0,0,0.75)] border border-white/10 z-20 flex flex-col tablet-container">
                   {/* Screen */}
                   <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 relative flex flex-col">
                     <img 
                       src={`/${caseStudy.id}-tablet.png`}
                       alt="Tablet View"
-                      className="w-full h-full object-cover object-top select-none pointer-events-none"
+                      className="w-full h-auto object-cover object-top select-none pointer-events-none scroll-animate"
+                      style={{ '--scroll-duration': scrollDurations.tablet } as React.CSSProperties}
                     />
                   </div>
                 </div>
 
                 {/* 3. SMARTPHONE MOCKUP */}
-                <div className="phone-animate absolute -bottom-2 right-0 sm:right-6 md:right-12 w-[65px] h-[130px] sm:w-[85px] sm:h-[170px] md:w-[100px] md:h-[200px] bg-[#1e2330] rounded-[18px] sm:rounded-[24px] p-1 shadow-[0_20px_40px_rgba(0,0,0,0.8)] border border-white/10 z-30 flex flex-col">
+                <div className="phone-animate absolute -bottom-2 right-0 sm:right-6 md:right-12 w-[65px] h-[130px] sm:w-[85px] sm:h-[170px] md:w-[100px] md:h-[200px] bg-[#1e2330] rounded-[18px] sm:rounded-[24px] p-1 shadow-[0_20px_40px_rgba(0,0,0,0.8)] border border-white/10 z-30 flex flex-col phone-container">
                   {/* Notch */}
                   <div className="absolute top-1 left-1/2 -translate-x-1/2 w-6 sm:w-8 h-1.5 bg-black rounded-full z-40" />
                   
@@ -277,7 +329,8 @@ export default function ProjetoDetalhePage() {
                     <img 
                       src={`/${caseStudy.id}-mobile.png`}
                       alt="Mobile View"
-                      className="w-full h-full object-cover object-top select-none pointer-events-none"
+                      className="w-full h-auto object-cover object-top select-none pointer-events-none scroll-animate"
+                      style={{ '--scroll-duration': scrollDurations.mobile } as React.CSSProperties}
                     />
                   </div>
                 </div>
