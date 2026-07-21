@@ -193,12 +193,12 @@ export default function ProjetoDetalhePage() {
               <div className="lg:col-span-5 flex flex-col items-start justify-center">
                 <AnimatedSection>
                   <div className="mb-6">
-                    <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-mono">
+                    <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-sans">
                       <ArrowLeft className="w-3.5 h-3.5" />
                       <span>Voltar para Projetos</span>
                     </Link>
                   </div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-primary font-semibold block mb-4">// {caseStudy.category}</span>
+                  <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold block mb-4">{caseStudy.category}</span>
                   <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-[1.05]">
                     {caseStudy.title}
                   </h1>
@@ -352,7 +352,7 @@ export default function ProjetoDetalhePage() {
             {/* Esquerda: Visão Geral, Desafios, Solução e Resultados */}
             <div className="lg:col-span-8 flex flex-col gap-16 text-left">
               <AnimatedSection options={{ delay: 0.1 }}>
-                <h2 className="text-xs uppercase font-mono tracking-widest text-neutral-400 mb-6 font-bold">[ Visão Geral ]</h2>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">Visão Geral</h2>
                 <h3 className="text-2xl md:text-3xl font-black text-neutral-950 mb-6 tracking-tight leading-tight">{caseStudy.tagline}</h3>
                 <p className="text-neutral-600 font-light leading-relaxed text-base md:text-lg pl-5 border-l-2 border-primary/30">
                   {caseStudy.overview}
@@ -360,14 +360,14 @@ export default function ProjetoDetalhePage() {
               </AnimatedSection>
 
               <AnimatedSection options={{ delay: 0.2 }}>
-                <h2 className="text-xs uppercase font-mono tracking-widest text-neutral-400 mb-6 font-bold">[ O Desafio ]</h2>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">O Desafio</h2>
                 <p className="text-neutral-600 font-light leading-relaxed text-base">
                   {caseStudy.challenge}
                 </p>
               </AnimatedSection>
 
               <AnimatedSection options={{ delay: 0.3 }}>
-                <h2 className="text-xs uppercase font-mono tracking-widest text-neutral-400 mb-6 font-bold">[ A Solução Lunar ]</h2>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">A Solução Lunar</h2>
                 <p className="text-neutral-600 font-light leading-relaxed text-base mb-12">
                   {caseStudy.solution}
                 </p>
@@ -375,7 +375,7 @@ export default function ProjetoDetalhePage() {
 
               {/* Seção Métricas de Performance Técnica */}
               <AnimatedSection options={{ delay: 0.35 }}>
-                <h2 className="text-xs uppercase font-mono tracking-widest text-neutral-400 mb-6 font-bold">[ Performance Técnica ]</h2>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">Performance Técnica</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
                   {/* Card 1: Velocidade */}
                   <div className="bg-[#0b0f19] border border-white/[0.05] p-6 rounded-2xl flex flex-col justify-between hover:border-primary/30 transition-all duration-300 shadow-sm text-left relative overflow-hidden group">
@@ -429,7 +429,7 @@ export default function ProjetoDetalhePage() {
               </AnimatedSection>
 
               <AnimatedSection options={{ delay: 0.4 }}>
-                <h2 className="text-xs uppercase font-mono tracking-widest text-neutral-400 mb-8 font-bold">[ Principais Resultados ]</h2>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-8 font-semibold">Principais Resultados</h2>
                 <div className="grid grid-cols-1 gap-4">
                   {caseStudy.results.map((result, index) => (
                     <div key={index} className="flex gap-4 items-start bg-neutral-50 border border-neutral-100 p-6 rounded-2xl">
@@ -445,7 +445,7 @@ export default function ProjetoDetalhePage() {
             <div className="lg:col-span-4 lg:sticky lg:top-24 flex flex-col gap-10 text-left">
               <AnimatedSection options={{ delay: 0.2 }} className="w-full">
                 <div className="rounded-3xl border border-neutral-100 bg-neutral-50 p-8 shadow-sm">
-                  <h4 className="text-xs uppercase font-mono tracking-widest text-neutral-400 mb-8 font-bold">[ Metadados do Projeto ]</h4>
+                  <h4 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-8 font-semibold">Metadados do Projeto</h4>
                   
                   <div className="space-y-6">
                     <div className="flex gap-3 items-center pb-4 border-b border-neutral-200/60">
@@ -532,8 +532,8 @@ export default function ProjetoDetalhePage() {
               {/* Left Side: Explanatory Text */}
               <div className="lg:col-span-5 text-left">
                 <AnimatedSection>
-                  <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-4 font-bold">
-                    [ Anatomia da Conversão ]
+                  <p className="text-xs uppercase font-sans tracking-widest text-primary mb-4 font-semibold">
+                    Anatomia da Conversão
                   </p>
                   <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6 leading-tight">
                     Design System &<br />Componentes Modulares

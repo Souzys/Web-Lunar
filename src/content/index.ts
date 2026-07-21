@@ -11,7 +11,7 @@ export const siteContent = {
     ],
     ctaBox: {
       text: "Sites e sistemas que geram leads, vendas e resultados reais — não só visual bonito.",
-      buttonText: "Fale Conosco",
+      buttonText: "Solicitar Orçamento",
     },
     bottomText: "Unimos design visual refinado e engenharia de software de alta performance para criar produtos digitais que geram resultados de verdade.",
     socialButtons: [

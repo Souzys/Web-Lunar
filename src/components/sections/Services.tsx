@@ -189,13 +189,12 @@ export function Services() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <AnimatedSection className="w-full">
              <div className="mb-6">
-              <span className="text-primary font-mono text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-primary/30 bg-primary/10">
-                [ Nossas Especialidades ]
+              <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold">
+                Nossas Especialidades
               </span>
             </div>
-            <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] text-neutral-900 w-full">
-              <span className="block text-left">Sites e sistemas planejados para gerar <span className="italic">resultados</span></span>
-              <span className="block text-left italic mt-2">reais.</span>
+            <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] text-neutral-900 w-full text-left">
+              Sites e sistemas planejados para gerar <span className="italic">resultados reais.</span>
             </h2>
           </AnimatedSection>
         </div>

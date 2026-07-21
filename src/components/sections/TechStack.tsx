@@ -4,6 +4,8 @@ import React from 'react';
 import { Marquee } from '@/components/ui/Marquee';
 
 const TECHNOLOGIES = [
+  { name: 'Gemini AI', icon: '/gemini.svg' },
+  { name: 'Antigravity IDE', icon: '/antigravity.png' },
   { name: 'Next.js', icon: 'https://cdn.simpleicons.org/nextdotjs/000000' },
   { name: 'React', icon: 'https://cdn.simpleicons.org/react/61DAFB' },
   { name: 'TypeScript', icon: 'https://cdn.simpleicons.org/typescript/3178C6' },

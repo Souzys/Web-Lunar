@@ -133,10 +133,10 @@ export default function SobrePage() {
           {/* Esquerda: Conteúdo de Texto */}
           <div className="flex flex-col items-start text-left">
             <AnimatedSection>
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(29,77,255,0.4)]" />
-                <span className="text-xs font-mono uppercase tracking-widest text-primary font-semibold">
-                  // OPERAÇÕES E DIRETRIZES DE ENGENHARIA
+              <div className="flex items-center gap-2.5 mb-8">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
+                <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
+                  Operações e Diretrizes de Engenharia
                 </span>
               </div>
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-white mb-6 leading-tight">
@@ -176,7 +176,7 @@ export default function SobrePage() {
         <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
           {/* Main text in full width with Typewriter Effect */}
           <div className="mb-16 w-full">
-            <h2 className="text-xs uppercase font-mono tracking-widest text-white/40 mb-6 font-bold">[ O MANIFESTO CORPORATIVO ]</h2>
+            <h2 className="text-xs uppercase font-sans tracking-widest text-white/40 mb-6 font-semibold">O Manifesto Corporativo</h2>
             <div className="text-xl md:text-3xl text-neutral-300 font-light leading-relaxed w-full">
               <TypewriterRichText
                 speed={25}
@@ -224,7 +224,7 @@ export default function SobrePage() {
           {/* Header — left-aligned, editorial style */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20 pb-8 border-b border-neutral-100">
             <div>
-              <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-3 font-bold">[ ARQUITETURA WEB LUNAR ]</p>
+              <p className="text-xs uppercase font-sans tracking-widest text-primary mb-3 font-semibold">Arquitetura Web Lunar</p>
               <h2 className="font-display text-5xl md:text-7xl lg:text-[80px] font-semibold tracking-tighter text-neutral-950 leading-[0.9]">
                 Os Quatro Pilares
               </h2>
@@ -293,7 +293,7 @@ export default function SobrePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end mb-24 pb-8 border-b border-neutral-200">
             <AnimatedSection>
               <div>
-                <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-3 font-bold">[ ENGENHARIA DE DETALHE ]</p>
+                <p className="text-xs uppercase font-sans tracking-widest text-primary mb-3 font-semibold">Engenharia de Detalhe</p>
                 <h2 className="font-display font-semibold text-5xl md:text-6xl tracking-tighter text-neutral-900 leading-[0.95]">
                   Velocidade Brutal. <br/>
                   Segurança Inviolável.
@@ -376,7 +376,7 @@ export default function SobrePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
             <AnimatedSection>
               <div>
-                <h2 className="text-xs uppercase tracking-widest text-primary font-mono mb-3 font-bold">[ CORE STACK ]</h2>
+                <h2 className="text-xs uppercase tracking-widest text-primary font-sans mb-3 font-semibold">Core Stack</h2>
                 <p className="font-display font-bold text-4xl md:text-5xl lg:text-5xl leading-[1.1] tracking-tighter text-white/95">
                   Mural de Autoridade Técnica
                 </p>
@@ -438,7 +438,7 @@ export default function SobrePage() {
           <div className="relative z-10">
             <AnimatedSection>
               <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2 className="text-xs uppercase tracking-widest text-primary font-mono mb-3 font-bold">[ CONTRATAÇÃO ]</h2>
+                <h2 className="text-xs uppercase tracking-widest text-primary font-sans mb-3 font-semibold">Contratação</h2>
                 <p className="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tighter text-white/95 mb-6">
                   Modelos de Engajamento
                 </p>

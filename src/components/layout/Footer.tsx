@@ -1,11 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { Marquee } from '@/components/ui/Marquee';
 import { siteContent } from '@/content';
-import { ArrowUpRight, CheckCircle2, Loader2, Send } from 'lucide-react';
-import { trpc } from '@/utils/trpc';
+import { ArrowUpRight, MessageCircle } from 'lucide-react';
 import { useAudio } from '@/hooks/useAudio';
 import { usePathname } from 'next/navigation';
 
@@ -14,180 +12,61 @@ export function Footer() {
   const isContactPage = pathname === '/contato';
 
   const { playHover, playClick } = useAudio();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    content: "",
-  });
-  const [success, setSuccess] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
-
-  const submitMutation = trpc.submitMessage.useMutation({
-    onSuccess: () => {
-      playClick();
-      setSuccess(true);
-      setFormData({ name: "", email: "", subject: "", content: "" });
-      setErrorMsg("");
-    },
-    onError: (err) => {
-      setErrorMsg(err.message || "Ocorreu um erro ao enviar sua mensagem.");
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    playClick();
-    submitMutation.mutate(formData);
-  };
 
   return (
     <footer className="relative z-10 overflow-hidden" id="contact">
 
-      {/* === CTA SECTION — "WORK WITH WEB LUNAR" === (Modo Claro) */}
+      {/* === CTA BANNER — CONVITE PARA ORÇAMENTO === */}
       {!isContactPage && (
-        <div className="pt-32 pb-24 relative bg-[#FAFAFA] text-neutral-900 border-t border-black/5">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(29,77,255,0.05)_0%,transparent_70%)] pointer-events-none" />
-        
-        <div className="container mx-auto px-6 max-w-[1440px] relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Left Column: Form (order-2 lg:order-1) */}
-          <div className="w-full order-2 lg:order-1 bg-white border border-black/5 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden text-left">
-            {success ? (
-              <div className="flex flex-col items-center justify-center py-10 text-center">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6">
-                  <CheckCircle2 className="w-8 h-8 text-emerald-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-neutral-900 mb-2">Mensagem Enviada!</h3>
-                <p className="text-neutral-500 text-sm max-w-sm leading-relaxed">
-                  Sua mensagem foi recebida. Entraremos em contato de volta em breve.
-                </p>
-                <button
-                  onClick={() => {
-                    playClick();
-                    setSuccess(false);
-                  }}
-                  onMouseEnter={playHover}
-                  className="mt-8 px-6 py-2.5 rounded-full border border-black/10 hover:border-black/20 text-xs font-semibold text-neutral-600 hover:text-neutral-900 transition-all duration-300"
-                >
-                  Enviar Outra Mensagem
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs uppercase font-bold text-neutral-500 tracking-wider">
-                      Seu Nome
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Ex: Lucas Pinheiro"
-                      className="px-4 py-3 rounded-xl bg-black/[0.01] border border-black/10 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all text-sm"
-                    />
-                  </div>
+        <div className="py-24 md:py-32 relative bg-[#05070F] text-white border-t border-white/5 overflow-hidden text-center">
+          {/* Glow ambient background */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/15 rounded-full blur-[150px] pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs uppercase font-bold text-neutral-500 tracking-wider">
-                      Seu E-mail
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="Ex: contato@weblunar.co"
-                      className="px-4 py-3 rounded-xl bg-black/[0.01] border border-black/10 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs uppercase font-bold text-neutral-500 tracking-wider">
-                    Assunto (Opcional)
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="Ex: Novo projeto de design"
-                    className="px-4 py-3 rounded-xl bg-black/[0.01] border border-black/10 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all text-sm"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs uppercase font-bold text-neutral-500 tracking-wider">
-                    Mensagem
-                  </label>
-                  <textarea
-                    required
-                    rows={4}
-                    value={formData.content}
-                    onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                    placeholder="Conte-me um pouco sobre o que você precisa..."
-                    className="px-4 py-3 rounded-xl bg-black/[0.01] border border-black/10 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all text-sm resize-none"
-                  />
-                </div>
-
-                {errorMsg && (
-                  <span className="text-xs text-rose-500 font-semibold">{errorMsg}</span>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={submitMutation.isPending}
-                  onMouseEnter={playHover}
-                  className="mt-2 flex items-center justify-center gap-2 w-full py-4 text-xs font-bold tracking-widest uppercase rounded-full bg-primary text-white hover:bg-primary-hover disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-md hover:shadow-lg"
-                >
-                  {submitMutation.isPending ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Transmitindo...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      <span>Enviar Mensagem</span>
-                    </>
-                  )}
-                </button>
-              </form>
-            )}
-          </div>
-
-          {/* Right Column: Text (order-1 lg:order-2) */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2">
-            {/* Dot + label */}
-            <div className="flex items-center gap-3 mb-8">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm font-mono uppercase tracking-widest text-neutral-500">
+          <div className="container mx-auto px-6 max-w-4xl relative z-10 flex flex-col items-center">
+            {/* Status dot badge */}
+            <div className="flex items-center justify-center gap-2.5 mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.6)]" />
+              <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
                 Disponível para novos projetos
               </span>
             </div>
-            
-            <h2 
-              className="font-sans font-semibold tracking-tighter mb-8 text-left"
-              style={{
-                fontSize: '60px',
-                lineHeight: '57px',
-                color: 'lab(7.78201 -0.0000149012 0)'
-              }}
-            >
-              Vamos Criar Algo <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
-                Incrível
-              </span>{" "}
-              Juntos.
+
+            {/* Giant Heading */}
+            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white mb-6 leading-[1.05] text-balance">
+              Vamos Criar Algo <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Incrível</span> Juntos.
             </h2>
-            <p className="text-neutral-500 text-base md:text-lg font-light leading-relaxed max-w-md">
-              Tem um projeto em mente ou quer bater um papo sobre design e tecnologia? Preencha o formulário e vamos transformar suas ideias em realidade.
+
+            {/* Supporting Description */}
+            <p className="text-neutral-400 text-base md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10 text-balance">
+              Tem um projeto em mente ou quer escalar sua marca com design refinado e engenharia de software de alta performance?
             </p>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+              <Link
+                href="/contato"
+                onMouseEnter={playHover}
+                onClick={playClick}
+                className="flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-xs uppercase tracking-wider hover:bg-blue-600 transition-all duration-300 shadow-[0_0_25px_rgba(29,77,255,0.4)] hover:shadow-[0_0_35px_rgba(29,77,255,0.6)] hover:scale-105 active:scale-95 cursor-pointer font-sans w-full sm:w-auto"
+              >
+                <span>Solicitar Orçamento</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+              <a
+                href="https://wa.me/5561982630397?text=Ol%C3%A1%20equipe%20Web%20Lunar!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20um%20projeto."
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={playHover}
+                onClick={playClick}
+                className="flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white/[0.05] border border-white/10 text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer font-sans w-full sm:w-auto"
+              >
+                <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                <span>Falar no WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
       )}
 
 

@@ -6,7 +6,6 @@ import { Services } from "@/components/sections/Services";
 import { TechStack } from "@/components/sections/TechStack";
 import { Impact } from "@/components/sections/Impact";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Pricing } from "@/components/sections/Pricing";
 import { FAQ } from "@/components/sections/FAQ";
 import { Blog } from "@/components/sections/Blog";
 import { useLenis } from "@/hooks/useLenis";
@@ -23,7 +22,6 @@ export default function Home() {
         <TechStack />
         <Impact />
         <Testimonials />
-        <Pricing />
         <FAQ />
         <Blog />
       </div>

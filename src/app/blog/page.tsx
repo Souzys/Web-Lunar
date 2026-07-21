@@ -59,10 +59,10 @@ export default function BlogPage() {
 
         <div className="container mx-auto px-6 max-w-[1440px] relative z-10 text-center">
           <AnimatedSection>
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(29,77,255,0.4)]" />
-              <span className="text-xs font-mono uppercase tracking-widest text-primary font-semibold">
-                // Nosso Conhecimento
+            <div className="flex items-center justify-center gap-2.5 mb-8">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
+              <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
+                Nosso Conhecimento
               </span>
             </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-tight">

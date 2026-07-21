@@ -318,10 +318,10 @@ export default function ServicosPage() {
           {/* Esquerda: Conteúdo de Texto */}
           <div className="flex flex-col items-start text-left">
             <AnimatedSection>
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(29,77,255,0.4)]" />
-                <span className="text-xs font-mono uppercase tracking-widest text-primary font-semibold">
-                  [ Nossas Especialidades ]
+              <div className="flex items-center gap-2.5 mb-8">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
+                <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
+                  Nossas Especialidades
                 </span>
               </div>
             </AnimatedSection>
@@ -375,7 +375,7 @@ export default function ServicosPage() {
             {/* Header - Sem margens artificiais, alinhado com o container */}
             <div className="flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-0 justify-between mb-16 md:mb-20 relative">
               <div>
-                <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-4 font-bold">[ Serviços ]</p>
+                <p className="text-xs uppercase font-sans tracking-widest text-primary mb-4 font-semibold">Serviços</p>
                 <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tighter text-neutral-950 leading-[0.95]">
                   O que desenvolvemos
                 </h2>
@@ -512,7 +512,7 @@ export default function ServicosPage() {
           <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20 pb-8 border-b border-white/5">
               <div>
-                <p className="text-[10px] uppercase font-mono tracking-[0.3em] text-primary mb-3 font-bold">[ Por que a Web Lunar ]</p>
+                <p className="text-xs uppercase font-sans tracking-widest text-primary mb-3 font-semibold">Por que a Web Lunar</p>
                 <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter text-white leading-[0.95]">
                   Diferenciais técnicos
                 </h2>
