@@ -60,7 +60,7 @@ export function IndustryCircles() {
               </h2>
             </AnimatedSection>
             <AnimatedSection options={{ delay: 0.3 }}>
-              <p className="text-lg md:text-2xl text-text-muted font-light leading-relaxed max-w-3xl text-balance">
+              <p className="text-lg md:text-2xl text-white font-light leading-relaxed max-w-3xl text-balance">
                 Desde 2021, atuamos como um estúdio de engenharia digital que une design estratégico, conversão e tecnologia avançada. O que entregamos não é apenas visual; é arquitetado meticulosamente para liderar o mercado e gerar resultados concretos.
               </p>
             </AnimatedSection>
