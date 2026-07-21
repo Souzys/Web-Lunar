@@ -182,8 +182,8 @@ export default function SobrePage() {
                 speed={25}
                 delay={400}
                 parts={[
-                  { text: "No mercado de alta performance, a infraestrutura tecnológica divide a escala previsível do colapso. Sob picos severos de tráfego, arquiteturas genéricas falham. Nesse nível de operação, " },
-                  { text: "milissegundos de latência destroem conversões e queimam capital.", className: "text-white font-medium" }
+                  { text: "Na WEB LUNAR unimos design minimalista e engenharia de software de elite. Desenvolvemos sistemas rápidos, modulares e blindados contra picos de tráfego, prontos para " },
+                  { text: "converter acessos em faturamento previsível.", className: "text-white font-medium" }
                 ]}
               />
             </div>
@@ -194,8 +194,8 @@ export default function SobrePage() {
             {/* Left: sub-text */}
             <div>
               <AnimatedSection options={{ delay: 0.15 }}>
-                <p className="text-base md:text-lg text-white font-light leading-relaxed max-w-xl border-l border-primary/30 pl-5 text-balance font-sans">
-                  Na WEB LUNAR unimos design minimalista e engenharia de software de elite. Desenvolvemos sistemas rápidos, modulares e blindados contra picos de tráfego, prontos para converter acessos em faturamento previsível.
+                <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed max-w-xl border-l border-primary/30 pl-5 text-balance font-sans">
+                  No mercado de alta performance, a infraestrutura tecnológica divide a escala previsível do colapso. Sob picos severos de tráfego, arquiteturas genéricas falham. Nesse nível de operação, milissegundos de latência destroem conversões e queimam capital.
                 </p>
                 <div className="mt-8 pl-5">
                   <Link href="/contato">
