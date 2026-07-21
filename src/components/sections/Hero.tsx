@@ -108,7 +108,7 @@ export function Hero() {
 
           {/* Description & CTAs */}
           <AnimatedSection options={{ delay: 0.4, y: 40 }} className="w-full flex flex-col items-start gap-10 mt-2">
-            <p className="text-base md:text-lg lg:text-xl text-text-muted font-light leading-relaxed max-w-2xl">
+            <p className="text-base md:text-lg lg:text-xl text-white font-light leading-relaxed max-w-2xl">
               {hero.bottomText || "Estratégia, design premium e engenharia de software para marcas que querem liderar o mercado."}
             </p>
             
