@@ -195,7 +195,7 @@ export function Services() {
             </div>
             <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] text-neutral-900 w-full">
               <span className="block text-left">Sites e sistemas planejados para gerar <span className="italic">resultados</span></span>
-              <span className="block text-center italic mt-2">reais.</span>
+              <span className="block text-left italic mt-2">reais.</span>
             </h2>
           </AnimatedSection>
         </div>
