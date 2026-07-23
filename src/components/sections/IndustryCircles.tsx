@@ -46,8 +46,8 @@ export function IndustryCircles() {
       <div className="container mx-auto max-w-[1440px] px-6">
         <AnimatedSection>
           <div className="mb-16">
-            <span className="text-primary font-mono text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-primary/30 bg-primary/10">
-              [ Sobre Nós ]
+            <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/30 bg-primary/10 font-semibold">
+              {industryCircles.tag}
             </span>
           </div>
         </AnimatedSection>

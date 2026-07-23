@@ -18,9 +18,11 @@ export function Impact() {
 
           {/* Tag */}
           <AnimatedSection as="div">
-            <p className="text-sm font-display uppercase tracking-[0.15em] font-black text-neutral-800 mb-10">
-              {impact.tag}
-            </p>
+            <div className="mb-8">
+              <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold inline-block">
+                {impact.tag}
+              </span>
+            </div>
           </AnimatedSection>
 
           {/* Large description with scroll reveal */}

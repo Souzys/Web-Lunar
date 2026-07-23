@@ -92,9 +92,9 @@ export function Hero() {
         <div className="lg:col-span-7 flex flex-col justify-center items-start text-left">
           {/* Badge */}
           <AnimatedSection options={{ delay: 0.1, y: 20 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-mono uppercase tracking-widest text-text-muted">{hero.subtitle}</span>
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md mb-8">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.6)]" />
+              <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">{hero.subtitle}</span>
             </div>
           </AnimatedSection>
 

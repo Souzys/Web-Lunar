@@ -161,8 +161,8 @@ export function Portfolio() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
           <div>
             <div className="mb-6">
-              <span className="text-primary font-mono text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-primary/30 bg-primary/10">
-                [ {portfolio.tag} ]
+              <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold">
+                {portfolio.tag}
               </span>
             </div>
             <h2 className="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-none text-neutral-900">

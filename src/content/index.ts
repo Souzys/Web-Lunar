@@ -23,13 +23,13 @@ export const siteContent = {
   },
 
   industryCircles: {
-    tag: "SOBRE NÓS",
+    tag: "Sobre Nós",
     title: "Desenvolvemos sites e sistemas que unem design moderno, estratégia de conversão e tecnologia sólida — transformando ideias em soluções digitais que funcionam.",
     period: "2021–Now",
   },
 
   portfolio: {
-    tag: "NOSSO TRABALHO",
+    tag: "Nosso Trabalho",
     title: "Nosso trabalho",
     projects: [
       {
@@ -118,7 +118,7 @@ export const siteContent = {
   },
 
   testimonials: {
-    tag: "DEPOIMENTOS",
+    tag: "Depoimentos",
     title: "O QUE DIZEM SOBRE NÓS",
     titleHighlight: "SOBRE NÓS",
     items: [

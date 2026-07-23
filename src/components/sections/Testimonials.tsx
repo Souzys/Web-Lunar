@@ -15,8 +15,8 @@ export function Testimonials() {
         <div className="mb-12">
           <AnimatedSection>
             <div className="mb-4">
-              <span className="text-primary font-mono text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-primary/30 bg-primary/10">
-                [ {testimonials.tag} ]
+              <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold">
+                {testimonials.tag}
               </span>
             </div>
             <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 max-w-xl">
@@ -36,7 +36,7 @@ export function Testimonials() {
               <div className="relative z-10 flex flex-col justify-between h-full">
                 <div>
                   {/* Clean Minimalist Category Badge */}
-                  <span className="text-[10px] font-mono tracking-wider uppercase text-primary font-bold mb-4 block">
+                  <span className="text-[10px] font-sans tracking-wider uppercase text-primary font-bold mb-4 block">
                     {item.badge}
                   </span>
                   

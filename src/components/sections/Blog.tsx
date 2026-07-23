@@ -17,8 +17,8 @@ export function Blog() {
           <div className="max-w-3xl">
             <AnimatedSection>
               <div className="mb-6">
-                <span className="text-primary font-mono text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-primary/30 bg-primary/10 inline-block">
-                  [ {blog.tag} ]
+                <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold inline-block">
+                  {blog.tag}
                 </span>
               </div>
             </AnimatedSection>
