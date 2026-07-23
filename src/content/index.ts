@@ -33,6 +33,7 @@ export const siteContent = {
     title: "Nosso trabalho",
     projects: [
       {
+        id: "volk",
         year: "2024",
         category: "Experiência Web",
         livePreview: "LIVE PREVIEW",
@@ -45,6 +46,7 @@ export const siteContent = {
         url: "https://volkpresenter.tv/pt",
       },
       {
+        id: "capi",
         year: "2024",
         category: "Site Institucional",
         livePreview: "LIVE PREVIEW",

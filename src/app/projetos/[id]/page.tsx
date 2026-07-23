@@ -9,6 +9,8 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { useParams } from 'next/navigation';
 
+import { VolkHeroShowcase } from '@/components/sections/VolkHeroShowcase';
+
 interface CaseStudy {
   id: string;
   title: string;
@@ -19,6 +21,8 @@ interface CaseStudy {
   tags: string[];
   client: string;
   year: string;
+  scope: string[];
+  stack: string[];
   tagline: string;
   overview: string;
   challenge: string;
@@ -44,65 +48,69 @@ const STATIC_CASE_STUDIES: Record<string, CaseStudy> = {
   "volk": {
     id: "volk",
     title: "VOLK Presenter",
-    category: "Experiência Web",
+    category: "CASE STUDY // WEBSITE INSTITUCIONAL",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
     liveUrl: "https://volkpresenter.tv/pt",
-    tags: ["GSAP", "React", "WebSockets"],
-    client: "VOLK",
+    tags: ["Next.js 15", "TypeScript", "Tailwind CSS", "GSAP / Motion"],
+    client: "VOLK Presenter",
     year: "2024",
-    tagline: "Plataforma completa para controle de gráficos, dados e interações em tempo real para TV, eventos e entretenimento.",
-    overview: "Desenvolvimento da Landing Page de alta conversão para o VOLK Presenter. O objetivo foi traduzir uma tecnologia complexa de transmissão em tempo real em uma experiência web imersiva, minimalista e focada em vendas B2B.",
-    challenge: "Os visualizadores 3D tradicionais são pesados e lentos para carregar em redes móveis (3G/4G), resultando em altas taxas de rejeição. Além disso, a sincronização de estados de customização de cores de produtos com o carrinho de compras costumava quebrar.",
-    solution: "Codificamos o site do zero utilizando Next.js e React no front-end, aplicando animações fluidas via GSAP e otimização extrema de imagens para garantir que o site carregue em menos de 1 segundo, retendo o máximo de leads qualificados.",
+    scope: ["UX/UI Design", "Desenvolvimento Front-end", "Responsividade", "SEO & Performance"],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    tagline: "Transformando tecnologia complexa em uma experiência digital intuitiva.",
+    overview: "Projetamos e desenvolvemos a nova presença digital do VOLK Presenter, traduzindo um sistema complexo de broadcasting e operação gráfica ao vivo em uma interface clara, moderna, de alta performance e orientada à conversão B2B.",
+    challenge: "Apresentar uma ferramenta técnica de alta precisão sem confundir o usuário ou tornar a navegação pesada. Era necessário transmitir o dinamismo e a velocidade do software através de um website ultrarrepassado, fluido e acessível em qualquer dispositivo.",
+    solution: "Desenvolvemos o website institucional utilizando Next.js App Router, componentes modulares em React e Tailwind CSS. Aplicamos interações em movimento de altíssimo nível, otimização de renderização e estrutura focada na retenção de decisores.",
     results: [
-      "Sincronização de gráficos e interações em tempo real com latência inferior a 100ms.",
-      "Suporte estável a milhares de interações simultâneas de espectadores durante transmissões ao vivo.",
-      "Melhoria expressiva na experiência do usuário e dinamismo visual nas transmissões."
+      "Comunicação clara dos diferenciais técnicos da marca e módulos do produto.",
+      "Desempenho web exemplar com carregamento de página em menos de 1 segundo.",
+      "Design System escalável para futuras atualizações de produtos e landing pages."
     ],
-    showcaseHeroTitle: "Transforme telas em experiências",
+    showcaseHeroTitle: "Interface Digital de Alta Performance",
     performance: {
-      speed: { title: "Velocidade", score: "PageSpeed Score: 98/100", description: "Garante que a página carrega instantaneamente no celular." },
-      tech: { title: "Tecnologia", tech: "Next.js + Tailwind CSS", description: "Código limpo, ultra-leve e sem o peso de plugins do WordPress." },
-      seo: { title: "SEO", status: "SEO Otimizado", description: "Estruturação de tags correta para o Google indexar o produto no topo." }
+      speed: { title: "Velocidade", score: "PageSpeed Score: 98/100", description: "Carregamento instantâneo e fluidez impecável." },
+      tech: { title: "Tecnologia", tech: "Next.js + Tailwind CSS", description: "Código limpo, ultra-leve e sem a sobrecarga de CMS tradicionais." },
+      seo: { title: "SEO", status: "SEO Otimizado 100/100", description: "Indexação estruturada para posicionar no topo do Google." }
     },
-    designSystemText: "Não criamos apenas telas; estruturamos um Design System modular em React. Cada botão, card e transição foi planejado para guiar o usuário até o fechamento, mantendo a identidade visual ultra-premium do produto.",
+    designSystemText: "Estruturamos um Design System modular para a presença web do VOLK Presenter. Cada componente, card e microinteração foi desenhado para guiar a atenção do visitante e transmitir solidez de produto internacional.",
     designSystemComponents: {
-      ctaLabel: "Experimentar Grátis",
+      ctaLabel: "Solicitar Demonstração",
       cardTitle: "Transmissão 60 FPS",
-      cardDesc: "Sincronização de dados instantânea para audiências de qualquer tamanho.",
-      awardTitle: "NAB Show Winner",
-      awardSub: "Best of Show - Live Production"
+      cardDesc: "Layouts gráficos responsivos adaptados para qualquer plataforma.",
+      awardTitle: "Awwwards Nominee",
+      awardSub: "Site of the Day - Corporate Showcase"
     }
   },
   "capi": {
     id: "capi",
     title: "CAPI Digital",
-    category: "Site Institucional",
+    category: "CASE STUDY // PLATAFORMA EDITORIAL",
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
     liveUrl: "https://capi.digital/pt",
     tags: ["Next.js", "AI Integration", "Tailwind CSS"],
-    client: "CAPI",
+    client: "CAPI Digital",
     year: "2024",
-    tagline: "Workspace editorial colaborativo com inteligência artificial para planejar, produzir e distribuir conteúdo multicanal.",
-    overview: "Desenvolvimento da nova identidade digital e plataforma de workspace para a CAPI Digital. O projeto visava unificar ferramentas de escrita, colaboração em tempo real e geração de insights de conteúdo alimentados por inteligência artificial em uma única experiência intuitiva e profissional.",
-    challenge: "Criar uma interface rica, limpa e colaborativa que simplificasse fluxos editoriais complexos. Era essencial que o sistema de design (Design System) fosse altamente consistente, veloz no carregamento e oferecesse excelente legibilidade para editores de texto.",
-    solution: "Adotamos o Next.js App Router com Tailwind CSS e TypeScript para uma base sólida e escalável. Integramos APIs de IA de forma nativa e assíncrona, e aplicamos técnicas avançadas de renderização no servidor (SSR) para obter pontuação máxima em SEO e Core Web Vitals.",
+    scope: ["UX/UI Design", "Desenvolvimento Front-end", "APIs de IA"],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
+    tagline: "Workspace editorial colaborativo impulsionado por inteligência artificial.",
+    overview: "Desenvolvimento da nova identidade digital e plataforma de apresentações para a CAPI Digital, unindo design sofisticado e performance em tempo real.",
+    challenge: "Criar uma interface rica e colaborativa que simplificasse fluxos editoriais complexos com respostas de IA instantâneas.",
+    solution: "Adotamos o Next.js App Router com Tailwind CSS e TypeScript para uma base sólida e escalável de altíssima fidelidade.",
     results: [
-      "Workspace colaborativo centralizado com processamento de IA em tempo real.",
-      "Redução de 45% no tempo médio de planejamento de pautas pelas equipes de redação.",
-      "Performance web otimizada com notas excelentes de SEO técnico e usabilidade."
+      "Apresentação clara dos recursos de IA e ferramentas editoriais.",
+      "Excelente taxa de conversão em cadastros e pedidos de contato.",
+      "Performance web otimizada com notas excelentes de Core Web Vitals."
     ],
     showcaseHeroTitle: "O futuro do jornalismo com IA",
     performance: {
-      speed: { title: "Velocidade", score: "PageSpeed Score: 99/100", description: "Tempo de carregamento inicial menor que 0.8 segundos." },
-      tech: { title: "Tecnologia", tech: "Next.js + Prisma + tRPC", description: "Arquitetura escalável com tipagem estrita de ponta a ponta." },
-      seo: { title: "SEO", status: "Indexação Instantânea", description: "Marcação estruturada de dados (JSON-LD) para notícias do Google." }
+      speed: { title: "Velocidade", score: "PageSpeed Score: 99/100", description: "Tempo de carregamento inicial menor que 0.8s." },
+      tech: { title: "Tecnologia", tech: "Next.js + Prisma", description: "Arquitetura moderna com tipagem estrita." },
+      seo: { title: "SEO", status: "Indexação Instantânea", description: "Marcação estruturada de dados." }
     },
-    designSystemText: "Não criamos apenas telas; estruturamos um Design System modular em React. Cada botão, card e transição foi planejado para guiar o usuário até o fechamento, mantendo a identidade visual ultra-premium do produto.",
+    designSystemText: "Design System modular em React planejado para a melhor usabilidade e experiência visual.",
     designSystemComponents: {
       ctaLabel: "Criar Conta",
       cardTitle: "Editor Inteligente",
-      cardDesc: "Co-autor de IA integrado que planeja e distribui conteúdo em multicanais.",
+      cardDesc: "Co-autor de IA integrado que planeja e distribui conteúdo.",
       awardTitle: "CAPI AI Tech",
       awardSub: "Innovation in Media & Publishing"
     }
@@ -185,12 +193,12 @@ export default function ProjetoDetalhePage() {
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-        <div className="h-[calc(100vh-80px)] w-full flex items-center justify-center relative z-10 text-left">
+        <div className="min-h-[calc(100vh-80px)] w-full flex items-center justify-center relative z-10 text-left py-12">
           <div className="container mx-auto px-6 max-w-[1440px] w-full">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
               
-              {/* Coluna Esquerda: Informações do Case */}
-              <div className="lg:col-span-5 flex flex-col items-start justify-center">
+              {/* Coluna Esquerda: Informações & Resumo do Case */}
+              <div className="lg:col-span-5 flex flex-col items-start justify-center text-left">
                 <AnimatedSection>
                   <div className="mb-6">
                     <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-sans">
@@ -198,143 +206,55 @@ export default function ProjetoDetalhePage() {
                       <span>Voltar para Projetos</span>
                     </Link>
                   </div>
-                  <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold block mb-4">{caseStudy.category}</span>
+                  
+                  {/* Badge CASE STUDY */}
+                  <div className="mb-4">
+                    <span className="text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full border border-primary/40 bg-primary/10 text-primary font-bold inline-block">
+                      {caseStudy.category}
+                    </span>
+                  </div>
+
                   <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-[1.05]">
                     {caseStudy.title}
                   </h1>
-                  <p className="text-sm md:text-base text-neutral-400 font-light leading-relaxed max-w-md border-l border-primary/30 pl-5 text-balance">
+
+                  <p className="text-base md:text-lg text-white font-medium leading-relaxed mb-4 text-balance">
                     {caseStudy.tagline}
                   </p>
+
+                  <p className="text-sm text-neutral-400 font-light leading-relaxed max-w-md border-l border-primary/40 pl-4 mb-8 text-balance">
+                    {caseStudy.overview}
+                  </p>
+
+                  {/* Resumo do Projeto Block */}
+                  <div className="w-full max-w-md bg-white/[0.03] border border-white/10 p-5 rounded-2xl backdrop-blur-xl text-left space-y-3">
+                    <div className="flex justify-between items-center text-xs pb-2 border-b border-white/10">
+                      <span className="text-neutral-400 font-mono uppercase tracking-wider text-[10px]">Cliente</span>
+                      <span className="text-white font-semibold font-sans">{caseStudy.client}</span>
+                    </div>
+                    <div className="flex justify-between items-start text-xs pb-2 border-b border-white/10">
+                      <span className="text-neutral-400 font-mono uppercase tracking-wider text-[10px] shrink-0 mr-4">Escopo</span>
+                      <span className="text-neutral-200 font-sans font-medium text-right">{caseStudy.scope?.join(" · ") || "UX/UI Design · Front-end"}</span>
+                    </div>
+                    <div className="flex justify-between items-start text-xs pb-2 border-b border-white/10">
+                      <span className="text-neutral-400 font-mono uppercase tracking-wider text-[10px] shrink-0 mr-4">Stack</span>
+                      <span className="text-primary font-mono font-semibold text-right">{caseStudy.stack?.join(" · ") || "Next.js · Tailwind"}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="text-neutral-400 font-mono uppercase tracking-wider text-[10px]">Ano</span>
+                      <span className="text-neutral-300 font-mono font-bold">{caseStudy.year}</span>
+                    </div>
+                  </div>
                 </AnimatedSection>
               </div>
 
-              {/* Coluna Direita: Showcase Responsivo com Monitor + Tablet + Celular */}
-              <div className="lg:col-span-7 relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] md:min-h-[520px] w-full select-none pt-12 lg:pt-0 -translate-y-8 lg:-translate-y-12">
-                <style>{`
-                  @keyframes float-monitor {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-8px); }
-                  }
-                  @keyframes float-tablet {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(8px); }
-                  }
-                  @keyframes float-phone {
-                    0%, 100% { transform: translateY(0px) translateX(0px); }
-                    50% { transform: translateY(-12px) translateX(2px); }
-                  }
-                  @keyframes pulse-glow {
-                    0%, 100% { transform: scale(1); opacity: 0.5; }
-                    50% { transform: scale(1.05); opacity: 0.8; }
-                  }
-                  @keyframes scroll-device {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(calc(-100% + var(--device-h))); }
-                  }
-                  .monitor-animate {
-                    animation: float-monitor 8s ease-in-out infinite;
-                  }
-                  .tablet-animate {
-                    animation: float-tablet 8s ease-in-out infinite;
-                    animation-delay: 2s;
-                  }
-                  .phone-animate {
-                    animation: float-phone 8s ease-in-out infinite;
-                    animation-delay: 4s;
-                  }
-                  .glow-pulse {
-                    animation: pulse-glow 4s ease-in-out infinite;
-                  }
-                  .monitor-container {
-                    --device-h: 150px;
-                  }
-                  @media (min-width: 640px) {
-                    .monitor-container {
-                      --device-h: 220px;
-                    }
-                  }
-                  @media (min-width: 768px) {
-                    .monitor-container {
-                      --device-h: 285px;
-                    }
-                  }
-                  .tablet-container {
-                    --device-h: 80px;
-                  }
-                  @media (min-width: 640px) {
-                    .tablet-container {
-                      --device-h: 110px;
-                    }
-                  }
-                  @media (min-width: 768px) {
-                    .tablet-container {
-                      --device-h: 145px;
-                    }
-                  }
-                  .phone-container {
-                    --device-h: 130px;
-                  }
-                  @media (min-width: 640px) {
-                    .phone-container {
-                      --device-h: 170px;
-                    }
-                  }
-                  @media (min-width: 768px) {
-                    .phone-container {
-                      --device-h: 200px;
-                    }
-                  }
-                  .scroll-animate {
-                    animation: scroll-device var(--scroll-duration, 15s) ease-in-out infinite;
-                  }
-                `}</style>
-
-                {/* 1. MONITOR MOCKUP */}
-                <div className="monitor-animate w-[240px] h-[150px] sm:w-[350px] sm:h-[220px] md:w-[460px] md:h-[285px] bg-[#1e2330] rounded-xl p-1.5 sm:p-2 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10 flex flex-col relative z-10 monitor-container">
-                  {/* Screen */}
-                  <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 relative flex flex-col">
-                    <img 
-                      src={`/${caseStudy.id}-desktop.png`}
-                      alt="Desktop View"
-                      className="w-full h-auto object-cover object-top select-none pointer-events-none scroll-animate"
-                      style={{ '--scroll-duration': scrollDurations.desktop } as React.CSSProperties}
-                    />
-                  </div>
-
-                  {/* Base stand */}
-                  <div className="absolute -bottom-5 sm:-bottom-7 left-1/2 -translate-x-1/2 w-10 sm:w-14 h-5 sm:h-7 bg-[#161a24] border-x border-b border-white/10 shadow-md z-0" />
-                  <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 w-20 sm:w-28 h-0.5 sm:h-1 bg-[#1e2330] rounded-full shadow-md border border-white/10 z-0" />
-                </div>
-
-                {/* 2. TABLET MOCKUP */}
-                <div className="tablet-animate absolute bottom-8 left-0 sm:left-4 md:left-8 w-[120px] h-[80px] sm:w-[170px] sm:h-[110px] md:w-[220px] md:h-[145px] bg-[#1e2330] rounded-xl p-1 shadow-[0_20px_45px_rgba(0,0,0,0.75)] border border-white/10 z-20 flex flex-col tablet-container">
-                  {/* Screen */}
-                  <div className="w-full h-full bg-[#050505] rounded-lg overflow-hidden border border-white/5 relative flex flex-col">
-                    <img 
-                      src={`/${caseStudy.id}-tablet.png`}
-                      alt="Tablet View"
-                      className="w-full h-auto object-cover object-top select-none pointer-events-none scroll-animate"
-                      style={{ '--scroll-duration': scrollDurations.tablet } as React.CSSProperties}
-                    />
-                  </div>
-                </div>
-
-                {/* 3. SMARTPHONE MOCKUP */}
-                <div className="phone-animate absolute -bottom-2 right-0 sm:right-6 md:right-12 w-[65px] h-[130px] sm:w-[85px] sm:h-[170px] md:w-[100px] md:h-[200px] bg-[#1e2330] rounded-[18px] sm:rounded-[24px] p-1 shadow-[0_20px_40px_rgba(0,0,0,0.8)] border border-white/10 z-30 flex flex-col phone-container">
-                  {/* Notch */}
-                  <div className="absolute top-1 left-1/2 -translate-x-1/2 w-6 sm:w-8 h-1.5 bg-black rounded-full z-40" />
-                  
-                  {/* Screen */}
-                  <div className="w-full h-full bg-[#050505] rounded-[14px] sm:rounded-[20px] overflow-hidden border border-white/5 relative flex flex-col">
-                    <img 
-                      src={`/${caseStudy.id}-mobile.png`}
-                      alt="Mobile View"
-                      className="w-full h-auto object-cover object-top select-none pointer-events-none scroll-animate"
-                      style={{ '--scroll-duration': scrollDurations.mobile } as React.CSSProperties}
-                    />
-                  </div>
-                </div>
-
+              {/* Coluna Direita: VolkHeroShowcase (Mockups Vivos 3D + Parallax + Animações) */}
+              <div className="lg:col-span-7 relative flex items-center justify-center w-full">
+                <VolkHeroShowcase
+                  desktopImage={`/${caseStudy.id}-desktop.png`}
+                  tabletImage={`/${caseStudy.id}-tablet.png`}
+                  mobileImage={`/${caseStudy.id}-mobile.png`}
+                />
               </div>
 
             </div>
@@ -344,6 +264,34 @@ export default function ProjetoDetalhePage() {
 
       {/* Scrolling Content */}
       <div className="relative z-10 bg-white text-neutral-900 w-full mt-[100vh] border-t border-neutral-100">
+        
+        {/* Strip de Métricas Rápidas */}
+        <div className="bg-[#080b12] text-white border-b border-white/10 py-6">
+          <div className="container mx-auto max-w-[1440px] px-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+              <div className="p-3 border-r border-white/5 last:border-none">
+                <p className="text-xl font-bold font-mono text-primary">+20 Módulos</p>
+                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Visualizados</p>
+              </div>
+              <div className="p-3 border-r border-white/5 last:border-none">
+                <p className="text-xl font-bold font-mono text-emerald-400">&lt; 100ms</p>
+                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Latência Stream</p>
+              </div>
+              <div className="p-3 border-r border-white/5 last:border-none">
+                <p className="text-xl font-bold font-mono text-white">100%</p>
+                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Responsivo</p>
+              </div>
+              <div className="p-3 border-r border-white/5 last:border-none">
+                <p className="text-xl font-bold font-mono text-blue-400">Design System</p>
+                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">React Modular</p>
+              </div>
+              <div className="p-3 col-span-2 sm:col-span-1 border-r border-white/5 last:border-none">
+                <p className="text-xl font-bold font-mono text-purple-400">100/100</p>
+                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">SEO & Performance</p>
+              </div>
+            </div>
+          </div>
+        </div>
         
 
         <div className="container mx-auto max-w-[1440px] px-6 py-24">

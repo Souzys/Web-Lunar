@@ -49,12 +49,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     if (overlayRef.current) gsap.to(overlayRef.current, { opacity: 0, duration: 0.35, ease: 'power2.out' });
   };
 
+  const projectUrl = `/projetos/${project.id || (project.name.toLowerCase().includes('volk') ? 'volk' : 'capi')}`;
+
   return (
-    <a
+    <Link
       ref={cardRef as any}
-      href={project.url || '#'}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={projectUrl}
       className="group relative cursor-pointer col-span-1 block"
       style={{ opacity: 0 }}
       onMouseEnter={handleEnter}
@@ -129,7 +129,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           Ver Case <ArrowUpRight className="w-3 h-3" />
         </span>
       </div>
-    </a>
+    </Link>
   );
 }
 
