@@ -181,22 +181,22 @@ export default function ProjetoDetalhePage() {
     : { desktop: '16s', tablet: '20s', mobile: '18s' };
 
   return (
-    <div className="bg-bg text-text min-h-screen font-sans selection:bg-primary selection:text-white">
-      {/* Hero Header (Fixed Background) */}
-      <div ref={heroRef} className="fixed top-0 left-0 h-screen w-full z-0 overflow-hidden pt-20 bg-bg">
+    <div className="bg-[#05070F] text-text min-h-screen font-sans selection:bg-primary selection:text-white">
+      {/* Hero Header (Natural Scroll Layout) */}
+      <div ref={heroRef} className="relative w-full z-10 overflow-hidden pt-28 pb-0 bg-[#05070F]">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div
             ref={glowRef}
-            className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 mix-blend-screen pointer-events-none"
-            style={{ left: 0, top: 0, willChange: 'transform' }}
+            className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[140px] opacity-50 mix-blend-screen pointer-events-none"
+            style={{ left: '50%', top: '20%', transform: 'translate(-50%, -50%)', willChange: 'transform' }}
           />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-        <div className="w-full flex flex-col items-center justify-center relative z-10 text-center pt-12 pb-16">
-          <div className="container mx-auto px-6 max-w-[1240px] w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center justify-center relative z-10 text-center">
+          <div className="container mx-auto px-6 max-w-[1280px] w-full flex flex-col items-center">
             
-            <AnimatedSection className="flex flex-col items-center max-w-4xl text-center">
+            <AnimatedSection className="flex flex-col items-center max-w-5xl text-center">
               {/* Back Link */}
               <div className="mb-6">
                 <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-sans">
@@ -206,24 +206,24 @@ export default function ProjetoDetalhePage() {
               </div>
               
               {/* Badge CASE STUDY */}
-              <div className="mb-4">
+              <div className="mb-6">
                 <span className="text-[10px] font-mono tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary font-bold inline-block">
                   {caseStudy.category}
                 </span>
               </div>
 
-              {/* Titulo Gigante Centralizado */}
-              <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-6 leading-[1.02]">
+              {/* Titulo Gigante Centralizado (Estilo Aiko ~110px) */}
+              <h1 className="font-display text-6xl sm:text-8xl lg:text-[110px] font-bold tracking-tighter text-white mb-6 leading-[0.92]">
                 {caseStudy.title}
               </h1>
 
               {/* Subtítulo Centralizado */}
-              <p className="text-lg md:text-xl text-neutral-300 font-light leading-relaxed max-w-2xl mb-8 text-balance">
+              <p className="text-lg md:text-2xl text-neutral-300 font-light leading-relaxed max-w-2xl mb-10 text-balance">
                 {caseStudy.tagline}
               </p>
 
               {/* Linha Horizontal Elegante de Metadados (Client / Scope / Stack / Year) */}
-              <div className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 px-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl mb-12 text-center text-xs">
+              <div className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 px-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl mb-10 text-center text-xs">
                 <div>
                   <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Cliente</p>
                   <p className="text-white font-semibold">{caseStudy.client}</p>
@@ -241,10 +241,18 @@ export default function ProjetoDetalhePage() {
                   <p className="text-neutral-300 font-mono font-bold">{caseStudy.year}</p>
                 </div>
               </div>
+
+              {/* Indicador EXPLORE ↓ */}
+              <div className="flex flex-col items-center gap-2 mb-6 text-neutral-400 font-mono text-xs uppercase tracking-widest animate-bounce">
+                <span className="text-[10px]">EXPLORE</span>
+                <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </div>
             </AnimatedSection>
 
-            {/* Mockup do MacBook Centralizado em Grande Escala (Sem Scroll) */}
-            <div className="w-full relative flex items-center justify-center">
+            {/* Mockup do MacBook Pro Centralizado em Grande Escala (Começa espiando no fundo da tela) */}
+            <div className="w-full relative flex items-center justify-center -mb-20 sm:-mb-32">
               <VolkHeroShowcase desktopImage={`/${caseStudy.id}-desktop.png`} />
             </div>
 
@@ -253,7 +261,7 @@ export default function ProjetoDetalhePage() {
       </div>
 
       {/* Scrolling Content */}
-      <div className="relative z-10 bg-white text-neutral-900 w-full mt-[100vh] border-t border-neutral-100">
+      <div className="relative z-20 bg-white text-neutral-900 w-full border-t border-neutral-100 pt-20">
         
         {/* Strip de Métricas Rápidas */}
         <div className="bg-[#080b12] text-white border-b border-white/10 py-6">
