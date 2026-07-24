@@ -193,71 +193,61 @@ export default function ProjetoDetalhePage() {
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-        <div className="min-h-[calc(100vh-80px)] w-full flex items-center justify-center relative z-10 text-left py-12">
-          <div className="container mx-auto px-6 max-w-[1440px] w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+        <div className="w-full flex flex-col items-center justify-center relative z-10 text-center pt-12 pb-16">
+          <div className="container mx-auto px-6 max-w-[1240px] w-full flex flex-col items-center">
+            
+            <AnimatedSection className="flex flex-col items-center max-w-4xl text-center">
+              {/* Back Link */}
+              <div className="mb-6">
+                <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-sans">
+                  <ArrowLeft className="w-3.5 h-3.5" />
+                  <span>Voltar para Projetos</span>
+                </Link>
+              </div>
               
-              {/* Coluna Esquerda: Informações & Resumo do Case */}
-              <div className="lg:col-span-5 flex flex-col items-start justify-center text-left">
-                <AnimatedSection>
-                  <div className="mb-6">
-                    <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-sans">
-                      <ArrowLeft className="w-3.5 h-3.5" />
-                      <span>Voltar para Projetos</span>
-                    </Link>
-                  </div>
-                  
-                  {/* Badge CASE STUDY */}
-                  <div className="mb-4">
-                    <span className="text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full border border-primary/40 bg-primary/10 text-primary font-bold inline-block">
-                      {caseStudy.category}
-                    </span>
-                  </div>
-
-                  <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-[1.05]">
-                    {caseStudy.title}
-                  </h1>
-
-                  <p className="text-base md:text-lg text-white font-medium leading-relaxed mb-4 text-balance">
-                    {caseStudy.tagline}
-                  </p>
-
-                  <p className="text-sm text-neutral-400 font-light leading-relaxed max-w-md border-l border-primary/40 pl-4 mb-8 text-balance">
-                    {caseStudy.overview}
-                  </p>
-
-                  {/* Resumo do Projeto Block */}
-                  <div className="w-full max-w-md bg-white/[0.03] border border-white/10 p-5 rounded-2xl backdrop-blur-xl text-left space-y-3">
-                    <div className="flex justify-between items-center text-xs pb-2 border-b border-white/10">
-                      <span className="text-neutral-400 font-mono uppercase tracking-wider text-[10px]">Cliente</span>
-                      <span className="text-white font-semibold font-sans">{caseStudy.client}</span>
-                    </div>
-                    <div className="flex justify-between items-start text-xs pb-2 border-b border-white/10">
-                      <span className="text-neutral-400 font-mono uppercase tracking-wider text-[10px] shrink-0 mr-4">Escopo</span>
-                      <span className="text-neutral-200 font-sans font-medium text-right">{caseStudy.scope?.join(" · ") || "UX/UI Design · Front-end"}</span>
-                    </div>
-                    <div className="flex justify-between items-start text-xs pb-2 border-b border-white/10">
-                      <span className="text-neutral-400 font-mono uppercase tracking-wider text-[10px] shrink-0 mr-4">Stack</span>
-                      <span className="text-primary font-mono font-semibold text-right">{caseStudy.stack?.join(" · ") || "Next.js · Tailwind"}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-neutral-400 font-mono uppercase tracking-wider text-[10px]">Ano</span>
-                      <span className="text-neutral-300 font-mono font-bold">{caseStudy.year}</span>
-                    </div>
-                  </div>
-                </AnimatedSection>
+              {/* Badge CASE STUDY */}
+              <div className="mb-4">
+                <span className="text-[10px] font-mono tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary font-bold inline-block">
+                  {caseStudy.category}
+                </span>
               </div>
 
-              {/* Coluna Direita: VolkHeroShowcase (Mockups Vivos 3D + Parallax + Animações) */}
-              <div className="lg:col-span-7 relative flex items-center justify-center w-full">
-                <VolkHeroShowcase
-                  desktopImage={`/${caseStudy.id}-desktop.png`}
-                  tabletImage={`/${caseStudy.id}-tablet.png`}
-                  mobileImage={`/${caseStudy.id}-mobile.png`}
-                />
-              </div>
+              {/* Titulo Gigante Centralizado */}
+              <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-6 leading-[1.02]">
+                {caseStudy.title}
+              </h1>
 
+              {/* Subtítulo Centralizado */}
+              <p className="text-lg md:text-xl text-neutral-300 font-light leading-relaxed max-w-2xl mb-8 text-balance">
+                {caseStudy.tagline}
+              </p>
+
+              {/* Linha Horizontal Elegante de Metadados (Client / Scope / Stack / Year) */}
+              <div className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 px-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl mb-12 text-center text-xs">
+                <div>
+                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Cliente</p>
+                  <p className="text-white font-semibold">{caseStudy.client}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Escopo</p>
+                  <p className="text-neutral-200 font-medium truncate">{caseStudy.scope?.[0] || "UX/UI Design"}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Stack</p>
+                  <p className="text-primary font-mono font-semibold">Next.js & Motion</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Ano</p>
+                  <p className="text-neutral-300 font-mono font-bold">{caseStudy.year}</p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Mockup do MacBook Centralizado em Grande Escala (Sem Scroll) */}
+            <div className="w-full relative flex items-center justify-center">
+              <VolkHeroShowcase desktopImage={`/${caseStudy.id}-desktop.png`} />
             </div>
+
           </div>
         </div>
       </div>
