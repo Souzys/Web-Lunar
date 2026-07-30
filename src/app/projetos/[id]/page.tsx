@@ -212,8 +212,8 @@ export default function ProjetoDetalhePage() {
                 </span>
               </div>
 
-              {/* Titulo Gigante Centralizado (Estilo Aiko ~110px) */}
-              <h1 className="font-display text-6xl sm:text-8xl lg:text-[110px] font-bold tracking-tighter text-white mb-6 leading-[0.92]">
+              {/* Titulo Centralizado dos Cases */}
+              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.05]">
                 {caseStudy.title}
               </h1>
 

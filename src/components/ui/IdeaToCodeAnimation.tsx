@@ -5,10 +5,26 @@ import gsap from 'gsap';
 
 export function IdeaToCodeAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const floatRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const root = containerRef.current;
+    const floatEl = floatRef.current;
     if (!root) return;
+
+    // Continuous smooth floating animation
+    let floatTween: gsap.core.Tween | null = null;
+    if (floatEl) {
+      floatTween = gsap.to(floatEl, {
+        y: -14,
+        rotation: 0.8,
+        duration: 3.2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        transformOrigin: '50% 50%',
+      });
+    }
 
     const q  = (s: string) => root.querySelector(s);
     const qa = (s: string): Element[] => Array.from(root.querySelectorAll(s));
@@ -116,7 +132,10 @@ export function IdeaToCodeAnimation() {
     }, 'reset+=0.2')
     .to({}, { duration: 0.5 }); // Hold antes de recomeçar o loop
 
-    return () => { tl.kill(); };
+    return () => { 
+      tl.kill(); 
+      if (floatTween) floatTween.kill();
+    };
   }, []);
 
   return (
@@ -130,88 +149,90 @@ export function IdeaToCodeAnimation() {
         style={{ background: 'radial-gradient(ellipse, #2D6BFF 0%, transparent 70%)' }}
       />
 
-      <svg viewBox="0 0 400 400" className="w-full h-full overflow-visible select-none">
-        <defs>
-          {/* Brilho neon azul para destaques */}
-          <filter id="gf-blue" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
+      <div ref={floatRef} className="w-full h-full flex items-center justify-center pointer-events-none">
+        <svg viewBox="0 0 400 400" className="w-full h-full overflow-visible select-none pointer-events-auto">
+          <defs>
+            {/* Brilho neon azul para destaques */}
+            <filter id="gf-blue" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
 
-        {/* ── BASE UI (Strokes e Fills unificados) ── */}
-        <g>
-          {/* Browser Frame */}
-          <rect className="fill-el" x="20" y="40" width="360" height="320" rx="10" fill="#05070D" />
-          <rect className="shape-el" x="20" y="40" width="360" height="320" rx="10" fill="none" stroke="#DDE4FF" strokeWidth="1.5" />
-          
-          {/* Topbar Fill */}
-          <rect className="fill-el" x="20" y="40" width="360" height="40" rx="10" fill="#09101f" />
-          <line className="shape-el" x1="20" y1="80" x2="380" y2="80" stroke="#DDE4FF" strokeWidth="1.5" />
+          {/* ── BASE UI (Strokes e Fills unificados) ── */}
+          <g>
+            {/* Browser Frame */}
+            <rect className="fill-el" x="20" y="40" width="360" height="320" rx="10" fill="#05070D" />
+            <rect className="shape-el" x="20" y="40" width="360" height="320" rx="10" fill="none" stroke="#DDE4FF" strokeWidth="1.5" />
+            
+            {/* Topbar Fill */}
+            <rect className="fill-el" x="20" y="40" width="360" height="40" rx="10" fill="#09101f" />
+            <line className="shape-el" x1="20" y1="80" x2="380" y2="80" stroke="#DDE4FF" strokeWidth="1.5" />
 
-          {/* OS Dots */}
-          <circle className="fill-el" cx="40" cy="60" r="4.5" fill="#ff5f56" />
-          <circle className="shape-el" cx="40" cy="60" r="4.5" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
-          
-          <circle className="fill-el" cx="55" cy="60" r="4.5" fill="#ffbd2e" />
-          <circle className="shape-el" cx="55" cy="60" r="4.5" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
-          
-          <circle className="fill-el" cx="70" cy="60" r="4.5" fill="#27c93f" />
-          <circle className="shape-el" cx="70" cy="60" r="4.5" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            {/* OS Dots */}
+            <circle className="fill-el" cx="40" cy="60" r="4.5" fill="#ff5f56" />
+            <circle className="shape-el" cx="40" cy="60" r="4.5" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            
+            <circle className="fill-el" cx="55" cy="60" r="4.5" fill="#ffbd2e" />
+            <circle className="shape-el" cx="55" cy="60" r="4.5" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            
+            <circle className="fill-el" cx="70" cy="60" r="4.5" fill="#27c93f" />
+            <circle className="shape-el" cx="70" cy="60" r="4.5" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
 
-          {/* URL Bar */}
-          <rect className="fill-el" x="120" y="50" width="160" height="20" rx="10" fill="#0d1525" />
-          <rect className="shape-el" x="120" y="50" width="160" height="20" rx="10" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            {/* URL Bar */}
+            <rect className="fill-el" x="120" y="50" width="160" height="20" rx="10" fill="#0d1525" />
+            <rect className="shape-el" x="120" y="50" width="160" height="20" rx="10" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
 
-          {/* Linhas Internas Navbar */}
-          <rect className="fill-el" x="150" y="58" width="100" height="4" rx="2" fill="rgba(255,255,255,0.1)" />
-          <rect className="shape-el" x="150" y="58" width="100" height="4" rx="2" fill="none" stroke="#DDE4FF" strokeWidth="1" />
+            {/* Linhas Internas Navbar */}
+            <rect className="fill-el" x="150" y="58" width="100" height="4" rx="2" fill="rgba(255,255,255,0.1)" />
+            <rect className="shape-el" x="150" y="58" width="100" height="4" rx="2" fill="none" stroke="#DDE4FF" strokeWidth="1" />
 
-          {/* Content Cards */}
-          <rect className="fill-el" x="40" y="100" width="90" height="80" rx="8" fill="#09101f" />
-          <rect className="shape-el" x="40" y="100" width="90" height="80" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
-          <rect className="fill-el" x="50" y="115" width="50" height="6" rx="3" fill="#2D6BFF" />
-          <rect className="shape-el" x="50" y="115" width="50" height="6" rx="3" fill="none" stroke="#DDE4FF" strokeWidth="1" />
-          
-          <rect className="fill-el" x="155" y="100" width="90" height="80" rx="8" fill="#09101f" />
-          <rect className="shape-el" x="155" y="100" width="90" height="80" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
-          <rect className="fill-el" x="165" y="115" width="40" height="6" rx="3" fill="#DDE4FF" fillOpacity="0.8" />
-          <rect className="shape-el" x="165" y="115" width="40" height="6" rx="3" fill="none" stroke="#DDE4FF" strokeWidth="1" />
+            {/* Content Cards */}
+            <rect className="fill-el" x="40" y="100" width="90" height="80" rx="8" fill="#09101f" />
+            <rect className="shape-el" x="40" y="100" width="90" height="80" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            <rect className="fill-el" x="50" y="115" width="50" height="6" rx="3" fill="#2D6BFF" />
+            <rect className="shape-el" x="50" y="115" width="50" height="6" rx="3" fill="none" stroke="#DDE4FF" strokeWidth="1" />
+            
+            <rect className="fill-el" x="155" y="100" width="90" height="80" rx="8" fill="#09101f" />
+            <rect className="shape-el" x="155" y="100" width="90" height="80" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            <rect className="fill-el" x="165" y="115" width="40" height="6" rx="3" fill="#DDE4FF" fillOpacity="0.8" />
+            <rect className="shape-el" x="165" y="115" width="40" height="6" rx="3" fill="none" stroke="#DDE4FF" strokeWidth="1" />
 
-          <rect className="fill-el" x="270" y="100" width="90" height="80" rx="8" fill="#09101f" />
-          <rect className="shape-el" x="270" y="100" width="90" height="80" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
-          <rect className="fill-el" x="280" y="115" width="60" height="6" rx="3" fill="#DDE4FF" fillOpacity="0.8" />
-          <rect className="shape-el" x="280" y="115" width="60" height="6" rx="3" fill="none" stroke="#DDE4FF" strokeWidth="1" />
+            <rect className="fill-el" x="270" y="100" width="90" height="80" rx="8" fill="#09101f" />
+            <rect className="shape-el" x="270" y="100" width="90" height="80" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            <rect className="fill-el" x="280" y="115" width="60" height="6" rx="3" fill="#DDE4FF" fillOpacity="0.8" />
+            <rect className="shape-el" x="280" y="115" width="60" height="6" rx="3" fill="none" stroke="#DDE4FF" strokeWidth="1" />
 
-          {/* Graph Area */}
-          <rect className="fill-el" x="40" y="200" width="205" height="130" rx="8" fill="#09101f" />
-          <rect className="shape-el" x="40" y="200" width="205" height="130" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
-          
-          {/* Graph Line */}
-          <path className="graph-line" d="M 50 290 Q 90 230 130 260 T 230 230" fill="none" stroke="#4A8BFF" strokeWidth="2.5" strokeLinecap="round" filter="url(#gf-blue)" />
+            {/* Graph Area */}
+            <rect className="fill-el" x="40" y="200" width="205" height="130" rx="8" fill="#09101f" />
+            <rect className="shape-el" x="40" y="200" width="205" height="130" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            
+            {/* Graph Line */}
+            <path className="graph-line" d="M 50 290 Q 90 230 130 260 T 230 230" fill="none" stroke="#4A8BFF" strokeWidth="2.5" strokeLinecap="round" filter="url(#gf-blue)" />
 
-          {/* Sidebar */}
-          <rect className="fill-el" x="265" y="200" width="95" height="130" rx="8" fill="#09101f" />
-          <rect className="shape-el" x="265" y="200" width="95" height="130" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
-          
-          {/* Avatar/Profile in Sidebar */}
-          <circle className="fill-el" cx="312" cy="235" r="16" fill="#111932" />
-          <circle className="shape-el" cx="312" cy="235" r="16" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
-          
-          {/* CTA Button */}
-          <g className="cta-btn">
-            <rect className="fill-el" x="275" y="280" width="75" height="26" rx="13" fill="#2D6BFF" filter="url(#gf-blue)" />
-            <rect className="shape-el" x="275" y="280" width="75" height="26" rx="13" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
-            <rect className="fill-el" x="292" y="291" width="40" height="4" rx="2" fill="white" />
-            <rect className="shape-el" x="292" y="291" width="40" height="4" rx="2" fill="none" stroke="#DDE4FF" strokeWidth="1" />
+            {/* Sidebar */}
+            <rect className="fill-el" x="265" y="200" width="95" height="130" rx="8" fill="#09101f" />
+            <rect className="shape-el" x="265" y="200" width="95" height="130" rx="8" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            
+            {/* Avatar/Profile in Sidebar */}
+            <circle className="fill-el" cx="312" cy="235" r="16" fill="#111932" />
+            <circle className="shape-el" cx="312" cy="235" r="16" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+            
+            {/* CTA Button */}
+            <g className="cta-btn">
+              <rect className="fill-el" x="275" y="280" width="75" height="26" rx="13" fill="#2D6BFF" filter="url(#gf-blue)" />
+              <rect className="shape-el" x="275" y="280" width="75" height="26" rx="13" fill="none" stroke="#DDE4FF" strokeWidth="1.2" />
+              <rect className="fill-el" x="292" y="291" width="40" height="4" rx="2" fill="white" />
+              <rect className="shape-el" x="292" y="291" width="40" height="4" rx="2" fill="none" stroke="#DDE4FF" strokeWidth="1" />
+            </g>
+
           </g>
 
-        </g>
-
-      </svg>
+        </svg>
+      </div>
     </div>
   );
 }
