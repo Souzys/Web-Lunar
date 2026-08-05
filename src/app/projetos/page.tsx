@@ -160,11 +160,11 @@ export default function ProjetosPage() {
                   <div>
                     {/* Thumbnail */}
                     <Link href={`/projetos/${project.id}`} className="block">
-                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#080b12] rounded-2xl mb-6 border border-neutral-200/60 group-hover:shadow-md transition-all duration-300 flex items-center justify-center p-1">
+                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#080b12] rounded-2xl mb-6 border border-neutral-200/60 group-hover:shadow-md transition-all duration-300">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="object-contain object-top w-full h-full rounded-xl group-hover:scale-102 transition-transform duration-500 ease-out"
+                          className="object-cover object-top w-full h-full group-hover:scale-102 transition-transform duration-500 ease-out"
                           loading="lazy"
                         />
                         <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] uppercase font-semibold tracking-wider bg-black/60 border border-white/10 text-white backdrop-blur-sm">
