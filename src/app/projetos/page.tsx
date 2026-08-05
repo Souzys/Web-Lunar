@@ -187,7 +187,7 @@ export default function ProjetosPage() {
                   <div>
                     {/* Thumbnail */}
                     <Link href={`/projetos/${project.id}`} className="block">
-                      <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#080b12] rounded-2xl mb-6 border border-neutral-200/60 group-hover:shadow-md transition-all duration-300">
+                      <div className="relative aspect-[1902/885] w-full overflow-hidden bg-[#080b12] rounded-2xl mb-6 border border-neutral-200/60 group-hover:shadow-md transition-all duration-300">
                         <img
                           src={project.image}
                           alt={project.title}

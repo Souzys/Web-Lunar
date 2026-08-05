@@ -61,7 +61,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       onMouseLeave={handleLeave}
     >
       {/* Image Container */}
-      <div className="relative overflow-hidden rounded-xl border border-black/5 bg-[#080b12] shadow-sm aspect-[16/9]">
+      <div className="relative overflow-hidden rounded-xl border border-black/5 bg-[#080b12] shadow-sm aspect-[1902/885]">
         <img
           ref={imgRef}
           src={project.image}
