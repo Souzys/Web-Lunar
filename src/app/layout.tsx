@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { TRPCProvider } from "./trpc-provider";
 import { Navbar } from "@/components/layout/Navbar";
@@ -32,6 +33,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${spaceGrotesk.variable} font-sans h-full antialiased`}>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y7VHPMMT3L"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-Y7VHPMMT3L');
+          `}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col bg-bg text-text selection:bg-primary selection:text-white">
         <TRPCProvider>
           <Navbar />
