@@ -61,7 +61,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       onMouseLeave={handleLeave}
     >
       {/* Image Container */}
-      <div className="relative overflow-hidden rounded-xl border border-black/5 bg-[#080b12] shadow-sm aspect-[16/10]">
+      <div className="relative overflow-hidden rounded-xl border border-black/5 bg-[#080b12] shadow-sm aspect-[16/10] flex items-center justify-center p-1">
         <img
           ref={imgRef}
           src={project.image}
@@ -70,7 +70,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           height={500}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-contain object-top rounded-lg"
           style={{ transformOrigin: 'top center', willChange: 'transform' }}
         />
 

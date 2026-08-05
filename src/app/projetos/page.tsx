@@ -21,26 +21,35 @@ interface LocalProject {
 
 const DEFAULT_PROJECTS: LocalProject[] = [
   {
+    id: "snews",
+    title: "SNEWS",
+    description: "Website institucional de alta performance e internacionalizado para a líder em soluções tecnológicas de broadcast.",
+    category: "Website Institucional",
+    image: "/printsnews.webp",
+    liveUrl: "https://snews.tv",
+    tags: ["Next.js App Router", "TypeScript", "next-intl (i18n)"],
+  },
+  {
     id: "volk",
     title: "VOLK Presenter",
-    description: "Plataforma completa para controle de gráficos, dados e interações em tempo real para TV, eventos e entretenimento.",
+    description: "Experiência web imersiva com animações fluidas para a plataforma de gráficos e interatividade em tempo real.",
     category: "Experiência Web",
-    image: "/printvolk.png",
+    image: "/printvolk.webp",
     liveUrl: "https://volkpresenter.tv/pt",
-    tags: ["GSAP", "React", "WebSockets"],
+    tags: ["Next.js 15", "GSAP", "Framer Motion"],
   },
   {
     id: "capi",
     title: "CAPI Digital",
-    description: "Workspace editorial colaborativo com inteligência artificial para planejar, produzir e distribuir conteúdo multicanal.",
-    category: "Site Institucional",
-    image: "/printcapi.png",
+    description: "Landing page e plataforma de apresentação para o cérebro operacional de produção de conteúdo assistido por IA.",
+    category: "Landing Page",
+    image: "/printcapi.webp",
     liveUrl: "https://capi.digital/pt",
     tags: ["Next.js", "AI Integration", "Tailwind CSS"],
   },
 ];
 
-const CATEGORIES = ["Todos", "Experiência Web", "Site Institucional"];
+const CATEGORIES = ["Todos", "Website Institucional", "Experiência Web", "Landing Page"];
 
 export default function ProjetosPage() {
   useLenis();
@@ -151,11 +160,11 @@ export default function ProjetosPage() {
                   <div>
                     {/* Thumbnail */}
                     <Link href={`/projetos/${project.id}`} className="block">
-                      <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 rounded-2xl mb-6 border border-neutral-200/50 group-hover:shadow-md transition-all duration-300">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#080b12] rounded-2xl mb-6 border border-neutral-200/60 group-hover:shadow-md transition-all duration-300 flex items-center justify-center p-1">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="object-cover object-top w-full h-full group-hover:scale-103 transition-transform duration-700 ease-out"
+                          className="object-contain object-top w-full h-full rounded-xl group-hover:scale-102 transition-transform duration-500 ease-out"
                           loading="lazy"
                         />
                         <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] uppercase font-semibold tracking-wider bg-black/60 border border-white/10 text-white backdrop-blur-sm">
