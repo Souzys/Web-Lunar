@@ -2,6 +2,7 @@ import React from 'react';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { Counter } from '@/components/ui/Counter';
 import { ScrollRevealText } from '@/components/ui/ScrollRevealText';
+import { Marquee } from '@/components/ui/Marquee';
 import { siteContent } from '@/content';
 
 const COLORS = ['bg-neutral-300', 'bg-primary', 'bg-neutral-300', 'bg-primary'];
@@ -70,9 +71,7 @@ export function Impact() {
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-            <div
-              className="flex gap-16 w-max animate-[scroll_20s_linear_infinite]"
-            >
+            <Marquee speed={0.4} direction="left">
               {[
                 '/White-min.png',
                 '/Ativo-1-1.png',
@@ -87,16 +86,17 @@ export function Impact() {
                 '/image-1.png',
                 '/Logo-Savage-Week-Negativo.png',
               ].map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt={`Logo parceiro ${i + 1}`}
-                  style={{ height: 36, objectFit: 'contain', opacity: 0.2, flexShrink: 0, filter: 'brightness(0)' }}
-                  className="hover:opacity-60 transition-all duration-300 cursor-pointer"
-                  loading="lazy"
-                />
+                <div key={i} className="mx-10 flex items-center justify-center">
+                  <img
+                    src={src}
+                    alt={`Logo parceiro ${i + 1}`}
+                    style={{ height: 36, objectFit: 'contain', opacity: 0.25, filter: 'brightness(0)' }}
+                    className="hover:opacity-70 transition-all duration-300 cursor-pointer"
+                    loading="lazy"
+                  />
+                </div>
               ))}
-            </div>
+            </Marquee>
           </div>
 
         </div>
