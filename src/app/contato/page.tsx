@@ -38,7 +38,12 @@ export default function ContatoPage() {
       setErrorMsg('');
 
       if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const lenis = (window as any).lenis;
+        if (lenis) {
+          lenis.scrollTo(0, { duration: 1.2 });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
     },
     onError: (err) => {

@@ -18,6 +18,8 @@ export function useLenis() {
       touchMultiplier: 1.5,
     });
 
+    (window as any).lenis = lenis;
+
     // Sincroniza o ScrollTrigger com cada evento de scroll do Lenis
     lenis.on('scroll', ScrollTrigger.update);
 
@@ -31,6 +33,7 @@ export function useLenis() {
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      delete (window as any).lenis;
       lenis.destroy();
       gsap.ticker.remove(updateRaf);
     };
