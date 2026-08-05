@@ -25,18 +25,11 @@ export function LogosMarquee() {
 
       <Marquee speed={0.4} direction="left">
         {ALL_LOGOS.map((src, i) => (
-          <div key={i} className="mx-10 flex items-center justify-center">
+          <div key={i} className="mx-8 md:mx-12 flex items-center justify-center">
             <img
               src={src}
               alt={`Logo parceiro ${(i % LOGOS.length) + 1}`}
-              style={{
-                height: 36,
-                objectFit: 'contain',
-                opacity: 0.25,
-                filter: 'brightness(0)',
-                flexShrink: 0,
-              }}
-              className="hover:opacity-70 transition-all duration-300 cursor-pointer"
+              className="h-8 md:h-10 w-auto object-contain brightness-0 opacity-50 hover:opacity-100 transition-all duration-300 cursor-pointer shrink-0"
               loading="lazy"
             />
           </div>
