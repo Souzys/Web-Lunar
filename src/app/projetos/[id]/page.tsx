@@ -251,8 +251,8 @@ export default function ProjetoDetalhePage() {
               </div>
             </AnimatedSection>
 
-            {/* Mockup do MacBook Pro Centralizado em Grande Escala (Começa espiando no fundo da tela) */}
-            <div className="w-full relative flex items-center justify-center -mb-10 sm:-mb-16">
+            {/* Mockup Centralizado Slim */}
+            <div className="w-full relative flex items-center justify-center pt-4 pb-12">
               <VolkHeroShowcase desktopImage={caseStudy.id === 'volk' ? '/printvolk.png' : `/${caseStudy.id}-desktop.png`} />
             </div>
 
@@ -260,36 +260,36 @@ export default function ProjetoDetalhePage() {
         </div>
       </div>
 
-      {/* Scrolling Content */}
-      <div className="relative z-20 bg-white text-neutral-900 w-full border-t border-neutral-100 pt-20">
-        
-        {/* Strip de Métricas Rápidas */}
-        <div className="bg-[#080b12] text-white border-b border-white/10 py-6">
-          <div className="container mx-auto max-w-[1440px] px-6">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
-              <div className="p-3 border-r border-white/5 last:border-none">
-                <p className="text-xl font-bold font-mono text-primary">+20 Módulos</p>
-                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Visualizados</p>
-              </div>
-              <div className="p-3 border-r border-white/5 last:border-none">
-                <p className="text-xl font-bold font-mono text-emerald-400">&lt; 100ms</p>
-                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Latência Stream</p>
-              </div>
-              <div className="p-3 border-r border-white/5 last:border-none">
-                <p className="text-xl font-bold font-mono text-white">100%</p>
-                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Responsivo</p>
-              </div>
-              <div className="p-3 border-r border-white/5 last:border-none">
-                <p className="text-xl font-bold font-mono text-blue-400">Design System</p>
-                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">React Modular</p>
-              </div>
-              <div className="p-3 col-span-2 sm:col-span-1 border-r border-white/5 last:border-none">
-                <p className="text-xl font-bold font-mono text-purple-400">100/100</p>
-                <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">SEO & Performance</p>
-              </div>
+      {/* Strip de Métricas Rápidas (Transição Escura Fluida) */}
+      <div className="relative z-20 bg-[#080b12] text-white border-t border-b border-white/10 py-8">
+        <div className="container mx-auto max-w-[1440px] px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+            <div className="p-3 border-r border-white/5 last:border-none">
+              <p className="text-xl font-bold font-mono text-primary">+20 Módulos</p>
+              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Visualizados</p>
+            </div>
+            <div className="p-3 border-r border-white/5 last:border-none">
+              <p className="text-xl font-bold font-mono text-emerald-400">&lt; 100ms</p>
+              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Latência Stream</p>
+            </div>
+            <div className="p-3 border-r border-white/5 last:border-none">
+              <p className="text-xl font-bold font-mono text-white">100%</p>
+              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Responsivo</p>
+            </div>
+            <div className="p-3 border-r border-white/5 last:border-none">
+              <p className="text-xl font-bold font-mono text-blue-400">Design System</p>
+              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">React Modular</p>
+            </div>
+            <div className="p-3 col-span-2 sm:col-span-1 border-r border-white/5 last:border-none">
+              <p className="text-xl font-bold font-mono text-purple-400">100/100</p>
+              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">SEO & Performance</p>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Scrolling Content (Conteúdo Principal em Fundo Claro) */}
+      <div className="relative z-20 bg-white text-neutral-900 w-full pt-16">
         
 
         <div className="container mx-auto max-w-[1440px] px-6 py-24">
