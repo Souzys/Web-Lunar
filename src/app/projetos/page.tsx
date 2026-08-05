@@ -24,7 +24,7 @@ const DEFAULT_PROJECTS: LocalProject[] = [
     id: "snews",
     title: "SNEWS",
     description: "Website institucional de alta performance e internacionalizado para a líder em soluções tecnológicas de broadcast.",
-    category: "Website Institucional",
+    category: "Site Institucional",
     image: "/printsnews.webp",
     liveUrl: "https://snews.tv",
     tags: ["Next.js App Router", "TypeScript", "next-intl (i18n)"],
@@ -42,14 +42,14 @@ const DEFAULT_PROJECTS: LocalProject[] = [
     id: "capi",
     title: "CAPI Digital",
     description: "Landing page e plataforma de apresentação para o cérebro operacional de produção de conteúdo assistido por IA.",
-    category: "Landing Page",
+    category: "Experiência Web",
     image: "/printcapi.webp",
     liveUrl: "https://capi.digital/pt",
     tags: ["Next.js", "AI Integration", "Tailwind CSS"],
   },
 ];
 
-const CATEGORIES = ["Todos", "Website Institucional", "Experiência Web", "Landing Page"];
+const CATEGORIES = ["Todos", "Experiência Web", "Site Institucional", "Landing Page", "Interfaces SaaS", "Identidade Visual", "E-commerce"];
 
 export default function ProjetosPage() {
   useLenis();
@@ -129,7 +129,7 @@ export default function ProjetosPage() {
         <div className="container mx-auto max-w-[1440px] px-6 py-24">
           
           {/* Category Filters */}
-          <div className="flex flex-wrap gap-2.5 mb-16 max-w-md">
+          <div className="flex flex-wrap gap-2.5 mb-16 w-full">
             <AnimatedSection options={{ delay: 0.1 }} className="flex flex-wrap gap-2">
               {CATEGORIES.map((cat) => (
                 <button

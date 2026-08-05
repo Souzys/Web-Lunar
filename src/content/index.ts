@@ -35,7 +35,7 @@ export const siteContent = {
       {
         id: "snews",
         year: "2026",
-        category: "Website Institucional & Multi-idioma",
+        category: "Site Institucional",
         livePreview: "VER CASE",
         name: "SNEWS",
         description: "Website institucional de alta performance e internacionalizado para a líder em soluções tecnológicas de broadcast.",
@@ -48,7 +48,7 @@ export const siteContent = {
       {
         id: "volk",
         year: "2026",
-        category: "Plataforma Web & Animações 60 FPS",
+        category: "Experiência Web",
         livePreview: "LIVE PREVIEW",
         name: "VOLK Presenter",
         description: "Experiência web imersiva com animações fluidas para a plataforma de gráficos e interatividade em tempo real.",
@@ -61,7 +61,7 @@ export const siteContent = {
       {
         id: "capi",
         year: "2026",
-        category: "Landing Page & Plataforma Editorial",
+        category: "Experiência Web",
         livePreview: "LIVE PREVIEW",
         name: "CAPI Digital",
         description: "Landing page e plataforma de apresentação para o cérebro operacional de produção de conteúdo assistido por IA.",

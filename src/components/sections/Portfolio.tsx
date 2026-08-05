@@ -11,7 +11,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const CATEGORIES = ['Todos', 'Interfaces SaaS', 'Identidade Visual', 'Experiência Web', 'E-commerce', 'Landing Page', 'Site Institucional'];
+const CATEGORIES = ['Todos', 'Experiência Web', 'Site Institucional', 'Landing Page', 'Interfaces SaaS', 'Identidade Visual', 'E-commerce'];
 
 type Project = (typeof siteContent.portfolio.projects)[0];
 
