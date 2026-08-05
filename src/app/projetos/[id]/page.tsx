@@ -219,6 +219,41 @@ const STATIC_CASE_STUDIES: Record<string, CaseStudy> = {
       awardTitle: "Tax Advisory Showcase",
       awardSub: "Design & Desenvolvimento Web Lunar"
     }
+  },
+  "osa": {
+    id: "osa",
+    title: "ÔSA Branding Studio",
+    category: "CASE STUDY // LANDING PAGE & BRANDING STUDIO",
+    image: "/printosa.webp",
+    liveUrl: "https://osabrandingstudio.com/homenew/",
+    tags: ["WordPress", "Elementor Pro", "Branding & Design", "Yoast SEO", "Performance WPO"],
+    client: "ÔSA Branding Studio",
+    year: "2026",
+    scope: ["UX/UI Design Editorial", "Desenvolvimento em WordPress", "Configuração Elementor Pro", "Otimização de Performance"],
+    stack: ["WordPress", "Elementor Pro", "Yoast SEO", "WPO Plugins"],
+    tagline: "Presença digital autoral e landing page conceitual para estúdio europeu de branding.",
+    overview: "Projetamos a nova landing page e presença digital da ÔSA Branding Studio, um estúdio criativo especializado em construção de marcas autênticas e posicionamento estratégico. Desenvolvido em WordPress e Elementor Pro, o projeto reflete uma estética editorial arrojada, 'diferente do que estás habituado', com layout de alto impacto visual.",
+    challenge: "Traduzir a identidade provocativa e disruptiva do estúdio de branding em uma navegação web marcante, mantendo carregamento rápido e autonomia total de gerenciamento de portfólio no WordPress.",
+    solution: "Construímos uma landing page dinâmica no WordPress utilizando Elementor Pro e plugins de otimização de performance, aplicando tipografia marcante, espaçamentos generosos, microinterações e vitrine de projetos.",
+    results: [
+      "Posicionamento de marca forte e diferencial competitivo no mercado de design europeu.",
+      "Plataforma intuitiva em WordPress para publicação ágil de novos cases de branding.",
+      "Excelente velocidade de carregamento com recursos gráficos otimizados."
+    ],
+    showcaseHeroTitle: "Design Conceitual & Identidade Provocativa para Estúdio de Branding",
+    performance: {
+      speed: { title: "Velocidade", score: "WPO & Fluid Performance", description: "Imagens e assets visuais otimizados sem perda de qualidade conceitual." },
+      tech: { title: "Tecnologia", tech: "WordPress + Elementor Pro", description: "Autonomia de edição com estrutura modular e limpa." },
+      seo: { title: "SEO", status: "Yoast SEO", description: "Otimização focada no nicho de branding, design e consultoria criativa." }
+    },
+    designSystemText: "Desenvolvemos uma estética visual editorial com forte contraste, tipografia de grande porte e cartões de projeto minimalistas que deixam o portfólio em destaque.",
+    designSystemComponents: {
+      ctaLabel: "Ver Portfólio",
+      cardTitle: "Brand Strategy",
+      cardDesc: "Técnicas criativas e conceituais para criação de estratégias de marca.",
+      awardTitle: "Design Studio Showcase",
+      awardSub: "Design & Desenvolvimento Web Lunar"
+    }
   }
 };
 

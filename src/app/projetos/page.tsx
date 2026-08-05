@@ -65,6 +65,15 @@ const DEFAULT_PROJECTS: LocalProject[] = [
     liveUrl: "https://acptaxadvisory.com/",
     tags: ["WordPress", "Elementor Pro", "AIOSEO"],
   },
+  {
+    id: "osa",
+    title: "ÔSA Branding Studio",
+    description: "Landing page e plataforma de apresentação para estúdio europeu especializado em branding e design conceitual.",
+    category: "Landing Page",
+    image: "/printosa.webp",
+    liveUrl: "https://osabrandingstudio.com/homenew/",
+    tags: ["WordPress", "Elementor Pro", "Yoast SEO"],
+  },
 ];
 
 const CATEGORIES = ["Todos", "Experiência Web", "Site Institucional", "Landing Page", "Interfaces SaaS", "Identidade Visual", "E-commerce"];
