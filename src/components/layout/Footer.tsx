@@ -6,12 +6,21 @@ import { siteContent } from '@/content';
 import { ArrowUpRight, MessageCircle } from 'lucide-react';
 import { useAudio } from '@/hooks/useAudio';
 import { usePathname } from 'next/navigation';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function Footer() {
   const pathname = usePathname();
   const isContactPage = pathname === '/contato';
-
+  const { t } = useLanguage();
   const { playHover, playClick } = useAudio();
+
+  const studioLinks = [
+    { label: t.nav.inicio, href: '/' },
+    { label: t.nav.sobre, href: '/sobre' },
+    { label: t.nav.projetos, href: '/projetos' },
+    { label: t.nav.servicos, href: '/servicos' },
+    { label: t.nav.contato, href: '/contato' },
+  ];
 
   return (
     <footer className="relative z-10 overflow-hidden" id="contact">
@@ -28,18 +37,18 @@ export function Footer() {
             <div className="flex items-center justify-center gap-2.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.6)]" />
               <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
-                Disponível para novos projetos
+                {t.nav.atendimento}
               </span>
             </div>
 
             {/* Giant Heading */}
             <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white mb-6 leading-[1.05] text-balance">
-              Vamos Criar Algo <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Incrível</span> Juntos.
+              {t.contactPage.title}
             </h2>
 
             {/* Supporting Description */}
             <p className="text-neutral-400 text-base md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10 text-balance">
-              Tem um projeto em mente ou quer escalar sua marca com design refinado e engenharia de software de alta performance?
+              {t.contactPage.subtitle}
             </p>
 
             {/* Action Buttons */}
@@ -50,7 +59,7 @@ export function Footer() {
                 onClick={playClick}
                 className="flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary text-white font-semibold text-xs uppercase tracking-wider hover:bg-blue-600 transition-all duration-300 shadow-[0_0_25px_rgba(29,77,255,0.4)] hover:shadow-[0_0_35px_rgba(29,77,255,0.6)] hover:scale-105 active:scale-95 cursor-pointer font-sans w-full sm:w-auto"
               >
-                <span>Solicitar Orçamento</span>
+                <span>{t.hero.ctaButton}</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
               <a
@@ -62,14 +71,12 @@ export function Footer() {
                 className="flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white/[0.05] border border-white/10 text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer font-sans w-full sm:w-auto"
               >
                 <MessageCircle className="w-4 h-4 text-[#25D366]" />
-                <span>Falar no WhatsApp</span>
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>
         </div>
       )}
-
-
 
       {/* === FOOTER LINKS === (Modo Escuro) */}
       <div className="bg-[#05070B] text-white">
@@ -80,7 +87,7 @@ export function Footer() {
               <img src="/logo-web-lunar-light.png" alt="Web Lunar" className="h-10 md:h-14 w-auto object-contain" />
             </div>
           <p className="text-sm font-light text-neutral-400 leading-relaxed max-w-sm mb-8">
-            Estúdio de design e engenharia focado em criar produtos digitais premium de alta performance e valor percebido.
+            {t.footer.tagline}
           </p>
           <p className="text-sm font-mono text-neutral-500">{siteContent.footer.contact.phone}</p>
         </div>
@@ -89,28 +96,19 @@ export function Footer() {
         <div>
           <h4 className="text-white text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">STUDIO</h4>
           <ul className="flex flex-col gap-4">
-            {siteContent.footer.links.pages.map(link => {
-              let href = '#';
-              if (link === 'Início') href = '/';
-              if (link === 'Sobre') href = '/sobre';
-              if (link === 'Portfólio') href = '/#projetos';
-              if (link === 'Serviços') href = '/servicos';
-              if (link === 'Contato') href = '/#contato';
-              
-              return (
-                <li key={link}>
-                  <Link href={href} className="text-sm text-neutral-400 hover:text-primary transition-colors duration-300">
-                    {link}
-                  </Link>
-                </li>
-              );
-            })}
+            {studioLinks.map(link => (
+              <li key={link.href}>
+                <Link href={link.href} className="text-sm text-neutral-400 hover:text-primary transition-colors duration-300">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Services */}
         <div>
-          <h4 className="text-white text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">SERVIÇOS</h4>
+          <h4 className="text-white text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">{t.nav.servicos}</h4>
           <ul className="flex flex-col gap-4">
             {siteContent.footer.links.single.map(link => (
               <li key={link}>
@@ -139,8 +137,8 @@ export function Footer() {
       </div>
 
         {/* Bottom bar */}
-        <div className="container mx-auto max-w-[1440px] px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-500 tracking-widest">
-          <p>© {new Date().getFullYear()} WEB LUNAR. TODOS OS DIREITOS RESERVADOS.</p>
+        <div className="container mx-auto max-w-[1440px] px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-500 tracking-widest uppercase">
+          <p>© {new Date().getFullYear()} WEB LUNAR. {t.footer.allRightsReserved}</p>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-white transition-colors">PRIVACIDADE</Link>
             <Link href="#" className="hover:text-white transition-colors">TERMOS</Link>

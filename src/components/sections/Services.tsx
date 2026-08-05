@@ -3,10 +3,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { siteContent } from '@/content';
 import { getServiceIcon } from '@/components/ui/ServiceIcons';
+import { useLanguage } from '@/context/LanguageContext';
 
-// Destaques reais correspondentes aos serviços
 const SERVICE_HIGHLIGHTS = [
   [
     'Design orientado a conversão',
@@ -46,10 +45,10 @@ const SERVICE_HIGHLIGHTS = [
   ]
 ];
 
-function ServiceCard({ service, index }: { service: any, index: number }) {
+function ServiceCard({ service, index }: { service: { title: string; desc: string }, index: number }) {
   const [isFlipped, setIsFlipped] = React.useState(false);
   const highlights = SERVICE_HIGHLIGHTS[index] || [];
-  const Icon = getServiceIcon; // Não é o componente direto mas temos a imagem/SVG de watermark
+  const { t } = useLanguage();
 
   return (
     <div 
@@ -77,7 +76,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
           {/* Top Section */}
           <div className="flex justify-between items-start relative z-10">
             <span className="font-display text-3xl font-black text-black/10 group-hover:text-primary transition-colors duration-500">
-              {service.number}
+              0{index + 1}
             </span>
             <div className="w-10 h-10 border border-white/80 group-hover:border-primary/30 group-hover:bg-primary/10 text-neutral-400 group-hover:text-primary group-hover:-rotate-45 flex items-center justify-center rounded-full transition-all duration-500 bg-white/50 shadow-sm backdrop-blur-sm">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -92,50 +91,39 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
               {service.title}
             </h3>
             <p className="text-sm leading-relaxed font-light text-neutral-600 group-hover:text-neutral-900 transition-colors duration-500">
-              {service.description}
+              {service.desc}
             </p>
           </div>
 
           {/* Background Watermark SVG */}
           <div className="absolute right-2 bottom-2 translate-x-4 translate-y-4 w-32 h-32 opacity-[0.03] group-hover:opacity-[0.08] text-neutral-950 group-hover:text-primary transition-all duration-700 pointer-events-none z-0">
-            {getServiceIcon(service.number, "w-full h-full")}
+            {getServiceIcon(String(index + 1), "w-full h-full")}
           </div>
         </div>
 
-        {/* LADO DE TRÁS */}
+        {/* VERSO DO CARD */}
         <div 
-          className="absolute inset-0 w-full h-full bg-white border border-primary/20 p-8 md:p-10 flex flex-col justify-between rounded-2xl shadow-[0_20px_50px_rgba(29,77,255,0.06)] overflow-hidden"
+          className="absolute inset-0 w-full h-full rounded-2xl bg-neutral-900 text-white p-8 flex flex-col justify-between shadow-xl overflow-hidden"
           style={{ 
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
             pointerEvents: isFlipped ? 'auto' : 'none'
           }}
         >
-          {/* Decorative Glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
-
-          {/* Top Info */}
-          <div className="relative z-10">
-            <div className="flex justify-between items-center mb-6">
-              <span className="text-[10px] font-mono tracking-widest text-primary uppercase font-bold">
-                [ Detalhes do Serviço ]
-              </span>
-              <span className="font-display text-sm font-bold text-neutral-400">
-                {service.number}
-              </span>
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-primary">Destaques Técnicos</span>
+              <span className="text-[10px] font-mono text-neutral-400 cursor-pointer">Voltar ↺</span>
             </div>
-            
-            <h3 className="font-sans text-xl font-bold tracking-tight text-neutral-900 mb-6">
+            <h3 className="font-sans text-xl font-bold text-white mb-4">
               {service.title}
             </h3>
 
             {/* Highlights List */}
             <ul className="space-y-3">
               {highlights.map((h, i) => (
-                <li key={i} className="flex items-center gap-3 text-xs md:text-sm text-neutral-600">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary/20 shrink-0 flex items-center justify-center">
-                    <span className="w-1 h-1 rounded-full bg-primary" />
-                  </span>
+                <li key={i} className="flex items-center gap-3 text-xs md:text-sm text-neutral-300">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                   {h}
                 </li>
               ))}
@@ -147,11 +135,11 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
             <Link 
               href={`/contato?subject=${encodeURIComponent('Orçamento: ' + service.title)}`}
               onClick={(e) => {
-                e.stopPropagation(); // Previne o flip de disparar de novo ao clicar no botão
+                e.stopPropagation();
               }}
               className="flex items-center justify-center gap-2 w-full py-3.5 text-xs font-bold tracking-widest uppercase rounded-full bg-primary text-white hover:bg-primary-hover transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              <span>Contratar Projeto</span>
+              <span>{t.hero.ctaButton}</span>
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -164,50 +152,49 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
 }
 
 export function Services() {
-  const { services } = siteContent;
+  const { t } = useLanguage();
+
+  const serviceItems = [
+    t.services.items.landingPages,
+    t.services.items.sitesApps,
+    t.services.items.ecommerce,
+    t.services.items.agendamento,
+    t.services.items.integracoes,
+    t.services.items.performance,
+  ];
 
   return (
     <section id="service" className="py-32 bg-[#FAFAFA] text-neutral-900 relative overflow-hidden border-t border-black/5">
-      {/* Subtle Background Grid & Glows */}
+      {/* Background Grid & Glows */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
-        {/* Clean Repeating Grid */}
-        <div 
-          className="absolute inset-0 bg-[linear-gradient(to_right,#00000004_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)] bg-[size:40px_40px]" 
-        />
-        {/* Soft Radial Ambient Glows - amplificados para brilhar através do vidro das abas */}
-        <div 
-          className="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full bg-primary/8 blur-[100px] -translate-x-1/2 -translate-y-1/2" 
-        />
-        <div 
-          className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] rounded-full bg-blue-500/5 blur-[120px] translate-x-1/4" 
-        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000004_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)] bg-[size:40px_40px]" />
+        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full bg-primary/8 blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] rounded-full bg-blue-500/5 blur-[120px] translate-x-1/4" />
       </div>
 
       <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
-        
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
           <AnimatedSection className="w-full">
              <div className="mb-6">
               <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold">
-                Nossas Especialidades
+                {t.services.tag}
               </span>
             </div>
             <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] text-neutral-900 w-full text-left">
-              Sites e sistemas planejados para gerar <span className="italic">resultados reais.</span>
+              {t.services.title}
             </h2>
           </AnimatedSection>
         </div>
 
         {/* Services Premium Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.items.map((service, index) => (
+          {serviceItems.map((service, index) => (
             <AnimatedSection key={index} options={{ delay: index * 0.1 }}>
               <ServiceCard service={service} index={index} />
             </AnimatedSection>
           ))}
         </div>
-
       </div>
     </section>
   );

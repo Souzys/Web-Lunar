@@ -3,9 +3,26 @@
 import React from 'react';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { siteContent } from '@/content';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function Testimonials() {
   const { testimonials } = siteContent;
+  const { t } = useLanguage();
+
+  const testimonialItems = [
+    {
+      ...testimonials.items[0],
+      badge: t.testimonials.item1.badge,
+      text: t.testimonials.item1.text,
+      role: t.testimonials.item1.role,
+    },
+    {
+      ...testimonials.items[1],
+      badge: t.testimonials.item2.badge,
+      text: t.testimonials.item2.text,
+      role: t.testimonials.item2.role,
+    },
+  ];
 
   return (
     <section className="py-20 bg-[#FAFAFA] text-neutral-900 overflow-hidden relative border-t border-black/5">
@@ -16,18 +33,18 @@ export function Testimonials() {
           <AnimatedSection>
             <div className="mb-4">
               <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold">
-                {testimonials.tag}
+                {t.testimonials.tag}
               </span>
             </div>
             <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 max-w-xl">
-              Quem já trabalhou conosco.
+              {t.testimonials.title}
             </h2>
           </AnimatedSection>
         </div>
 
         {/* Clean, Minimalist 2-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.items.map((item, index) => (
+          {testimonialItems.map((item, index) => (
             <AnimatedSection 
               key={index} 
               options={{ delay: index * 0.08 }}
@@ -42,16 +59,7 @@ export function Testimonials() {
                   
                   {/* Smaller, highly legible text */}
                   <p className="text-base md:text-lg leading-relaxed text-neutral-700 mb-6 font-light">
-                    "{item.text.split(item.highlight).map((part, i, arr) => (
-                      <React.Fragment key={i}>
-                        {part}
-                        {i < arr.length - 1 && (
-                          <span className="font-semibold text-primary">
-                            {item.highlight}
-                          </span>
-                        )}
-                      </React.Fragment>
-                    ))}"
+                    "{item.text}"
                   </p>
                 </div>
 

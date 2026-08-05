@@ -7,6 +7,7 @@ import { trpc } from '@/utils/trpc';
 import { ExternalLink, Loader2 } from 'lucide-react';
 import gsap from 'gsap';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface LocalProject {
   id: string;
@@ -80,6 +81,7 @@ const CATEGORIES = ["Todos", "Experiência Web", "Site Institucional", "Landing 
 
 export default function ProjetosPage() {
   useLenis();
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
@@ -137,14 +139,14 @@ export default function ProjetosPage() {
               <div className="flex items-center justify-center gap-2.5 mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
                 <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
-                  Nosso Portfólio
+                  {t.projectsPage.tag}
                 </span>
               </div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-tight">
-                Galeria de Projetos
+                {t.projectsPage.title}
               </h1>
               <p className="text-base md:text-lg text-white font-light leading-relaxed max-w-xl mx-auto pl-5 border-l-2 md:border-l-0 md:border-t border-primary/30 pt-4 text-balance">
-                Estudos de caso, plataformas SaaS e soluções digitais sob medida, desenvolvidas com o mais alto rigor técnico e visual.
+                {t.projectsPage.subtitle}
               </p>
             </AnimatedSection>
           </div>

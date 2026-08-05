@@ -7,9 +7,11 @@ import { ParticleCanvas } from '@/components/ui/ParticleCanvas';
 import { trpc } from '@/utils/trpc';
 import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, Globe, Clock } from 'lucide-react';
 import gsap from 'gsap';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContatoPage() {
   useLenis();
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
 
@@ -138,11 +140,11 @@ ${formData.content}
             <div className="flex items-center justify-center gap-2.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.6)]" />
               <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
-                Solicitar Orçamento
+                {t.contactPage.tag}
               </span>
             </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white leading-tight">
-              Faça seu Orçamento
+              {t.contactPage.title}
             </h1>
           </AnimatedSection>
         </div>
