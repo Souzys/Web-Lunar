@@ -2,7 +2,7 @@ import React from 'react';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { Counter } from '@/components/ui/Counter';
 import { ScrollRevealText } from '@/components/ui/ScrollRevealText';
-import { Marquee } from '@/components/ui/Marquee';
+import { LogosMarquee } from '@/components/ui/LogosMarquee';
 import { siteContent } from '@/content';
 
 const COLORS = ['bg-neutral-300', 'bg-primary', 'bg-neutral-300', 'bg-primary'];
@@ -67,37 +67,7 @@ export function Impact() {
           </div>
 
           {/* === BRANDS MARQUEE === */}
-          <div className="mt-16 border-t border-black/5 pt-12 relative overflow-hidden w-full">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-            <Marquee speed={0.4} direction="left">
-              {[
-                '/White-min.png',
-                '/Ativo-1-1.png',
-                '/Group-1.png',
-                '/Group-13-8.png',
-                '/image-1.png',
-                '/Logo-Savage-Week-Negativo.png',
-                '/White-min.png',
-                '/Ativo-1-1.png',
-                '/Group-1.png',
-                '/Group-13-8.png',
-                '/image-1.png',
-                '/Logo-Savage-Week-Negativo.png',
-              ].map((src, i) => (
-                <div key={i} className="mx-10 flex items-center justify-center">
-                  <img
-                    src={src}
-                    alt={`Logo parceiro ${i + 1}`}
-                    style={{ height: 36, objectFit: 'contain', opacity: 0.25, filter: 'brightness(0)' }}
-                    className="hover:opacity-70 transition-all duration-300 cursor-pointer"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </Marquee>
-          </div>
+          <LogosMarquee />
 
         </div>
       </div>
