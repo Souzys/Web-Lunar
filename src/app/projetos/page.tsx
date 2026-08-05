@@ -63,7 +63,7 @@ const DEFAULT_PROJECTS: LocalProject[] = [
     category: "Site Institucional",
     image: "/printacp.webp",
     liveUrl: "https://acptaxadvisory.com/",
-    tags: ["WordPress", "Tax Advisory", "SEO B2B"],
+    tags: ["WordPress", "Elementor Pro", "AIOSEO"],
   },
 ];
 
