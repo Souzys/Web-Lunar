@@ -27,7 +27,7 @@ export async function sendContactEmail({ name, email, subject, content }: SendCo
   // 1. Resend API Integration (se RESEND_API_KEY estiver configurado)
   if (process.env.RESEND_API_KEY) {
     try {
-      const fromEmail = process.env.RESEND_FROM_EMAIL || "Web Lunar <onboarding@resend.dev>";
+      const fromEmail = process.env.RESEND_FROM_EMAIL || "Web Lunar <contato@weblunar.com.br>";
       
       // Tenta enviar para o targetEmail
       let res = await fetch("https://api.resend.com/emails", {
