@@ -54,7 +54,16 @@ const DEFAULT_PROJECTS: LocalProject[] = [
     category: "Landing Page",
     image: "/printadansonea.webp",
     liveUrl: "https://www.adansonea.com/",
-    tags: ["UX/UI Design", "Tailwind CSS", "SEO B2B"],
+    tags: ["WordPress", "Elementor Pro", "Plugins Otimizados"],
+  },
+  {
+    id: "acp",
+    title: "ACP Tax Advisory",
+    description: "Website institucional e plataforma de serviços fiscais para consultoria norte-americana de planejamento tributário.",
+    category: "Site Institucional",
+    image: "/printacp.webp",
+    liveUrl: "https://acptaxadvisory.com/",
+    tags: ["WordPress", "Tax Advisory", "SEO B2B"],
   },
 ];
 

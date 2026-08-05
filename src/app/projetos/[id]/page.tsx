@@ -156,32 +156,67 @@ const STATIC_CASE_STUDIES: Record<string, CaseStudy> = {
     category: "CASE STUDY // LANDING PAGE & BOUTIQUE PEOPLE ADVISORY",
     image: "/printadansonea.webp",
     liveUrl: "https://www.adansonea.com/",
-    tags: ["UX/UI Design", "Engenharia Front-end", "Tailwind CSS", "SEO & Performance B2B"],
+    tags: ["WordPress", "Elementor Pro", "Plugins Otimizados", "Yoast SEO", "Performance & WPO"],
     client: "Adansonea Leadership Consulting",
     year: "2026",
-    scope: ["UX/UI Design", "Arquitetura de Conteúdo", "Desenvolvimento Web", "SEO & Otimização"],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    tagline: "Presença digital refinada para consultoria internacional de liderança e estratégia corporativa.",
-    overview: "Projetamos a landing page e a presença digital para a Adansonea, uma consultoria boutique especializada em estratégias de liderança e gestão de pessoas para organizações globais. A plataforma reflete a sofisticação e o prestígio da marca através de um layout minimalista, tipografia elegante e estrutura focada na conversão de executivos.",
-    challenge: "Posicionar a marca Adansonea no mercado internacional com uma interface elegante e sóbria que comunique credibilidade e experiência executiva de alto nível, mantendo uma experiência de leitura impecável.",
-    solution: "Desenvolvemos uma estrutura de landing page institucional com paleta corporativa refinada, hierarquia visual clara, microinterações e otimização total de SEO e velocidade para tomadores de decisão corporativos.",
+    scope: ["UX/UI Design", "Desenvolvimento em WordPress", "Configuração Elementor Pro", "SEO & Otimização de Performance"],
+    stack: ["WordPress", "Elementor Pro", "Yoast SEO", "WPO Plugins"],
+    tagline: "Presença digital refinada em WordPress & Elementor Pro para consultoria internacional de liderança.",
+    overview: "Projetamos e desenvolvemos a landing page e a presença digital para a Adansonea, uma consultoria boutique especializada em estratégias de liderança e gestão de pessoas para organizações globais. A plataforma foi construída em WordPress e Elementor Pro com um ecossistema de plugins otimizados, combinando design executivo de alto padrão com autonomia total para a equipe cliente gerenciar seus conteúdos.",
+    challenge: "Posicionar a marca Adansonea no mercado internacional com uma interface elegante e sóbria que comunique credibilidade corporativa, utilizando uma arquitetura em WordPress limpa, rápida e de fácil gestão interna.",
+    solution: "Desenvolvemos uma estrutura sob medida no WordPress alimentada por Elementor Pro, aplicando técnicas avançadas de WPO (Web Performance Optimization), otimização de imagens, scripts e plugins de SEO para garantir navegação rápida e excelente indexação.",
     results: [
-      "Design de marca executivo que transmite credibilidade e autoridade no setor.",
-      "Estrutura otimizada para captação de prospects e agendamento de consultorias.",
-      "Pontuação máxima no PageSpeed com carregamento ultrarrápido em dispositivos móveis e desktop."
+      "Plataforma intuitiva em WordPress permitindo gestão fácil e ágil de conteúdos pela equipe Adansonea.",
+      "Design de marca executivo com Elementor Pro focado em conversão de clientes B2B.",
+      "Otimização completa de performance e SEO com plugins configurados e alta velocidade no PageSpeed."
     ],
-    showcaseHeroTitle: "Design de Alto Nível para Consultoria de Liderança Executiva",
+    showcaseHeroTitle: "Design Executive & Autonomia em WordPress com Elementor Pro",
     performance: {
-      speed: { title: "Velocidade", score: "Carregamento Instantâneo", description: "Carregamento e navegação ultrarrápidos para o público corporativo." },
-      tech: { title: "Tecnologia", tech: "Next.js + Tailwind", description: "Código limpo, seguro e altamente otimizado para o mercado global." },
-      seo: { title: "SEO", status: "SEO & Otimização B2B", description: "Posicionamento estratégico nos mecanismos de busca internacionais." }
+      speed: { title: "Velocidade", score: "WPO & Performance", description: "Navegação fluida com otimização avançada de assets e cache no WordPress." },
+      tech: { title: "Tecnologia", tech: "WordPress + Elementor Pro", description: "Gestão de conteúdo intuitiva e flexibilidade com ecossistema de plugins." },
+      seo: { title: "SEO", status: "Yoast SEO Otimizado", description: "Meta tags e indexação estruturada para o mercado de liderança internacional." }
     },
-    designSystemText: "Desenvolvemos um design system elegante com tons corporativos sóbrios, contraste impecável e elementos visuais minimalistas que destacam os pilares metodológicos da consultoria.",
+    designSystemText: "Desenvolvemos um design system refinado no Elementor Pro com tons corporativos sóbrios, contraste impecável e componentes visuais reutilizáveis para manter a consistência em todas as seções.",
     designSystemComponents: {
       ctaLabel: "Conhecer a Adansonea",
       cardTitle: "People Strategy",
       cardDesc: "Alinhamento de RH e liderança com as metas estratégicas do negócio.",
-      awardTitle: "Boutique Showcase",
+      awardTitle: "WordPress Showcase",
+      awardSub: "Design & Desenvolvimento Web Lunar"
+    }
+  },
+  "acp": {
+    id: "acp",
+    title: "ACP Tax Advisory",
+    category: "CASE STUDY // WEBSITE INSTITUCIONAL & CONSULTORIA FISCAL",
+    image: "/printacp.webp",
+    liveUrl: "https://acptaxadvisory.com/",
+    tags: ["UX/UI Design", "Desenvolvimento Web", "Tax Advisory", "SEO B2B", "Performance Optimization"],
+    client: "ACP Tax Advisory LLC",
+    year: "2026",
+    scope: ["UX/UI Design", "Arquitetura de Informação", "Desenvolvimento Web Institucional", "SEO & Conversão"],
+    stack: ["WordPress", "TypeScript", "Tailwind CSS", "AIOSEO"],
+    tagline: "Website institucional de alta conversão para consultoria norte-americana de planejamento tributário.",
+    overview: "Desenvolvemos o novo website institucional da ACP Tax Advisory, uma firma norte-americana de consultoria tributária e planejamento financeiro para empresários. A plataforma desmistifica a complexidade fiscal através de uma linguagem clara, arquitetura visual sóbria e fluxos de agendamento simplificados.",
+    challenge: "Transformar tópicos fiscais complexos em uma experiência digital simples, elegante e altamente persuasiva para empresários nos Estados Unidos, garantindo carregamento rápido e otimização para captação de leads.",
+    solution: "Criamos um layout corporativo moderno com seções explicativas claras, depoimentos de clientes, calculadoras/simuladores institucionais e formulários integrados para contratação direta de estratégias tributárias.",
+    results: [
+      "Aumento significativo no tempo de permanência no site e na taxa de conversão para reuniões de diagnóstico.",
+      "Comunicação direta e transparente da proposta de valor em consultoria tributária B2B.",
+      "Estrutura otimizada para SEO local e nacional nos Estados Unidos com carregamento em sub-segundo."
+    ],
+    showcaseHeroTitle: "Planejamento Tributário Inteligente & Presença Digital de Confiança",
+    performance: {
+      speed: { title: "Velocidade", score: "Carregamento Rápido", description: "Otimização completa de recursos para carregamento instantâneo no desktop e mobile." },
+      tech: { title: "Tecnologia", tech: "WordPress Otimizado", description: "Arquitetura limpa com segurança e gerenciamento intuitivo de conteúdo." },
+      seo: { title: "SEO", status: "Indexação Internacional", description: "Otimização total para mecanismos de busca focados em serviços financeiros e fiscais." }
+    },
+    designSystemText: "Criamos uma identidade visual sóbria e refinada, alinhando tons azuis marinho profundos a detalhes dourados e tipografia corporativa de altíssima legibilidade.",
+    designSystemComponents: {
+      ctaLabel: "Get Started Now",
+      cardTitle: "Smart Tax Strategy",
+      cardDesc: "Soluções e planejamento tributário sem complicação para empresas.",
+      awardTitle: "Tax Advisory Showcase",
       awardSub: "Design & Desenvolvimento Web Lunar"
     }
   }

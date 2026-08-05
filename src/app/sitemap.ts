@@ -25,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'volk',
     'capi',
     'adansonea',
+    'acp',
     'capi-midia',
     'volk-mkt',
     'lumina-app',
