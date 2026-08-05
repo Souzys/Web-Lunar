@@ -21,6 +21,8 @@
     "@types/howler": "^2.2.13",
     "@types/nodemailer": "^8.0.1",
     "@types/three": "^0.185.0",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.2",
     "gsap": "^3.15.0",

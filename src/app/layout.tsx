@@ -5,6 +5,8 @@ import { TRPCProvider } from "./trpc-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,6 +39,8 @@ export default function RootLayout({
           <Footer />
           <WhatsAppFloat />
         </TRPCProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
