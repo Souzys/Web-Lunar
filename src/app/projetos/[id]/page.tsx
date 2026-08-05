@@ -84,7 +84,7 @@ const STATIC_CASE_STUDIES: Record<string, CaseStudy> = {
     id: "capi",
     title: "CAPI Digital",
     category: "CASE STUDY // PLATAFORMA EDITORIAL",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+    image: "/printcapi.png",
     liveUrl: "https://capi.digital/pt",
     tags: ["Next.js", "AI Integration", "Tailwind CSS"],
     client: "CAPI Digital",
@@ -253,7 +253,7 @@ export default function ProjetoDetalhePage() {
 
             {/* Mockup Centralizado Slim */}
             <div className="w-full relative flex items-center justify-center pt-4 pb-12">
-              <VolkHeroShowcase desktopImage={caseStudy.id === 'volk' ? '/printvolk.png' : `/${caseStudy.id}-desktop.png`} />
+              <VolkHeroShowcase desktopImage={caseStudy.image} />
             </div>
 
           </div>

@@ -34,7 +34,7 @@ const DEFAULT_PROJECTS: LocalProject[] = [
     title: "CAPI Digital",
     description: "Workspace editorial colaborativo com inteligência artificial para planejar, produzir e distribuir conteúdo multicanal.",
     category: "Site Institucional",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+    image: "/printcapi.png",
     liveUrl: "https://capi.digital/pt",
     tags: ["Next.js", "AI Integration", "Tailwind CSS"],
   },

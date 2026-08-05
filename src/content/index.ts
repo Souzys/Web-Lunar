@@ -53,7 +53,7 @@ export const siteContent = {
         name: "CAPI Digital",
         description: "Workspace editorial colaborativo com inteligência artificial para planejar, produzir e distribuir conteúdo multicanal.",
         buttonText: "Ver Projeto",
-        image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        image: "/printcapi.png",
         size: "large",
         color: "#E28743",
         url: "https://capi.digital/pt",
