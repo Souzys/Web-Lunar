@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
 import { siteContent } from '@/content';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -20,6 +21,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   const imgRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const card = cardRef.current;
@@ -77,46 +79,22 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {/* Hover overlay */}
         <div
           ref={overlayRef}
-          className="absolute inset-0 flex flex-col justify-between p-6 md:p-8 pointer-events-none"
-          style={{ opacity: 0, background: 'rgba(0,0,0,0.6)' }}
+          className="absolute inset-0 bg-primary/20 backdrop-blur-[2px] opacity-0 flex items-center justify-center pointer-events-none transition-opacity duration-300"
         >
-          {/* Top */}
-          <div className="flex justify-between items-start">
-            <span className="text-xs font-mono uppercase tracking-widest text-white border border-white/20 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md">
-              {project.category}
-            </span>
-            <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg transition-all duration-300">
-              <ArrowUpRight className="w-5 h-5" />
-            </div>
-          </div>
-
-          {/* Bottom */}
-          <div>
-            <p className="text-white/90 text-sm mb-2 max-w-sm leading-relaxed font-light">
-              {project.description}
-            </p>
-          </div>
-        </div>
-
-        {/* Index number — bottom left always */}
-        <div className="absolute bottom-4 left-5 pointer-events-none">
-          <span className="text-white/40 text-xs font-mono font-bold drop-shadow-md">
-            {String(index + 1).padStart(2, '0')}
+          <span className="w-12 h-12 rounded-full bg-white text-primary flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform duration-300">
+            <ArrowUpRight className="w-6 h-6" />
           </span>
         </div>
       </div>
 
-      {/* Card Footer */}
-      <div className="flex items-center justify-between pt-5 pb-2">
+      {/* Info */}
+      <div className="pt-4 flex items-start justify-between gap-4">
         <div>
-          <h3
-            className="font-sans text-xl md:text-2xl font-bold tracking-tight transition-colors duration-200 text-neutral-900"
-            style={{ color: hovered ? '#1D4DFF' : '#111' }}
-          >
+          <h3 className="font-sans font-bold text-xl md:text-2xl text-neutral-900 group-hover:text-primary transition-colors duration-200 tracking-tight">
             {project.name}
           </h3>
-          <span className="text-xs text-neutral-500 font-mono uppercase tracking-wider">
-            {project.category} · {project.year}
+          <span className="text-xs font-sans uppercase font-bold tracking-wider text-neutral-500">
+            {project.category}
           </span>
         </div>
         <span
@@ -129,7 +107,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             background: hovered ? 'transparent' : 'rgba(0,0,0,0.05)'
           }}
         >
-          Ver Case <ArrowUpRight className="w-3 h-3" />
+          {t.portfolio.verCase} <ArrowUpRight className="w-3 h-3" />
         </span>
       </div>
     </Link>
@@ -138,6 +116,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export function Portfolio() {
   const { portfolio } = siteContent;
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('Todos');
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -165,18 +144,18 @@ export function Portfolio() {
           <div>
             <div className="mb-6">
               <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold">
-                {portfolio.tag}
+                {t.portfolio.tag}
               </span>
             </div>
             <h2 className="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-none text-neutral-900">
-              {portfolio.title}
+              {t.portfolio.title}
             </h2>
           </div>
           <Link
             href="/projetos"
             className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest border border-black/10 px-6 py-4 hover:bg-black hover:text-white transition-all duration-300 self-start md:self-auto rounded-full text-neutral-900"
           >
-            Ver todos <ArrowUpRight className="w-4 h-4" />
+            {t.portfolio.viewAll} <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
 

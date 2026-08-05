@@ -4,11 +4,20 @@ import { Counter } from '@/components/ui/Counter';
 import { ScrollRevealText } from '@/components/ui/ScrollRevealText';
 import { LogosMarquee } from '@/components/ui/LogosMarquee';
 import { siteContent } from '@/content';
+import { useLanguage } from '@/context/LanguageContext';
 
 const COLORS = ['bg-neutral-300', 'bg-primary', 'bg-neutral-300', 'bg-primary'];
 
 export function Impact() {
   const { impact } = siteContent;
+  const { t } = useLanguage();
+
+  const statLabels = [
+    t.impact.stats.projects,
+    t.impact.stats.clients,
+    t.impact.stats.years,
+    t.impact.stats.satisfaction,
+  ];
 
   return (
     <section className="bg-white text-black overflow-hidden border-t border-black/5">
@@ -21,7 +30,7 @@ export function Impact() {
           <AnimatedSection as="div">
             <div className="mb-8">
               <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold inline-block">
-                {impact.tag}
+                {t.impact.tag}
               </span>
             </div>
           </AnimatedSection>
@@ -29,7 +38,7 @@ export function Impact() {
           {/* Large description with scroll reveal */}
           <div className="mb-16 max-w-5xl">
             <ScrollRevealText
-              text={`${impact.descriptionBold}${impact.descriptionFade}`}
+              text={`${t.impact.descriptionBold}${t.impact.descriptionFade}`}
               variant="light"
               className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-snug tracking-tight text-black"
             />
@@ -60,7 +69,7 @@ export function Impact() {
 
                 {/* Label */}
                 <span className="text-sm text-neutral-500 font-mono uppercase tracking-widest transition-colors duration-300 group-hover:text-neutral-800">
-                  {stat.label}
+                  {statLabels[index] || stat.label}
                 </span>
               </AnimatedSection>
             ))}

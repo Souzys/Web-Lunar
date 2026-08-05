@@ -7,9 +7,11 @@ import { IdeaToCodeAnimation } from '@/components/ui/IdeaToCodeAnimation';
 import { siteContent } from '@/content';
 import gsap from 'gsap';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function Hero() {
   const { hero } = siteContent;
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
 
@@ -108,32 +110,32 @@ export function Hero() {
           <AnimatedSection options={{ delay: 0.1, y: 20 }} className="w-full flex justify-center sm:justify-start">
             <div className="inline-flex items-center justify-center text-center gap-2.5 px-3.5 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md mb-8 max-w-full">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0 shadow-[0_0_8px_rgba(29,77,255,0.6)]" />
-              <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold text-center leading-normal">{hero.subtitle}</span>
+              <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold text-center leading-normal">{t.hero.subtitle}</span>
             </div>
           </AnimatedSection>
 
           {/* Massive Headline */}
           <AnimatedSection options={{ delay: 0.2, y: 40 }} className="w-full">
             <h1 className="font-display font-bold text-[7.5vw] md:text-[5vw] lg:text-[4vw] xl:text-[4.5vw] leading-[1.1] tracking-tighter mb-4">
-              <span className="text-white/95">{hero.title1} </span>
-              <span className="inline-block pr-4 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">{hero.title2}</span>
+              <span className="text-white/95">{t.hero.title1} </span>
+              <span className="inline-block pr-4 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">{t.hero.title2}</span>
             </h1>
           </AnimatedSection>
 
           {/* Description & CTAs */}
           <AnimatedSection options={{ delay: 0.4, y: 40 }} className="w-full flex flex-col items-start gap-10 mt-2">
             <p className="text-base md:text-lg lg:text-xl text-white font-light leading-relaxed max-w-2xl">
-              {hero.bottomText || "Estratégia, design premium e engenharia de software para marcas que querem liderar o mercado."}
+              {t.hero.bottomText}
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link href="/contato" className="w-full sm:w-auto">
                 <PrimaryButton className="w-full bg-primary hover:bg-primary-hover text-white px-8 py-4 text-sm tracking-widest rounded-full transition-transform hover:scale-105 active:scale-95">
-                  {hero.ctaBox.buttonText}
+                  {t.hero.ctaButton}
                 </PrimaryButton>
               </Link>
               <Link href="/projetos" className="group flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/10 bg-transparent hover:bg-white/5 transition-all text-sm font-medium tracking-widest uppercase">
-                Ver Projetos
+                {t.hero.projectsButton}
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </div>

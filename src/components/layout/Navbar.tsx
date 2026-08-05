@@ -5,9 +5,12 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import gsap from 'gsap';
 import { siteContent } from '@/content';
+import { useLanguage } from '@/context/LanguageContext';
+import { Language } from '@/content/translations';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
   const menuRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLSpanElement>(null);
@@ -21,7 +24,7 @@ export function Navbar() {
       // Física elástica premium para a expansão da Ilha Dinâmica
       gsap.to(menuRef.current, {
         width: 320,
-        height: 480,
+        height: 520,
         borderRadius: 24,
         duration: 0.6,
         ease: 'back.out(1.3)',
@@ -50,7 +53,7 @@ export function Navbar() {
 
       gsap.fromTo(bottomRef.current,
         { opacity: 0, y: 10 },
-        { opacity: 0.5, y: 0, duration: 0.4, delay: 0.35, ease: 'power2.out', overwrite: 'auto' }
+        { opacity: 1, y: 0, duration: 0.4, delay: 0.35, ease: 'power2.out', overwrite: 'auto' }
       );
     } else {
       // Encolhimento rápido e limpo ao fechar
@@ -92,7 +95,20 @@ export function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const links = ['Início', 'Sobre', 'Serviços', 'Projetos', 'Blog', 'Contato'];
+  const navItems = [
+    { label: t.nav.inicio, href: '/' },
+    { label: t.nav.sobre, href: '/sobre' },
+    { label: t.nav.servicos, href: '/servicos' },
+    { label: t.nav.projetos, href: '/projetos' },
+    { label: t.nav.blog, href: '/blog' },
+    { label: t.nav.contato, href: '/contato' },
+  ];
+
+  const languages: { code: Language; flag: string; label: string }[] = [
+    { code: 'pt', flag: '🇧🇷', label: 'PT' },
+    { code: 'en', flag: '🇺🇸', label: 'EN' },
+    { code: 'es', flag: '🇪🇸', label: 'ES' },
+  ];
 
   return (
     <>
@@ -137,43 +153,50 @@ export function Navbar() {
           ref={contentRef} 
           className="w-full h-full flex flex-col justify-between px-6 pb-6 pt-2 overflow-hidden opacity-0 pointer-events-none"
         >
-          <nav className="flex flex-col gap-4 font-display text-2xl font-black uppercase tracking-tighter mt-4">
-            {links.map((link, i) => {
-              let href = `/#${link.toLowerCase()}`;
-              if (link.toLowerCase() === 'início') href = '/';
-              if (link.toLowerCase() === 'sobre') href = '/sobre';
-              if (link.toLowerCase() === 'serviços') href = '/servicos';
-              if (link.toLowerCase() === 'projetos') href = '/projetos';
-              if (link.toLowerCase() === 'blog') href = '/blog';
-              if (link.toLowerCase() === 'contato') href = '/contato';
-              
-              return (
-                <div key={link} className="overflow-hidden">
-                  <Link 
-                    href={href}
-                    ref={el => { linksRef.current[i] = el; }}
-                    onClick={() => setIsOpen(false)}
-                    className="inline-block hover:text-primary transition-colors duration-300"
-                  >
-                    {link}
-                  </Link>
-                </div>
-              );
-            })}
+          <nav className="flex flex-col gap-3 font-display text-2xl font-black uppercase tracking-tighter mt-2">
+            {navItems.map((item, i) => (
+              <div key={item.href} className="overflow-hidden">
+                <Link 
+                  href={item.href}
+                  ref={el => { linksRef.current[i] = el; }}
+                  onClick={() => setIsOpen(false)}
+                  className="inline-block hover:text-primary transition-colors duration-300"
+                >
+                  {item.label}
+                </Link>
+              </div>
+            ))}
           </nav>
 
           {/* Rodapé Interno da Ilha */}
           <div 
             ref={bottomRef}
-            className="flex flex-col gap-4 pb-2 border-t border-white/10 pt-4 text-[10px] text-text-muted font-mono tracking-widest uppercase"
+            className="flex flex-col gap-3 pb-1 border-t border-white/10 pt-3 text-[10px] text-text-muted font-mono tracking-widest uppercase"
           >
             <div>
-              <p className="mb-0.5 text-white/30">LOCALIZAÇÃO</p>
-              <p className="text-white/70">{siteContent.footer.contact.address}</p>
+              <p className="mb-0.5 text-white/30">{t.nav.localizacao}</p>
+              <p className="text-white/70">{t.nav.atendimento}</p>
             </div>
+            
+            {/* Seleção de Idioma com Bandeiras */}
             <div>
-              <p className="mb-0.5 text-white/30">CONTATO</p>
-              <p className="text-white/70">{siteContent.footer.contact.phone}</p>
+              <p className="mb-1 text-white/30">{t.nav.idioma}</p>
+              <div className="flex items-center gap-1.5">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => setLanguage(lang.code)}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-sans font-bold flex items-center gap-1.5 transition-all ${
+                      language === lang.code
+                        ? 'bg-primary text-white shadow-md border border-primary'
+                        : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border border-white/10'
+                    }`}
+                  >
+                    <span className="text-sm">{lang.flag}</span>
+                    <span>{lang.label}</span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>

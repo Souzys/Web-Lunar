@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   description: "Criamos produtos digitais premium de alta performance e conversão.",
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,12 +50,14 @@ export default function RootLayout({
             gtag('config', 'G-Y7VHPMMT3L');
           `}
         </Script>
-        <TRPCProvider>
-          <Navbar />
-          <main className="flex-1 w-full flex flex-col">{children}</main>
-          <Footer />
-          <WhatsAppFloat />
-        </TRPCProvider>
+        <LanguageProvider>
+          <TRPCProvider>
+            <Navbar />
+            <main className="flex-1 w-full flex flex-col">{children}</main>
+            <Footer />
+            <WhatsAppFloat />
+          </TRPCProvider>
+        </LanguageProvider>
         <Analytics />
         <SpeedInsights />
       </body>
