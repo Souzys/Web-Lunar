@@ -112,7 +112,7 @@ export default function SobrePage() {
       {/* =========================================
           HERO SECTION (FIXED BACKGROUND)
       ========================================= */}
-      <div ref={heroRef} className="fixed top-0 left-0 h-screen w-full flex flex-col items-center justify-center z-0 overflow-hidden pt-20 bg-bg">
+      <div ref={heroRef} className="fixed top-0 left-0 h-screen w-full flex flex-col items-center justify-center z-0 overflow-hidden pt-24 sm:pt-28 md:pt-20 bg-bg">
         {/* Deep blue radial glow (Mouse Tracking) */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div 
@@ -133,9 +133,9 @@ export default function SobrePage() {
           {/* Esquerda: Conteúdo de Texto */}
           <div className="flex flex-col items-start text-left">
             <AnimatedSection>
-              <div className="flex items-center gap-2.5 mb-8">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
-                <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md mb-6 max-w-full">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0 shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
+                <span className="text-[10px] sm:text-xs font-sans uppercase tracking-widest text-primary font-semibold leading-normal">
                   Operações e Diretrizes de Engenharia
                 </span>
               </div>
@@ -155,7 +155,7 @@ export default function SobrePage() {
           </div>
           
           {/* Direita: Wireframe Isométrico */}
-          <AnimatedSection options={{ delay: 0.4 }} className="flex items-center justify-center lg:justify-end w-full">
+          <AnimatedSection options={{ delay: 0.4 }} className="hidden lg:flex items-center justify-center lg:justify-end w-full">
             <IsometricWireframe />
           </AnimatedSection>
         </div>
