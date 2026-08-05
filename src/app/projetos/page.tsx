@@ -47,6 +47,15 @@ const DEFAULT_PROJECTS: LocalProject[] = [
     liveUrl: "https://capi.digital/pt",
     tags: ["Next.js", "AI Integration", "Tailwind CSS"],
   },
+  {
+    id: "adansonea",
+    title: "Adansonea",
+    description: "Landing page e plataforma institucional para consultoria boutique global de liderança e gestão de pessoas.",
+    category: "Landing Page",
+    image: "/printadansonea.webp",
+    liveUrl: "https://www.adansonea.com/",
+    tags: ["UX/UI Design", "Tailwind CSS", "SEO B2B"],
+  },
 ];
 
 const CATEGORIES = ["Todos", "Experiência Web", "Site Institucional", "Landing Page", "Interfaces SaaS", "Identidade Visual", "E-commerce"];

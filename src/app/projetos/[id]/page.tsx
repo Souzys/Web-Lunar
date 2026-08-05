@@ -149,6 +149,41 @@ const STATIC_CASE_STUDIES: Record<string, CaseStudy> = {
       awardTitle: "SaaS Product Showcase",
       awardSub: "Design & Desenvolvimento Web Lunar"
     }
+  },
+  "adansonea": {
+    id: "adansonea",
+    title: "Adansonea",
+    category: "CASE STUDY // LANDING PAGE & BOUTIQUE PEOPLE ADVISORY",
+    image: "/printadansonea.webp",
+    liveUrl: "https://www.adansonea.com/",
+    tags: ["UX/UI Design", "Engenharia Front-end", "Tailwind CSS", "SEO & Performance B2B"],
+    client: "Adansonea Leadership Consulting",
+    year: "2026",
+    scope: ["UX/UI Design", "Arquitetura de Conteúdo", "Desenvolvimento Web", "SEO & Otimização"],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    tagline: "Presença digital refinada para consultoria internacional de liderança e estratégia corporativa.",
+    overview: "Projetamos a landing page e a presença digital para a Adansonea, uma consultoria boutique especializada em estratégias de liderança e gestão de pessoas para organizações globais. A plataforma reflete a sofisticação e o prestígio da marca através de um layout minimalista, tipografia elegante e estrutura focada na conversão de executivos.",
+    challenge: "Posicionar a marca Adansonea no mercado internacional com uma interface elegante e sóbria que comunique credibilidade e experiência executiva de alto nível, mantendo uma experiência de leitura impecável.",
+    solution: "Desenvolvemos uma estrutura de landing page institucional com paleta corporativa refinada, hierarquia visual clara, microinterações e otimização total de SEO e velocidade para tomadores de decisão corporativos.",
+    results: [
+      "Design de marca executivo que transmite credibilidade e autoridade no setor.",
+      "Estrutura otimizada para captação de prospects e agendamento de consultorias.",
+      "Pontuação máxima no PageSpeed com carregamento ultrarrápido em dispositivos móveis e desktop."
+    ],
+    showcaseHeroTitle: "Design de Alto Nível para Consultoria de Liderança Executiva",
+    performance: {
+      speed: { title: "Velocidade", score: "Carregamento Instantâneo", description: "Carregamento e navegação ultrarrápidos para o público corporativo." },
+      tech: { title: "Tecnologia", tech: "Next.js + Tailwind", description: "Código limpo, seguro e altamente otimizado para o mercado global." },
+      seo: { title: "SEO", status: "SEO & Otimização B2B", description: "Posicionamento estratégico nos mecanismos de busca internacionais." }
+    },
+    designSystemText: "Desenvolvemos um design system elegante com tons corporativos sóbrios, contraste impecável e elementos visuais minimalistas que destacam os pilares metodológicos da consultoria.",
+    designSystemComponents: {
+      ctaLabel: "Conhecer a Adansonea",
+      cardTitle: "People Strategy",
+      cardDesc: "Alinhamento de RH e liderança com as metas estratégicas do negócio.",
+      awardTitle: "Boutique Showcase",
+      awardSub: "Design & Desenvolvimento Web Lunar"
+    }
   }
 };
 
