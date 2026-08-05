@@ -252,7 +252,7 @@ export default function ProjetoDetalhePage() {
             </AnimatedSection>
 
             {/* Mockup do MacBook Pro Centralizado em Grande Escala (Começa espiando no fundo da tela) */}
-            <div className="w-full relative flex items-center justify-center -mb-20 sm:-mb-32">
+            <div className="w-full relative flex items-center justify-center -mb-10 sm:-mb-16">
               <VolkHeroShowcase desktopImage={caseStudy.id === 'volk' ? '/printvolk.png' : `/${caseStudy.id}-desktop.png`} />
             </div>
 

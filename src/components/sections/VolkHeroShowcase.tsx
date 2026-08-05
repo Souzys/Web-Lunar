@@ -36,7 +36,7 @@ export function VolkHeroShowcase({ desktopImage = '/printvolk.png' }: VolkHeroSh
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-[1280px] mx-auto flex flex-col items-center justify-center select-none overflow-visible pt-4"
+      className="relative w-full max-w-[960px] mx-auto flex flex-col items-center justify-center select-none overflow-visible pt-4"
     >
       {/* Glow de Fundo Sutil Estilo Apple */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[400px] bg-gradient-to-tr from-primary/20 via-blue-600/15 to-indigo-500/10 rounded-full blur-[150px] pointer-events-none" />
@@ -87,11 +87,14 @@ export function VolkHeroShowcase({ desktopImage = '/printvolk.png' }: VolkHeroSh
             </div>
 
             {/* Tela com Imagem do Site FIXA ESTÁTICA */}
-            <div className="relative w-full overflow-hidden bg-[#05070f] aspect-[16/10] sm:aspect-[16/9.8] flex items-start justify-center">
+            <div
+              className="relative w-full overflow-hidden bg-[#05070f] flex items-start justify-center"
+              style={{ aspectRatio: '1914 / 885' }}
+            >
               <img
                 src={desktopImage}
                 alt="VOLK Presenter Official Website MacBook View"
-                className="w-full h-auto object-cover object-top select-none pointer-events-none"
+                className="w-full h-full object-cover object-top select-none pointer-events-none"
               />
 
               {/* Reflexo Suave de Vidro Studio */}

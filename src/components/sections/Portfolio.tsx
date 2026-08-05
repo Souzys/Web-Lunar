@@ -61,14 +61,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       onMouseLeave={handleLeave}
     >
       {/* Image Container */}
-      <div className="relative overflow-hidden rounded-xl border border-black/5 bg-neutral-100 shadow-sm aspect-[4/3]">
+      <div className="relative overflow-hidden rounded-xl border border-black/5 bg-[#080b12] shadow-sm aspect-[16/10]">
         <img
           ref={imgRef}
           src={project.image}
           alt={project.name}
           loading="lazy"
-          className="w-full h-full object-cover"
-          style={{ transformOrigin: 'center center', willChange: 'transform' }}
+          className="w-full h-full object-cover object-top"
+          style={{ transformOrigin: 'top center', willChange: 'transform' }}
         />
 
         {/* Hover overlay */}

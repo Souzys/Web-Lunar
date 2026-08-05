@@ -155,7 +155,7 @@ export default function ProjetosPage() {
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="object-cover w-full h-full group-hover:scale-103 transition-transform duration-700 ease-out"
+                          className="object-cover object-top w-full h-full group-hover:scale-103 transition-transform duration-700 ease-out"
                           loading="lazy"
                         />
                         <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] uppercase font-semibold tracking-wider bg-black/60 border border-white/10 text-white backdrop-blur-sm">
