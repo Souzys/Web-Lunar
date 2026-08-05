@@ -22,40 +22,57 @@ export function IntroSlider() {
     if (!container || !hero || !about) return;
 
     const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth < 768;
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container,
           start: 'top top',
-          end: 'bottom bottom', // Scrubs over the 200vh height
-          scrub: true,
+          end: 'bottom bottom',
+          scrub: isMobile ? 0.5 : true,
         }
       });
 
-      // Efeito de desaparecer no Hero (0 a 1)
-      tl.to(hero, {
-        opacity: 0,
-        scale: 0.95,
-        y: -30,
-        duration: 1,
-        ease: 'power1.inOut',
-      }, 0);
+      if (isMobile) {
+        // Transição leve de opacidade pura no mobile para 60fps sem lag de GPU
+        tl.to(hero, {
+          opacity: 0,
+          duration: 1,
+          ease: 'none',
+        }, 0);
 
-      // Efeito de surgir no About (IndustryCircles) (0 a 1)
-      tl.fromTo(about,
-        { opacity: 0, scale: 1.05, y: 30 },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
+        tl.fromTo(about,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 1,
+            ease: 'none',
+          },
+          0
+        );
+      } else {
+        // Efeito com scale e y no desktop
+        tl.to(hero, {
+          opacity: 0,
+          scale: 0.95,
+          y: -30,
           duration: 1,
           ease: 'power1.inOut',
-        },
-        0 
-      );
+        }, 0);
 
-      // Estende a timeline para durar o dobro (t=1 até t=2)
-      // Isso garante que a animação termine na primeira metade do scroll (100vh),
-      // e na segunda metade (100vh a 200vh) a section se mantém fixa enquanto a próxima desliza por cima.
+        tl.fromTo(about,
+          { opacity: 0, scale: 1.05, y: 30 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power1.inOut',
+          },
+          0
+        );
+      }
+
       tl.to(about, {
         opacity: 1,
         duration: 1,
