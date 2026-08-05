@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${spaceGrotesk.variable} font-sans h-full antialiased`}>
-      <head>
+      <body className="min-h-full flex flex-col bg-bg text-text selection:bg-primary selection:text-white">
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Y7VHPMMT3L"
@@ -48,8 +48,6 @@ export default function RootLayout({
             gtag('config', 'G-Y7VHPMMT3L');
           `}
         </Script>
-      </head>
-      <body className="min-h-full flex flex-col bg-bg text-text selection:bg-primary selection:text-white">
         <TRPCProvider>
           <Navbar />
           <main className="flex-1 w-full flex flex-col">{children}</main>
