@@ -355,7 +355,7 @@ export default function ServicosPage() {
           </div>
 
           {/* Direita: Espaço para SVG */}
-          <AnimatedSection options={{ delay: 0.4 }} className="flex items-center justify-center lg:justify-end w-full">
+          <AnimatedSection options={{ delay: 0.4 }} className="hidden lg:flex items-center justify-center lg:justify-end w-full">
             <IsometricOctahedron />
           </AnimatedSection>
         </div>

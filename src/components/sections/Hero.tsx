@@ -127,7 +127,7 @@ export function Hero() {
         </div>
 
         {/* Coluna da Direita: Animação SVG Interativa */}
-        <div className="lg:col-span-5 flex items-center justify-center lg:justify-end w-full">
+        <div className="hidden lg:flex lg:col-span-5 items-center justify-center lg:justify-end w-full">
           <AnimatedSection options={{ delay: 0.5 }} className="w-full flex justify-center lg:justify-end">
             <IdeaToCodeAnimation />
           </AnimatedSection>

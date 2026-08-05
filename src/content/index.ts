@@ -34,7 +34,7 @@ export const siteContent = {
     projects: [
       {
         id: "volk",
-        year: "2024",
+        year: "2026",
         category: "Experiência Web",
         livePreview: "LIVE PREVIEW",
         name: "VOLK Presenter",
@@ -47,7 +47,7 @@ export const siteContent = {
       },
       {
         id: "capi",
-        year: "2024",
+        year: "2026",
         category: "Site Institucional",
         livePreview: "LIVE PREVIEW",
         name: "CAPI Digital",
