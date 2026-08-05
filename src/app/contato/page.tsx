@@ -36,6 +36,10 @@ export default function ContatoPage() {
       setTimeline('1 a 2 semanas');
       setReferenceLink('');
       setErrorMsg('');
+
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     },
     onError: (err) => {
       setErrorMsg(err.message || 'Ocorreu um erro ao enviar sua mensagem.');
@@ -121,7 +125,7 @@ ${formData.content}
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 container mx-auto max-w-[1440px] px-6 pt-32 pb-24 flex flex-col items-center">
+      <div className={`relative z-10 container mx-auto max-w-[1440px] px-6 pt-32 pb-24 flex flex-col items-center justify-center transition-all duration-500 ${success ? 'min-h-[85vh]' : ''}`}>
         
         {/* Centered Heading */}
         <div className="max-w-3xl text-center flex flex-col items-center mb-12">

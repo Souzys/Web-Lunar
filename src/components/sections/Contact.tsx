@@ -22,6 +22,10 @@ export default function Contact() {
       setSuccess(true);
       setFormData({ name: "", email: "", subject: "", content: "" });
       setErrorMsg("");
+      const section = document.getElementById("contact");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     },
     onError: (err) => {
       setErrorMsg(err.message || "Ocorreu um erro ao enviar sua mensagem.");
