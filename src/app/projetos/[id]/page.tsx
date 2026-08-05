@@ -49,7 +49,7 @@ const STATIC_CASE_STUDIES: Record<string, CaseStudy> = {
     id: "volk",
     title: "VOLK Presenter",
     category: "CASE STUDY // WEBSITE INSTITUCIONAL",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
+    image: "/printvolk.png",
     liveUrl: "https://volkpresenter.tv/pt",
     tags: ["Next.js 15", "TypeScript", "Tailwind CSS", "GSAP / Motion"],
     client: "VOLK Presenter",
@@ -253,7 +253,7 @@ export default function ProjetoDetalhePage() {
 
             {/* Mockup do MacBook Pro Centralizado em Grande Escala (Começa espiando no fundo da tela) */}
             <div className="w-full relative flex items-center justify-center -mb-20 sm:-mb-32">
-              <VolkHeroShowcase desktopImage={`/${caseStudy.id}-desktop.png`} />
+              <VolkHeroShowcase desktopImage={caseStudy.id === 'volk' ? '/printvolk.png' : `/${caseStudy.id}-desktop.png`} />
             </div>
 
           </div>

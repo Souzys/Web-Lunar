@@ -7,7 +7,7 @@ interface VolkHeroShowcaseProps {
   desktopImage?: string;
 }
 
-export function VolkHeroShowcase({ desktopImage = '/volk-desktop.png' }: VolkHeroShowcaseProps) {
+export function VolkHeroShowcase({ desktopImage = '/printvolk.png' }: VolkHeroShowcaseProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 

@@ -40,7 +40,7 @@ export const siteContent = {
         name: "VOLK Presenter",
         description: "Plataforma completa para controle de gráficos, dados e interações em tempo real para TV, eventos e entretenimento.",
         buttonText: "Ver Projeto",
-        image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
+        image: "/printvolk.png",
         size: "large",
         color: "#505050",
         url: "https://volkpresenter.tv/pt",
