@@ -68,22 +68,22 @@ export function IndustryCircles() {
           
           <div className="lg:col-span-4 grid grid-cols-2 gap-x-8 gap-y-10 content-start">
             <AnimatedSection options={{ delay: 0.4 }}>
-              <Stat label="Projetos Entregues" value={150} prefix="+" />
+              <Stat label="Projetos Entregues" value={50} prefix="+" />
             </AnimatedSection>
             <AnimatedSection options={{ delay: 0.5 }}>
               <Stat label="Anos de Experiência" value={4} prefix="+" />
             </AnimatedSection>
             <AnimatedSection options={{ delay: 0.6 }}>
-              <Stat label="Performance Média" value={98} suffix="%" />
+              <Stat label="Performance Média" value={100} suffix="%" />
             </AnimatedSection>
             <AnimatedSection options={{ delay: 0.7 }}>
-              <Stat label="Taxa de Satisfação" value={99} suffix="%" />
+              <Stat label="Taxa de Satisfação" value={100} suffix="%" />
             </AnimatedSection>
             <AnimatedSection options={{ delay: 0.8 }}>
               <Stat label="Alta de Conversão" value={35} prefix="+" suffix="%" />
             </AnimatedSection>
             <AnimatedSection options={{ delay: 0.9 }}>
-              <Stat label="Clientes Ativos" value={15} prefix="+" />
+              <Stat label="Clientes Ativos" value={30} prefix="+" />
             </AnimatedSection>
           </div>
         </div>

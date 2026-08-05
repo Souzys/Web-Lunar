@@ -108,10 +108,10 @@ export const siteContent = {
     descriptionBold: "Desenvolvimento full stack especializado em criar sites e sistemas que geram resultados reais: mais leads, mais vendas, mais reservas. Unimos as tecnologias mais modernas e design estratégico",
     descriptionFade: " para transformar ideias em soluções digitais funcionais, rápidas e otimizadas — do wireframe ao deploy em produção.",
     stats: [
-      { value: 40, prefix: "+", suffix: "", label: "Projetos entregues" },
+      { value: 50, prefix: "+", suffix: "", label: "Projetos entregues" },
       { value: 30, prefix: "+", suffix: "", label: "Clientes atendidos" },
       { value: 4, prefix: "+", suffix: "", decimals: 0, label: "Anos de experiência" },
-      { value: 98, prefix: "", suffix: "%", label: "Taxa de satisfação" },
+      { value: 100, prefix: "", suffix: "%", label: "Taxa de satisfação" },
     ],
   },
 
