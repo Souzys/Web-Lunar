@@ -66,7 +66,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           ref={imgRef}
           src={project.image}
           alt={project.name}
+          width={800}
+          height={500}
           loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-top"
           style={{ transformOrigin: 'top center', willChange: 'transform' }}
         />
