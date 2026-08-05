@@ -359,50 +359,50 @@ export default function ProjetoDetalhePage() {
                 <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">Performance Técnica</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
                   {/* Card 1: Velocidade */}
-                  <div className="bg-[#0b0f19] border border-white/[0.05] p-6 rounded-2xl flex flex-col justify-between hover:border-primary/30 transition-all duration-300 shadow-sm text-left relative overflow-hidden group">
+                  <div className="bg-white/80 backdrop-blur-xl border border-neutral-200/80 p-6 rounded-2xl flex flex-col justify-between hover:border-primary/40 transition-all duration-300 shadow-md hover:shadow-xl text-left relative overflow-hidden group">
                     <div className="absolute top-0 right-0 -mt-6 -mr-6 w-16 h-16 bg-emerald-500/10 rounded-full blur-md group-hover:bg-emerald-500/20 transition-colors" />
                     <div>
-                      <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 font-mono text-[10px] font-bold">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 mb-4 font-mono text-[10px] font-bold">
                         98%
                       </div>
-                      <h4 className="text-white font-bold text-sm mb-1.5">{caseStudy.performance.speed.title}</h4>
+                      <h4 className="text-neutral-900 font-bold text-sm mb-1.5">{caseStudy.performance.speed.title}</h4>
                       <p className="text-primary font-mono text-xs font-semibold mb-2">{caseStudy.performance.speed.score}</p>
                     </div>
-                    <p className="text-neutral-400 text-xs font-light leading-relaxed">
+                    <p className="text-neutral-600 text-xs font-light leading-relaxed">
                       {caseStudy.performance.speed.description}
                     </p>
                   </div>
 
                   {/* Card 2: Tecnologia */}
-                  <div className="bg-[#0b0f19] border border-white/[0.05] p-6 rounded-2xl flex flex-col justify-between hover:border-primary/30 transition-all duration-300 shadow-sm text-left relative overflow-hidden group">
+                  <div className="bg-white/80 backdrop-blur-xl border border-neutral-200/80 p-6 rounded-2xl flex flex-col justify-between hover:border-primary/40 transition-all duration-300 shadow-md hover:shadow-xl text-left relative overflow-hidden group">
                     <div className="absolute top-0 right-0 -mt-6 -mr-6 w-16 h-16 bg-blue-500/10 rounded-full blur-md group-hover:bg-blue-500/20 transition-colors" />
                     <div>
-                      <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+                      <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 mb-4">
                         <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                         </svg>
                       </div>
-                      <h4 className="text-white font-bold text-sm mb-1.5">{caseStudy.performance.tech.title}</h4>
+                      <h4 className="text-neutral-900 font-bold text-sm mb-1.5">{caseStudy.performance.tech.title}</h4>
                       <p className="text-primary font-mono text-xs font-semibold mb-2">{caseStudy.performance.tech.tech}</p>
                     </div>
-                    <p className="text-neutral-400 text-xs font-light leading-relaxed">
+                    <p className="text-neutral-600 text-xs font-light leading-relaxed">
                       {caseStudy.performance.tech.description}
                     </p>
                   </div>
 
                   {/* Card 3: SEO */}
-                  <div className="bg-[#0b0f19] border border-white/[0.05] p-6 rounded-2xl flex flex-col justify-between hover:border-primary/30 transition-all duration-300 shadow-sm text-left relative overflow-hidden group">
+                  <div className="bg-white/80 backdrop-blur-xl border border-neutral-200/80 p-6 rounded-2xl flex flex-col justify-between hover:border-primary/40 transition-all duration-300 shadow-md hover:shadow-xl text-left relative overflow-hidden group">
                     <div className="absolute top-0 right-0 -mt-6 -mr-6 w-16 h-16 bg-purple-500/10 rounded-full blur-md group-hover:bg-purple-500/20 transition-colors" />
                     <div>
-                      <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+                      <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-600 mb-4">
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                       </div>
-                      <h4 className="text-white font-bold text-sm mb-1.5">{caseStudy.performance.seo.title}</h4>
+                      <h4 className="text-neutral-900 font-bold text-sm mb-1.5">{caseStudy.performance.seo.title}</h4>
                       <p className="text-primary font-mono text-xs font-semibold mb-2">{caseStudy.performance.seo.status}</p>
                     </div>
-                    <p className="text-neutral-400 text-xs font-light leading-relaxed">
+                    <p className="text-neutral-600 text-xs font-light leading-relaxed">
                       {caseStudy.performance.seo.description}
                     </p>
                   </div>
