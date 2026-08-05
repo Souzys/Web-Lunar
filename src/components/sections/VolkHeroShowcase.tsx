@@ -23,228 +23,97 @@ export function VolkHeroShowcase({ desktopImage = '/printvolk.png' }: VolkHeroSh
     return () => { if (el) el.removeEventListener('mousemove', handleMouseMove); };
   }, []);
 
-  const tiltX = mousePos.y * -2;
-  const tiltY = mousePos.x * 2.5;
-
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-[880px] mx-auto select-none overflow-visible py-4"
-      style={{ perspective: '2000px' }}
+      className="relative w-full max-w-[860px] mx-auto select-none py-6"
+      style={{ perspective: '1600px' }}
     >
-      {/* Glow ambiente */}
-      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[300px] bg-gradient-to-tr from-primary/20 via-blue-500/12 to-transparent rounded-full blur-[120px] pointer-events-none" />
+      {/* Glow de fundo */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: '30%', left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '60%', height: '280px',
+          background: 'radial-gradient(ellipse, rgba(29,77,255,0.18) 0%, transparent 70%)',
+          filter: 'blur(60px)',
+        }}
+      />
 
-      {/* Laptop wrapper com 3D tilt */}
       <div
         className="relative w-full flex flex-col items-center transition-transform duration-300 ease-out"
-        style={{ transform: `rotateX(${tiltX}deg) rotateY(${tiltY}deg)` }}
+        style={{
+          transform: `rotateX(${mousePos.y * -2}deg) rotateY(${mousePos.x * 2}deg)`,
+        }}
       >
 
-        {/* ┌─────────────────────────────────┐ */}
-        {/*         TAMPA / DISPLAY LID         */}
-        {/* └─────────────────────────────────┘ */}
+        {/* ─── TELA ─── */}
         <div
-          className="w-full relative"
+          className="w-full"
           style={{
-            background: 'linear-gradient(160deg, #2c2f3a 0%, #1a1c24 60%, #13151c 100%)',
-            borderRadius: '16px 16px 0 0',
-            padding: '8px 8px 0 8px',
-            border: '1px solid rgba(255,255,255,0.13)',
+            background: '#1c1e26',
+            borderRadius: '14px 14px 0 0',
+            padding: '10px 10px 0',
+            border: '1px solid rgba(255,255,255,0.12)',
             borderBottom: 'none',
-            boxShadow: `
-              0 -1px 0 rgba(255,255,255,0.08) inset,
-              0 50px 100px rgba(0,0,0,0.85),
-              0 20px 50px rgba(0,0,0,0.6)
-            `,
+            boxShadow: '0 -2px 0 rgba(255,255,255,0.06) inset',
           }}
         >
-          {/* Câmera / Notch */}
+          {/* Notch câmera */}
           <div
-            className="absolute top-0 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center gap-1.5"
+            className="absolute top-[10px] left-1/2 -translate-x-1/2 flex items-center justify-center gap-1"
             style={{
-              width: '72px',
-              height: '12px',
+              width: '60px', height: '10px',
               background: '#10121a',
-              borderRadius: '0 0 8px 8px',
-              border: '1px solid rgba(255,255,255,0.07)',
-              borderTop: 'none',
+              borderRadius: '0 0 6px 6px',
+              zIndex: 10,
             }}
           >
-            <span className="w-[5px] h-[5px] rounded-full inline-block"
-              style={{ background: 'radial-gradient(circle at 35% 35%, #2a2d36, #0d0e14)', border: '1px solid rgba(255,255,255,0.1)' }} />
-            <span className="w-[4px] h-[4px] rounded-full inline-block animate-pulse"
-              style={{ background: 'radial-gradient(circle, #22c55e 0%, #16a34a 100%)', boxShadow: '0 0 4px #22c55e80' }} />
+            <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#1a1c23', border: '1px solid rgba(255,255,255,0.1)', display: 'inline-block' }} />
+            <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 5px #22c55e', display: 'inline-block' }} className="animate-pulse" />
           </div>
 
-          {/* Tela */}
-          <div
-            className="w-full overflow-hidden relative"
-            style={{
-              background: '#050709',
-              borderRadius: '9px 9px 0 0',
-              border: '1px solid rgba(255,255,255,0.05)',
-              borderBottom: 'none',
-            }}
-          >
-            <div
-              className="w-full relative overflow-hidden"
-              style={{ aspectRatio: '1914 / 885' }}
-            >
-              <img
-                src={desktopImage}
-                alt="VOLK Presenter website"
-                className="w-full h-full object-cover object-top pointer-events-none"
-              />
-              {/* Glare */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255,255,255,0.025) 0%, transparent 50%)',
-                }}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* ┌─────────────────────────────────┐ */}
-        {/*           HINGE / DOBRADIÇA         */}
-        {/* └─────────────────────────────────┘ */}
-        <div
-          className="w-[98%]"
-          style={{
-            height: '5px',
-            background: 'linear-gradient(180deg, #0c0e14 0%, #080a10 100%)',
-            borderLeft: '1px solid rgba(255,255,255,0.07)',
-            borderRight: '1px solid rgba(255,255,255,0.07)',
-          }}
-        />
-
-        {/* ┌─────────────────────────────────┐ */}
-        {/*       BASE (ALUMÍNIO PRATA)          */}
-        {/* └─────────────────────────────────┘ */}
-        <div
-          className="relative overflow-hidden"
-          style={{
-            width: '105%',
-            background: 'linear-gradient(180deg, #c9cbcf 0%, #b8bbbf 25%, #aaadB1 60%, #9fa2a6 100%)',
-            borderRadius: '0 0 14px 14px',
-            border: '1px solid rgba(0,0,0,0.28)',
-            borderTop: 'none',
-            padding: '8px 16px 12px',
-            transform: 'perspective(700px) rotateX(18deg)',
-            transformOrigin: 'top center',
-            boxShadow: `
-              0 35px 70px rgba(0,0,0,0.9),
-              0 15px 30px rgba(0,0,0,0.5),
-              inset 0 1px 0 rgba(255,255,255,0.65)
-            `,
-          }}
-        >
-          {/* Reflexo no topo da base */}
-          <div
-            className="absolute top-0 left-0 right-0"
-            style={{
-              height: '3px',
-              background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.7) 50%, transparent 100%)',
-            }}
-          />
-
-          {/* ── KEYBOARD WELL ── */}
-          <div
-            className="w-[85%] mx-auto rounded-[8px] overflow-hidden"
-            style={{
-              background: 'linear-gradient(180deg, #8c8f94 0%, #979a9e 100%)',
-              border: '1px solid rgba(0,0,0,0.2)',
-              boxShadow: 'inset 0 2px 5px rgba(0,0,0,0.3), inset 0 -1px 0 rgba(255,255,255,0.15)',
-              padding: '5px 6px',
-            }}
-          >
-            {/* Renderizar as fileiras do teclado */}
-            {[
-              { cols: 14, h: 5 },  // Fn row
-              { cols: 14, h: 9 },  // Numbers
-              { cols: 14, h: 9 },  // QWERTY
-              { cols: 13, h: 9 },  // ASDF
-              { cols: 12, h: 9 },  // ZXCV
-            ].map((row, ri) => (
-              <div
-                key={ri}
-                className="flex gap-[2px] mb-[2px]"
-              >
-                {Array.from({ length: row.cols }).map((_, ki) => (
-                  <div
-                    key={ki}
-                    className="flex-1 rounded-[3px]"
-                    style={{
-                      height: `${row.h}px`,
-                      background: 'linear-gradient(180deg, #d2d4d7 0%, #c0c3c7 100%)',
-                      border: '1px solid rgba(0,0,0,0.18)',
-                      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25)',
-                    }}
-                  />
-                ))}
-              </div>
-            ))}
-
-            {/* Spacebar row */}
-            <div className="flex gap-[2px]">
-              {[7, 6, 44, 6, 6, 6, 6, 6, 6, 7].map((w, i) => (
-                <div
-                  key={i}
-                  className="rounded-[3px]"
-                  style={{
-                    width: `${w}%`,
-                    height: '9px',
-                    flexShrink: 0,
-                    background: i === 2
-                      ? 'linear-gradient(180deg, #d6d8db 0%, #c4c7cb 100%)'
-                      : 'linear-gradient(180deg, #d2d4d7 0%, #c0c3c7 100%)',
-                    border: '1px solid rgba(0,0,0,0.18)',
-                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25)',
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* ── TRACKPAD ── */}
-          <div className="flex justify-center mt-2">
-            <div
-              className="rounded-[8px]"
-              style={{
-                width: '130px',
-                height: '45px',
-                background: 'linear-gradient(180deg, #b0b3b7 0%, #a6a9ad 100%)',
-                border: '1px solid rgba(0,0,0,0.22)',
-                boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.18), inset 0 -1px 0 rgba(255,255,255,0.25)',
-              }}
+          {/* Screenshot */}
+          <div style={{ borderRadius: '6px 6px 0 0', overflow: 'hidden', lineHeight: 0 }}>
+            <img
+              src={desktopImage}
+              alt="VOLK Presenter"
+              className="w-full pointer-events-none"
+              style={{ display: 'block', aspectRatio: '1914/885', objectFit: 'cover', objectPosition: 'top' }}
             />
           </div>
-
-          {/* Entalhe de abertura frontal */}
-          <div
-            className="absolute bottom-0 left-1/2 -translate-x-1/2"
-            style={{
-              width: '80px',
-              height: '4px',
-              background: '#8a8d91',
-              borderRadius: '0 0 6px 6px',
-              border: '1px solid rgba(0,0,0,0.2)',
-              borderTop: 'none',
-            }}
-          />
         </div>
 
-        {/* Sombra na "mesa" */}
+        {/* ─── BASE ─── */}
         <div
-          className="pointer-events-none"
           style={{
-            width: '88%',
-            height: '16px',
-            marginTop: '-6px',
-            background: 'rgba(0,0,0,0.55)',
-            filter: 'blur(16px)',
+            width: '106%',
+            background: 'linear-gradient(180deg, #b8babe 0%, #aaacb0 50%, #9ea0a4 100%)',
+            borderRadius: '0 0 10px 10px',
+            border: '1px solid rgba(0,0,0,0.3)',
+            borderTop: 'none',
+            height: '28px',
+            position: 'relative',
+            transform: 'perspective(600px) rotateX(14deg)',
+            transformOrigin: 'top center',
+            boxShadow: '0 30px 60px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.5)',
+          }}
+        >
+          {/* Reflexo no topo */}
+          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent)' }} />
+          {/* Entalhe frontal */}
+          <div style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: 70, height: 4, background: '#8e9094', borderRadius: '0 0 4px 4px', border: '1px solid rgba(0,0,0,0.15)', borderTop: 'none' }} />
+        </div>
+
+        {/* ─── SOMBRA ─── */}
+        <div
+          style={{
+            width: '85%',
+            height: '14px',
+            marginTop: '-4px',
+            background: 'rgba(0,0,0,0.5)',
+            filter: 'blur(14px)',
             borderRadius: '50%',
           }}
         />
