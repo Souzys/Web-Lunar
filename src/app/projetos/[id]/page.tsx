@@ -47,107 +47,107 @@ interface CaseStudy {
 const STATIC_CASE_STUDIES: Record<string, CaseStudy> = {
   "snews": {
     id: "snews",
-    title: "SNEWS Broadcast 2.0",
-    category: "CASE STUDY // ECOSSISTEMA BROADCAST & NRCS",
+    title: "SNEWS",
+    category: "CASE STUDY // WEBSITE INSTITUCIONAL & MULTI-IDIOMA",
     image: "/printsnews.webp",
     liveUrl: "https://snews.tv",
-    tags: ["Next.js", "TypeScript", "Docker", "PostgreSQL", "Prisma", "Real-Time APIs"],
+    tags: ["Next.js App Router", "TypeScript", "Tailwind CSS", "next-intl (i18n)", "Prisma", "Framer Motion"],
     client: "Snews Broadcast Solutions",
     year: "2026",
-    scope: ["Arquitetura de Software", "UX/UI Design", "Sistemas Distribuídos", "SEO & Performance"],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Docker", "PostgreSQL", "Prisma"],
-    tagline: "A próxima geração de tecnologia em automação e jornalismo para TV, Rádio e Mídia Digital.",
-    overview: "O SNEWS 2.0 é o ecossistema líder em soluções para broadcast na América Latina. Desenvolvido para gerenciar todo o ciclo de notícias — desde os sistemas NRCS (Arion), Playout avançado (NeoExpress) e Gerador de Caracteres (GCNews), até o jornalismo móvel (Souv) e estúdios interativos.",
-    challenge: "Integrar múltiplos subsistemas críticos de rádio e televisão com suporte 24/7, garantindo zero tempo de inatividade em transmissões ao vivo de grandes emissoras.",
-    solution: "Arquitetura distribuída de alta disponibilidade desenvolvida com Next.js, TypeScript, PostgreSQL e Docker, permitindo a gestão unificada de redações, exibições e curadoria de conteúdo multi-plataforma.",
+    scope: ["UX/UI Design", "Desenvolvimento Web Multi-idioma", "Design System", "Animações Interativas", "SEO & Performance"],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "next-intl", "Framer Motion"],
+    tagline: "Website institucional de alta performance para a líder em soluções de broadcast na América Latina.",
+    overview: "Projetamos e desenvolvemos a nova presença digital da Snews, estruturando um portal institucional robusto, internacionalizado e de altíssima fidelidade. A plataforma apresenta o ecossistema completo de soluções da marca (Arion, NeoExpress, GCNews, Souv) com navegação fluida, suporte a múltiplos idiomas e carregamento sub-segundo.",
+    challenge: "Comunicar a complexidade de um ecossistema com mais de 25 anos de história e múltiplos produtos broadcast em uma experiência web clara, moderna e capaz de converter grandes tomadores de decisão de emissoras de TV e Rádio na América Latina e no mundo.",
+    solution: "Construímos um website desacoplado com Next.js App Router, Tailwind CSS e sistema de i18n nativo para suporte fluido em Português, Inglês e Espanhol. Criamos componentes visuais modulares para apresentar cada produto, acompanhados de um blog técnico integrado e estrutura de captura de leads B2B.",
     results: [
-      "Confiabilidade comprovada em mais de 100 emissoras líderes de mídia.",
-      "Integração fluida entre redação (NRCS), exibição (Playout) e gráficos ao vivo.",
-      "Sincronização instantânea de fluxos de áudio, vídeo e distribuição digital."
+      "Apresentação clara e elegante de todo o portfólio de produtos e soluções broadcast da marca.",
+      "Arquitetura multi-idioma (PT, EN, ES) com alternância instantânea sem recarregamento de página.",
+      "Pontuação exemplar no Google PageSpeed com tempo de resposta e carregamento inicial em milissegundos."
     ],
-    showcaseHeroTitle: "Tecnologia de Elite para Redações de TV e Rádio",
+    showcaseHeroTitle: "Presença Digital de Alta Performance para a Indústria Broadcast",
     performance: {
-      speed: { title: "Disponibilidade", score: "SLA 99.99% Uptime", description: "Operação contínua 24/7 sem interrupções em transmissão ao vivo." },
-      tech: { title: "Tecnologia", tech: "Next.js + Docker", description: "Arquitetura desacoplada e escalável para ambientes broadcast." },
-      seo: { title: "Performance", status: "Zero Latência", description: "Processamento e sincronização de dados em milissegundos." }
+      speed: { title: "Velocidade", score: "PageSpeed Score: 99/100", description: "Navegação ultra rápida com renderização estática e dinâmica otimizada." },
+      tech: { title: "Tecnologia", tech: "Next.js + next-intl", description: "Arquitetura multi-idioma nativa e tipagem estrita em TypeScript." },
+      seo: { title: "SEO", status: "Indexação Internacional", description: "Estrutura de dados e meta tags otimizadas para busca global." }
     },
-    designSystemText: "Desenvolvemos uma linguagem visual corporativa robusta e um ecossistema de componentes modulares focados na máxima eficiência operacional.",
+    designSystemText: "Criamos uma linguagem visual corporativa de alto impacto, combinando contraste marcante, tipografia técnica precisa e cards interativos que destacam a imponência da marca no setor de comunicação.",
     designSystemComponents: {
       ctaLabel: "Agendar Demonstração",
-      cardTitle: "Ecossistema NRCS & Playout",
-      cardDesc: "Integração ponta a ponta para TV, Rádio e portais digitais.",
-      awardTitle: "Broadcast Tech Leader",
-      awardSub: "Líder em Automação de Mídia na América Latina"
+      cardTitle: "Ecossistema Broadcast",
+      cardDesc: "Apresentação integrada para soluções de TV, Rádio e Mídia Digital.",
+      awardTitle: "Broadcast Showcase",
+      awardSub: "Website Institucional de Alta Performance"
     }
   },
   "volk": {
     id: "volk",
     title: "VOLK Presenter",
-    category: "CASE STUDY // INTERATIVIDADE & BROADCAST",
+    category: "CASE STUDY // PLATAFORMA WEB & ANIMAÇÕES 60 FPS",
     image: "/printvolk.webp",
     liveUrl: "https://volkpresenter.tv/pt",
-    tags: ["Next.js 15", "TypeScript", "Tailwind CSS", "GSAP", "Framer Motion", "Real-Time APIs"],
+    tags: ["Next.js 15", "TypeScript", "Tailwind CSS", "GSAP", "Framer Motion", "i18n Dictionary"],
     client: "VOLK Presenter",
     year: "2026",
-    scope: ["UX/UI Design", "Engenharia Front-end", "Gráficos em Tempo Real", "SEO & Performance"],
+    scope: ["UX/UI Design de Alto Padrão", "Engenharia Front-end", "Animações GSAP", "Internacionalização (i18n)", "SEO & Performance"],
     stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "GSAP", "Framer Motion"],
-    tagline: "Transforme telas em experiências interativas em tempo real.",
-    overview: "Projetamos e desenvolvemos a plataforma do VOLK Presenter, conectando gráficos ao vivo, dados e interações touchscreen para operações de jornalismo, cobertura esportiva, entretenimento e eventos de alto padrão.",
-    challenge: "Entregar uma plataforma visual ultrarrápida, fluida e flexível para transmissões ao vivo sob estresse de breaking news, eliminando a complexidade de operações manuais em estúdio.",
-    solution: "Desenvolvemos o produto e website institucional utilizando Next.js 15, TypeScript e Tailwind CSS com animações via GSAP/Framer Motion. Integramos APIs ao vivo de clima, trânsito, eleições e placares esportivos com controle instantâneo.",
+    tagline: "Experiência web imersiva e responsiva para a plataforma de gráficos e interatividade em tempo real.",
+    overview: "Projetamos e desenvolvemos a experiência web do VOLK Presenter, traduzindo o dinamismo e a precisão do software de gráficos ao vivo em uma interface digital premium. O site apresenta os recursos de interatividade em estúdio, telas touchscreen e automação com animações fluidas a 60 FPS e suporte a múltiplos idiomas.",
+    challenge: "Transmitir a sensação de velocidade, controle e tecnologia de ponta do produto sem sobrecarregar a navegação do visitante, criando uma apresentação marcante que retenha a atenção de diretores de tecnologia e produtores.",
+    solution: "Desenvolvemos o website utilizando Next.js 15 App Router e Tailwind CSS, potencializado por animações com GSAP e Framer Motion. Estruturamos um sistema de dicionários de internacionalização (PT, EN, ES) e componentes de demonstração interativos como acordeões dinâmicos e modais de vídeo em alta definição.",
     results: [
-      "Gráficos interativos em tempo real a 60 FPS com zero latência percebida.",
-      "Conectividade direta via API para placares, eleições, clima e dados esportivos.",
-      "Redução drástica na complexidade operacional e no tempo de preparação de telas."
+      "Animações e interações refinadas rodando a 60 FPS sem sacrificar a velocidade de carregamento.",
+      "Internacionalização completa (Português, Inglês e Espanhol) para expansão no mercado global.",
+      "Design System fluido com navegação intuitiva e alta taxa de engajamento dos visitantes."
     ],
-    showcaseHeroTitle: "Interatividade em Tempo Real para Estúdios de Mídia",
+    showcaseHeroTitle: "Imersão Visual e Performance para a Nova Era da Mídia",
     performance: {
-      speed: { title: "Velocidade", score: "60 FPS Constante", description: "Gráficos e interações ao vivo sem engasgos ou atrasos." },
-      tech: { title: "Tecnologia", tech: "Next.js 15 + GSAP", description: "Arquitetura ultra-leve e responsiva com aceleração de hardware." },
-      seo: { title: "SEO", status: "SEO 100/100", description: "Estrutura otimizada para máximo alcance e conversão B2B." }
+      speed: { title: "Velocidade", score: "60 FPS Fluidos", description: "Interações em movimento otimizadas sem engasgos de GPU." },
+      tech: { title: "Tecnologia", tech: "Next.js 15 + GSAP", description: "Aceleração por hardware e arquitetura de componentes modulares." },
+      seo: { title: "Conversão", status: "SEO Otimizado 100/100", description: "Estrutura pronta para captar leads e agendamentos B2B." }
     },
-    designSystemText: "Criamos um Design System focado em legibilidade e contraste para ambientes de estúdio, permitindo que apresentadores e operadores controlem conteúdos complexos com poucos toques.",
+    designSystemText: "Desenvolvemos uma estética editorial moderna com fundos escuros profundos, detalhes em neon e tipografia de alto impacto, garantindo uma leitura clara e marcante em qualquer dispositivo.",
     designSystemComponents: {
       ctaLabel: "Começar a usar o VOLK",
-      cardTitle: "Controle Touchscreen",
-      cardDesc: "Telestration, mapas e placares ao vivo operados em segundos.",
-      awardTitle: "Interactive Broadcast Tech",
-      awardSub: "Plataforma de Interatividade em Tempo Real"
+      cardTitle: "Interatividade em Estúdio",
+      cardDesc: "Demonstração fluida dos módulos touchscreen e gráficos ao vivo.",
+      awardTitle: "Interactive Experience",
+      awardSub: "Website de Alta Fidelidade Visual"
     }
   },
   "capi": {
     id: "capi",
     title: "CAPI Digital",
-    category: "CASE STUDY // CÉREBRO EDITORIAL & IA",
+    category: "CASE STUDY // LANDING PAGE & PLATAFORMA EDITORIAL",
     image: "/printcapi.webp",
     liveUrl: "https://capi.digital/pt",
-    tags: ["Next.js App Router", "TypeScript", "Tailwind CSS", "next-intl", "Prisma", "AI Automation"],
+    tags: ["Next.js App Router", "TypeScript", "Tailwind CSS", "next-intl (i18n)", "Shadcn UI", "Framer Motion"],
     client: "CAPI Digital",
     year: "2026",
-    scope: ["Arquitetura de Produto", "UX/UI Design", "Front-end & Back-end", "Automação de IA"],
-    stack: ["Next.js App Router", "TypeScript", "Tailwind CSS", "Prisma", "OpenAI APIs"],
-    tagline: "Centralize, organize e automatize todo o fluxo de produção editorial.",
-    overview: "Desenvolvemos o CAPI como o cérebro operacional para redações e equipes de conteúdo modernas. A plataforma substitui o uso fragmentado de planilhas e grupos de mensagens, estruturando o pipeline desde o planejamento de pautas até a distribuição multi-canal.",
-    challenge: "Unificar processos dispersos de planejamento, redação, revisão e publicação em um único ambiente colaborativo sem engessar a criatividade da equipe.",
-    solution: "Criamos uma plataforma robusta com Next.js App Router, TypeScript, Prisma e next-intl. Integramos recursos de Inteligência Artificial para co-autoria, automação de pautas e adaptação de formatos em 1 clique.",
+    scope: ["UX/UI Design", "Estruturação de Copy & Arquitetura", "Engenharia Front-end", "Internacionalização (i18n)", "SEO"],
+    stack: ["Next.js App Router", "TypeScript", "Tailwind CSS", "next-intl", "Framer Motion"],
+    tagline: "Landing page e plataforma de apresentação para o cérebro operacional de produção de conteúdo com IA.",
+    overview: "Criamos a presença digital e a landing page institucional da CAPI Digital. O projeto traduz a proposta inovadora da marca — um ecossistema que centraliza planejamento de pautas, redação colaborativa e distribuição multi-canal assistida por inteligência artificial — em uma navegação limpa, direta e persuasiva.",
+    challenge: "Explicar de forma clara e envolvente como o CAPI resolve a fragmentação de ferramentas nas redações e equipes de conteúdo, transformando uma solução técnica complexa em um produto desejável para criadores e gestores.",
+    solution: "Construímos uma landing page interativa usando Next.js App Router, Tailwind CSS e next-intl (suporte a Português, Inglês e Espanhol). Desenvolvemos demonstrações visuais do workspace, simuladores de pipeline editorial, tabela comparativa de planos e fluxos de contato otimizados.",
     results: [
-      "Centralização completa do pipeline de conteúdo de ponta a ponta.",
-      "Redução expressiva de tarefas repetitivas e erros de publicação.",
-      "Aumento da velocidade de produção e publicação em múltiplos canais."
+      "Comunicação clara e envolvente da proposta de valor e dos benefícios da plataforma CAPI.",
+      "Estrutura multi-idioma (PT, EN, ES) com carregamento instantâneo em todas as páginas.",
+      "Alta taxa de conversão para solicitação de demonstrações e contratação de planos."
     ],
-    showcaseHeroTitle: "O Cérebro Operacional da Produção de Conteúdo",
+    showcaseHeroTitle: "Design Estratégico para o Cérebro Operacional de Conteúdo",
     performance: {
-      speed: { title: "Velocidade", score: "Render em <0.5s", description: "Navegação fluida no workspace mesmo em grandes pipelines." },
-      tech: { title: "Tecnologia", tech: "Next.js + Prisma + IA", description: "Infraestrutura moderna e altamente tipada end-to-end." },
-      seo: { title: "Produtividade", status: "Automação com IA", description: "Geração de pautas e adaptação de formatos em segundos." }
+      speed: { title: "Velocidade", score: "Render em <0.4s", description: "Carregamento instantâneo de páginas e componentes com Next.js." },
+      tech: { title: "Tecnologia", tech: "Next.js + next-intl", description: "Internacionalização nativa e código limpo altamente escalável." },
+      seo: { title: "SEO", status: "SEO & Meta Tags 100/100", description: "Estrutura pronta para posicionamento nos mecanismos de busca." }
     },
-    designSystemText: "Desenvolvemos um Workspace limpo e focado na escrita, eliminando distrações e proporcionando edição colaborativa em tempo real.",
+    designSystemText: "Criamos um visual minimalista e contemporâneo, inspirado nos melhores softwares de produtividade do mundo, com cartões refinados, microinterações sutis e tipografia cristalina.",
     designSystemComponents: {
-      ctaLabel: "Explorar Workspace",
-      cardTitle: "Pipeline Inteligente",
-      cardDesc: "Status customizáveis, prazos automáticos e publicação multi-canal.",
-      awardTitle: "Editorial Workspace Innovation",
-      awardSub: "Plataforma de Gestão Editorial e IA"
+      ctaLabel: "Começar Agora",
+      cardTitle: "Workspace Editorial",
+      cardDesc: "Apresentação visual do pipeline de planejamento, produção e publicação.",
+      awardTitle: "SaaS Product Showcase",
+      awardSub: "Design & Desenvolvimento Web Lunar"
     }
   }
 };
