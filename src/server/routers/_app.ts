@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { createTRPCRouter, publicProcedure, adminProcedure } from "../trpc";
+import { sendContactEmail } from "../email";
 
 export const appRouter = createTRPCRouter({
   // Project Procedures
@@ -63,9 +64,23 @@ export const appRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ ctx, input }) => {
-      return ctx.db.message.create({
-        data: input,
-      });
+      let savedMessage = null;
+      try {
+        savedMessage = await ctx.db.message.create({
+          data: input,
+        });
+      } catch (err) {
+        console.warn("[DB Warning] Não foi possível salvar mensagem no banco de dados:", err);
+      }
+
+      // Dispara envio de e-mail para lucasjobtech@gmail.com
+      const emailResult = await sendContactEmail(input);
+
+      return {
+        success: true,
+        savedMessage,
+        emailResult,
+      };
     }),
 
   getMessages: adminProcedure.query(async ({ ctx }) => {
