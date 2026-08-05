@@ -18,82 +18,77 @@ export function VolkHeroShowcase({ desktopImage = '/printvolk.png' }: VolkHeroSh
       const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
       setMousePos({ x: Math.max(-1, Math.min(1, x)), y: Math.max(-1, Math.min(1, y)) });
     };
-
     const el = containerRef.current;
     if (el) el.addEventListener('mousemove', handleMouseMove);
     return () => { if (el) el.removeEventListener('mousemove', handleMouseMove); };
   }, []);
 
-  const tilt = `perspective(2000px) rotateX(${mousePos.y * -2}deg) rotateY(${mousePos.x * 3}deg)`;
-
-  // Helper: render a row of keys
-  const KeyRow = ({ count, height = 'h-3 sm:h-5', extraClass = '' }: { count: number; height?: string; extraClass?: string }) => (
-    <div className={`flex gap-[2px] sm:gap-[3px] w-full ${extraClass}`}>
-      {Array.from({ length: count }).map((_, i) => (
-        <div
-          key={i}
-          className={`flex-1 ${height} bg-gradient-to-b from-[#d4d6d9] to-[#bbbec2] rounded-[3px] sm:rounded-[4px] border border-[#9fa2a8]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(0,0,0,0.15)] relative`}
-        >
-          <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white/30 to-transparent rounded-t-[3px]" />
-        </div>
-      ))}
-    </div>
-  );
+  const tiltX = mousePos.y * -2;
+  const tiltY = mousePos.x * 2.5;
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-[860px] mx-auto flex flex-col items-center select-none overflow-visible pt-2 pb-10"
+      className="relative w-full max-w-[880px] mx-auto select-none overflow-visible py-4"
+      style={{ perspective: '2000px' }}
     >
-      {/* Glow de Fundo */}
-      <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[340px] bg-gradient-to-tr from-primary/25 via-blue-600/15 to-indigo-500/10 rounded-full blur-[130px] pointer-events-none" />
+      {/* Glow ambiente */}
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[300px] bg-gradient-to-tr from-primary/20 via-blue-500/12 to-transparent rounded-full blur-[120px] pointer-events-none" />
 
+      {/* Laptop wrapper com 3D tilt */}
       <div
-        className="relative w-full z-20 transition-transform duration-300 ease-out flex flex-col items-center"
-        style={{ transform: tilt }}
+        className="relative w-full flex flex-col items-center transition-transform duration-300 ease-out"
+        style={{ transform: `rotateX(${tiltX}deg) rotateY(${tiltY}deg)` }}
       >
 
-        {/* ═══ DISPLAY LID ═══ */}
-        {/* Moldura Exterior (Alumínio Escuro Space Gray) */}
+        {/* ┌─────────────────────────────────┐ */}
+        {/*         TAMPA / DISPLAY LID         */}
+        {/* └─────────────────────────────────┘ */}
         <div
           className="w-full relative"
           style={{
-            background: 'linear-gradient(180deg, #2a2d35 0%, #1e2028 100%)',
-            borderRadius: '18px 18px 0 0',
-            padding: '10px 10px 0 10px',
-            boxShadow: '0 -2px 0 rgba(255,255,255,0.12) inset, 0 60px 120px rgba(0,0,0,0.9)',
-            border: '1px solid rgba(255,255,255,0.14)',
+            background: 'linear-gradient(160deg, #2c2f3a 0%, #1a1c24 60%, #13151c 100%)',
+            borderRadius: '16px 16px 0 0',
+            padding: '8px 8px 0 8px',
+            border: '1px solid rgba(255,255,255,0.13)',
             borderBottom: 'none',
+            boxShadow: `
+              0 -1px 0 rgba(255,255,255,0.08) inset,
+              0 50px 100px rgba(0,0,0,0.85),
+              0 20px 50px rgba(0,0,0,0.6)
+            `,
           }}
         >
-          {/* Notch da Câmera */}
+          {/* Câmera / Notch */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center gap-1.5"
             style={{
-              width: '80px',
-              height: '14px',
-              background: '#181a22',
-              borderRadius: '0 0 10px 10px',
-              border: '1px solid rgba(255,255,255,0.08)',
+              width: '72px',
+              height: '12px',
+              background: '#10121a',
+              borderRadius: '0 0 8px 8px',
+              border: '1px solid rgba(255,255,255,0.07)',
               borderTop: 'none',
             }}
           >
-            <span className="w-[5px] h-[5px] rounded-full bg-[#111318] border border-white/15 inline-block" />
-            <span className="w-[4px] h-[4px] rounded-full bg-emerald-500/80 inline-block animate-pulse" />
+            <span className="w-[5px] h-[5px] rounded-full inline-block"
+              style={{ background: 'radial-gradient(circle at 35% 35%, #2a2d36, #0d0e14)', border: '1px solid rgba(255,255,255,0.1)' }} />
+            <span className="w-[4px] h-[4px] rounded-full inline-block animate-pulse"
+              style={{ background: 'radial-gradient(circle, #22c55e 0%, #16a34a 100%)', boxShadow: '0 0 4px #22c55e80' }} />
           </div>
 
-          {/* Tela (Bezel Preto + Imagem) */}
+          {/* Tela */}
           <div
             className="w-full overflow-hidden relative"
             style={{
-              background: '#080a10',
-              borderRadius: '10px 10px 0 0',
-              border: '1px solid rgba(255,255,255,0.06)',
+              background: '#050709',
+              borderRadius: '9px 9px 0 0',
+              border: '1px solid rgba(255,255,255,0.05)',
               borderBottom: 'none',
             }}
           >
             <div
-              className="w-full relative overflow-hidden flex items-start justify-center"
+              className="w-full relative overflow-hidden"
               style={{ aspectRatio: '1914 / 885' }}
             >
               <img
@@ -101,87 +96,128 @@ export function VolkHeroShowcase({ desktopImage = '/printvolk.png' }: VolkHeroSh
                 alt="VOLK Presenter website"
                 className="w-full h-full object-cover object-top pointer-events-none"
               />
-              {/* Reflexo sutil na tela */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.018] to-transparent pointer-events-none" />
+              {/* Glare */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.025) 0%, transparent 50%)',
+                }}
+              />
             </div>
           </div>
         </div>
 
-        {/* ═══ HINGE (Dobradiça) ═══ */}
+        {/* ┌─────────────────────────────────┐ */}
+        {/*           HINGE / DOBRADIÇA         */}
+        {/* └─────────────────────────────────┘ */}
         <div
-          className="w-full relative z-30"
+          className="w-[98%]"
           style={{
-            height: '7px',
-            background: 'linear-gradient(180deg, #141720 0%, #0a0c12 100%)',
-            borderLeft: '1px solid rgba(255,255,255,0.10)',
-            borderRight: '1px solid rgba(255,255,255,0.10)',
-            boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.6)',
+            height: '5px',
+            background: 'linear-gradient(180deg, #0c0e14 0%, #080a10 100%)',
+            borderLeft: '1px solid rgba(255,255,255,0.07)',
+            borderRight: '1px solid rgba(255,255,255,0.07)',
           }}
         />
 
-        {/* ═══ BASE DO LAPTOP (Alumínio Prata) ═══ */}
+        {/* ┌─────────────────────────────────┐ */}
+        {/*       BASE (ALUMÍNIO PRATA)          */}
+        {/* └─────────────────────────────────┘ */}
         <div
-          className="w-[106%] relative z-20 overflow-hidden"
+          className="relative overflow-hidden"
           style={{
-            background: 'linear-gradient(180deg, #c8cace 0%, #b0b3b8 30%, #a0a3a8 70%, #909399 100%)',
-            borderRadius: '0 0 16px 16px',
-            border: '1px solid rgba(0,0,0,0.25)',
+            width: '105%',
+            background: 'linear-gradient(180deg, #c9cbcf 0%, #b8bbbf 25%, #aaadB1 60%, #9fa2a6 100%)',
+            borderRadius: '0 0 14px 14px',
+            border: '1px solid rgba(0,0,0,0.28)',
             borderTop: 'none',
-            padding: '10px 16px 14px',
-            boxShadow: '0 40px 80px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.6)',
-            transform: 'perspective(800px) rotateX(20deg)',
+            padding: '8px 16px 12px',
+            transform: 'perspective(700px) rotateX(18deg)',
             transformOrigin: 'top center',
+            boxShadow: `
+              0 35px 70px rgba(0,0,0,0.9),
+              0 15px 30px rgba(0,0,0,0.5),
+              inset 0 1px 0 rgba(255,255,255,0.65)
+            `,
           }}
         >
-          {/* Linha brilhante no topo da base */}
-          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/70 to-transparent mb-2.5" />
-
-          {/* ── KEYBOARD WELL (Recesso do Teclado) ── */}
+          {/* Reflexo no topo da base */}
           <div
-            className="w-full max-w-[86%] mx-auto rounded-lg sm:rounded-xl px-2 sm:px-3 py-2 sm:py-2.5 flex flex-col gap-[3px] sm:gap-[4px]"
+            className="absolute top-0 left-0 right-0"
             style={{
-              background: 'linear-gradient(180deg, #8a8d92 0%, #9598a0 100%)',
-              boxShadow: 'inset 0 2px 6px rgba(0,0,0,0.35), inset 0 -1px 0 rgba(255,255,255,0.15)',
-              border: '1px solid rgba(0,0,0,0.18)',
+              height: '3px',
+              background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.7) 50%, transparent 100%)',
+            }}
+          />
+
+          {/* ── KEYBOARD WELL ── */}
+          <div
+            className="w-[85%] mx-auto rounded-[8px] overflow-hidden"
+            style={{
+              background: 'linear-gradient(180deg, #8c8f94 0%, #979a9e 100%)',
+              border: '1px solid rgba(0,0,0,0.2)',
+              boxShadow: 'inset 0 2px 5px rgba(0,0,0,0.3), inset 0 -1px 0 rgba(255,255,255,0.15)',
+              padding: '5px 6px',
             }}
           >
-            {/* Row 0: Fn / Media keys (menores) */}
-            <KeyRow count={14} height="h-2 sm:h-3" />
-            {/* Row 1: Numbers */}
-            <KeyRow count={14} />
-            {/* Row 2: QWERTY */}
-            <KeyRow count={14} />
-            {/* Row 3: ASDF */}
-            <KeyRow count={13} />
-            {/* Row 4: ZXCV */}
-            <KeyRow count={12} />
-            {/* Row 5: Spacebar row */}
-            <div className="flex gap-[2px] sm:gap-[3px] w-full">
-              <div className="w-[8%] h-3 sm:h-5 bg-gradient-to-b from-[#d4d6d9] to-[#bbbec2] rounded-[3px] sm:rounded-[4px] border border-[#9fa2a8]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]" />
-              <div className="w-[8%] h-3 sm:h-5 bg-gradient-to-b from-[#d4d6d9] to-[#bbbec2] rounded-[3px] sm:rounded-[4px] border border-[#9fa2a8]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]" />
-              {/* Spacebar — mais largo */}
+            {/* Renderizar as fileiras do teclado */}
+            {[
+              { cols: 14, h: 5 },  // Fn row
+              { cols: 14, h: 9 },  // Numbers
+              { cols: 14, h: 9 },  // QWERTY
+              { cols: 13, h: 9 },  // ASDF
+              { cols: 12, h: 9 },  // ZXCV
+            ].map((row, ri) => (
               <div
-                className="flex-1 h-3 sm:h-5 rounded-[3px] sm:rounded-[4px] border border-[#9fa2a8]/60 relative"
-                style={{
-                  background: 'linear-gradient(180deg, #d8dadc 0%, #c2c5c9 100%)',
-                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(0,0,0,0.12)',
-                }}
+                key={ri}
+                className="flex gap-[2px] mb-[2px]"
               >
-                <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white/30 to-transparent rounded-t-[3px]" />
+                {Array.from({ length: row.cols }).map((_, ki) => (
+                  <div
+                    key={ki}
+                    className="flex-1 rounded-[3px]"
+                    style={{
+                      height: `${row.h}px`,
+                      background: 'linear-gradient(180deg, #d2d4d7 0%, #c0c3c7 100%)',
+                      border: '1px solid rgba(0,0,0,0.18)',
+                      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25)',
+                    }}
+                  />
+                ))}
               </div>
-              <div className="w-[8%] h-3 sm:h-5 bg-gradient-to-b from-[#d4d6d9] to-[#bbbec2] rounded-[3px] sm:rounded-[4px] border border-[#9fa2a8]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]" />
-              <div className="w-[8%] h-3 sm:h-5 bg-gradient-to-b from-[#d4d6d9] to-[#bbbec2] rounded-[3px] sm:rounded-[4px] border border-[#9fa2a8]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)]" />
+            ))}
+
+            {/* Spacebar row */}
+            <div className="flex gap-[2px]">
+              {[7, 6, 44, 6, 6, 6, 6, 6, 6, 7].map((w, i) => (
+                <div
+                  key={i}
+                  className="rounded-[3px]"
+                  style={{
+                    width: `${w}%`,
+                    height: '9px',
+                    flexShrink: 0,
+                    background: i === 2
+                      ? 'linear-gradient(180deg, #d6d8db 0%, #c4c7cb 100%)'
+                      : 'linear-gradient(180deg, #d2d4d7 0%, #c0c3c7 100%)',
+                    border: '1px solid rgba(0,0,0,0.18)',
+                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.25)',
+                  }}
+                />
+              ))}
             </div>
           </div>
 
           {/* ── TRACKPAD ── */}
-          <div className="w-full flex justify-center mt-2 sm:mt-3">
+          <div className="flex justify-center mt-2">
             <div
-              className="w-28 sm:w-44 h-10 sm:h-16 rounded-lg sm:rounded-xl"
+              className="rounded-[8px]"
               style={{
-                background: 'linear-gradient(180deg, #b0b3b8 0%, #a5a8ae 100%)',
-                border: '1px solid rgba(0,0,0,0.20)',
-                boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.20), inset 0 -1px 0 rgba(255,255,255,0.3)',
+                width: '130px',
+                height: '45px',
+                background: 'linear-gradient(180deg, #b0b3b7 0%, #a6a9ad 100%)',
+                border: '1px solid rgba(0,0,0,0.22)',
+                boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.18), inset 0 -1px 0 rgba(255,255,255,0.25)',
               }}
             />
           </div>
@@ -190,36 +226,30 @@ export function VolkHeroShowcase({ desktopImage = '/printvolk.png' }: VolkHeroSh
           <div
             className="absolute bottom-0 left-1/2 -translate-x-1/2"
             style={{
-              width: '100px',
-              height: '5px',
-              background: '#888b90',
-              borderRadius: '0 0 8px 8px',
-              border: '1px solid rgba(0,0,0,0.20)',
+              width: '80px',
+              height: '4px',
+              background: '#8a8d91',
+              borderRadius: '0 0 6px 6px',
+              border: '1px solid rgba(0,0,0,0.2)',
               borderTop: 'none',
             }}
           />
         </div>
 
-        {/* ═══ SOMBRA DO LAPTOP NA "MESA" ═══ */}
+        {/* Sombra na "mesa" */}
         <div
-          className="w-[90%] pointer-events-none"
+          className="pointer-events-none"
           style={{
-            height: '20px',
-            marginTop: '-8px',
+            width: '88%',
+            height: '16px',
+            marginTop: '-6px',
             background: 'rgba(0,0,0,0.55)',
-            filter: 'blur(18px)',
+            filter: 'blur(16px)',
             borderRadius: '50%',
           }}
         />
 
       </div>
-
-      <style>{`
-        @keyframes shimmer {
-          0% { transform: translateX(-150%) skewX(12deg); }
-          100% { transform: translateX(250%) skewX(12deg); }
-        }
-      `}</style>
     </div>
   );
 }
