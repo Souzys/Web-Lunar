@@ -9,22 +9,22 @@ if (typeof window !== "undefined") {
 
 export function useLenis() {
   useEffect(() => {
+    const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
     const lenis = new Lenis({
-      lerp: 0.1, // Taxa de interpolação padrão responsiva
+      lerp: 0.1,
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1.5,
+      touchMultiplier: 1,
+      syncTouch: false, // Preserva o scroll nativo ultra fluido a 120Hz em dispositivos móveis
     });
 
     (window as any).lenis = lenis;
 
-    // Sincroniza o ScrollTrigger com cada evento de scroll do Lenis
     lenis.on('scroll', ScrollTrigger.update);
 
-    // Usa o ticker do GSAP para rodar o raf do Lenis
-    // Isso garante sincronia total de quadros entre scroll e animações
     const updateRaf = (time: number) => {
       lenis.raf(time * 1000);
     };

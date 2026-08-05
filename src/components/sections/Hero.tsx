@@ -85,7 +85,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" ref={heroRef} className="relative min-h-screen flex flex-col justify-between pt-32 bg-bg text-text overflow-hidden">
+    <section id="home" ref={heroRef} className="relative min-h-screen flex flex-col justify-between pt-24 md:pt-32 bg-bg text-text overflow-hidden">
       {/* Awwwards Style Abstract Noise & Glow Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Deep blue radial glow (Desktop only mouse tracking) */}
@@ -102,7 +102,7 @@ export function Hero() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-primary/20 rounded-full blur-[60px] pointer-events-none md:hidden" />
       </div>
 
-      <div className="relative z-10 container mx-auto max-w-[1440px] px-6 flex-grow grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mt-12 md:mt-0">
+      <div className="relative z-10 container mx-auto max-w-[1440px] px-6 flex-grow grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mt-4 md:mt-0">
         
         {/* Coluna da Esquerda: Textos e CTAs */}
         <div className="lg:col-span-7 flex flex-col justify-center items-start text-left">

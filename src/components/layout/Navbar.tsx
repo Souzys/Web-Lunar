@@ -20,53 +20,56 @@ export function Navbar() {
   useEffect(() => {
     if (!menuRef.current || !contentRef.current || !titleRef.current || !bottomRef.current) return;
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
     if (isOpen) {
-      // Física elástica premium para a expansão da Ilha Dinâmica
+      const targetWidth = isMobile ? Math.min(310, window.innerWidth - 32) : 320;
+      const targetHeight = isMobile ? 490 : 520;
+
       gsap.to(menuRef.current, {
-        width: 320,
-        height: 520,
+        width: targetWidth,
+        height: targetHeight,
         borderRadius: 24,
-        duration: 0.6,
-        ease: 'back.out(1.3)',
+        duration: isMobile ? 0.3 : 0.45,
+        ease: isMobile ? 'power2.out' : 'back.out(1.2)',
         overwrite: 'auto'
       });
       
       gsap.to(titleRef.current, {
         opacity: 1,
-        duration: 0.3,
-        delay: 0.15,
+        duration: 0.25,
+        delay: 0.1,
         overwrite: 'auto'
       });
 
       gsap.to(contentRef.current, {
         opacity: 1,
         pointerEvents: 'auto',
-        duration: 0.4,
-        delay: 0.1,
+        duration: 0.3,
+        delay: 0.05,
         overwrite: 'auto'
       });
 
       gsap.fromTo(linksRef.current, 
-        { y: 15, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, delay: 0.2, ease: 'power2.out', overwrite: 'auto' }
+        { y: 12, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.3, stagger: 0.04, delay: 0.1, ease: 'power2.out', overwrite: 'auto' }
       );
 
       gsap.fromTo(bottomRef.current,
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.4, delay: 0.35, ease: 'power2.out', overwrite: 'auto' }
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.3, delay: 0.2, ease: 'power2.out', overwrite: 'auto' }
       );
     } else {
-      // Encolhimento rápido e limpo ao fechar
       gsap.to(contentRef.current, {
         opacity: 0,
         pointerEvents: 'none',
-        duration: 0.2,
+        duration: 0.15,
         overwrite: 'auto'
       });
 
       gsap.to(titleRef.current, {
         opacity: 0,
-        duration: 0.2,
+        duration: 0.15,
         overwrite: 'auto'
       });
 
@@ -74,7 +77,7 @@ export function Navbar() {
         width: 48,
         height: 48,
         borderRadius: 24,
-        duration: 0.5,
+        duration: isMobile ? 0.25 : 0.35,
         ease: 'power3.inOut',
         overwrite: 'auto'
       });

@@ -29,29 +29,29 @@ export function IntroSlider() {
           trigger: container,
           start: 'top top',
           end: 'bottom bottom',
-          scrub: isMobile ? 0.5 : true,
+          scrub: isMobile ? 0.2 : true,
         }
       });
 
       if (isMobile) {
-        // Transição leve de opacidade pura no mobile para 60fps sem lag de GPU
+        // Transição direta de opacidade para scroll responsivo de 1 flick no mobile
         tl.to(hero, {
           opacity: 0,
-          duration: 1,
-          ease: 'none',
+          duration: 0.8,
+          ease: 'power1.out',
         }, 0);
 
         tl.fromTo(about,
           { opacity: 0 },
           {
             opacity: 1,
-            duration: 1,
-            ease: 'none',
+            duration: 0.8,
+            ease: 'power1.out',
           },
           0
         );
       } else {
-        // Efeito com scale e y no desktop
+        // Efeito suave no desktop
         tl.to(hero, {
           opacity: 0,
           scale: 0.95,
@@ -72,18 +72,13 @@ export function IntroSlider() {
           0
         );
       }
-
-      tl.to(about, {
-        opacity: 1,
-        duration: 1,
-      }, 1);
     }, container);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[300vh] -mb-[100vh] bg-bg z-0">
+    <div ref={containerRef} className="relative w-full h-[140vh] -mb-[40vh] md:h-[300vh] md:-mb-[100vh] bg-bg z-0">
       <div className="sticky top-0 w-full h-screen overflow-hidden">
         <div ref={heroRef} className="absolute inset-0 w-full h-full z-10 flex flex-col justify-between will-change-[transform,opacity]">
           <Hero />
