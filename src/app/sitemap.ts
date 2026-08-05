@@ -21,6 +21,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Project pages
   const projectSlugs = [
+    'snews',
+    'volk',
+    'capi',
     'capi-midia',
     'volk-mkt',
     'lumina-app',
