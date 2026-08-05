@@ -217,25 +217,31 @@ export default function SobrePage() {
 
       {/* =========================================
           BLOCO 02: OS QUATRO PILARES
+      {/* =========================================
+          BLOCO 02: OS QUATRO PILARES
       ========================================= */}
-      <section className="py-28 w-full bg-white border-y border-neutral-100 relative overflow-hidden">
+      <section className="py-32 w-full bg-[#050713] text-white border-y border-white/10 relative overflow-hidden">
+        {/* Subtle grid background & glow */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
+
         <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
 
           {/* Header — left-aligned, editorial style */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20 pb-8 border-b border-neutral-100">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 pb-8 border-b border-white/10">
             <div>
-              <p className="text-xs uppercase font-sans tracking-widest text-primary mb-3 font-semibold">Arquitetura Web Lunar</p>
-              <h2 className="font-display text-5xl md:text-7xl lg:text-[80px] font-semibold tracking-tighter text-neutral-950 leading-[0.9]">
+              <p className="text-xs uppercase font-sans tracking-widest text-indigo-400 mb-3 font-semibold">Arquitetura Web Lunar</p>
+              <h2 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-[76px] font-bold tracking-tighter text-white leading-[0.95]">
                 Os Quatro Pilares
               </h2>
             </div>
-            <p className="text-lg text-neutral-900 font-light max-w-sm leading-relaxed hidden md:block">
+            <p className="text-base sm:text-lg text-neutral-300 font-light max-w-sm leading-relaxed hidden md:block">
               Princípios de engenharia que definem cada linha de código que entregamos.
             </p>
           </div>
 
-          {/* Pillars — horizontal editorial columns */}
-          <div ref={pillarsContainerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-100">
+          {/* Pillars Cards */}
+          <div ref={pillarsContainerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: <Server className="w-5 h-5" />,
@@ -266,17 +272,17 @@ export default function SobrePage() {
                 tag: "Quality"
               }
             ].map((item, i) => (
-              <div key={i} className="pillar-card flex flex-col justify-between p-8 min-h-[380px] bg-white group hover:bg-neutral-50 transition-colors duration-300">
-                <div className="flex justify-between items-start">
-                  <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-900 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <div key={i} className="pillar-card flex flex-col justify-between p-8 min-h-[360px] rounded-2xl bg-[#0A0E23]/90 border border-white/10 hover:border-indigo-500/50 hover:bg-[#0F1532] transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] group relative overflow-hidden">
+                <div className="flex justify-between items-center mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-[0_0_15px_rgba(29,77,255,0.2)]">
                     {item.icon}
                   </div>
-                  <span className="font-mono text-xs text-neutral-400 group-hover:text-primary transition-colors">{item.tag}</span>
+                  <span className="font-mono text-[11px] font-semibold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full tracking-widest uppercase">{item.tag}</span>
                 </div>
-                <div className="mt-8">
-                  <span className="font-mono text-xs text-neutral-300 block mb-2">{item.num}</span>
-                  <h3 className="font-display text-xl font-bold text-neutral-950 mb-3 tracking-tight">{item.title}</h3>
-                  <p className="text-neutral-500 font-light text-sm leading-relaxed">{item.desc}</p>
+                <div>
+                  <span className="font-mono text-xs text-indigo-400 font-bold tracking-widest block mb-2">{item.num}</span>
+                  <h3 className="font-display text-xl font-bold text-white mb-3 tracking-tight group-hover:text-indigo-200 transition-colors">{item.title}</h3>
+                  <p className="text-neutral-300 font-normal text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -287,14 +293,14 @@ export default function SobrePage() {
       {/* =========================================
           BLOCO 03: MANIFESTO DE VELOCIDADE
       ========================================= */}
-      <section className="py-28 bg-[#FAFAFA] border-b border-neutral-100 relative overflow-hidden">
+      <section className="py-32 bg-[#03050C] text-white border-b border-white/10 relative overflow-hidden">
         <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end mb-24 pb-8 border-b border-neutral-200">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end mb-20 pb-8 border-b border-white/10">
             <AnimatedSection>
               <div>
-                <p className="text-xs uppercase font-sans tracking-widest text-primary mb-3 font-semibold">Engenharia de Detalhe</p>
-                <h2 className="font-display font-semibold text-5xl md:text-6xl tracking-tighter text-neutral-900 leading-[0.95]">
+                <p className="text-xs uppercase font-sans tracking-widest text-indigo-400 mb-3 font-semibold">Engenharia de Detalhe</p>
+                <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tighter text-white leading-[0.95]">
                   Velocidade Brutal. <br/>
                   Segurança Inviolável.
                 </h2>
@@ -302,35 +308,35 @@ export default function SobrePage() {
             </AnimatedSection>
             
             <AnimatedSection options={{ delay: 0.15 }}>
-              <p className="text-neutral-600 font-light text-lg md:text-xl leading-relaxed max-w-xl text-balance">
+              <p className="text-neutral-300 font-light text-lg md:text-xl leading-relaxed max-w-xl text-balance">
                 Interfaces refinadas não servem para nada se falharem sob estresse técnico. Nosso desenvolvimento foca em garantir imunidade contra gargalos e vazamento de dados.
               </p>
             </AnimatedSection>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Activity className="w-8 h-8 text-primary mb-6" />,
+                icon: <Activity className="w-8 h-8 text-indigo-400 mb-6" />,
                 title: "Analytics Avançado & Rastreamento Privado",
                 desc: "Implementação de trackers otimizados que contornam bloqueadores de anúncios sem sacrificar a velocidade da página."
               },
               {
-                icon: <Box className="w-8 h-8 text-primary mb-6" />,
+                icon: <Box className="w-8 h-8 text-indigo-400 mb-6" />,
                 title: "Ecossistemas de Dados Comportamentais",
                 desc: "Integração profunda com ferramentas de mapas de calor e gravação de sessão sem inserção de scripts pesados de terceiros."
               },
               {
-                icon: <Lock className="w-8 h-8 text-primary mb-6" />,
+                icon: <Lock className="w-8 h-8 text-indigo-400 mb-6" />,
                 title: "Segurança de Dados e Conformidade",
                 desc: "Estruturas preparadas com as melhores práticas de proteção de tráfego, mitigação de vulnerabilidades em formulários e APIs protegidas."
               }
             ].map((item, i) => (
               <AnimatedSection key={i} options={{ delay: i * 0.15 }}>
-                <div className="flex flex-col h-full bg-white border border-neutral-100 hover:border-primary/20 hover:shadow-lg transition-all duration-500 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                <div className="flex flex-col h-full bg-[#0A0E23]/80 border border-white/10 hover:border-indigo-500/40 hover:bg-[#0F1532] transition-all duration-500 rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                   {item.icon}
-                  <h3 className="text-xl font-bold text-neutral-900 mb-4 tracking-tight">{item.title}</h3>
-                  <p className="text-neutral-500 font-light leading-relaxed text-sm">{item.desc}</p>
+                  <h3 className="text-xl font-bold text-white mb-4 tracking-tight">{item.title}</h3>
+                  <p className="text-neutral-300 font-normal leading-relaxed text-sm">{item.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
