@@ -402,7 +402,7 @@ export default function ProjetoDetalhePage() {
                     href={caseStudy.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 text-xs md:text-sm font-bold tracking-widest uppercase rounded-full bg-primary text-white hover:bg-blue-600 transition-all duration-300 shadow-[0_0_30px_rgba(29,77,255,0.4)] hover:shadow-[0_0_45px_rgba(29,77,255,0.8)] hover:scale-105 active:scale-95 group"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-3.5 text-xs font-bold tracking-widest uppercase rounded-full bg-primary text-white hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg group"
                   >
                     <span>Acessar Projeto</span>
                     <ExternalLink className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
