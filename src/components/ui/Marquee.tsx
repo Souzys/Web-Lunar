@@ -22,10 +22,6 @@ export function Marquee({ children, speed = 1, direction = 'left', className, ..
     
     if (!wrapper || !container || !content) return;
 
-    // Clone content to make it infinite
-    const clone = content.cloneNode(true) as HTMLDivElement;
-    container.appendChild(clone);
-
     const xPercent = direction === 'left' ? -50 : 0;
     const startXPercent = direction === 'left' ? 0 : -50;
 
@@ -59,7 +55,6 @@ export function Marquee({ children, speed = 1, direction = 'left', className, ..
       if (direction === 'right') progressOffset = deltaX / width;
 
       let newProgress = startProgress + progressOffset;
-      // Wrap progress between 0 and 1
       newProgress = (newProgress % 1 + 1) % 1;
       tl.progress(newProgress);
     };
@@ -111,7 +106,6 @@ export function Marquee({ children, speed = 1, direction = 'left', className, ..
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Apenas dá play se não estiver arrastando
           if (!isDragging) tl.play();
         } else {
           tl.pause();
@@ -125,9 +119,6 @@ export function Marquee({ children, speed = 1, direction = 'left', className, ..
     return () => {
       observer.disconnect();
       tl.kill();
-      if (container.contains(clone)) {
-        container.removeChild(clone);
-      }
       wrapper.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
@@ -145,7 +136,10 @@ export function Marquee({ children, speed = 1, direction = 'left', className, ..
       {...props}
     >
       <div ref={containerRef} className="flex whitespace-nowrap will-change-transform w-fit">
-        <div ref={contentRef} className="flex px-4 items-center">
+        <div ref={contentRef} className="flex items-center shrink-0">
+          {children}
+        </div>
+        <div className="flex items-center shrink-0" aria-hidden="true">
           {children}
         </div>
       </div>
