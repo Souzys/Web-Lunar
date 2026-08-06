@@ -52,7 +52,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
 
   return (
     <div 
-      className="h-[290px] w-full [perspective:1000px] cursor-pointer"
+      className="h-[310px] w-full [perspective:1000px] cursor-pointer"
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div 
@@ -64,7 +64,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
       >
         {/* LADO DA FRENTE */}
         <div 
-          className="absolute inset-0 w-full h-full group bg-white/80 hover:bg-white border border-black/[0.05] hover:border-primary/30 p-6 flex flex-col justify-between rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+          className="absolute inset-0 w-full h-full group bg-white/80 hover:bg-white border border-black/[0.05] hover:border-primary/30 p-5 flex flex-col justify-between rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
           style={{ 
             backfaceVisibility: 'hidden',
             pointerEvents: isFlipped ? 'none' : 'auto'
@@ -73,37 +73,37 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
           {/* Glow Effect inside Card */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-          {/* Top Section */}
-          <div className="flex justify-between items-start relative z-10">
-            <span className="font-display text-2xl font-black text-black/15 group-hover:text-primary transition-colors duration-300">
+          {/* Top Section Header */}
+          <div className="flex justify-between items-center relative z-10">
+            <span className="font-display text-xl font-black text-black/20 group-hover:text-primary transition-colors duration-300">
               0{index + 1}
             </span>
-            <div className="w-8 h-8 border border-neutral-200 group-hover:border-primary/30 group-hover:bg-primary/10 text-neutral-400 group-hover:text-primary group-hover:-rotate-45 flex items-center justify-center rounded-full transition-all duration-300 bg-white/50 shadow-sm backdrop-blur-sm">
-              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <div className="w-7 h-7 border border-neutral-200 group-hover:border-primary/30 group-hover:bg-primary/10 text-neutral-400 group-hover:text-primary group-hover:-rotate-45 flex items-center justify-center rounded-full transition-all duration-300 bg-white/50 shadow-sm backdrop-blur-sm">
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 19L19 5M19 5v10M19 5H9" />
               </svg>
             </div>
           </div>
 
-          {/* Bottom Section */}
-          <div className="mt-4 relative z-10">
-            <h3 className="font-sans text-xl font-bold tracking-tight mb-2 text-neutral-900 group-hover:text-primary transition-colors duration-300">
-              {service.title}
-            </h3>
-            <p className="text-xs leading-relaxed font-light text-neutral-600 group-hover:text-neutral-900 transition-colors duration-300 line-clamp-3">
-              {service.desc}
-            </p>
+          {/* Middle Animated SVG Visual Area */}
+          <div className="relative z-10 my-1 py-3.5 w-full flex items-center justify-center bg-neutral-50/80 group-hover:bg-primary/[0.04] rounded-xl border border-black/[0.03] group-hover:border-primary/20 transition-all duration-300">
+            {getServiceIcon(`0${index + 1}`, "w-10 h-10 text-neutral-600 group-hover:text-primary transition-colors duration-300")}
           </div>
 
-          {/* Background Watermark SVG */}
-          <div className="absolute right-2 bottom-2 translate-x-4 translate-y-4 w-28 h-28 opacity-[0.03] group-hover:opacity-[0.08] text-neutral-950 group-hover:text-primary transition-all duration-500 pointer-events-none z-0">
-            {getServiceIcon(String(index + 1), "w-full h-full")}
+          {/* Bottom Section */}
+          <div className="relative z-10">
+            <h3 className="font-sans text-base font-bold tracking-tight mb-1 text-neutral-900 group-hover:text-primary transition-colors duration-300">
+              {service.title}
+            </h3>
+            <p className="text-[11px] leading-relaxed font-light text-neutral-600 group-hover:text-neutral-900 transition-colors duration-300 line-clamp-2">
+              {service.desc}
+            </p>
           </div>
         </div>
 
         {/* VERSO DO CARD */}
         <div 
-          className="absolute inset-0 w-full h-full rounded-2xl bg-neutral-950 text-white p-6 flex flex-col justify-between shadow-xl overflow-hidden"
+          className="absolute inset-0 w-full h-full rounded-2xl bg-neutral-950 text-white p-5 flex flex-col justify-between shadow-xl overflow-hidden"
           style={{ 
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
@@ -115,7 +115,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
               <span className="text-[10px] font-mono uppercase tracking-widest text-primary font-bold">Destaques Técnicos</span>
               <span className="text-[10px] font-mono text-neutral-400 hover:text-white cursor-pointer transition-colors">Voltar ↺</span>
             </div>
-            <h3 className="font-sans text-lg font-bold text-white mb-3">
+            <h3 className="font-sans text-base font-bold text-white mb-3">
               {service.title}
             </h3>
 
@@ -131,7 +131,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
           </div>
 
           {/* Button CTA */}
-          <div className="relative z-10 w-full mt-3">
+          <div className="relative z-10 w-full mt-2">
             <Link 
               href={`/contato?subject=${encodeURIComponent('Orçamento: ' + service.title)}`}
               onClick={(e) => {
