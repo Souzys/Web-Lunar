@@ -146,32 +146,32 @@ export function SitesAppsIcon({ className = DEFAULT_CLASS }: IconProps) {
       `}</style>
 
       {/* Layer 1: Background Subtle Grid */}
-      <path d="M 20 20 H 140 M 20 50 H 140 M 20 80 H 140 M 20 110 H 140 M 20 140 H 140" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 4" opacity="0.5" />
+      <path d="M 20 20 H 140 M 20 50 H 140 M 20 80 H 140 M 20 110 H 140 M 20 140 H 140" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 4" opacity="0.4" />
 
       {/* Floating Code Tag </> Centered above Monitor */}
-      <g transform="translate(44, 14)" className="sa-code-tag">
-        <rect x="0" y="0" width="28" height="18" rx="4" fill="#171717" />
-        <path d="M 6 9 L 10 5 M 6 9 L 10 13 M 22 9 L 18 5 M 22 9 L 18 13" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <g transform="translate(56, 22)" className="sa-code-tag">
+        <rect x="0" y="0" width="26" height="16" rx="4" fill="#171717" />
+        <path d="M 6 8 L 9 5 M 6 8 L 9 11 M 20 8 L 17 5 M 20 8 L 17 11" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </g>
 
       {/* Desktop Monitor */}
-      <rect x="12" y="36" width="92" height="62" rx="6" fill="#FFFFFF" stroke="#171717" strokeWidth="2" />
-      <path d="M 44 98 L 36 114 H 80 L 72 98" stroke="#171717" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#FFFFFF" />
+      <rect x="20" y="42" width="84" height="54" rx="5" fill="#FFFFFF" stroke="#171717" strokeWidth="2" />
+      <path d="M 50 96 L 44 110 H 80 L 74 96" stroke="#171717" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#FFFFFF" />
 
       {/* Desktop Screen UI Blocks Assembling */}
-      <rect x="20" y="44" width="76" height="9" rx="2" fill="url(#saGrad)" className="sa-block-1" />
-      <rect x="20" y="57" width="22" height="33" rx="2" fill="#F3F4F6" stroke="#E5E7EB" strokeWidth="1" className="sa-block-2" />
-      <rect x="46" y="57" width="50" height="33" rx="2" fill="#171717" className="sa-block-3" />
+      <rect x="27" y="50" width="70" height="8" rx="2" fill="url(#saGrad)" className="sa-block-1" />
+      <rect x="27" y="61" width="20" height="28" rx="2" fill="#F3F4F6" stroke="#E5E7EB" strokeWidth="1" className="sa-block-2" />
+      <rect x="50" y="61" width="47" height="28" rx="2" fill="#171717" className="sa-block-3" />
 
       {/* Overlapping Smartphone */}
-      <g transform="translate(86, 56)">
-        <rect x="0" y="0" width="46" height="76" rx="7" fill="#FFFFFF" stroke="#171717" strokeWidth="2" />
-        <rect x="15" y="4" width="16" height="3" rx="1.5" fill="#171717" />
+      <g transform="translate(86, 58)">
+        <rect x="0" y="0" width="42" height="68" rx="6" fill="#FFFFFF" stroke="#171717" strokeWidth="2" />
+        <rect x="14" y="3" width="14" height="2.5" rx="1" fill="#171717" />
         
         {/* Mobile UI Blocks */}
-        <rect x="5" y="13" width="36" height="15" rx="3" fill="#1D4DFF" opacity="0.9" className="sa-block-1" />
-        <rect x="5" y="32" width="36" height="22" rx="3" fill="#F3F4F6" stroke="#E5E7EB" strokeWidth="1" className="sa-block-2" />
-        <rect x="5" y="58" width="36" height="11" rx="3" fill="#171717" className="sa-block-3" />
+        <rect x="5" y="11" width="32" height="13" rx="2" fill="#1D4DFF" opacity="0.9" className="sa-block-1" />
+        <rect x="5" y="28" width="32" height="20" rx="2" fill="#F3F4F6" stroke="#E5E7EB" strokeWidth="1" className="sa-block-2" />
+        <rect x="5" y="52" width="32" height="10" rx="2" fill="#171717" className="sa-block-3" />
       </g>
     </svg>
   );

@@ -86,7 +86,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
           </div>
 
           {/* Middle Animated SVG Visual Area (Freely floating inside main card) */}
-          <div className="relative z-10 my-1 h-[125px] w-full flex items-center justify-center pointer-events-none">
+          <div className="relative z-10 my-1 h-[135px] w-full flex items-center justify-center pointer-events-none overflow-visible">
             {getServiceIcon(`0${index + 1}`, "w-32 h-32 text-neutral-800 transition-all duration-300 group-hover:scale-105")}
           </div>
 
