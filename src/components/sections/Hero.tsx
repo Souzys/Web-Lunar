@@ -85,7 +85,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" ref={heroRef} className="relative min-h-screen flex flex-col justify-between pt-24 md:pt-32 bg-bg text-text overflow-hidden">
+    <section id="home" ref={heroRef} className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-between pt-28 pb-16 md:pt-32 md:pb-0 bg-bg text-text overflow-hidden">
       {/* Awwwards Style Abstract Noise & Glow Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Deep blue radial glow (Desktop only mouse tracking) */}

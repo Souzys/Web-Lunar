@@ -43,7 +43,7 @@ export function IndustryCircles() {
   const { t } = useLanguage();
 
   return (
-    <section className="w-full h-full flex flex-col justify-center bg-bg text-text overflow-hidden">
+    <section className="w-full py-16 md:py-24 flex flex-col justify-center bg-bg text-text overflow-hidden">
       <div className="container mx-auto max-w-[1440px] px-6">
         <AnimatedSection>
           <div className="mb-16">
