@@ -118,23 +118,23 @@ export function SitesAppsIcon({ className = DEFAULT_CLASS }: IconProps) {
       </defs>
       <style>{`
         @keyframes saBlockFade1 {
-          0%, 10% { opacity: 0; transform: translateY(6px); }
+          0%, 10% { opacity: 0; transform: translateY(5px); }
           25%, 85% { opacity: 1; transform: translateY(0); }
-          95%, 100% { opacity: 0; transform: translateY(-4px); }
+          95%, 100% { opacity: 0; transform: translateY(-3px); }
         }
         @keyframes saBlockFade2 {
-          0%, 25% { opacity: 0; transform: translateY(6px); }
+          0%, 25% { opacity: 0; transform: translateY(5px); }
           40%, 85% { opacity: 1; transform: translateY(0); }
-          95%, 100% { opacity: 0; transform: translateY(-4px); }
+          95%, 100% { opacity: 0; transform: translateY(-3px); }
         }
         @keyframes saBlockFade3 {
-          0%, 40% { opacity: 0; transform: translateY(6px); }
+          0%, 40% { opacity: 0; transform: translateY(5px); }
           55%, 85% { opacity: 1; transform: translateY(0); }
-          95%, 100% { opacity: 0; transform: translateY(-4px); }
+          95%, 100% { opacity: 0; transform: translateY(-3px); }
         }
         @keyframes saTagFloat {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-5px); }
+          50% { transform: translateY(-4px); }
         }
         .sa-block-1 { animation: saBlockFade1 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
         .sa-block-2 { animation: saBlockFade2 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
@@ -148,30 +148,30 @@ export function SitesAppsIcon({ className = DEFAULT_CLASS }: IconProps) {
       {/* Layer 1: Background Subtle Grid */}
       <path d="M 20 20 H 140 M 20 50 H 140 M 20 80 H 140 M 20 110 H 140 M 20 140 H 140" stroke="#E8E8E8" strokeWidth="1" strokeDasharray="2 4" opacity="0.5" />
 
-      {/* Desktop Monitor */}
-      <rect x="14" y="24" width="98" height="66" rx="6" fill="#FFFFFF" stroke="#171717" strokeWidth="2" />
-      <path d="M 48 90 L 40 108 H 86 L 78 90" stroke="#171717" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#FFFFFF" />
-
-      {/* Desktop Screen UI Blocks Assembling */}
-      <rect x="22" y="32" width="82" height="10" rx="2" fill="url(#saGrad)" className="sa-block-1" />
-      <rect x="22" y="46" width="24" height="36" rx="2" fill="#F3F4F6" stroke="#E5E7EB" strokeWidth="1" className="sa-block-2" />
-      <rect x="50" y="46" width="54" height="36" rx="2" fill="#171717" className="sa-block-3" />
-
-      {/* Overlapping Smartphone */}
-      <g transform="translate(94, 52)">
-        <rect x="0" y="0" width="50" height="82" rx="8" fill="#FFFFFF" stroke="#171717" strokeWidth="2" />
-        <rect x="16" y="4" width="18" height="3" rx="1.5" fill="#171717" />
-        
-        {/* Mobile UI Blocks */}
-        <rect x="6" y="14" width="38" height="16" rx="3" fill="#1D4DFF" opacity="0.9" className="sa-block-1" />
-        <rect x="6" y="34" width="38" height="24" rx="3" fill="#F3F4F6" stroke="#E5E7EB" strokeWidth="1" className="sa-block-2" />
-        <rect x="6" y="62" width="38" height="12" rx="3" fill="#171717" className="sa-block-3" />
+      {/* Floating Code Tag </> Centered above Monitor */}
+      <g transform="translate(44, 14)" className="sa-code-tag">
+        <rect x="0" y="0" width="28" height="18" rx="4" fill="#171717" />
+        <path d="M 6 9 L 10 5 M 6 9 L 10 13 M 22 9 L 18 5 M 22 9 L 18 13" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </g>
 
-      {/* Floating Code Tag </> */}
-      <g transform="translate(122, 18)" className="sa-code-tag">
-        <rect x="0" y="0" width="28" height="20" rx="4" fill="#171717" />
-        <path d="M 6 10 L 10 6 M 6 10 L 10 14 M 22 10 L 18 6 M 22 10 L 18 14" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Desktop Monitor */}
+      <rect x="12" y="36" width="92" height="62" rx="6" fill="#FFFFFF" stroke="#171717" strokeWidth="2" />
+      <path d="M 44 98 L 36 114 H 80 L 72 98" stroke="#171717" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#FFFFFF" />
+
+      {/* Desktop Screen UI Blocks Assembling */}
+      <rect x="20" y="44" width="76" height="9" rx="2" fill="url(#saGrad)" className="sa-block-1" />
+      <rect x="20" y="57" width="22" height="33" rx="2" fill="#F3F4F6" stroke="#E5E7EB" strokeWidth="1" className="sa-block-2" />
+      <rect x="46" y="57" width="50" height="33" rx="2" fill="#171717" className="sa-block-3" />
+
+      {/* Overlapping Smartphone */}
+      <g transform="translate(86, 56)">
+        <rect x="0" y="0" width="46" height="76" rx="7" fill="#FFFFFF" stroke="#171717" strokeWidth="2" />
+        <rect x="15" y="4" width="16" height="3" rx="1.5" fill="#171717" />
+        
+        {/* Mobile UI Blocks */}
+        <rect x="5" y="13" width="36" height="15" rx="3" fill="#1D4DFF" opacity="0.9" className="sa-block-1" />
+        <rect x="5" y="32" width="36" height="22" rx="3" fill="#F3F4F6" stroke="#E5E7EB" strokeWidth="1" className="sa-block-2" />
+        <rect x="5" y="58" width="36" height="11" rx="3" fill="#171717" className="sa-block-3" />
       </g>
     </svg>
   );
