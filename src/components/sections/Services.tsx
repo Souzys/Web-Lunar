@@ -165,11 +165,11 @@ export function Services() {
 
   return (
     <section id="service" className="py-20 md:py-24 bg-[#FAFAFA] text-neutral-900 relative overflow-hidden border-t border-black/5">
-      {/* Background Grid & Glows */}
+      {/* Background Grid & Optimized Glows */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000004_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)] bg-[size:40px_40px]" />
-        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full bg-primary/8 blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] rounded-full bg-blue-500/5 blur-[120px] translate-x-1/4" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(29,77,255,0.05)_0%,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(59,130,246,0.03)_0%,transparent_60%)]" />
       </div>
 
       <div className="container mx-auto max-w-[1440px] px-6 relative z-10">

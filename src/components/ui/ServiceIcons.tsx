@@ -6,7 +6,7 @@ interface IconProps {
   className?: string;
 }
 
-const DEFAULT_CLASS = "w-28 h-28 text-neutral-800 transition-colors duration-500";
+const DEFAULT_CLASS = "w-28 h-28 text-neutral-800 transition-colors duration-300";
 
 // ==========================================
 // 1. LANDING PAGES (Browser, CTA Click & Conversion Funnel Spark)
@@ -19,10 +19,6 @@ export function LandingPagesIcon({ className = DEFAULT_CLASS }: IconProps) {
           <stop offset="0%" stopColor="#1D4DFF" />
           <stop offset="100%" stopColor="#60A5FA" />
         </linearGradient>
-        <filter id="lpGlow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="3" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
       </defs>
       <style>{`
         @keyframes lpFunnelDot {
@@ -41,7 +37,7 @@ export function LandingPagesIcon({ className = DEFAULT_CLASS }: IconProps) {
         }
         @keyframes lpBtnPulse {
           0%, 52% { fill: url(#lpGrad); transform: scale(1); }
-          55% { fill: #1D4DFF; transform: scale(0.96); filter: drop-shadow(0 0 8px rgba(29,77,255,0.8)); }
+          55% { fill: #1D4DFF; transform: scale(0.96); }
           60% { fill: url(#lpGrad); transform: scale(1); }
           100% { fill: url(#lpGrad); transform: scale(1); }
         }
@@ -53,17 +49,21 @@ export function LandingPagesIcon({ className = DEFAULT_CLASS }: IconProps) {
         .lp-funnel-path {
           stroke-dasharray: 40;
           animation: lpFunnelDot 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          will-change: stroke-dashoffset, opacity;
         }
         .lp-cursor-g {
           animation: lpCursorGlide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          will-change: transform, opacity;
         }
         .lp-btn-rect {
           transform-origin: 45px 91px;
           animation: lpBtnPulse 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          will-change: transform;
         }
         .lp-spark-ring {
           transform-origin: 45px 91px;
           animation: lpSparkPop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          will-change: transform, opacity;
         }
         @media (prefers-reduced-motion: reduce) {
           .lp-funnel-path, .lp-cursor-g, .lp-btn-rect, .lp-spark-ring { animation: none !important; }
@@ -94,7 +94,7 @@ export function LandingPagesIcon({ className = DEFAULT_CLASS }: IconProps) {
       <rect x="28" y="84" width="34" height="14" rx="4" className="lp-btn-rect" />
 
       {/* Conversion Spark Circle */}
-      <circle cx="45" cy="91" r="12" fill="none" stroke="#1D4DFF" strokeWidth="2" className="lp-spark-ring" filter="url(#lpGlow)" />
+      <circle cx="45" cy="91" r="12" fill="none" stroke="#1D4DFF" strokeWidth="2" className="lp-spark-ring" />
 
       {/* Animated Cursor */}
       <g className="lp-cursor-g">
@@ -136,10 +136,10 @@ export function SitesAppsIcon({ className = DEFAULT_CLASS }: IconProps) {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-5px); }
         }
-        .sa-block-1 { animation: saBlockFade1 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-        .sa-block-2 { animation: saBlockFade2 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-        .sa-block-3 { animation: saBlockFade3 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-        .sa-code-tag { animation: saTagFloat 3s ease-in-out infinite; }
+        .sa-block-1 { animation: saBlockFade1 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
+        .sa-block-2 { animation: saBlockFade2 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
+        .sa-block-3 { animation: saBlockFade3 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
+        .sa-code-tag { animation: saTagFloat 3s ease-in-out infinite; will-change: transform; }
         @media (prefers-reduced-motion: reduce) {
           .sa-block-1, .sa-block-2, .sa-block-3, .sa-code-tag { animation: none !important; }
         }
@@ -188,10 +188,6 @@ export function EcommerceIcon({ className = DEFAULT_CLASS }: IconProps) {
           <stop offset="0%" stopColor="#1D4DFF" />
           <stop offset="100%" stopColor="#10B981" />
         </linearGradient>
-        <filter id="ecGlow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="3" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
       </defs>
       <style>{`
         @keyframes ecItemDrop {
@@ -214,10 +210,10 @@ export function EcommerceIcon({ className = DEFAULT_CLASS }: IconProps) {
           0% { stroke-dashoffset: 35; }
           100% { stroke-dashoffset: 0; }
         }
-        .ec-item-circle { animation: ecItemDrop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-        .ec-card-g { animation: ecCardSlide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-        .ec-check-g { transform-origin: 125px 95px; animation: ecCheckPop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-        .ec-dot-line { stroke-dasharray: 4 4; animation: ecDotTravel 2s linear infinite; }
+        .ec-item-circle { animation: ecItemDrop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
+        .ec-card-g { animation: ecCardSlide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
+        .ec-check-g { transform-origin: 125px 95px; animation: ecCheckPop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
+        .ec-dot-line { stroke-dasharray: 4 4; animation: ecDotTravel 2s linear infinite; will-change: stroke-dashoffset; }
         @media (prefers-reduced-motion: reduce) {
           .ec-item-circle, .ec-card-g, .ec-check-g, .ec-dot-line { animation: none !important; }
         }
@@ -242,7 +238,7 @@ export function EcommerceIcon({ className = DEFAULT_CLASS }: IconProps) {
 
       {/* Approved Checkmark Icon Badge */}
       <g className="ec-check-g">
-        <circle cx="125" cy="95" r="14" fill="#10B981" filter="url(#ecGlow)" />
+        <circle cx="125" cy="95" r="14" fill="#10B981" />
         <path d="M 118 95 L 123 100 L 132 90" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       </g>
     </svg>
@@ -260,10 +256,6 @@ export function BookingIcon({ className = DEFAULT_CLASS }: IconProps) {
           <stop offset="0%" stopColor="#1D4DFF" />
           <stop offset="100%" stopColor="#8B5CF6" />
         </linearGradient>
-        <filter id="bkGlow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="3" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
       </defs>
       <style>{`
         @keyframes clockSpinHour {
@@ -283,10 +275,10 @@ export function BookingIcon({ className = DEFAULT_CLASS }: IconProps) {
           30%, 80% { transform: translateY(0) scale(1); opacity: 1; }
           90%, 100% { transform: translateY(-5px) scale(0); opacity: 0; }
         }
-        .bk-hour-hand { transform-origin: 116px 112px; animation: clockSpinHour 12s linear infinite; }
-        .bk-minute-hand { transform-origin: 116px 112px; animation: clockSpinMinute 12s linear infinite; }
-        .bk-active-day { transform-origin: 82px 82px; animation: bkRingPulse 2.5s ease-in-out infinite; }
-        .bk-notif-g { transform-origin: 40px 125px; animation: bkNotifPop 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        .bk-hour-hand { transform-origin: 116px 112px; animation: clockSpinHour 12s linear infinite; will-change: transform; }
+        .bk-minute-hand { transform-origin: 116px 112px; animation: clockSpinMinute 12s linear infinite; will-change: transform; }
+        .bk-active-day { transform-origin: 82px 82px; animation: bkRingPulse 2.5s ease-in-out infinite; will-change: transform, opacity; }
+        .bk-notif-g { transform-origin: 40px 125px; animation: bkNotifPop 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
         @media (prefers-reduced-motion: reduce) {
           .bk-hour-hand, .bk-minute-hand, .bk-active-day, .bk-notif-g { animation: none !important; }
         }
@@ -307,7 +299,7 @@ export function BookingIcon({ className = DEFAULT_CLASS }: IconProps) {
       <circle cx="38" cy="82" r="3" fill="#D4D4D4" />
       <circle cx="60" cy="82" r="3" fill="#D4D4D4" />
       {/* Selected Day Ring */}
-      <circle cx="82" cy="82" r="8" fill="url(#bkGrad)" className="bk-active-day" filter="url(#bkGlow)" />
+      <circle cx="82" cy="82" r="8" fill="url(#bkGrad)" className="bk-active-day" />
       <circle cx="82" cy="82" r="4" fill="#FFFFFF" />
       <circle cx="104" cy="82" r="3" fill="#D4D4D4" />
 
@@ -322,7 +314,7 @@ export function BookingIcon({ className = DEFAULT_CLASS }: IconProps) {
 
       {/* WhatsApp / Notification Bubble Floating Bottom Left */}
       <g className="bk-notif-g" transform="translate(18, 110)">
-        <rect x="0" y="0" width="56" height="26" rx="13" fill="#25D366" filter="url(#bkGlow)" />
+        <rect x="0" y="0" width="56" height="26" rx="13" fill="#25D366" />
         <text x="28" y="16" fill="#FFFFFF" fontSize="10" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle">15:00 ✓</text>
       </g>
     </svg>
@@ -340,10 +332,6 @@ export function IntegrationsIcon({ className = DEFAULT_CLASS }: IconProps) {
           <stop offset="0%" stopColor="#1D4DFF" />
           <stop offset="100%" stopColor="#06B6D4" />
         </linearGradient>
-        <filter id="intGlow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="4" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
       </defs>
       <style>{`
         @keyframes intPacketFlow {
@@ -352,15 +340,17 @@ export function IntegrationsIcon({ className = DEFAULT_CLASS }: IconProps) {
         }
         @keyframes intHubPulse {
           0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.1); filter: drop-shadow(0 0 10px rgba(29,77,255,0.8)); }
+          50% { transform: scale(1.08); }
         }
         .int-flow-line {
           stroke-dasharray: 6 12;
           animation: intPacketFlow 2s linear infinite;
+          will-change: stroke-dashoffset;
         }
         .int-hub-g {
           transform-origin: 80px 80px;
           animation: intHubPulse 3s ease-in-out infinite;
+          will-change: transform;
         }
         @media (prefers-reduced-motion: reduce) {
           .int-flow-line, .int-hub-g { animation: none !important; }
@@ -413,7 +403,7 @@ export function IntegrationsIcon({ className = DEFAULT_CLASS }: IconProps) {
 
       {/* Central Hexagonal Hub Node */}
       <g className="int-hub-g">
-        <polygon points="80,62 96,71 96,89 80,98 64,89 64,71" fill="#171717" filter="url(#intGlow)" />
+        <polygon points="80,62 96,71 96,89 80,98 64,89 64,71" fill="#171717" />
         <polygon points="80,66 92,73 92,87 80,94 68,87 68,73" fill="url(#intGrad)" />
         <circle cx="80" cy="80" r="4" fill="#FFFFFF" />
       </g>
@@ -432,10 +422,6 @@ export function PerformanceIcon({ className = DEFAULT_CLASS }: IconProps) {
           <stop offset="0%" stopColor="#10B981" />
           <stop offset="100%" stopColor="#1D4DFF" />
         </linearGradient>
-        <filter id="perfGlow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="3" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
       </defs>
       <style>{`
         @keyframes perfNeedleRev {
@@ -457,13 +443,16 @@ export function PerformanceIcon({ className = DEFAULT_CLASS }: IconProps) {
         .perf-needle-g {
           transform-origin: 80px 105px;
           animation: perfNeedleRev 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          will-change: transform;
         }
         .perf-graph-path {
           stroke-dasharray: 120;
           animation: perfGraphDraw 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          will-change: stroke-dashoffset;
         }
         .perf-glass-g {
           animation: perfGlassSlide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          will-change: transform, opacity;
         }
         @media (prefers-reduced-motion: reduce) {
           .perf-needle-g, .perf-graph-path, .perf-glass-g { animation: none !important; }
@@ -472,7 +461,7 @@ export function PerformanceIcon({ className = DEFAULT_CLASS }: IconProps) {
 
       {/* Layer 1: Background SEO Graph Line */}
       <path d="M 25 135 L 55 122 L 85 128 L 135 88" stroke="#E5E7EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M 25 135 L 55 122 L 85 128 L 135 88" stroke="url(#perfGrad)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="perf-graph-path" filter="url(#perfGlow)" />
+      <path d="M 25 135 L 55 122 L 85 128 L 135 88" stroke="url(#perfGrad)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="perf-graph-path" />
 
       {/* Speedometer Arc */}
       <path d="M 28 105 A 52 52 0 0 1 132 105" stroke="#E5E7EB" strokeWidth="4" strokeLinecap="round" />

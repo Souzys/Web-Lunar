@@ -30,7 +30,7 @@ export function useLenis() {
     };
 
     gsap.ticker.add(updateRaf);
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.lagSmoothing(1000, 16);
 
     return () => {
       delete (window as any).lenis;
