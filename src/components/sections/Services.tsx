@@ -52,7 +52,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
 
   return (
     <div 
-      className="h-[310px] w-full [perspective:1000px] cursor-pointer"
+      className="h-[340px] w-full [perspective:1000px] cursor-pointer"
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div 
@@ -86,8 +86,8 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
           </div>
 
           {/* Middle Animated SVG Visual Area */}
-          <div className="relative z-10 my-1 py-3.5 w-full flex items-center justify-center bg-neutral-50/80 group-hover:bg-primary/[0.04] rounded-xl border border-black/[0.03] group-hover:border-primary/20 transition-all duration-300">
-            {getServiceIcon(`0${index + 1}`, "w-10 h-10 text-neutral-600 group-hover:text-primary transition-colors duration-300")}
+          <div className="relative z-10 my-2 h-[120px] w-full flex items-center justify-center bg-neutral-50/70 group-hover:bg-primary/[0.03] rounded-xl border border-black/[0.04] group-hover:border-primary/20 transition-all duration-300 overflow-hidden">
+            {getServiceIcon(`0${index + 1}`, "w-28 h-28 text-neutral-800 transition-colors duration-300")}
           </div>
 
           {/* Bottom Section */}
