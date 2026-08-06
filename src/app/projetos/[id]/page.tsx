@@ -391,9 +391,24 @@ export default function ProjetoDetalhePage() {
               </div>
             </AnimatedSection>
 
-            {/* Mockup Centralizado Slim */}
-            <div className="w-full relative flex items-center justify-center pt-4 pb-12">
+            {/* Mockup Centralizado Slim & Botão Acessar Projeto */}
+            <div className="w-full relative flex flex-col items-center justify-center pt-4 pb-12">
               <VolkHeroShowcase desktopImage={caseStudy.image} />
+
+              {/* Botão Acessar Projeto Abaixo do Mockup */}
+              {caseStudy.liveUrl && (
+                <AnimatedSection options={{ delay: 0.2 }} className="mt-10 z-30">
+                  <a
+                    href={caseStudy.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 text-xs md:text-sm font-bold tracking-widest uppercase rounded-full bg-primary text-white hover:bg-blue-600 transition-all duration-300 shadow-[0_0_30px_rgba(29,77,255,0.4)] hover:shadow-[0_0_45px_rgba(29,77,255,0.8)] hover:scale-105 active:scale-95 group"
+                  >
+                    <span>Acessar Projeto</span>
+                    <ExternalLink className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </AnimatedSection>
+              )}
             </div>
 
           </div>
