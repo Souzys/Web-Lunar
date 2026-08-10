@@ -105,7 +105,7 @@ export function Hero() {
       <div className="relative z-10 container mx-auto max-w-[1440px] px-6 flex-grow grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mt-4 md:mt-0">
         
         {/* Coluna da Esquerda: Textos e CTAs */}
-        <div className="lg:col-span-7 flex flex-col justify-center items-start text-left">
+        <div className="lg:col-span-7 flex flex-col justify-center items-center sm:items-start text-center sm:text-left">
           {/* Badge */}
           <AnimatedSection options={{ delay: 0.1, y: 20 }} className="w-full flex justify-center sm:justify-start">
             <div className="inline-flex items-center justify-center text-center gap-2 sm:gap-2.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md mb-6 sm:mb-8 max-w-full">
@@ -118,13 +118,13 @@ export function Hero() {
           <AnimatedSection options={{ delay: 0.2, y: 40 }} className="w-full text-center sm:text-left">
             <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-[5vw] lg:text-[4vw] xl:text-[4.5vw] leading-[1.1] tracking-tighter mb-4 text-center sm:text-left">
               <span className="text-white/95">{t.hero.title1} </span>
-              <span className="inline-block sm:pr-4 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">{t.hero.title2}</span>
+              <span className="inline-block pr-3 sm:pr-4 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">{t.hero.title2}</span>
             </h1>
           </AnimatedSection>
 
           {/* Description & CTAs */}
-          <AnimatedSection options={{ delay: 0.4, y: 40 }} className="w-full flex flex-col items-start gap-10 mt-2">
-            <p className="text-base md:text-lg lg:text-xl text-white font-light leading-relaxed max-w-2xl">
+          <AnimatedSection options={{ delay: 0.4, y: 40 }} className="w-full flex flex-col items-center sm:items-start gap-8 sm:gap-10 mt-2">
+            <p className="text-base md:text-lg lg:text-xl text-white font-light leading-relaxed max-w-2xl text-center sm:text-left">
               {t.hero.bottomText}
             </p>
             
