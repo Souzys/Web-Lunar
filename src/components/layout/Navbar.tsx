@@ -127,7 +127,7 @@ export function Navbar() {
       {/* Ilha Dinâmica Flutuante */}
       <div 
         ref={menuRef}
-        className="fixed top-6 right-6 md:right-8 lg:right-12 z-50 bg-[#080a0f]/90 border border-white/10 backdrop-blur-xl shadow-2xl flex flex-col justify-between overflow-hidden pointer-events-auto"
+        className="fixed top-10 right-6 md:right-8 lg:right-12 z-50 bg-[#080a0f]/90 border border-white/10 backdrop-blur-xl shadow-2xl flex flex-col justify-between overflow-hidden pointer-events-auto"
         style={{
           width: 48,
           height: 48,
