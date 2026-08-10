@@ -16,7 +16,6 @@ export const siteContent = {
     bottomText: "Unimos design visual refinado e engenharia de software de alta performance para criar produtos digitais que geram resultados de verdade.",
     socialButtons: [
       { name: "Instagram", url: "https://instagram.com/" },
-      { name: "WhatsApp", url: "https://wa.me/" },
       { name: "LinkedIn", url: "https://linkedin.com/in/" },
       { name: "GitHub", url: "https://github.com/" },
     ],
