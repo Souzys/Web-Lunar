@@ -6,48 +6,18 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { getServiceIcon } from '@/components/ui/ServiceIcons';
 import { useLanguage } from '@/context/LanguageContext';
 
-const SERVICE_HIGHLIGHTS = [
-  [
-    'Design orientado a conversão',
-    'Integração com pixel e CRM',
-    'Carregamento sub-segundo',
-    'Testes A/B estruturados'
-  ],
-  [
-    'Next.js App Router & React',
-    'Design System personalizado',
-    'SEO técnico avançado',
-    'Painel administrativo integrado'
-  ],
-  [
-    'Checkout de alta conversão',
-    'Integração: Stripe, Pix, etc.',
-    'Recuperação de carrinho',
-    'Painel simples de vendas'
-  ],
-  [
-    'Calendário em tempo real',
-    'Notificações WhatsApp/Email',
-    'Regras de agendamento automáticas',
-    'Painel administrativo limpo'
-  ],
-  [
-    'Conexão com HubSpot/RD Station',
-    'Automação de e-mail marketing',
-    'Integrações via Webhooks e APIs',
-    'Sincronização de pixels de anúncios'
-  ],
-  [
-    'Auditoria de Core Web Vitals',
-    'Otimização técnica para o Google',
-    'Compactação inteligente de imagens',
-    'Monitoramento avançado'
-  ]
-];
+interface ServiceCardData {
+  title: string;
+  desc: string;
+  tagline: string;
+  fullDesc: string;
+  highlights: string[];
+  deliverables: string[];
+  timeRange: string;
+}
 
-function ServiceCard({ service, index }: { service: { title: string; desc: string }, index: number }) {
+function ServiceCard({ service, index }: { service: ServiceCardData; index: number }) {
   const [isFlipped, setIsFlipped] = React.useState(false);
-  const highlights = SERVICE_HIGHLIGHTS[index] || [];
   const { t } = useLanguage();
 
   return (
@@ -85,7 +55,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
             </div>
           </div>
 
-          {/* Middle Animated SVG Visual Area (Freely floating inside main card) */}
+          {/* Middle Animated SVG Visual Area */}
           <div className="relative z-10 my-1 h-[135px] w-full flex items-center justify-center pointer-events-none overflow-visible">
             {getServiceIcon(`0${index + 1}`, "w-32 h-32 text-neutral-800 transition-all duration-300 group-hover:scale-105")}
           </div>
@@ -112,8 +82,8 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
         >
           <div>
             <div className="flex items-center justify-between mb-3">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-primary font-bold">Destaques Técnicos</span>
-              <span className="text-[10px] font-mono text-neutral-400 hover:text-white cursor-pointer transition-colors">Voltar ↺</span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-primary font-bold">{t.services.technicalHighlights}</span>
+              <span className="text-[10px] font-mono text-neutral-400 hover:text-white cursor-pointer transition-colors">{t.services.backCard}</span>
             </div>
             <h3 className="font-sans text-base font-bold text-white mb-3">
               {service.title}
@@ -121,7 +91,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
 
             {/* Highlights List */}
             <ul className="space-y-2">
-              {highlights.map((h, i) => (
+              {service.highlights.map((h, i) => (
                 <li key={i} className="flex items-center gap-2 text-xs text-neutral-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                   <span>{h}</span>
@@ -133,7 +103,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
           {/* Button CTA */}
           <div className="relative z-10 w-full mt-2">
             <Link 
-              href={`/contato?subject=${encodeURIComponent('Orçamento: ' + service.title)}`}
+              href={`/contato?subject=${encodeURIComponent(service.title)}`}
               onClick={(e) => {
                 e.stopPropagation();
               }}
@@ -154,7 +124,7 @@ function ServiceCard({ service, index }: { service: { title: string; desc: strin
 export function Services() {
   const { t } = useLanguage();
 
-  const serviceItems = [
+  const serviceItems: ServiceCardData[] = [
     t.services.items.landingPages,
     t.services.items.sitesApps,
     t.services.items.ecommerce,

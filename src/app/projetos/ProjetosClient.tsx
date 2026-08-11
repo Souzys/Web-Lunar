@@ -8,89 +8,29 @@ import gsap from 'gsap';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
-interface LocalProject {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  image: string;
-  liveUrl?: string;
-  githubUrl?: string;
-  tags: string[];
-}
-
-const DEFAULT_PROJECTS: LocalProject[] = [
-  {
-    id: "snews",
-    title: "SNEWS",
-    description: "Website institucional de alta performance e internacionalizado para a líder em soluções tecnológicas de broadcast.",
-    category: "Site Institucional",
-    image: "/printsnews.webp",
-    liveUrl: "https://snews.tv",
-    tags: ["Next.js App Router", "TypeScript", "next-intl (i18n)"],
-  },
-  {
-    id: "volk",
-    title: "VOLK Presenter",
-    description: "Experiência web imersiva com animações fluidas para a plataforma de gráficos e interatividade em tempo real.",
-    category: "Experiência Web",
-    image: "/printvolk.webp",
-    liveUrl: "https://volkpresenter.tv/pt",
-    tags: ["Next.js 15", "GSAP", "Framer Motion"],
-  },
-  {
-    id: "capi",
-    title: "CAPI Digital",
-    description: "Landing page e plataforma de apresentação para o cérebro operacional de produção de conteúdo assistido por IA.",
-    category: "Experiência Web",
-    image: "/printcapi.webp",
-    liveUrl: "https://capi.digital/pt",
-    tags: ["Next.js", "AI Integration", "Tailwind CSS"],
-  },
-  {
-    id: "adansonea",
-    title: "Adansonea",
-    description: "Landing page e plataforma institucional para consultoria boutique global de liderança e gestão de pessoas.",
-    category: "Landing Page",
-    image: "/printadansonea.webp",
-    liveUrl: "https://www.adansonea.com/",
-    tags: ["WordPress", "Elementor Pro", "Plugins Otimizados"],
-  },
-  {
-    id: "acp",
-    title: "ACP Tax Advisory",
-    description: "Website institucional e plataforma de serviços fiscais para consultoria norte-americana de planejamento tributário.",
-    category: "Site Institucional",
-    image: "/printacp.webp",
-    liveUrl: "https://acptaxadvisory.com/",
-    tags: ["WordPress", "Elementor Pro", "AIOSEO"],
-  },
-  {
-    id: "osa",
-    title: "ÔSA Branding Studio",
-    description: "Landing page e plataforma de apresentação para estúdio europeu especializado em branding e design conceitual.",
-    category: "Landing Page",
-    image: "/printosa.webp",
-    liveUrl: "https://osabrandingstudio.com/homenew/",
-    tags: ["WordPress", "Elementor Pro", "Yoast SEO"],
-  },
-];
-
-const CATEGORIES = ["Todos", "Experiência Web", "Site Institucional", "Landing Page", "Interfaces SaaS", "Identidade Visual", "E-commerce"];
-
 export function ProjetosClient() {
   useLenis();
   const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
-  const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [selectedCategoryKey, setSelectedCategoryKey] = useState<string>("todos");
 
   const isLoading = false;
-  const projects: LocalProject[] = DEFAULT_PROJECTS;
+  const projects = t.portfolio.projects;
 
-  const filteredProjects = selectedCategory === "Todos"
+  const categoryKeys: Array<{ key: string; label: string }> = [
+    { key: 'todos', label: t.portfolio.categories.todos },
+    { key: 'experienciaWeb', label: t.portfolio.categories.experienciaWeb },
+    { key: 'siteInstitucional', label: t.portfolio.categories.siteInstitucional },
+    { key: 'landingPage', label: t.portfolio.categories.landingPage },
+    { key: 'interfacesSaas', label: t.portfolio.categories.interfacesSaas },
+    { key: 'identidadeVisual', label: t.portfolio.categories.identidadeVisual },
+    { key: 'ecommerce', label: t.portfolio.categories.ecommerce },
+  ];
+
+  const filteredProjects = selectedCategoryKey === "todos"
     ? projects
-    : projects.filter(p => p.category === selectedCategory);
+    : projects.filter(p => p.categoryKey === selectedCategoryKey);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -119,33 +59,31 @@ export function ProjetosClient() {
   return (
     <div className="bg-bg text-text min-h-screen font-sans selection:bg-primary selection:text-white">
       {/* Hero / background glow */}
-      <div ref={heroRef} className="fixed top-0 left-0 h-screen w-full z-0 overflow-hidden pt-20 bg-bg">
+      <div ref={heroRef} className="fixed top-0 left-0 h-[50vh] w-full flex flex-col items-center justify-center z-0 overflow-hidden pt-20 bg-bg">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div
             ref={glowRef}
-            className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 mix-blend-screen pointer-events-none"
+            className="absolute w-[800px] h-[800px] bg-primary/15 rounded-full blur-[140px] opacity-40 mix-blend-screen pointer-events-none"
             style={{ left: 0, top: 0, willChange: 'transform' }}
           />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-        <div className="h-[calc(50vh-80px)] w-full flex flex-col items-center justify-center relative z-10 text-center">
-          <div className="container mx-auto px-6 max-w-[1440px]">
-            <AnimatedSection>
-              <div className="flex items-center justify-center gap-2.5 mb-8">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
-                <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
-                  {t.projectsPage.tag}
-                </span>
-              </div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-tight">
-                {t.projectsPage.title}
-              </h1>
-              <p className="text-base md:text-lg text-white font-light leading-relaxed max-w-xl mx-auto pl-5 border-l-2 md:border-l-0 md:border-t border-primary/30 pt-4 text-balance">
-                {t.projectsPage.subtitle}
-              </p>
-            </AnimatedSection>
-          </div>
+        <div className="container mx-auto px-6 max-w-[1440px] relative z-10 text-center">
+          <AnimatedSection>
+            <div className="flex items-center justify-center gap-2.5 mb-8">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
+              <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
+                {t.projectsPage.tag}
+              </span>
+            </div>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-tight">
+              {t.projectsPage.title}
+            </h1>
+            <p className="text-base md:text-lg text-white font-light leading-relaxed max-w-xl mx-auto pl-5 border-l-2 md:border-l-0 md:border-t border-primary/30 pt-4 text-balance">
+              {t.projectsPage.subtitle}
+            </p>
+          </AnimatedSection>
         </div>
       </div>
 
@@ -156,17 +94,17 @@ export function ProjetosClient() {
           {/* Category Filters */}
           <div className="flex flex-wrap gap-2.5 mb-16 w-full">
             <AnimatedSection options={{ delay: 0.1 }} className="flex flex-wrap gap-2">
-              {CATEGORIES.map((cat) => (
+              {categoryKeys.map((cat) => (
                 <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
+                  key={cat.key}
+                  onClick={() => setSelectedCategoryKey(cat.key)}
                   className={`px-5 py-2.5 rounded-full text-xs font-medium tracking-wide uppercase transition-all duration-300 ${
-                    selectedCategory === cat
+                    selectedCategoryKey === cat.key
                       ? "bg-neutral-950 text-white font-semibold shadow-md"
                       : "text-neutral-500 hover:text-neutral-950 border border-neutral-200 hover:border-neutral-350 bg-neutral-50"
                   }`}
                 >
-                  {cat}
+                  {cat.label}
                 </button>
               ))}
             </AnimatedSection>
@@ -176,7 +114,7 @@ export function ProjetosClient() {
           {isLoading ? (
             <div className="flex flex-col items-center justify-center py-20 gap-3">
               <Loader2 className="w-8 h-8 text-primary animate-spin" />
-              <span className="text-sm text-neutral-500 font-mono">Escaneando portfólio...</span>
+              <span className="text-sm text-neutral-500 font-mono">{t.projectsPage.scanning}</span>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -232,7 +170,7 @@ export function ProjetosClient() {
                           className="inline-flex items-center gap-1.5 text-xs text-primary hover:text-blue-700 transition-colors font-semibold"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
-                          <span>Projeto Online</span>
+                          <span>{t.portfolio.liveProject}</span>
                         </a>
                       )}
                       {project.githubUrl && (
@@ -245,7 +183,7 @@ export function ProjetosClient() {
                           <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                             <path fillRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" clipRule="evenodd" />
                           </svg>
-                          <span>Código Fonte</span>
+                          <span>{t.portfolio.sourceCode}</span>
                         </a>
                       )}
                     </div>

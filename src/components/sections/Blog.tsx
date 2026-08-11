@@ -2,12 +2,13 @@
 
 import React from 'react';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { siteContent } from '@/content';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
 import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function Blog() {
-  const { blog } = siteContent;
+  const { t } = useLanguage();
 
   return (
     <section id="blog" className="py-24 bg-white text-neutral-900 border-t border-black/5 relative overflow-hidden">
@@ -18,26 +19,28 @@ export function Blog() {
             <AnimatedSection>
               <div className="mb-6">
                 <span className="text-primary font-sans text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 font-semibold inline-block">
-                  {blog.tag}
+                  {t.blog.tag}
                 </span>
               </div>
             </AnimatedSection>
             <AnimatedSection options={{ delay: 0.1 }}>
               <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tight text-neutral-900">
-                {blog.title}
+                {t.blog.title}
               </h2>
             </AnimatedSection>
           </div>
           
           <AnimatedSection options={{ delay: 0.2 }}>
-            <PrimaryButton className="bg-transparent text-neutral-900 border border-black/10 hover:bg-neutral-100 px-8 py-4 rounded-full text-sm shadow-sm hover:shadow-md">
-              {blog.buttonText}
-            </PrimaryButton>
+            <Link href="/blog">
+              <PrimaryButton className="bg-transparent text-neutral-900 border border-black/10 hover:bg-neutral-100 px-8 py-4 rounded-full text-sm shadow-sm hover:shadow-md">
+                {t.blog.buttonText}
+              </PrimaryButton>
+            </Link>
           </AnimatedSection>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {blog.posts.map((post, index) => (
+          {t.blog.posts.map((post, index) => (
             <AnimatedSection key={index} options={{ delay: index * 0.1 }} className="group cursor-pointer">
               <div className="aspect-[4/3] w-full overflow-hidden bg-[#FAFAFA] rounded-2xl mb-6 relative border border-black/5 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none" />

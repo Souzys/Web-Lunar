@@ -2,9 +2,10 @@
 
 import React from 'react';
 import { Marquee } from '@/components/ui/Marquee';
+import { useLanguage } from '@/context/LanguageContext';
 
 const TECHNOLOGIES = [
-  { name: 'Gemini AI', icon: '/gemini.svg' },
+  { name: 'Gemini AI', icon: 'https://cdn.simpleicons.org/googlegemini/4E88D4' },
   { name: 'Antigravity IDE', icon: '/antigravity.png' },
   { name: 'Next.js', icon: 'https://cdn.simpleicons.org/nextdotjs/000000' },
   { name: 'React', icon: 'https://cdn.simpleicons.org/react/61DAFB' },
@@ -30,11 +31,13 @@ const TECHNOLOGIES = [
 ];
 
 export function TechStack() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 bg-[#FAFAFA] text-neutral-900 border-t border-black/5 overflow-hidden">
       <div className="container mx-auto max-w-7xl px-6 mb-12">
         <p className="text-center font-display text-sm md:text-base uppercase tracking-[0.15em] font-black text-neutral-800">
-          TECNOLOGIAS QUE UTILIZO
+          {t.techStack.title}
         </p>
       </div>
 

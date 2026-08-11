@@ -3,19 +3,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLenis } from '@/hooks/useLenis';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { siteContent } from '@/content';
 import { ArrowUpRight, Search } from 'lucide-react';
 import gsap from 'gsap';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function BlogClient() {
   useLenis();
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const { blog } = siteContent;
-
-  const filteredPosts = blog.posts.filter((post) =>
+  const filteredPosts = t.blog.posts.filter((post) =>
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -62,14 +61,14 @@ export function BlogClient() {
             <div className="flex items-center justify-center gap-2.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
               <span className="text-xs font-sans uppercase tracking-widest text-primary font-semibold">
-                Nosso Conhecimento
+                {t.blog.tag}
               </span>
             </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-tight">
-              Design & Código
+              {t.blog.title}
             </h1>
             <p className="text-base md:text-lg text-white font-light leading-relaxed max-w-xl mx-auto pl-5 border-l-2 md:border-l-0 md:border-t border-primary/30 pt-4 text-balance">
-              Artigos, guias e pensamentos sobre engenharia de software de alta performance, design visual e estratégias de conversão.
+              {t.blog.subtitle}
             </p>
           </AnimatedSection>
         </div>
@@ -85,7 +84,7 @@ export function BlogClient() {
               <div className="relative flex items-center">
                 <input
                   type="text"
-                  placeholder="Pesquisar artigos..."
+                  placeholder={t.blog.searchPlaceholder}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-12 pr-4 py-3 rounded-full border border-neutral-200 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all text-sm bg-neutral-50"
@@ -124,7 +123,7 @@ export function BlogClient() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-neutral-400 font-mono text-sm">Nenhum artigo encontrado para a sua busca.</p>
+              <p className="text-neutral-400 font-mono text-sm">{t.blog.noResults}</p>
             </div>
           )}
 

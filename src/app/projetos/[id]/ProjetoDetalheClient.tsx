@@ -7,12 +7,18 @@ import { ArrowLeft, ExternalLink, Calendar, CheckCircle2, User, Globe, Tag, Arro
 import Link from 'next/link';
 import gsap from 'gsap';
 import { VolkHeroShowcase } from '@/components/sections/VolkHeroShowcase';
-import { CaseStudy } from './caseStudiesData';
+import { CaseStudy, CASE_STUDIES_I18N } from './caseStudiesData';
+import { useLanguage } from '@/context/LanguageContext';
 
-export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | null }) {
+export function ProjetoDetalheClient({ caseStudy: initialCaseStudy }: { caseStudy: CaseStudy | null }) {
   useLenis();
+  const { language, t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
+
+  const activeCaseStudy = initialCaseStudy
+    ? (CASE_STUDIES_I18N[language]?.[initialCaseStudy.id] || initialCaseStudy)
+    : null;
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -38,13 +44,85 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  if (!caseStudy) {
+  const labels = {
+    pt: {
+      back: "Voltar para Projetos",
+      notFound: "Estudo de caso não encontrado",
+      client: "Cliente",
+      scope: "Escopo",
+      stack: "Stack",
+      year: "Ano",
+      explore: "EXPLORE",
+      visit: "Acessar Projeto",
+      overview: "Visão Geral",
+      challenge: "O Desafio",
+      solution: "A Solução Lunar",
+      techPerformance: "Performance Técnica",
+      keyResults: "Principais Resultados",
+      metadata: "Metadados do Projeto",
+      category: "Categoria",
+      technologies: "Tecnologias",
+      designSystem: "Design System & Interface",
+      interactiveComponents: "Componentes Interativos",
+      startProjectTitle: "Quer um resultado como este?",
+      startProjectDesc: "Desenvolvemos plataformas web de alto padrão sob medida para o seu negócio.",
+      startProjectBtn: "Iniciar um Projeto",
+    },
+    en: {
+      back: "Back to Projects",
+      notFound: "Case study not found",
+      client: "Client",
+      scope: "Scope",
+      stack: "Stack",
+      year: "Year",
+      explore: "EXPLORE",
+      visit: "Visit Live Project",
+      overview: "Overview",
+      challenge: "The Challenge",
+      solution: "The Lunar Solution",
+      techPerformance: "Technical Performance",
+      keyResults: "Key Results",
+      metadata: "Project Metadata",
+      category: "Category",
+      technologies: "Technologies",
+      designSystem: "Design System & Interface",
+      interactiveComponents: "Interactive Components",
+      startProjectTitle: "Want results like this for your brand?",
+      startProjectDesc: "We build custom, high-end digital platforms tailored for your business growth.",
+      startProjectBtn: "Start a Project",
+    },
+    es: {
+      back: "Volver a Proyectos",
+      notFound: "Estudio de caso no encontrado",
+      client: "Cliente",
+      scope: "Alcance",
+      stack: "Stack",
+      year: "Año",
+      explore: "EXPLORAR",
+      visit: "Ver Proyecto en Vivo",
+      overview: "Visión General",
+      challenge: "El Desafío",
+      solution: "La Solución Lunar",
+      techPerformance: "Rendimiento Técnico",
+      keyResults: "Resultados Clave",
+      metadata: "Metadatos del Proyecto",
+      category: "Categoría",
+      technologies: "Tecnologías",
+      designSystem: "Design System e Interfaz",
+      interactiveComponents: "Componentes Interactivos",
+      startProjectTitle: "¿Quieres resultados como este para tu marca?",
+      startProjectDesc: "Desarrollamos plataformas digitales a medida para impulsar tu crecimiento.",
+      startProjectBtn: "Iniciar un Proyecto",
+    },
+  }[language];
+
+  if (!activeCaseStudy) {
     return (
       <div className="bg-bg text-text min-h-screen flex flex-col items-center justify-center gap-6">
-        <h1 className="text-2xl font-mono text-neutral-400">Estudo de caso não encontrado</h1>
+        <h1 className="text-2xl font-mono text-neutral-400">{labels.notFound}</h1>
         <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-sm">
           <ArrowLeft className="w-4 h-4" />
-          <span>Voltar para Projetos</span>
+          <span>{labels.back}</span>
         </Link>
       </div>
     );
@@ -71,50 +149,50 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
               <div className="mb-6">
                 <Link href="/projetos" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-sans">
                   <ArrowLeft className="w-3.5 h-3.5" />
-                  <span>Voltar para Projetos</span>
+                  <span>{labels.back}</span>
                 </Link>
               </div>
               
               {/* Badge CASE STUDY */}
               <div className="mb-6">
                 <span className="text-[10px] font-mono tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary font-bold inline-block">
-                  {caseStudy.category}
+                  {activeCaseStudy.category}
                 </span>
               </div>
 
               {/* Titulo Centralizado dos Cases */}
               <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.05]">
-                {caseStudy.title}
+                {activeCaseStudy.title}
               </h1>
 
               {/* Subtítulo Centralizado */}
               <p className="text-lg md:text-2xl text-neutral-300 font-light leading-relaxed max-w-2xl mb-10 text-balance">
-                {caseStudy.tagline}
+                {activeCaseStudy.tagline}
               </p>
 
               {/* Linha Horizontal Elegante de Metadados */}
               <div className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 px-6 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl mb-10 text-center text-xs">
                 <div>
-                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Cliente</p>
-                  <p className="text-white font-semibold">{caseStudy.client}</p>
+                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">{labels.client}</p>
+                  <p className="text-white font-semibold">{activeCaseStudy.client}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Escopo</p>
-                  <p className="text-neutral-200 font-medium truncate">{caseStudy.scope?.[0] || "UX/UI Design"}</p>
+                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">{labels.scope}</p>
+                  <p className="text-neutral-200 font-medium truncate">{activeCaseStudy.scope?.[0] || "UX/UI Design"}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Stack</p>
+                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">{labels.stack}</p>
                   <p className="text-primary font-mono font-semibold">Next.js & Motion</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Ano</p>
-                  <p className="text-neutral-300 font-mono font-bold">{caseStudy.year}</p>
+                  <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">{labels.year}</p>
+                  <p className="text-neutral-300 font-mono font-bold">{activeCaseStudy.year}</p>
                 </div>
               </div>
 
               {/* Indicador EXPLORE ↓ */}
               <div className="flex flex-col items-center gap-2 mb-6 text-neutral-400 font-mono text-xs uppercase tracking-widest animate-bounce">
-                <span className="text-[10px]">EXPLORE</span>
+                <span className="text-[10px]">{labels.explore}</span>
                 <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
@@ -123,17 +201,17 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
 
             {/* Mockup Centralizado Slim & Botão Acessar Projeto */}
             <div className="w-full relative flex flex-col items-center justify-center pt-4 pb-12">
-              <VolkHeroShowcase desktopImage={caseStudy.image} />
+              <VolkHeroShowcase desktopImage={activeCaseStudy.image} />
 
-              {caseStudy.liveUrl && (
+              {activeCaseStudy.liveUrl && (
                 <AnimatedSection options={{ delay: 0.2 }} className="mt-10 z-30">
                   <a
-                    href={caseStudy.liveUrl}
+                    href={activeCaseStudy.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-3 px-8 py-3.5 text-xs font-bold tracking-widest uppercase rounded-full bg-primary text-white hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg group"
                   >
-                    <span>Acessar Projeto</span>
+                    <span>{labels.visit}</span>
                     <ExternalLink className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 </AnimatedSection>
@@ -150,15 +228,15 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
             <div className="p-3 border-r border-white/5 last:border-none">
               <p className="text-xl font-bold font-mono text-primary">+20 Módulos</p>
-              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Visualizados</p>
+              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">{labels.interactiveComponents}</p>
             </div>
             <div className="p-3 border-r border-white/5 last:border-none">
               <p className="text-xl font-bold font-mono text-emerald-400">&lt; 100ms</p>
-              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Latência Stream</p>
+              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">TTFB / Latency</p>
             </div>
             <div className="p-3 border-r border-white/5 last:border-none">
               <p className="text-xl font-bold font-mono text-white">100%</p>
-              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Responsivo</p>
+              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">Mobile-First</p>
             </div>
             <div className="p-3 border-r border-white/5 last:border-none">
               <p className="text-xl font-bold font-mono text-blue-400">Design System</p>
@@ -180,30 +258,30 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
             {/* Esquerda */}
             <div className="lg:col-span-8 flex flex-col gap-16 text-left">
               <AnimatedSection options={{ delay: 0.1 }}>
-                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">Visão Geral</h2>
-                <h3 className="text-2xl md:text-3xl font-black text-neutral-950 mb-6 tracking-tight leading-tight">{caseStudy.tagline}</h3>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">{labels.overview}</h2>
+                <h3 className="text-2xl md:text-3xl font-black text-neutral-950 mb-6 tracking-tight leading-tight">{activeCaseStudy.tagline}</h3>
                 <p className="text-neutral-600 font-light leading-relaxed text-base md:text-lg pl-5 border-l-2 border-primary/30">
-                  {caseStudy.overview}
+                  {activeCaseStudy.overview}
                 </p>
               </AnimatedSection>
 
               <AnimatedSection options={{ delay: 0.2 }}>
-                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">O Desafio</h2>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">{labels.challenge}</h2>
                 <p className="text-neutral-600 font-light leading-relaxed text-base">
-                  {caseStudy.challenge}
+                  {activeCaseStudy.challenge}
                 </p>
               </AnimatedSection>
 
               <AnimatedSection options={{ delay: 0.3 }}>
-                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">A Solução Lunar</h2>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">{labels.solution}</h2>
                 <p className="text-neutral-600 font-light leading-relaxed text-base mb-12">
-                  {caseStudy.solution}
+                  {activeCaseStudy.solution}
                 </p>
               </AnimatedSection>
 
               {/* Seção Métricas de Performance Técnica */}
               <AnimatedSection options={{ delay: 0.35 }}>
-                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">Performance Técnica</h2>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-6 font-semibold">{labels.techPerformance}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
                   {/* Card 1: Velocidade */}
                   <div className="bg-white/80 backdrop-blur-xl border border-neutral-200/80 p-6 rounded-2xl flex flex-col justify-between hover:border-primary/40 transition-all duration-300 shadow-md hover:shadow-xl text-left relative overflow-hidden group">
@@ -212,11 +290,11 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
                       <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 mb-4 font-mono text-[10px] font-bold">
                         98%
                       </div>
-                      <h4 className="text-neutral-900 font-bold text-sm mb-1.5">{caseStudy.performance.speed.title}</h4>
-                      <p className="text-primary font-mono text-xs font-semibold mb-2">{caseStudy.performance.speed.score}</p>
+                      <h4 className="text-neutral-900 font-bold text-sm mb-1.5">{activeCaseStudy.performance.speed.title}</h4>
+                      <p className="text-primary font-mono text-xs font-semibold mb-2">{activeCaseStudy.performance.speed.score}</p>
                     </div>
                     <p className="text-neutral-600 text-xs font-light leading-relaxed">
-                      {caseStudy.performance.speed.description}
+                      {activeCaseStudy.performance.speed.description}
                     </p>
                   </div>
 
@@ -229,11 +307,11 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
                           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                         </svg>
                       </div>
-                      <h4 className="text-neutral-900 font-bold text-sm mb-1.5">{caseStudy.performance.tech.title}</h4>
-                      <p className="text-primary font-mono text-xs font-semibold mb-2">{caseStudy.performance.tech.tech}</p>
+                      <h4 className="text-neutral-900 font-bold text-sm mb-1.5">{activeCaseStudy.performance.tech.title}</h4>
+                      <p className="text-primary font-mono text-xs font-semibold mb-2">{activeCaseStudy.performance.tech.tech}</p>
                     </div>
                     <p className="text-neutral-600 text-xs font-light leading-relaxed">
-                      {caseStudy.performance.tech.description}
+                      {activeCaseStudy.performance.tech.description}
                     </p>
                   </div>
 
@@ -246,20 +324,20 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
                           <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                       </div>
-                      <h4 className="text-neutral-900 font-bold text-sm mb-1.5">{caseStudy.performance.seo.title}</h4>
-                      <p className="text-primary font-mono text-xs font-semibold mb-2">{caseStudy.performance.seo.status}</p>
+                      <h4 className="text-neutral-900 font-bold text-sm mb-1.5">{activeCaseStudy.performance.seo.title}</h4>
+                      <p className="text-primary font-mono text-xs font-semibold mb-2">{activeCaseStudy.performance.seo.status}</p>
                     </div>
                     <p className="text-neutral-600 text-xs font-light leading-relaxed">
-                      {caseStudy.performance.seo.description}
+                      {activeCaseStudy.performance.seo.description}
                     </p>
                   </div>
                 </div>
               </AnimatedSection>
 
               <AnimatedSection options={{ delay: 0.4 }}>
-                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-8 font-semibold">Principais Resultados</h2>
+                <h2 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-8 font-semibold">{labels.keyResults}</h2>
                 <div className="grid grid-cols-1 gap-4">
-                  {caseStudy.results.map((result, index) => (
+                  {activeCaseStudy.results.map((result, index) => (
                     <div key={index} className="flex gap-4 items-start bg-neutral-50 border border-neutral-100 p-6 rounded-2xl">
                       <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                       <p className="text-neutral-700 text-sm font-medium leading-relaxed">{result}</p>
@@ -273,40 +351,40 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
             <div className="lg:col-span-4 lg:sticky lg:top-24 flex flex-col gap-10 text-left">
               <AnimatedSection options={{ delay: 0.2 }} className="w-full">
                 <div className="rounded-3xl border border-neutral-100 bg-neutral-50 p-8 shadow-sm">
-                  <h4 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-8 font-semibold">Metadados do Projeto</h4>
+                  <h4 className="text-xs uppercase font-sans tracking-widest text-neutral-400 mb-8 font-semibold">{labels.metadata}</h4>
                   
                   <div className="space-y-6">
                     <div className="flex gap-3 items-center pb-4 border-b border-neutral-200/60">
                       <User className="w-4 h-4 text-primary shrink-0" />
                       <div>
-                        <p className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase mb-0.5">Cliente</p>
-                        <p className="text-neutral-900 text-sm font-semibold">{caseStudy.client}</p>
+                        <p className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase mb-0.5">{labels.client}</p>
+                        <p className="text-neutral-900 text-sm font-semibold">{activeCaseStudy.client}</p>
                       </div>
                     </div>
 
                     <div className="flex gap-3 items-center pb-4 border-b border-neutral-200/60">
                       <Calendar className="w-4 h-4 text-primary shrink-0" />
                       <div>
-                        <p className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase mb-0.5">Ano de Entrega</p>
-                        <p className="text-neutral-900 text-sm font-semibold">{caseStudy.year}</p>
+                        <p className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase mb-0.5">{labels.year}</p>
+                        <p className="text-neutral-900 text-sm font-semibold">{activeCaseStudy.year}</p>
                       </div>
                     </div>
 
                     <div className="flex gap-3 items-center pb-4 border-b border-neutral-200/60">
                       <Globe className="w-4 h-4 text-primary shrink-0" />
                       <div>
-                        <p className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase mb-0.5">Categoria</p>
-                        <p className="text-neutral-900 text-sm font-semibold">{caseStudy.category}</p>
+                        <p className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase mb-0.5">{labels.category}</p>
+                        <p className="text-neutral-900 text-sm font-semibold">{activeCaseStudy.category}</p>
                       </div>
                     </div>
 
-                    <div className="flex gap-3 items-start">
-                      <Tag className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    <div className="flex gap-3 items-start pt-2">
+                      <Tag className="w-4 h-4 text-primary shrink-0 mt-1" />
                       <div>
-                        <p className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase mb-1">Tecnologias</p>
-                        <div className="flex flex-wrap gap-1 mt-1">
-                          {caseStudy.tags.map(tag => (
-                            <span key={tag} className="px-2 py-0.5 rounded text-[9px] font-mono bg-white border border-neutral-200 text-neutral-500 uppercase tracking-wider">
+                        <p className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase mb-2">{labels.technologies}</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {activeCaseStudy.tags.map((tag) => (
+                            <span key={tag} className="px-2 py-0.5 rounded text-[10px] font-mono bg-neutral-200/60 text-neutral-700">
                               {tag}
                             </span>
                           ))}
@@ -314,117 +392,30 @@ export function ProjetoDetalheClient({ caseStudy }: { caseStudy: CaseStudy | nul
                       </div>
                     </div>
                   </div>
+                </div>
+              </AnimatedSection>
 
-                  <div className="flex flex-col gap-3 mt-10">
-                    {caseStudy.liveUrl && (
-                      <a
-                        href={caseStudy.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 w-full py-3.5 text-xs font-bold tracking-widest uppercase rounded-full bg-primary text-white hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        <span>Acessar Projeto</span>
-                      </a>
-                    )}
-                    {caseStudy.githubUrl && (
-                      <a
-                        href={caseStudy.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 w-full py-3.5 text-xs font-bold tracking-widest uppercase rounded-full border border-neutral-300 text-neutral-700 hover:text-neutral-950 hover:border-neutral-400 transition-all duration-300"
-                      >
-                        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" clipRule="evenodd" />
-                        </svg>
-                        <span>Ver Código Fonte</span>
-                      </a>
-                    )}
-                  </div>
+              {/* Box de Contato / Iniciar Projeto */}
+              <AnimatedSection options={{ delay: 0.3 }} className="w-full">
+                <div className="rounded-3xl border border-primary/20 bg-primary/5 p-8 text-left relative overflow-hidden">
+                  <div className="absolute top-0 right-0 -mt-8 -mr-8 w-24 h-24 bg-primary/10 rounded-full blur-xl" />
+                  <h4 className="font-sans font-bold text-lg text-neutral-900 mb-2">{labels.startProjectTitle}</h4>
+                  <p className="text-neutral-600 text-xs font-light leading-relaxed mb-6">
+                    {labels.startProjectDesc}
+                  </p>
+                  <Link
+                    href={`/contato?subject=${encodeURIComponent('Projeto similar a: ' + activeCaseStudy.title)}`}
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 text-xs font-bold uppercase tracking-wider rounded-full bg-primary text-white hover:bg-blue-600 transition-all duration-300 shadow-md"
+                  >
+                    <span>{labels.startProjectBtn}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </AnimatedSection>
             </div>
 
           </div>
         </div>
-
-        {/* Seção Design System */}
-        <section className="bg-[#050505] text-white py-24 border-t border-white/5 relative overflow-hidden select-none">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
-
-          <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-              
-              <div className="lg:col-span-5 text-left">
-                <AnimatedSection>
-                  <p className="text-xs uppercase font-sans tracking-widest text-primary mb-4 font-semibold">
-                    Anatomia da Conversão
-                  </p>
-                  <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6 leading-tight">
-                    Design System &<br />Componentes Modulares
-                  </h2>
-                  <p className="text-neutral-400 font-light text-base leading-relaxed mb-8 text-balance">
-                    {caseStudy.designSystemText}
-                  </p>
-                </AnimatedSection>
-              </div>
-
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
-                <div className="absolute inset-0 border border-white/[0.03] rounded-3xl pointer-events-none" />
-
-                <div className="flex flex-col gap-6 justify-center">
-                  <AnimatedSection options={{ delay: 0.1 }} className="bg-[#0b0f19] border border-white/[0.08] p-8 rounded-2xl shadow-xl flex flex-col items-start gap-4 hover:border-primary/40 transition-colors duration-300">
-                    <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-wider">// Botão Interativo Glow</span>
-                    <button className="relative group px-6 py-3.5 text-xs font-mono font-bold tracking-widest uppercase rounded-full bg-primary text-white overflow-hidden shadow-[0_0_20px_rgba(29,77,255,0.3)] hover:shadow-[0_0_30px_rgba(29,77,255,0.6)] transition-all duration-300">
-                      <span className="relative z-10 flex items-center gap-2">
-                        {caseStudy.designSystemComponents.ctaLabel}
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </button>
-                  </AnimatedSection>
-
-                  <AnimatedSection options={{ delay: 0.2 }} className="bg-[#0b0f19] border border-white/[0.08] p-6 rounded-2xl shadow-xl flex items-center gap-4 hover:border-primary/40 transition-colors duration-300">
-                    <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 shrink-0 shadow-inner">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                      </svg>
-                    </div>
-                    <div className="text-left">
-                      <p className="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">Reconhecimento</p>
-                      <p className="text-white text-xs font-bold font-sans mt-0.5">{caseStudy.designSystemComponents.awardTitle}</p>
-                      <p className="text-neutral-400 text-[10px] font-light font-sans leading-tight mt-0.5">{caseStudy.designSystemComponents.awardSub}</p>
-                    </div>
-                  </AnimatedSection>
-                </div>
-
-                <div className="flex flex-col gap-6 justify-center">
-                  <AnimatedSection options={{ delay: 0.3 }} className="bg-[#0b0f19] border border-white/[0.08] p-8 rounded-2xl shadow-xl hover:border-primary/40 transition-colors duration-300 flex flex-col justify-between text-left min-h-[220px]">
-                    <div>
-                      <div className="flex justify-between items-center mb-6">
-                        <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-wider">// Anatomia do Card</span>
-                        <span className="text-xs font-mono font-bold text-primary">01</span>
-                      </div>
-                      <h4 className="text-white font-bold text-lg mb-2">{caseStudy.designSystemComponents.cardTitle}</h4>
-                      <p className="text-neutral-400 text-xs font-light leading-relaxed">
-                        {caseStudy.designSystemComponents.cardDesc}
-                      </p>
-                    </div>
-                    <div className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 mt-6 group-hover:border-primary/30 group-hover:text-primary transition-colors">
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </div>
-                  </AnimatedSection>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </section>
-
       </div>
     </div>
   );

@@ -110,10 +110,15 @@ export function Footer() {
         <div>
           <h4 className="text-white text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">{t.nav.servicos}</h4>
           <ul className="flex flex-col gap-4">
-            {siteContent.footer.links.single.map(link => (
-              <li key={link}>
+            {[
+              t.services.items.landingPages.title,
+              t.services.items.sitesApps.title,
+              t.services.items.ecommerce.title,
+              t.services.items.integracoes.title,
+            ].map(linkTitle => (
+              <li key={linkTitle}>
                 <Link href="/servicos" className="text-sm text-neutral-400 hover:text-primary transition-colors duration-300">
-                  {link}
+                  {linkTitle}
                 </Link>
               </li>
             ))}
@@ -140,8 +145,8 @@ export function Footer() {
         <div className="container mx-auto max-w-[1440px] px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-neutral-500 tracking-widest uppercase">
           <p>© {new Date().getFullYear()} WEB LUNAR. {t.footer.allRightsReserved}</p>
           <div className="flex gap-8">
-            <Link href="#" className="hover:text-white transition-colors">PRIVACIDADE</Link>
-            <Link href="#" className="hover:text-white transition-colors">TERMOS</Link>
+            <Link href="#" className="hover:text-white transition-colors">{t.footer.privacy}</Link>
+            <Link href="#" className="hover:text-white transition-colors">{t.footer.terms}</Link>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import gsap from 'gsap';
 import Link from 'next/link';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PrimaryButton } from '@/components/ui/PrimaryButton';
+import { useLanguage } from '@/context/LanguageContext';
 
 function generateLatencyPath() {
   const pts: number[] = [];
@@ -34,8 +35,22 @@ function pointsToFill(pts: number[]): string {
   return `M0,${pts[0]} L${line} L280,60 L0,60 Z`;
 }
 
+const PILLAR_ICONS = [
+  Server,
+  Zap,
+  Code2,
+  Shield,
+];
+
+const DETAIL_ICONS = [
+  Activity,
+  Box,
+  Lock,
+];
+
 export function SobreClient() {
   useLenis();
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const pillarsContainerRef = useRef<HTMLDivElement>(null);
@@ -127,20 +142,19 @@ export function SobreClient() {
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md mb-6 max-w-full">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0 shadow-[0_0_8px_rgba(29,77,255,0.4)]" />
                 <span className="text-[10px] sm:text-xs font-sans uppercase tracking-widest text-primary font-semibold leading-normal">
-                  Operações e Diretrizes de Engenharia
+                  {t.sobrePage.badge}
                 </span>
               </div>
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-white mb-6 leading-tight">
-                A Infraestrutura Oculta <br className="hidden lg:block"/>
+                {t.sobrePage.title} <br className="hidden lg:block"/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
-                  Por Trás de Interfaces
-                </span> <br className="hidden lg:block"/>
-                De <span className="italic">Alto Padrão</span>
+                  {t.sobrePage.titleHighlight}
+                </span>
               </h1>
             </AnimatedSection>
             <AnimatedSection options={{ delay: 0.2 }}>
               <p className="text-base md:text-lg text-text-muted font-light leading-relaxed max-w-xl border-l border-primary/30 pl-5 text-balance">
-                Não projetamos páginas estáticas. Construímos ecossistemas digitais robustos, projetados matematicamente para suportar tráfego severo, proteger margens de lucro e expandir operações sem gargalos técnicos.
+                {t.sobrePage.subtitle}
               </p>
             </AnimatedSection>
           </div>
@@ -164,14 +178,14 @@ export function SobreClient() {
         
         <div className="container mx-auto max-w-[1440px] px-6 relative z-10">
           <div className="mb-16 w-full">
-            <h2 className="text-xs uppercase font-sans tracking-widest text-white/40 mb-6 font-semibold">O Manifesto Corporativo</h2>
+            <h2 className="text-xs uppercase font-sans tracking-widest text-white/40 mb-6 font-semibold">{t.sobrePage.manifestoTag}</h2>
             <div className="text-xl md:text-3xl text-neutral-300 font-light leading-relaxed w-full">
               <TypewriterRichText
                 speed={25}
                 delay={400}
                 parts={[
-                  { text: "Na WEB LUNAR unimos design minimalista e engenharia de software de elite. Desenvolvemos sistemas rápidos, modulares e blindados contra picos de tráfego, prontos para " },
-                  { text: "converter acessos em faturamento previsível.", className: "text-white font-medium" }
+                  { text: t.sobrePage.manifestoP1 },
+                  { text: t.sobrePage.manifestoHighlight, className: "text-white font-medium" }
                 ]}
               />
             </div>
@@ -181,11 +195,11 @@ export function SobreClient() {
             <div>
               <AnimatedSection options={{ delay: 0.15 }}>
                 <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed max-w-xl border-l border-primary/30 pl-5 text-balance font-sans">
-                  No mercado de alta performance, a infraestrutura tecnológica divide a escala previsível do colapso. Sob picos severos de tráfego, arquiteturas genéricas falham. Nesse nível de operação, milissegundos de latência destroem conversões e queimam capital.
+                  {t.sobrePage.manifestoP2}
                 </p>
                 <div className="mt-8 pl-5">
                   <Link href="/contato">
-                    <PrimaryButton>Solicitar Orçamento</PrimaryButton>
+                    <PrimaryButton>{t.sobrePage.ctaButton}</PrimaryButton>
                   </Link>
                 </div>
               </AnimatedSection>
@@ -211,61 +225,35 @@ export function SobreClient() {
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 pb-8 border-b border-white/10">
             <div>
-              <p className="text-xs uppercase font-sans tracking-widest text-indigo-400 mb-3 font-semibold">Arquitetura Web Lunar</p>
+              <p className="text-xs uppercase font-sans tracking-widest text-indigo-400 mb-3 font-semibold">{t.sobrePage.pillarsTag}</p>
               <h2 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-[76px] font-bold tracking-tighter text-white leading-[0.95]">
-                Os Quatro Pilares
+                {t.sobrePage.pillarsTitle}
               </h2>
             </div>
             <p className="text-base sm:text-lg text-neutral-300 font-light max-w-sm leading-relaxed hidden md:block">
-              Princípios de engenharia que definem cada linha de código que entregamos.
+              {t.sobrePage.pillarsSubtitle}
             </p>
           </div>
 
           <div ref={pillarsContainerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: <Server className="w-5 h-5" />,
-                num: "01",
-                title: "Engenharia Full-Stack Desacoplada",
-                desc: "Separamos a interface visual (Front-End) do processamento (Back-End). A interface roda globalmente em redes ultra velozes, e os dados sensíveis permanecem isolados e seguros.",
-                tag: "Architecture"
-              },
-              {
-                icon: <Zap className="w-5 h-5" />,
-                num: "02",
-                title: "Desempenho Sub-Segundo (Zero Latência)",
-                desc: "Cada script, imagem e requisição ao banco passa por otimização estrita. Usamos Server Components para garantir que o primeiro render aconteça em frações de segundo.",
-                tag: "Performance"
-              },
-              {
-                icon: <Code2 className="w-5 h-5" />,
-                num: "03",
-                title: "Type-Safe End-to-End & Escalabilidade",
-                desc: "Códigos 100% tipados de ponta a ponta que eliminam falhas entre a interface e o servidor, garantindo estabilidade para acoplar novos módulos sem quebras.",
-                tag: "Engineering"
-              },
-              {
-                icon: <Shield className="w-5 h-5" />,
-                num: "04",
-                title: "Prontidão para Auditoria Técnica",
-                desc: "Projetos limpos, sem caixas-pretas ou código confuso. Entregamos infraestrutura documentada, componentizada e pronta para auditorias de CTOs.",
-                tag: "Quality"
-              }
-            ].map((item, i) => (
-              <div key={i} className="pillar-card flex flex-col justify-between p-8 min-h-[360px] rounded-2xl bg-[#0A0E23]/90 border border-white/10 hover:border-indigo-500/50 hover:bg-[#0F1532] transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] group relative overflow-hidden">
-                <div className="flex justify-between items-center mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-[0_0_15px_rgba(29,77,255,0.2)]">
-                    {item.icon}
+            {t.sobrePage.pillars.map((item, i) => {
+              const Icon = PILLAR_ICONS[i] || Server;
+              return (
+                <div key={i} className="pillar-card flex flex-col justify-between p-8 min-h-[360px] rounded-2xl bg-[#0A0E23]/90 border border-white/10 hover:border-indigo-500/50 hover:bg-[#0F1532] transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] group relative overflow-hidden">
+                  <div className="flex justify-between items-center mb-8">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-[0_0_15px_rgba(29,77,255,0.2)]">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <span className="font-mono text-[11px] font-semibold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full tracking-widest uppercase">{item.tag}</span>
                   </div>
-                  <span className="font-mono text-[11px] font-semibold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full tracking-widest uppercase">{item.tag}</span>
+                  <div>
+                    <span className="font-mono text-xs text-indigo-400 font-bold tracking-widest block mb-2">{item.num}</span>
+                    <h3 className="font-display text-xl font-bold text-white mb-3 tracking-tight group-hover:text-indigo-200 transition-colors">{item.title}</h3>
+                    <p className="text-neutral-300 font-normal text-sm leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <span className="font-mono text-xs text-indigo-400 font-bold tracking-widest block mb-2">{item.num}</span>
-                  <h3 className="font-display text-xl font-bold text-white mb-3 tracking-tight group-hover:text-indigo-200 transition-colors">{item.title}</h3>
-                  <p className="text-neutral-300 font-normal text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -279,47 +267,33 @@ export function SobreClient() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end mb-20 pb-8 border-b border-white/10">
             <AnimatedSection>
               <div>
-                <p className="text-xs uppercase font-sans tracking-widest text-indigo-400 mb-3 font-semibold">Engenharia de Detalhe</p>
+                <p className="text-xs uppercase font-sans tracking-widest text-indigo-400 mb-3 font-semibold">{t.sobrePage.detailTag}</p>
                 <h2 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tighter text-white leading-[0.95]">
-                  Velocidade Brutal. <br/>
-                  Segurança Inviolável.
+                  {t.sobrePage.detailTitle}
                 </h2>
               </div>
             </AnimatedSection>
             
             <AnimatedSection options={{ delay: 0.15 }}>
               <p className="text-neutral-300 font-light text-lg md:text-xl leading-relaxed max-w-xl text-balance">
-                Interfaces refinadas não servem para nada se falharem sob estresse técnico. Nosso desenvolvimento foca em garantir imunidade contra gargalos e vazamento de dados.
+                {t.sobrePage.detailSubtitle}
               </p>
             </AnimatedSection>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Activity className="w-8 h-8 text-indigo-400 mb-6" />,
-                title: "Analytics Avançado & Rastreamento Privado",
-                desc: "Implementação de trackers otimizados que contornam bloqueadores de anúncios sem sacrificar a velocidade da página."
-              },
-              {
-                icon: <Box className="w-8 h-8 text-indigo-400 mb-6" />,
-                title: "Ecossistemas de Dados Comportamentais",
-                desc: "Integração profunda com ferramentas de mapas de calor e gravação de sessão sem inserção de scripts pesados de terceiros."
-              },
-              {
-                icon: <Lock className="w-8 h-8 text-indigo-400 mb-6" />,
-                title: "Segurança de Dados e Conformidade",
-                desc: "Estruturas preparadas com as melhores práticas de proteção de tráfego, mitigação de vulnerabilidades em formulários e APIs protegidas."
-              }
-            ].map((item, i) => (
-              <AnimatedSection key={i} options={{ delay: i * 0.15 }}>
-                <div className="flex flex-col h-full bg-[#0A0E23]/80 border border-white/10 hover:border-indigo-500/40 hover:bg-[#0F1532] transition-all duration-500 rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                  {item.icon}
-                  <h3 className="text-xl font-bold text-white mb-4 tracking-tight">{item.title}</h3>
-                  <p className="text-neutral-300 font-normal leading-relaxed text-sm">{item.desc}</p>
-                </div>
-              </AnimatedSection>
-            ))}
+            {t.sobrePage.detailCards.map((item, i) => {
+              const Icon = DETAIL_ICONS[i] || Activity;
+              return (
+                <AnimatedSection key={i} options={{ delay: i * 0.15 }}>
+                  <div className="flex flex-col h-full bg-[#0A0E23]/80 border border-white/10 hover:border-indigo-500/40 hover:bg-[#0F1532] transition-all duration-500 rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                    <Icon className="w-8 h-8 text-indigo-400 mb-6" />
+                    <h3 className="text-xl font-bold text-white mb-4 tracking-tight">{item.title}</h3>
+                    <p className="text-neutral-300 font-normal leading-relaxed text-sm">{item.desc}</p>
+                  </div>
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -361,12 +335,12 @@ export function SobreClient() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
             <AnimatedSection>
               <div>
-                <h2 className="text-xs uppercase tracking-widest text-primary font-sans mb-3 font-semibold">Core Stack</h2>
+                <h2 className="text-xs uppercase tracking-widest text-primary font-sans mb-3 font-semibold">{t.sobrePage.coreStackTag}</h2>
                 <p className="font-display font-bold text-4xl md:text-5xl lg:text-5xl leading-[1.1] tracking-tighter text-white/95">
-                  Mural de Autoridade Técnica
+                  {t.sobrePage.coreStackTitle}
                 </p>
                 <p className="mt-6 text-neutral-400 font-light text-lg md:text-xl leading-relaxed text-balance">
-                  Para agências e empresas que inspecionam nossa infraestrutura, operamos rigorosamente com a vanguarda tecnológica do mercado global de software:
+                  {t.sobrePage.coreStackSubtitle}
                 </p>
               </div>
             </AnimatedSection>
@@ -381,7 +355,7 @@ export function SobreClient() {
                 </div>
                 <div className="mx-auto flex items-center gap-2 text-[#8b949e] text-xs font-mono">
                   <Terminal className="w-3 h-3" />
-                  <span>root@weblunar: ~/stack-ativa-contra-gargalos</span>
+                  <span>root@weblunar: ~/core-stack</span>
                 </div>
               </div>
               <div className="p-6 md:p-10 font-mono text-sm md:text-base leading-relaxed overflow-x-auto">
@@ -396,13 +370,13 @@ export function SobreClient() {
                     <span className="text-[#ff7b72] font-semibold">Runtime & Backend:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">Node.js (TypeScript Strict Mode) // Docker Containers // Prisma ORM.</span>
                   </p>
                   <p>
-                    <span className="text-[#ff7b72] font-semibold">Frontend & Framework:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">Next.js (App Router) // React Server Components // Tailwind CSS // Shadcn/UI.</span>
+                    <span className="text-[#ff7b72] font-semibold">Frontend & Framework:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">Next.js (App Router) // React Server Components // Tailwind CSS.</span>
                   </p>
                   <p>
-                    <span className="text-[#ff7b72] font-semibold">Comunicação & Cache:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">tRPC Type-Safe APIs // PostgreSQL Database // Redis Caching.</span>
+                    <span className="text-[#ff7b72] font-semibold">APIs & Cache:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">tRPC Type-Safe APIs // PostgreSQL Database // Redis Caching.</span>
                   </p>
                   <p>
-                    <span className="text-[#ff7b72] font-semibold">Animações Fluidas:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">GSAP Engine // ScrollTrigger // Lenis Smooth Scroll.</span>
+                    <span className="text-[#ff7b72] font-semibold">Motion & Scroll:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">GSAP Engine // ScrollTrigger // Lenis Smooth Scroll.</span>
                   </p>
                 </div>
                 
@@ -420,31 +394,18 @@ export function SobreClient() {
           <div className="relative z-10">
             <AnimatedSection>
               <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2 className="text-xs uppercase tracking-widest text-primary font-sans mb-3 font-semibold">Contratação</h2>
+                <h2 className="text-xs uppercase tracking-widest text-primary font-sans mb-3 font-semibold">{t.sobrePage.hireTag}</h2>
                 <p className="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tighter text-white/95 mb-6">
-                  Modelos de Engajamento
+                  {t.sobrePage.hireTitle}
                 </p>
                 <p className="text-neutral-400 font-light leading-relaxed text-lg md:text-xl text-balance">
-                  Não atuamos com o formato informal do mercado tradicional de freelancers. A WEB LUNAR estabelece relações corporativas estruturadas para atender demandas específicas de crescimento:
+                  {t.sobrePage.hireSubtitle}
                 </p>
               </div>
             </AnimatedSection>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Desenvolvimento de Escopo Fechado",
-                  desc: "Engenharia pontual de ponta a ponta, desde o desenho da arquitetura técnica ao deploy final em ambientes de produção de alta performance."
-                },
-                {
-                  title: "Outsourcing e Transbordo Técnico",
-                  desc: "Alocação contínua de capacidade sênior para agências de design ou lançamentos que exigem um parceiro confiável para absorver demandas complexas sob prazos rígidos."
-                },
-                {
-                  title: "Contratos de Evolução e SLA",
-                  desc: "Acordos de nível de serviço mensais focados em monitoramento ativo, auditoria de performance, otimização de conversão e atualizações de infraestrutura."
-                }
-              ].map((item, i) => (
+              {t.sobrePage.hireModels.map((item, i) => (
                 <AnimatedSection key={i} options={{ delay: i * 0.15 }}>
                   <div className="bg-[#05070c]/80 border border-white/[0.05] hover:bg-[#05070c]/90 hover:border-white/[0.1] hover:shadow-2xl transition-all duration-500 rounded-3xl p-8 lg:p-10 h-full group shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                     <CheckCircle2 className="w-8 h-8 text-primary mb-8 opacity-50 group-hover:opacity-100 transition-opacity" />
@@ -465,6 +426,7 @@ export function SobreClient() {
 }
 
 function SystemMonitor() {
+  const { t } = useLanguage();
   const [latencyMs, setLatencyMs] = useState(12);
   const [graphPts, setGraphPts] = useState(staticInitialPath);
   const [bars, setBars] = useState([88, 62, 76, 44]);
@@ -487,14 +449,14 @@ function SystemMonitor() {
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[#3fb950] animate-pulse" />
-          <span className="text-white/40 tracking-widest uppercase text-[10px]">SYS MONITOR</span>
+          <span className="text-white/40 tracking-widest uppercase text-[10px]">{t.sobrePage.sysMonitor}</span>
         </div>
-        <span className="text-white/20 text-[10px]">PROD / BR-1</span>
+        <span className="text-white/20 text-[10px]">PROD / CLOUD</span>
       </div>
 
       <div className="mb-5">
         <div className="flex justify-between text-white/30 mb-2 text-[10px]">
-          <span>LATENCY</span>
+          <span>{t.sobrePage.latency}</span>
           <span
             className="tabular-nums transition-all duration-500"
             style={{ color: latencyMs < 20 ? '#3fb950' : '#f59e0b' }}
@@ -532,9 +494,9 @@ function SystemMonitor() {
 
       <div className="grid grid-cols-3 gap-3 mb-5">
         {[
-          { label: 'UPTIME', value: '99.98%', color: '#3fb950' },
-          { label: 'TTFB', value: `${latencyMs + 4}ms`, color: '#a5d6ff' },
-          { label: 'ERRORS', value: '0.00%', color: '#3fb950' },
+          { label: t.sobrePage.uptime, value: '99.98%', color: '#3fb950' },
+          { label: t.sobrePage.ttfb, value: `${latencyMs + 4}ms`, color: '#a5d6ff' },
+          { label: t.sobrePage.errors, value: '0.00%', color: '#3fb950' },
         ].map((m) => (
           <div key={m.label} className="bg-white/[0.03] rounded-lg p-2.5 text-center border border-white/5">
             <p className="text-white/30 text-[9px] mb-1 tracking-widest">{m.label}</p>
@@ -545,7 +507,7 @@ function SystemMonitor() {
 
       <div className="space-y-2">
         <div className="flex justify-between text-white/30 text-[10px] mb-1.5">
-          <span>THROUGHPUT</span>
+          <span>{t.sobrePage.throughput}</span>
           <span className="tabular-nums transition-all duration-700">{reqsPerSec}k req/s</span>
         </div>
         {bars.map((w, i) => (

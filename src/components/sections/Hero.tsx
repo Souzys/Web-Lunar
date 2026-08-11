@@ -154,7 +154,7 @@ export function Hero() {
       {/* Social Links Footer Line */}
       <div className="relative z-10 w-full border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-6 py-4 md:py-6 mt-10 md:mt-20 bg-bg/50 backdrop-blur-md">
         <div className="text-xs font-mono text-text-muted tracking-widest uppercase hidden md:block">
-          BASEADO NO BRASIL / ATENDENDO GLOBALMENTE
+          {t.hero.locationLine}
         </div>
         
         <div className="flex items-center gap-8 justify-center md:justify-end w-full md:w-auto">

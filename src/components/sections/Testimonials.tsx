@@ -9,20 +9,10 @@ export function Testimonials() {
   const { testimonials } = siteContent;
   const { t } = useLanguage();
 
-  const testimonialItems = [
-    {
-      ...testimonials.items[0],
-      badge: t.testimonials.item1.badge,
-      text: t.testimonials.item1.text,
-      role: t.testimonials.item1.role,
-    },
-    {
-      ...testimonials.items[1],
-      badge: t.testimonials.item2.badge,
-      text: t.testimonials.item2.text,
-      role: t.testimonials.item2.role,
-    },
-  ];
+  const testimonialItems = t.testimonials.items.map((item, index) => ({
+    ...item,
+    author: testimonials.items[index]?.author || 'Cliente',
+  }));
 
   return (
     <section className="py-20 bg-[#FAFAFA] text-neutral-900 overflow-hidden relative border-t border-black/5">
@@ -43,7 +33,7 @@ export function Testimonials() {
         </div>
 
         {/* Clean, Minimalist 2-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonialItems.map((item, index) => (
             <AnimatedSection 
               key={index} 

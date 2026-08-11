@@ -4,7 +4,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
-import { siteContent } from '@/content';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -12,11 +11,19 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const CATEGORIES = ['Todos', 'Experiência Web', 'Site Institucional', 'Landing Page', 'Interfaces SaaS', 'Identidade Visual', 'E-commerce'];
+interface ProjectItem {
+  id: string;
+  title: string;
+  category: string;
+  categoryKey: string;
+  description: string;
+  image: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  tags: string[];
+}
 
-type Project = (typeof siteContent.portfolio.projects)[0];
-
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project, index }: { project: ProjectItem; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -51,13 +58,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     if (overlayRef.current) gsap.to(overlayRef.current, { opacity: 0, duration: 0.35, ease: 'power2.out' });
   };
 
-  const projectUrl = `/projetos/${project.id || (project.name.toLowerCase().includes('volk') ? 'volk' : 'capi')}`;
+  const projectUrl = `/projetos/${project.id}`;
 
   return (
     <Link
       ref={cardRef as any}
       href={projectUrl}
-      className="group relative cursor-pointer col-span-1 block"
+      className="group relative cursor-pointer col-span-1 block text-left"
       style={{ opacity: 0 }}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
@@ -67,7 +74,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <img
           ref={imgRef}
           src={project.image}
-          alt={project.name}
+          alt={project.title}
           width={800}
           height={450}
           loading="lazy"
@@ -91,14 +98,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       <div className="pt-4 flex items-start justify-between gap-4">
         <div>
           <h3 className="font-sans font-bold text-xl md:text-2xl text-neutral-900 group-hover:text-primary transition-colors duration-200 tracking-tight">
-            {project.name}
+            {project.title}
           </h3>
           <span className="text-xs font-sans uppercase font-bold tracking-wider text-neutral-500">
             {project.category}
           </span>
         </div>
         <span
-          className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-widest transition-all duration-200 bg-black/5 px-3 py-1 rounded-full text-neutral-600"
+          className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-widest transition-all duration-200 bg-black/5 px-3 py-1 rounded-full text-neutral-600 shrink-0"
           style={{ 
             color: hovered ? '#1D4DFF' : '#555', 
             opacity: hovered ? 1 : 0, 
@@ -115,14 +122,23 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 }
 
 export function Portfolio() {
-  const { portfolio } = siteContent;
   const { t } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState('Todos');
+  const [activeFilterKey, setActiveFilterKey] = useState<string>('todos');
   const headerRef = useRef<HTMLDivElement>(null);
 
-  const filtered = activeFilter === 'Todos'
-    ? portfolio.projects
-    : portfolio.projects.filter(p => p.category === activeFilter);
+  const categoryKeys: Array<{ key: string; label: string }> = [
+    { key: 'todos', label: t.portfolio.categories.todos },
+    { key: 'experienciaWeb', label: t.portfolio.categories.experienciaWeb },
+    { key: 'siteInstitucional', label: t.portfolio.categories.siteInstitucional },
+    { key: 'landingPage', label: t.portfolio.categories.landingPage },
+    { key: 'interfacesSaas', label: t.portfolio.categories.interfacesSaas },
+    { key: 'identidadeVisual', label: t.portfolio.categories.identidadeVisual },
+    { key: 'ecommerce', label: t.portfolio.categories.ecommerce },
+  ];
+
+  const filtered = activeFilterKey === 'todos'
+    ? t.portfolio.projects
+    : t.portfolio.projects.filter(p => p.categoryKey === activeFilterKey);
 
   useEffect(() => {
     const el = headerRef.current;
@@ -161,17 +177,17 @@ export function Portfolio() {
 
         {/* ── Category Filters ── */}
         <div className="flex flex-wrap justify-between gap-y-3 pb-8 border-b border-black/5 w-full">
-          {CATEGORIES.map(cat => (
+          {categoryKeys.map(cat => (
             <button
-              key={cat}
-              onClick={() => setActiveFilter(cat)}
+              key={cat.key}
+              onClick={() => setActiveFilterKey(cat.key)}
               className={`px-5 py-2 text-xs font-sans font-bold uppercase tracking-wider rounded-full transition-all duration-300 ease-out border hover:scale-105 active:scale-95 ${
-                activeFilter === cat
+                activeFilterKey === cat.key
                   ? 'bg-primary text-white border-primary shadow-md'
                   : 'bg-black/[0.03] text-neutral-500 border-black/5 hover:bg-black/[0.08] hover:text-neutral-900 hover:border-black/10 hover:shadow-sm'
               }`}
             >
-              {cat}
+              {cat.label}
             </button>
           ))}
         </div>
@@ -182,7 +198,7 @@ export function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 mt-8">
           {filtered.map((project, index) => (
             <ProjectCard
-              key={project.name}
+              key={project.id}
               project={project}
               index={index}
             />
@@ -192,13 +208,13 @@ export function Portfolio() {
         {/* ── Bottom CTA ── */}
         <div className="mt-16 pt-10 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-neutral-800 text-lg md:text-xl max-w-xl font-medium leading-relaxed">
-            Quer ver o processo criativo por trás de cada projeto? Cada case inclui estratégia, wireframes e resultados reais.
+            {t.portfolio.ctaProcessText}
           </p>
           <Link
             href="/contato"
             className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 text-sm font-mono uppercase tracking-widest hover:bg-primary-hover transition-all duration-300 rounded-full shadow-lg hover:shadow-xl"
           >
-            Iniciar um Projeto
+            {t.portfolio.ctaButtonText}
             <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
         </div>

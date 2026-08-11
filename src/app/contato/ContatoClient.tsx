@@ -21,9 +21,9 @@ export function ContatoClient() {
     subject: '',
     content: '',
   });
-  const [projectType, setProjectType] = useState('Landing Page');
-  const [budgetRange, setBudgetRange] = useState('Até R$ 5k');
-  const [timeline, setTimeline] = useState('1 a 2 semanas');
+  const [projectType, setProjectType] = useState(t.contactPage.projectTypes[0] || 'Landing Page');
+  const [budgetRange, setBudgetRange] = useState(t.contactPage.budgetRanges[0] || 'Até R$ 5k');
+  const [timeline, setTimeline] = useState(t.contactPage.timelineRanges[0] || '1 a 2 semanas');
   const [referenceLink, setReferenceLink] = useState('');
   const [activeTab, setActiveTab] = useState<'form' | 'whatsapp'>('form');
   const [success, setSuccess] = useState(false);
@@ -33,9 +33,9 @@ export function ContatoClient() {
     onSuccess: () => {
       setSuccess(true);
       setFormData({ name: '', email: '', subject: '', content: '' });
-      setProjectType('Landing Page');
-      setBudgetRange('Até R$ 5k');
-      setTimeline('1 a 2 semanas');
+      setProjectType(t.contactPage.projectTypes[0] || 'Landing Page');
+      setBudgetRange(t.contactPage.budgetRanges[0] || 'Até R$ 5k');
+      setTimeline(t.contactPage.timelineRanges[0] || '1 a 2 semanas');
       setReferenceLink('');
       setErrorMsg('');
 
@@ -81,7 +81,7 @@ ${formData.content}
       if (planParam) {
         setFormData(prev => ({
           ...prev,
-          subject: `Contratação do Plano ${planParam}`,
+          subject: `Plano: ${planParam}`,
         }));
       } else if (subjectParam) {
         setFormData(prev => ({
@@ -158,15 +158,15 @@ ${formData.content}
                   <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6">
                     <CheckCircle2 className="w-8 h-8 text-emerald-400" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Transmissão Recebida!</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">{t.contactPage.successTitle}</h3>
                   <p className="text-neutral-300 text-sm max-w-sm">
-                    Obrigado pelo contato. Analisaremos as informações do seu projeto e entraremos em contato com seu orçamento o mais rápido possível.
+                    {t.contactPage.successDesc}
                   </p>
                   <button
                     onClick={() => setSuccess(false)}
                     className="mt-8 px-6 py-2.5 rounded-full border border-white/20 text-neutral-300 hover:text-white hover:bg-white/10 transition-all duration-300 cursor-pointer text-sm"
                   >
-                    Enviar Outro Orçamento
+                    {t.contactPage.sendAnother}
                   </button>
                 </div>
               ) : (
@@ -182,7 +182,7 @@ ${formData.content}
                           : 'text-neutral-400 hover:text-white'
                       }`}
                     >
-                      Formulário
+                      {t.contactPage.formTab}
                     </button>
                     <button
                       type="button"
@@ -193,17 +193,17 @@ ${formData.content}
                           : 'text-neutral-400 hover:text-[#25D366]'
                       }`}
                     >
-                      WhatsApp
+                      {t.contactPage.whatsappTab}
                     </button>
                   </div>
 
                   {activeTab === 'form' ? (
                     <p className="text-center text-xs text-neutral-400 -mt-6 mb-8 flex items-center justify-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-primary" /> Resposta em até 24 horas
+                      <Clock className="w-3.5 h-3.5 text-primary" /> {t.contactPage.response24h}
                     </p>
                   ) : (
                     <p className="text-center text-xs text-neutral-400 -mt-6 mb-8 flex items-center justify-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#25D366]" /> Resposta em até 5 minutos
+                      <Clock className="w-3.5 h-3.5 text-[#25D366]" /> {t.contactPage.response5min}
                     </p>
                   )}
 
@@ -212,28 +212,28 @@ ${formData.content}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex flex-col gap-2">
                           <label className="text-xs uppercase font-bold text-neutral-300 tracking-wider">
-                            Seu Nome
+                            {t.contactPage.nameLabel}
                           </label>
                           <input
                             type="text"
                             required
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            placeholder="Ex: Lucas Pinheiro"
+                            placeholder={t.contactPage.namePlaceholder}
                             className="px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all text-sm font-sans"
                           />
                         </div>
 
                         <div className="flex flex-col gap-2">
                           <label className="text-xs uppercase font-bold text-neutral-300 tracking-wider">
-                            Seu E-mail
+                            {t.contactPage.emailLabel}
                           </label>
                           <input
                             type="email"
                             required
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            placeholder="Ex: contato@weblunar.com.br"
+                            placeholder={t.contactPage.emailPlaceholder}
                             className="px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all text-sm font-sans"
                           />
                         </div>
@@ -241,13 +241,13 @@ ${formData.content}
 
                       <div className="flex flex-col gap-2">
                         <label className="text-xs uppercase font-bold text-neutral-300 tracking-wider">
-                          Assunto
+                          {t.contactPage.subjectLabel}
                         </label>
                         <input
                           type="text"
                           value={formData.subject}
                           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                          placeholder="Ex: Desenvolvimento de novo sistema"
+                          placeholder={t.contactPage.subjectPlaceholder}
                           className="px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all text-sm font-sans"
                         />
                       </div>
@@ -255,10 +255,10 @@ ${formData.content}
                       {/* Tipo de Projeto */}
                       <div className="flex flex-col gap-2">
                         <label className="text-xs uppercase font-bold text-neutral-300 tracking-wider">
-                          Tipo de Projeto
+                          {t.contactPage.typeLabel}
                         </label>
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                          {['Landing Page', 'Site Institucional', 'E-commerce', 'Sistema Web', 'App Mobile', 'Outro'].map((type) => (
+                          {t.contactPage.projectTypes.map((type) => (
                             <button
                               key={type}
                               type="button"
@@ -279,10 +279,10 @@ ${formData.content}
                         {/* Faixa de Orçamento */}
                         <div className="flex flex-col gap-2">
                           <label className="text-xs uppercase font-bold text-neutral-300 tracking-wider">
-                            Investimento Estimado
+                            {t.contactPage.budgetLabel}
                           </label>
                           <div className="grid grid-cols-2 gap-3">
-                            {['Até R$ 5k', 'R$ 5k - 10k', 'R$ 10k - 20k', 'R$ 30k - 50k+'].map((budget) => (
+                            {t.contactPage.budgetRanges.map((budget) => (
                               <button
                                 key={budget}
                                 type="button"
@@ -302,10 +302,10 @@ ${formData.content}
                         {/* Prazo Estimado */}
                         <div className="flex flex-col gap-2">
                           <label className="text-xs uppercase font-bold text-neutral-300 tracking-wider">
-                            Prazo Estimado
+                            {t.contactPage.timelineLabel}
                           </label>
                           <div className="grid grid-cols-2 gap-3">
-                            {['1 a 2 semanas', 'Até 1 mês', '1 a 3 meses', 'Sem pressa'].map((time) => (
+                            {t.contactPage.timelineRanges.map((time) => (
                               <button
                                 key={time}
                                 type="button"
@@ -326,27 +326,27 @@ ${formData.content}
                       {/* Link de Referência ou Wireframe */}
                       <div className="flex flex-col gap-2">
                         <label className="text-xs uppercase font-bold text-neutral-300 tracking-wider">
-                          Link de Referência / Wireframe (Figma, Drive, etc.)
+                          {t.contactPage.refLabel}
                         </label>
                         <input
                           type="text"
                           value={referenceLink}
                           onChange={(e) => setReferenceLink(e.target.value)}
-                          placeholder="Ex: https://figma.com/... ou link do Google Drive/PDF"
+                          placeholder={t.contactPage.refPlaceholder}
                           className="px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all text-sm font-sans"
                         />
                       </div>
 
                       <div className="flex flex-col gap-2">
                         <label className="text-xs uppercase font-bold text-neutral-300 tracking-wider">
-                          Descrição do Projeto / Demais Detalhes
+                          {t.contactPage.descLabel}
                         </label>
                         <textarea
                           required
                           rows={5}
                           value={formData.content}
                           onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                          placeholder="Fale um pouco sobre a sua demanda, escopo desejado ou requisitos..."
+                          placeholder={t.contactPage.descPlaceholder}
                           className="px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all text-sm resize-none font-sans"
                         />
                       </div>
@@ -363,12 +363,12 @@ ${formData.content}
                         {submitMutation.isPending ? (
                           <>
                             <Loader2 className="w-4 h-4 animate-spin" />
-                            <span>Processando...</span>
+                            <span>{t.contactPage.processing}</span>
                           </>
                         ) : (
                           <>
                             <Send className="w-4 h-4" />
-                            <span>Enviar Transmissão</span>
+                            <span>{t.contactPage.submitButton}</span>
                           </>
                         )}
                       </button>
@@ -384,36 +384,27 @@ ${formData.content}
                         </div>
                       </div>
 
-                      <h3 className="text-xl font-bold text-white mb-2">Converse pelo WhatsApp</h3>
+                      <h3 className="text-xl font-bold text-white mb-2">{t.contactPage.whatsappTitle}</h3>
                       <p className="text-neutral-300 text-sm font-light leading-relaxed mb-6">
-                        Prefere um atendimento imediato? Fale agora mesmo com um de nossos engenheiros e designers para detalhar o seu projeto e receber um orçamento rápido.
+                        {t.contactPage.whatsappSubtitle}
                       </p>
 
                       <div className="w-full space-y-3.5 mb-8 text-left border-t border-white/10 pt-6">
-                        <div className="flex items-center gap-3 text-neutral-200 text-sm">
-                          <CheckCircle2 className="w-4.5 h-4.5 text-[#25D366] shrink-0" />
-                          <span>Resposta rápida em até 5 minutos</span>
-                        </div>
-                        <div className="flex items-center gap-3 text-neutral-200 text-sm">
-                          <CheckCircle2 className="w-4.5 h-4.5 text-[#25D366] shrink-0" />
-                          <span>Atendimento técnico direto (sem robôs)</span>
-                        </div>
-                        <div className="flex items-center gap-3 text-neutral-200 text-sm">
-                          <CheckCircle2 className="w-4.5 h-4.5 text-[#25D366] shrink-0" />
-                          <span>Definição de escopo e prazos na hora</span>
-                        </div>
+                        {t.contactPage.whatsappBenefits.map((b, i) => (
+                          <div key={i} className="flex items-center gap-3 text-neutral-200 text-sm">
+                            <CheckCircle2 className="w-4.5 h-4.5 text-[#25D366] shrink-0" />
+                            <span>{b}</span>
+                          </div>
+                        ))}
                       </div>
 
                       <a
                         href="https://wa.me/5561982630397?text=Ol%C3%A1%20equipe%20Web%20Lunar!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20um%20projeto."
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-3 w-full py-4 text-sm font-semibold tracking-wider uppercase rounded-full bg-[#25D366] text-white hover:bg-[#20ba5a] transition-all duration-300 shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:scale-102 active:scale-98 cursor-pointer font-sans"
+                        className="flex items-center justify-center gap-2 w-full py-4 text-sm font-semibold tracking-wider uppercase rounded-full bg-[#25D366] text-neutral-950 hover:bg-[#20bd5a] transition-all duration-300 shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:shadow-[0_0_35px_rgba(37,211,102,0.6)] cursor-pointer"
                       >
-                        <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97-1.861-1.868-4.339-2.897-6.97-2.899-5.443 0-9.87 4.372-9.875 9.8.001 1.77.476 3.5 1.379 5.017l-.988 3.598 3.675-.952zm11.458-6.666c-.301-.15-1.785-.88-2.062-.98-.277-.1-.478-.15-.678.15-.2.3-.778.98-.953 1.18-.176.2-.352.226-.653.076-.301-.15-1.272-.469-2.423-1.496-.895-.798-1.5-1.784-1.676-2.084-.176-.3-.019-.462.132-.611.135-.134.301-.35.452-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.678-1.635-.93-2.245-.245-.59-.496-.51-.678-.52-.175-.008-.376-.01-.577-.01-.2 0-.527.075-.803.375-.276.3-1.054 1.03-1.054 2.512s1.08 2.916 1.23 3.116c.15.2 2.126 3.246 5.15 4.553.719.31 1.28.496 1.717.636.722.23 1.38.197 1.901.12.58-.087 1.785-.73 2.036-1.436.251-.706.251-1.314.176-1.436-.076-.123-.277-.2-.577-.35z" />
-                        </svg>
-                        Conversar no WhatsApp
+                        <span>{t.contactPage.chatWhatsAppButton}</span>
                       </a>
                     </div>
                   )}
