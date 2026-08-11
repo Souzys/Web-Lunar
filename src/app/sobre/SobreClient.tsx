@@ -53,43 +53,10 @@ export function SobreClient() {
   const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
-  const pillarsContainerRef = useRef<HTMLDivElement>(null);
 
   const glowCombinedRef = useRef<HTMLDivElement>(null);
   const xCombinedTo = useRef<any>(null);
   const yCombinedTo = useRef<any>(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    const container = pillarsContainerRef.current;
-    if (!container) return;
-
-    const cards = container.querySelectorAll('.pillar-card');
-
-    const tl = gsap.fromTo(cards,
-      { 
-        y: (i) => 150 + i * 70, 
-        opacity: 0 
-      },
-      {
-        y: 0,
-        opacity: 1,
-        ease: 'power1.out',
-        scrollTrigger: {
-          trigger: container,
-          start: 'top 92%',
-          end: 'bottom 85%',
-          scrub: 1.2,
-        }
-      }
-    );
-
-    return () => {
-      if (tl.scrollTrigger) tl.scrollTrigger.kill();
-      tl.kill();
-    };
-  }, []);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -235,7 +202,7 @@ export function SobreClient() {
             </p>
           </div>
 
-          <div ref={pillarsContainerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.sobrePage.pillars.map((item, i) => {
               const Icon = PILLAR_ICONS[i] || Server;
               return (
