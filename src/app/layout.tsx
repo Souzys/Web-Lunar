@@ -52,15 +52,14 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "/",
     languages: {
-      "pt-BR": "/",
-      "en-US": "/?lang=en",
-      "es-ES": "/?lang=es",
+      "pt-BR": "https://weblunar.com.br",
+      "en-US": "https://weblunar.com.br/?lang=en",
+      "es-ES": "https://weblunar.com.br/?lang=es",
     },
   },
   openGraph: {
-    title: "Web Lunar | Sistemas Digitais & Produtos Web Premium",
+    title: "Web Lunar | Sistemas Digitais, Sites & Landing Pages de Alta Conversão",
     description: "Unimos design visual refinado e engenharia de software de alta performance para criar soluções digitais que geram resultados de verdade.",
     url: "https://weblunar.com.br",
     siteName: "Web Lunar",
@@ -77,7 +76,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Lunar | Sistemas Digitais & Produtos Web Premium",
+    title: "Web Lunar | Sistemas Digitais, Sites & Landing Pages de Alta Conversão",
     description: "Desenvolvimento de sites, landing pages e sistemas digitais de alta velocidade e conversão.",
     images: ["/printvolk.webp"],
   },
@@ -105,6 +104,12 @@ const jsonLd = {
       "url": "https://weblunar.com.br",
       "logo": "https://weblunar.com.br/icon.png",
       "description": "Desenvolvimento de produtos digitais premium, sistemas web de alta performance e landing pages de alta conversão.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-61-98263-0397",
+        "contactType": "customer service",
+        "availableLanguage": ["Portuguese", "English", "Spanish"]
+      },
       "sameAs": [
         "https://github.com/Souzys/Web-Lunar"
       ]

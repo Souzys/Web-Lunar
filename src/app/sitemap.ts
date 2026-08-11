@@ -4,22 +4,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://weblunar.com.br';
   const currentDate = new Date();
 
-  // Static routes
+  // Static core routes for Google Sitelinks & High Priority Crawl
   const routes = [
     '',
-    '/sobre',
     '/servicos',
     '/projetos',
+    '/sobre',
     '/contato',
     '/blog',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1.0 : 0.9,
+    changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
+    priority: route === '' ? 1.0 : (route === '/servicos' || route === '/projetos' ? 0.9 : 0.8),
   }));
 
-  // Project pages
+  // Active Project Case Studies
   const projectSlugs = [
     'snews',
     'volk',
@@ -27,12 +27,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'adansonea',
     'acp',
     'osa',
-    'capi-midia',
-    'volk-mkt',
-    'lumina-app',
-    'nex-fintech',
-    'aurora-saas',
-    'pulse-health',
   ];
 
   const projectRoutes = projectSlugs.map((slug) => ({

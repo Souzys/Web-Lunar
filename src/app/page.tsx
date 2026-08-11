@@ -1,30 +1,30 @@
-'use client';
+import type { Metadata } from "next";
+import { HomeClient } from "./HomeClient";
 
-import { IntroSlider } from "@/components/sections/IntroSlider";
-import { Portfolio } from "@/components/sections/Portfolio";
-import { Services } from "@/components/sections/Services";
-import { TechStack } from "@/components/sections/TechStack";
-import { Impact } from "@/components/sections/Impact";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { FAQ } from "@/components/sections/FAQ";
-import { Blog } from "@/components/sections/Blog";
-import { useLenis } from "@/hooks/useLenis";
+export const metadata: Metadata = {
+  title: "Web Lunar | Sistemas Digitais, Sites & Landing Pages de Alta Conversão",
+  description: "Criamos produtos digitais premium, sistemas web de alta performance, landing pages persuasivas e plataformas e-commerce de alto impacto visual.",
+  alternates: {
+    canonical: "https://weblunar.com.br",
+  },
+  openGraph: {
+    title: "Web Lunar | Sistemas Digitais, Sites & Landing Pages de Alta Conversão",
+    description: "Criamos produtos digitais premium, sistemas web de alta performance, landing pages persuasivas e plataformas e-commerce de alto impacto visual.",
+    url: "https://weblunar.com.br",
+    siteName: "Web Lunar",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/printvolk.webp",
+        width: 1902,
+        height: 885,
+        alt: "Web Lunar",
+      },
+    ],
+  },
+};
 
 export default function Home() {
-  useLenis();
-
-  return (
-    <>
-      <IntroSlider />
-      <div className="relative z-10">
-        <Portfolio />
-        <Services />
-        <TechStack />
-        <Impact />
-        <Testimonials />
-        <FAQ />
-        <Blog />
-      </div>
-    </>
-  );
+  return <HomeClient />;
 }
