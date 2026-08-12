@@ -29,16 +29,16 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
     if (!hero || !glow) return;
 
     gsap.set(glow, {
-      x: typeof window !== 'undefined' ? window.innerWidth / 2 - 400 : 0,
-      y: typeof window !== 'undefined' ? window.innerHeight / 3 - 400 : 0,
+      x: typeof window !== 'undefined' ? window.innerWidth / 2 - 350 : 0,
+      y: typeof window !== 'undefined' ? window.innerHeight / 3 - 350 : 0,
     });
 
-    const xTo = gsap.quickTo(glow, 'x', { duration: 1.2, ease: 'power2.out' });
-    const yTo = gsap.quickTo(glow, 'y', { duration: 1.2, ease: 'power2.out' });
+    const xTo = gsap.quickTo(glow, 'x', { duration: 1.5, ease: 'power2.out' });
+    const yTo = gsap.quickTo(glow, 'y', { duration: 1.5, ease: 'power2.out' });
 
     const handleMouseMove = (e: MouseEvent) => {
-      xTo(e.clientX - 400);
-      yTo(e.clientY - 400);
+      xTo(e.clientX - 350);
+      yTo(e.clientY - 350);
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -119,27 +119,32 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
 
   return (
     <div className="bg-[#05070F] text-white min-h-screen font-sans selection:bg-primary selection:text-white relative overflow-hidden">
-      {/* Background Glow & High-Tech Subtle Grid que cobre 100% da tela de forma contínua */}
+      {/* Background suave, sem linhas de degradação / banding */}
       <div ref={heroRef} className="fixed top-0 left-0 h-screen w-full z-0 overflow-hidden bg-[#05070F] pointer-events-none">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div
             ref={glowRef}
-            className="absolute w-[800px] h-[800px] bg-primary/25 rounded-full blur-[150px] opacity-75 pointer-events-none"
-            style={{ left: 0, top: 0, willChange: 'transform' }}
+            className="absolute w-[700px] h-[700px] rounded-full pointer-events-none transition-opacity duration-700"
+            style={{
+              left: 0,
+              top: 0,
+              willChange: 'transform',
+              background: 'radial-gradient(circle, rgba(29, 77, 255, 0.12) 0%, rgba(29, 77, 255, 0.04) 45%, rgba(5, 7, 15, 0) 70%)',
+            }}
           />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-60" />
       </div>
 
       {/* Header do Artigo */}
       <div className="relative z-10 pt-32 pb-12">
-        <div className="container mx-auto max-w-4xl px-6">
+        <div className="container mx-auto max-w-3xl px-6">
           <AnimatedSection>
             {/* Voltar para o Blog */}
             <div className="mb-8">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-xs uppercase tracking-widest font-mono transition-colors"
+                className="inline-flex items-center gap-2 text-primary hover:text-blue-300 font-semibold text-xs uppercase tracking-widest font-mono transition-colors"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>{labels.backToBlog}</span>
@@ -148,47 +153,47 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
 
             {/* Metadados: Categoria, Data, Tempo de leitura */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="px-3.5 py-1.5 rounded-full text-[11px] font-mono tracking-wider uppercase bg-primary/15 border border-primary/35 text-primary font-bold shadow-[0_0_12px_rgba(29,77,255,0.2)]">
+              <span className="px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase bg-primary/20 border border-primary/40 text-blue-300 font-bold">
                 {activePost.category}
               </span>
-              <div className="flex items-center gap-1.5 text-xs text-neutral-400 font-mono">
-                <Calendar className="w-3.5 h-3.5 text-primary/70" />
+              <div className="flex items-center gap-1.5 text-xs text-neutral-300 font-mono">
+                <Calendar className="w-3.5 h-3.5 text-primary" />
                 <span>{activePost.date}</span>
               </div>
-              <span className="text-neutral-600">•</span>
-              <div className="flex items-center gap-1.5 text-xs text-neutral-400 font-mono">
-                <Clock className="w-3.5 h-3.5 text-primary/70" />
+              <span className="text-neutral-500">•</span>
+              <div className="flex items-center gap-1.5 text-xs text-neutral-300 font-mono">
+                <Clock className="w-3.5 h-3.5 text-primary" />
                 <span>{activePost.readTime}</span>
               </div>
             </div>
 
             {/* Título Principal */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
               {activePost.title}
             </h1>
 
-            {/* Subtítulo / Resumo */}
-            <p className="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8 border-l-2 border-primary/50 pl-5 text-balance">
+            {/* Subtítulo / Resumo com maior destaque e legibilidade */}
+            <p className="text-xl sm:text-2xl text-neutral-200 font-normal leading-relaxed mb-8 border-l-3 border-primary pl-5 text-balance">
               {activePost.excerpt}
             </p>
 
             {/* Linha do Autor e Compartilhamento */}
             <div className="flex items-center justify-between py-4 border-t border-b border-white/10 text-xs">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center font-bold text-primary text-xs shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center font-bold text-blue-300 text-xs shadow-sm">
                   WL
                 </div>
                 <div>
-                  <p className="text-white font-semibold">{activePost.author.name}</p>
-                  <p className="text-neutral-400 text-[11px]">{activePost.author.role}</p>
+                  <p className="text-white font-bold text-sm">{activePost.author.name}</p>
+                  <p className="text-neutral-300 text-xs">{activePost.author.role}</p>
                 </div>
               </div>
 
               <button
                 onClick={handleShare}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-neutral-300 hover:text-white transition-all cursor-pointer font-mono text-[11px]"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-white transition-all cursor-pointer font-mono text-xs shadow-sm"
               >
-                <Share2 className="w-3.5 h-3.5" />
+                <Share2 className="w-3.5 h-3.5 text-primary" />
                 <span>{labels.share}</span>
               </button>
             </div>
@@ -197,9 +202,9 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
       </div>
 
       {/* Imagem de Capa */}
-      <div className="relative z-10 container mx-auto max-w-4xl px-6 mb-16">
+      <div className="relative z-10 container mx-auto max-w-3xl px-6 mb-16">
         <AnimatedSection options={{ delay: 0.15 }}>
-          <div className="aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-neutral-900/60 backdrop-blur-md">
+          <div className="aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-neutral-900">
             <img
               src={activePost.image}
               alt={activePost.title}
@@ -209,38 +214,38 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
         </AnimatedSection>
       </div>
 
-      {/* Corpo do Artigo */}
-      <div className="relative z-10 container mx-auto max-w-3xl px-6 pb-24 text-neutral-200 leading-relaxed font-light">
+      {/* Corpo do Artigo com Tipografia Nítida e Confortável */}
+      <div className="relative z-10 container mx-auto max-w-3xl px-6 pb-24 text-white">
         <div className="space-y-12">
           {activePost.sections.map((section, idx) => (
             <AnimatedSection key={idx} options={{ delay: 0.1 * idx }}>
               {section.heading && (
-                <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-5 tracking-tight">
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6 tracking-tight mt-10">
                   {section.heading}
                 </h2>
               )}
 
-              <div className="space-y-4 text-base md:text-lg text-neutral-300 leading-relaxed">
+              <div className="space-y-5 text-lg sm:text-[19px] text-[#e2e8f0] leading-[1.85] font-normal">
                 {section.paragraphs.map((p, pIdx) => (
                   <p key={pIdx}>{p}</p>
                 ))}
               </div>
 
               {section.callout && (
-                <div className="my-6 p-6 rounded-2xl bg-primary/10 border-l-4 border-primary text-white font-normal text-sm md:text-base backdrop-blur-md shadow-lg shadow-primary/5">
+                <div className="my-8 p-6 sm:p-7 rounded-2xl bg-primary/10 border-l-4 border-primary text-white font-medium text-base sm:text-lg leading-relaxed shadow-lg">
                   {section.callout}
                 </div>
               )}
 
               {section.list && (
-                <ul className="mt-6 space-y-3 pl-2">
+                <div className="mt-8 space-y-3.5">
                   {section.list.map((item, lIdx) => (
-                    <li key={lIdx} className="flex items-start gap-3 text-sm md:text-base text-neutral-200">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-primary shrink-0 mt-0.5" />
+                    <div key={lIdx} className="flex items-start gap-3.5 p-4 rounded-xl bg-white/[0.03] border border-white/10 text-base sm:text-lg text-white leading-relaxed">
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />
                       <span>{item}</span>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               )}
             </AnimatedSection>
           ))}
@@ -248,9 +253,9 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
           {/* Conclusão */}
           {activePost.conclusion && (
             <AnimatedSection options={{ delay: 0.3 }}>
-              <div className="pt-8 border-t border-white/10">
-                <h3 className="text-xl font-bold text-white mb-3">{labels.conclusionTitle}</h3>
-                <p className="text-base md:text-lg text-neutral-300 leading-relaxed">
+              <div className="pt-10 border-t border-white/10 mt-12">
+                <h3 className="text-2xl font-bold text-white mb-4">{labels.conclusionTitle}</h3>
+                <p className="text-lg sm:text-[19px] text-[#e2e8f0] leading-[1.85] font-normal">
                   {activePost.conclusion}
                 </p>
               </div>
@@ -260,18 +265,17 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
 
         {/* Box CTA de Conversão no Final do Post */}
         <AnimatedSection options={{ delay: 0.35 }} className="mt-20">
-          <div className="rounded-3xl border border-primary/30 bg-gradient-to-b from-primary/15 to-white/[0.02] backdrop-blur-xl p-8 md:p-12 text-center relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl pointer-events-none" />
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
+          <div className="rounded-3xl border border-primary/30 bg-gradient-to-b from-primary/15 to-transparent p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl">
+            <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-3">
               {labels.ctaTitle}
             </h3>
-            <p className="text-neutral-300 text-sm md:text-base max-w-lg mx-auto mb-8 font-light">
+            <p className="text-neutral-200 text-base sm:text-lg max-w-lg mx-auto mb-8 font-light">
               {labels.ctaDesc}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contato"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(29,77,255,0.4)] hover:shadow-[0_0_30px_rgba(29,77,255,0.6)]"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(29,77,255,0.4)]"
               >
                 {labels.ctaBtn}
               </Link>
@@ -279,7 +283,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
                 href="https://wa.me/5561982630397?text=Ol%C3%A1!%20Li%20o%20artigo%20no%20blog%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/40 text-[#25D366] font-semibold text-xs uppercase tracking-widest transition-all shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-neutral-950 font-bold text-xs uppercase tracking-widest transition-all shadow-md"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>{labels.whatsappBtn}</span>
@@ -299,14 +303,14 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
                 <Link
                   key={rPost.slug}
                   href={`/blog/${rPost.slug}`}
-                  className="group bg-white/[0.03] border border-white/10 hover:border-primary/40 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.06] flex flex-col justify-between backdrop-blur-md shadow-lg"
+                  className="group bg-white/[0.03] border border-white/10 hover:border-primary/40 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.06] flex flex-col justify-between"
                 >
                   <div>
-                    <div className="text-[10px] font-mono text-primary uppercase tracking-widest mb-2 font-semibold">{rPost.category}</div>
-                    <h4 className="text-base font-bold text-white group-hover:text-primary transition-colors mb-2 line-clamp-2">
+                    <div className="text-xs font-mono text-primary uppercase tracking-widest mb-2 font-bold">{rPost.category}</div>
+                    <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors mb-2 line-clamp-2">
                       {rPost.title}
                     </h4>
-                    <p className="text-neutral-400 text-xs line-clamp-2 font-light">
+                    <p className="text-neutral-300 text-sm line-clamp-2 font-light">
                       {rPost.excerpt}
                     </p>
                   </div>
