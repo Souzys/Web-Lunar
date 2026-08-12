@@ -169,10 +169,12 @@ export interface TranslationDictionary {
     searchPlaceholder: string;
     noResults: string;
     posts: Array<{
+      slug: string;
       date: string;
       title: string;
       excerpt: string;
       image: string;
+      category?: string;
     }>;
   };
   contactPage: {
@@ -576,19 +578,25 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'Nenhum artigo encontrado para a sua busca.',
       posts: [
         {
+          slug: 'como-planejar-primeiro-site-profissional',
           date: '12 de Agosto, 2026',
+          category: 'Planejamento Web',
           title: 'Como planejar o seu primeiro site profissional: o guia básico',
           excerpt: 'Do objetivo principal à escolha do conteúdo. Veja o que você realmente precisa definir antes de colocar sua empresa no ar.',
           image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
         },
         {
+          slug: 'landing-page-ou-site-institucional',
           date: '08 de Agosto, 2026',
+          category: 'Estratégia & Conversão',
           title: 'Landing Page ou Site Institucional: qual é o ideal para você?',
           excerpt: 'Entenda de forma simples a diferença entre uma página direta para vendas e um site completo com várias seções.',
           image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80',
         },
         {
+          slug: '3-coisas-essenciais-para-passar-confianca',
           date: '02 de Agosto, 2026',
+          category: 'Boas Práticas',
           title: '3 coisas essenciais que todo site precisa ter para passar confiança',
           excerpt: 'Design organizado, boa velocidade no celular e botão de WhatsApp visível. O essencial para começar com o pé direito.',
           image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
@@ -1038,19 +1046,25 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'No articles found matching your query.',
       posts: [
         {
+          slug: 'como-planejar-primeiro-site-profissional',
           date: 'August 12, 2026',
+          category: 'Web Planning',
           title: 'How to plan your first professional website: The beginner’s guide',
           excerpt: 'From core objectives to key content. What you actually need to define before launching your business online.',
           image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
         },
         {
+          slug: 'landing-page-ou-site-institucional',
           date: 'August 08, 2026',
+          category: 'Strategy & Conversion',
           title: 'Landing Page or Full Website: Which one is right for you?',
           excerpt: 'A simple breakdown between a focused sales landing page and a full corporate multi-page website.',
           image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80',
         },
         {
+          slug: '3-coisas-essenciais-para-passar-confianca',
           date: 'August 02, 2026',
+          category: 'Best Practices',
           title: '3 essential elements every new website needs to build trust',
           excerpt: 'Clean design, fast mobile loading, and visible contact buttons. The fundamentals to start strong.',
           image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
@@ -1500,19 +1514,25 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'No se encontraron artículos para tu búsqueda.',
       posts: [
         {
+          slug: 'como-planejar-primeiro-site-profissional',
           date: '12 de Agosto, 2026',
+          category: 'Planificación Web',
           title: 'Cómo planificar tu primer sitio web profesional: Guía básica',
           excerpt: 'Del objetivo principal al contenido clave. Lo que necesitas definir antes de lanzar tu negocio en internet.',
           image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
         },
         {
+          slug: 'landing-page-ou-site-institucional',
           date: '08 de Agosto, 2026',
+          category: 'Estrategia y Conversión',
           title: '¿Landing Page o Sitio Web Completo? Cuál elegir',
           excerpt: 'Conoce la diferencia fundamental entre una página enfocada en ventas y un sitio institucional con varias páginas.',
           image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80',
         },
         {
+          slug: '3-coisas-essenciais-para-passar-confianca',
           date: '02 de Agosto, 2026',
+          category: 'Buenas Prácticas',
           title: '3 elementos clave que todo sitio web nuevo necesita para generar confianza',
           excerpt: 'Diseño ordenado, carga rápida en móviles y botón de WhatsApp visible. Lo básico para empezar con éxito.',
           image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',

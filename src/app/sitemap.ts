@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { STATIC_BLOG_POSTS } from '@/content/blogPostsData';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://weblunar.com.br';
@@ -36,5 +37,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...routes, ...projectRoutes];
+  // Active Blog Articles
+  const blogRoutes = Object.keys(STATIC_BLOG_POSTS).map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...routes, ...projectRoutes, ...blogRoutes];
 }

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useLenis } from '@/hooks/useLenis';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { ArrowUpRight, Search } from 'lucide-react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -98,26 +99,28 @@ export function BlogClient() {
           {filteredPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {filteredPosts.map((post, index) => (
-                <AnimatedSection key={index} options={{ delay: index * 0.1 }} className="group cursor-pointer">
-                  <div className="aspect-[4/3] w-full overflow-hidden bg-neutral-100 rounded-2xl mb-6 relative border border-neutral-200/50 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity" />
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300">
-                      <ArrowUpRight className="w-4 h-4" />
+                <AnimatedSection key={index} options={{ delay: index * 0.1 }} className="group">
+                  <Link href={`/blog/${post.slug}`} className="block h-full cursor-pointer">
+                    <div className="aspect-[4/3] w-full overflow-hidden bg-neutral-100 rounded-2xl mb-6 relative border border-neutral-200/50 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity" />
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="text-xs font-mono text-primary mb-3 tracking-widest uppercase">{post.date}</div>
-                  <h3 className="font-sans text-xl md:text-2xl font-black mb-3 tracking-tight text-neutral-950 group-hover:text-primary transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-neutral-500 font-light leading-relaxed text-sm">
-                    {post.excerpt}
-                  </p>
+                    <div className="text-xs font-mono text-primary mb-3 tracking-widest uppercase">{post.date}</div>
+                    <h3 className="font-sans text-xl md:text-2xl font-black mb-3 tracking-tight text-neutral-950 group-hover:text-primary transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-neutral-500 font-light leading-relaxed text-sm">
+                      {post.excerpt}
+                    </p>
+                  </Link>
                 </AnimatedSection>
               ))}
             </div>

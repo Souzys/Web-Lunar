@@ -299,18 +299,21 @@ export const siteContent = {
     buttonText: "Ver todos",
     posts: [
       {
+        slug: "como-planejar-primeiro-site-profissional",
         date: "12 de Agosto, 2026",
         title: "Como planejar o seu primeiro site profissional: o guia básico",
         excerpt: "Do objetivo principal à escolha do conteúdo. Veja o que você realmente precisa definir antes de colocar sua empresa no ar.",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
       },
       {
+        slug: "landing-page-ou-site-institucional",
         date: "08 de Agosto, 2026",
         title: "Landing Page ou Site Institucional: qual é o ideal para você?",
         excerpt: "Entenda de forma simples a diferença entre uma página direta para vendas e um site completo com várias seções.",
         image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
       },
       {
+        slug: "3-coisas-essenciais-para-passar-confianca",
         date: "02 de Agosto, 2026",
         title: "3 coisas essenciais que todo site precisa ter para passar confiança",
         excerpt: "Design organizado, boa velocidade no celular e botão de WhatsApp visível. O essencial para começar com o pé direito.",
