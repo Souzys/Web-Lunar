@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useLenis } from '@/hooks/useLenis';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { ArrowLeft, Clock, Calendar, Tag, ArrowUpRight, Share2, CheckCircle2, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, Share2, CheckCircle2, MessageCircle, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { BlogPostDetail, BLOG_POSTS_I18N } from '@/content/blogPostsData';
@@ -11,7 +11,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | null }) {
   useLenis();
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
 
@@ -30,17 +30,15 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
 
     gsap.set(glow, {
       x: typeof window !== 'undefined' ? window.innerWidth / 2 - 400 : 0,
-      y: typeof window !== 'undefined' ? window.innerHeight / 4 - 400 : 0,
+      y: typeof window !== 'undefined' ? window.innerHeight / 3 - 400 : 0,
     });
 
-    const xTo = gsap.quickTo(glow, 'x', { duration: 1.5, ease: 'power2.out' });
-    const yTo = gsap.quickTo(glow, 'y', { duration: 1.5, ease: 'power2.out' });
+    const xTo = gsap.quickTo(glow, 'x', { duration: 1.2, ease: 'power2.out' });
+    const yTo = gsap.quickTo(glow, 'y', { duration: 1.2, ease: 'power2.out' });
 
     const handleMouseMove = (e: MouseEvent) => {
-      if (window.scrollY < (window.innerHeight || 800)) {
-        xTo(e.clientX - 400);
-        yTo(e.clientY - 400);
-      }
+      xTo(e.clientX - 400);
+      yTo(e.clientY - 400);
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
@@ -59,6 +57,8 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
       ctaDesc: 'Desenvolvemos sites, landing pages e sistemas sob medida com foco em autoridade e conversão rápida.',
       ctaBtn: 'Solicitar Orçamento',
       whatsappBtn: 'Falar no WhatsApp',
+      conclusionTitle: 'Conclusão',
+      readArticle: 'Ler artigo',
     },
     en: {
       backToBlog: 'Back to Blog',
@@ -71,6 +71,8 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
       ctaDesc: 'We build high-performance websites, landing pages, and systems tailored for business growth.',
       ctaBtn: 'Request a Proposal',
       whatsappBtn: 'Chat on WhatsApp',
+      conclusionTitle: 'Conclusion',
+      readArticle: 'Read article',
     },
     es: {
       backToBlog: 'Volver al Blog',
@@ -83,12 +85,14 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
       ctaDesc: 'Desarrollamos sitios web, landing pages y sistemas a medida para impulsar tu crecimiento.',
       ctaBtn: 'Solicitar Cotización',
       whatsappBtn: 'Hablar por WhatsApp',
+      conclusionTitle: 'Conclusión',
+      readArticle: 'Leer artículo',
     },
   }[language];
 
   if (!activePost) {
     return (
-      <div className="bg-bg text-text min-h-screen flex flex-col items-center justify-center gap-6">
+      <div className="bg-[#05070F] text-white min-h-screen flex flex-col items-center justify-center gap-6">
         <h1 className="text-2xl font-mono text-neutral-400">{labels.notFound}</h1>
         <Link href="/blog" className="inline-flex items-center gap-2 text-primary hover:text-blue-400 font-semibold text-sm">
           <ArrowLeft className="w-4 h-4" />
@@ -114,13 +118,13 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
   };
 
   return (
-    <div className="bg-[#05070F] text-white min-h-screen font-sans selection:bg-primary selection:text-white">
-      {/* Background Glow */}
-      <div ref={heroRef} className="fixed top-0 left-0 h-[60vh] w-full z-0 overflow-hidden bg-[#05070F] pointer-events-none">
+    <div className="bg-[#05070F] text-white min-h-screen font-sans selection:bg-primary selection:text-white relative overflow-hidden">
+      {/* Background Glow & High-Tech Subtle Grid que cobre 100% da tela de forma contínua */}
+      <div ref={heroRef} className="fixed top-0 left-0 h-screen w-full z-0 overflow-hidden bg-[#05070F] pointer-events-none">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div
             ref={glowRef}
-            className="absolute w-[800px] h-[800px] bg-primary/15 rounded-full blur-[150px] opacity-50 mix-blend-screen pointer-events-none"
+            className="absolute w-[800px] h-[800px] bg-primary/25 rounded-full blur-[150px] opacity-75 pointer-events-none"
             style={{ left: 0, top: 0, willChange: 'transform' }}
           />
         </div>
@@ -128,7 +132,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
       </div>
 
       {/* Header do Artigo */}
-      <div className="relative z-10 pt-32 pb-16">
+      <div className="relative z-10 pt-32 pb-12">
         <div className="container mx-auto max-w-4xl px-6">
           <AnimatedSection>
             {/* Voltar para o Blog */}
@@ -144,34 +148,34 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
 
             {/* Metadados: Categoria, Data, Tempo de leitura */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider uppercase bg-primary/10 border border-primary/30 text-primary font-bold">
+              <span className="px-3.5 py-1.5 rounded-full text-[11px] font-mono tracking-wider uppercase bg-primary/15 border border-primary/35 text-primary font-bold shadow-[0_0_12px_rgba(29,77,255,0.2)]">
                 {activePost.category}
               </span>
               <div className="flex items-center gap-1.5 text-xs text-neutral-400 font-mono">
-                <Calendar className="w-3.5 h-3.5" />
+                <Calendar className="w-3.5 h-3.5 text-primary/70" />
                 <span>{activePost.date}</span>
               </div>
               <span className="text-neutral-600">•</span>
               <div className="flex items-center gap-1.5 text-xs text-neutral-400 font-mono">
-                <Clock className="w-3.5 h-3.5" />
+                <Clock className="w-3.5 h-3.5 text-primary/70" />
                 <span>{activePost.readTime}</span>
               </div>
             </div>
 
             {/* Título Principal */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
               {activePost.title}
             </h1>
 
             {/* Subtítulo / Resumo */}
-            <p className="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8 border-l-2 border-primary/40 pl-5">
+            <p className="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-8 border-l-2 border-primary/50 pl-5 text-balance">
               {activePost.excerpt}
             </p>
 
             {/* Linha do Autor e Compartilhamento */}
             <div className="flex items-center justify-between py-4 border-t border-b border-white/10 text-xs">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center font-bold text-primary text-xs">
+                <div className="w-9 h-9 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center font-bold text-primary text-xs shadow-sm">
                   WL
                 </div>
                 <div>
@@ -182,7 +186,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
 
               <button
                 onClick={handleShare}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white transition-all cursor-pointer font-mono text-[11px]"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-neutral-300 hover:text-white transition-all cursor-pointer font-mono text-[11px]"
               >
                 <Share2 className="w-3.5 h-3.5" />
                 <span>{labels.share}</span>
@@ -195,7 +199,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
       {/* Imagem de Capa */}
       <div className="relative z-10 container mx-auto max-w-4xl px-6 mb-16">
         <AnimatedSection options={{ delay: 0.15 }}>
-          <div className="aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-neutral-900">
+          <div className="aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-neutral-900/60 backdrop-blur-md">
             <img
               src={activePost.image}
               alt={activePost.title}
@@ -223,7 +227,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
               </div>
 
               {section.callout && (
-                <div className="my-6 p-6 rounded-2xl bg-primary/10 border-l-4 border-primary text-white font-normal text-sm md:text-base">
+                <div className="my-6 p-6 rounded-2xl bg-primary/10 border-l-4 border-primary text-white font-normal text-sm md:text-base backdrop-blur-md shadow-lg shadow-primary/5">
                   {section.callout}
                 </div>
               )}
@@ -232,7 +236,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
                 <ul className="mt-6 space-y-3 pl-2">
                   {section.list.map((item, lIdx) => (
                     <li key={lIdx} className="flex items-start gap-3 text-sm md:text-base text-neutral-200">
-                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" />
+                      <CheckCircle2 className="w-4.5 h-4.5 text-primary shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -245,7 +249,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
           {activePost.conclusion && (
             <AnimatedSection options={{ delay: 0.3 }}>
               <div className="pt-8 border-t border-white/10">
-                <h3 className="text-xl font-bold text-white mb-3">Conclusão</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{labels.conclusionTitle}</h3>
                 <p className="text-base md:text-lg text-neutral-300 leading-relaxed">
                   {activePost.conclusion}
                 </p>
@@ -256,7 +260,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
 
         {/* Box CTA de Conversão no Final do Post */}
         <AnimatedSection options={{ delay: 0.35 }} className="mt-20">
-          <div className="rounded-3xl border border-primary/30 bg-gradient-to-b from-primary/15 to-transparent p-8 md:p-10 text-center relative overflow-hidden shadow-2xl">
+          <div className="rounded-3xl border border-primary/30 bg-gradient-to-b from-primary/15 to-white/[0.02] backdrop-blur-xl p-8 md:p-12 text-center relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl pointer-events-none" />
             <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
               {labels.ctaTitle}
@@ -267,7 +271,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contato"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(29,77,255,0.4)]"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(29,77,255,0.4)] hover:shadow-[0_0_30px_rgba(29,77,255,0.6)]"
               >
                 {labels.ctaBtn}
               </Link>
@@ -275,7 +279,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
                 href="https://wa.me/5561982630397?text=Ol%C3%A1!%20Li%20o%20artigo%20no%20blog%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/40 text-[#25D366] font-semibold text-xs uppercase tracking-widest transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/40 text-[#25D366] font-semibold text-xs uppercase tracking-widest transition-all shadow-sm"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>{labels.whatsappBtn}</span>
@@ -295,10 +299,10 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
                 <Link
                   key={rPost.slug}
                   href={`/blog/${rPost.slug}`}
-                  className="group bg-white/[0.03] border border-white/10 hover:border-primary/40 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.06] flex flex-col justify-between"
+                  className="group bg-white/[0.03] border border-white/10 hover:border-primary/40 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.06] flex flex-col justify-between backdrop-blur-md shadow-lg"
                 >
                   <div>
-                    <div className="text-[10px] font-mono text-primary uppercase tracking-widest mb-2">{rPost.category}</div>
+                    <div className="text-[10px] font-mono text-primary uppercase tracking-widest mb-2 font-semibold">{rPost.category}</div>
                     <h4 className="text-base font-bold text-white group-hover:text-primary transition-colors mb-2 line-clamp-2">
                       {rPost.title}
                     </h4>
@@ -307,7 +311,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
                     </p>
                   </div>
                   <div className="inline-flex items-center gap-1.5 text-xs text-primary font-semibold mt-4">
-                    <span>Ler artigo</span>
+                    <span>{labels.readArticle}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
                 </Link>
