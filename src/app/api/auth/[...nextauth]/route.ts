@@ -10,12 +10,20 @@ export const authOptions: AuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const adminEmail = process.env.ADMIN_EMAIL || "admin@weblunar.co";
-        const adminPassword = process.env.ADMIN_PASSWORD || "lunarsecretadminpass";
+        const adminEmail = process.env.ADMIN_EMAIL;
+        const adminPassword = process.env.ADMIN_PASSWORD;
+
+        // Sem credenciais configuradas nas variáveis de ambiente, bloqueia qualquer acesso
+        if (!adminEmail || !adminPassword) {
+          console.error("ADMIN_EMAIL ou ADMIN_PASSWORD não configurados no ambiente.");
+          return null;
+        }
 
         if (
-          credentials?.email === adminEmail &&
-          credentials?.password === adminPassword
+          credentials?.email &&
+          credentials?.password &&
+          credentials.email === adminEmail &&
+          credentials.password === adminPassword
         ) {
           return {
             id: "admin-1",

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import gsap from 'gsap';
 import { siteContent } from '@/content';
@@ -9,6 +10,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { Language } from '@/content/translations';
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const menuRef = useRef<HTMLDivElement>(null);
@@ -16,6 +18,10 @@ export function Navbar() {
   const titleRef = useRef<HTMLSpanElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  if (pathname?.startsWith('/links')) {
+    return null;
+  }
 
   useEffect(() => {
     if (!menuRef.current || !contentRef.current || !titleRef.current || !bottomRef.current) return;

@@ -2,8 +2,15 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 export default function WhatsAppFloat() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith('/links')) {
+    return null;
+  }
+
   const phoneNumber = '5561982630397';
   const defaultMessage = encodeURIComponent('Olá equipe Web Lunar! Vim pelo site e gostaria de conversar sobre um projeto.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;

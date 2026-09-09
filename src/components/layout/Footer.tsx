@@ -10,6 +10,11 @@ import { useLanguage } from '@/context/LanguageContext';
 
 export function Footer() {
   const pathname = usePathname();
+  
+  if (pathname?.startsWith('/links')) {
+    return null;
+  }
+
   const isContactPage = pathname === '/contato';
   const { t } = useLanguage();
   const { playHover, playClick } = useAudio();

@@ -9,6 +9,7 @@ import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LanguageProvider } from "@/context/LanguageContext";
+import ClarityInit from "@/components/analytics/ClarityInit";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -207,6 +208,7 @@ export default function RootLayout({
         </LanguageProvider>
         <Analytics />
         <SpeedInsights />
+        <ClarityInit />
       </body>
     </html>
   );
