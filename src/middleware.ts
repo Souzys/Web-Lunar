@@ -1,46 +1,50 @@
-import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { getToken } from "next-auth/jwt";
 
-export default withAuth(
-  function middleware(req) {
-    const hostname = req.headers.get("host") || "";
-    const { pathname } = req.nextUrl;
+export async function middleware(req: NextRequest) {
+  const hostname = req.headers.get("host") || "";
+  const { pathname } = req.nextUrl;
 
-    // Detecta subdomínio de links (ex: links.weblunar.com.br, links.localhost:3000)
-    const isLinksSubdomain =
-      hostname.startsWith("links.") ||
-      hostname.includes("links.weblunar.com.br");
+  // Detecta subdomínio de links (ex: links.weblunar.com.br, links.localhost:3000)
+  const isLinksSubdomain =
+    hostname.startsWith("links.") ||
+    hostname.includes("links.weblunar.com.br");
 
-    if (isLinksSubdomain) {
-      // Se acessar a raiz do subdomínio ou qualquer rota interna, reescreve para /links
-      if (!pathname.startsWith("/links")) {
-        return NextResponse.rewrite(
-          new URL(`/links${pathname === "/" ? "" : pathname}`, req.url)
-        );
-      }
+  if (isLinksSubdomain) {
+    // Se acessar a raiz do subdomínio ou qualquer rota interna, reescreve para /links
+    if (!pathname.startsWith("/links")) {
+      return NextResponse.rewrite(
+        new URL(`/links${pathname === "/" ? "" : pathname}`, req.url)
+      );
+    }
+  }
+
+  // Se a rota for administrativa (exceto tela de login), exige autenticação
+  if (pathname.startsWith("/admin") && !pathname.startsWith("/admin/login")) {
+    const secret = process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET;
+
+    if (!secret) {
+      console.error("[Middleware] NEXTAUTH_SECRET não está configurado no ambiente.");
+      const loginUrl = new URL("/admin/login", req.url);
+      loginUrl.searchParams.set("error", "Configuration");
+      return NextResponse.redirect(loginUrl);
     }
 
-    return NextResponse.next();
-  },
-  {
-    callbacks: {
-      authorized: ({ req, token }) => {
-        // Se a rota for administrativa, exige autenticação (exceto tela de login)
-        if (req.nextUrl.pathname.startsWith("/admin")) {
-          if (req.nextUrl.pathname.startsWith("/admin/login")) {
-            return true;
-          }
-          return !!token;
-        }
-        // Todas as outras rotas (incluindo subdomínios e páginas públicas) são liberadas
-        return true;
-      },
-    },
-    pages: {
-      signIn: "/admin/login",
-    },
+    const token = await getToken({
+      req,
+      secret,
+    });
+
+    if (!token) {
+      const loginUrl = new URL("/admin/login", req.url);
+      loginUrl.searchParams.set("callbackUrl", pathname);
+      return NextResponse.redirect(loginUrl);
+    }
   }
-);
+
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: [
