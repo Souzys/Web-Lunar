@@ -244,6 +244,40 @@ export const CASE_STUDIES_I18N: Record<Language, Record<string, CaseStudy>> = {
         awardTitle: "Editorial Design",
         awardSub: "Showcase Conceitual de Branding"
       }
+    },
+    "quizsaas": {
+      id: "quizsaas",
+      title: "QuizSaaS",
+      category: "CASE STUDY // INTERFACES SAAS & TESTES COMPORTAMENTAIS",
+      image: "/quizsaas.png",
+      tags: ["React", "Next.js", "Tailwind CSS", "UX/UI SaaS", "Framer Motion"],
+      client: "Behavioral Insight SaaS",
+      year: "2026",
+      scope: ["UX/UI Design", "Engenharia Front-end", "Arquitetura de Fluxo Interativo", "Otimização de Conversão"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      tagline: "Interface interativa de alta conversão para diagnóstico comportamental e retenção de usuários.",
+      overview: "Projetamos a interface de onboarding e diagnóstico comportamental para plataforma SaaS baseada em modelos de psicologia e análise de percepção. O produto converte tráfego frio em usuários engajados com fluxo dinâmico e resposta visual em tempo real.",
+      challenge: "Capturar a atenção do usuário nos primeiros segundos com alto impacto visual e psicologia de produto, conduzindo-o por perguntas interativas sem atrito ou abandono de funil.",
+      solution: "Estruturamos um design system dark-mode focado em clareza perceptual, tipografia imponente e microinterações fluidas com Tailwind CSS e Framer Motion, gerando uma experiência viciante e informativa.",
+      results: [
+        "Aumento substancial na taxa de conclusão do fluxo de perguntas.",
+        "Experiência imersiva que retém a atenção do usuário nos primeiros 3 segundos.",
+        "Carregamento instantâneo em dispositivos móveis e desktop."
+      ],
+      showcaseHeroTitle: "Design de Interface SaaS Focado em Psicologia e Alta Conversão",
+      performance: {
+        speed: { title: "Performance", score: "Score 99/100", description: "Interface ultra-rápida sem dependências pesadas." },
+        tech: { title: "Front-end", tech: "Next.js & Tailwind", description: "Design modular com componentes altamente desacoplados." },
+        seo: { title: "Engajamento", status: "Alta Retenção", description: "Fluxo otimizado para redução drástica de bounce rate." }
+      },
+      designSystemText: "Paleta escura de alto contraste com gradientes sutis em magenta e roxo, evocando modernidade, profundidade e foco cognitivo.",
+      designSystemComponents: {
+        ctaLabel: "Descobrir meu padrão",
+        cardTitle: "Decodificação Comportamental",
+        cardDesc: "Análise precisa de percepção inconsciente e pontos cegos.",
+        awardTitle: "SaaS Product Design",
+        awardSub: "Interface Interativa de Comportamento"
+      }
     }
   },
   en: {
@@ -456,6 +490,40 @@ export const CASE_STUDIES_I18N: Record<Language, Record<string, CaseStudy>> = {
         awardTitle: "Editorial Design",
         awardSub: "Conceptual Branding Showcase"
       }
+    },
+    "quizsaas": {
+      id: "quizsaas",
+      title: "QuizSaaS",
+      category: "CASE STUDY // SAAS INTERFACES & BEHAVIORAL TESTING",
+      image: "/quizsaas.png",
+      tags: ["React", "Next.js", "Tailwind CSS", "UX/UI SaaS", "Framer Motion"],
+      client: "Behavioral Insight SaaS",
+      year: "2026",
+      scope: ["UX/UI Design", "Front-end Engineering", "Interactive Flow Architecture", "Conversion Rate Optimization"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      tagline: "High-converting interactive interface for behavioral assessment and user retention.",
+      overview: "We designed the onboarding and behavioral assessment interface for a SaaS platform grounded in psychological models and perception analysis, transforming cold traffic into engaged users.",
+      challenge: "Captivate visitors within the first few seconds through compelling product psychology and visual contrast, guiding them seamlessly through interactive questions without churn.",
+      solution: "Engineered a dark-mode design system with striking typography, fluid micro-interactions, and instant loading speeds across desktop and mobile devices.",
+      results: [
+        "Substantial increase in question flow completion rates.",
+        "Immersive experience engineered for immediate 3-second engagement.",
+        "Instant loading across mobile and desktop devices."
+      ],
+      showcaseHeroTitle: "SaaS Interface Design Focused on Psychology & High Conversion",
+      performance: {
+        speed: { title: "Performance", score: "Score 99/100", description: "Ultra-fast interface with streamlined dependencies." },
+        tech: { title: "Front-end", tech: "Next.js & Tailwind", description: "Modular design system with decoupled components." },
+        seo: { title: "Engagement", status: "High Retention", description: "Optimized interactive flow drastically reducing bounce rate." }
+      },
+      designSystemText: "High-contrast dark palette with subtle magenta and purple gradients, inspiring focus, depth, and cognitive clarity.",
+      designSystemComponents: {
+        ctaLabel: "Discover my pattern",
+        cardTitle: "Behavioral Decoding",
+        cardDesc: "Accurate analysis of unconscious perception and blind spots.",
+        awardTitle: "SaaS Product Design",
+        awardSub: "Behavioral Interactive Experience"
+      }
     }
   },
   es: {
@@ -667,6 +735,40 @@ export const CASE_STUDIES_I18N: Record<Language, Record<string, CaseStudy>> = {
         cardDesc: "Casos de estudio visuales con profunda dirección de arte.",
         awardTitle: "Editorial Design",
         awardSub: "Showcase Conceptual de Branding"
+      }
+    },
+    "quizsaas": {
+      id: "quizsaas",
+      title: "QuizSaaS",
+      category: "CASE STUDY // INTERFACES SAAS & TEST CONDUCTUAL",
+      image: "/quizsaas.png",
+      tags: ["React", "Next.js", "Tailwind CSS", "UX/UI SaaS", "Framer Motion"],
+      client: "Behavioral Insight SaaS",
+      year: "2026",
+      scope: ["Diseño UX/UI", "Ingeniería Front-end", "Arquitectura de Flujo Interactivo", "Optimización de Conversión"],
+      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      tagline: "Interfaz interactiva de alta conversión para diagnóstico conductual y retención de usuarios.",
+      overview: "Diseñamos la interfaz de onboarding y diagnóstico conductual para una plataforma SaaS basada en psicología y análisis de percepción, convirtiendo visitantes en usuarios fidelizados.",
+      challenge: "Capturar la atención del usuario en los primeros segundos con psicología de producto y alto contraste visual, guiándolo por preguntas intuitivas sin fricción.",
+      solution: "Desarrollamos un design system en modo oscuro con tipografía contundente, microinteracciones fluidas y carga instantánea en todos los dispositivos.",
+      results: [
+        "Incremento notable en la tasa de finalización del cuestionario.",
+        "Experiencia inmersiva diseñada para retención inmediata en 3 segundos.",
+        "Carga instantánea en dispositivos móviles y de escritorio."
+      ],
+      showcaseHeroTitle: "Diseño de Interfaz SaaS Enfocado en Psicología y Alta Conversión",
+      performance: {
+        speed: { title: "Rendimiento", score: "Puntuación 99/100", description: "Interfaz ultrarrápida sin dependencias pesadas." },
+        tech: { title: "Front-end", tech: "Next.js & Tailwind", description: "Arquitectura modular y componentes desacoplados." },
+        seo: { title: "Retención", status: "Alto Compromiso", description: "Flujo interactivo optimizado para mínima tasa de rebote." }
+      },
+      designSystemText: "Paleta oscura de alto contraste con sutiles degradados en magenta y violeta, evocando modernidade, profundidad y concentración.",
+      designSystemComponents: {
+        ctaLabel: "Descubrir mi patrón",
+        cardTitle: "Decodificación Conductual",
+        cardDesc: "Análisis preciso de percepción inconsciente y puntos ciegos.",
+        awardTitle: "SaaS Product Design",
+        awardSub: "Interfaz Interactiva de Comportamiento"
       }
     }
   }

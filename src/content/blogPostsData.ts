@@ -18,18 +18,83 @@ export interface BlogPostDetail {
     callout?: string;
     list?: string[];
   }>;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
   conclusion: string;
 }
 
 export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> = {
   pt: {
+    'quanto-custa-criar-um-site-profissional': {
+      slug: 'quanto-custa-criar-um-site-profissional',
+      title: 'Quanto Custa Criar um Site Profissional em 2026? [Tabela de Preços e Prazos]',
+      date: '20 de Setembro, 2026',
+      readTime: '5 min de leitura',
+      category: 'Preços & Estratégia',
+      excerpt: 'Descubra os valores reais para desenvolvimento de landing pages, sites institucionais e sistemas sob medida em 2026, sem surpresas no orçamento.',
+      image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80',
+      author: {
+        name: 'Equipe Web Lunar',
+        role: 'Engenharia & Precificação Digital',
+      },
+      sections: [
+        {
+          heading: 'O que define o valor de um site profissional?',
+          paragraphs: [
+            'O custo de desenvolvimento varia de acordo com o nível de personalização, tecnologia empregada, velocidade de carregamento e foco em conversão de clientes. Um site barato feito em templates genéricos costuma sair caro quando é lento, quebra no celular ou não gera nenhuma venda.',
+            'Na Web Lunar, nós desenvolvemos soluções sob medida com Next.js, TypeScript e Tailwind CSS, garantindo pontuações superiores a 90 no Google PageSpeed e carregamento em milissegundos.',
+          ],
+        },
+        {
+          heading: 'Tabela Média de Preços no Brasil (2026)',
+          paragraphs: [
+            'Abaixo estão as faixas de investimento praticadas no mercado para projetos de alto nível profissional:',
+          ],
+          list: [
+            'Landing Page de Alta Conversão: R$ 1.500 a R$ 3.800 (Ideal para campanhas de Google Ads e tráfego pago, entregue em 5 a 10 dias).',
+            'Site Institucional Completo: R$ 3.200 a R$ 7.500 (Ideal para empresas com múltiplos serviços, blog e autoridade no Google, 10 a 20 dias).',
+            'Plataforma E-commerce / Catálogo: R$ 5.500 a R$ 14.000 (Com checkout integrado, controle de estoque e alta velocidade).',
+            'Sistemas Web / SaaS sob medida: a partir de R$ 9.000 (Painéis administrativos, integrações via API e banco de dados dedicado).',
+          ],
+          callout: 'Importante: Desconfie de orçamentos de R$ 300 a R$ 500 com mensalidades infinitas. Geralmente usam temas pesados piratas, não têm segurança e o site não pertence verdadeiramente à sua empresa.',
+        },
+        {
+          heading: 'Custos Recorrentes Essenciais (Domínio e Hospedagem)',
+          paragraphs: [
+            'Além do desenvolvimento inicial, existem custos de infraestrutura obrigatórios para qualquer site na internet:',
+          ],
+          list: [
+            'Registro de Domínio (.com.br): cerca de R$ 40/ano no Registro.br.',
+            'Hospedagem em Nuvem Moderna: R$ 0 a R$ 120/mês (em provedores como Vercel/Cloudflare, muitos projetos profissionais rodam no plano gratuito com máxima segurança e SSL incluso).',
+            'Manutenção e Evolução: sob demanda ou planos mensais para quem adiciona conteúdos e páginas frequentemente.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Quanto tempo leva para meu site ficar pronto?',
+          answer: 'Uma landing page focada em conversão leva em média de 5 a 10 dias úteis. Sites institucionais completos levam entre 12 e 20 dias úteis, dependendo do envio das informações pelo cliente.',
+        },
+        {
+          question: 'O site será meu ou fico preso a mensalidades?',
+          answer: 'Na Web Lunar, o código do projeto é 100% de sua propriedade. Você não paga mensalidades obrigatórias de manutenção após a entrega.',
+        },
+        {
+          question: 'Como faço para receber um orçamento rápido para o meu negócio?',
+          answer: 'Basta clicar no botão de WhatsApp do site ou acessar nossa página de contato para falar diretamente com nossos desenvolvedores em poucos minutos.',
+        },
+      ],
+      conclusion: 'Investir em um site de alto padrão não é um custo, mas um investimento comercial que se paga nas primeiras semanas de conversão de clientes qualificados.',
+    },
     'como-planejar-primeiro-site-profissional': {
       slug: 'como-planejar-primeiro-site-profissional',
-      title: 'Como planejar o seu primeiro site profissional: o guia básico',
+      title: 'Como Planejar um Site Profissional Passo a Passo: Guia Completo [Checklist]',
       date: '12 de Agosto, 2026',
-      readTime: '3 min de leitura',
+      readTime: '4 min de leitura',
       category: 'Planejamento Web',
-      excerpt: 'Do objetivo principal à escolha do conteúdo. Veja o que você realmente precisa definir antes de colocar sua empresa no ar.',
+      excerpt: 'Aprenda como planejar um site profissional do zero: objetivos, estrutura de páginas, conteúdo e tecnologia para atrair clientes e vender mais.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
       author: {
         name: 'Equipe Web Lunar',
@@ -45,33 +110,44 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           callout: 'Dica de ouro: Um site com um único objetivo claro converte até 3x mais do que um site que tenta falar de tudo ao mesmo tempo.',
         },
         {
-          heading: '2. Reúna as informações essenciais',
+          heading: '2. Reúna as informações essenciais (Checklist)',
           paragraphs: [
             'Você não precisa de dezenas de páginas para começar com autoridade. O essencial para um lançamento rápido e eficiente inclui:',
           ],
           list: [
-            'Quem é você e qual problema você resolve para o cliente.',
-            'Quais serviços ou produtos você oferece com clareza.',
+            'Quem é você e qual problema você resolve para o cliente (Proposta Única de Valor).',
+            'Quais serviços ou produtos você oferece com clareza e benefícios diretos.',
             'Depoimentos ou provas sociais de clientes que já confiaram no seu trabalho.',
-            'Um canal direto e fácil de contato (como link do WhatsApp ou formulário ágil).',
+            'Um canal direto e fácil de contato (botão de WhatsApp destacado com mensagem pronta).',
           ],
         },
         {
-          heading: '3. Priorize a experiência no celular',
+          heading: '3. Priorize a experiência e velocidade no celular',
           paragraphs: [
             'Hoje, mais de 80% dos acessos chegam por smartphones. Seu site precisa carregar em menos de 2 segundos no 4G, ter botões fáceis de clicar com o polegar e textos legíveis sem precisar dar zoom.',
+            'Tecnologias modernas como Next.js e React superam CMSs antigos que acumulam plugins pesados e deixam o site lento para os visitantes.',
           ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Qual é o primeiro passo para planejar um site?',
+          answer: 'O primeiro passo é mapear o objetivo do site (gerar leads, vender produtos ou apresentar a marca) e definir o público-alvo prioritário.',
+        },
+        {
+          question: 'O que preciso enviar para a equipe de desenvolvimento começar?',
+          answer: 'Geralmente seu logotipo, referências visuais que você admira, textos explicativos dos seus serviços e fotos de produtos/equipe.',
         },
       ],
       conclusion: 'Criar um site profissional não precisa ser complicado. Comece com uma base sólida, visual moderno e foco em contato rápido. O restante você expande conforme o negócio cresce.',
     },
     'landing-page-ou-site-institucional': {
       slug: 'landing-page-ou-site-institucional',
-      title: 'Landing Page ou Site Institucional: qual é o ideal para você?',
+      title: 'Landing Page ou Site Institucional: Qual a Diferença e Qual Escolher?',
       date: '08 de Agosto, 2026',
       readTime: '4 min de leitura',
       category: 'Estratégia & Conversão',
-      excerpt: 'Entenda de forma simples a diferença entre uma página direta para vendas e um site completo com várias seções.',
+      excerpt: 'Entenda de forma simples a diferença entre uma página direta para vendas e um site completo com várias seções, e descubra qual dá mais retorno.',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80',
       author: {
         name: 'Equipe Web Lunar',
@@ -100,6 +176,16 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           paragraphs: [
             'Se o seu foco agora é gerar leads e vendas rápidas com um orçamento enxuto, comece com uma Landing Page de alto padrão. Se a sua empresa precisa apresentar diversos setores e criar conteúdo recorrente, opte por um Site Institucional.',
           ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Uma Landing Page converte mais do que um site?',
+          answer: 'Para campanhas de anúncios (Google Ads / Facebook Ads), sim. Landing pages chegam a converter 3x a 5x mais porque eliminam distrações e guiam o usuário diretamente ao contato.',
+        },
+        {
+          question: 'Posso começar com uma Landing Page e depois virar um site completo?',
+          answer: 'Com certeza. Essa é uma das abordagens mais inteligentes para testar o mercado e gerar as primeiras vendas antes de investir em uma estrutura maior.',
         },
       ],
       conclusion: 'Não existe escolha certa ou errada — existe a ferramenta ideal para a fase atual do seu negócio. Ambas podem trabalhar juntas para maximizar seus resultados.',
@@ -142,15 +228,61 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           ],
         },
       ],
+      faqs: [
+        {
+          question: 'Como comprovar a autoridade da minha empresa no site?',
+          answer: 'Exibindo avaliações reais de clientes satisfeitos, dados numéricos de resultados gerados e fotos da sua equipe ou do produto real.',
+        },
+      ],
       conclusion: 'Confiança não se compra, se constrói nos detalhes. Um site bem construído é o seu melhor vendedor trabalhando 24 horas por dia.',
     },
   },
   en: {
+    'quanto-custa-criar-um-site-profissional': {
+      slug: 'quanto-custa-criar-um-site-profissional',
+      title: 'How Much Does a Professional Website Cost in 2026? [Price Guide]',
+      date: 'September 20, 2026',
+      readTime: '5 min read',
+      category: 'Pricing & Strategy',
+      excerpt: 'Discover real development costs for landing pages, corporate websites, and custom platforms in 2026 with full transparency.',
+      image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80',
+      author: {
+        name: 'Web Lunar Team',
+        role: 'Digital Engineering & Pricing',
+      },
+      sections: [
+        {
+          heading: 'What determines the cost of a professional website?',
+          paragraphs: [
+            'The investment depends on custom design needs, underlying tech stack, mobile speed, and conversion strategy. Cheap templates often end up expensive due to slow loading and zero customer leads.',
+            'At Web Lunar, we engineer high-performance digital products with Next.js and TypeScript, securing 90+ Google PageSpeed ratings.',
+          ],
+        },
+        {
+          heading: 'Average Market Investment Ranges',
+          paragraphs: [
+            'Here is the standard market pricing for high-tier development:',
+          ],
+          list: [
+            'High-Converting Landing Page: $400 - $950 (Perfect for targeted paid ads and immediate conversions).',
+            'Full Corporate Website: $900 - $2,200 (Comprehensive branding, multi-page showcase, SEO architecture).',
+            'Custom Web App / E-commerce: Starting from $2,500+ (Database integrations, client portals, custom workflows).',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'How long does development take?',
+          answer: 'Landing pages are usually delivered within 5 to 10 days. Full multi-page corporate sites take 12 to 20 days.',
+        },
+      ],
+      conclusion: 'A well-engineered website is an active revenue generator that pays for itself through high conversion rates.',
+    },
     'como-planejar-primeiro-site-profissional': {
       slug: 'como-planejar-primeiro-site-profissional',
-      title: 'How to plan your first professional website: The beginner’s guide',
+      title: 'How to Plan a Professional Website Step by Step: Complete Guide [Checklist]',
       date: 'August 12, 2026',
-      readTime: '3 min read',
+      readTime: '4 min read',
       category: 'Web Planning',
       excerpt: 'From core objectives to key content. What you actually need to define before launching your business online.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
@@ -168,7 +300,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           callout: 'Pro tip: A webpage with one clear call-to-action converts up to 3x higher than pages that try to say everything at once.',
         },
         {
-          heading: '2. Gather the essential information',
+          heading: '2. Gather the essential information (Checklist)',
           paragraphs: [
             'You do not need dozens of pages to start with authority. The essentials for a fast and effective launch include:',
           ],
@@ -269,11 +401,40 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
     },
   },
   es: {
+    'quanto-custa-criar-um-site-profissional': {
+      slug: 'quanto-custa-criar-um-site-profissional',
+      title: '¿Cuánto Cuesta Crear un Sitio Web Profesional en 2026? [Guía de Precios]',
+      date: '20 de Septiembre, 2026',
+      readTime: '5 min de lectura',
+      category: 'Precios y Estrategia',
+      excerpt: 'Conoce los valores reales de desarrollo de landing pages, sitios corporativos y plataformas web a medida en 2026 sin costes ocultos.',
+      image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80',
+      author: {
+        name: 'Equipo Web Lunar',
+        role: 'Ingeniería y Precios Digitales',
+      },
+      sections: [
+        {
+          heading: '¿Qué determina el valor de un sitio web profesional?',
+          paragraphs: [
+            'El costo varía según el diseño a medida, la tecnología, la velocidad en móviles y la optimización para ventas. Plantillas baratas terminan costando caro por su lentitud y falta de conversiones.',
+            'En Web Lunar creamos plataformas con Next.js y TypeScript de máxima velocidad y diseño premium.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: '¿Cuánto tiempo tarda la entrega?',
+          answer: 'Las landing pages se entregan en 5 a 10 días hábiles. Los sitios corporativos completos en 12 a 20 días.',
+        },
+      ],
+      conclusion: 'Un sitio web de alto nivel no es un gasto, sino una inversión que genera clientes mes a mes.',
+    },
     'como-planejar-primeiro-site-profissional': {
       slug: 'como-planejar-primeiro-site-profissional',
-      title: 'Cómo planificar tu primer sitio web profesional: Guía básica',
+      title: 'Cómo Planificar un Sitio Web Profesional Paso a Paso: Guía Completa [Checklist]',
       date: '12 de Agosto, 2026',
-      readTime: '3 min de lectura',
+      readTime: '4 min de lectura',
       category: 'Planificación Web',
       excerpt: 'Del objetivo principal al contenido clave. Lo que necesitas definir antes de lanzar tu negocio en internet.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
@@ -291,7 +452,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           callout: 'Consejo clave: Una página con un único llamado a la acción convierte hasta 3 veces más que un sitio sobrecargado.',
         },
         {
-          heading: '2. Reúne la información indispensable',
+          heading: '2. Reúne la información indispensable (Checklist)',
           paragraphs: [
             'No necesitas decenas de páginas para comenzar con autoridad. Lo esencial para un lanzamiento rápido incluye:',
           ],
@@ -313,7 +474,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
     },
     'landing-page-ou-site-institucional': {
       slug: 'landing-page-ou-site-institucional',
-      title: '¿Landing Page o Sitio Web Completo? Cuál elegir',
+      title: 'Landing Page o Sitio Web Completo: ¿Cuál elegir para tu negocio?',
       date: '08 de Agosto, 2026',
       readTime: '4 min de lectura',
       category: 'Estrategia y Conversión',
@@ -370,7 +531,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           ],
         },
         {
-          heading: '2. Velocidad y adaptabilidad móvil',
+          heading: '2. Velocidade y adaptabilidad móvil',
           paragraphs: [
             'Los sitios lentos generan desconfianza inmediata. La ingeniería web moderna asegura cargas instantáneas sin fallas en dispositivos móviles.',
           ],

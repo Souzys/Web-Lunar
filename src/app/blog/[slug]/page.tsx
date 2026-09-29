@@ -115,7 +115,18 @@ export default async function ArtigoPage({ params }: Props) {
           "@type": "WebPage",
           "@id": `https://weblunar.com.br/blog/${slug}`
         }
-      }
+      },
+      ...(post.faqs && post.faqs.length > 0 ? [{
+        "@type": "FAQPage",
+        "mainEntity": post.faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }] : [])
     ]
   };
 

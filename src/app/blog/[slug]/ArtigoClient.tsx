@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useLenis } from '@/hooks/useLenis';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { ArrowLeft, Clock, Calendar, Share2, CheckCircle2, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, Share2, CheckCircle2, MessageCircle, ArrowUpRight, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { BlogPostDetail, BLOG_POSTS_I18N } from '@/content/blogPostsData';
@@ -58,6 +58,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
       ctaBtn: 'Solicitar Orçamento',
       whatsappBtn: 'Falar no WhatsApp',
       conclusionTitle: 'Conclusão',
+      faqTitle: 'Perguntas Frequentes',
       readArticle: 'Ler artigo',
     },
     en: {
@@ -72,6 +73,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
       ctaBtn: 'Request a Proposal',
       whatsappBtn: 'Chat on WhatsApp',
       conclusionTitle: 'Conclusion',
+      faqTitle: 'Frequently Asked Questions',
       readArticle: 'Read article',
     },
     es: {
@@ -86,6 +88,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
       ctaBtn: 'Solicitar Cotización',
       whatsappBtn: 'Hablar por WhatsApp',
       conclusionTitle: 'Conclusión',
+      faqTitle: 'Preguntas Frecuentes',
       readArticle: 'Leer artículo',
     },
   }[language];
@@ -249,6 +252,26 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
               )}
             </AnimatedSection>
           ))}
+
+          {/* Perguntas Frequentes (FAQ) com Rich Styling */}
+          {activePost.faqs && activePost.faqs.length > 0 && (
+            <AnimatedSection options={{ delay: 0.25 }} className="pt-8">
+              <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 shadow-xl space-y-6">
+                <div className="flex items-center gap-3">
+                  <HelpCircle className="w-6 h-6 text-primary" />
+                  <h3 className="font-display text-2xl font-bold text-white">{labels.faqTitle}</h3>
+                </div>
+                <div className="space-y-5">
+                  {activePost.faqs.map((faq, fIdx) => (
+                    <div key={fIdx} className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
+                      <h4 className="text-base sm:text-lg font-bold text-white">{faq.question}</h4>
+                      <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+          )}
 
           {/* Conclusão */}
           {activePost.conclusion && (

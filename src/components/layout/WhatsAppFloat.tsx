@@ -112,8 +112,19 @@ export default function WhatsAppFloat() {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
-      className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 pointer-events-auto whatsapp-float-container"
+      className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 pointer-events-auto whatsapp-float-container flex items-center gap-3"
     >
+      {/* Tooltip / Badge de ação rápida */}
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-emerald-500/30 bg-[#0a0f1d]/90 text-white backdrop-blur-md hover:bg-neutral-900 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.4)] group"
+      >
+        <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse shrink-0" />
+        <span className="text-neutral-200 group-hover:text-white">Orçamento no WhatsApp</span>
+      </a>
+
       <a
         href={whatsappUrl}
         target="_blank"
