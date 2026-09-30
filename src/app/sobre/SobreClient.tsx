@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useLenis } from '@/hooks/useLenis';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { IsometricWireframe } from '@/components/ui/IsometricWireframe';
-import { Server, Zap, Code2, Shield, Activity, Lock, Terminal, Box, CheckCircle2 } from 'lucide-react';
+import { Server, Zap, Code2, Shield, Activity, Lock, Box, CheckCircle2 } from 'lucide-react';
 import gsap from 'gsap';
 import Link from 'next/link';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -266,7 +266,7 @@ export function SobreClient() {
       </section>
 
       {/* =========================================
-          BLOCO 04 E 05: CORE STACK & ENGAJAMENTO
+          MODELOS DE ENGAJAMENTO
       ========================================= */}
       <section 
         className="py-24 border-t border-white/5 bg-[#020408] relative overflow-hidden"
@@ -296,67 +296,7 @@ export function SobreClient() {
       >
         <div ref={glowCombinedRef} className="absolute w-[800px] h-[800px] bg-primary/15 rounded-full blur-[100px] opacity-0 pointer-events-none top-0 left-0 will-change-transform" />
         
-        <div className="container mx-auto max-w-[1440px] px-6 flex flex-col gap-32">
-          
-          {/* MURAL DE AUTORIDADE TÉCNICA */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
-            <AnimatedSection>
-              <div>
-                <h2 className="text-xs uppercase tracking-widest text-primary font-sans mb-3 font-semibold">{t.sobrePage.coreStackTag}</h2>
-                <p className="font-display font-bold text-4xl md:text-5xl lg:text-5xl leading-[1.1] tracking-tighter text-white/95">
-                  {t.sobrePage.coreStackTitle}
-                </p>
-                <p className="mt-6 text-neutral-400 font-light text-lg md:text-xl leading-relaxed text-balance">
-                  {t.sobrePage.coreStackSubtitle}
-                </p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection options={{ delay: 0.2 }}>
-            <div className="w-full rounded-3xl overflow-hidden border border-white/[0.06] bg-[#07090e] shadow-[0_8px_30px_rgb(0,0,0,0.2)]">
-              <div className="bg-white/[0.02] border-b border-white/[0.08] px-4 py-3 flex items-center gap-2">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                  <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                </div>
-                <div className="mx-auto flex items-center gap-2 text-[#8b949e] text-xs font-mono">
-                  <Terminal className="w-3 h-3" />
-                  <span>root@weblunar: ~/core-stack</span>
-                </div>
-              </div>
-              <div className="p-6 md:p-10 font-mono text-sm md:text-base leading-relaxed overflow-x-auto">
-                <div className="flex gap-4 mb-6">
-                  <span className="text-[#3fb950] font-bold">➜</span>
-                  <span className="text-[#58a6ff]">~</span>
-                  <span className="text-white font-semibold">cat core_stack.config</span>
-                </div>
-                
-                <div className="text-[#8b949e] pl-6 border-l-2 border-white/[0.08] ml-2 flex flex-col gap-4">
-                  <p>
-                    <span className="text-[#ff7b72] font-semibold">Runtime & Backend:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">Node.js (TypeScript Strict Mode) // Docker Containers // Prisma ORM.</span>
-                  </p>
-                  <p>
-                    <span className="text-[#ff7b72] font-semibold">Frontend & Framework:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">Next.js (App Router) // React Server Components // Tailwind CSS.</span>
-                  </p>
-                  <p>
-                    <span className="text-[#ff7b72] font-semibold">APIs & Cache:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">tRPC Type-Safe APIs // PostgreSQL Database // Redis Caching.</span>
-                  </p>
-                  <p>
-                    <span className="text-[#ff7b72] font-semibold">Motion & Scroll:</span> <br className="md:hidden"/> <span className="text-[#a5d6ff]">GSAP Engine // ScrollTrigger // Lenis Smooth Scroll.</span>
-                  </p>
-                </div>
-                
-                <div className="flex gap-4 mt-8 items-center">
-                  <span className="text-[#3fb950] font-bold">➜</span>
-                  <span className="text-[#58a6ff]">~</span>
-                  <span className="w-2 h-5 bg-white/80 animate-pulse block" />
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-          </div>
-
+        <div className="container mx-auto max-w-[1440px] px-6">
           {/* MODELOS DE ENGAJAMENTO */}
           <div className="relative z-10">
             <AnimatedSection>
