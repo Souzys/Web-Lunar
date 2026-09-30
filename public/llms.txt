@@ -1,0 +1,39 @@
+# Web Lunar
+
+> Web Lunar é uma software house e estúdio de design digital especializado no desenvolvimento de landing pages de alta conversão, websites institucionais premium e sistemas web sob medida construídos com Next.js, React e TypeScript.
+
+## Visão Geral
+* **Nome:** Web Lunar
+* **Website:** https://weblunar.com.br
+* **WhatsApp Oficial:** +55 (61) 98263-0397
+* **Localização / Atendimento:** Atendimento remoto para todo o Brasil e clientes globais (EUA, Europa e América Latina).
+* **Foco:** Performance web (pontuação 90+ no Google PageSpeed), design visual refinado (nível Awwwards) e arquitetura focada em vendas e conversão de leads no WhatsApp.
+
+## Serviços Oferecidos
+1. **Landing Pages de Alta Conversão:** Páginas únicas projetadas para tráfego pago (Google Ads, Meta Ads), com tempo de carregamento inferior a 1.5s, copy persuasiva e integração direta ao WhatsApp. Prazo médio: 5 a 10 dias úteis.
+2. **Websites Institucionais Corporativos:** Estrutura completa de autoridade digital (Início, Sobre Nós, Serviços, Portfólio, Blog e Contato), com arquitetura SEO técnico e internacionalização (PT, EN, ES). Prazo médio: 10 a 20 dias úteis.
+3. **Plataformas E-Commerce & Catálogos Digitais:** Lojas virtuais rápidas com checkout integrado e gestão de produtos.
+4. **Sistemas Web & SaaS sob Medida:** Painéis administrativos, portais de clientes, dashboards e integrações de API com bancos de dados dedicados (PostgreSQL, Prisma, tRPC).
+
+## Stack Tecnológica & Engenharia
+* **Frontend:** Next.js (App Router), React, TypeScript, Tailwind CSS, Framer Motion, GSAP, Three.js / React Three Fiber.
+* **Backend & APIs:** Node.js, tRPC, Prisma ORM, PostgreSQL.
+* **Infraestrutura & Nuvem:** Vercel Edge Network, Cloudflare, Docker.
+* **Métricas de Performance:** Otimização para Core Web Vitals (LCP, FID/INP, CLS), Schema.org (JSON-LD), AEO e SEO técnico.
+
+## Casos de Estudo e Portfólio
+* **S-News:** Portal institucional e plataforma digital de notícias e comunicação corporativa.
+* **Volk:** Interface moderna e landing page imersiva para o setor industrial e automotivo.
+* **Capi:** Plataforma digital com foco em experiência mobile e conversão de leads.
+* **ACP Tax Advisory:** Solução corporativa para consultoria tributária e serviços financeiros.
+* **Adansonea & OSA:** Projetos digitais sob medida com forte apelo visual e interatividade.
+
+## Filosofia Técnica
+A Web Lunar prioriza fricção zero na experiência do usuário, substituindo formulários burocráticos por comunicação direta via WhatsApp e construindo código 100% de propriedade do cliente, sem aprisionamento a mensalidades de templates fechados.
+
+## Links Relevantes
+* Início: https://weblunar.com.br
+* Serviços: https://weblunar.com.br/servicos
+* Projetos: https://weblunar.com.br/projetos
+* Blog & Artigos: https://weblunar.com.br/blog
+* Solicitação de Proposta: https://weblunar.com.br/contato

@@ -587,6 +587,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'Nenhum artigo encontrado para a sua busca.',
       posts: [
         {
+          slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
+          date: '28 de Setembro, 2026',
+          category: 'SEO & Tecnologia',
+          title: 'Site com IA vs WordPress: Qual Ranqueia Melhor no Google em 2026?',
+          excerpt: 'A análise definitiva sobre como o algoritmo do Google realmente avalia sites criados por inteligência artificial versus o ecossistema tradicional do WordPress.',
+          image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
+        },
+        {
+          slug: 'quanto-custa-criar-um-site-profissional',
+          date: '20 de Setembro, 2026',
+          category: 'Preços & Estratégia',
+          title: 'Quanto Custa Criar um Site Profissional em 2026? [Tabela de Preços e Prazos]',
+          excerpt: 'Descubra os valores reais para desenvolvimento de landing pages, sites institucionais e sistemas sob medida em 2026, sem surpresas no orçamento.',
+          image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80',
+        },
+        {
           slug: 'como-planejar-primeiro-site-profissional',
           date: '12 de Agosto, 2026',
           category: 'Planejamento Web',
@@ -1064,6 +1080,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'No articles found matching your query.',
       posts: [
         {
+          slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
+          date: 'September 28, 2026',
+          category: 'SEO & Tech',
+          title: 'AI Website vs WordPress: Which Ranks Better on Google in 2026?',
+          excerpt: 'The definitive analysis on how Google actually evaluates AI-built platforms versus traditional WordPress in 2026.',
+          image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
+        },
+        {
+          slug: 'quanto-custa-criar-um-site-profissional',
+          date: 'September 20, 2026',
+          category: 'Pricing & Strategy',
+          title: 'How Much Does a Professional Website Cost in 2026? [Price Guide]',
+          excerpt: 'Discover real development costs for landing pages, corporate websites, and custom platforms in 2026 with full transparency.',
+          image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80',
+        },
+        {
           slug: 'como-planejar-primeiro-site-profissional',
           date: 'August 12, 2026',
           category: 'Web Planning',
@@ -1540,6 +1572,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       searchPlaceholder: 'Buscar artículos...',
       noResults: 'No se encontraron artículos para tu búsqueda.',
       posts: [
+        {
+          slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
+          date: '28 de Septiembre, 2026',
+          category: 'SEO y Tecnología',
+          title: 'Sitio Web con IA vs WordPress: ¿Cuál Posiciona Mejor en Google en 2026?',
+          excerpt: 'El análisis definitivo sobre cómo evalúa el algoritmo de Google las plataformas creadas con inteligencia artificial frente a WordPress en 2026.',
+          image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
+        },
+        {
+          slug: 'quanto-custa-criar-um-site-profissional',
+          date: '20 de Septiembre, 2026',
+          category: 'Precios y Estrategia',
+          title: '¿Cuánto Cuesta Crear un Sitio Web Profesional en 2026? [Guía de Precios]',
+          excerpt: 'Conoce los valores reales de desarrollo de landing pages, sitios corporativos y plataformas web a medida en 2026 sin costes ocultos.',
+          image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80',
+        },
         {
           slug: 'como-planejar-primeiro-site-profissional',
           date: '12 de Agosto, 2026',
