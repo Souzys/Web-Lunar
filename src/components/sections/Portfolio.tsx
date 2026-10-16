@@ -163,25 +163,25 @@ export function Portfolio() {
                 {t.portfolio.tag}
               </span>
             </div>
-            <h2 className="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-none text-neutral-900">
+            <h2 className="font-sans text-[2.25rem] sm:text-5xl md:text-7xl font-bold tracking-tight leading-none text-neutral-900 whitespace-nowrap">
               {t.portfolio.title}
             </h2>
           </div>
           <Link
             href="/projetos"
-            className="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-widest border border-black/10 px-6 py-4 hover:bg-black hover:text-white transition-all duration-300 self-start md:self-auto rounded-full text-neutral-900"
+            className="inline-flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-widest border border-black/10 px-5 py-3.5 md:px-6 md:py-4 hover:bg-black hover:text-white transition-all duration-300 self-start md:self-auto rounded-full text-neutral-900"
           >
             {t.portfolio.viewAll} <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
 
         {/* ── Category Filters ── */}
-        <div className="flex flex-wrap justify-between gap-y-3 pb-8 border-b border-black/5 w-full">
+        <div className="flex flex-wrap items-center justify-start md:justify-between gap-2 md:gap-y-3 pb-8 border-b border-black/5 w-full">
           {categoryKeys.map(cat => (
             <button
               key={cat.key}
               onClick={() => setActiveFilterKey(cat.key)}
-              className={`px-5 py-2 text-xs font-sans font-bold uppercase tracking-wider rounded-full transition-all duration-300 ease-out border hover:scale-105 active:scale-95 ${
+              className={`px-4 py-2 md:px-5 text-[11px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-full transition-all duration-300 ease-out border whitespace-nowrap hover:scale-105 active:scale-95 ${
                 activeFilterKey === cat.key
                   ? 'bg-primary text-white border-primary shadow-md'
                   : 'bg-black/[0.03] text-neutral-500 border-black/5 hover:bg-black/[0.08] hover:text-neutral-900 hover:border-black/10 hover:shadow-sm'
