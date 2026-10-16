@@ -1337,8 +1337,8 @@ export const translations: Record<Language, TranslationDictionary> = {
       atendimento: 'Global · Atención Remota',
     },
     hero: {
-      title1: 'Creación de Sitios Web que',
-      title2: 'Generan Resultados Reales',
+      title1: 'Sitios Web que Generan',
+      title2: 'Resultados Reales',
       subtitle: 'AGENCIA DE CREACIÓN DE SITIOS WEB',
       bottomText: 'Sitios web profesionales, optimizados para Google y diseñados para convertir visitas en clientes.',
       ctaButton: 'Quiero mi sitio web',
