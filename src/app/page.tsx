@@ -47,7 +47,7 @@ export default function Home() {
         "logo": "https://weblunar.com.br/icon.png",
         "image": "https://weblunar.com.br/printvolk.webp",
         "telephone": "+55-61-98263-0397",
-        "priceRange": "R$ 1.500 - R$ 15.000",
+        "priceRange": "R$ 700 - R$ 15.000",
         "description": "Desenvolvimento de landing pages de alta conversão, websites institucionais e sistemas web modernos com Next.js e TypeScript.",
         "areaServed": [
           {

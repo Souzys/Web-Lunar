@@ -52,7 +52,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           heading: 'O WordPress em 2026: Autoridade consolidada ou peso excessivo?',
           paragraphs: [
             'O WordPress ainda comanda grande parte da internet por sua maturidade e ecossistema de plugins como Yoast e RankMath. No entanto, para o empresário contemporâneo, ele apresenta um desafio crítico: a sobrecarga técnica.',
-            'Temas pesados de construtores visuais (como Elementor ou Divi) acumulam dezenas de scripts, folhas de estilo gigantes e requisições no servidor. O resultado costuma ser uma pontuação baixa nos Core Web Vitals (com notas móveis entre 30 e 50 no Google PageSpeed), o que afeta diretamente o ranqueamento orgânico em buscas locais e comerciais.',
+            'Temas pesados de construtores visuais (como Elementor ou Divi) acumulam dezenas de scripts, folhas de estilo gigantes e requisições no servidor. O resultado costuma ser um site lento no celular, e o Google rebaixa páginas lentas nas buscas locais e comerciais.',
           ],
           list: [
             'Pontos Fortes do WordPress: Facilidade de publicação de blogs simples e familiaridade no mercado.',
@@ -62,7 +62,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: 'Construtores com IA: Velocidade de prototipagem vs Limitações técnicas',
           paragraphs: [
-            'Por outro lado, ferramentas modernas de IA geram páginas inteiras em segundos, estruturando tags semânticas (H1, H2, meta descriptions e microdados) com alta precisão semântica.',
+            'Por outro lado, ferramentas modernas de IA geram páginas inteiras em segundos, já organizando títulos e descrições de um jeito que o Google entende facilmente.',
             'O ponto de atenção está nas ferramentas proprietárias de "site em 30 segundos": muitas delas geram layouts genéricos, aprisionam a empresa em mensalidades perpétuas e dificultam integrações analíticas profundas (pixels de conversão, tracking de funil e banco de dados proprietário).',
           ],
         },
@@ -70,11 +70,11 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           heading: 'A Convergência: Como empresas de alto nível estão unindo os dois mundos',
           paragraphs: [
             'A disputa entre "fazer no WordPress" ou "gerar tudo numa IA genérica" é uma falsa escolha. As empresas líderes em posicionamento orgânico e conversão adotam uma terceira via: o Desenvolvimento Híbrido de Alta Performance.',
-            'Utiliza-se a inteligência artificial para mapear intenções de busca do público e arquitetar copys persuasivas, mas a entrega final é feita em arquitetura moderna (Next.js / TypeScript). Isso elimina os gargalos de lentidão do WordPress e garante nota 95+ no Google PageSpeed, com código limpo e 100% de propriedade do cliente.',
+            'Utiliza-se a inteligência artificial para mapear intenções de busca do público e arquitetar copys persuasivas, mas a entrega final é feita sob medida, sem temas pesados nem plugins desnecessários. O resultado é um site que abre em menos de 1 segundo no celular, não trava e pertence 100% ao cliente.',
           ],
           list: [
             'Inteligência Artificial: Usada para pesquisa de mercado, semântica avançada e agilidade.',
-            'Engenharia Moderna (Next.js): Garante tempo de carregamento em milissegundos e segurança militar.',
+            'Desenvolvimento sob medida: site leve, que abre na hora no celular e com segurança reforçada.',
             'Psicologia de Vendas: Botão direto de WhatsApp e formulário ágil para fechar contratos sem atrito.',
           ],
         },
@@ -90,11 +90,11 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         },
         {
           question: 'O que mais influencia o ranqueamento de um site hoje?',
-          answer: 'Velocidade móvel (Core Web Vitals), tempo de retenção do usuário, clareza na resposta da busca e segurança (HTTPS e ausência de scripts invasivos).',
+          answer: 'Velocidade no celular, tempo que o visitante passa na página, clareza na resposta da busca e segurança (HTTPS e ausência de scripts invasivos).',
         },
         {
           question: 'Como a Web Lunar trabalha com essas tecnologias?',
-          answer: 'Nós unimos a precisão e velocidade da IA no processo de pesquisa e desenvolvimento com a robustez do Next.js, entregando plataformas ultrarrápidas pensadas para ranquear e vender.',
+          answer: 'Nós unimos a precisão e velocidade da IA no processo de pesquisa e desenvolvimento com um desenvolvimento sob medida, entregando sites ultrarrápidos pensados para aparecer no Google e vender.',
         },
       ],
       conclusion: 'Não importa se o seu site foi planejado com auxílio de IA ou construído em código tradicional: quem vence no Google é quem entrega a resposta mais rápida, confiável e agradável para o usuário final.',
@@ -116,19 +116,19 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           heading: 'O que define o valor de um site profissional?',
           paragraphs: [
             'O custo de desenvolvimento varia de acordo com o nível de personalização, tecnologia empregada, velocidade de carregamento e foco em conversão de clientes. Um site barato feito em templates genéricos costuma sair caro quando é lento, quebra no celular ou não gera nenhuma venda.',
-            'Na Web Lunar, nós desenvolvemos soluções sob medida com Next.js, TypeScript e Tailwind CSS, garantindo pontuações superiores a 90 no Google PageSpeed e carregamento em milissegundos.',
+            'Na Web Lunar, cada site é feito sob medida para o seu negócio: abre em menos de 1 segundo no celular, passa confiança logo de cara e leva o visitante direto para o seu WhatsApp.',
           ],
         },
         {
           heading: 'Tabela Média de Preços no Brasil (2026)',
           paragraphs: [
-            'Abaixo estão as faixas de investimento praticadas no mercado para projetos de alto nível profissional:',
+            'Abaixo estão as faixas de investimento praticadas hoje. Para efeito de comparação, agências tradicionais costumam cobrar de R$ 1.500 a R$ 3.000 só por uma landing page:',
           ],
           list: [
-            'Landing Page de Alta Conversão: R$ 1.500 a R$ 3.800 (Ideal para campanhas de Google Ads e tráfego pago, entregue em 5 a 10 dias).',
-            'Site Institucional Completo: R$ 3.200 a R$ 7.500 (Ideal para empresas com múltiplos serviços, blog e autoridade no Google, 10 a 20 dias).',
-            'Plataforma E-commerce / Catálogo: R$ 5.500 a R$ 14.000 (Com checkout integrado, controle de estoque e alta velocidade).',
-            'Sistemas Web / SaaS sob medida: a partir de R$ 9.000 (Painéis administrativos, integrações via API e banco de dados dedicado).',
+            'Landing Page de Alta Conversão: a partir de R$ 700 (Ideal para anúncios no Google e Instagram e para receber orçamentos no WhatsApp, entregue em 5 a 10 dias).',
+            'Site Institucional Completo: R$ 1.500 a R$ 3.500 (Ideal para empresas com vários serviços, blog e presença forte no Google, 10 a 20 dias).',
+            'Loja Virtual / Catálogo: a partir de R$ 2.500 (Para vender produtos online com Pix e cartão, controle de estoque e carregamento rápido).',
+            'Sistemas sob medida (agendamentos, painéis, áreas de cliente): orçamento personalizado conforme o projeto.',
           ],
           callout: 'Importante: Desconfie de orçamentos de R$ 300 a R$ 500 com mensalidades infinitas. Geralmente usam temas pesados piratas, não têm segurança e o site não pertence verdadeiramente à sua empresa.',
         },
@@ -139,7 +139,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           ],
           list: [
             'Registro de Domínio (.com.br): cerca de R$ 40/ano no Registro.br.',
-            'Hospedagem em Nuvem Moderna: R$ 0 a R$ 120/mês (em provedores como Vercel/Cloudflare, muitos projetos profissionais rodam no plano gratuito com máxima segurança e SSL incluso).',
+            'Hospedagem: de R$ 0 a R$ 120/mês (muitos sites profissionais rodam em planos gratuitos de hospedagem moderna, já com cadeado de segurança incluso).',
             'Manutenção e Evolução: sob demanda ou planos mensais para quem adiciona conteúdos e páginas frequentemente.',
           ],
         },
@@ -302,16 +302,16 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           ],
           list: [
             '1. O site será 100% seu? Fuja de empresas que prendem você em "aluguéis de site" onde você perde tudo se cancelar a mensalidade.',
-            '2. Qual a nota de velocidade no Google PageSpeed? Sites modernos em Next.js atingem 95+ de performance, enquanto templates comuns mal passam de 40.',
+            '2. O site abre rápido no celular? Teste você mesmo pelo 4G: um site profissional abre em menos de 2 segundos. Se demora, o cliente desiste e o Google rebaixa.',
             '3. O texto é pensado para vender (Copywriting)? Um site que só fala sobre a empresa não vende; ele precisa falar da dor do seu cliente.',
-            '4. Já vem otimizado para o Google (SEO Técnico)? Títulos, meta tags, sitemap automático e estrutura semântica são obrigatórios.',
+            '4. Já vem preparado para aparecer no Google? Pergunte se o site sai configurado para ser encontrado nas buscas, e não só bonito.',
             '5. Portfólio real e funcionando: clique nos sites que a agência já criou e teste a navegação pelo seu próprio celular.',
           ],
         },
         {
           heading: 'Como funciona o método da Web Lunar',
           paragraphs: [
-            'Na Web Lunar, unimos o melhor dos dois mundos: a visão comercial de uma agência focada em vendas com a engenharia de ponta (Next.js e WordPress Otimizado). Entregamos projetos rápidos, sem mensalidades ocultas e já conectados ao seu WhatsApp e Google Search Console.',
+            'Na Web Lunar, unimos o melhor dos dois mundos: a visão comercial de uma agência focada em vendas com um desenvolvimento sob medida, leve e rápido. Entregamos projetos sem mensalidades ocultas, já conectados ao seu WhatsApp e prontos para aparecer no Google.',
           ],
         },
       ],
@@ -352,9 +352,9 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
             'Aplicamos estes quatro pilares em todos os projetos da Web Lunar para acelerar o posicionamento orgânico:',
           ],
           list: [
-            '1. Palavras-chave com intenção de compra no Título (H1): em vez de frases vagas como "Bem-vindo à nossa empresa", use "Criação de Sites Profissionais" ou o nome exato do serviço que o cliente digita no Google.',
-            '2. Velocidade instantânea no celular (Core Web Vitals): o Google rebaixa sites lentos. Páginas que abrem em menos de 1 segundo ganham prioridade no leilão orgânico.',
-            '3. Conexão direta com o Google Search Console: envio imediato do Sitemap XML e solicitação de indexação das páginas estratégicas.',
+            '1. Palavras que o cliente realmente pesquisa no título principal: em vez de frases vagas como "Bem-vindo à nossa empresa", use "Criação de Sites Profissionais" ou o nome exato do serviço que o cliente digita no Google.',
+            '2. Velocidade instantânea no celular: o Google rebaixa sites lentos. Páginas que abrem em menos de 1 segundo ganham prioridade no leilão orgânico.',
+            '3. Avisar o Google que o site existe: cadastrar o site nas ferramentas oficiais do Google para que ele seja encontrado em dias, e não em meses.',
             '4. Artigos de blog respondendo dúvidas reais de compra: conteúdos como tabelas de preços, comparativos e guias atraem clientes qualificados todos os dias sem pagar por clique.',
           ],
           callout: 'Resultado prático: Um único artigo bem posicionado no Google pode gerar dezenas de pedidos de orçamento por mês no piloto automático, sem custo de anúncios.',
@@ -363,11 +363,11 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       faqs: [
         {
           question: 'Quanto tempo demora para um site novo aparecer no Google?',
-          answer: 'Com a configuração correta no Google Search Console e sitemap otimizado, a indexação inicial ocorre entre 24 horas e 7 dias. O ganho de posições para termos concorridos evolui continuamente nos primeiros 30 a 90 dias.',
+          answer: 'Com o site cadastrado corretamente nas ferramentas do Google, ele começa a aparecer nas buscas entre 24 horas e 7 dias. O ganho de posições para termos concorridos evolui continuamente nos primeiros 30 a 90 dias.',
         },
         {
           question: 'A Web Lunar já entrega o site otimizado para o Google?',
-          answer: 'Sim! Todos os nossos sites já saem com SEO técnico completo: títulos estratégicos, meta descrições persuasivas, imagens leves em WebP/SVG, nota alta no PageSpeed e sitemap pronto para o Google.',
+          answer: 'Sim! Todos os nossos sites já saem prontos para o Google: títulos estratégicos, descrições que chamam o clique, imagens leves, carregamento rápido e cadastro feito nas ferramentas do Google.',
         },
       ],
       conclusion: 'Quer transformar o seu site em um ímã de clientes no Google? Fale com a Web Lunar e descubra como criamos sites já preparados para liderar as buscas do seu mercado.',
@@ -443,7 +443,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: 'The Modern Convergence',
           paragraphs: [
-            'Leading digital businesses combine AI data analysis for content strategy with modern Next.js architecture to secure 95+ PageSpeed scores and maximize conversion rates.',
+            'Leading businesses combine AI-assisted research with custom, lightweight websites that open in under one second on mobile and turn visitors into customers.',
           ],
         },
       ],
@@ -472,18 +472,18 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           heading: 'What determines the cost of a professional website?',
           paragraphs: [
             'The investment depends on custom design needs, underlying tech stack, mobile speed, and conversion strategy. Cheap templates often end up expensive due to slow loading and zero customer leads.',
-            'At Web Lunar, we engineer high-performance digital products with Next.js and TypeScript, securing 90+ Google PageSpeed ratings.',
+            'At Web Lunar, every website is custom-built for your business: it loads in under one second on mobile, builds trust instantly, and sends visitors straight to your WhatsApp.',
           ],
         },
         {
           heading: 'Average Market Investment Ranges',
           paragraphs: [
-            'Here is the standard market pricing for high-tier development:',
+            'Here are today’s investment ranges. For comparison, traditional agencies often charge $300 to $600 for a landing page alone:',
           ],
           list: [
-            'High-Converting Landing Page: $400 - $950 (Perfect for targeted paid ads and immediate conversions).',
-            'Full Corporate Website: $900 - $2,200 (Comprehensive branding, multi-page showcase, SEO architecture).',
-            'Custom Web App / E-commerce: Starting from $2,500+ (Database integrations, client portals, custom workflows).',
+            'High-Converting Landing Page: starting at $140 (Perfect for paid ads and receiving quote requests on WhatsApp).',
+            'Full Corporate Website: $300 - $700 (Multiple pages, blog, and strong presence on Google).',
+            'Online Store / E-commerce: starting at $500 (Sell products online with card payments and inventory control).',
           ],
         },
       ],
@@ -632,11 +632,11 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: '5 mandatory criteria before signing a quote',
           paragraphs: [
-            'Before hiring any agency or freelancer, verify code ownership, mobile PageSpeed scores (95+), persuasive copywriting, technical SEO setup, and live portfolio projects.',
+            'Before hiring any agency or freelancer, verify full ownership of your website, fast loading on mobile, persuasive copy, readiness to rank on Google, and live portfolio projects.',
           ],
           list: [
             '100% code ownership without mandatory monthly rental traps.',
-            '95+ Google PageSpeed score on mobile devices.',
+            'Loads in under 2 seconds on a regular mobile connection.',
             'Conversion-oriented copywriting and direct WhatsApp/lead integration.',
           ],
         },
@@ -659,7 +659,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: 'The 4 pillars to rank fast on Google in 2026',
           paragraphs: [
-            'Combining high-intent keywords in your H1, sub-second Core Web Vitals on mobile, direct Google Search Console indexing, and strategic blog articles creates an organic lead machine.',
+            'Using the words your customers actually search for in your main headline, loading instantly on mobile, registering your site with Google’s official tools, and publishing helpful articles turns your website into an organic lead machine.',
           ],
         },
       ],
@@ -689,7 +689,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: 'La Convergencia de Alto Nivel',
           paragraphs: [
-            'Las empresas líderes unen el análisis semántico de IA con arquitecturas modernas en Next.js para lograr puntuaciones de 95+ en PageSpeed y maximizar ventas.',
+            'Las empresas líderes combinan la investigación con IA con sitios a medida, livianos, que abren en menos de un segundo en el móvil y convierten visitas en clientes.',
           ],
         },
       ],
@@ -718,7 +718,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           heading: '¿Qué determina el valor de un sitio web profesional?',
           paragraphs: [
             'El costo varía según el diseño a medida, la tecnología, la velocidad en móviles y la optimización para ventas. Plantillas baratas terminan costando caro por su lentitud y falta de conversiones.',
-            'En Web Lunar creamos plataformas con Next.js y TypeScript de máxima velocidad y diseño premium.',
+            'En Web Lunar cada sitio se hace a medida: abre en menos de un segundo en el móvil, transmite confianza y lleva al visitante directo a tu WhatsApp.',
           ],
         },
       ],
@@ -867,7 +867,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: '5 criterios obligatorios antes de aprobar un presupuesto',
           paragraphs: [
-            'Antes de contratar cualquier agencia, verifica la propiedad total del código, velocidad móvil 95+ en PageSpeed, textos enfocados en ventas y optimización SEO.',
+            'Antes de contratar cualquier agencia, verifica que el sitio sea 100% tuyo, que cargue rápido en el móvil, que los textos estén enfocados en ventas y que esté preparado para aparecer en Google.',
           ],
         },
       ],
@@ -889,7 +889,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: 'Los 4 pilares para posicionar rápido en Google en 2026',
           paragraphs: [
-            'Combinar palabras clave con intención de compra en el H1, velocidad instantánea en el móvil, conexión con Search Console y artículos estratégicos genera clientes todos los días.',
+            'Usar en el título principal las palabras que tus clientes realmente buscan, cargar al instante en el móvil, registrar tu sitio en las herramientas oficiales de Google y publicar artículos útiles genera clientes todos los días.',
           ],
         },
       ],
