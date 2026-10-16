@@ -278,6 +278,74 @@ export const CASE_STUDIES_I18N: Record<Language, Record<string, CaseStudy>> = {
         awardTitle: "SaaS Product Design",
         awardSub: "Interface Interativa de Comportamento"
       }
+    },
+    "aura-atelier": {
+      id: "aura-atelier",
+      title: "AURA Atelier",
+      category: "CASE STUDY // IDENTIDADE VISUAL & DIREÇÃO DE ARTE",
+      image: "/case-aura-brand.svg",
+      tags: ["Branding", "Identidade Visual", "Brandbook", "Packaging Design", "Tipografia"],
+      client: "AURA Atelier Paris / SP",
+      year: "2026",
+      scope: ["Estratégia de Marca", "Sistema de Identidade Visual", "Design de Embalagens", "Direção de Arte", "Brand Guidelines"],
+      stack: ["Figma", "Adobe Illustrator", "Design System", "Direção Criativa"],
+      tagline: "Identidade visual minimalista e atemporal para marca contemporânea de alta perfumaria e cosméticos.",
+      overview: "Desenvolvemos todo o universo visual da AURA Atelier, desde o posicionamento estratégico e construção do monograma áureo até o design de embalagens táteis e diretrizes globais de marca.",
+      challenge: "Criar uma identidade visual que transmitisse luxo silencioso, sofisticação europeia e autoridade imediata, destacando a marca tanto em prateleiras físicas quanto no ambiente digital.",
+      solution: "Construímos um sistema visual baseado na proporção áurea (1:1.618), combinando tipografia editorial clássica com geometria minimalista e uma paleta contrastante em preto obsidiana, folha de ouro e seda crua.",
+      results: [
+        "Reconhecimento imediato de marca com estética proprietária de alto valor percebido.",
+        "Brandbook completo com diretrizes digitais, impressas e de embalagens.",
+        "Aumento de 85% na percepção de valor premium em pesquisas com consumidores."
+      ],
+      showcaseHeroTitle: "Estética Minimalista e Atemporal para o Mercado de Alto Padrão",
+      performance: {
+        speed: { title: "Consistência", score: "Brand System 100%", description: "Guia visual modular aplicável do digital ao packaging físico." },
+        tech: { title: "Geometria", tech: "Proporção Áurea 1:1.618", description: "Monograma e grid construídos com precisão matemática." },
+        seo: { title: "Posicionamento", status: "Alto Valor Percebido", description: "Identidade desenhada para elevar o ticket médio da marca." }
+      },
+      designSystemText: "Equilíbrio entre tipografia serifada editorial de alto contraste e tons profundos em Obsidian (#0B0C10), Gold Leaf (#D4AF37) e Raw Silk (#F4F1EA).",
+      designSystemComponents: {
+        ctaLabel: "Explorar Brandbook",
+        cardTitle: "Monograma & Sistema",
+        cardDesc: "Construção geométrica e aplicações em embalagens de luxo.",
+        awardTitle: "Brand Identity",
+        awardSub: "Direção de Arte & Identidade Visual"
+      }
+    },
+    "kronos-store": {
+      id: "kronos-store",
+      title: "KRONOS Store",
+      category: "CASE STUDY // E-COMMERCE HEADLESS DE ALTA CONVERSÃO",
+      image: "/case-kronos-ecommerce.svg",
+      tags: ["Next.js Commerce", "Shopify Headless", "Tailwind CSS", "Checkout 1-Click", "Pix & Apple Pay"],
+      client: "KRONOS Horology",
+      year: "2026",
+      scope: ["UX/UI para E-commerce", "Arquitetura Headless", "Otimização de Checkout (CRO)", "Vitrine Interativa", "SEO para Produtos"],
+      stack: ["Next.js", "TypeScript", "Shopify Storefront API", "Tailwind CSS", "Stripe / Pix"],
+      tagline: "E-commerce ultrarrápido com vitrine interativa e checkout em 1 clique para marca de relojoaria de precisão.",
+      overview: "Projetamos e desenvolvemos a loja virtual da KRONOS com arquitetura headless, unindo a velocidade instantânea do Next.js com um fluxo de compra sem atrito pensado para maximizar vendas no mobile e desktop.",
+      challenge: "Superar a lentidão e a alta taxa de abandono de carrinho das plataformas tradicionais de e-commerce ao vender produtos de ticket alto.",
+      solution: "Implementamos uma vitrine imersiva com carregamento sub-segundo, seletor de variantes em tempo real e checkout transparente integrado a Pix com confirmação instantânea e Apple Pay.",
+      results: [
+        "Aumento de 148% na taxa de conversão geral da loja logo no primeiro trimestre.",
+        "Redução de 60% no abandono de carrinho graças ao checkout em 1 clique.",
+        "Carregamento de páginas de produto em menos de 0,6 segundos no mobile."
+      ],
+      showcaseHeroTitle: "Engenharia de E-commerce Desenhada para Escalar Vendas",
+      performance: {
+        speed: { title: "Velocidade", score: "PageSpeed 99/100", description: "Páginas de produto instantâneas que não deixam o cliente esperando." },
+        tech: { title: "Arquitetura", tech: "Next.js + Shopify Headless", description: "Segurança de ponta com liberdade total de design e conversão." },
+        seo: { title: "Conversão", status: "+148% em Vendas", description: "Fluxo de checkout otimizado para Pix e cartão em 1 clique." }
+      },
+      designSystemText: "Interface escura sofisticada com destaques em verde esmeralda de alta conversão, valorizando a fotografia dos produtos e guiando o olhar direto para o botão de compra.",
+      designSystemComponents: {
+        ctaLabel: "Comprar com 1 Clique",
+        cardTitle: "Vitrine de Alta Conversão",
+        cardDesc: "Seleção instantânea de modelos com cálculo automático e envio expresso.",
+        awardTitle: "Headless Commerce",
+        awardSub: "Performance & Conversão em E-commerce"
+      }
     }
   },
   en: {
@@ -524,6 +592,74 @@ export const CASE_STUDIES_I18N: Record<Language, Record<string, CaseStudy>> = {
         awardTitle: "SaaS Product Design",
         awardSub: "Behavioral Interactive Experience"
       }
+    },
+    "aura-atelier": {
+      id: "aura-atelier",
+      title: "AURA Atelier",
+      category: "CASE STUDY // VISUAL IDENTITY & ART DIRECTION",
+      image: "/case-aura-brand.svg",
+      tags: ["Branding", "Visual Identity", "Brandbook", "Packaging Design", "Typography"],
+      client: "AURA Atelier Paris / SP",
+      year: "2026",
+      scope: ["Brand Strategy", "Visual Identity System", "Packaging Design", "Art Direction", "Brand Guidelines"],
+      stack: ["Figma", "Adobe Illustrator", "Design System", "Creative Direction"],
+      tagline: "Minimalist and timeless visual identity for a contemporary luxury fragrance and cosmetics house.",
+      overview: "We crafted the entire visual universe for AURA Atelier, from strategic positioning and golden-ratio monogram construction to tactile packaging design and global brand guidelines.",
+      challenge: "Create a visual identity that conveys quiet luxury, European sophistication, and immediate authority across both physical retail shelves and digital touchpoints.",
+      solution: "Built a visual system grounded in the golden ratio (1:1.618), pairing classical editorial typography with minimalist geometry and a contrasting palette of obsidian black, gold leaf, and raw silk.",
+      results: [
+        "Immediate brand recognition with a proprietary high-perceived-value aesthetic.",
+        "Comprehensive brandbook covering digital, print, and packaging applications.",
+        "85% increase in premium brand perception across consumer focus groups."
+      ],
+      showcaseHeroTitle: "Minimalist and Timeless Aesthetic for the Luxury Market",
+      performance: {
+        speed: { title: "Consistency", score: "Brand System 100%", description: "Modular visual system adaptable from digital screens to physical packaging." },
+        tech: { title: "Geometry", tech: "Golden Ratio 1:1.618", description: "Monogram and layout grid engineered with mathematical precision." },
+        seo: { title: "Positioning", status: "High Perceived Value", description: "Identity crafted to elevate brand equity and average order value." }
+      },
+      designSystemText: "Balance between high-contrast editorial serif typography and deep tones in Obsidian (#0B0C10), Gold Leaf (#D4AF37), and Raw Silk (#F4F1EA).",
+      designSystemComponents: {
+        ctaLabel: "Explore Brandbook",
+        cardTitle: "Monogram & System",
+        cardDesc: "Geometric construction and luxury packaging applications.",
+        awardTitle: "Brand Identity",
+        awardSub: "Art Direction & Visual Identity"
+      }
+    },
+    "kronos-store": {
+      id: "kronos-store",
+      title: "KRONOS Store",
+      category: "CASE STUDY // HIGH-CONVERSION HEADLESS E-COMMERCE",
+      image: "/case-kronos-ecommerce.svg",
+      tags: ["Next.js Commerce", "Shopify Headless", "Tailwind CSS", "1-Click Checkout", "Instant Pay"],
+      client: "KRONOS Horology",
+      year: "2026",
+      scope: ["E-commerce UX/UI", "Headless Architecture", "Checkout Optimization (CRO)", "Interactive Showcase", "Product SEO"],
+      stack: ["Next.js", "TypeScript", "Shopify Storefront API", "Tailwind CSS", "Stripe / Apple Pay"],
+      tagline: "Ultra-fast headless e-commerce with interactive product showcase and 1-click checkout for precision horology.",
+      overview: "We designed and developed the KRONOS online store using headless architecture, combining Next.js instant speed with a frictionless buying flow built to maximize sales on mobile and desktop.",
+      challenge: "Overcome slow page loads and high cart abandonment rates typical of traditional e-commerce templates when selling high-ticket products.",
+      solution: "Implemented an immersive sub-second storefront, real-time variant selector, and seamless 1-click checkout with instant payment confirmation.",
+      results: [
+        "148% increase in overall store conversion rate within the first quarter.",
+        "60% reduction in cart abandonment powered by 1-click checkout.",
+        "Product pages loading in under 0.6 seconds on mobile devices."
+      ],
+      showcaseHeroTitle: "E-commerce Engineering Built to Scale Online Sales",
+      performance: {
+        speed: { title: "Speed", score: "PageSpeed 99/100", description: "Instant product pages that never keep buyers waiting." },
+        tech: { title: "Architecture", tech: "Next.js + Shopify Headless", description: "Enterprise security with total design and conversion freedom." },
+        seo: { title: "Conversion", status: "+148% Sales Growth", description: "Frictionless checkout flow optimized for mobile buyers." }
+      },
+      designSystemText: "Sophisticated dark interface with high-converting emerald accents, highlighting product photography and guiding attention directly to the buy button.",
+      designSystemComponents: {
+        ctaLabel: "1-Click Purchase",
+        cardTitle: "High-Conversion Showcase",
+        cardDesc: "Instant variant switching with automated shipping calculation.",
+        awardTitle: "Headless Commerce",
+        awardSub: "E-commerce Performance & Conversion"
+      }
     }
   },
   es: {
@@ -769,6 +905,74 @@ export const CASE_STUDIES_I18N: Record<Language, Record<string, CaseStudy>> = {
         cardDesc: "Análisis preciso de percepción inconsciente y puntos ciegos.",
         awardTitle: "SaaS Product Design",
         awardSub: "Interfaz Interactiva de Comportamiento"
+      }
+    },
+    "aura-atelier": {
+      id: "aura-atelier",
+      title: "AURA Atelier",
+      category: "CASE STUDY // IDENTIDAD VISUAL Y DIRECCIÓN DE ARTE",
+      image: "/case-aura-brand.svg",
+      tags: ["Branding", "Identidad Visual", "Brandbook", "Packaging Design", "Tipografía"],
+      client: "AURA Atelier Paris / SP",
+      year: "2026",
+      scope: ["Estrategia de Marca", "Sistema de Identidad Visual", "Diseño de Empaques", "Dirección de Arte", "Brand Guidelines"],
+      stack: ["Figma", "Adobe Illustrator", "Design System", "Dirección Creativa"],
+      tagline: "Identidad visual minimalista y atemporal para casa contemporánea de alta perfumería y cosmética.",
+      overview: "Desarrollamos todo el universo visual de AURA Atelier, desde el posicionamiento estratégico y la construcción del monograma áureo hasta el diseño de empaques táctiles y manual global de marca.",
+      challenge: "Crear una identidad visual que transmitiera lujo silencioso, sofisticación europea y autoridad inmediata tanto en puntos de venta físicos como en el entorno digital.",
+      solution: "Construimos un sistema visual basado en la proporción áurea (1:1.618), combinando tipografía editorial clásica con geometría minimalista y una paleta en negro obsidiana, hoja de oro y seda cruda.",
+      results: [
+        "Reconocimiento inmediato de marca con estética propietaria de alto valor percibido.",
+        "Brandbook integral con directrices digitales, impresas y de empaques.",
+        "Incremento del 85% en la percepción de marca premium en estudios con consumidores."
+      ],
+      showcaseHeroTitle: "Estética Minimalista y Atemporal para el Mercado de Lujo",
+      performance: {
+        speed: { title: "Consistencia", score: "Brand System 100%", description: "Sistema visual modular aplicable desde pantallas hasta empaques físicos." },
+        tech: { title: "Geometría", tech: "Proporción Áurea 1:1.618", description: "Monograma y retícula construidos con precisión matemática." },
+        seo: { title: "Posicionamiento", status: "Alto Valor Percibido", description: "Identidad diseñada para elevar el ticket promedio de la marca." }
+      },
+      designSystemText: "Equilibrio entre tipografía serif editorial de alto contraste y tonos profundos en Obsidian (#0B0C10), Gold Leaf (#D4AF37) y Raw Silk (#F4F1EA).",
+      designSystemComponents: {
+        ctaLabel: "Explorar Brandbook",
+        cardTitle: "Monograma y Sistema",
+        cardDesc: "Construcción geométrica y aplicaciones en empaques de lujo.",
+        awardTitle: "Brand Identity",
+        awardSub: "Dirección de Arte e Identidad Visual"
+      }
+    },
+    "kronos-store": {
+      id: "kronos-store",
+      title: "KRONOS Store",
+      category: "CASE STUDY // E-COMMERCE HEADLESS DE ALTA CONVERSIÓN",
+      image: "/case-kronos-ecommerce.svg",
+      tags: ["Next.js Commerce", "Shopify Headless", "Tailwind CSS", "Checkout 1-Clic", "Pago Instantáneo"],
+      client: "KRONOS Horology",
+      year: "2026",
+      scope: ["UX/UI para E-commerce", "Arquitectura Headless", "Optimización de Checkout (CRO)", "Vitrina Interactiva", "SEO de Productos"],
+      stack: ["Next.js", "TypeScript", "Shopify Storefront API", "Tailwind CSS", "Stripe / Apple Pay"],
+      tagline: "E-commerce ultrarrápido con vitrina interactiva y checkout en 1 clic para relojería de precisión.",
+      overview: "Diseñamos y desarrollamos la tienda online de KRONOS con arquitectura headless, uniendo la velocidad instantánea de Next.js con un flujo de compra sin fricción pensado para maximizar ventas.",
+      challenge: "Superar la lentitud y la alta tasa de abandono de carrito de las plataformas tradicionales al vender productos de alto valor.",
+      solution: "Implementamos una vitrina inmersiva de carga en milisegundos, selector de variantes en tiempo real y checkout transparente en 1 clic.",
+      results: [
+        "Aumento del 148% en la tasa de conversión general durante el primer trimestre.",
+        "Reducción del 60% en el abandono de carrito gracias al checkout en 1 clic.",
+        "Carga de páginas de producto en menos de 0,6 segundos en dispositivos móviles."
+      ],
+      showcaseHeroTitle: "Ingeniería de E-commerce Diseñada para Escalar Ventas",
+      performance: {
+        speed: { title: "Velocidad", score: "PageSpeed 99/100", description: "Páginas de producto instantáneas sin tiempos de espera." },
+        tech: { title: "Arquitectura", tech: "Next.js + Shopify Headless", description: "Seguridad empresarial con libertad total de diseño y conversión." },
+        seo: { title: "Conversión", status: "+148% en Ventas", description: "Flujo de pago optimizado para compras rápidas en móvil." }
+      },
+      designSystemText: "Interfaz oscura sofisticada con acentos en verde esmeralda de alta conversión, destacando el producto y guiando la atención al botón de compra.",
+      designSystemComponents: {
+        ctaLabel: "Compra en 1 Clic",
+        cardTitle: "Vitrina de Alta Conversión",
+        cardDesc: "Selección instantánea de modelos con envío exprés automatizado.",
+        awardTitle: "Headless Commerce",
+        awardSub: "Rendimiento y Conversión en E-commerce"
       }
     }
   }
