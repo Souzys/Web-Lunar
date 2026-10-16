@@ -1,8 +1,8 @@
 export const siteContent = {
   hero: {
-    title1: "Design &",
-    title2: "Código",
-    subtitle: "DESENVOLVIMENTO FULL STACK & WEB DESIGNER",
+    title1: "Criação de Sites que",
+    title2: "Geram Resultados Reais",
+    subtitle: "AGÊNCIA DE CRIAÇÃO DE SITES",
     scrollingTags: [
       "React & Next.js",
       "Landing Pages",
@@ -13,7 +13,7 @@ export const siteContent = {
       text: "Sites e sistemas que geram leads, vendas e resultados reais — não só visual bonito.",
       buttonText: "Solicitar Orçamento",
     },
-    bottomText: "Unimos design visual refinado e engenharia de software de alta performance para criar produtos digitais que geram resultados de verdade.",
+    bottomText: "Sites profissionais, otimizados para o Google e feitos para converter visitantes em clientes.",
     socialButtons: [
       { name: "Instagram", url: "https://instagram.com/" },
       { name: "LinkedIn", url: "https://linkedin.com/in/" },

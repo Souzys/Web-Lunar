@@ -283,12 +283,12 @@ export const translations: Record<Language, TranslationDictionary> = {
       atendimento: 'Brasil · Atendimento Remoto',
     },
     hero: {
-      title1: 'Design &',
-      title2: 'Código',
-      subtitle: 'DESENVOLVIMENTO FULL STACK & WEB DESIGNER',
-      bottomText: 'Unimos design visual refinado e engenharia de software de alta performance para criar produtos digitais que geram resultados de verdade.',
-      ctaButton: 'Solicitar Orçamento',
-      projectsButton: 'Ver Projetos',
+      title1: 'Criação de Sites que',
+      title2: 'Geram Resultados Reais',
+      subtitle: 'AGÊNCIA DE CRIAÇÃO DE SITES',
+      bottomText: 'Sites profissionais, otimizados para o Google e feitos para converter visitantes em clientes.',
+      ctaButton: 'Quero meu site',
+      projectsButton: 'Ver sites que criamos',
       locationLine: 'BASEADO NO BRASIL / ATENDENDO GLOBALMENTE',
     },
     about: {
