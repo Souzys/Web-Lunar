@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { STATIC_BLOG_POSTS } from '@/content/blogPostsData';
+import { STATIC_CASE_STUDIES } from '@/app/projetos/[id]/caseStudiesData';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://weblunar.com.br';
@@ -20,29 +21,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '' ? 1.0 : (route === '/servicos' || route === '/projetos' ? 0.9 : 0.8),
   }));
 
-  // Active Project Case Studies
-  const projectSlugs = [
-    'snews',
-    'volk',
-    'capi',
-    'adansonea',
-    'acp',
-    'osa',
-  ];
-
-  const projectRoutes = projectSlugs.map((slug) => ({
+  // Active Project Case Studies (dynamic)
+  const projectRoutes = Object.keys(STATIC_CASE_STUDIES).map((slug) => ({
     url: `${baseUrl}/projetos/${slug}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));
 
-  // Active Blog Articles
+  // Active Blog Articles (dynamic)
   const blogRoutes = Object.keys(STATIC_BLOG_POSTS).map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
   }));
 
   return [...routes, ...projectRoutes, ...blogRoutes];

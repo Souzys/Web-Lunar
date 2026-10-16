@@ -162,64 +162,69 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
     },
     'como-planejar-primeiro-site-profissional': {
       slug: 'como-planejar-primeiro-site-profissional',
-      title: 'Como Planejar um Site Profissional Passo a Passo: Guia Completo [Checklist]',
-      date: '12 de Agosto, 2026',
-      readTime: '4 min de leitura',
-      category: 'Planejamento Web',
-      excerpt: 'Aprenda como planejar um site profissional do zero: objetivos, estrutura de páginas, conteúdo e tecnologia para atrair clientes e vender mais.',
+      title: 'Como Planejar um Site Profissional em 2026: Guia Passo a Passo (+ Checklist)',
+      date: '15 de Outubro, 2026',
+      readTime: '5 min de leitura',
+      category: 'Planejamento de Site',
+      excerpt: 'Aprenda como planejar um site do zero: o que colocar na página inicial profissional, estrutura de vendas, checklist completo e como atrair clientes no Google.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
       author: {
         name: 'Equipe Web Lunar',
-        role: 'Design & Estratégia Digital',
+        role: 'Design & Estratégia de Conversão',
       },
       sections: [
         {
-          heading: '1. Defina o objetivo central do seu site',
+          heading: '1. Como planejar um site que realmente gera orçamentos',
           paragraphs: [
-            'Antes de pensar em cores, logotipo ou imagens, responda a uma pergunta simples: o que uma pessoa deve fazer ao entrar no seu site?',
-            'Seja agendar uma conversa no WhatsApp, preencher um formulário de orçamento ou comprar um produto, ter um objetivo claro evita páginas confusas e cheias de informação inútil.',
+            'Um bom planejamento de site começa antes de escolher cores ou logotipo. A primeira etapa é responder: qual ação o visitante deve tomar nos primeiros 5 segundos em que entra na sua página?',
+            'Seja chamar no WhatsApp, pedir um orçamento rápido ou agendar uma reunião, todo o planejamento de site profissional precisa girar em torno de transformar visitas em vendas reais.',
           ],
-          callout: 'Dica de ouro: Um site com um único objetivo claro converte até 3x mais do que um site que tenta falar de tudo ao mesmo tempo.',
+          callout: 'Dica de ouro: Empresas que fazem um planejamento de site focado em uma única chamada de ação (CTA) convertem até 3x mais clientes do que sites confusos.',
         },
         {
-          heading: '2. Reúna as informações essenciais (Checklist)',
+          heading: '2. O que uma Página Inicial Profissional precisa ter (Checklist)',
           paragraphs: [
-            'Você não precisa de dezenas de páginas para começar com autoridade. O essencial para um lançamento rápido e eficiente inclui:',
+            'Para ter uma página inicial profissional que transmite autoridade imediata e faz o cliente confiar na sua empresa, siga este checklist prático:',
           ],
           list: [
-            'Quem é você e qual problema você resolve para o cliente (Proposta Única de Valor).',
-            'Quais serviços ou produtos você oferece com clareza e benefícios diretos.',
-            'Depoimentos ou provas sociais de clientes que já confiaram no seu trabalho.',
-            'Um canal direto e fácil de contato (botão de WhatsApp destacado com mensagem pronta).',
+            'Promessa clara no topo (Hero): diga exatamente o que você faz e qual resultado entrega.',
+            'Prova social visível: depoimentos reais, logos de clientes atendidos ou números do seu negócio.',
+            'Apresentação objetiva dos serviços: sem textos técnicos difíceis — foque no benefício para o cliente.',
+            'Botão de WhatsApp estratégico: sempre visível no celular para quem quer atendimento imediato.',
+            'FAQ (Perguntas Frequentes): quebre as principais objeções de preço e prazo na própria página inicial.',
           ],
         },
         {
-          heading: '3. Priorize a experiência e velocidade no celular',
+          heading: '3. Velocidade no celular e SEO desde o primeiro dia',
           paragraphs: [
-            'Hoje, mais de 80% dos acessos chegam por smartphones. Seu site precisa carregar em menos de 2 segundos no 4G, ter botões fáceis de clicar com o polegar e textos legíveis sem precisar dar zoom.',
-            'Tecnologias modernas como Next.js e React superam CMSs antigos que acumulam plugins pesados e deixam o site lento para os visitantes.',
+            'Mais de 82% dos orçamentos hoje acontecem pelo celular. No seu planejamento de site, exigir carregamento abaixo de 2 segundos e estrutura otimizada para o Google (SEO) é o que separa um site que vende todos os dias de um cartão de visitas esquecido.',
+            'Na Web Lunar, cuidamos de todo o planejamento, textos persuasivos e desenvolvimento ultrarrápido para você não precisar quebrar a cabeça.',
           ],
         },
       ],
       faqs: [
         {
-          question: 'Qual é o primeiro passo para planejar um site?',
-          answer: 'O primeiro passo é mapear o objetivo do site (gerar leads, vender produtos ou apresentar a marca) e definir o público-alvo prioritário.',
+          question: 'Como planejar um site do zero mesmo sem entender de tecnologia?',
+          answer: 'Você só precisa definir três coisas: qual serviço quer vender mais, quem é o seu cliente ideal e quais são os seus diferenciais. A estrutura visual, textos de vendas e programação ficam 100% por conta da agência.',
         },
         {
-          question: 'O que preciso enviar para a equipe de desenvolvimento começar?',
-          answer: 'Geralmente seu logotipo, referências visuais que você admira, textos explicativos dos seus serviços e fotos de produtos/equipe.',
+          question: 'O que não pode faltar em uma página inicial profissional?',
+          answer: 'Um título claro com sua proposta de valor, botão de contato rápido pelo WhatsApp, lista dos principais serviços, depoimentos de clientes e carregamento rápido no celular.',
+        },
+        {
+          question: 'Quanto tempo leva o planejamento e criação de um site profissional?',
+          answer: 'Com um método organizado como o da Web Lunar, o planejamento leva de 2 a 3 dias e o site completo vai ao ar em 7 a 15 dias úteis.',
         },
       ],
-      conclusion: 'Criar um site profissional não precisa ser complicado. Comece com uma base sólida, visual moderno e foco em contato rápido. O restante você expande conforme o negócio cresce.',
+      conclusion: 'Fazer um bom planejamento de site é o caminho mais curto para parar de depender só de indicações e começar a atrair clientes todos os dias pelo Google.',
     },
     'landing-page-ou-site-institucional': {
       slug: 'landing-page-ou-site-institucional',
-      title: 'Landing Page ou Site Institucional: Qual a Diferença e Qual Escolher?',
-      date: '08 de Agosto, 2026',
-      readTime: '4 min de leitura',
+      title: 'Landing Page ou Site Institucional: Diferenças, Preços e Qual Vende Mais em 2026',
+      date: '14 de Outubro, 2026',
+      readTime: '5 min de leitura',
       category: 'Estratégia & Conversão',
-      excerpt: 'Entenda de forma simples a diferença entre uma página direta para vendas e um site completo com várias seções, e descubra qual dá mais retorno.',
+      excerpt: 'Explorando os tipos de sites: entenda a diferença prática entre Landing Page e Site Institucional, quanto custa cada um e qual escolher para gerar clientes rápido.',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80',
       author: {
         name: 'Equipe Web Lunar',
@@ -227,40 +232,145 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: 'O que é uma Landing Page?',
+          heading: 'Explorando os tipos de sites: Landing Page vs Site Institucional',
           paragraphs: [
-            'A Landing Page é uma página única, sem menu superior complexo ou links para outras páginas. Toda a sua estrutura é construída para guiar o visitante em direção a uma única ação: entrar em contato, pedir um orçamento ou contratar um serviço.',
-            'É a melhor escolha para anúncios no Google Ads, campanhas no Instagram e lançamentos de ofertas específicas.',
+            'Na hora de colocar sua empresa na internet, a dúvida mais comum é escolher entre uma Landing Page (página de alta conversão) ou um Site Institucional completo.',
+            'Embora os dois funcionem muito bem, cada um foi desenhado para um objetivo comercial diferente — e escolher o modelo certo economiza dinheiro e acelera o retorno sobre o investimento.',
           ],
         },
         {
-          heading: 'O que é um Site Institucional?',
+          heading: 'Quando escolher uma Landing Page (Landing Site)?',
           paragraphs: [
-            'Um Site Institucional é composto por várias páginas (Início, Sobre Nós, Serviços, Portfólio, Blog, Contato). Ele funciona como a sede digital da sua empresa, ideal para apresentar a história da marca, equipe, catálogo de soluções e gerar autoridade orgânica no Google (SEO).',
+            'A Landing Page é uma página única e direta ao ponto, criada com gatilhos mentais e foco total em fazer o visitante clicar no botão de orçamento ou WhatsApp. Não há menus complexos que distraiam o cliente.',
+            'É a campeã absoluta para quem roda anúncios no Google Ads ou Instagram e quer receber contatos qualificados todos os dias.',
+          ],
+        },
+        {
+          heading: 'Quando escolher um Site Institucional Completo?',
+          paragraphs: [
+            'O Site Institucional possui múltiplas páginas (Início, Sobre, Serviços separados, Portfólio, Blog e Contato). É a sede digital oficial da sua empresa, perfeita para posicionar diversas palavras-chave no Google gratuitamente (SEO orgânico) e transmitir porte de empresa líder.',
           ],
           list: [
-            'Landing Page: Ideal para tráfego pago, lançamentos e campanhas com foco em conversão imediata.',
-            'Site Institucional: Ideal para empresas consolidadas, múltiplos serviços e posicionamento de marca a longo prazo.',
+            'Landing Page: Foco 100% em vendas rápidas, ideal para tráfego pago (Google Ads / Meta Ads) e entrega em até 7 dias.',
+            'Site Institucional: Foco em autoridade de marca, múltiplos serviços e ranqueamento orgânico no Google a médio e longo prazo.',
           ],
         },
         {
-          heading: 'Como escolher para o seu momento?',
+          heading: 'Resumo: Qual dá mais retorno financeiro?',
           paragraphs: [
-            'Se o seu foco agora é gerar leads e vendas rápidas com um orçamento enxuto, comece com uma Landing Page de alto padrão. Se a sua empresa precisa apresentar diversos setores e criar conteúdo recorrente, opte por um Site Institucional.',
+            'Se você quer retorno rápido anunciando um serviço específico, comece com uma Landing Page de alta conversão. Se sua empresa atende vários serviços e quer dominar as pesquisas orgânicas do Google na sua região, o Site Institucional com Blog é o melhor investimento.',
           ],
         },
       ],
       faqs: [
         {
-          question: 'Uma Landing Page converte mais do que um site?',
-          answer: 'Para campanhas de anúncios (Google Ads / Facebook Ads), sim. Landing pages chegam a converter 3x a 5x mais porque eliminam distrações e guiam o usuário diretamente ao contato.',
+          question: 'Uma Landing Page converte mais do que um site comum?',
+          answer: 'Sim! Em campanhas de anúncios pagos, uma Landing Page chega a converter de 3x a 5x mais orçamentos porque guia o visitante sem distrações até o botão de WhatsApp.',
         },
         {
-          question: 'Posso começar com uma Landing Page e depois virar um site completo?',
-          answer: 'Com certeza. Essa é uma das abordagens mais inteligentes para testar o mercado e gerar as primeiras vendas antes de investir em uma estrutura maior.',
+          question: 'Posso começar com uma Landing Page e depois expandir para Site Institucional?',
+          answer: 'Sim! Na Web Lunar desenvolvemos sua Landing Page com estrutura modular, permitindo adicionar novas páginas e blog no futuro sem precisar refazer o site do zero.',
         },
       ],
-      conclusion: 'Não existe escolha certa ou errada — existe a ferramenta ideal para a fase atual do seu negócio. Ambas podem trabalhar juntas para maximizar seus resultados.',
+      conclusion: 'Ainda em dúvida entre Landing Page ou Site Institucional? Chame nossa equipe no WhatsApp que analisamos o seu negócio gratuitamente e indicamos o formato mais lucrativo.',
+    },
+    'como-escolher-empresa-de-criacao-de-sites': {
+      slug: 'como-escolher-empresa-de-criacao-de-sites',
+      title: 'Como Contratar uma Empresa de Criação de Sites em 2026 (Sem Cair em Ciladas)',
+      date: '15 de Outubro, 2026',
+      readTime: '5 min de leitura',
+      category: 'Guia de Contratação',
+      excerpt: 'Vai contratar uma agência ou desenvolvedor de sites? Veja os 5 critérios essenciais para escolher uma empresa de criação de sites que entrega prazo, SEO e vendas.',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
+      author: {
+        name: 'Equipe Web Lunar',
+        role: 'Consultoria & Engenharia Web',
+      },
+      sections: [
+        {
+          heading: 'Por que tantos empresários se frustram ao criar um site?',
+          paragraphs: [
+            'O mercado está cheio de promessas de "sites prontos em 24 horas por R$ 300" ou agências tradicionais que cobram fortunas e demoram 4 meses para entregar um template lento em WordPress.',
+            'Contratar a empresa de criação de sites certa é a diferença entre ter uma máquina de vendas trabalhando 24h por você ou ter uma dor de cabeça que não traz nenhum cliente.',
+          ],
+          callout: 'Regra número 1: Nunca contrate um site apenas porque o layout parece bonito no computador. Exija ver a velocidade dele no celular e como ele aparece no Google.',
+        },
+        {
+          heading: '5 critérios obrigatórios antes de fechar orçamento',
+          paragraphs: [
+            'Antes de assinar contrato com qualquer agência de sites ou freelancer, faça este checklist:',
+          ],
+          list: [
+            '1. O site será 100% seu? Fuja de empresas que prendem você em "aluguéis de site" onde você perde tudo se cancelar a mensalidade.',
+            '2. Qual a nota de velocidade no Google PageSpeed? Sites modernos em Next.js atingem 95+ de performance, enquanto templates comuns mal passam de 40.',
+            '3. O texto é pensado para vender (Copywriting)? Um site que só fala sobre a empresa não vende; ele precisa falar da dor do seu cliente.',
+            '4. Já vem otimizado para o Google (SEO Técnico)? Títulos, meta tags, sitemap automático e estrutura semântica são obrigatórios.',
+            '5. Portfólio real e funcionando: clique nos sites que a agência já criou e teste a navegação pelo seu próprio celular.',
+          ],
+        },
+        {
+          heading: 'Como funciona o método da Web Lunar',
+          paragraphs: [
+            'Na Web Lunar, unimos o melhor dos dois mundos: a visão comercial de uma agência focada em vendas com a engenharia de ponta (Next.js e WordPress Otimizado). Entregamos projetos rápidos, sem mensalidades ocultas e já conectados ao seu WhatsApp e Google Search Console.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Vale mais a pena contratar agência de sites ou freelancer?',
+          answer: 'O ideal é uma agência enxuta e especializada como a Web Lunar: você tem atendimento direto com quem desenvolve (sem telefone sem fio), qualidade de engenharia sênior e cumprimento rigoroso de prazos.',
+        },
+        {
+          question: 'O que deve constar no orçamento de criação de site?',
+          answer: 'Design personalizado para celular e computador, otimização básica de SEO para o Google, integração com botão de WhatsApp/formulário, configuração de domínio/SSL e entrega da propriedade total do código.',
+        },
+      ],
+      conclusion: 'Quer um orçamento transparente e sem compromisso para o site da sua empresa? Clique no botão de WhatsApp aqui no site e receba uma análise personalizada hoje mesmo.',
+    },
+    'como-aparecer-no-google-com-site-novo': {
+      slug: 'como-aparecer-no-google-com-site-novo',
+      title: 'Como Aparecer na Primeira Página do Google com um Site Novo em 2026',
+      date: '15 de Outubro, 2026',
+      readTime: '5 min de leitura',
+      category: 'SEO & Google',
+      excerpt: 'Criou um site mas ninguém encontra sua empresa nas buscas? Veja o passo a passo prático de SEO para indexar rápido e atrair clientes prontos para comprar.',
+      image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=1200&q=80',
+      author: {
+        name: 'Equipe Web Lunar',
+        role: 'Especialistas em SEO & Performance',
+      },
+      sections: [
+        {
+          heading: 'Por que colocar o site no ar não basta para aparecer no Google?',
+          paragraphs: [
+            'Muitas empresas colocam um site no ar e acham que, magicamente, ele vai aparecer em 1º lugar quando alguém pesquisar pelo serviço na cidade. Na prática, o Google precisa entender exatamente sobre o que é a sua página, confiar na velocidade dela e ver que ela responde melhor ao cliente do que o seu concorrente.',
+          ],
+        },
+        {
+          heading: 'Os 4 pilares para ranquear rápido no Google em 2026',
+          paragraphs: [
+            'Aplicamos estes quatro pilares em todos os projetos da Web Lunar para acelerar o posicionamento orgânico:',
+          ],
+          list: [
+            '1. Palavras-chave com intenção de compra no Título (H1): em vez de frases vagas como "Bem-vindo à nossa empresa", use "Criação de Sites Profissionais" ou o nome exato do serviço que o cliente digita no Google.',
+            '2. Velocidade instantânea no celular (Core Web Vitals): o Google rebaixa sites lentos. Páginas que abrem em menos de 1 segundo ganham prioridade no leilão orgânico.',
+            '3. Conexão direta com o Google Search Console: envio imediato do Sitemap XML e solicitação de indexação das páginas estratégicas.',
+            '4. Artigos de blog respondendo dúvidas reais de compra: conteúdos como tabelas de preços, comparativos e guias atraem clientes qualificados todos os dias sem pagar por clique.',
+          ],
+          callout: 'Resultado prático: Um único artigo bem posicionado no Google pode gerar dezenas de pedidos de orçamento por mês no piloto automático, sem custo de anúncios.',
+        },
+      ],
+      faqs: [
+        {
+          question: 'Quanto tempo demora para um site novo aparecer no Google?',
+          answer: 'Com a configuração correta no Google Search Console e sitemap otimizado, a indexação inicial ocorre entre 24 horas e 7 dias. O ganho de posições para termos concorridos evolui continuamente nos primeiros 30 a 90 dias.',
+        },
+        {
+          question: 'A Web Lunar já entrega o site otimizado para o Google?',
+          answer: 'Sim! Todos os nossos sites já saem com SEO técnico completo: títulos estratégicos, meta descrições persuasivas, imagens leves em WebP/SVG, nota alta no PageSpeed e sitemap pronto para o Google.',
+        },
+      ],
+      conclusion: 'Quer transformar o seu site em um ímã de clientes no Google? Fale com a Web Lunar e descubra como criamos sites já preparados para liderar as buscas do seu mercado.',
     },
     '3-coisas-essenciais-para-passar-confianca': {
       slug: '3-coisas-essenciais-para-passar-confianca',
@@ -506,6 +616,55 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       ],
       conclusion: 'Trust is built through polished details. A well-engineered website becomes your best sales asset working 24/7.',
     },
+    'como-escolher-empresa-de-criacao-de-sites': {
+      slug: 'como-escolher-empresa-de-criacao-de-sites',
+      title: 'How to Choose a Web Design & Development Agency in 2026 (Without Traps)',
+      date: 'October 15, 2026',
+      readTime: '5 min read',
+      category: 'Hiring Guide',
+      excerpt: 'Looking to hire a website agency or developer? Check the 5 essential criteria to choose a team that delivers speed, SEO, and real sales.',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
+      author: {
+        name: 'Web Lunar Team',
+        role: 'Web Consulting & Engineering',
+      },
+      sections: [
+        {
+          heading: '5 mandatory criteria before signing a quote',
+          paragraphs: [
+            'Before hiring any agency or freelancer, verify code ownership, mobile PageSpeed scores (95+), persuasive copywriting, technical SEO setup, and live portfolio projects.',
+          ],
+          list: [
+            '100% code ownership without mandatory monthly rental traps.',
+            '95+ Google PageSpeed score on mobile devices.',
+            'Conversion-oriented copywriting and direct WhatsApp/lead integration.',
+          ],
+        },
+      ],
+      conclusion: 'Want a transparent, no-obligation quote for your company website? Reach out to Web Lunar today.',
+    },
+    'como-aparecer-no-google-com-site-novo': {
+      slug: 'como-aparecer-no-google-com-site-novo',
+      title: 'How to Rank on the First Page of Google with a New Website in 2026',
+      date: 'October 15, 2026',
+      readTime: '5 min read',
+      category: 'SEO & Google',
+      excerpt: 'Launched a website but nobody finds your business on Google? See the practical SEO roadmap to index fast and attract ready-to-buy clients.',
+      image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=1200&q=80',
+      author: {
+        name: 'Web Lunar Team',
+        role: 'SEO & Performance Specialists',
+      },
+      sections: [
+        {
+          heading: 'The 4 pillars to rank fast on Google in 2026',
+          paragraphs: [
+            'Combining high-intent keywords in your H1, sub-second Core Web Vitals on mobile, direct Google Search Console indexing, and strategic blog articles creates an organic lead machine.',
+          ],
+        },
+      ],
+      conclusion: 'Turn your website into a 24/7 organic client magnet on Google with Web Lunar.',
+    },
   },
   es: {
     'site-com-ia-vs-wordpress-qual-ranqueia-melhor': {
@@ -691,6 +850,50 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         },
       ],
       conclusion: 'La confianza se construye en los detalles. Un sitio web bien hecho es tu mejor canal de ventas 24/7.',
+    },
+    'como-escolher-empresa-de-criacao-de-sites': {
+      slug: 'como-escolher-empresa-de-criacao-de-sites',
+      title: 'Cómo Contratar una Empresa de Creación de Sitios Web en 2026 (Sin Trampas)',
+      date: '15 de Octubre, 2026',
+      readTime: '5 min de lectura',
+      category: 'Guía de Contratación',
+      excerpt: '¿Vas a contratar una agencia de sitios web? Conoce los 5 criterios esenciales para elegir un equipo que entregue velocidad, SEO y ventas.',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
+      author: {
+        name: 'Equipo Web Lunar',
+        role: 'Consultoría e Ingeniería Web',
+      },
+      sections: [
+        {
+          heading: '5 criterios obligatorios antes de aprobar un presupuesto',
+          paragraphs: [
+            'Antes de contratar cualquier agencia, verifica la propiedad total del código, velocidad móvil 95+ en PageSpeed, textos enfocados en ventas y optimización SEO.',
+          ],
+        },
+      ],
+      conclusion: '¿Quieres una cotización transparente para el sitio web de tu empresa? Contáctanos por WhatsApp.',
+    },
+    'como-aparecer-no-google-com-site-novo': {
+      slug: 'como-aparecer-no-google-com-site-novo',
+      title: 'Cómo Aparecer en la Primera Página de Google con un Sitio Web Nuevo en 2026',
+      date: '15 de Octubre, 2026',
+      readTime: '5 min de lectura',
+      category: 'SEO y Google',
+      excerpt: '¿Creaste un sitio web pero nadie encuentra tu empresa en Google? Mira el paso a paso práctico de SEO para indexar rápido y atraer clientes.',
+      image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=1200&q=80',
+      author: {
+        name: 'Equipo Web Lunar',
+        role: 'Especialistas en SEO y Rendimiento',
+      },
+      sections: [
+        {
+          heading: 'Los 4 pilares para posicionar rápido en Google en 2026',
+          paragraphs: [
+            'Combinar palabras clave con intención de compra en el H1, velocidad instantánea en el móvil, conexión con Search Console y artículos estratégicos genera clientes todos los días.',
+          ],
+        },
+      ],
+      conclusion: 'Transforma tu sitio web en un imán de clientes en Google con Web Lunar.',
     },
   },
 };

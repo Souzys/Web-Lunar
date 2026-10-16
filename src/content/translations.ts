@@ -605,6 +605,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'Nenhum artigo encontrado para a sua busca.',
       posts: [
         {
+          slug: 'como-escolher-empresa-de-criacao-de-sites',
+          date: '15 de Outubro, 2026',
+          category: 'Guia de Contratação',
+          title: 'Como Contratar uma Empresa de Criação de Sites em 2026 (Sem Cair em Ciladas)',
+          excerpt: 'Vai contratar uma agência ou desenvolvedor de sites? Veja os 5 critérios essenciais para escolher uma empresa de criação de sites que entrega prazo, SEO e vendas.',
+          image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80',
+        },
+        {
+          slug: 'como-aparecer-no-google-com-site-novo',
+          date: '15 de Outubro, 2026',
+          category: 'SEO & Google',
+          title: 'Como Aparecer na Primeira Página do Google com um Site Novo em 2026',
+          excerpt: 'Criou um site mas ninguém encontra sua empresa nas buscas? Veja o passo a passo prático de SEO para indexar rápido e atrair clientes prontos para comprar.',
+          image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=600&q=80',
+        },
+        {
           slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
           date: '28 de Setembro, 2026',
           category: 'SEO & Tecnologia',
@@ -622,18 +638,18 @@ export const translations: Record<Language, TranslationDictionary> = {
         },
         {
           slug: 'como-planejar-primeiro-site-profissional',
-          date: '12 de Agosto, 2026',
-          category: 'Planejamento Web',
-          title: 'Como planejar o seu primeiro site profissional: o guia básico',
-          excerpt: 'Do objetivo principal à escolha do conteúdo. Veja o que você realmente precisa definir antes de colocar sua empresa no ar.',
+          date: '15 de Outubro, 2026',
+          category: 'Planejamento de Site',
+          title: 'Como Planejar um Site Profissional em 2026: Guia Passo a Passo (+ Checklist)',
+          excerpt: 'Aprenda como planejar um site do zero: o que colocar na página inicial profissional, estrutura de vendas, checklist completo e como atrair clientes no Google.',
           image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
         },
         {
           slug: 'landing-page-ou-site-institucional',
-          date: '08 de Agosto, 2026',
+          date: '14 de Outubro, 2026',
           category: 'Estratégia & Conversão',
-          title: 'Landing Page ou Site Institucional: qual é o ideal para você?',
-          excerpt: 'Entenda de forma simples a diferença entre uma página direta para vendas e um site completo com várias seções.',
+          title: 'Landing Page ou Site Institucional: Diferenças, Preços e Qual Vende Mais em 2026',
+          excerpt: 'Explorando os tipos de sites: entenda a diferença prática entre Landing Page e Site Institucional, quanto custa cada um e qual escolher para gerar clientes rápido.',
           image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80',
         },
         {
@@ -1115,6 +1131,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       searchPlaceholder: 'Search articles...',
       noResults: 'No articles found matching your query.',
       posts: [
+        {
+          slug: 'como-escolher-empresa-de-criacao-de-sites',
+          date: 'October 15, 2026',
+          category: 'Hiring Guide',
+          title: 'How to Choose a Web Design & Development Agency in 2026 (Without Traps)',
+          excerpt: 'Looking to hire a website agency or developer? Check the 5 essential criteria to choose a team that delivers speed, SEO, and real sales.',
+          image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80',
+        },
+        {
+          slug: 'como-aparecer-no-google-com-site-novo',
+          date: 'October 15, 2026',
+          category: 'SEO & Google',
+          title: 'How to Rank on the First Page of Google with a New Website in 2026',
+          excerpt: 'Launched a website but nobody finds your business on Google? See the practical SEO roadmap to index fast and attract ready-to-buy clients.',
+          image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=600&q=80',
+        },
         {
           slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
           date: 'September 28, 2026',
@@ -1626,6 +1658,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       searchPlaceholder: 'Buscar artículos...',
       noResults: 'No se encontraron artículos para tu búsqueda.',
       posts: [
+        {
+          slug: 'como-escolher-empresa-de-criacao-de-sites',
+          date: '15 de Octubre, 2026',
+          category: 'Guía de Contratación',
+          title: 'Cómo Contratar una Empresa de Creación de Sitios Web en 2026 (Sin Trampas)',
+          excerpt: '¿Vas a contratar una agencia de sitios web? Conoce los 5 criterios esenciales para elegir un equipo que entregue velocidad, SEO y ventas.',
+          image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80',
+        },
+        {
+          slug: 'como-aparecer-no-google-com-site-novo',
+          date: '15 de Octubre, 2026',
+          category: 'SEO y Google',
+          title: 'Cómo Aparecer en la Primera Página de Google con un Sitio Web Nuevo en 2026',
+          excerpt: '¿Creaste un sitio web pero nadie encuentra tu empresa en Google? Mira el paso a paso práctico de SEO para indexar rápido y atraer clientes.',
+          image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=600&q=80',
+        },
         {
           slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
           date: '28 de Septiembre, 2026',
