@@ -22,7 +22,7 @@ export function ContatoClient() {
     content: '',
   });
   const [projectType, setProjectType] = useState(t.contactPage.projectTypes[0] || 'Landing Page');
-  const [budgetRange, setBudgetRange] = useState(t.contactPage.budgetRanges[0] || 'Até R$ 5k');
+  const [budgetRange, setBudgetRange] = useState(t.contactPage.budgetRanges[0] || 'A partir de R$ 500');
   const [timeline, setTimeline] = useState(t.contactPage.timelineRanges[0] || '1 a 2 semanas');
   const [referenceLink, setReferenceLink] = useState('');
   const [activeTab, setActiveTab] = useState<'form' | 'whatsapp'>('form');
@@ -34,7 +34,7 @@ export function ContatoClient() {
       setSuccess(true);
       setFormData({ name: '', email: '', subject: '', content: '' });
       setProjectType(t.contactPage.projectTypes[0] || 'Landing Page');
-      setBudgetRange(t.contactPage.budgetRanges[0] || 'Até R$ 5k');
+      setBudgetRange(t.contactPage.budgetRanges[0] || 'A partir de R$ 500');
       setTimeline(t.contactPage.timelineRanges[0] || '1 a 2 semanas');
       setReferenceLink('');
       setErrorMsg('');

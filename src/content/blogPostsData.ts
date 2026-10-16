@@ -426,7 +426,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       date: 'September 28, 2026',
       readTime: '5 min read',
       category: 'SEO & Tech',
-      excerpt: 'The definitive analysis on how Google actually evaluates AI-built platforms versus traditional WordPress in 2026.',
+      excerpt: 'The definitive analysis of how Google’s algorithm actually evaluates websites built with artificial intelligence versus the traditional WordPress ecosystem in 2026.',
       image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80',
       author: {
         name: 'Web Lunar Team',
@@ -434,34 +434,71 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: 'Google’s Real Stance on AI-Generated Websites',
+          heading: 'The penalty myth: what does Google really say about AI?',
           paragraphs: [
-            'Google Search Central guidelines state clearly that AI content and structure are not penalized as long as they deliver true value, high speed, and solve user queries according to E-E-A-T criteria.',
-            'Performance and user experience on mobile devices remain the primary ranking signals.',
+            'For a long time, people believed Google would punish any page built with artificial intelligence. In 2026, Google’s official guidelines make the rule very clear: the search engine does not judge the tool used to create the content or the code, but how genuinely useful the page is to the person searching (the E-E-A-T criteria: Experience, Expertise, Authoritativeness and Trustworthiness).',
+            'If an AI-assisted website answers the visitor’s question accurately and loads instantly on mobile, it often outranks traditional websites full of filler content.',
+          ],
+          callout: 'Google’s official position: creating content or structure with AI does not violate search policies, as long as the goal is not to manipulate rankings with mass spam.',
+        },
+        {
+          heading: 'WordPress in 2026: established authority or too heavy?',
+          paragraphs: [
+            'WordPress still powers a large part of the internet thanks to its maturity and plugin ecosystem, with tools like Yoast and RankMath. For today’s business owner, however, it brings a critical challenge: technical bloat.',
+            'Heavy visual-builder themes (like Elementor or Divi) pile up dozens of scripts, huge style files and server requests. The result is usually a slow website on mobile, and Google pushes slow pages down in local and commercial searches.',
+          ],
+          list: [
+            'WordPress strengths: easy publishing for simple blogs and broad market familiarity.',
+            'Where WordPress struggles: frequent security issues in third-party plugins, slow loading on mobile data and constant database maintenance.',
           ],
         },
         {
-          heading: 'The Modern Convergence',
+          heading: 'AI website builders: fast prototyping vs technical limits',
           paragraphs: [
-            'Leading businesses combine AI-assisted research with custom, lightweight websites that open in under one second on mobile and turn visitors into customers.',
+            'On the other hand, modern AI tools generate entire pages in seconds, already organizing titles and descriptions in a way Google understands easily.',
+            'The catch is in proprietary "website in 30 seconds" tools: many of them produce generic layouts, lock the business into never-ending subscriptions and make deeper analytics integrations difficult (conversion pixels, funnel tracking and owning your own data).',
+          ],
+        },
+        {
+          heading: 'The convergence: how top companies are combining both worlds',
+          paragraphs: [
+            'The debate between "build it on WordPress" and "generate everything with a generic AI" is a false choice. The companies leading in organic rankings and conversion take a third path: high-performance hybrid development.',
+            'AI is used to map what customers are searching for and to craft persuasive copy, but the final website is custom-built, with no heavy themes or unnecessary plugins. The result is a site that opens in under one second on mobile, never freezes and belongs 100% to the client.',
+          ],
+          list: [
+            'Artificial intelligence: used for market research, advanced search intent analysis and speed.',
+            'Custom development: a lightweight website that opens instantly on mobile, with reinforced security.',
+            'Sales psychology: direct WhatsApp button and a quick form to close deals without friction.',
           ],
         },
       ],
       faqs: [
         {
-          question: 'Does Google penalize AI-built websites?',
-          answer: 'No. Google evaluates user value, page speed, and content helpfulness regardless of whether AI was used during creation.',
+          question: 'Can Google tell if a website was made with AI?',
+          answer: 'Yes, Google’s algorithms analyze language patterns, but the company has officially stated that it does not penalize content just for being AI-generated. It prioritizes practical usefulness and page experience.',
+        },
+        {
+          question: 'Can a WordPress website still rank #1?',
+          answer: 'Yes, as long as it is carefully optimized, free of unnecessary plugins and hosted on a fast server that guarantees good performance on mobile.',
+        },
+        {
+          question: 'What influences a website’s ranking the most today?',
+          answer: 'Mobile speed, how long visitors stay on the page, how clearly the page answers the search, and security (HTTPS and no intrusive scripts).',
+        },
+        {
+          question: 'How does Web Lunar work with these technologies?',
+          answer: 'We combine the precision and speed of AI in research with custom development, delivering ultra-fast websites designed to show up on Google and sell.',
         },
       ],
-      conclusion: 'Whether powered by AI or built traditionally, the winner in organic search is always the platform that delivers the fastest, most relevant user experience.',
+      conclusion: 'Whether your website was planned with the help of AI or built with traditional code, the winner on Google is always the one that delivers the fastest, most reliable and most pleasant answer to the end user.',
     },
     'quanto-custa-criar-um-site-profissional': {
       slug: 'quanto-custa-criar-um-site-profissional',
-      title: 'How Much Does a Professional Website Cost in 2026? [Price Guide]',
+      title: 'How Much Does a Professional Website Cost in 2026? [Price & Timeline Guide]',
       date: 'September 20, 2026',
       readTime: '5 min read',
       category: 'Pricing & Strategy',
-      excerpt: 'Discover real development costs for landing pages, corporate websites, and custom platforms in 2026 with full transparency.',
+      excerpt: 'Discover the real prices for landing pages, business websites and custom systems in 2026, with no surprises in your budget.',
       image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80',
       author: {
         name: 'Web Lunar Team',
@@ -469,120 +506,174 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: 'What determines the cost of a professional website?',
+          heading: 'What determines the price of a professional website?',
           paragraphs: [
-            'The investment depends on custom design needs, underlying tech stack, mobile speed, and conversion strategy. Cheap templates often end up expensive due to slow loading and zero customer leads.',
-            'At Web Lunar, every website is custom-built for your business: it loads in under one second on mobile, builds trust instantly, and sends visitors straight to your WhatsApp.',
+            'The cost depends on the level of customization, loading speed and how focused the site is on turning visitors into customers. A cheap website built on a generic template usually ends up expensive when it is slow, breaks on mobile or never brings in a single sale.',
+            'At Web Lunar, every website is custom-built for your business: it loads in under one second on mobile, builds trust instantly and sends visitors straight to your WhatsApp.',
           ],
         },
         {
-          heading: 'Average Market Investment Ranges',
+          heading: 'Average Price Table (2026)',
           paragraphs: [
             'Here are today’s investment ranges. For comparison, traditional agencies often charge $300 to $600 for a landing page alone:',
           ],
           list: [
-            'High-Converting Landing Page: starting at $140 (Perfect for paid ads and receiving quote requests on WhatsApp).',
-            'Full Corporate Website: $300 - $700 (Multiple pages, blog, and strong presence on Google).',
-            'Online Store / E-commerce: starting at $500 (Sell products online with card payments and inventory control).',
+            'High-Converting Landing Page: starting at $140 (Ideal for Google and Instagram ads and for receiving quote requests on WhatsApp, delivered in 5 to 10 days).',
+            'Full Business Website: $300 to $700 (Ideal for companies with several services, a blog and a strong presence on Google, 10 to 20 days).',
+            'Online Store / Catalog: starting at $500 (Sell products online with card payments, inventory control and fast loading).',
+            'Custom systems (bookings, dashboards, client areas): personalized quote based on the project.',
+          ],
+          callout: 'Important: be wary of $60 to $100 quotes with endless monthly fees. They usually rely on heavy pirated themes, have no security, and the website never truly belongs to your business.',
+        },
+        {
+          heading: 'Essential Recurring Costs (Domain and Hosting)',
+          paragraphs: [
+            'Besides the initial development, every website on the internet has some mandatory infrastructure costs:',
+          ],
+          list: [
+            'Domain registration (.com or local domain): around $10 to $15 per year.',
+            'Hosting: from $0 to $25/month (many professional websites run on free modern hosting plans, with the security padlock already included).',
+            'Maintenance and updates: on demand or monthly plans for businesses that add content and pages frequently.',
           ],
         },
       ],
       faqs: [
         {
-          question: 'How long does development take?',
-          answer: 'Landing pages are usually delivered within 5 to 10 days. Full multi-page corporate sites take 12 to 20 days.',
+          question: 'How long does it take for my website to be ready?',
+          answer: 'A conversion-focused landing page takes 5 to 10 business days on average. Full business websites take 12 to 20 business days, depending on how quickly the client sends the information.',
+        },
+        {
+          question: 'Will the website be mine, or am I stuck with monthly fees?',
+          answer: 'At Web Lunar, the project is 100% yours. You do not pay mandatory maintenance fees after delivery.',
+        },
+        {
+          question: 'How do I get a quick quote for my business?',
+          answer: 'Just click the WhatsApp button on the website or visit our contact page to talk directly with our developers within minutes.',
         },
       ],
-      conclusion: 'A well-engineered website is an active revenue generator that pays for itself through high conversion rates.',
+      conclusion: 'A high-quality website is not a cost, it is a business investment that pays for itself within the first weeks of bringing in qualified customers.',
     },
     'como-planejar-primeiro-site-profissional': {
       slug: 'como-planejar-primeiro-site-profissional',
-      title: 'How to Plan a Professional Website Step by Step: Complete Guide [Checklist]',
-      date: 'August 12, 2026',
-      readTime: '4 min read',
-      category: 'Web Planning',
-      excerpt: 'From core objectives to key content. What you actually need to define before launching your business online.',
+      title: 'How to Plan a Professional Website in 2026: Step-by-Step Guide (+ Checklist)',
+      date: 'October 15, 2026',
+      readTime: '5 min read',
+      category: 'Website Planning',
+      excerpt: 'Learn how to plan a website from scratch: what to put on a professional homepage, sales structure, a complete checklist and how to attract customers on Google.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
       author: {
         name: 'Web Lunar Team',
-        role: 'Design & Strategy',
+        role: 'Design & Conversion Strategy',
       },
       sections: [
         {
-          heading: '1. Define your website’s primary objective',
+          heading: '1. How to plan a website that actually brings in quote requests',
           paragraphs: [
-            'Before picking colors, logos, or visuals, ask yourself one simple question: what is the single action a visitor should take on your site?',
-            'Whether it is scheduling a WhatsApp consultation, submitting an inquiry form, or buying a service, having a single focus prevents cluttered and confusing pages.',
+            'Good website planning starts before choosing colors or a logo. The first step is answering one question: what should the visitor do within the first 5 seconds on your page?',
+            'Whether it is messaging you on WhatsApp, requesting a quick quote or booking a meeting, every professional website plan should revolve around turning visits into real sales.',
           ],
-          callout: 'Pro tip: A webpage with one clear call-to-action converts up to 3x higher than pages that try to say everything at once.',
+          callout: 'Golden tip: businesses that plan their website around a single call to action convert up to 3x more customers than businesses with confusing websites.',
         },
         {
-          heading: '2. Gather the essential information (Checklist)',
+          heading: '2. What a professional homepage needs (Checklist)',
           paragraphs: [
-            'You do not need dozens of pages to start with authority. The essentials for a fast and effective launch include:',
+            'To have a professional homepage that conveys instant authority and makes customers trust your business, follow this practical checklist:',
           ],
           list: [
-            'Who you are and the exact problem you solve for clients.',
-            'Clear descriptions of your core services or products.',
-            'Testimonials and social proof from past clients.',
-            'A direct, frictionless contact channel (such as WhatsApp or an instant contact form).',
+            'A clear promise at the top: say exactly what you do and what result you deliver.',
+            'Visible social proof: real testimonials, logos of clients you have served or numbers from your business.',
+            'A straightforward presentation of your services: no technical jargon, focus on the benefit for the customer.',
+            'A strategic WhatsApp button: always visible on mobile for people who want immediate service.',
+            'FAQ: answer the main objections about price and timeline right on the homepage.',
           ],
         },
         {
-          heading: '3. Prioritize mobile performance first',
+          heading: '3. Mobile speed and Google visibility from day one',
           paragraphs: [
-            'Over 80% of web traffic comes from smartphones. Your site must load in under 2 seconds, with thumb-friendly buttons and clear typography that requires no zooming.',
+            'More than 82% of quote requests today happen on mobile. When planning your website, demanding load times under 2 seconds and a structure ready for Google is what separates a website that sells every day from a forgotten digital business card.',
+            'At Web Lunar, we handle all the planning, persuasive copy and ultra-fast development so you do not have to worry about it.',
           ],
         },
       ],
-      conclusion: 'Building a professional website does not have to be overwhelming. Start with solid foundations, clean modern aesthetics, and fast communication.',
+      faqs: [
+        {
+          question: 'How do I plan a website from scratch without understanding technology?',
+          answer: 'You only need to define three things: which service you want to sell more, who your ideal customer is and what makes you different. The visual structure, sales copy and development are 100% handled by the agency.',
+        },
+        {
+          question: 'What must a professional homepage have?',
+          answer: 'A clear headline with your value proposition, a quick WhatsApp contact button, a list of your main services, customer testimonials and fast loading on mobile.',
+        },
+        {
+          question: 'How long does it take to plan and build a professional website?',
+          answer: 'With an organized method like Web Lunar’s, planning takes 2 to 3 days and the full website goes live in 7 to 15 business days.',
+        },
+      ],
+      conclusion: 'Good website planning is the shortest path to stop relying only on referrals and start attracting customers from Google every day.',
     },
     'landing-page-ou-site-institucional': {
       slug: 'landing-page-ou-site-institucional',
-      title: 'Landing Page or Full Website: Which one is right for you?',
-      date: 'August 08, 2026',
-      readTime: '4 min read',
+      title: 'Landing Page or Business Website: Differences, Prices and Which Sells More in 2026',
+      date: 'October 14, 2026',
+      readTime: '5 min read',
       category: 'Strategy & Conversion',
-      excerpt: 'A simple breakdown between a focused sales landing page and a full corporate multi-page website.',
+      excerpt: 'Exploring website types: understand the practical difference between a landing page and a business website, how much each costs and which one to choose to get customers fast.',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80',
       author: {
         name: 'Web Lunar Team',
-        role: 'Engineering & Performance',
+        role: 'Development & Performance',
       },
       sections: [
         {
-          heading: 'What is a Landing Page?',
+          heading: 'Exploring website types: Landing Page vs Business Website',
           paragraphs: [
-            'A Landing Page is a standalone single page designed specifically to direct visitors toward one conversion goal: booking a call, requesting a quote, or purchasing an offer.',
-            'It is the ideal choice for paid traffic campaigns (Google Ads, Meta Ads) and targeted promotions.',
+            'When taking your business online, the most common question is whether to choose a landing page (a high-converting single page) or a full business website.',
+            'Both work very well, but each was designed for a different business goal, and choosing the right model saves money and speeds up your return on investment.',
           ],
         },
         {
-          heading: 'What is a Corporate Website?',
+          heading: 'When should you choose a Landing Page?',
           paragraphs: [
-            'A Corporate Website consists of multiple pages (Home, About, Services, Portfolio, Blog, Contact). It serves as your brand’s central digital headquarters, establishing long-term credibility and organic search authority (SEO).',
+            'A landing page is a single, straight-to-the-point page built with persuasion techniques and a total focus on getting the visitor to click the quote or WhatsApp button. There are no complex menus to distract the customer.',
+            'It is the absolute champion for businesses running Google or Instagram ads that want qualified contacts every day.',
+          ],
+        },
+        {
+          heading: 'When should you choose a full Business Website?',
+          paragraphs: [
+            'A business website has multiple pages (Home, About, separate Services, Portfolio, Blog and Contact). It is your company’s official digital headquarters, perfect for ranking for many keywords on Google for free and for conveying the image of a market leader.',
           ],
           list: [
-            'Landing Page: Best for paid ad campaigns and fast lead generation.',
-            'Corporate Website: Best for established businesses, multiple service lines, and long-term brand authority.',
+            'Landing Page: 100% focused on fast sales, ideal for paid ads (Google Ads / Meta Ads) and delivered in up to 7 days.',
+            'Business Website: focused on brand authority, multiple services and organic Google rankings in the medium and long term.',
           ],
         },
         {
-          heading: 'How to make the right choice?',
+          heading: 'Summary: which one brings a better financial return?',
           paragraphs: [
-            'If your priority is generating immediate leads with an agile budget, start with a high-end Landing Page. If your company needs to showcase multiple departments and publish content, invest in a Corporate Website.',
+            'If you want a fast return by advertising one specific service, start with a high-converting landing page. If your business offers several services and wants to dominate organic Google searches in your region, a business website with a blog is the best investment.',
           ],
         },
       ],
-      conclusion: 'There is no wrong choice — only the right tool for your current business stage. Both can work synergistically to accelerate growth.',
+      faqs: [
+        {
+          question: 'Does a landing page convert more than a regular website?',
+          answer: 'Yes! In paid ad campaigns, a landing page can convert 3x to 5x more quote requests because it guides the visitor straight to the WhatsApp button without distractions.',
+        },
+        {
+          question: 'Can I start with a landing page and expand into a business website later?',
+          answer: 'Yes! At Web Lunar we build your landing page with a modular structure, so new pages and a blog can be added later without rebuilding the website from scratch.',
+        },
+      ],
+      conclusion: 'Still unsure between a landing page and a business website? Message our team on WhatsApp and we will analyze your business for free and recommend the most profitable format.',
     },
     '3-coisas-essenciais-para-passar-confianca': {
       slug: '3-coisas-essenciais-para-passar-confianca',
-      title: '3 essential elements every new website needs to build trust',
+      title: '3 essential things every website needs to build trust',
       date: 'August 02, 2026',
       readTime: '3 min read',
       category: 'Best Practices',
-      excerpt: 'Clean design, fast mobile loading, and visible contact buttons. The fundamentals to start strong.',
+      excerpt: 'Organized design, good mobile speed and a visible WhatsApp button. The essentials to start on the right foot.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
       author: {
         name: 'Web Lunar Team',
@@ -592,37 +683,43 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: '1. Instant clarity within the first 3 seconds',
           paragraphs: [
-            'When visitors arrive on your website, they must immediately understand what you do and how you help them. Clear headlines and modern typography convey instant professionalism.',
+            'When someone lands on your website, they need to understand in less than 3 seconds what you do and how you can help them. Clear headlines, modern typography and a well-defined visual hierarchy convey instant professionalism.',
           ],
         },
         {
-          heading: '2. Flawless speed and mobile responsiveness',
+          heading: '2. Flawless speed and stability',
           paragraphs: [
-            'Slow websites create immediate doubt. Building with modern web technologies ensures sub-second loading without lagging on mobile devices.',
+            'Slow websites create immediate distrust. Modern development guarantees instant loading, without freezing or breaking on the customer’s phone.',
           ],
-          callout: 'Fact: Over 50% of visitors bounce if a website takes more than 3 seconds to load.',
+          callout: 'Fact: more than 50% of visitors leave a website if it takes more than 3 seconds to fully load.',
         },
         {
-          heading: '3. Social proof and accessible communication',
+          heading: '3. Social proof and easy contact',
           paragraphs: [
-            'Include real customer feedback, partner badges, and an accessible contact button. People feel much more confident closing deals when they see transparent proof and real people.',
+            'Include real customer testimonials, partner logos and an always-accessible WhatsApp button. Visitors feel much more confident closing a deal when they see real, reachable people behind the business.',
           ],
           list: [
-            'Real testimonials with names and company roles.',
-            'Direct WhatsApp contact widget.',
-            'Clear service details and transparent contact info.',
+            'Real testimonials with name and industry.',
+            'A direct floating WhatsApp button.',
+            'Clear terms, contact details and address or service area.',
           ],
         },
       ],
-      conclusion: 'Trust is built through polished details. A well-engineered website becomes your best sales asset working 24/7.',
+      faqs: [
+        {
+          question: 'How can I prove my company’s authority on my website?',
+          answer: 'By showing real reviews from satisfied customers, numbers about the results you deliver and photos of your team or your real product.',
+        },
+      ],
+      conclusion: 'Trust cannot be bought, it is built in the details. A well-built website is your best salesperson, working 24 hours a day.',
     },
     'como-escolher-empresa-de-criacao-de-sites': {
       slug: 'como-escolher-empresa-de-criacao-de-sites',
-      title: 'How to Choose a Web Design & Development Agency in 2026 (Without Traps)',
+      title: 'How to Hire a Website Design Company in 2026 (Without Falling Into Traps)',
       date: 'October 15, 2026',
       readTime: '5 min read',
       category: 'Hiring Guide',
-      excerpt: 'Looking to hire a website agency or developer? Check the 5 essential criteria to choose a team that delivers speed, SEO, and real sales.',
+      excerpt: 'Hiring a website agency or developer? See the 5 essential criteria for choosing a website design company that delivers on time, ranks on Google and sells.',
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
       author: {
         name: 'Web Lunar Team',
@@ -630,26 +727,52 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: '5 mandatory criteria before signing a quote',
+          heading: 'Why do so many business owners get frustrated when building a website?',
           paragraphs: [
-            'Before hiring any agency or freelancer, verify full ownership of your website, fast loading on mobile, persuasive copy, readiness to rank on Google, and live portfolio projects.',
+            'The market is full of promises like "website ready in 24 hours for $60" or traditional agencies that charge a fortune and take 4 months to deliver a slow WordPress template.',
+            'Hiring the right website design company is the difference between having a sales machine working for you 24/7 and having a headache that brings in no customers at all.',
+          ],
+          callout: 'Rule number 1: never hire a website just because the layout looks pretty on a computer. Ask to see how fast it is on mobile and how it shows up on Google.',
+        },
+        {
+          heading: '5 mandatory criteria before accepting a quote',
+          paragraphs: [
+            'Before signing a contract with any website agency or freelancer, go through this checklist:',
           ],
           list: [
-            '100% code ownership without mandatory monthly rental traps.',
-            'Loads in under 2 seconds on a regular mobile connection.',
-            'Conversion-oriented copywriting and direct WhatsApp/lead integration.',
+            '1. Will the website be 100% yours? Avoid companies that lock you into "website rentals" where you lose everything if you cancel the monthly fee.',
+            '2. Does the website open fast on mobile? Test it yourself on mobile data: a professional website opens in under 2 seconds. If it is slow, customers give up and Google pushes it down.',
+            '3. Is the copy written to sell? A website that only talks about the company does not sell; it needs to speak to your customer’s problem.',
+            '4. Is it ready to show up on Google? Ask whether the website is set up to be found in searches, not just to look nice.',
+            '5. A real, working portfolio: click on the websites the agency has already built and test them on your own phone.',
+          ],
+        },
+        {
+          heading: 'How the Web Lunar method works',
+          paragraphs: [
+            'At Web Lunar, we combine the best of both worlds: the commercial mindset of a sales-focused agency with custom, lightweight and fast development. We deliver projects with no hidden monthly fees, already connected to your WhatsApp and ready to show up on Google.',
           ],
         },
       ],
-      conclusion: 'Want a transparent, no-obligation quote for your company website? Reach out to Web Lunar today.',
+      faqs: [
+        {
+          question: 'Is it better to hire a website agency or a freelancer?',
+          answer: 'The ideal is a lean, specialized agency like Web Lunar: you talk directly with the people building your site (no broken telephone), get senior-level quality and strict deadlines.',
+        },
+        {
+          question: 'What should a website design quote include?',
+          answer: 'Custom design for mobile and desktop, basic Google optimization, WhatsApp button/form integration, domain and security setup, and full ownership of the website.',
+        },
+      ],
+      conclusion: 'Want a transparent, no-obligation quote for your company’s website? Click the WhatsApp button on this site and get a personalized analysis today.',
     },
     'como-aparecer-no-google-com-site-novo': {
       slug: 'como-aparecer-no-google-com-site-novo',
-      title: 'How to Rank on the First Page of Google with a New Website in 2026',
+      title: 'How to Reach the First Page of Google with a New Website in 2026',
       date: 'October 15, 2026',
       readTime: '5 min read',
       category: 'SEO & Google',
-      excerpt: 'Launched a website but nobody finds your business on Google? See the practical SEO roadmap to index fast and attract ready-to-buy clients.',
+      excerpt: 'Launched a website but nobody finds your business in search results? See the practical step-by-step to get indexed fast and attract customers ready to buy.',
       image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=1200&q=80',
       author: {
         name: 'Web Lunar Team',
@@ -657,13 +780,36 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: 'The 4 pillars to rank fast on Google in 2026',
+          heading: 'Why isn’t launching a website enough to show up on Google?',
           paragraphs: [
-            'Using the words your customers actually search for in your main headline, loading instantly on mobile, registering your site with Google’s official tools, and publishing helpful articles turns your website into an organic lead machine.',
+            'Many businesses launch a website and expect it to magically appear in first place when someone searches for their service in their city. In practice, Google needs to understand exactly what your page is about, trust its speed and see that it answers the customer better than your competitor does.',
           ],
         },
+        {
+          heading: 'The 4 pillars to rank fast on Google in 2026',
+          paragraphs: [
+            'We apply these four pillars to every Web Lunar project to speed up organic rankings:',
+          ],
+          list: [
+            '1. The words your customers actually search for in your main headline: instead of vague phrases like "Welcome to our company", use "Professional Website Design" or the exact name of the service your customer types into Google.',
+            '2. Instant speed on mobile: Google pushes slow websites down. Pages that open in under one second get priority in organic results.',
+            '3. Tell Google your website exists: register your site with Google’s official tools so it is found in days, not months.',
+            '4. Blog articles answering real buying questions: content such as price tables, comparisons and guides attracts qualified customers every day without paying per click.',
+          ],
+          callout: 'Practical result: a single well-ranked article on Google can generate dozens of quote requests per month on autopilot, with no ad spend.',
+        },
       ],
-      conclusion: 'Turn your website into a 24/7 organic client magnet on Google with Web Lunar.',
+      faqs: [
+        {
+          question: 'How long does it take for a new website to show up on Google?',
+          answer: 'Once the website is correctly registered with Google’s tools, it starts appearing in search results within 24 hours to 7 days. Rankings for competitive terms keep improving over the first 30 to 90 days.',
+        },
+        {
+          question: 'Does Web Lunar deliver websites already optimized for Google?',
+          answer: 'Yes! All our websites are delivered ready for Google: strategic titles, click-worthy descriptions, lightweight images, fast loading and registration with Google’s tools already done.',
+        },
+      ],
+      conclusion: 'Want to turn your website into a customer magnet on Google? Talk to Web Lunar and see how we build websites ready to lead the searches in your market.',
     },
   },
   es: {
@@ -673,41 +819,79 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       date: '28 de Septiembre, 2026',
       readTime: '5 min de lectura',
       category: 'SEO y Tecnología',
-      excerpt: 'El análisis definitivo sobre cómo evalúa el algoritmo de Google las plataformas creadas con inteligencia artificial frente a WordPress en 2026.',
+      excerpt: 'El análisis definitivo sobre cómo el algoritmo de Google evalúa realmente los sitios creados con inteligencia artificial frente al ecosistema tradicional de WordPress en 2026.',
       image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80',
       author: {
         name: 'Equipo Web Lunar',
-        role: 'Ingeniería Web y Analítica Digital',
+        role: 'Ingeniería Web y Analítica de Datos',
       },
       sections: [
         {
-          heading: 'La postura oficial de Google ante la IA',
+          heading: 'El mito de la penalización: ¿qué dice realmente Google sobre la IA?',
           paragraphs: [
-            'Google Search Central establece con claridad que el contenido y código con IA no se penalizan siempre que aporten valor real, máxima velocidad y resuelvan la búsqueda del usuario bajo los criterios E-E-A-T.',
+            'Durante mucho tiempo circuló el rumor de que Google castigaría cualquier página creada con inteligencia artificial. En 2026, las directrices oficiales de Google dejan la regla muy clara: el buscador no evalúa la herramienta utilizada para crear el contenido o el código, sino la utilidad real para quien busca (criterios E-E-A-T: Experiencia, Especialización, Autoridad y Confiabilidad).',
+            'Si un sitio creado con ayuda de IA responde con precisión a la duda del visitante y carga al instante en el móvil, muchas veces supera a sitios tradicionales llenos de contenido de relleno.',
+          ],
+          callout: 'Postura oficial de Google: crear contenido o estructura con IA no viola las políticas de búsqueda, siempre que el objetivo no sea manipular el posicionamiento con spam masivo.',
+        },
+        {
+          heading: 'WordPress en 2026: ¿autoridad consolidada o peso excesivo?',
+          paragraphs: [
+            'WordPress todavía impulsa gran parte de internet gracias a su madurez y su ecosistema de plugins, con herramientas como Yoast y RankMath. Sin embargo, para el empresario actual presenta un desafío crítico: la sobrecarga técnica.',
+            'Los temas pesados de constructores visuales (como Elementor o Divi) acumulan decenas de scripts, archivos de estilo enormes y peticiones al servidor. El resultado suele ser un sitio lento en el móvil, y Google relega las páginas lentas en las búsquedas locales y comerciales.',
+          ],
+          list: [
+            'Puntos fuertes de WordPress: facilidad para publicar blogs sencillos y amplia familiaridad en el mercado.',
+            'Dónde sufre WordPress: problemas frecuentes de seguridad en plugins de terceros, carga lenta con datos móviles y mantenimiento constante de la base de datos.',
           ],
         },
         {
-          heading: 'La Convergencia de Alto Nivel',
+          heading: 'Constructores con IA: velocidad de prototipado vs limitaciones técnicas',
           paragraphs: [
-            'Las empresas líderes combinan la investigación con IA con sitios a medida, livianos, que abren en menos de un segundo en el móvil y convierten visitas en clientes.',
+            'Por otro lado, las herramientas modernas de IA generan páginas completas en segundos, organizando títulos y descripciones de una forma que Google entiende fácilmente.',
+            'El punto de atención está en las herramientas propietarias de "sitio en 30 segundos": muchas generan diseños genéricos, atan a la empresa a suscripciones eternas y dificultan integraciones de analítica más profundas (píxeles de conversión, seguimiento del embudo y propiedad de tus propios datos).',
+          ],
+        },
+        {
+          heading: 'La convergencia: cómo las empresas de alto nivel unen ambos mundos',
+          paragraphs: [
+            'La disputa entre "hacerlo en WordPress" o "generarlo todo con una IA genérica" es una falsa elección. Las empresas líderes en posicionamiento orgánico y conversión adoptan una tercera vía: el desarrollo híbrido de alto rendimiento.',
+            'La inteligencia artificial se usa para mapear lo que buscan los clientes y crear textos persuasivos, pero el sitio final se hace a medida, sin temas pesados ni plugins innecesarios. El resultado es un sitio que abre en menos de un segundo en el móvil, no se traba y pertenece 100% al cliente.',
+          ],
+          list: [
+            'Inteligencia artificial: usada para investigación de mercado, análisis avanzado de búsquedas y agilidad.',
+            'Desarrollo a medida: un sitio liviano que abre al instante en el móvil y con seguridad reforzada.',
+            'Psicología de ventas: botón directo de WhatsApp y formulario ágil para cerrar contratos sin fricción.',
           ],
         },
       ],
       faqs: [
         {
-          question: '¿Google penaliza sitios creados con IA?',
-          answer: 'No. Google prioriza la velocidad de carga y la utilidad para el visitante, independientemente de las herramientas empleadas.',
+          question: '¿Google sabe si un sitio fue hecho con IA?',
+          answer: 'Sí, los algoritmos de Google analizan patrones de lenguaje, pero la empresa ya declaró oficialmente que no penaliza el contenido solo por estar generado con IA. Prioriza la utilidad práctica y la experiencia de la página.',
+        },
+        {
+          question: '¿Un sitio en WordPress todavía puede posicionar en primer lugar?',
+          answer: 'Sí, siempre que esté rigurosamente optimizado, sin exceso de plugins innecesarios y con un servidor rápido que garantice buen rendimiento en el móvil.',
+        },
+        {
+          question: '¿Qué influye más en el posicionamiento de un sitio hoy?',
+          answer: 'La velocidad en el móvil, el tiempo que el visitante pasa en la página, la claridad con que la página responde a la búsqueda y la seguridad (HTTPS y ausencia de scripts invasivos).',
+        },
+        {
+          question: '¿Cómo trabaja Web Lunar con estas tecnologías?',
+          answer: 'Unimos la precisión y velocidad de la IA en la investigación con un desarrollo a medida, entregando sitios ultrarrápidos pensados para aparecer en Google y vender.',
         },
       ],
-      conclusion: 'En SEO orgánico triunfa quien ofrece la respuesta más rápida, clara y confiable para el usuario.',
+      conclusion: 'No importa si tu sitio fue planificado con ayuda de IA o construido con código tradicional: en Google gana quien entrega la respuesta más rápida, confiable y agradable para el usuario final.',
     },
     'quanto-custa-criar-um-site-profissional': {
       slug: 'quanto-custa-criar-um-site-profissional',
-      title: '¿Cuánto Cuesta Crear un Sitio Web Profesional en 2026? [Guía de Precios]',
+      title: '¿Cuánto Cuesta Crear un Sitio Web Profesional en 2026? [Tabla de Precios y Plazos]',
       date: '20 de Septiembre, 2026',
       readTime: '5 min de lectura',
       category: 'Precios y Estrategia',
-      excerpt: 'Conoce los valores reales de desarrollo de landing pages, sitios corporativos y plataformas web a medida en 2026 sin costes ocultos.',
+      excerpt: 'Descubre los valores reales para el desarrollo de landing pages, sitios institucionales y sistemas a medida en 2026, sin sorpresas en el presupuesto.',
       image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80',
       author: {
         name: 'Equipo Web Lunar',
@@ -715,70 +899,118 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: '¿Qué determina el valor de un sitio web profesional?',
+          heading: '¿Qué define el precio de un sitio web profesional?',
           paragraphs: [
-            'El costo varía según el diseño a medida, la tecnología, la velocidad en móviles y la optimización para ventas. Plantillas baratas terminan costando caro por su lentitud y falta de conversiones.',
-            'En Web Lunar cada sitio se hace a medida: abre en menos de un segundo en el móvil, transmite confianza y lleva al visitante directo a tu WhatsApp.',
+            'El costo varía según el nivel de personalización, la velocidad de carga y qué tan enfocado está el sitio en convertir visitantes en clientes. Un sitio barato hecho con plantillas genéricas suele salir caro cuando es lento, falla en el móvil o no genera ninguna venta.',
+            'En Web Lunar cada sitio se hace a medida para tu negocio: abre en menos de un segundo en el móvil, transmite confianza desde el primer momento y lleva al visitante directo a tu WhatsApp.',
+          ],
+        },
+        {
+          heading: 'Tabla de Precios Promedio (2026)',
+          paragraphs: [
+            'Estos son los rangos de inversión actuales. Como referencia, las agencias tradicionales suelen cobrar entre US$ 300 y US$ 600 solo por una landing page:',
+          ],
+          list: [
+            'Landing Page de Alta Conversión: desde US$ 140 (Ideal para anuncios en Google e Instagram y para recibir cotizaciones por WhatsApp, entregada en 5 a 10 días).',
+            'Sitio Institucional Completo: de US$ 300 a US$ 700 (Ideal para empresas con varios servicios, blog y presencia fuerte en Google, 10 a 20 días).',
+            'Tienda Online / Catálogo: desde US$ 500 (Para vender productos online con pagos con tarjeta, control de stock y carga rápida).',
+            'Sistemas a medida (reservas, paneles, áreas de clientes): presupuesto personalizado según el proyecto.',
+          ],
+          callout: 'Importante: desconfía de presupuestos de US$ 60 a US$ 100 con mensualidades eternas. Suelen usar temas pesados piratas, no tienen seguridad y el sitio nunca pertenece realmente a tu empresa.',
+        },
+        {
+          heading: 'Costos Recurrentes Esenciales (Dominio y Hosting)',
+          paragraphs: [
+            'Además del desarrollo inicial, todo sitio en internet tiene algunos costos de infraestructura obligatorios:',
+          ],
+          list: [
+            'Registro de dominio (.com o dominio local): alrededor de US$ 10 a US$ 15 por año.',
+            'Hosting: de US$ 0 a US$ 25 al mes (muchos sitios profesionales funcionan en planes gratuitos de hosting moderno, con el candado de seguridad incluido).',
+            'Mantenimiento y evolución: bajo demanda o planes mensuales para quienes agregan contenido y páginas con frecuencia.',
           ],
         },
       ],
       faqs: [
         {
-          question: '¿Cuánto tiempo tarda la entrega?',
-          answer: 'Las landing pages se entregan en 5 a 10 días hábiles. Los sitios corporativos completos en 12 a 20 días.',
+          question: '¿Cuánto tiempo tarda mi sitio en estar listo?',
+          answer: 'Una landing page enfocada en conversión tarda en promedio de 5 a 10 días hábiles. Los sitios institucionales completos tardan entre 12 y 20 días hábiles, según la rapidez con que el cliente envíe la información.',
+        },
+        {
+          question: '¿El sitio será mío o quedo atado a mensualidades?',
+          answer: 'En Web Lunar el proyecto es 100% tuyo. No pagas mensualidades obligatorias de mantenimiento después de la entrega.',
+        },
+        {
+          question: '¿Cómo recibo una cotización rápida para mi negocio?',
+          answer: 'Solo haz clic en el botón de WhatsApp del sitio o visita nuestra página de contacto para hablar directamente con nuestros desarrolladores en pocos minutos.',
         },
       ],
-      conclusion: 'Un sitio web de alto nivel no es un gasto, sino una inversión que genera clientes mes a mes.',
+      conclusion: 'Invertir en un sitio de alto nivel no es un gasto, sino una inversión comercial que se paga en las primeras semanas de captación de clientes calificados.',
     },
     'como-planejar-primeiro-site-profissional': {
       slug: 'como-planejar-primeiro-site-profissional',
-      title: 'Cómo Planificar un Sitio Web Profesional Paso a Paso: Guía Completa [Checklist]',
-      date: '12 de Agosto, 2026',
-      readTime: '4 min de leitura',
-      category: 'Planificación Web',
-      excerpt: 'Del objetivo principal al contenido clave. Lo que necesitas definir antes de lanzar tu negocio en internet.',
+      title: 'Cómo Planificar un Sitio Web Profesional en 2026: Guía Paso a Paso (+ Checklist)',
+      date: '15 de Octubre, 2026',
+      readTime: '5 min de lectura',
+      category: 'Planificación de Sitio',
+      excerpt: 'Aprende a planificar un sitio desde cero: qué poner en una página de inicio profesional, estructura de ventas, checklist completo y cómo atraer clientes en Google.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
       author: {
         name: 'Equipo Web Lunar',
-        role: 'Diseño y Estrategia Digital',
+        role: 'Diseño y Estrategia de Conversión',
       },
       sections: [
         {
-          heading: '1. Define el objetivo principal de tu sitio web',
+          heading: '1. Cómo planificar un sitio que realmente genere cotizaciones',
           paragraphs: [
-            'Antes de pensar en colores o imágenes, responde una pregunta simple: ¿qué acción esperas que realice un visitante al ingresar a tu sitio?',
-            'Tener un objetivo claro (agendar por WhatsApp, pedir cotización o comprar) evita páginas confusas y saturadas.',
+            'Una buena planificación de sitio empieza antes de elegir colores o logotipo. El primer paso es responder: ¿qué acción debe realizar el visitante en los primeros 5 segundos en tu página?',
+            'Ya sea escribirte por WhatsApp, pedir una cotización rápida o agendar una reunión, toda la planificación de un sitio profesional debe girar en torno a convertir visitas en ventas reales.',
           ],
-          callout: 'Consejo clave: Una página con un único llamado a la acción convierte hasta 3 veces más que un sitio sobrecargado.',
+          callout: 'Consejo de oro: las empresas que planifican su sitio en torno a un único llamado a la acción convierten hasta 3 veces más clientes que los sitios confusos.',
         },
         {
-          heading: '2. Reúne la información indispensable (Checklist)',
+          heading: '2. Lo que necesita una página de inicio profesional (Checklist)',
           paragraphs: [
-            'No necesitas decenas de páginas para comenzar con autoridad. Lo esencial para un lanzamiento rápido incluye:',
+            'Para tener una página de inicio profesional que transmita autoridad inmediata y haga que el cliente confíe en tu empresa, sigue este checklist práctico:',
           ],
           list: [
-            'Quién eres y qué problema solucionas a tus clientes.',
-            'Tus servicios o productos principales explicados con claridad.',
-            'Testimonios o casos de éxito de clientes satisfechos.',
-            'Un canal directo y ágil de contacto (WhatsApp o formulario rápido).',
+            'Una promesa clara arriba de todo: di exactamente qué haces y qué resultado entregas.',
+            'Prueba social visible: testimonios reales, logos de clientes atendidos o números de tu negocio.',
+            'Presentación directa de los servicios: sin textos técnicos difíciles, enfocada en el beneficio para el cliente.',
+            'Botón de WhatsApp estratégico: siempre visible en el móvil para quien quiere atención inmediata.',
+            'Preguntas frecuentes: responde las principales objeciones de precio y plazo en la propia página de inicio.',
           ],
         },
         {
-          heading: '3. Prioriza la velocidad en dispositivos móviles',
+          heading: '3. Velocidad en el móvil y visibilidad en Google desde el primer día',
           paragraphs: [
-            'Más del 80% de las visitas provienen de teléfonos inteligentes. Tu sitio debe cargar en menos de 2 segundos con botones cómodos y textos perfectamente legibles.',
+            'Más del 82% de las cotizaciones hoy se hacen desde el móvil. Al planificar tu sitio, exigir una carga de menos de 2 segundos y una estructura preparada para Google es lo que separa a un sitio que vende todos los días de una tarjeta de presentación olvidada.',
+            'En Web Lunar nos encargamos de toda la planificación, los textos persuasivos y el desarrollo ultrarrápido para que no tengas que preocuparte.',
           ],
         },
       ],
-      conclusion: 'Crear un sitio web profesional no tiene por qué ser complicado. Comienza con bases sólidas, estética moderna y enfoque en conversión rápida.',
+      faqs: [
+        {
+          question: '¿Cómo planificar un sitio desde cero sin saber de tecnología?',
+          answer: 'Solo necesitas definir tres cosas: qué servicio quieres vender más, quién es tu cliente ideal y cuáles son tus diferenciales. La estructura visual, los textos de venta y el desarrollo quedan 100% a cargo de la agencia.',
+        },
+        {
+          question: '¿Qué no puede faltar en una página de inicio profesional?',
+          answer: 'Un título claro con tu propuesta de valor, un botón de contacto rápido por WhatsApp, la lista de tus principales servicios, testimonios de clientes y carga rápida en el móvil.',
+        },
+        {
+          question: '¿Cuánto tiempo lleva planificar y crear un sitio profesional?',
+          answer: 'Con un método organizado como el de Web Lunar, la planificación lleva de 2 a 3 días y el sitio completo sale al aire en 7 a 15 días hábiles.',
+        },
+      ],
+      conclusion: 'Una buena planificación de sitio es el camino más corto para dejar de depender solo de recomendaciones y empezar a atraer clientes desde Google todos los días.',
     },
     'landing-page-ou-site-institucional': {
       slug: 'landing-page-ou-site-institucional',
-      title: 'Landing Page o Sitio Web Completo: ¿Cuál elegir para tu negocio?',
-      date: '08 de Agosto, 2026',
-      readTime: '4 min de lectura',
+      title: 'Landing Page o Sitio Institucional: Diferencias, Precios y Cuál Vende Más en 2026',
+      date: '14 de Octubre, 2026',
+      readTime: '5 min de lectura',
       category: 'Estrategia y Conversión',
-      excerpt: 'Conoce la diferencia fundamental entre una página enfocada en ventas y un sitio institucional con varias páginas.',
+      excerpt: 'Explorando los tipos de sitios: entiende la diferencia práctica entre una landing page y un sitio institucional, cuánto cuesta cada uno y cuál elegir para conseguir clientes rápido.',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80',
       author: {
         name: 'Equipo Web Lunar',
@@ -786,38 +1018,55 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: '¿Qué es una Landing Page?',
+          heading: 'Explorando los tipos de sitios: Landing Page vs Sitio Institucional',
           paragraphs: [
-            'Es una página única diseñada específicamente para guiar al visitante hacia una sola acción: solicitar una cotización o contratar un servicio.',
-            'Es la mejor alternativa para anuncios en Google Ads, Meta Ads y lanzamientos puntuales.',
+            'Al llevar tu empresa a internet, la duda más común es elegir entre una landing page (página de alta conversión) o un sitio institucional completo.',
+            'Aunque ambos funcionan muy bien, cada uno fue diseñado para un objetivo comercial distinto, y elegir el modelo correcto ahorra dinero y acelera el retorno de la inversión.',
           ],
         },
         {
-          heading: '¿Qué es un Sitio Institucional?',
+          heading: '¿Cuándo elegir una Landing Page?',
           paragraphs: [
-            'Un portal corporativo con múltiples páginas (Inicio, Nosotros, Servicios, Portafolio, Blog, Contacto). Funciona como la sede digital de tu empresa para posicionamiento y reputación de marca.',
+            'La landing page es una página única y directa, creada con técnicas de persuasión y foco total en que el visitante haga clic en el botón de cotización o de WhatsApp. No tiene menús complejos que distraigan al cliente.',
+            'Es la campeona absoluta para quienes hacen anuncios en Google o Instagram y quieren recibir contactos calificados todos los días.',
+          ],
+        },
+        {
+          heading: '¿Cuándo elegir un Sitio Institucional completo?',
+          paragraphs: [
+            'El sitio institucional tiene varias páginas (Inicio, Nosotros, Servicios por separado, Portafolio, Blog y Contacto). Es la sede digital oficial de tu empresa, perfecta para posicionar muchas palabras clave en Google de forma gratuita y transmitir la imagen de una empresa líder.',
           ],
           list: [
-            'Landing Page: Ideal para tráfico pago y captación inmediata de clientes.',
-            'Sitio Institucional: Ideal para empresas consolidadas y múltiples líneas de servicios.',
+            'Landing Page: foco 100% en ventas rápidas, ideal para anuncios pagos (Google Ads / Meta Ads) y entrega en hasta 7 días.',
+            'Sitio Institucional: foco en autoridad de marca, múltiples servicios y posicionamiento orgánico en Google a mediano y largo plazo.',
           ],
         },
         {
-          heading: '¿Cuál elegir para tu momento actual?',
+          heading: 'Resumen: ¿cuál da más retorno financiero?',
           paragraphs: [
-            'Si buscas resultados rápidos y un presupuesto ágil, comienza con una Landing Page. Si necesitas presentar una estructura corporativa completa, elige un Sitio Institucional.',
+            'Si quieres un retorno rápido anunciando un servicio específico, empieza con una landing page de alta conversión. Si tu empresa ofrece varios servicios y quiere dominar las búsquedas orgánicas de Google en tu región, el sitio institucional con blog es la mejor inversión.',
           ],
         },
       ],
-      conclusion: 'No existe una opción equivocada, sino la herramienta adecuada para el momento de tu negocio.',
+      faqs: [
+        {
+          question: '¿Una landing page convierte más que un sitio común?',
+          answer: '¡Sí! En campañas de anuncios pagos, una landing page puede convertir de 3 a 5 veces más cotizaciones porque guía al visitante sin distracciones hasta el botón de WhatsApp.',
+        },
+        {
+          question: '¿Puedo empezar con una landing page y luego ampliarla a un sitio institucional?',
+          answer: '¡Sí! En Web Lunar desarrollamos tu landing page con una estructura modular, lo que permite agregar nuevas páginas y un blog en el futuro sin rehacer el sitio desde cero.',
+        },
+      ],
+      conclusion: '¿Todavía dudas entre landing page y sitio institucional? Escríbele a nuestro equipo por WhatsApp: analizamos tu negocio gratis y te indicamos el formato más rentable.',
     },
     '3-coisas-essenciais-para-passar-confianca': {
       slug: '3-coisas-essenciais-para-passar-confianca',
-      title: '3 elementos clave que todo sitio web nuevo necesita para generar confianza',
+      title: '3 cosas esenciales que todo sitio necesita para transmitir confianza',
       date: '02 de Agosto, 2026',
       readTime: '3 min de lectura',
       category: 'Buenas Prácticas',
-      excerpt: 'Diseño ordenado, carga rápida en móviles y botón de WhatsApp visible. Lo básico para empezar con éxito.',
+      excerpt: 'Diseño ordenado, buena velocidad en el móvil y botón de WhatsApp visible. Lo esencial para empezar con el pie derecho.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
       author: {
         name: 'Equipo Web Lunar',
@@ -825,39 +1074,45 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: '1. Claridad en los primeros 3 segundos',
+          heading: '1. Claridad inmediata en los primeros 3 segundos',
           paragraphs: [
-            'Al entrar a tu sitio, el visitante debe entender de inmediato qué haces y cómo puedes ayudarle. Titulares claros y tipografía moderna generan confianza al instante.',
+            'Cuando alguien entra a tu sitio, necesita entender en menos de 3 segundos qué haces y cómo puedes ayudarle. Títulos claros, tipografía moderna y una jerarquía visual bien definida transmiten profesionalismo al instante.',
           ],
         },
         {
-          heading: '2. Velocidade y adaptabilidad móvil',
+          heading: '2. Velocidad y estabilidad impecables',
           paragraphs: [
-            'Los sitios lentos generan desconfianza inmediata. La ingeniería web moderna asegura cargas instantáneas sin fallas en dispositivos móviles.',
+            'Los sitios lentos generan desconfianza inmediata. Un desarrollo moderno garantiza carga instantánea, sin trabarse ni romperse en el móvil del cliente.',
           ],
-          callout: 'Dato: Más del 50% de los usuarios abandonan un sitio si tarda más de 3 segundos en abrir.',
+          callout: 'Dato: más del 50% de los visitantes abandona un sitio si tarda más de 3 segundos en cargar por completo.',
         },
         {
-          heading: '3. Prueba social y contacto accesible',
+          heading: '3. Prueba social y contacto fácil',
           paragraphs: [
-            'Muestra testimonios reales, logos de clientes y un botón de WhatsApp flotante. Las personas se sienten mucho más seguras cuando saben que hay un equipo real disponible.',
+            'Incluye testimonios reales de clientes, logos de socios y un botón de WhatsApp siempre accesible. El visitante se siente mucho más seguro para cerrar negocio cuando percibe que hay personas reales y accesibles detrás de la empresa.',
           ],
           list: [
-            'Testimonios reales con nombre y cargo.',
-            'Botón de WhatsApp siempre visible.',
-            'Información clara de contacto y servicios.',
+            'Testimonios reales con nombre y rubro.',
+            'Botón flotante de WhatsApp directo.',
+            'Términos claros, datos de contacto y dirección o zona de atención.',
           ],
         },
       ],
-      conclusion: 'La confianza se construye en los detalles. Un sitio web bien hecho es tu mejor canal de ventas 24/7.',
+      faqs: [
+        {
+          question: '¿Cómo demostrar la autoridad de mi empresa en el sitio?',
+          answer: 'Mostrando opiniones reales de clientes satisfechos, números sobre los resultados que generas y fotos de tu equipo o de tu producto real.',
+        },
+      ],
+      conclusion: 'La confianza no se compra, se construye en los detalles. Un sitio bien hecho es tu mejor vendedor, trabajando las 24 horas del día.',
     },
     'como-escolher-empresa-de-criacao-de-sites': {
       slug: 'como-escolher-empresa-de-criacao-de-sites',
-      title: 'Cómo Contratar una Empresa de Creación de Sitios Web en 2026 (Sin Trampas)',
+      title: 'Cómo Contratar una Empresa de Creación de Sitios Web en 2026 (Sin Caer en Trampas)',
       date: '15 de Octubre, 2026',
       readTime: '5 min de lectura',
       category: 'Guía de Contratación',
-      excerpt: '¿Vas a contratar una agencia de sitios web? Conoce los 5 criterios esenciales para elegir un equipo que entregue velocidad, SEO y ventas.',
+      excerpt: '¿Vas a contratar una agencia o desarrollador de sitios? Conoce los 5 criterios esenciales para elegir una empresa de creación de sitios que cumpla plazos, aparezca en Google y venda.',
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
       author: {
         name: 'Equipo Web Lunar',
@@ -865,21 +1120,52 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
+          heading: '¿Por qué tantos empresarios se frustran al crear un sitio?',
+          paragraphs: [
+            'El mercado está lleno de promesas como "sitio listo en 24 horas por US$ 60" o de agencias tradicionales que cobran fortunas y tardan 4 meses en entregar una plantilla lenta en WordPress.',
+            'Contratar la empresa de creación de sitios correcta es la diferencia entre tener una máquina de ventas trabajando para ti las 24 horas o un dolor de cabeza que no trae ningún cliente.',
+          ],
+          callout: 'Regla número 1: nunca contrates un sitio solo porque el diseño se ve bonito en la computadora. Pide ver qué tan rápido es en el móvil y cómo aparece en Google.',
+        },
+        {
           heading: '5 criterios obligatorios antes de aprobar un presupuesto',
           paragraphs: [
-            'Antes de contratar cualquier agencia, verifica que el sitio sea 100% tuyo, que cargue rápido en el móvil, que los textos estén enfocados en ventas y que esté preparado para aparecer en Google.',
+            'Antes de firmar contrato con cualquier agencia de sitios o freelancer, revisa este checklist:',
+          ],
+          list: [
+            '1. ¿El sitio será 100% tuyo? Huye de empresas que te atan a "alquileres de sitio" donde lo pierdes todo si cancelas la mensualidad.',
+            '2. ¿El sitio abre rápido en el móvil? Pruébalo tú mismo con datos móviles: un sitio profesional abre en menos de 2 segundos. Si tarda, el cliente se va y Google lo relega.',
+            '3. ¿Los textos están pensados para vender? Un sitio que solo habla de la empresa no vende; necesita hablar del problema de tu cliente.',
+            '4. ¿Viene preparado para aparecer en Google? Pregunta si el sitio sale configurado para ser encontrado en las búsquedas, y no solo para verse bonito.',
+            '5. Portafolio real y funcionando: entra a los sitios que la agencia ya creó y prueba la navegación desde tu propio móvil.',
+          ],
+        },
+        {
+          heading: 'Cómo funciona el método de Web Lunar',
+          paragraphs: [
+            'En Web Lunar unimos lo mejor de los dos mundos: la visión comercial de una agencia enfocada en ventas con un desarrollo a medida, liviano y rápido. Entregamos proyectos sin mensualidades ocultas, ya conectados a tu WhatsApp y listos para aparecer en Google.',
           ],
         },
       ],
-      conclusion: '¿Quieres una cotización transparente para el sitio web de tu empresa? Contáctanos por WhatsApp.',
+      faqs: [
+        {
+          question: '¿Conviene más contratar una agencia de sitios o un freelancer?',
+          answer: 'Lo ideal es una agencia ágil y especializada como Web Lunar: hablas directamente con quien desarrolla (sin intermediarios), con calidad de nivel sénior y cumplimiento estricto de plazos.',
+        },
+        {
+          question: '¿Qué debe incluir el presupuesto de creación de un sitio?',
+          answer: 'Diseño personalizado para móvil y computadora, optimización básica para Google, integración con botón de WhatsApp/formulario, configuración de dominio y seguridad, y entrega de la propiedad total del sitio.',
+        },
+      ],
+      conclusion: '¿Quieres un presupuesto transparente y sin compromiso para el sitio de tu empresa? Haz clic en el botón de WhatsApp de este sitio y recibe un análisis personalizado hoy mismo.',
     },
     'como-aparecer-no-google-com-site-novo': {
       slug: 'como-aparecer-no-google-com-site-novo',
-      title: 'Cómo Aparecer en la Primera Página de Google con un Sitio Web Nuevo en 2026',
+      title: 'Cómo Aparecer en la Primera Página de Google con un Sitio Nuevo en 2026',
       date: '15 de Octubre, 2026',
       readTime: '5 min de lectura',
       category: 'SEO y Google',
-      excerpt: '¿Creaste un sitio web pero nadie encuentra tu empresa en Google? Mira el paso a paso práctico de SEO para indexar rápido y atraer clientes.',
+      excerpt: '¿Creaste un sitio pero nadie encuentra tu empresa en las búsquedas? Mira el paso a paso práctico para indexarlo rápido y atraer clientes listos para comprar.',
       image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=1200&q=80',
       author: {
         name: 'Equipo Web Lunar',
@@ -887,15 +1173,39 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: 'Los 4 pilares para posicionar rápido en Google en 2026',
+          heading: '¿Por qué publicar el sitio no basta para aparecer en Google?',
           paragraphs: [
-            'Usar en el título principal las palabras que tus clientes realmente buscan, cargar al instante en el móvil, registrar tu sitio en las herramientas oficiales de Google y publicar artículos útiles genera clientes todos los días.',
+            'Muchas empresas publican un sitio y creen que, por arte de magia, va a aparecer en primer lugar cuando alguien busque su servicio en la ciudad. En la práctica, Google necesita entender exactamente de qué trata tu página, confiar en su velocidad y ver que responde al cliente mejor que tu competencia.',
           ],
         },
+        {
+          heading: 'Los 4 pilares para posicionar rápido en Google en 2026',
+          paragraphs: [
+            'Aplicamos estos cuatro pilares en todos los proyectos de Web Lunar para acelerar el posicionamiento orgánico:',
+          ],
+          list: [
+            '1. Las palabras que tu cliente realmente busca en el título principal: en lugar de frases vagas como "Bienvenido a nuestra empresa", usa "Creación de Sitios Web Profesionales" o el nombre exacto del servicio que el cliente escribe en Google.',
+            '2. Velocidad instantánea en el móvil: Google relega los sitios lentos. Las páginas que abren en menos de un segundo ganan prioridad en los resultados orgánicos.',
+            '3. Avisarle a Google que tu sitio existe: registrar el sitio en las herramientas oficiales de Google para que sea encontrado en días, y no en meses.',
+            '4. Artículos de blog que respondan dudas reales de compra: contenidos como tablas de precios, comparativas y guías atraen clientes calificados todos los días sin pagar por clic.',
+          ],
+          callout: 'Resultado práctico: un solo artículo bien posicionado en Google puede generar decenas de pedidos de cotización por mes en piloto automático, sin gastar en anuncios.',
+        },
       ],
-      conclusion: 'Transforma tu sitio web en un imán de clientes en Google con Web Lunar.',
+      faqs: [
+        {
+          question: '¿Cuánto tarda un sitio nuevo en aparecer en Google?',
+          answer: 'Con el sitio registrado correctamente en las herramientas de Google, empieza a aparecer en las búsquedas entre 24 horas y 7 días. Las posiciones para términos competidos siguen mejorando durante los primeros 30 a 90 días.',
+        },
+        {
+          question: '¿Web Lunar entrega el sitio ya optimizado para Google?',
+          answer: '¡Sí! Todos nuestros sitios salen listos para Google: títulos estratégicos, descripciones que invitan al clic, imágenes livianas, carga rápida y registro hecho en las herramientas de Google.',
+        },
+      ],
+      conclusion: '¿Quieres convertir tu sitio en un imán de clientes en Google? Habla con Web Lunar y descubre cómo creamos sitios preparados para liderar las búsquedas de tu mercado.',
     },
   },
+
 };
 
 export const STATIC_BLOG_POSTS = BLOG_POSTS_I18N.pt;
