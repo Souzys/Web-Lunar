@@ -515,15 +515,15 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: 'Average Price Table (2026)',
           paragraphs: [
-            'Here are today’s investment ranges. For comparison, traditional agencies often charge $300 to $600 for a landing page alone:',
+            'Here are today’s standard investment ranges for modern high-performance web development. For comparison, traditional agencies often charge $1,500 to $3,500 for a landing page alone:',
           ],
           list: [
-            'High-Converting Landing Page: starting at $140 (Ideal for Google and Instagram ads and for receiving quote requests on WhatsApp, delivered in 5 to 10 days).',
-            'Full Business Website: $300 to $700 (Ideal for companies with several services, a blog and a strong presence on Google, 10 to 20 days).',
-            'Online Store / Catalog: starting at $500 (Sell products online with card payments, inventory control and fast loading).',
-            'Custom systems (bookings, dashboards, client areas): personalized quote based on the project.',
+            'High-Converting Landing Page: starting at $450 (Ideal for Google and Instagram ads, fast lead generation, delivered in 5 to 10 days).',
+            'Full Business Website: $1,200 to $2,500 (Ideal for companies with several services, a blog and a strong organic presence on Google, 10 to 20 days).',
+            'Online Store / Catalog: starting at $1,800 (Sell products online with card checkout, inventory management and fast loading).',
+            'Custom systems (bookings, dashboards, client portals): tailored quote based on project scope.',
           ],
-          callout: 'Important: be wary of $60 to $100 quotes with endless monthly fees. They usually rely on heavy pirated themes, have no security, and the website never truly belongs to your business.',
+          callout: 'Important: be wary of $100 to $200 offers with endless monthly fees. They usually rely on heavy pirated templates, have no security, and the website never truly belongs to your business.',
         },
         {
           heading: 'Essential Recurring Costs (Domain and Hosting)',
@@ -908,15 +908,15 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         {
           heading: 'Tabla de Precios Promedio (2026)',
           paragraphs: [
-            'Estos son los rangos de inversión actuales. Como referencia, las agencias tradicionales suelen cobrar entre US$ 300 y US$ 600 solo por una landing page:',
+            'Estos son los rangos de inversión habituales en el mercado internacional. Como referencia, las agencias tradicionales suelen cobrar entre US$ 1.500 y US$ 3.500 solo por una landing page:',
           ],
           list: [
-            'Landing Page de Alta Conversión: desde US$ 140 (Ideal para anuncios en Google e Instagram y para recibir cotizaciones por WhatsApp, entregada en 5 a 10 días).',
-            'Sitio Institucional Completo: de US$ 300 a US$ 700 (Ideal para empresas con varios servicios, blog y presencia fuerte en Google, 10 a 20 días).',
-            'Tienda Online / Catálogo: desde US$ 500 (Para vender productos online con pagos con tarjeta, control de stock y carga rápida).',
+            'Landing Page de Alta Conversión: desde US$ 450 (Ideal para anuncios en Google e Instagram y captación rápida de clientes, entregada en 5 a 10 días).',
+            'Sitio Institucional Completo: de US$ 1.200 a US$ 2.500 (Ideal para empresas con varios servicios, blog y presencia fuerte en Google, 10 a 20 días).',
+            'Tienda Online / Catálogo: desde US$ 1.800 (Para vender productos online con pasarelas de pago, control de stock y carga rápida).',
             'Sistemas a medida (reservas, paneles, áreas de clientes): presupuesto personalizado según el proyecto.',
           ],
-          callout: 'Importante: desconfía de presupuestos de US$ 60 a US$ 100 con mensualidades eternas. Suelen usar temas pesados piratas, no tienen seguridad y el sitio nunca pertenece realmente a tu empresa.',
+          callout: 'Importante: desconfía de ofertas de US$ 100 a US$ 200 con mensualidades eternas. Suelen usar temas pesados piratas, no tienen seguridad y el sitio nunca pertenece realmente a tu empresa.',
         },
         {
           heading: 'Costos Recurrentes Esenciales (Dominio y Hosting)',
