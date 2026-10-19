@@ -453,10 +453,10 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           callout: 'Regra de ouro da conversão: cada elemento da sua página precisa responder a uma dúvida do cliente ou remover uma barreira que impede o contato.',
         },
         {
-          heading: 'Quanto custa ter uma landing page profissional?',
+          heading: 'Investimento e Retorno: Vale a pena contratar uma landing page?',
           paragraphs: [
-            'Na Web Lunar, desenvolvemos landing pages de alta conversão a partir de R$ 700 para o Brasil (e a partir de $450 no mercado internacional), com entrega rápida entre 7 a 14 dias.',
-            'Como o foco é 100% em vendas, um único cliente fechado pelo site frequentemente já paga o investimento inicial da criação.',
+            'Na Web Lunar, desenvolvemos landing pages de alta conversão sob medida para o objetivo comercial de cada empresa, com prazos ágeis de entrega entre 7 a 14 dias úteis.',
+            'Como a estrutura é 100% pensada para gerar vendas e pedidos de orçamento no WhatsApp, o retorno sobre o investimento costuma acontecer já nos primeiros clientes conquistados através da página.',
           ],
         },
       ],
@@ -904,9 +904,9 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           callout: 'Golden rule of conversion: every sentence and element must either answer a buying concern or dismantle a hesitation.',
         },
         {
-          heading: 'How much does a bespoke landing page cost?',
+          heading: 'Investment & Return: Is a bespoke landing page worth it?',
           paragraphs: [
-            'At Web Lunar, we engineer high-converting landing pages starting at $450 USD (or R$ 700 for Brazil), delivered in 7 to 14 business days.',
+            'At Web Lunar, we engineer high-converting landing pages tailored to each business’s commercial goals, delivered within an agile 7 to 14 business day timeframe.',
             'Because the architecture is strictly conversion-centric, closing your first customer through the site typically pays for the entire initial build.',
           ],
         },
@@ -1355,10 +1355,10 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           callout: 'Regla fundamental de conversión: cada elemento de la página debe responder a una duda del cliente o eliminar un obstáculo que impida el contacto.',
         },
         {
-          heading: '¿Cuánto cuesta una landing page profesional?',
+          heading: 'Inversión y Retorno: ¿Vale la pena contratar una landing page?',
           paragraphs: [
-            'En Web Lunar desarrollamos landing pages de alto impacto desde $450 USD (o R$ 700 para Brasil), con entrega ágil entre 7 y 14 días laborables.',
-            'Como el enfoque está 100% en las ventas, un solo cliente cerrado a través de la página suele amortizar por completo la inversión inicial.',
+            'En Web Lunar desarrollamos landing pages de alta conversión a medida para los objetivos de cada negocio, con entregas ágiles entre 7 y 14 días laborables.',
+            'Como la estructura está 100% enfocada en las ventas y en generar contactos por WhatsApp, el retorno de la inversión suele alcanzarse con los primeros clientes captados a través de la página.',
           ],
         },
       ],
