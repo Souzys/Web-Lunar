@@ -293,7 +293,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     about: {
       tag: 'Sobre Nós',
-      title: 'Desenvolvemos sites e sistemas que unem design moderno, estratégia de conversão e tecnologia sólida — transformando ideias em soluções digitais que funcionam.',
+      title: 'Desenvolvemos sites e sistemas que unem design moderno, estratégia de conversão e tecnologia sólida, transformando ideias em soluções digitais que funcionam.',
       period: '2021–Presente',
     },
     services: {
@@ -430,7 +430,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     impact: {
       tag: 'AQUI VOCÊ ENCONTRA',
       descriptionBold: 'Desenvolvimento full stack especializado em criar sites e sistemas que geram resultados reais: mais leads, mais vendas, mais reservas. Unimos as tecnologias mais modernas e design estratégico',
-      descriptionFade: ' para transformar ideias em soluções digitais funcionais, rápidas e otimizadas — do wireframe ao deploy em produção.',
+      descriptionFade: ' para transformar ideias em soluções digitais funcionais, rápidas e otimizadas: do wireframe ao deploy em produção.',
       stats: {
         projects: 'Projetos entregues',
         clients: 'Clientes atendidos',
@@ -575,11 +575,11 @@ export const translations: Record<Language, TranslationDictionary> = {
       questions: [
         {
           q: 'A Web Lunar trabalha com clientes de outros estados ou países?',
-          a: 'Sim! Atendemos clientes de todo o Brasil e também internacionalmente. Todo o processo é feito de forma remota — reuniões por vídeo, entregas via plataformas colaborativas e comunicação ágil pelo WhatsApp ou Slack.',
+          a: 'Sim! Atendemos clientes de todo o Brasil e também internacionalmente. Todo o processo é feito de forma 100% remota: reuniões por vídeo, entregas via plataformas colaborativas e comunicação ágil pelo WhatsApp ou Slack.',
         },
         {
           q: 'Com que tipo de cliente vocês costumam trabalhar?',
-          a: 'Trabalhamos com empreendedores, startups e PMEs que precisam de presença digital estratégica. Se você quer um site que converte — não só um site bonito — provavelmente temos sinergia.',
+          a: 'Trabalhamos com empreendedores, startups e PMEs que precisam de presença digital estratégica. Se você quer um site que converte, não só um site bonito, provavelmente temos sinergia.',
         },
         {
           q: 'Qual é o prazo médio de entrega de um projeto?',
@@ -604,6 +604,14 @@ export const translations: Record<Language, TranslationDictionary> = {
       searchPlaceholder: 'Pesquisar artigos...',
       noResults: 'Nenhum artigo encontrado para a sua busca.',
       posts: [
+        {
+          slug: 'landing-page-que-vende-guia-pratico',
+          date: '19 de Outubro, 2026',
+          category: 'Conversão & Vendas',
+          title: 'Landing Page que Vende: O Guia Prático para Transformar Cliques em Clientes em 2026',
+          excerpt: 'Por que tantas páginas bonitas não vendem nada? Conheça os 5 elementos indispensáveis de uma landing page de alta conversão para atrair contatos qualificados no WhatsApp todos os dias.',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
+        },
         {
           slug: 'como-escolher-empresa-de-criacao-de-sites',
           date: '15 de Outubro, 2026',
@@ -820,7 +828,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     about: {
       tag: 'About Us',
-      title: 'We build websites and digital products that combine modern design, conversion strategy, and rock-solid tech — turning ideas into working digital solutions.',
+      title: 'We build websites and digital products that combine modern design, conversion strategy, and rock-solid tech, turning ideas into working digital solutions.',
       period: '2021–Present',
     },
     services: {
@@ -957,7 +965,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     impact: {
       tag: 'WHAT WE DELIVER',
       descriptionBold: 'Full stack development specialized in building websites and systems that generate real outcomes: more leads, sales, and bookings. We join modern tech with strategic design',
-      descriptionFade: ' to transform ideas into fast, functional, and optimized digital solutions — from wireframe to production.',
+      descriptionFade: ' to transform ideas into fast, functional, and optimized digital solutions: from wireframe to production.',
       stats: {
         projects: 'Projects delivered',
         clients: 'Clients served',
@@ -1102,11 +1110,11 @@ export const translations: Record<Language, TranslationDictionary> = {
       questions: [
         {
           q: 'Does Web Lunar work with clients globally or in other countries?',
-          a: 'Yes! We serve clients across the Americas, Europe, and worldwide. Our entire collaboration is remote — video syncs, collaborative Figma/GitHub reviews, and instant communication via WhatsApp or Slack.',
+          a: 'Yes! We serve clients across the Americas, Europe, and worldwide. Our entire collaboration is remote: video syncs, collaborative Figma/GitHub reviews, and instant communication via WhatsApp or Slack.',
         },
         {
           q: 'What type of clients do you typically partner with?',
-          a: 'We work with ambitious founders, high-growth startups, and established enterprises that need a strategic digital presence. If you want a platform that converts and performs — not just a generic template — we are the right fit.',
+          a: 'We work with ambitious founders, high-growth startups, and established enterprises that need a strategic digital presence. If you want a platform that converts and performs, not just a generic template, we are the right fit.',
         },
         {
           q: 'What is the average turnaround time for a project?',
@@ -1131,6 +1139,14 @@ export const translations: Record<Language, TranslationDictionary> = {
       searchPlaceholder: 'Search articles...',
       noResults: 'No articles found matching your query.',
       posts: [
+        {
+          slug: 'landing-page-que-vende-guia-pratico',
+          date: 'October 19, 2026',
+          category: 'Conversion & Growth',
+          title: 'High-Converting Landing Pages: The Practical Guide to Turning Clicks into Clients in 2026',
+          excerpt: 'Why do so many sleek pages fail to sell anything? Discover the 5 vital components of a high-converting landing page to pull qualified customer inquiries every day.',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
+        },
         {
           slug: 'como-escolher-empresa-de-criacao-de-sites',
           date: 'October 15, 2026',
@@ -1347,7 +1363,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     about: {
       tag: 'Nosotros',
-      title: 'Desarrollamos sitios web y sistemas que combinan diseño moderno, estrategia de conversión y tecnología sólida — transformando ideas en soluciones digitales que funcionan.',
+      title: 'Desarrollamos sitios web y sistemas que combinan diseño moderno, estrategia de conversión y tecnología sólida, transformando ideas en soluciones digitales que funcionan.',
       period: '2021–Presente',
     },
     services: {
@@ -1484,7 +1500,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     impact: {
       tag: 'LO QUE HACEMOS',
       descriptionBold: 'Desarrollo full stack especializado en crear sitios web y sistemas que generan resultados reales: más clientes potenciales, ventas y reservas. Combinamos tecnología moderna y diseño estratégico',
-      descriptionFade: ' para transformar ideas en soluciones digitales rápidas, funcionales y optimizadas — desde el wireframe hasta el despliegue.',
+      descriptionFade: ' para transformar ideas en soluciones digitales rápidas, funcionales y optimizadas: desde el wireframe hasta el despliegue.',
       stats: {
         projects: 'Proyectos entregados',
         clients: 'Clientes atendidos',
@@ -1658,6 +1674,14 @@ export const translations: Record<Language, TranslationDictionary> = {
       searchPlaceholder: 'Buscar artículos...',
       noResults: 'No se encontraron artículos para tu búsqueda.',
       posts: [
+        {
+          slug: 'landing-page-que-vende-guia-pratico',
+          date: '19 de Octubre, 2026',
+          category: 'Conversión y Ventas',
+          title: 'Landing Pages que Venden: La Guía Práctica para Convertir Clics en Clientes en 2026',
+          excerpt: '¿Por qué tantas páginas atractivas no consiguen clientes? Descubre los 5 elementos esenciales de una landing page de alta conversión para generar solicitudes por WhatsApp todos los días.',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
+        },
         {
           slug: 'como-escolher-empresa-de-criacao-de-sites',
           date: '15 de Octubre, 2026',

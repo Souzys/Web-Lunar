@@ -10,7 +10,7 @@ export const siteContent = {
       "Node.js & APIs",
     ],
     ctaBox: {
-      text: "Sites e sistemas que geram leads, vendas e resultados reais — não só visual bonito.",
+      text: "Sites e sistemas que geram leads, vendas e resultados reais, não só visual bonito.",
       buttonText: "Solicitar Orçamento",
     },
     bottomText: "Sites profissionais, otimizados para o Google e feitos para converter visitantes em clientes.",
@@ -23,7 +23,7 @@ export const siteContent = {
 
   industryCircles: {
     tag: "Sobre Nós",
-    title: "Desenvolvemos sites e sistemas que unem design moderno, estratégia de conversão e tecnologia sólida — transformando ideias em soluções digitais que funcionam.",
+    title: "Desenvolvemos sites e sistemas que unem design moderno, estratégia de conversão e tecnologia sólida, transformando ideias em soluções digitais que funcionam.",
     period: "2021–Now",
   },
 
@@ -196,7 +196,7 @@ export const siteContent = {
   impact: {
     tag: "AQUI VOCÊ ENCONTRA",
     descriptionBold: "Desenvolvimento full stack especializado em criar sites e sistemas que geram resultados reais: mais leads, mais vendas, mais reservas. Unimos as tecnologias mais modernas e design estratégico",
-    descriptionFade: " para transformar ideias em soluções digitais funcionais, rápidas e otimizadas — do wireframe ao deploy em produção.",
+    descriptionFade: " para transformar ideias em soluções digitais funcionais, rápidas e otimizadas: do wireframe ao deploy em produção.",
     stats: [
       { value: 50, prefix: "+", suffix: "", label: "Projetos entregues" },
       { value: 30, prefix: "+", suffix: "", label: "Clientes atendidos" },
@@ -310,11 +310,11 @@ export const siteContent = {
     questions: [
       {
         q: "A Web Lunar trabalha com clientes de outros estados ou países?",
-        a: "Sim! Atendemos clientes de todo o Brasil e também internacionalmente. Todo o processo é feito de forma remota — reuniões por vídeo, entregas via plataformas colaborativas e comunicação ágil pelo WhatsApp ou Slack.",
+        a: "Sim! Atendemos clientes de todo o Brasil e também internacionalmente. Todo o processo é feito de forma 100% remota: reuniões por vídeo, entregas via plataformas colaborativas e comunicação ágil pelo WhatsApp ou Slack.",
       },
       {
         q: "Com que tipo de cliente vocês costumam trabalhar?",
-        a: "Trabalhamos com empreendedores, startups e PMEs que precisam de presença digital estratégica. Se você quer um site que converte — não só um site bonito — provavelmente temos sinergia.",
+        a: "Trabalhamos com empreendedores, startups e PMEs que precisam de presença digital estratégica. Se você quer um site que converte, não só um site bonito, provavelmente temos sinergia.",
       },
       {
         q: "Qual é o prazo médio de entrega de um projeto?",

@@ -189,7 +189,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           list: [
             'Promessa clara no topo (Hero): diga exatamente o que você faz e qual resultado entrega.',
             'Prova social visível: depoimentos reais, logos de clientes atendidos ou números do seu negócio.',
-            'Apresentação objetiva dos serviços: sem textos técnicos difíceis — foque no benefício para o cliente.',
+            'Apresentação objetiva dos serviços: sem textos técnicos difíceis, foque no benefício direto para o cliente.',
             'Botão de WhatsApp estratégico: sempre visível no celular para quem quer atendimento imediato.',
             'FAQ (Perguntas Frequentes): quebre as principais objeções de preço e prazo na própria página inicial.',
           ],
@@ -235,7 +235,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
           heading: 'Explorando os tipos de sites: Landing Page vs Site Institucional',
           paragraphs: [
             'Na hora de colocar sua empresa na internet, a dúvida mais comum é escolher entre uma Landing Page (página de alta conversão) ou um Site Institucional completo.',
-            'Embora os dois funcionem muito bem, cada um foi desenhado para um objetivo comercial diferente — e escolher o modelo certo economiza dinheiro e acelera o retorno sobre o investimento.',
+            'Embora os dois funcionem muito bem, cada um foi desenhado para um objetivo comercial diferente, e escolher o modelo certo economiza dinheiro e acelera o retorno sobre o investimento.',
           ],
         },
         {
@@ -417,6 +417,64 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         },
       ],
       conclusion: 'Confiança não se compra, se constrói nos detalhes. Um site bem construído é o seu melhor vendedor trabalhando 24 horas por dia.',
+    },
+    'landing-page-que-vende-guia-pratico': {
+      slug: 'landing-page-que-vende-guia-pratico',
+      title: 'Landing Page que Vende: O Guia Prático para Transformar Cliques em Clientes em 2026',
+      date: '19 de Outubro, 2026',
+      readTime: '6 min de leitura',
+      category: 'Conversão & Vendas',
+      excerpt: 'Por que tantas páginas bonitas não vendem nada? Conheça os 5 elementos indispensáveis de uma landing page de alta conversão para atrair contatos qualificados no WhatsApp todos os dias.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
+      author: {
+        name: 'Equipe Web Lunar',
+        role: 'Estratégia de Conversão & UX',
+      },
+      sections: [
+        {
+          heading: 'O erro que faz 90% das landing pages queimarem dinheiro',
+          paragraphs: [
+            'Muitos empreendedores investem em anúncios no Google ou no Instagram, enviam centenas de pessoas para uma página bonita, mas ninguém clica no botão de contato.',
+            'O motivo costuma ser simples: excesso de distrações. Uma landing page não é um catálogo de fotos nem um folheto institucional. Ela existe para cumprir uma única missão: fazer a pessoa certa entender o seu valor e pedir um orçamento imediatamente.',
+          ],
+        },
+        {
+          heading: 'Os 5 elementos obrigatórios de uma página que converte de verdade',
+          paragraphs: [
+            'Ao desenhar qualquer projeto na Web Lunar, aplicamos uma arquitetura testada para garantir que cada visitante percorra um caminho natural até a compra:',
+          ],
+          list: [
+            '1. Título com promessa direta: o cliente descobre nos primeiros 3 segundos qual problema você resolve e qual benefício ele terá.',
+            '2. Botão de WhatsApp em destaque: botão fixo e visível o tempo todo na tela do celular, sem exigir formulários demorados.',
+            '3. Prova social antes da oferta: depoimentos reais com fotos, logos de clientes atendidos ou dados de projetos entregues geram confiança imediata.',
+            '4. Seção de serviços sem enrolação: explique o que está incluso no seu serviço de maneira limpa, destacando os diferenciais competitivos.',
+            '5. Carregamento instantâneo em 4G: se a página demorar mais de 2 segundos para abrir no celular, o cliente fecha a aba e clica no anúncio do concorrente.',
+          ],
+          callout: 'Regra de ouro da conversão: cada elemento da sua página precisa responder a uma dúvida do cliente ou remover uma barreira que impede o contato.',
+        },
+        {
+          heading: 'Quanto custa ter uma landing page profissional?',
+          paragraphs: [
+            'Na Web Lunar, desenvolvemos landing pages de alta conversão a partir de R$ 700 para o Brasil (e a partir de $450 no mercado internacional), com entrega rápida entre 7 a 14 dias.',
+            'Como o foco é 100% em vendas, um único cliente fechado pelo site frequentemente já paga o investimento inicial da criação.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Qual a diferença entre uma landing page e um site comum?',
+          answer: 'O site comum tem várias páginas, menus e links para redes sociais, o que pode dispersar a atenção. A landing page tem um único objetivo: direcionar o visitante para o botão de WhatsApp ou formulário de orçamento, sem distrações.',
+        },
+        {
+          question: 'Preciso investir em anúncios para ter resultados com uma landing page?',
+          answer: 'Os anúncios no Google Ads e Instagram aceleram os resultados nos primeiros dias. Porém, com uma boa otimização de SEO local que aplicamos no código, sua landing page também recebe visitas orgânicas e gratuitas pelo Google.',
+        },
+        {
+          question: 'Em quanto tempo uma landing page fica pronta?',
+          answer: 'Na Web Lunar, nosso processo ágil entrega a landing page completa, com textos persuasivos, design moderno e botão de WhatsApp configurado entre 7 e 14 dias úteis.',
+        },
+      ],
+      conclusion: 'Não deixe clientes irem para o concorrente por falta de uma página convincente. Fale com a equipe da Web Lunar e coloque no ar uma landing page feita sob medida para vender o seu serviço.',
     },
   },
   en: {
@@ -811,6 +869,64 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       ],
       conclusion: 'Want to turn your website into a customer magnet on Google? Talk to Web Lunar and see how we build websites ready to lead the searches in your market.',
     },
+    'landing-page-que-vende-guia-pratico': {
+      slug: 'landing-page-que-vende-guia-pratico',
+      title: 'High-Converting Landing Pages: The Practical Guide to Turning Clicks into Clients in 2026',
+      date: 'October 19, 2026',
+      readTime: '6 min read',
+      category: 'Conversion & Growth',
+      excerpt: 'Why do so many sleek pages fail to sell anything? Discover the 5 vital components of a high-converting landing page to pull qualified customer inquiries every day.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
+      author: {
+        name: 'Web Lunar Team',
+        role: 'Conversion Strategy & UX',
+      },
+      sections: [
+        {
+          heading: 'The costly mistake behind 90% of underperforming landing pages',
+          paragraphs: [
+            'Many founders spend hard-earned ad budgets driving visitors to a visually pleasant page, only to see zero conversion requests in return.',
+            'The culprit is usually friction and distraction. A true landing page is not an online brochure. It exists with one laser-focused objective: make the ideal buyer grasp your exact value and click your call-to-action without second guessing.',
+          ],
+        },
+        {
+          heading: 'The 5 essential pillars of a landing page that actually converts',
+          paragraphs: [
+            'When building custom landing pages at Web Lunar, we implement a rigorously tested layout designed to lead visitors straight toward engagement:',
+          ],
+          list: [
+            '1. Clear value proposition upfront: buyers must understand what problem you solve within their first 3 seconds on the page.',
+            '2. Prominent direct contact button: sticky and effortless to tap on mobile screens, bypassing tedious 10-field contact forms.',
+            '3. Genuine proof before the sales pitch: authentic testimonials, client logos, or hard delivery metrics establish credibility instantly.',
+            '4. Straightforward breakdown of deliverables: describe what is included clearly and transparently, highlighting your competitive advantages.',
+            '5. Sub-second load times on mobile: if a page takes more than 2 seconds to load over 4G, prospective buyers leave and hire your competitor.',
+          ],
+          callout: 'Golden rule of conversion: every sentence and element must either answer a buying concern or dismantle a hesitation.',
+        },
+        {
+          heading: 'How much does a bespoke landing page cost?',
+          paragraphs: [
+            'At Web Lunar, we engineer high-converting landing pages starting at $450 USD (or R$ 700 for Brazil), delivered in 7 to 14 business days.',
+            'Because the architecture is strictly conversion-centric, closing your first customer through the site typically pays for the entire initial build.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'What separates a landing page from a standard corporate website?',
+          answer: 'Standard websites feature complex navigation, multiple subpages, and scattered links that split attention. A landing page eliminates all distractions and funnels users directly to a single decisive action: reaching out.',
+        },
+        {
+          question: 'Do I need paid advertising to see results from a landing page?',
+          answer: 'Paid traffic via Google and Meta provides fast feedback. However, because we engineer technical SEO directly into the markup, your landing page also gains valuable free organic search visibility on Google.',
+        },
+        {
+          question: 'What is the turnaround time for a custom landing page?',
+          answer: 'Our streamlined workflow delivers a complete, persuasive, mobile-optimized landing page in 7 to 14 business days.',
+        },
+      ],
+      conclusion: 'Stop losing valuable customers to competitors with better-converting pages. Contact Web Lunar today to launch a landing page engineered to sell your services.',
+    },
   },
   es: {
     'site-com-ia-vs-wordpress-qual-ranqueia-melhor': {
@@ -1203,6 +1319,64 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         },
       ],
       conclusion: '¿Quieres convertir tu sitio en un imán de clientes en Google? Habla con Web Lunar y descubre cómo creamos sitios preparados para liderar las búsquedas de tu mercado.',
+    },
+    'landing-page-que-vende-guia-pratico': {
+      slug: 'landing-page-que-vende-guia-pratico',
+      title: 'Landing Pages que Venden: La Guía Práctica para Convertir Clics en Clientes en 2026',
+      date: '19 de Octubre, 2026',
+      readTime: '6 min de lectura',
+      category: 'Conversión y Ventas',
+      excerpt: '¿Por qué tantas páginas atractivas no consiguen clientes? Descubre los 5 elementos esenciales de una landing page de alta conversión para generar solicitudes por WhatsApp todos los días.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
+      author: {
+        name: 'Equipo Web Lunar',
+        role: 'Estrategia de Conversión y UX',
+      },
+      sections: [
+        {
+          heading: 'El error que hace perder dinero al 90% de las landing pages',
+          paragraphs: [
+            'Muchos emprendedores invierten en anuncios en Google o Instagram, envían cientos de personas a una página moderna, pero nadie solicita un presupuesto.',
+            'El motivo suele ser el exceso de distracciones. Una landing page no es un catálogo de fotos ni un folleto corporativo. Existe para cumplir un único objetivo: hacer que la persona indicada comprenda tu propuesta de valor y haga clic en el botón de contacto de inmediato.',
+          ],
+        },
+        {
+          heading: 'Los 5 elementos indispensables de una página que convierte clientes',
+          paragraphs: [
+            'Al diseñar cualquier proyecto en Web Lunar, aplicamos una estructura probada para guiar al visitante de forma natural hacia la contratación:',
+          ],
+          list: [
+            '1. Título con promesa directa: el usuario comprende en menos de 3 segundos qué problema resuelves y qué beneficio obtendrá.',
+            '2. Botón de WhatsApp destacado: botón fijo y siempre accesible en el móvil, sin obligar a llenar formularios largos.',
+            '3. Prueba social antes de la oferta: testimonios reales, logotipos de clientes o métricas de proyectos transmiten confianza inmediata.',
+            '4. Explicación clara de los servicios: detalla qué incluye tu solución de forma sencilla, resaltando tus ventajas competitivas.',
+            '5. Carga instantánea en el móvil: si la página tarda más de 2 segundos en abrir, el usuario vuelve atrás y contrata a tu competencia.',
+          ],
+          callout: 'Regla fundamental de conversión: cada elemento de la página debe responder a una duda del cliente o eliminar un obstáculo que impida el contacto.',
+        },
+        {
+          heading: '¿Cuánto cuesta una landing page profesional?',
+          paragraphs: [
+            'En Web Lunar desarrollamos landing pages de alto impacto desde $450 USD (o R$ 700 para Brasil), con entrega ágil entre 7 y 14 días laborables.',
+            'Como el enfoque está 100% en las ventas, un solo cliente cerrado a través de la página suele amortizar por completo la inversión inicial.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: '¿Cuál es la diferencia entre una landing page y un sitio web tradicional?',
+          answer: 'Un sitio tradicional tiene múltiples páginas, menús extensos y enlaces que dispersan la atención. La landing page tiene un solo objetivo: dirigir al usuario directamente al botón de WhatsApp o formulario de contacto, sin distracciones.',
+        },
+        {
+          question: '¿Necesito pagar publicidad para tener resultados con una landing page?',
+          answer: 'Los anuncios en Google Ads y redes sociales aceleran las visitas rápidamente. Sin embargo, gracias a la optimización de SEO técnico que aplicamos en el código, tu landing page también recibe visitas orgánicas y gratuitas en Google.',
+        },
+        {
+          question: '¿En cuánto tiempo queda lista una landing page?',
+          answer: 'Con nuestro flujo de desarrollo ágil, entregamos la página completa, con redacción persuasiva, diseño optimizado y botón de WhatsApp configurado en un plazo de 7 a 14 días hábiles.',
+        },
+      ],
+      conclusion: 'No dejes escapar clientes por no tener una página convincente. Habla con Web Lunar y publica una landing page diseñada para hacer crecer tu negocio.',
     },
   },
 
