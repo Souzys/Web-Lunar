@@ -39,14 +39,6 @@ export function Marquee({ children, speed = 1, direction = 'left', className, ..
     let startX = 0;
     let startProgress = 0;
 
-    const onMouseDown = (e: MouseEvent) => {
-      isDragging = true;
-      startX = e.clientX;
-      startProgress = tl.progress();
-      tl.pause();
-      wrapper.style.cursor = 'grabbing';
-    };
-
     const onMouseMove = (e: MouseEvent) => {
       if (!isDragging) return;
       const deltaX = e.clientX - startX;
@@ -64,17 +56,22 @@ export function Marquee({ children, speed = 1, direction = 'left', className, ..
       isDragging = false;
       tl.play();
       wrapper.style.cursor = 'grab';
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+
+    const onMouseDown = (e: MouseEvent) => {
+      isDragging = true;
+      startX = e.clientX;
+      startProgress = tl.progress();
+      tl.pause();
+      wrapper.style.cursor = 'grabbing';
+      window.addEventListener('mousemove', onMouseMove, { passive: true });
+      window.addEventListener('mouseup', onMouseUp);
     };
 
     // Mobile Touch Drag
     let startTouchX = 0;
-    const onTouchStart = (e: TouchEvent) => {
-      isDragging = true;
-      startTouchX = e.touches[0].clientX;
-      startProgress = tl.progress();
-      tl.pause();
-    };
-
     const onTouchMove = (e: TouchEvent) => {
       if (!isDragging) return;
       const deltaX = e.touches[0].clientX - startTouchX;
@@ -91,15 +88,21 @@ export function Marquee({ children, speed = 1, direction = 'left', className, ..
       if (!isDragging) return;
       isDragging = false;
       tl.play();
+      wrapper.removeEventListener('touchmove', onTouchMove);
+      wrapper.removeEventListener('touchend', onTouchEnd);
+    };
+
+    const onTouchStart = (e: TouchEvent) => {
+      isDragging = true;
+      startTouchX = e.touches[0].clientX;
+      startProgress = tl.progress();
+      tl.pause();
+      wrapper.addEventListener('touchmove', onTouchMove, { passive: true });
+      wrapper.addEventListener('touchend', onTouchEnd);
     };
 
     wrapper.addEventListener('mousedown', onMouseDown);
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('mouseup', onMouseUp);
-
     wrapper.addEventListener('touchstart', onTouchStart, { passive: true });
-    wrapper.addEventListener('touchmove', onTouchMove, { passive: true });
-    wrapper.addEventListener('touchend', onTouchEnd);
 
     wrapper.style.cursor = 'grab';
 

@@ -1,10 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { getServiceIcon } from '@/components/ui/ServiceIcons';
 import { useLanguage } from '@/context/LanguageContext';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface ServiceCardData {
   title: string;
@@ -17,26 +23,40 @@ interface ServiceCardData {
 }
 
 function ServiceCard({ service, index }: { service: ServiceCardData; index: number }) {
-  const [isFlipped, setIsFlipped] = React.useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [is3DActive, setIs3DActive] = useState(false);
   const { t } = useLanguage();
+
+  const handleToggleFlip = () => {
+    setIs3DActive(true);
+    setIsFlipped((prev) => !prev);
+  };
+
+  const handleTransitionEnd = () => {
+    if (!isFlipped) {
+      setIs3DActive(false);
+    }
+  };
 
   return (
     <div 
-      className="h-[340px] w-full [perspective:1000px] cursor-pointer"
-      onClick={() => setIsFlipped(!isFlipped)}
+      data-service-card
+      className={`h-[340px] w-full cursor-pointer ${is3DActive || isFlipped ? '[perspective:1000px]' : ''}`}
+      onClick={handleToggleFlip}
     >
       <div 
         className="relative w-full h-full transition-transform duration-700 ease-in-out"
+        onTransitionEnd={handleTransitionEnd}
         style={{ 
-          transformStyle: 'preserve-3d',
+          transformStyle: is3DActive || isFlipped ? 'preserve-3d' : 'flat',
           transform: isFlipped ? 'rotateY(180deg)' : 'none'
         }}
       >
         {/* LADO DA FRENTE */}
         <div 
-          className="absolute inset-0 w-full h-full group bg-white/80 hover:bg-white border border-black/[0.05] hover:border-primary/30 p-5 flex flex-col justify-between rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+          className="absolute inset-0 w-full h-full group bg-white border border-black/[0.05] hover:border-primary/30 p-5 flex flex-col justify-between rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
           style={{ 
-            backfaceVisibility: 'hidden',
+            backfaceVisibility: is3DActive || isFlipped ? 'hidden' : 'visible',
             pointerEvents: isFlipped ? 'none' : 'auto'
           }}
         >
@@ -48,7 +68,7 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
             <span className="font-display text-xl font-black text-black/20 group-hover:text-primary transition-colors duration-300">
               0{index + 1}
             </span>
-            <div className="w-7 h-7 border border-neutral-200 group-hover:border-primary/30 group-hover:bg-primary/10 text-neutral-400 group-hover:text-primary group-hover:-rotate-45 flex items-center justify-center rounded-full transition-all duration-300 bg-white/50 shadow-sm backdrop-blur-sm">
+            <div className="w-7 h-7 border border-neutral-200 group-hover:border-primary/30 group-hover:bg-primary/10 text-neutral-400 group-hover:text-primary group-hover:-rotate-45 flex items-center justify-center rounded-full transition-all duration-300 bg-white shadow-sm">
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 19L19 5M19 5v10M19 5H9" />
               </svg>
@@ -57,7 +77,7 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
 
           {/* Middle Animated SVG Visual Area */}
           <div className="relative z-10 my-1 h-[135px] w-full flex items-center justify-center pointer-events-none overflow-visible">
-            {getServiceIcon(`0${index + 1}`, "w-32 h-32 text-neutral-800 transition-all duration-300 group-hover:scale-105")}
+            {getServiceIcon(`0${index + 1}`, "w-32 h-32 text-neutral-800 transition-transform duration-300 group-hover:scale-105")}
           </div>
 
           {/* Bottom Section */}
@@ -77,6 +97,7 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
           style={{ 
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
+            visibility: is3DActive || isFlipped ? 'visible' : 'hidden',
             pointerEvents: isFlipped ? 'auto' : 'none'
           }}
         >
@@ -123,6 +144,9 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
 
 export function Services() {
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [iconsPaused, setIconsPaused] = useState(true);
 
   const serviceItems: ServiceCardData[] = [
     t.services.items.landingPages,
@@ -133,8 +157,58 @@ export function Services() {
     t.services.items.performance,
   ];
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    const grid = gridRef.current;
+    if (!section || !grid) return;
+
+    // 1. Pausa animações de SVG quando a seção está fora da tela para preservar 120 FPS
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIconsPaused(!entry.isIntersecting);
+      },
+      { rootMargin: '100px 0px', threshold: 0 }
+    );
+    observer.observe(section);
+
+    // 2. Um único ScrollTrigger unificado para todos os 6 cards (elimina 6 gatilhos simultâneos)
+    const cards = grid.querySelectorAll('[data-service-card]');
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cards,
+        { y: 36, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.75,
+          stagger: 0.07,
+          ease: 'power2.out',
+          force3D: true,
+          scrollTrigger: {
+            trigger: grid,
+            start: 'top 82%',
+            once: true,
+          },
+          onComplete: () => {
+            gsap.set(cards, { clearProps: 'transform' });
+          },
+        }
+      );
+    }, grid);
+
+    return () => {
+      observer.disconnect();
+      ctx.revert();
+    };
+  }, []);
+
   return (
-    <section id="service" className="py-20 md:py-24 bg-[#FAFAFA] text-neutral-900 relative overflow-hidden border-t border-black/5">
+    <section
+      id="service"
+      ref={sectionRef}
+      data-icons-paused={iconsPaused ? 'true' : 'false'}
+      className="py-20 md:py-24 bg-[#FAFAFA] text-neutral-900 relative overflow-hidden border-t border-black/5"
+    >
       {/* Background Grid & Optimized Glows */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000004_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)] bg-[size:40px_40px]" />
@@ -158,11 +232,9 @@ export function Services() {
         </div>
 
         {/* Services Premium Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {serviceItems.map((service, index) => (
-            <AnimatedSection key={index} options={{ delay: index * 0.08 }}>
-              <ServiceCard service={service} index={index} />
-            </AnimatedSection>
+            <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
       </div>

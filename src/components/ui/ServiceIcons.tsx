@@ -49,21 +49,23 @@ export function LandingPagesIcon({ className = DEFAULT_CLASS }: IconProps) {
         .lp-funnel-path {
           stroke-dasharray: 40;
           animation: lpFunnelDot 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          will-change: stroke-dashoffset, opacity;
         }
         .lp-cursor-g {
           animation: lpCursorGlide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          will-change: transform, opacity;
         }
         .lp-btn-rect {
           transform-origin: 45px 91px;
           animation: lpBtnPulse 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          will-change: transform;
         }
         .lp-spark-ring {
           transform-origin: 45px 91px;
           animation: lpSparkPop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          will-change: transform, opacity;
+        }
+        [data-icons-paused="true"] .lp-funnel-path,
+        [data-icons-paused="true"] .lp-cursor-g,
+        [data-icons-paused="true"] .lp-btn-rect,
+        [data-icons-paused="true"] .lp-spark-ring {
+          animation-play-state: paused;
         }
         @media (prefers-reduced-motion: reduce) {
           .lp-funnel-path, .lp-cursor-g, .lp-btn-rect, .lp-spark-ring { animation: none !important; }
@@ -136,10 +138,16 @@ export function SitesAppsIcon({ className = DEFAULT_CLASS }: IconProps) {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-4px); }
         }
-        .sa-block-1 { animation: saBlockFade1 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
-        .sa-block-2 { animation: saBlockFade2 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
-        .sa-block-3 { animation: saBlockFade3 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
-        .sa-code-tag { animation: saTagFloat 3s ease-in-out infinite; will-change: transform; }
+        .sa-block-1 { animation: saBlockFade1 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        .sa-block-2 { animation: saBlockFade2 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        .sa-block-3 { animation: saBlockFade3 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        .sa-code-tag { animation: saTagFloat 3s ease-in-out infinite; }
+        [data-icons-paused="true"] .sa-block-1,
+        [data-icons-paused="true"] .sa-block-2,
+        [data-icons-paused="true"] .sa-block-3,
+        [data-icons-paused="true"] .sa-code-tag {
+          animation-play-state: paused;
+        }
         @media (prefers-reduced-motion: reduce) {
           .sa-block-1, .sa-block-2, .sa-block-3, .sa-code-tag { animation: none !important; }
         }
@@ -210,10 +218,16 @@ export function EcommerceIcon({ className = DEFAULT_CLASS }: IconProps) {
           0% { stroke-dashoffset: 35; }
           100% { stroke-dashoffset: 0; }
         }
-        .ec-item-circle { animation: ecItemDrop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
-        .ec-card-g { animation: ecCardSlide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
-        .ec-check-g { transform-origin: 125px 95px; animation: ecCheckPop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
-        .ec-dot-line { stroke-dasharray: 4 4; animation: ecDotTravel 2s linear infinite; will-change: stroke-dashoffset; }
+        .ec-item-circle { animation: ecItemDrop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        .ec-card-g { animation: ecCardSlide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        .ec-check-g { transform-origin: 125px 95px; animation: ecCheckPop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        .ec-dot-line { stroke-dasharray: 4 4; animation: ecDotTravel 2s linear infinite; }
+        [data-icons-paused="true"] .ec-item-circle,
+        [data-icons-paused="true"] .ec-card-g,
+        [data-icons-paused="true"] .ec-check-g,
+        [data-icons-paused="true"] .ec-dot-line {
+          animation-play-state: paused;
+        }
         @media (prefers-reduced-motion: reduce) {
           .ec-item-circle, .ec-card-g, .ec-check-g, .ec-dot-line { animation: none !important; }
         }
@@ -275,10 +289,16 @@ export function BookingIcon({ className = DEFAULT_CLASS }: IconProps) {
           30%, 80% { transform: translateY(0) scale(1); opacity: 1; }
           90%, 100% { transform: translateY(-5px) scale(0); opacity: 0; }
         }
-        .bk-hour-hand { transform-origin: 116px 112px; animation: clockSpinHour 12s linear infinite; will-change: transform; }
-        .bk-minute-hand { transform-origin: 116px 112px; animation: clockSpinMinute 12s linear infinite; will-change: transform; }
-        .bk-active-day { transform-origin: 82px 82px; animation: bkRingPulse 2.5s ease-in-out infinite; will-change: transform, opacity; }
-        .bk-notif-g { transform-origin: 40px 125px; animation: bkNotifPop 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform, opacity; }
+        .bk-hour-hand { transform-origin: 116px 112px; animation: clockSpinHour 12s linear infinite; }
+        .bk-minute-hand { transform-origin: 116px 112px; animation: clockSpinMinute 12s linear infinite; }
+        .bk-active-day { transform-origin: 82px 82px; animation: bkRingPulse 2.5s ease-in-out infinite; }
+        .bk-notif-g { transform-origin: 40px 125px; animation: bkNotifPop 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+        [data-icons-paused="true"] .bk-hour-hand,
+        [data-icons-paused="true"] .bk-minute-hand,
+        [data-icons-paused="true"] .bk-active-day,
+        [data-icons-paused="true"] .bk-notif-g {
+          animation-play-state: paused;
+        }
         @media (prefers-reduced-motion: reduce) {
           .bk-hour-hand, .bk-minute-hand, .bk-active-day, .bk-notif-g { animation: none !important; }
         }
@@ -345,38 +365,38 @@ export function IntegrationsIcon({ className = DEFAULT_CLASS }: IconProps) {
         .int-flow-line {
           stroke-dasharray: 6 12;
           animation: intPacketFlow 2s linear infinite;
-          will-change: stroke-dashoffset;
         }
         .int-hub-g {
           transform-origin: 80px 80px;
           animation: intHubPulse 3s ease-in-out infinite;
-          will-change: transform;
+        }
+        [data-icons-paused="true"] .int-flow-line,
+        [data-icons-paused="true"] .int-hub-g {
+          animation-play-state: paused;
         }
         @media (prefers-reduced-motion: reduce) {
           .int-flow-line, .int-hub-g { animation: none !important; }
         }
       `}</style>
 
-      {/* Layer 1: Elegant Bezier Connection Lines */}
-      {/* Node 1: Circle (30, 30) */}
-      <path d="M 30 30 Q 55 55 80 80" stroke="#E5E7EB" strokeWidth="2" />
-      <path d="M 30 30 Q 55 55 80 80" stroke="#1D4DFF" strokeWidth="2" className="int-flow-line" />
-
-      {/* Node 2: Square (130, 30) */}
-      <path d="M 130 30 Q 105 55 80 80" stroke="#E5E7EB" strokeWidth="2" />
-      <path d="M 130 30 Q 105 55 80 80" stroke="#06B6D4" strokeWidth="2" className="int-flow-line" />
-
-      {/* Node 3: Diamond (135, 125) */}
-      <path d="M 135 125 Q 110 100 80 80" stroke="#E5E7EB" strokeWidth="2" />
-      <path d="M 135 125 Q 110 100 80 80" stroke="#1D4DFF" strokeWidth="2" className="int-flow-line" />
-
-      {/* Node 4: Triangle (80, 142) */}
-      <path d="M 80 142 L 80 80" stroke="#E5E7EB" strokeWidth="2" />
-      <path d="M 80 142 L 80 80" stroke="#06B6D4" strokeWidth="2" className="int-flow-line" />
-
-      {/* Node 5: Pill (25, 125) */}
-      <path d="M 25 125 Q 50 100 80 80" stroke="#E5E7EB" strokeWidth="2" />
-      <path d="M 25 125 Q 50 100 80 80" stroke="#1D4DFF" strokeWidth="2" className="int-flow-line" />
+      {/* Layer 1: Elegant Bezier Connection Lines (Batch Optimized into Single Paths) */}
+      <path
+        d="M 30 30 Q 55 55 80 80 M 130 30 Q 105 55 80 80 M 135 125 Q 110 100 80 80 M 80 142 L 80 80 M 25 125 Q 50 100 80 80"
+        stroke="#E5E7EB"
+        strokeWidth="2"
+      />
+      <path
+        d="M 30 30 Q 55 55 80 80 M 135 125 Q 110 100 80 80 M 25 125 Q 50 100 80 80"
+        stroke="#1D4DFF"
+        strokeWidth="2"
+        className="int-flow-line"
+      />
+      <path
+        d="M 130 30 Q 105 55 80 80 M 80 142 L 80 80"
+        stroke="#06B6D4"
+        strokeWidth="2"
+        className="int-flow-line"
+      />
 
       {/* Peripheral Nodes */}
       {/* Node 1: Circle */}
@@ -443,16 +463,18 @@ export function PerformanceIcon({ className = DEFAULT_CLASS }: IconProps) {
         .perf-needle-g {
           transform-origin: 80px 105px;
           animation: perfNeedleRev 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          will-change: transform;
         }
         .perf-graph-path {
           stroke-dasharray: 120;
           animation: perfGraphDraw 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          will-change: stroke-dashoffset;
         }
         .perf-glass-g {
           animation: perfGlassSlide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          will-change: transform, opacity;
+        }
+        [data-icons-paused="true"] .perf-needle-g,
+        [data-icons-paused="true"] .perf-graph-path,
+        [data-icons-paused="true"] .perf-glass-g {
+          animation-play-state: paused;
         }
         @media (prefers-reduced-motion: reduce) {
           .perf-needle-g, .perf-graph-path, .perf-glass-g { animation: none !important; }

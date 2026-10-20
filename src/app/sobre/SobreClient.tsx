@@ -59,6 +59,7 @@ export function SobreClient() {
   const yCombinedTo = useRef<any>(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const hero = heroRef.current;
     const glow = glowRef.current;
     if (!hero || !glow) return;
@@ -79,7 +80,23 @@ export function SobreClient() {
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+
+    // Desliga a visibilidade do Hero quando o conteúdo rolar por cima, pausando animações 3D de fundo
+    const trigger = ScrollTrigger.create({
+      trigger: ".sobre-content-overlay",
+      start: "top top",
+      end: "max",
+      onToggle: (self) => {
+        if (hero) {
+          hero.style.visibility = self.isActive ? 'hidden' : 'visible';
+        }
+      },
+    });
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      trigger.kill();
+    };
   }, []);
 
   return (
@@ -92,7 +109,7 @@ export function SobreClient() {
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div 
             ref={glowRef}
-            className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 pointer-events-none"
+            className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[90px] opacity-40 pointer-events-none transform-gpu"
             style={{
               left: 0,
               top: 0,
@@ -135,7 +152,7 @@ export function SobreClient() {
       {/* =========================================
           SCROLLING OVERLAY CONTENT
       ========================================= */}
-      <div className="relative z-10 bg-bg w-full mt-[100vh]">
+      <div className="sobre-content-overlay relative z-10 bg-bg w-full mt-[100vh]">
       
       {/* =========================================
           BLOCO 01: MANIFESTO CORPORATIVO
@@ -271,9 +288,8 @@ export function SobreClient() {
       <section 
         className="py-24 border-t border-white/5 bg-[#020408] relative overflow-hidden"
         onMouseMove={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect();
-          const x = e.clientX - rect.left - 400;
-          const y = e.clientY - rect.top - 400;
+          const x = (e.nativeEvent as any).offsetX - 400;
+          const y = (e.nativeEvent as any).offsetY - 400;
           
           if (!xCombinedTo.current && glowCombinedRef.current) {
             xCombinedTo.current = gsap.quickTo(glowCombinedRef.current, "x", { duration: 1.5, ease: "power2.out" });
@@ -294,7 +310,7 @@ export function SobreClient() {
           }
         }}
       >
-        <div ref={glowCombinedRef} className="absolute w-[800px] h-[800px] bg-primary/15 rounded-full blur-[100px] opacity-0 pointer-events-none top-0 left-0 will-change-transform" />
+        <div ref={glowCombinedRef} className="absolute w-[800px] h-[800px] bg-primary/15 rounded-full blur-[80px] opacity-0 pointer-events-none top-0 left-0 transform-gpu" />
         
         <div className="container mx-auto max-w-[1440px] px-6">
           {/* MODELOS DE ENGAJAMENTO */}

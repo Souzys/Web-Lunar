@@ -51,7 +51,7 @@ export function BlogClient() {
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div
             ref={glowRef}
-            className="absolute w-[800px] h-[800px] bg-primary/15 rounded-full blur-[140px] opacity-40 mix-blend-screen pointer-events-none"
+            className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[90px] opacity-40 pointer-events-none transform-gpu"
             style={{ left: 0, top: 0, willChange: 'transform' }}
           />
         </div>

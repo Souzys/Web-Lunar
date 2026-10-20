@@ -52,6 +52,7 @@ export function IsometricWireframe() {
           animate();
           tl.play();
         } else {
+          cancelAnimationFrame(animationFrame);
           tl.pause();
         }
       },

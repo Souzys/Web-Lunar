@@ -56,6 +56,9 @@ export function useGsapReveal(
             once: true,
             markers: markers,
           },
+          onComplete: () => {
+            gsap.set(elements, { clearProps: 'transform' });
+          },
         }
       );
     });

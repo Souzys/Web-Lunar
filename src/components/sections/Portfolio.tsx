@@ -25,9 +25,6 @@ interface ProjectItem {
 
 function ProjectCard({ project, index }: { project: ProjectItem; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const [hovered, setHovered] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -38,25 +35,17 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
         { opacity: 0, y: 60 },
         {
           opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+          force3D: true,
           scrollTrigger: { trigger: card, start: 'top 88%', once: true },
           delay: (index % 3) * 0.12,
+          onComplete: () => {
+            gsap.set(card, { clearProps: 'transform' });
+          },
         }
       );
     }, card);
     return () => ctx.revert();
   }, [index]);
-
-  const handleEnter = () => {
-    setHovered(true);
-    if (imgRef.current) gsap.to(imgRef.current, { scale: 1.08, duration: 0.6, ease: 'power2.out' });
-    if (overlayRef.current) gsap.to(overlayRef.current, { opacity: 1, duration: 0.35, ease: 'power2.out' });
-  };
-
-  const handleLeave = () => {
-    setHovered(false);
-    if (imgRef.current) gsap.to(imgRef.current, { scale: 1, duration: 0.6, ease: 'power2.out' });
-    if (overlayRef.current) gsap.to(overlayRef.current, { opacity: 0, duration: 0.35, ease: 'power2.out' });
-  };
 
   const projectUrl = `/projetos/${project.id}`;
 
@@ -66,28 +55,22 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
       href={projectUrl}
       className="group relative cursor-pointer col-span-1 block text-left"
       style={{ opacity: 0 }}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
     >
       {/* Image Container */}
       <div className="relative overflow-hidden rounded-xl border border-black/5 bg-[#080b12] shadow-sm aspect-[1902/885]">
         <img
-          ref={imgRef}
           src={project.image}
           alt={project.title}
           width={800}
           height={450}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover object-top"
-          style={{ transformOrigin: 'top center', willChange: 'transform' }}
+          className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
+          style={{ transformOrigin: 'top center' }}
         />
 
-        {/* Hover overlay */}
-        <div
-          ref={overlayRef}
-          className="absolute inset-0 bg-primary/20 backdrop-blur-[2px] opacity-0 flex items-center justify-center pointer-events-none transition-opacity duration-300"
-        >
+        {/* Hover overlay — 100% nativo com aceleração por GPU */}
+        <div className="absolute inset-0 bg-primary/25 opacity-0 group-hover:opacity-100 flex items-center justify-center pointer-events-none transition-opacity duration-300">
           <span className="w-12 h-12 rounded-full bg-white text-primary flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform duration-300">
             <ArrowUpRight className="w-6 h-6" />
           </span>
@@ -104,16 +87,7 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
             {project.category}
           </span>
         </div>
-        <span
-          className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-widest transition-all duration-200 bg-black/5 px-3 py-1 rounded-full text-neutral-600 shrink-0"
-          style={{ 
-            color: hovered ? '#1D4DFF' : '#555', 
-            opacity: hovered ? 1 : 0, 
-            borderColor: hovered ? '#1D4DFF' : 'transparent', 
-            borderWidth: 1,
-            background: hovered ? 'transparent' : 'rgba(0,0,0,0.05)'
-          }}
-        >
+        <span className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-widest transition-all duration-200 bg-black/5 px-3 py-1 rounded-full text-neutral-600 shrink-0 opacity-0 group-hover:opacity-100 group-hover:text-primary group-hover:border-primary border border-transparent group-hover:bg-transparent">
           {t.portfolio.verCase} <ArrowUpRight className="w-3 h-3" />
         </span>
       </div>

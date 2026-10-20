@@ -9,15 +9,14 @@ if (typeof window !== "undefined") {
 
 export function useLenis() {
   useEffect(() => {
-    const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-
     const lenis = new Lenis({
-      lerp: 0.1,
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1,
+      touchMultiplier: 1.2,
       syncTouch: false, // Preserva o scroll nativo ultra fluido a 120Hz em dispositivos móveis
     });
 
@@ -30,12 +29,14 @@ export function useLenis() {
     };
 
     gsap.ticker.add(updateRaf);
-    gsap.ticker.lagSmoothing(1000, 16);
+    // lagSmoothing(0) é fundamental na integração Lenis + GSAP para eliminar micro-travamentos a 120Hz
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
       delete (window as any).lenis;
       lenis.destroy();
       gsap.ticker.remove(updateRaf);
+      gsap.ticker.lagSmoothing(500, 33);
     };
   }, []);
 }

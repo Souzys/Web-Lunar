@@ -23,7 +23,7 @@ export function ScrollRevealText({
   text,
   className = '',
   as: Tag = 'p',
-  scrub = 1.5,
+  scrub = true as any,
   variant = 'dark',
 }: ScrollRevealTextProps) {
   const containerRef = useRef<HTMLElement>(null);
@@ -38,11 +38,12 @@ export function ScrollRevealText({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         words,
-        { color: isLight ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.15)' },
+        { opacity: 0.15 },
         {
-          color: isLight ? 'rgba(0,0,0,1)' : 'rgba(255,255,255,1)',
+          opacity: 1,
           stagger: 0.05,
           ease: 'none',
+          force3D: true,
           scrollTrigger: {
             trigger: el,
             start: 'top 80%',
@@ -65,9 +66,11 @@ export function ScrollRevealText({
         <span
           key={i}
           data-word
+          className={isLight ? 'text-black' : 'text-white'}
           style={{ 
-            color: isLight ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.15)', 
-            display: 'inline' 
+            opacity: 0.15,
+            display: 'inline',
+            willChange: 'opacity',
           }}
         >
           {word}

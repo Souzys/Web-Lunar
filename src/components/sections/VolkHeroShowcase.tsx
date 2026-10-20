@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
-import { Lock, ArrowDown } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
 
 interface VolkHeroShowcaseProps {
   desktopImage?: string;
@@ -9,29 +8,52 @@ interface VolkHeroShowcaseProps {
 
 export function VolkHeroShowcase({ desktopImage = '/printvolk.webp' }: VolkHeroShowcaseProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const laptopRef = useRef<HTMLDivElement>(null);
 
-  // Mouse Parallax suave 3D
+  // Mouse Parallax suave 3D direto no DOM (0 re-renders de React)
   useEffect(() => {
+    const container = containerRef.current;
+    const laptop = laptopRef.current;
+    if (!container || !laptop) return;
+
+    let rafId: number;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
     const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
+      const rect = container.getBoundingClientRect();
       const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
       const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
-      setMousePos({ x: Math.max(-1, Math.min(1, x)), y: Math.max(-1, Math.min(1, y)) });
+      targetX = Math.max(-1, Math.min(1, x));
+      targetY = Math.max(-1, Math.min(1, y));
     };
 
-    const el = containerRef.current;
-    if (el) {
-      el.addEventListener('mousemove', handleMouseMove);
-    }
+    const handleMouseLeave = () => {
+      targetX = 0;
+      targetY = 0;
+    };
+
+    const loop = () => {
+      // Interpolação fluida a 120 FPS
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+
+      laptop.style.transform = `perspective(1800px) rotateX(${currentY * -3.5}deg) rotateY(${currentX * 4.5}deg)`;
+      rafId = requestAnimationFrame(loop);
+    };
+
+    container.addEventListener('mousemove', handleMouseMove, { passive: true });
+    container.addEventListener('mouseleave', handleMouseLeave);
+    rafId = requestAnimationFrame(loop);
 
     return () => {
-      if (el) el.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(rafId);
     };
   }, []);
-
-  const laptopTransform = `perspective(1800px) rotateX(${mousePos.y * -3.5}deg) rotateY(${mousePos.x * 4.5}deg)`;
 
   return (
     <div
@@ -39,15 +61,16 @@ export function VolkHeroShowcase({ desktopImage = '/printvolk.webp' }: VolkHeroS
       className="relative w-full max-w-[960px] mx-auto flex flex-col items-center justify-center select-none overflow-visible pt-4"
     >
       {/* Glow de Fundo Sutil Estilo Apple */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[400px] bg-gradient-to-tr from-primary/20 via-blue-600/15 to-indigo-500/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[400px] bg-gradient-to-tr from-primary/20 via-blue-600/15 to-indigo-500/10 rounded-full blur-[90px] pointer-events-none transform-gpu" />
 
       {/* Mockup Minimalista com Bordas Finas */}
       <div
-        className="relative w-full z-20 transition-transform duration-300 ease-out"
-        style={{ transform: laptopTransform }}
+        ref={laptopRef}
+        className="relative w-full z-20 will-change-transform transform-gpu"
+        style={{ transform: 'perspective(1800px) rotateX(0deg) rotateY(0deg)' }}
       >
         {/* Moldura Externa Slim (Bordas Finas) */}
-        <div className="w-full bg-[#121520] rounded-2xl p-1.5 sm:p-2 shadow-[0_35px_90px_rgba(0,0,0,0.85)] border border-white/15 relative overflow-hidden backdrop-blur-2xl">
+        <div className="w-full bg-[#121520] rounded-2xl p-1.5 sm:p-2 shadow-[0_35px_90px_rgba(0,0,0,0.85)] border border-white/15 relative overflow-hidden">
           
           {/* Reflexo Shimmer no Alumínio */}
           <div className="absolute -inset-full top-0 bg-gradient-to-r from-transparent via-white/[0.05] to-transparent w-full h-full skew-x-12 animate-[shimmer_10s_infinite]" />

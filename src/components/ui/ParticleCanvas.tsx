@@ -121,6 +121,11 @@ export function ParticleCanvas() {
     window.addEventListener('mouseleave', handleMouseLeave);
 
     const render = () => {
+      if (document.hidden) {
+        animationFrameId = requestAnimationFrame(render);
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
 
       const now = Date.now();
@@ -133,7 +138,7 @@ export function ParticleCanvas() {
         lastShootingStarTime = now;
       }
 
-      // --- Stars Rendering ---
+      // --- Stars Rendering (Otimizado com fillRect para 120 FPS suave) ---
       for (let i = 0; i < stars.length; i++) {
         const s = stars[i];
 
@@ -168,11 +173,9 @@ export function ParticleCanvas() {
         const renderX = s.x + offsetX;
         const renderY = s.y + offsetY;
 
-        // Render pure star point
-        ctx.beginPath();
-        ctx.arc(renderX, renderY, s.size, 0, Math.PI * 2);
+        // Renderização acelerada em retângulos/pontos sem triangulação de path
         ctx.fillStyle = `rgba(${s.color}, ${currentAlpha})`;
-        ctx.fill();
+        ctx.fillRect(renderX - s.size / 2, renderY - s.size / 2, s.size, s.size);
       }
 
       // --- Shooting Stars Rendering ---

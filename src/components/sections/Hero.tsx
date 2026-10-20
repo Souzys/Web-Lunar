@@ -20,26 +20,18 @@ export function Hero() {
     const glow = glowRef.current;
     if (!container || !glow) return;
 
-    gsap.set(glow, {
-      x: typeof window !== 'undefined' ? window.innerWidth / 2 - 400 : 0,
-      y: typeof window !== 'undefined' ? window.innerHeight / 4 - 400 : 0,
-    });
+    const xTo = gsap.quickTo(glow, 'x', { duration: 1.2, ease: 'power2.out' });
+    const yTo = gsap.quickTo(glow, 'y', { duration: 1.2, ease: 'power2.out' });
+
+    xTo(typeof window !== 'undefined' ? window.innerWidth / 2 - 400 : 0);
+    yTo(typeof window !== 'undefined' ? window.innerHeight / 4 - 400 : 0);
 
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left - 400;
-      const y = e.clientY - rect.top - 400;
-
-      gsap.to(glow, {
-        x: x,
-        y: y,
-        duration: 1.5,
-        ease: 'power2.out',
-        overwrite: 'auto',
-      });
+      xTo(e.clientX - 400);
+      yTo(e.clientY - 400);
     };
 
-    container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => {
       container.removeEventListener('mousemove', handleMouseMove);
     };
@@ -91,7 +83,7 @@ export function Hero() {
         {/* Deep blue radial glow (Desktop only mouse tracking) */}
         <div 
           ref={glowRef}
-          className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 mix-blend-screen pointer-events-none hidden md:block"
+          className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[80px] opacity-40 pointer-events-none hidden md:block transform-gpu"
           style={{
             left: 0,
             top: 0,

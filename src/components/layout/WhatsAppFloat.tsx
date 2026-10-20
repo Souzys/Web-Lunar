@@ -18,94 +18,43 @@ export default function WhatsAppFloat() {
   const [isLightSection, setIsLightSection] = useState(false);
 
   useEffect(() => {
-    let ticking = false;
+    // Detecta se o botão flutuante está sobre uma seção de fundo claro
+    // Usando IntersectionObserver para taxa de atualização a 120 FPS sem forçar layout reflow no scroll
+    const lightElements = document.querySelectorAll<HTMLElement>(
+      'section.bg-white, section.bg-\\[\\#FAFAFA\\], div.bg-white, div.bg-\\[\\#FAFAFA\\], [data-light-section="true"]'
+    );
 
-    const checkBackground = () => {
-      // 1. Se estiver no topo da página (Hero fixo escuro), mantém escuro por padrão
-      if (typeof window !== 'undefined' && window.scrollY < window.innerHeight * 0.75) {
-        setIsLightSection(false);
-        return;
-      }
+    if (lightElements.length === 0) {
+      setIsLightSection(false);
+      return;
+    }
 
-      // Coordenadas do canto inferior direito onde o botão flutuante reside
-      const x = window.innerWidth - 60;
-      const y = window.innerHeight - 60;
+    const intersectingElements = new Set<Element>();
 
-      // Desativa o pointer-events do container do botão temporariamente para capturar o elemento no fundo
-      const container = document.querySelector('.whatsapp-float-container') as HTMLElement;
-      if (container) container.style.pointerEvents = 'none';
-
-      const element = document.elementFromPoint(x, y);
-
-      if (container) container.style.pointerEvents = 'auto';
-
-      if (!element) return;
-
-      // Sobe na árvore de elementos ignorando tags/botões/badges pequenos para pegar a cor real da seção
-      let current: HTMLElement | null = element as HTMLElement;
-      let foundLight = false;
-
-      while (current && current !== document.body && current !== document.documentElement) {
-        const tag = current.tagName;
-        const isSmallElement =
-          tag === 'SPAN' ||
-          tag === 'BUTTON' ||
-          tag === 'A' ||
-          tag === 'SVG' ||
-          tag === 'P' ||
-          tag === 'H1' ||
-          tag === 'H2' ||
-          tag === 'H3' ||
-          tag === 'IMG' ||
-          current.classList.contains('badge') ||
-          (current.offsetWidth > 0 && current.offsetWidth < 280 && current.offsetHeight < 120);
-
-        if (!isSmallElement) {
-          const bg = window.getComputedStyle(current).backgroundColor;
-          if (bg && bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)') {
-            const rgbMatch = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-            if (rgbMatch) {
-              const r = parseInt(rgbMatch[1], 10);
-              const g = parseInt(rgbMatch[2], 10);
-              const b = parseInt(rgbMatch[3], 10);
-
-              // Se a média dos canais RGB for maior que 190, é uma seção clara/branca
-              if ((r + g + b) / 3 > 190) {
-                foundLight = true;
-              }
-              break; // Encontrou a cor do container da seção, encerra a busca
-            }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            intersectingElements.add(entry.target);
+          } else {
+            intersectingElements.delete(entry.target);
           }
-        }
-        current = current.parentElement;
-      }
-
-      setIsLightSection(foundLight);
-    };
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          checkBackground();
-          ticking = false;
         });
-        ticking = true;
+        setIsLightSection(intersectingElements.size > 0);
+      },
+      {
+        // Alinha a detecção exatamente com o canto inferior direito onde o botão reside
+        rootMargin: '0px 0px -70px 0px',
+        threshold: 0,
       }
-    };
+    );
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
-    
-    // Verificação inicial
-    checkBackground();
-    const timer = setTimeout(checkBackground, 300);
+    lightElements.forEach((el) => observer.observe(el));
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-      clearTimeout(timer);
+      observer.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <motion.div

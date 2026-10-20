@@ -1,38 +1,16 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
+import { Counter } from '@/components/ui/Counter';
 import { siteContent } from '@/content';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Simple count up hook
-function useCountUp(end: number, duration: number = 2000) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let startTimestamp: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      // easeOutExpo
-      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      setCount(Math.floor(ease * end));
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }, [end, duration]);
-
-  return count;
-}
-
 const Stat = ({ label, value, prefix = '', suffix = '' }: { label: string, value: number, prefix?: string, suffix?: string }) => {
-  const count = useCountUp(value, 2500);
   return (
     <div className="flex flex-col border-t border-white/10 pt-6">
       <span className="font-display text-4xl lg:text-5xl font-semibold text-white mb-2 tracking-tight">
-        {prefix}{count}{suffix}
+        <Counter value={value} prefix={prefix} suffix={suffix} duration={2} />
       </span>
       <span className="text-xs font-mono uppercase tracking-widest text-text-muted">{label}</span>
     </div>

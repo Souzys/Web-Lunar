@@ -30,7 +30,7 @@ export function IntroSlider() {
           trigger: container,
           start: 'top top',
           end: 'bottom bottom',
-          scrub: 0.5,
+          scrub: true,
         }
       });
 
