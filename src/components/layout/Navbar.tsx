@@ -19,7 +19,7 @@ export function Navbar() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
-  if (pathname?.startsWith('/links')) {
+  if (pathname?.startsWith('/links') || pathname?.startsWith('/odonto')) {
     return null;
   }
 

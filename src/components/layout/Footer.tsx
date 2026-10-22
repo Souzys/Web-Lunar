@@ -11,7 +11,7 @@ import { useLanguage } from '@/context/LanguageContext';
 export function Footer() {
   const pathname = usePathname();
   
-  if (pathname?.startsWith('/links')) {
+  if (pathname?.startsWith('/links') || pathname?.startsWith('/odonto')) {
     return null;
   }
 

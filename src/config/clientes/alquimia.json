@@ -1,0 +1,125 @@
+{
+  "nomeClinica": "Alquimia Odontologia",
+  "slogan": "Referência em Implantes, Próteses, Ortodontia e Cirurgia de Siso",
+  "cidadeBairro": "Taguatinga Norte — Brasília, DF",
+  "enderecoCompleto": "CNB 11, Lote 9 - Edifício Pinheiro de Brito, Sala 301 — Taguatinga Norte, Brasília - DF",
+  "whatsappNumero": "5561983159971",
+  "telefoneExibicao": "(61) 98315-9971",
+  "logoUrl": "/images/odonto/logo-alquimia.png",
+  "imagemHero": "/images/odonto/alquimiaodontoo.webp",
+  "instagramUrl": "https://www.instagram.com/alquimiaodontologia/",
+  "instagramHandle": "@alquimiaodontologia",
+  "croResponsavel": "Dr. Rodrigo Krauss (CRO-DF 8370) | Dra. Jheninfher Fagundes (CRO-DF 1030)",
+  "anosExperiencia": "10+ Anos em Reabilitação Oral",
+  "pacientesAtendidos": "Milhares de Sorrisos Transformados",
+  "notaGoogle": "5.0",
+  "totalAvaliacoesGoogle": "180+",
+  "vagasSemana": 4,
+  "horarioAtendimento": {
+    "abertura": 8,
+    "fechamento": 19,
+    "texto": "Seg a Sex: 08h às 19h | Sáb: 08h às 13h"
+  },
+  "linksMapas": {
+    "googleMaps": "https://www.google.com/maps/search/?api=1&query=Alquimia+Odontologia+CNB+11+Lote+9+Taguatinga+Norte+Brasilia+DF",
+    "waze": "https://waze.com/ul?q=CNB%2011%20Lote%209%20Taguatinga%20Norte%20Brasilia"
+  },
+  "hero": {
+    "badge": "Mais de 10 Anos Transformando Sorrisos no DF",
+    "tituloPrincipal": "Transformando Vidas com Implantes Dentários e Reabilitação Oral Completa",
+    "subtitulo": "Reunimos em um só lugar todas as especialidades para o seu conforto: Implantes, Próteses, Extração de Siso, Aparelho Ortodôntico e Clareamento Dental com atendimento humanizado.",
+    "ctaTexto": "Agendar Minha Avaliação Agora"
+  },
+  "procedimentos": [
+    {
+      "id": "Prótese e Implante Dentário",
+      "icone": "🦷",
+      "titulo": "Implante & Prótese Dentária",
+      "subCurto": "Mastigação firme e estética natural",
+      "descricao": "Recupere a segurança de sorrir e mastigar com implantes e próteses de alta precisão conduzidos pelo Dr. Rodrigo Krauss (CRO 8370).",
+      "tempoEstimado": "Planejamento individualizado",
+      "ancoraValor": "Condições facilitadas de pagamento",
+      "destaque": "Especialidade Principal"
+    },
+    {
+      "id": "Extração de Siso",
+      "icone": "🛡️",
+      "titulo": "Extração de Siso Segura",
+      "subCurto": "Procedimento rápido e pós-operatório tranquilo",
+      "descricao": "Remoção segura de dentes do siso inclusos ou inflamados com protocolo moderno de anestesia e máximo conforto para o paciente.",
+      "tempoEstimado": "Atendimento de urgência e eletivo",
+      "ancoraValor": "Avaliação com Raio-X",
+      "destaque": "Cirurgia Segura"
+    },
+    {
+      "id": "Aparelho Ortodôntico",
+      "icone": "✨",
+      "titulo": "Aparelho Ortodôntico",
+      "subCurto": "Alinhamento dental com a Dra. Jheninfher",
+      "descricao": "Correção do alinhamento e da mordida com aparelhos modernos sob acompanhamento da especialista Dra. Jheninfher Fagundes (CRO-DF 1030).",
+      "tempoEstimado": "Manutenções mensais ágeis",
+      "ancoraValor": "Planos acessíveis",
+      "destaque": "Ortodontia Especializada"
+    },
+    {
+      "id": "Clareamento Dental",
+      "icone": "🌟",
+      "titulo": "Clareamento Dental & Estética",
+      "subCurto": "Dentes mais brancos com segurança",
+      "descricao": "Protocolos de clareamento dental seguros que devolvem o brilho natural do seu sorriso sem comprometer a saúde do esmalte.",
+      "tempoEstimado": "Resultados rápidos",
+      "ancoraValor": "Parcelamento facilitado",
+      "destaque": "Sorriso Renovado"
+    }
+  ],
+  "antesDepois": [
+    {
+      "titulo": "Reabilitação Oral, Estética & Alinhamento",
+      "descricao": "Restauração da estética, função mastigatória e harmonia do sorriso com materiais nota 10 e acompanhamento próximo.",
+      "tag": "Reabilitação & Estética Dental",
+      "imagemAntes": "/images/odonto/lentes-antes.jpg",
+      "imagemDepois": "/images/odonto/lentes-depois.jpg"
+    }
+  ],
+  "depoimentos": [
+    {
+      "nome": "Klecius Karmona",
+      "bairro": "Paciente Alquimia Odontologia",
+      "procedimento": "Reabilitação & Implantes",
+      "texto": "Agradeço o profissionalismo de todos que me atenderam na Alquimia, em especial a Dra. Lutyane e o Dr. Rodrigo que sempre me indicaram um trabalho funcional e focado no resultado. Merecem 5 estrelas de ouro!",
+      "tempo": "Avaliação Verificada"
+    },
+    {
+      "nome": "Alinezinha F. Araújo",
+      "bairro": "Taguatinga, DF",
+      "procedimento": "Atendimento Clínico",
+      "texto": "Quero parabenizá-los pelo carinho e profissionalismo que nos atendem. A clínica possui um atendimento humanizado, valorizando em primeiro lugar o paciente. A qualidade dos materiais e profissionais é nota 10!",
+      "tempo": "Avaliação Verificada"
+    },
+    {
+      "nome": "Maysa Pacheco Batista",
+      "bairro": "Brasília, DF",
+      "procedimento": "Odontologia Familiar",
+      "texto": "Excelente qualidade e atendimento!! Super recomendo a Alquimia Odontologia para toda a família! Ambientes super acolhedores.",
+      "tempo": "Avaliação Verificada"
+    }
+  ],
+  "faq": [
+    {
+      "pergunta": "Como funciona a avaliação para Implante ou Prótese Dentária?",
+      "resposta": "Na consulta inicial com o Dr. Rodrigo Krauss (CRO 8370), avaliamos sua saúde bucal e exames para indicar a solução mais segura, funcional e confortável para devolver seu sorriso fixo."
+    },
+    {
+      "pergunta": "A extração de siso dói? Como é a recuperação?",
+      "resposta": "Realizamos o procedimento com anestesia local de alta eficácia para que você não sinta dor durante a cirurgia, além de passarmos todas as orientações e medicações para um pós-operatório rápido e tranquilo."
+    },
+    {
+      "pergunta": "Quais as formas de pagamento e parcelamento da clínica?",
+      "resposta": "Trabalhamos com preços justos e condições facilitadas no cartão de crédito, Pix e planos de tratamento por etapas para caber no seu orçamento."
+    },
+    {
+      "pergunta": "Onde a Alquimia Odontologia está localizada?",
+      "resposta": "Estamos na CNB 11, Lote 9 - Edifício Pinheiro de Brito, Sala 301, em Taguatinga Norte (Brasília - DF), com fácil acesso."
+    }
+  ]
+}

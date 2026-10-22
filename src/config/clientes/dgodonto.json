@@ -1,0 +1,125 @@
+{
+  "nomeClinica": "DG Odontologia",
+  "slogan": "Mais de 21 Anos de Tradição e Excelência na Asa Norte",
+  "cidadeBairro": "Asa Norte — Brasília, DF",
+  "enderecoCompleto": "STN, Edifício Jaime Leal, Salas 130 a 134 — Asa Norte, Brasília - DF",
+  "whatsappNumero": "556133402331",
+  "telefoneExibicao": "(61) 3340-2331",
+  "logoUrl": "/images/odonto/logo-dgodonto.png",
+  "imagemHero": "/images/odonto/dgodontoo.webp",
+  "instagramUrl": "https://www.instagram.com/dgodontodf/",
+  "instagramHandle": "@dgodontodf",
+  "croResponsavel": "Dra. Dyane Grace Martins (CRO-DF 1718)",
+  "anosExperiencia": "21+ Anos de Excelência na Asa Norte",
+  "pacientesAtendidos": "Mais de 10.000 Pacientes Atendidos",
+  "notaGoogle": "4.9",
+  "totalAvaliacoesGoogle": "120+",
+  "vagasSemana": 3,
+  "horarioAtendimento": {
+    "abertura": 8,
+    "fechamento": 19,
+    "texto": "Seg a Sex: 08h às 19h | Sáb: 08h às 13h"
+  },
+  "linksMapas": {
+    "googleMaps": "https://www.google.com/maps/search/?api=1&query=DG+Odontologia+STN+Edificio+Jaime+Leal+Asa+Norte+Brasilia+DF",
+    "waze": "https://waze.com/ul?q=STN%20Edificio%20Jaime%20Leal%20Asa%20Norte%20Brasilia"
+  },
+  "hero": {
+    "badge": "Mais de 21 Anos de Tradição no STN - Asa Norte",
+    "tituloPrincipal": "Odontologia de Alta Precisão, Reabilitação Oral e Harmonização Facial",
+    "subtitulo": "Estrutura completa no Edifício Jaime Leal (Salas 130 a 134) com equipamentos de última geração, implantes sem cortes, ortodontia e estética com a Dra. Dyane Grace.",
+    "ctaTexto": "Agendar Avaliação com a Dra. Dyane"
+  },
+  "procedimentos": [
+    {
+      "id": "Harmonização Orofacial",
+      "icone": "✨",
+      "titulo": "Harmonização Orofacial & Estética",
+      "subCurto": "Preenchimento, toxina e estética avançada",
+      "descricao": "Procedimentos estéticos minimamente invasivos conduzidos pela Dra. Dyane Grace para realçar a beleza e simetria do seu rosto.",
+      "tempoEstimado": "Avaliação facial completa",
+      "ancoraValor": "Condições facilitadas",
+      "destaque": "Especialidade Premium"
+    },
+    {
+      "id": "Ortodontia & Aparelhos",
+      "icone": "💎",
+      "titulo": "Ortodontia & Alinhamento Dental",
+      "subCurto": "Aparelhos estéticos e ortopedia facial",
+      "descricao": "Correção funcional e estética da mordida com técnicas modernas para crianças, jovens e adultos.",
+      "tempoEstimado": "Acompanhamento dedicado",
+      "ancoraValor": "Planos sob medida",
+      "destaque": "Tradição de 21 Anos"
+    },
+    {
+      "id": "Implantes & Próteses",
+      "icone": "🦷",
+      "titulo": "Implantes Dentários & Próteses",
+      "subCurto": "Recuperação total da mastigação",
+      "descricao": "Reabilitação oral completa para devolver dentes fixos com conforto, segurança e durabilidade de longo prazo.",
+      "tempoEstimado": "Planejamento minucioso",
+      "ancoraValor": "Parcelamento facilitado",
+      "destaque": "Reabilitação Oral"
+    },
+    {
+      "id": "Clareamento & Prevenção",
+      "icone": "🌟",
+      "titulo": "Clareamento Dental & Check-up",
+      "subCurto": "Dentes brancos e saúde bucal contínua",
+      "descricao": "Remoção de manchas, clareamento supervisionado e prevenção completa para manter seu sorriso saudável por toda a vida.",
+      "tempoEstimado": "Sessões rápidas",
+      "ancoraValor": "A partir de 6x sem juros",
+      "destaque": "Prevenção & Brilho"
+    }
+  ],
+  "antesDepois": [
+    {
+      "titulo": "Reabilitação Estética & Harmonização do Sorriso",
+      "descricao": "Transformações reais conduzidas com precisão clínica, respeitando a anatomia e os traços naturais de cada paciente.",
+      "tag": "Estética & Harmonização",
+      "imagemAntes": "/images/odonto/lentes-antes.jpg",
+      "imagemDepois": "/images/odonto/lentes-depois.jpg"
+    }
+  ],
+  "depoimentos": [
+    {
+      "nome": "Carla Mendonça",
+      "bairro": "Asa Norte, Brasília",
+      "procedimento": "Harmonização & Ortodontia",
+      "texto": "Sou paciente da Dra. Dyane há anos no Edifício Jaime Leal. O cuidado, a atenção e a pontualidade da DG Odontologia são incomparáveis em Brasília!",
+      "tempo": "Avaliação Verificada"
+    },
+    {
+      "nome": "Marcos Vinicius",
+      "bairro": "Lago Norte, DF",
+      "procedimento": "Implantes Dentários",
+      "texto": "Clínica com mais de 20 anos de tradição que realmente cumpre o que promete. Profissionais competentes e ambiente acolhedor. Recomendo de olhos fechados.",
+      "tempo": "Avaliação Verificada"
+    },
+    {
+      "nome": "Juliana Silveira",
+      "bairro": "Asa Sul, Brasília",
+      "procedimento": "Clareamento Dental",
+      "texto": "Atendimento impecável desde a recepção até a cadeira da dentista. Meu clareamento ficou super natural e sem nenhuma sensibilidade.",
+      "tempo": "Avaliação Verificada"
+    }
+  ],
+  "faq": [
+    {
+      "pergunta": "Onde a DG Odontologia está localizada na Asa Norte?",
+      "resposta": "Estamos localizados no Setor Terminal Norte (STN), Edifício Jaime Leal, Salas 130 a 134, no coração de Brasília, com estacionamento fácil e acessibilidade."
+    },
+    {
+      "pergunta": "Quais tratamentos de Harmonização Orofacial vocês realizam?",
+      "resposta": "A Dra. Dyane Grace realiza protocolos individualizados de toxina botulínica, preenchimentos estéticos e estruturação facial com produtos de primeira linha e segurança médica total."
+    },
+    {
+      "pergunta": "A clínica atende convênios ou somente particular?",
+      "resposta": "Atendemos de forma personalizada e fornecemos toda a documentação, laudos e recibos necessários para que você solicite o reembolso junto ao seu plano de saúde com facilidade."
+    },
+    {
+      "pergunta": "Como faço para agendar uma primeira avaliação?",
+      "resposta": "Você pode agendar diretamente pelo simulador nesta página ou chamar nossa recepção no WhatsApp. Respondemos em poucos minutos durante o horário comercial."
+    }
+  ]
+}

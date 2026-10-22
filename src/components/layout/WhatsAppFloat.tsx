@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function WhatsAppFloat() {
   const pathname = usePathname();
 
-  if (pathname?.startsWith('/links')) {
+  if (pathname?.startsWith('/links') || pathname?.startsWith('/odonto')) {
     return null;
   }
 
