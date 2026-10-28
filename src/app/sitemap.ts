@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { STATIC_BLOG_POSTS } from '@/content/blogPostsData';
 import { STATIC_CASE_STUDIES } from '@/app/projetos/[id]/caseStudiesData';
+import { PROGRAMMATIC_SEO_LIST } from '@/content/programmaticSeoData';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://weblunar.com.br';
@@ -10,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [
     '',
     '/servicos',
+    '/solucoes',
     '/projetos',
     '/sobre',
     '/contato',
@@ -18,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}${route}`,
     lastModified: currentDate,
     changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
-    priority: route === '' ? 1.0 : (route === '/servicos' || route === '/projetos' ? 0.9 : 0.8),
+    priority: route === '' ? 1.0 : (route === '/servicos' || route === '/solucoes' || route === '/projetos' ? 0.9 : 0.8),
   }));
 
   // Active Project Case Studies (dynamic)
@@ -37,5 +39,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.85,
   }));
 
-  return [...routes, ...projectRoutes, ...blogRoutes];
+  // Programmatic SEO Solutions (Service x Region + Specialized Niches)
+  const programmaticRoutes = PROGRAMMATIC_SEO_LIST.map((item) => ({
+    url: `${baseUrl}/solucoes/${item.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }));
+
+  return [...routes, ...projectRoutes, ...blogRoutes, ...programmaticRoutes];
 }

@@ -24,6 +24,7 @@ export function Footer() {
     { label: t.nav.sobre, href: '/sobre' },
     { label: t.nav.projetos, href: '/projetos' },
     { label: t.nav.servicos, href: '/servicos' },
+    { label: 'Soluções', href: '/solucoes' },
     { label: t.nav.contato, href: '/contato' },
   ];
 
