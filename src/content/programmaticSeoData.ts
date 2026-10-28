@@ -1,6 +1,6 @@
 export interface ProgrammaticPageData {
   slug: string;
-  type: 'service-city' | 'niche';
+  type: 'service-city' | 'niche' | 'niche-city';
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -420,6 +420,96 @@ export const CITIES_DATA: CityInfo[] = [
     localInsight: 'Em um polo reconhecido pela excelência em saúde e educação, ter um site rápido e focado na experiência do paciente diferencia sua clínica imediatamente.',
     keySectors: 'odontologia, medicina, educação superior, comércio e serviços técnicos',
   },
+  {
+    slug: 'juiz-de-fora',
+    name: 'Juiz de Fora',
+    state: 'MG',
+    region: 'Sudeste',
+    economicProfile: 'principal centro médico, universitário e industrial da Zona da Mata Mineira',
+    localInsight: 'Estrategicamente localizada entre BH e o Rio de Janeiro, Juiz de Fora possui forte demanda por serviços médicos, odontológicos e empresariais que começam na pesquisa do Google.',
+    keySectors: 'clínicas médicas, educação, indústria têxtil e metalúrgica, engenharia e advocacia',
+  },
+  {
+    slug: 'sao-luis',
+    name: 'São Luís',
+    state: 'MA',
+    region: 'Nordeste',
+    economicProfile: 'grande complexo portuário (Itaqui), polo siderúrgico, logístico e centro de serviços do Maranhão',
+    localInsight: 'Empresas de São Luís instaladas no Renascença, Calhau e Península da Ponta d’Areia conquistam clientes de alto ticket quando contam com páginas rápidas e profissionais.',
+    keySectors: 'logística portuária, engenharia, clínicas médicas, turismo nos Lençóis e mercado imobiliário',
+  },
+  {
+    slug: 'teresina',
+    name: 'Teresina',
+    state: 'PI',
+    region: 'Nordeste',
+    economicProfile: 'maior polo de saúde privada do Meio-Norte brasileiro, atraindo pacientes de múltiplos estados',
+    localInsight: 'Como Teresina é referência regional em medicina e odontologia, clínicas que aparecem no topo do Google captam pacientes particulares de todo o Piauí e Maranhão.',
+    keySectors: 'hospitais, clínicas médicas e odontológicas, educação privada, comércio e energia solar',
+  },
+  {
+    slug: 'campina-grande',
+    name: 'Campina Grande',
+    state: 'PB',
+    region: 'Nordeste',
+    economicProfile: 'reconhecido polo tecnológico e universitário mundial, com forte indústria de software, calçados e saúde',
+    localInsight: 'Em uma cidade com vocação tecnológica, empresas que investem em sites velozes e modernos ganham destaque imediato no mercado local e nacional.',
+    keySectors: 'tecnologia e software, clínicas especializadas, indústria, educação e eventos',
+  },
+  {
+    slug: 'lajeado',
+    name: 'Chapecó',
+    state: 'SC',
+    region: 'Sul',
+    economicProfile: 'capital brasileira da agroindústria, polo metalmecânico, cooperativista e logístico do oeste catarinense',
+    localInsight: 'O empresariado do oeste de Santa Catarina é focado em produtividade e negócios B2B. Um site institucional sólido abre portas para contratos em toda a região Sul.',
+    keySectors: 'agroindústria, máquinas e equipamentos, logística, clínicas e contabilidade',
+  },
+  {
+    slug: 'cascavel',
+    name: 'Cascavel',
+    state: 'PR',
+    region: 'Sul',
+    economicProfile: 'capital do oeste paranaense, referência no agronegócio de alta tecnologia, medicina e ensino universitário',
+    localInsight: 'Em Cascavel, empresas do agronegócio, engenharia e clínicas médicas que dominam o Google recebem pedidos diários de clientes de dezenas de municípios vizinhos.',
+    keySectors: 'agronegócio, medicina, odontologia, concessionárias e construção civil',
+  },
+  {
+    slug: 'foz-do-iguacu',
+    name: 'Foz do Iguaçu',
+    state: 'PR',
+    region: 'Sul',
+    economicProfile: 'segundo maior destino de turistas estrangeiros do país, comércio na tríplice fronteira, hotelaria e logística internacional',
+    localInsight: 'Por atuar em uma região trinacional (Brasil, Paraguai e Argentina), negócios de Foz do Iguaçu se beneficiam imensamente de sites rápidos e preparados para múltiplos idiomas.',
+    keySectors: 'turismo e receptivo, hotelaria, clínicas de odontologia e estética, comércio exterior e eventos',
+  },
+  {
+    slug: 'anapolis',
+    name: 'Anápolis',
+    state: 'GO',
+    region: 'Centro-Oeste',
+    economicProfile: 'sede do DAIA (maior polo farmacêutico e logístico do Centro-Oeste), entre Goiânia e Brasília',
+    localInsight: 'Com indústrias farmacêuticas, porto seco e comércio pujante no bairro Jundiaí, Anápolis oferece excelente retorno para empresas B2B e clínicas bem posicionadas no Google.',
+    keySectors: 'indústria farmacêutica, logística, engenharia, clínicas médicas e contabilidade',
+  },
+  {
+    slug: 'palmas',
+    name: 'Palmas',
+    state: 'TO',
+    region: 'Norte',
+    economicProfile: 'capital planejada em plena expansão imobiliária, centro do agronegócio do Matopiba e energia solar',
+    localInsight: 'O mercado de Palmas cresce em ritmo acelerado. Posicionar sua empresa agora na primeira página do Google garante liderança orgânica com baixa concorrência.',
+    keySectors: 'agronegócio, energia solar, construção civil, clínicas particulares e serviços públicos/privados',
+  },
+  {
+    slug: 'porto-velho',
+    name: 'Porto Velho',
+    state: 'RO',
+    region: 'Norte',
+    economicProfile: 'polo logístico hidroviário do agronegócio, energia hidrelétrica, comércio e serviços na Amazônia Ocidental',
+    localInsight: 'Empresas e clínicas de Porto Velho que contam com páginas rápidas para celular transformam pesquisas no Google em clientes todos os dias.',
+    keySectors: 'logística, agronegócio, clínicas médicas e odontológicas, advocacia e comércio',
+  },
 ];
 
 export const SERVICE_TYPES: ServiceType[] = [
@@ -466,6 +556,36 @@ export const SERVICE_TYPES: ServiceType[] = [
       'Páginas de produto otimizadas para aparecer nas buscas orgânicas do Google',
       'Painel simples para cadastrar produtos, controlar estoque e gerenciar pedidos',
       'Recuperação automática de carrinho abandonado e botão de compra assistida via WhatsApp',
+    ],
+  },
+  {
+    slugPrefix: 'agencia-de-seo-em',
+    name: 'Otimização SEO e Posicionamento no Google',
+    shortName: 'SEO & Google',
+    focusBenefit: 'colocar sua empresa na primeira página do Google e nas recomendações de IAs (ChatGPT e Gemini) sem pagar por clique',
+    deliveryTime: '7 a 15 dias úteis para implementação técnica',
+    idealFor: 'empresas que já possuem ou querem um site novo dominando as pesquisas orgânicas da sua cidade e segmento',
+    coreFeatures: [
+      'Auditoria e correção completa de Core Web Vitals e velocidade no celular',
+      'Arquitetura de SEO Programático e páginas de serviço focadas em intenção de compra',
+      'Implementação de microdados Schema.org (LocalBusiness, Service e FAQPage)',
+      'Integração direta e monitoramento via Google Search Console e Google Analytics 4',
+      'Estruturação de conteúdo estratégico para ser citado por assistentes de IA',
+    ],
+  },
+  {
+    slugPrefix: 'desenvolvimento-de-sistemas-web-em',
+    name: 'Desenvolvimento de Sistemas Web e Plataformas Sob Medida',
+    shortName: 'Sistema Web / SaaS',
+    focusBenefit: 'automatizar processos internos, criar portais de clientes, sistemas de agendamento ou lançar seu próprio produto SaaS',
+    deliveryTime: '30 a 60 dias úteis',
+    idealFor: 'empresas em expansão e startups que precisam de painéis administrativos, integrações via API e sistemas exclusivos',
+    coreFeatures: [
+      'Desenvolvimento Full Stack moderno em Next.js, React, TypeScript e Node.js',
+      'Painéis administrativos seguros com controle de usuários, permissões e relatórios',
+      'Integração nativa com gateways de pagamento (Stripe, Asaas, Mercado Pago, Pix)',
+      'Conexão via API e Webhooks com CRMs, ERPs e automações de WhatsApp',
+      'Banco de dados escalável na nuvem com backups automáticos e alta disponibilidade',
     ],
   },
 ];
@@ -921,20 +1041,245 @@ export const NICHES_DATA: NicheInfo[] = [
     ],
     complianceOrDetail: 'Construído com foco em empatia, transparência e acolhimento familiar.',
   },
+  {
+    slug: 'site-para-clinica-de-implantes-dentarios',
+    name: 'Clínicas de Implantes Dentários e Reabilitação Oral',
+    singular: 'Clínica de Implantes',
+    targetAudience: 'pacientes buscando protocolo sobre implantes, carga imediata, implante unitário e prótese fixa',
+    mainPain: 'pacientes de implante pesquisam muito antes de decidir e desconfiam de clínicas que não mostram estrutura moderna e explicação clara sobre o tratamento sem dor',
+    conversionGoal: 'agendar avaliações de tomografia e planejamento de implantes dentários',
+    specificFeatures: [
+      'Seção educativa explicando Carga Imediata, Protocolo Fixo e sedação consciente para pacientes com receio',
+      'Destaque para tecnologia de escaneamento intraoral 3D e cirurgia guiada sem cortes',
+      'Qualificador rápido para identificar se o paciente busca 1 implante ou reabilitação total',
+      'Botão direto para agendar avaliação com o implantodontista pelo WhatsApp',
+    ],
+    complianceOrDetail: 'Foco no procedimento de maior ticket médio da odontologia, respeitando as normas do CFO.',
+  },
+  {
+    slug: 'site-para-cirurgia-plastica',
+    name: 'Cirurgiões Plásticos e Clínicas de Cirurgia Estética',
+    singular: 'Clínica de Cirurgia Plástica',
+    targetAudience: 'pacientes buscando rinoplastia, mamoplastia, lipoaspiração HD, abdominoplastia e lifting facial',
+    mainPain: 'pacientes de cirurgia plástica exigem altíssimo nível de confiança, segurança hospitalar e título de especialista (SBCP)',
+    conversionGoal: 'agendar consultas presenciais de avaliação cirúrgica particular',
+    specificFeatures: [
+      'Design de luxo minimalista que reflete precisão cirúrgica, ética e cuidado no pré e pós-operatório',
+      'Páginas detalhadas para cada procedimento (Contorno Corporal, Mama, Face, Rinoplastia)',
+      'Destaque para credenciais médicas (CRM, RQE, membro da SBCP) e hospitais onde opera',
+      'Atendimento de concierge via WhatsApp para agendamento de consulta exclusiva',
+    ],
+    complianceOrDetail: 'Totalmente alinhado às diretrizes éticas do CFM e da Sociedade Brasileira de Cirurgia Plástica.',
+  },
+  {
+    slug: 'site-para-dermatologista-e-tricologia',
+    name: 'Dermatologistas, Clínicas Capilares e Transplante Capilar',
+    singular: 'Clínica Dermatológica ou Capilar',
+    targetAudience: 'pacientes procurando transplante capilar FUE, tratamento de calvície, lasers dermatológicos, rejuvenescimento e dermatologia clínica',
+    mainPain: 'concorrer com clínicas populares por não ter uma página que posicione a autoridade médica e a tecnologia do consultório',
+    conversionGoal: 'agendar consultas dermatológicas e avaliações de transplante capilar',
+    specificFeatures: [
+      'Apresentação dos protocolos capilares (Técnica FUE, MMP Capilar, Ledterapia) e tecnologias a laser',
+      'Design clean e sofisticado com foco na saúde da pele, cabelos e rejuvenescimento natural',
+      'Agendamento rápido de consulta particular com triagem da queixa principal',
+      'SEO técnico focado em termos de alta intenção de busca médica na sua cidade',
+    ],
+    complianceOrDetail: 'Atrai pacientes que valorizam diagnóstico médico especializado e procedimentos de ponta.',
+  },
+  {
+    slug: 'site-para-nutricionista-e-nutrologo',
+    name: 'Nutricionistas Esportivos, Clínicos e Médicos Nutrólogos',
+    singular: 'Consultório de Nutrição ou Nutrologia',
+    targetAudience: 'pacientes buscando emagrecimento saudável, hipertrofia, performance esportiva, longevidade e reposição metabólica',
+    mainPain: 'depender de postagens diárias no Instagram para conseguir preencher a agenda de consultas e acompanhamentos trimestrais',
+    conversionGoal: 'vender consultas avulsas e planos de acompanhamento nutricional/metabólico',
+    specificFeatures: [
+      'Apresentação do método de atendimento, exame de bioimpedância e aplicativo de acompanhamento',
+      'Explicação clara de como funcionam os planos de acompanhamento (Trimestral/Semestral)',
+      'Botão de WhatsApp com qualificação do objetivo do paciente (Emagrecimento, Hipertrofia, Saúde)',
+      'Avaliações reais de pacientes que transformaram a saúde e composição corporal',
+    ],
+    complianceOrDetail: 'Ideal para posicionar programas de acompanhamento de maior valor agregado.',
+  },
+  {
+    slug: 'site-para-advogado-trabalhista-e-previdenciario',
+    name: 'Escritórios de Advocacia Trabalhista e Previdenciária (INSS)',
+    singular: 'Escritório Trabalhista e Previdenciário',
+    targetAudience: 'trabalhadores buscando rescisão indireta, horas extras, acidente de trabalho, aposentadoria, BPC/LOAS e auxílio-doença',
+    mainPain: 'atender dezenas de pessoas sem direito algum porque a página atual não faz uma pré-triagem básica do caso',
+    conversionGoal: 'receber casos trabalhistas e previdenciários já pré-qualificados no WhatsApp',
+    specificFeatures: [
+      'Questionário rápido de 3 passos: área do direito, situação atual e tempo de serviço/contribuição',
+      'Textos claros que explicam os direitos do cidadão sem juridiquês complicado',
+      'Carregamento instantâneo em celulares simples para não perder nenhum contato de campanha',
+      'Botão de WhatsApp direto com a equipe de triagem do escritório',
+    ],
+    complianceOrDetail: 'Comunicação informativa 100% adequada às normas éticas da OAB.',
+  },
+  {
+    slug: 'site-para-advogado-empresarial-e-tributario',
+    name: 'Advocacia Empresarial, Tributária, Societária e Contratos',
+    singular: 'Banca Jurídica Empresarial',
+    targetAudience: 'empresários, diretores financeiros e sócios buscando recuperação tributária, blindagem patrimonial, holdings familiares e contratos B2B',
+    mainPain: 'ter uma presença digital tímida que não transmite a senioridade necessária para atender médias e grandes empresas',
+    conversionGoal: 'agendar reuniões estratégicas com sócios e diretores de empresas',
+    specificFeatures: [
+      'Visual corporativo sóbrio, inspirado nas maiores bancas jurídicas internacionais',
+      'Páginas específicas para Recuperação de Créditos Tributários, Holding Familiar, Fusões (M&A) e Assessoria Mensal',
+      'Publicação de artigos técnicos que posicionam os sócios no Google e no LinkedIn',
+      'Formulário executivo para solicitação de reunião diagnóstica',
+    ],
+    complianceOrDetail: 'Projetado para atrair honorários corporativos e contratos de partido mensal.',
+  },
+  {
+    slug: 'site-para-empresa-de-engenharia-civil-e-projetos',
+    name: 'Escritórios de Engenharia Estrutural, Elétrica, Laudos e Perícias',
+    singular: 'Empresa de Engenharia',
+    targetAudience: 'indústrias, condomínios, construtoras e comércios precisando de projetos complementares, AVCB, laudos estruturais e reformas',
+    mainPain: 'depender apenas de parceiros antigos por não aparecer quando empresas pesquisam engenharia especializada no Google',
+    conversionGoal: 'receber solicitações de propostas técnicas, laudos com ART e projetos de engenharia',
+    specificFeatures: [
+      'Catálogo organizado por especialidade: Projetos Estruturais, Instalações, AVCB/Bombeiros, Laudos e Perícias',
+      'Destaque para registro no CREA, emissão ágil de ART e acervo técnico (CAT)',
+      'Formulário para envio de plantas, editais ou solicitação de vistoria técnica in loco',
+      'SEO focado nas buscas técnicas de engenheiros, síndicos e gerentes industriais',
+    ],
+    complianceOrDetail: 'Aumenta o fluxo de cotações B2B durante todos os meses do ano.',
+  },
+  {
+    slug: 'site-para-empresa-de-energia-fotovoltaica-industrial',
+    name: 'Usinas Solares, Energia Livre e Eficiência Energética B2B',
+    singular: 'Consultoria em Energia e Usinas Solares',
+    targetAudience: 'indústrias, redes de supermercados, hotéis, postos de combustível e agronegócio (Mercado Livre de Energia e Grupo A)',
+    mainPain: 'páginas amadoras que só atraem residências pequenas em vez de contas de energia acima de R$ 10.000/mês (Demanda Contratada / Grupo A)',
+    conversionGoal: 'captar faturas de alta tensão (Grupo A) e projetos de usinas de investimento',
+    specificFeatures: [
+      'Qualificador focado em Grandes Consumidores: filtra contas acima de R$ 5 mil, R$ 15 mil e R$ 50 mil mensais',
+      'Explicação técnica sobre Migração para o Mercado Livre de Energia e Usinas Fotovoltaicas',
+      'Estudos de caso mostrando redução anual de custos operacionais em indústrias e agronegócio',
+      'Canal direto para envio da fatura de energia para estudo de viabilidade engenharia',
+    ],
+    complianceOrDetail: 'Direciona sua força comercial para os contratos de maior margem do setor elétrico.',
+  },
+  {
+    slug: 'site-para-distribuidora-e-atacado',
+    name: 'Distribuidoras, Atacadistas, Importadoras e Indústrias B2B',
+    singular: 'Distribuidora ou Atacadista',
+    targetAudience: 'lojistas, revendedores, supermercados, farmácias e compradores corporativos buscando fornecedores no atacado com CNPJ',
+    mainPain: 'representantes comerciais perdendo tempo com consumidor final (varejo) ou catálogo em PDF desatualizado difícil de cotar',
+    conversionGoal: 'receber cadastros de lojistas com CNPJ ativo para compras no atacado',
+    specificFeatures: [
+      'Catálogo digital B2B organizado por categorias e marcas distribuídas (com ou sem exibição de preços)',
+      'Filtro obrigatório de CNPJ e pedido mínimo para proteger seu time de vendas do varejo unitário',
+      'Integração rápida com WhatsApp da televendas separada por região de atendimento',
+      'SEO preparado para quando o lojista pesquisa "distribuidora de [produto] no atacado"',
+    ],
+    complianceOrDetail: 'Transforma seu site em uma máquina de abertura de novos pontos de venda (PDVs) em todo o Brasil.',
+  },
+  {
+    slug: 'site-para-empresa-de-mudancas-e-guarda-moveis',
+    name: 'Empresas de Mudanças Residenciais, Comerciais e Self Storage',
+    singular: 'Empresa de Mudanças ou Self Storage',
+    targetAudience: 'famílias mudando de apartamento/cidade e empresas transferindo escritórios ou precisando de guarda-móveis (box privativo)',
+    mainPain: '100% da demanda de mudanças acontece na pesquisa imediata do Google. Quem não tem um formulário rápido de inventário perde o frete na hora',
+    conversionGoal: 'receber pedidos diários de orçamento de mudança local, interestadual e locação de box',
+    specificFeatures: [
+      'Cotador rápido: Cidade de Origem, Cidade de Destino, Tipo de Imóvel e Data Prevista',
+      'Destaque para embalagem completa, seguro total da carga, içamento e montagem de móveis',
+      'Apresentação de boxes de Guarda-Móveis / Self Storage com segurança monitorada',
+      'Botão de WhatsApp imediato para envio de vídeo ou lista de itens da mudança',
+    ],
+    complianceOrDetail: 'Altíssima conversão para campanhas de Google Ads de pesquisa local e interestadual.',
+  },
+  {
+    slug: 'site-para-empresa-de-limpeza-pos-obra-e-terceirizacao',
+    name: 'Terceirização de Limpeza, Pós-Obra e Conservação Corporativa',
+    singular: 'Empresa de Limpeza e Terceirização',
+    targetAudience: 'arquitetos, construtoras, escritórios corporativos, clínicas e condomínios contratando limpeza técnica pós-obra ou equipe fixa',
+    mainPain: 'ser confundido com diaristas autônomas por não apresentar equipamentos profissionais, EPIs e emissão de nota fiscal',
+    conversionGoal: 'fechar limpezas pós-obra de alto padrão e contratos fixos de terceirização',
+    specificFeatures: [
+      'Separação clara entre Limpeza Técnica Pós-Obra (fina/pesada) e Terceirização de Mão de Obra Fixa',
+      'Destaque para maquinário industrial, produtos homologados, equipe uniformizada e seguro de responsabilidade',
+      'Orçamento rápido no WhatsApp informando metragem aproximada (m²) e localização',
+      'Foco em parcerias recorrentes com escritórios de arquitetura e engenharia',
+    ],
+    complianceOrDetail: 'Posiciona sua empresa para atender obras de alto padrão, clínicas e sedes corporativas.',
+  },
+  {
+    slug: 'site-para-laboratorio-e-clinica-de-imagem',
+    name: 'Laboratórios de Análises Clínicas, Diagnóstico por Imagem e Check-up',
+    singular: 'Laboratório ou Clínica de Diagnóstico',
+    targetAudience: 'pacientes buscando exames de sangue, coleta domiciliar, ultrassonografia, ressonância, tomografia e exames ocupacionais',
+    mainPain: 'pacientes têm dificuldade de encontrar unidades, preparo de exames e agendamento rápido pelo celular no site antigo do laboratório',
+    conversionGoal: 'aumentar o agendamento de exames particulares, coleta domiciliar e convênios',
+    specificFeatures: [
+      'Acesso rápido para Agendar Exames no WhatsApp, Coleta Domiciliar e Consulta de Resultados Online',
+      'Lista clara de exames realizados, orientações de jejum/preparo e convênios aceitos',
+      'Localizador fácil das unidades de atendimento com horário de coleta e rota no mapa',
+      'Carregamento ultrarrápido pensado para pacientes que acessam pelo 4G na saída do consultório médico',
+    ],
+    complianceOrDetail: 'Melhora a experiência do paciente e reduz o congestionamento telefônico da recepção.',
+  },
+  {
+    slug: 'site-para-clinica-de-fonoaudiologia-e-desenvolvimento-infantil',
+    name: 'Clínicas de Fonoaudiologia, Terapia ABA, Psicopedagogia e Neuropediatria',
+    singular: 'Clínica de Desenvolvimento Infantil',
+    targetAudience: 'pais buscando avaliação e intervenção multidisciplinar (Fonoaudiologia, Terapia Ocupacional, ABA, TEA, TDAH e Apraxia da Fala)',
+    mainPain: 'famílias buscam clínicas que transmitam acolhimento, estrutura lúdica segura e equipe certificada, mas encontram páginas frias',
+    conversionGoal: 'agendar avaliações iniciais multidisciplinares com os pais',
+    specificFeatures: [
+      'Design empático e acolhedor que apresenta as salas sensoriais e a metodologia de intervenção',
+      'Explicação clara para os pais sobre atraso de fala, integração sensorial, método ABA e acompanhamento escolar',
+      'Botão direto para falar com a coordenação clínica pelo WhatsApp e tirar dúvidas iniciais',
+      'Posicionamento orgânico no Google para famílias que pesquisam especialistas na região',
+    ],
+    complianceOrDetail: 'Transmite a segurança técnica e o carinho que toda família procura para o desenvolvimento dos filhos.',
+  },
+  {
+    slug: 'site-para-aluguel-de-equipamentos-e-maquinas',
+    name: 'Locadoras de Equipamentos para Construção, Eventos, Médico ou TI',
+    singular: 'Locadora de Equipamentos',
+    targetAudience: 'construtoras, engenheiros, produtores de eventos, clínicas ou empresas buscando locação de máquinas, andaimes, geradores ou notebooks',
+    mainPain: 'o cliente precisa saber rapidamente se o equipamento está disponível para locação imediata, mas os catálogos atuais são confusos',
+    conversionGoal: 'receber pedidos de cotação de locação diária, semanal ou mensal no WhatsApp',
+    specificFeatures: [
+      'Catálogo ágil por categoria de equipamento com especificações técnicas e aplicação',
+      'Botão "Consultar Disponibilidade e Valor de Locação" direto no WhatsApp em cada item',
+      'Filtro de período de locação (Diária, Mensal, Contrato Anual) e opção de entrega na obra/empresa',
+      'SEO focado em termos exatos como "aluguel de [equipamento]" para capturar demanda urgente',
+    ],
+    complianceOrDetail: 'Aumenta a taxa de ocupação do seu estoque de máquinas e equipamentos.',
+  },
+  {
+    slug: 'site-para-fotografo-e-produtora-de-video',
+    name: 'Produtoras Audiovisuais, Filmes Corporativos e Fotógrafos de Alto Padrão',
+    singular: 'Produtora Audiovisual ou Estúdio',
+    targetAudience: 'empresas contratando vídeos institucionais, cobertura de eventos, comerciais, fotos corporativas ou noivos buscando fotografia autoral',
+    mainPain: 'usar portfólios gratuitos lentos que comprimem a qualidade das imagens ou demoram 10 segundos para abrir o showreel no celular',
+    conversionGoal: 'fechar produções audiovisuais corporativas, campanhas e coberturas premium',
+    specificFeatures: [
+      'Player de vídeo otimizado e galerias em alta resolução com carregamento instantâneo',
+      'Estética cinematográfica escura que destaca as cores e a direção de fotografia do seu trabalho',
+      'Qualificador de orçamento por tipo de diária/projeto (Vídeo Institucional, Evento, Retrato Corporativo, Casamento)',
+      'Posicionamento profissional no Google para ser encontrado por agências e diretores de marketing',
+    ],
+    complianceOrDetail: 'Valoriza seu trabalho autoral e permite cobrar um ticket condizente com a qualidade da sua entrega.',
+  },
 ];
 
 // Generate all programmatic pages dynamically and deterministically
 function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
   const pages: Record<string, ProgrammaticPageData> = {};
 
-  // 1. Service x City combinations (3 services * 40 cities = 120 pages)
+  // 1. Service x City combinations (5 services * 50 cities = 250 pages)
   CITIES_DATA.forEach((city, cityIdx) => {
     SERVICE_TYPES.forEach((service, serviceIdx) => {
       const slug = `${service.slugPrefix}-${city.slug}`;
       
-      // Pick related slugs (other services in same city + neighboring cities + top niches)
       const otherServicesSameCity = SERVICE_TYPES
         .filter((_, idx) => idx !== serviceIdx)
+        .slice(0, 2)
         .map((s) => `${s.slugPrefix}-${city.slug}`);
       
       const nextCity1 = CITIES_DATA[(cityIdx + 1) % CITIES_DATA.length];
@@ -1003,7 +1348,7 @@ function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
     });
   });
 
-  // 2. Niche pages (30 specialized industry pages)
+  // 2. Niche pages (45 specialized industry pages)
   NICHES_DATA.forEach((niche, nicheIdx) => {
     const slug = niche.slug;
     const nextNiche1 = NICHES_DATA[(nicheIdx + 1) % NICHES_DATA.length];
@@ -1012,6 +1357,7 @@ function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
     const relatedCities = [
       `criacao-de-sites-em-${CITIES_DATA[nicheIdx % CITIES_DATA.length].slug}`,
       `criacao-de-landing-page-em-${CITIES_DATA[(nicheIdx + 1) % CITIES_DATA.length].slug}`,
+      `${niche.slug}-em-${CITIES_DATA[nicheIdx % 10].slug}`,
     ];
 
     pages[slug] = {
@@ -1065,6 +1411,79 @@ function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
       ],
       relatedSlugs: [nextNiche1.slug, nextNiche2.slug, nextNiche3.slug, ...relatedCities],
     };
+  });
+
+  // 3. Ultra-Targeted Niche x Top 10 Cities combinations (12 top niches * 10 top cities = 120 pages)
+  const topNiches = NICHES_DATA.slice(0, 12);
+  const topCities = CITIES_DATA.slice(0, 10);
+
+  topNiches.forEach((niche, nIdx) => {
+    topCities.forEach((city, cIdx) => {
+      const slug = `${niche.slug}-em-${city.slug}`;
+      const nextCity = topCities[(cIdx + 1) % topCities.length];
+      const nextNiche = topNiches[(nIdx + 1) % topNiches.length];
+
+      pages[slug] = {
+        slug,
+        type: 'niche-city',
+        cityName: city.name,
+        stateCode: city.state,
+        nicheName: niche.name,
+        serviceName: `Site e Landing Page para ${niche.singular} em ${city.name}`,
+        title: `Site para ${niche.singular} em ${city.name} (${city.state})`,
+        metaTitle: `Criação de Site e Landing Page para ${niche.singular} em ${city.name} - ${city.state}`,
+        metaDescription: `Especialistas em sites e landing pages para ${niche.name.toLowerCase()} em ${city.name} (${city.state}). Atraia clientes pelo Google e qualifique contatos no WhatsApp.`,
+        badge: `${niche.singular.toUpperCase()} · ${city.name.toUpperCase()} (${city.state})`,
+        heroTitle: `Sites e Landing Pages para ${niche.singular} em`,
+        heroHighlight: `${city.name} (${city.state})`,
+        heroSubtitle: `Posicione seu negócio de ${niche.singular.toLowerCase()} no topo das pesquisas de ${city.name} para atrair ${niche.targetAudience} e gerar ${niche.conversionGoal}.`,
+        contextHeading: `Como destacar seu negócio de ${niche.singular} no mercado de ${city.name} (${city.state})`,
+        contextParagraphs: [
+          `Em um polo exigente como ${city.name} (${city.economicProfile}), profissionais e empresas de ${niche.name} enfrentam um desafio diário: ${niche.mainPain}.`,
+          city.localInsight,
+          `${niche.complianceOrDetail} Por isso, desenvolvemos para o mercado de ${city.name} páginas ultrarrápidas com filtro qualificador integrado, transformando pesquisas locais no Google em ${niche.conversionGoal}.`,
+        ],
+        painPointsTitle: `O que faz ${niche.name} em ${city.name} perderem clientes todos os dias`,
+        painPoints: [
+          {
+            title: `Invisibilidade nas pesquisas locais de ${city.name}`,
+            desc: `Clientes que pesquisam no Google por ${niche.singular.toLowerCase()} em ${city.name} já estão decididos a contratar. Se você não aparece na primeira página com uma estrutura impecável, esse cliente fecha com o concorrente do bairro ao lado.`,
+          },
+          {
+            title: 'Páginas lentas que encarecem anúncios no Google e Instagram',
+            desc: `Rodar tráfego pago em ${city.name} enviando o visitante para um site lento ou confuso desperdiça seu orçamento com cliques que não viram conversas no WhatsApp.`,
+          },
+          {
+            title: 'Falta de triagem inteligente do perfil do cliente',
+            desc: `Sem o formulário anti-curioso na página, você perde tempo respondendo contatos desalinhados em vez de focar em ${niche.conversionGoal}.`,
+          },
+        ],
+        deliverablesTitle: `O que entregamos para o seu projeto de ${niche.singular} em ${city.name}`,
+        deliverables: niche.specificFeatures,
+        faqs: [
+          {
+            question: `Como a Web Lunar ajuda meu negócio de ${niche.singular} a aparecer no Google em ${city.name}?`,
+            answer: `Combinamos arquitetura de código ultrarrápida (nota 90+ no Google PageSpeed) com SEO técnico geolocalizado para ${city.name} (${city.state}) e termos específicos buscados por ${niche.targetAudience}.`,
+          },
+          {
+            question: `Em quanto tempo a página fica pronta para captar clientes em ${city.name}?`,
+            answer: `Entregamos landing pages de alta conversão entre 7 a 14 dias úteis e sites completos entre 10 a 20 dias úteis, já configurados com botão de WhatsApp qualificador e prontos para campanhas em ${city.name}.`,
+          },
+          {
+            question: `A estrutura respeita as normas do setor de ${niche.name}?`,
+            answer: `Sim! ${niche.complianceOrDetail} Todos os textos e elementos visuais são construídos sob medida para transmitir máxima ética, autoridade e confiança.`,
+          },
+        ],
+        relatedSlugs: [
+          niche.slug,
+          `criacao-de-sites-em-${city.slug}`,
+          `criacao-de-landing-page-em-${city.slug}`,
+          `${niche.slug}-em-${nextCity.slug}`,
+          `${nextNiche.slug}-em-${city.slug}`,
+          nextNiche.slug,
+        ],
+      };
+    });
   });
 
   return pages;
