@@ -476,6 +476,133 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       ],
       conclusion: 'Não deixe clientes irem para o concorrente por falta de uma página convincente. Fale com a equipe da Web Lunar e coloque no ar uma landing page feita sob medida para vender o seu serviço.',
     },
+    'seo-programatico-o-que-e-como-escalar-paginas-no-google': {
+      slug: 'seo-programatico-o-que-e-como-escalar-paginas-no-google',
+      title: 'O Que É SEO Programático e Como Escalar Centenas de Páginas no Google em 2026',
+      date: '28 de Outubro, 2026',
+      readTime: '6 min de leitura',
+      category: 'SEO & Tecnologia',
+      excerpt: 'Entenda como grandes marcas usam SEO programático com dados dinâmicos para dominar buscas de cauda longa no Google, multiplicar leads orgânicos e como aplicar no seu negócio.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
+      author: {
+        name: 'Equipe Web Lunar',
+        role: 'Engenharia Web & SEO Avançado',
+      },
+      sections: [
+        {
+          heading: 'O que é SEO Programático e por que ele revoluciona o tráfego orgânico?',
+          paragraphs: [
+            'No SEO tradicional, a criação de conteúdo costuma depender da redação manual de cada artigo ou página institucional, um processo lento e com alto custo por página produzida.',
+            'O SEO Programático (pSEO) inverte essa lógica: em vez de criar páginas manualmente uma a uma, desenvolve-se uma arquitetura com banco de dados estruturado e um layout de alta performance capaz de gerar centenas ou milhares de páginas únicas e altamente segmentadas.',
+            'Gigantes da internet como TripAdvisor, Canva, Zap Imóveis e Wise construíram seus impérios de busca usando exatamente essa técnica: páginas criadas para atender buscas hiper-específicas, como serviços por bairro ou modelos de design por nicho.',
+          ],
+          callout: 'Definição prática: SEO Programático é a automação estruturada de páginas que respondem com precisão a pesquisas de cauda longa, entregando valor real e dados específicos para cada intenção de busca.',
+        },
+        {
+          heading: 'A anatomia de uma estratégia de SEO Programático vencedora em 2026',
+          paragraphs: [
+            'Para que uma estratégia programática tenha sucesso sem riscos de punição, é essencial combinar três pilares fundamentais de engenharia:',
+          ],
+          list: [
+            '1. Banco de dados confiável e enriquecido: dados exclusivos sobre cidades, serviços, categorias ou tabelas comparativas que realmente ajudem o usuário.',
+            '2. Código de altíssima performance: páginas construídas em Next.js com geração estática e hidratação ultrarrápida, garantindo pontuação máxima no Core Web Vitals.',
+            '3. Conteúdo dinâmico não duplicado: variação inteligente de títulos, textos contextuais, blocos de perguntas frequentes e chamadas para ação personalizadas para cada segmento.',
+            '4. Marcação de Schema.org e Sitemaps automatizados: indexação acelerada nos motores de busca com dados estruturados para rich snippets no Google.',
+          ],
+        },
+        {
+          heading: 'Como evitar penalizações do Google e garantir autoridade real',
+          paragraphs: [
+            'As diretrizes do Google contra conteúdo de baixa qualidade (thin content) e páginas de transição (doorway pages) são rigorosas. O Google não pune a automação em si, mas sim páginas rasas criadas apenas para manipular o algoritmo sem agregar valor ao visitante.',
+            'Para garantir imunidade contra atualizações de algoritmo, cada página programática precisa resolver a intenção de busca com clareza, oferecer um caminho direto de conversão para o WhatsApp ou contato e carregar instantaneamente em conexões móveis.',
+          ],
+        },
+        {
+          heading: 'Como a Web Lunar implementa SEO Programático no seu negócio',
+          paragraphs: [
+            'Na Web Lunar, desenhamos arquiteturas completas de SEO programático sob medida para empresas que desejam expandir sua atuação geográfica ou liderar segmentos de mercado com alta demanda de busca.',
+            'Cuidamos desde a modelagem dos dados e copywriting estratégico até o desenvolvimento da infraestrutura em Next.js, conectando o tráfego gerado diretamente aos seus canais comerciais de vendas.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'O que diferencia o SEO programático do SEO tradicional?',
+          answer: 'O SEO tradicional foca em poucas palavras-chave genéricas de alta concorrência escritas manualmente. O SEO programático foca em milhares de buscas de cauda longa, onde a concorrência é menor e a intenção de compra é muito mais qualificada.',
+        },
+        {
+          question: 'O Google pode punir o meu domínio por criar muitas páginas?',
+          answer: 'Não, desde que as páginas ofereçam informações verdadeiras, úteis e diferenciadas. O Google penaliza cópias vazias ou spam, mas indexa e ranqueia com prioridade páginas estruturadas que resolvem a dúvida exata do usuário com rapidez.',
+        },
+        {
+          question: 'Para quais tipos de negócios o SEO programático é indicado?',
+          answer: 'É ideal para prestadores de serviços que atendem múltiplas regiões ou cidades, imobiliárias, diretórios, plataformas B2B, empresas de tecnologia e e-commerces com grande variedade de categorias.',
+        },
+      ],
+      conclusion: 'Se você quer multiplicar o alcance da sua empresa no Google sem depender exclusivamente de anúncios pagos, o SEO programático é o melhor caminho. Fale com a equipe da Web Lunar e descubra como colocar essa tecnologia para gerar oportunidades para o seu negócio.',
+    },
+    'velocidade-do-site-e-vendas-por-que-site-lento-perde-dinheiro': {
+      slug: 'velocidade-do-site-e-vendas-por-que-site-lento-perde-dinheiro',
+      title: 'Velocidade do Site e Vendas: Por Que Cada Segundo a Mais Faz Sua Empresa Perder Clientes',
+      date: '24 de Outubro, 2026',
+      readTime: '5 min de leitura',
+      category: 'Performance & Vendas',
+      excerpt: 'Descubra como os Core Web Vitals e a velocidade de carregamento impactam diretamente o faturamento da sua empresa e por que páginas que abrem abaixo de 1 segundo convertem até o dobro.',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
+      author: {
+        name: 'Equipe Web Lunar',
+        role: 'Engenharia Web & Otimização de Conversão',
+      },
+      sections: [
+        {
+          heading: 'A tolerância zero do consumidor na internet moderna',
+          paragraphs: [
+            'Na era do 5G e das redes sociais em alta velocidade, os usuários não têm paciência para esperar uma página carregar. Estudos de usabilidade do Google comprovam que 53% das pessoas abandonam um site se ele demorar mais de 3 segundos para abrir no celular.',
+            'Cada segundo adicional entre o clique no anúncio e a exibição completa do conteúdo reduz a taxa de conversão em até 20%. Em termos práticos: se o seu site é lento, você está pagando pelo clique e entregando o cliente de presente para a concorrência.',
+          ],
+          callout: 'Impacto direto no tráfego pago: um site rápido reduz o Custo por Clique (CPC) nos anúncios do Google e Meta, porque o algoritmo recompensa páginas que entregam boa experiência.',
+        },
+        {
+          heading: 'Os Core Web Vitals do Google e o impacto real no faturamento',
+          paragraphs: [
+            'O Google utiliza métricas técnicas oficiais de experiência de página como fator de ranqueamento na busca orgânica:',
+          ],
+          list: [
+            'LCP (Largest Contentful Paint): mede a velocidade com que o conteúdo principal da página fica visível. O ideal é abaixo de 2,0 segundos.',
+            'INP (Interaction to Next Paint): avalia a rapidez da resposta visual quando o usuário toca em um botão ou abre o menu. Páginas que travam durante o toque perdem pontos.',
+            'CLS (Cumulative Layout Shift): garante que botões e textos não fiquem pulando na tela enquanto imagens carregam, evitando cliques acidentais e frustração.',
+          ],
+        },
+        {
+          heading: 'Por que sites tradicionais sofrem com lentidão?',
+          paragraphs: [
+            'A maioria dos sites corporativos sofre do mesmo mal: construtores visuais genéricos que injetam centenas de scripts desnecessários, imagens pesadas sem compressão e dezenas de plugins de terceiros competindo por memória.',
+            'Na Web Lunar, nós desenvolvemos aplicações web utilizando Next.js moderno e código limpo sob medida. O resultado são páginas leves, com nota máxima nos testes oficiais do Google e carregamento fluido a 120 FPS.',
+          ],
+        },
+        {
+          heading: 'Como a Web Lunar transforma velocidade em vendas',
+          paragraphs: [
+            'Nosso processo de desenvolvimento combina design visual refinado com engenharia de ponta: compressão inteligente de ativos, entrega por redes de distribuição de conteúdo (CDN) e otimização para que o visitante encontre a informação e o botão de WhatsApp sem nenhum segundo de espera.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Como posso testar a velocidade real do meu site?',
+          answer: 'Você pode usar a ferramenta gratuita PageSpeed Insights do Google. Se a pontuação mobile do seu site estiver abaixo de 80, ele tem gargalos graves que estão afastando clientes.',
+        },
+        {
+          question: 'Melhorar a velocidade do site ajuda no posicionamento do Google?',
+          answer: 'Sim. Os Core Web Vitals são critérios oficiais de ranqueamento. Sites rápidos e responsivos ganham prioridade nas buscas locais e pesquisas móveis.',
+        },
+        {
+          question: 'É possível deixar qualquer site rápido sem perder a beleza visual?',
+          answer: 'Com certeza. Usando tecnologias contemporâneas de renderização como Next.js e Tailwind, é possível ter animações ricas e visual moderno sem comprometer a velocidade de abertura.',
+        },
+      ],
+      conclusion: 'Não permita que a lentidão do seu site continue sabotando seus investimentos em marketing e vendas. Converse com a Web Lunar e construa uma presença digital de altíssima performance para a sua empresa.',
+    },
   },
   en: {
     'site-com-ia-vs-wordpress-qual-ranqueia-melhor': {
@@ -927,6 +1054,133 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       ],
       conclusion: 'Stop losing valuable customers to competitors with better-converting pages. Contact Web Lunar today to launch a landing page engineered to sell your services.',
     },
+    'seo-programatico-o-que-e-como-escalar-paginas-no-google': {
+      slug: 'seo-programatico-o-que-e-como-escalar-paginas-no-google',
+      title: 'What is Programmatic SEO and How to Scale Hundreds of Pages on Google in 2026',
+      date: 'October 28, 2026',
+      readTime: '6 min read',
+      category: 'SEO & Strategy',
+      excerpt: 'Learn how major brands use programmatic SEO with dynamic data sets to dominate long-tail Google searches, multiply organic leads, and apply it to your business.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
+      author: {
+        name: 'Web Lunar Team',
+        role: 'Web Engineering & Advanced SEO',
+      },
+      sections: [
+        {
+          heading: 'What is Programmatic SEO and why does it revolutionize organic traffic?',
+          paragraphs: [
+            'In traditional SEO, content production usually relies on manually writing each article or landing page—a slow process with high cost per published page.',
+            'Programmatic SEO (pSEO) flips this paradigm: instead of creating pages one by one, developers build a high-performance template powered by a structured database capable of generating hundreds or thousands of unique, hyper-targeted pages.',
+            'Global tech giants like TripAdvisor, Canva, and Wise built their search traffic empires using this exact strategy: programmatic pages answering hyper-specific queries such as services per city or design templates per niche.',
+          ],
+          callout: 'Practical definition: Programmatic SEO is the structured automation of high-performance pages answering long-tail search intent with genuine, localized data.',
+        },
+        {
+          heading: 'The anatomy of a winning Programmatic SEO setup in 2026',
+          paragraphs: [
+            'To achieve sustained search rankings without quality penalties, a programmatic strategy requires three core technical pillars:',
+          ],
+          list: [
+            '1. Reliable, enriched database: unique data points across locations, services, or comparative matrices that genuinely answer user intent.',
+            '2. High-performance codebase: pages built with Next.js static site generation and lightweight client hydration for perfect Core Web Vitals.',
+            '3. Dynamic non-duplicate content: intelligent variations of titles, contextual paragraphs, FAQ blocks, and localized calls-to-action.',
+            '4. Automated Schema.org markup and XML sitemaps: accelerating Googlebot discovery with structured data for rich snippets.',
+          ],
+        },
+        {
+          heading: 'How to avoid Google penalties and build genuine domain authority',
+          paragraphs: [
+            'Google’s spam policies strictly penalize thin content and low-value doorway pages. Google does not penalize automation itself, but rather empty, repetitive pages designed solely to game search rankings.',
+            'To safeguard your domain against algorithm updates, every programmatic page must address user intent directly, offer a frictionless path to contact or purchase, and load instantly on mobile connections.',
+          ],
+        },
+        {
+          heading: 'How Web Lunar implements Programmatic SEO for your company',
+          paragraphs: [
+            'At Web Lunar, we design full-stack programmatic SEO architectures tailored for companies looking to expand their geographic reach or dominate high-intent market niches.',
+            'We handle data modeling, conversion-driven copywriting, and Next.js engineering, ensuring organic traffic seamlessly converts into qualified inquiries for your sales team.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'What is the main difference between programmatic SEO and traditional SEO?',
+          answer: 'Traditional SEO targets a handful of high-competition keywords written manually. Programmatic SEO targets thousands of long-tail search queries where competition is lower and buyer intent is significantly higher.',
+        },
+        {
+          question: 'Will Google penalize my domain for creating many pages quickly?',
+          answer: 'No, provided the pages provide unique, reliable, and helpful information. Google rewards fast, well-structured pages that answer user queries better than generic alternatives.',
+        },
+        {
+          question: 'What kinds of businesses benefit most from programmatic SEO?',
+          answer: 'It is ideal for service businesses targeting multiple cities or regions, directories, B2B platforms, real estate portfolios, and e-commerce catalogs with diverse categories.',
+        },
+      ],
+      conclusion: 'If you want to scale your company presence on Google without relying solely on paid ads, programmatic SEO is the most scalable approach. Contact Web Lunar to see how we can turn this technology into qualified leads for your business.',
+    },
+    'velocidade-do-site-e-vendas-por-que-site-lento-perde-dinheiro': {
+      slug: 'velocidade-do-site-e-vendas-por-que-site-lento-perde-dinheiro',
+      title: 'Website Speed and Sales: Why Every Extra Second Causes Your Business to Lose Customers',
+      date: 'October 24, 2026',
+      readTime: '5 min read',
+      category: 'Performance & Growth',
+      excerpt: 'Discover how Core Web Vitals and load times directly impact your business revenue and why sub-second websites convert up to twice as many clients.',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
+      author: {
+        name: 'Web Lunar Team',
+        role: 'Web Engineering & Conversion Optimization',
+      },
+      sections: [
+        {
+          heading: 'Zero tolerance: how modern users react to slow websites',
+          paragraphs: [
+            'In an era of 5G and instant feeds, users expect websites to open immediately. Google usability research shows that 53% of mobile visits are abandoned if a page takes longer than 3 seconds to load.',
+            'Every additional second between an ad click and complete page rendering drops conversions by up to 20%. In practice, a sluggish website means you pay for advertising while handing warm prospects directly to your competitors.',
+          ],
+          callout: 'Paid advertising efficiency: fast landing pages improve Quality Score on Google and Meta Ads, directly lowering your Cost Per Click (CPC).',
+        },
+        {
+          heading: 'Google Core Web Vitals and their direct impact on revenue',
+          paragraphs: [
+            'Google officially factors page experience metrics into search ranking algorithms:',
+          ],
+          list: [
+            'LCP (Largest Contentful Paint): measures how quickly main content renders. Target: under 2.0 seconds.',
+            'INP (Interaction to Next Paint): evaluates how fast pages respond to taps and clicks without UI lag.',
+            'CLS (Cumulative Layout Shift): ensures elements do not shift during page load, preventing accidental misclicks.',
+          ],
+        },
+        {
+          heading: 'Why legacy platforms struggle and how Next.js fixes it',
+          paragraphs: [
+            'Most corporate sites suffer from bloated visual page builders that inject hundreds of unneeded scripts and uncompressed assets.',
+            'At Web Lunar, we build custom web applications using modern Next.js and optimized Tailwind CSS. The result is fluid 120 FPS performance and perfect scores across official Google speed tests.',
+          ],
+        },
+        {
+          heading: 'How Web Lunar turns technical performance into revenue',
+          paragraphs: [
+            'Our engineering stack combines refined UI design with edge caching, modern image formats (AVIF/WebP), and frictionless WhatsApp integration so visitors find answers without waiting.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'How can I test my current website speed?',
+          answer: 'You can test your URL for free using Google PageSpeed Insights. Mobile scores under 80 indicate critical bottlenecks that hurt conversion rates.',
+        },
+        {
+          question: 'Does speed improve organic search ranking?',
+          answer: 'Yes. Core Web Vitals are official ranking signals. Fast, mobile-first sites receive priority in search algorithms.',
+        },
+        {
+          question: 'Can a visually rich website still load under 1 second?',
+          answer: 'Absolutely. Using modern server components, modern bundling, and edge distribution, high-end visuals and lightning-fast loading coexist smoothly.',
+        },
+      ],
+      conclusion: 'Stop letting slow load times undermine your marketing investments. Get in touch with Web Lunar to build an ultra-fast, high-converting digital presence.',
+    },
   },
   es: {
     'site-com-ia-vs-wordpress-qual-ranqueia-melhor': {
@@ -1377,6 +1631,133 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
         },
       ],
       conclusion: 'No dejes escapar clientes por no tener una página convincente. Habla con Web Lunar y publica una landing page diseñada para hacer crecer tu negocio.',
+    },
+    'seo-programatico-o-que-e-como-escalar-paginas-no-google': {
+      slug: 'seo-programatico-o-que-e-como-escalar-paginas-no-google',
+      title: 'Qué es el SEO Programático y Cómo Escalar Cientos de Páginas en Google en 2026',
+      date: '28 de Octubre, 2026',
+      readTime: '6 min de lectura',
+      category: 'SEO y Estrategia',
+      excerpt: 'Descubre cómo grandes marcas utilizan el SEO programático con datos dinámicos para dominar búsquedas de cola larga en Google, multiplicar prospectos y cómo aplicarlo a tu negocio.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
+      author: {
+        name: 'Equipo Web Lunar',
+        role: 'Ingeniería Web y SEO Avanzado',
+      },
+      sections: [
+        {
+          heading: '¿Qué es el SEO Programático y por qué revoluciona el tráfico orgánico?',
+          paragraphs: [
+            'En el SEO tradicional, la creación de contenidos depende de redactar manualmente cada artículo o página web, un proceso lento y costoso por página producida.',
+            'El SEO Programático (pSEO) cambia esta lógica: en lugar de crear páginas una a una, se diseña una arquitectura con base de datos estructurada y una plantilla de alto rendimiento capaz de generar cientos o miles de páginas dinámicas altamente segmentadas.',
+            'Empresas globales como TripAdvisor, Canva y Zap Imóveis construyeron su autoridad en buscadores con esta estrategia: páginas creadas para responder búsquedas hiperespecíficas, como servicios por ciudad o plantillas de diseño por nicho.',
+          ],
+          callout: 'Definición práctica: El SEO Programático es la automatización estructurada de páginas que responden con precisión a búsquedas de cola larga, aportando datos reales y valor para el usuario.',
+        },
+        {
+          heading: 'Los pilares técnicos de una estrategia de SEO Programático exitosa en 2026',
+          paragraphs: [
+            'Para que una estrategia programática funcione de forma sostenible sin riesgo de penalizaciones por parte de Google, se necesitan tres pilares fundamentales:',
+          ],
+          list: [
+            '1. Base de datos confiable y enriquecida: datos únicos sobre ciudades, servicios, industrias o matrices comparativas que realmente resuelvan dudas.',
+            '2. Código de máximo rendimiento: páginas construidas con Next.js y generación estática para lograr calificaciones perfectas en Core Web Vitals.',
+            '3. Contenido dinámico no duplicado: títulos contextuales, textos variados, bloques de preguntas frecuentes locales y llamadas a la acción segmentadas.',
+            '4. Marcado Schema.org y Sitemaps automáticos: indexación acelerada en Google con datos estructurados para fragmentos enriquecidos (rich snippets).',
+          ],
+        },
+        {
+          heading: 'Cómo evitar penalizaciones de Google y construir autoridad real',
+          paragraphs: [
+            'Las directrices de Google contra contenido de baja calidad y páginas puente (doorway pages) son estrictas. Google no penaliza la automatización técnica en sí, sino las páginas vacías que intentan manipular el algoritmo sin aportar utilidad al visitante.',
+            'Para proteger tu dominio frente a actualizaciones de algoritmo, cada página programática debe resolver la intención de búsqueda de forma directa, ofrecer un canal claro de contacto por WhatsApp y cargar al instante en dispositivos móviles.',
+          ],
+        },
+        {
+          heading: 'Cómo implementa Web Lunar el SEO Programático en tu negocio',
+          paragraphs: [
+            'En Web Lunar diseñamos infraestructuras completas de SEO programático a medida para empresas que buscan expandir su cobertura geográfica o liderar nichos de alta demanda.',
+            'Gestionamos desde la arquitectura de datos y la redacción persuasiva hasta el desarrollo de la aplicación web en Next.js, conectando el tráfico orgánico directamente con tus canales de venta.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: '¿Cuál es la diferencia entre el SEO programático y el SEO tradicional?',
+          answer: 'El SEO tradicional se enfoca en pocas palabras clave genéricas de alta competencia escritas manualmente. El SEO programático apunta a miles de términos de búsqueda de cola larga con menor competencia y alta intención de compra.',
+        },
+        {
+          question: '¿Google puede penalizar mi dominio por publicar muchas páginas?',
+          answer: 'No, siempre que las páginas ofrezcan información verídica, útil y relevante. Google penaliza el spam vacío, pero posiciona con prioridad páginas rápidas y bien estructuradas.',
+        },
+        {
+          question: '¿Qué tipo de negocios se benefician más del SEO programático?',
+          answer: 'Es ideal para empresas de servicios con cobertura en múltiples ciudades, inmobiliarias, directorios, plataformas B2B y tiendas online con catálogos extensos.',
+        },
+      ],
+      conclusion: 'Si deseas multiplicar el alcance de tu empresa en Google sin depender exclusivamente de publicidad de pago, el SEO programático es la mejor alternativa. Habla con Web Lunar y descubre cómo poner esta tecnología a generar clientes para tu negocio.',
+    },
+    'velocidade-do-site-e-vendas-por-que-site-lento-perde-dinheiro': {
+      slug: 'velocidade-do-site-e-vendas-por-que-site-lento-perde-dinheiro',
+      title: 'Velocidad del Sitio y Ventas: Por Qué Cada Segundo Extra Hace Perder Clientes a Tu Empresa',
+      date: '24 de Octubre, 2026',
+      readTime: '5 min de lectura',
+      category: 'Rendimiento y Ventas',
+      excerpt: 'Descubre cómo las Core Web Vitals y la velocidad de carga impactan directamente en la facturación de tu empresa y por qué las páginas que abren en menos de 1 segundo duplican ventas.',
+      image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
+      author: {
+        name: 'Equipo Web Lunar',
+        role: 'Ingeniería Web y Optimización de Conversión',
+      },
+      sections: [
+        {
+          heading: 'Tolerancia cero: la reacción del usuario contemporáneo ante un sitio lento',
+          paragraphs: [
+            'En la era del 5G y el consumo inmediato, los usuarios no esperan. Estudios oficiales de usabilidad de Google demuestran que el 53% de las personas abandonan una página web si tarda más de 3 segundos en cargar en el móvil.',
+            'Cada segundo adicional entre el clic en el anuncio y la visualización del contenido reduce la tasa de conversión hasta en un 20%. En la práctica: un sitio web lento desperdicia tu inversión publicitaria y regala clientes a la competencia.',
+          ],
+          callout: 'Eficiencia en publicidad pagada: un sitio web rápido reduce el Coste por Clic (CPC) en Google Ads y Meta Ads, ya que el algoritmo premia las páginas de destino con mejor experiencia.',
+        },
+        {
+          heading: 'Las Core Web Vitals de Google y su impacto en las ventas',
+          paragraphs: [
+            'Google utiliza métricas técnicas de experiencia de página como factor de posicionamiento en su buscador:',
+          ],
+          list: [
+            'LCP (Largest Contentful Paint): mide el tiempo hasta que el contenido principal es visible. Lo ideal es menos de 2,0 segundos.',
+            'INP (Interaction to Next Paint): evalúa la fluidez de respuesta cuando el usuario toca un botón o abre el menú sin bloqueos.',
+            'CLS (Cumulative Layout Shift): asegura que los elementos no salten en pantalla mientras cargan las imágenes, evitando toques involuntarios.',
+          ],
+        },
+        {
+          heading: '¿Por qué los sitios tradicionales sufren lentitud y cómo Next.js lo soluciona?',
+          paragraphs: [
+            'La mayoría de sitios web corporativos sufren del mismo problema: constructores visuales pesados que inyectan código innecesario, imágenes pesadas sin optimizar y plugins que saturan la memoria del dispositivo.',
+            'En Web Lunar desarrollamos aplicaciones web a medida utilizando Next.js moderno. El resultado son páginas ligeras, con puntuaciones máximas en PageSpeed y navegación fluida a 120 FPS.',
+          ],
+        },
+        {
+          heading: 'Cómo transforma Web Lunar la velocidad en ventas reales',
+          paragraphs: [
+            'Combinamos diseño visual de alto nivel con distribución en servidores CDN de borde, compresión inteligente de imágenes y botones de WhatsApp directos para que el visitante interactúe sin esperas.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: '¿Cómo puedo comprobar la velocidad real de mi sitio web?',
+          answer: 'Puedes utilizar la herramienta gratuita PageSpeed Insights de Google. Una puntuación inferior a 80 en móvil revela problemas que están perjudicando tus ventas.',
+        },
+        {
+          question: '¿La velocidad web influye en el posicionamento en Google?',
+          answer: 'Sí. Las Core Web Vitals son señales directas de ranking. Los sitios web rápidos y optimizados para móviles reciben prioridad en los resultados de búsqueda.',
+        },
+        {
+          question: '¿Un sitio web con diseño visual avanzado puede cargar en menos de 1 segundo?',
+          answer: 'Totalmente. Empleando componentes de servidor, empaquetado optimizado y código moderno en Next.js, es posible ofrecer animaciones atractivas sin penalizar la velocidad de carga.',
+        },
+      ],
+      conclusion: 'No permitas que la lentitud de tu sitio web siga saboteando tus resultados comerciales. Habla con Web Lunar y crea una presencia digital de máximo rendimiento para tu empresa.',
     },
   },
 

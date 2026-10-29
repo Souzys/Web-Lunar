@@ -605,6 +605,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'Nenhum artigo encontrado para a sua busca.',
       posts: [
         {
+          slug: 'seo-programatico-o-que-e-como-escalar-paginas-no-google',
+          date: '28 de Outubro, 2026',
+          category: 'SEO & Tecnologia',
+          title: 'O Que É SEO Programático e Como Escalar Centenas de Páginas no Google em 2026',
+          excerpt: 'Entenda como grandes marcas usam SEO programático com dados dinâmicos para dominar buscas de cauda longa no Google, multiplicar leads orgânicos e como aplicar no seu negócio.',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+        },
+        {
+          slug: 'velocidade-do-site-e-vendas-por-que-site-lento-perde-dinheiro',
+          date: '24 de Outubro, 2026',
+          category: 'Performance & Vendas',
+          title: 'Velocidade do Site e Vendas: Por Que Cada Segundo a Mais Faz Sua Empresa Perder Clientes',
+          excerpt: 'Descubra como os Core Web Vitals e a velocidade de carregamento impactam diretamente o faturamento da sua empresa e por que páginas que abrem abaixo de 1 segundo convertem até o dobro.',
+          image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80',
+        },
+        {
           slug: 'landing-page-que-vende-guia-pratico',
           date: '19 de Outubro, 2026',
           category: 'Conversão & Vendas',
@@ -1140,6 +1156,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'No articles found matching your query.',
       posts: [
         {
+          slug: 'seo-programatico-o-que-e-como-escalar-paginas-no-google',
+          date: 'October 28, 2026',
+          category: 'SEO & Strategy',
+          title: 'What is Programmatic SEO and How to Scale Hundreds of Pages on Google in 2026',
+          excerpt: 'Learn how major brands use programmatic SEO with dynamic data sets to dominate long-tail Google searches, multiply organic leads, and apply it to your business.',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+        },
+        {
+          slug: 'velocidade-do-site-e-vendas-por-que-site-lento-perde-dinheiro',
+          date: 'October 24, 2026',
+          category: 'Performance & Growth',
+          title: 'Website Speed and Sales: Why Every Extra Second Causes Your Business to Lose Customers',
+          excerpt: 'Discover how Core Web Vitals and load times directly impact your business revenue and why sub-second websites convert up to twice as many clients.',
+          image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80',
+        },
+        {
           slug: 'landing-page-que-vende-guia-pratico',
           date: 'October 19, 2026',
           category: 'Conversion & Growth',
@@ -1674,6 +1706,22 @@ export const translations: Record<Language, TranslationDictionary> = {
       searchPlaceholder: 'Buscar artículos...',
       noResults: 'No se encontraron artículos para tu búsqueda.',
       posts: [
+        {
+          slug: 'seo-programatico-o-que-e-como-escalar-paginas-no-google',
+          date: '28 de Octubre, 2026',
+          category: 'SEO y Estrategia',
+          title: 'Qué es el SEO Programático y Cómo Escalar Cientos de Páginas en Google en 2026',
+          excerpt: 'Descubre cómo grandes marcas utilizan el SEO programático con datos dinámicos para dominar búsquedas de cola larga en Google, multiplicar prospectos y cómo aplicarlo a tu negocio.',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+        },
+        {
+          slug: 'velocidade-do-site-e-vendas-por-que-site-lento-perde-dinheiro',
+          date: '24 de Octubre, 2026',
+          category: 'Rendimiento y Ventas',
+          title: 'Velocidad del Sitio y Ventas: Por Qué Cada Segundo Extra Hace Perder Clientes a Tu Empresa',
+          excerpt: 'Descubre cómo las Core Web Vitals y la velocidad de carga impactan directamente en la facturación de tu empresa y por qué las páginas que abren en menos de 1 segundo duplican ventas.',
+          image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80',
+        },
         {
           slug: 'landing-page-que-vende-guia-pratico',
           date: '19 de Octubre, 2026',
