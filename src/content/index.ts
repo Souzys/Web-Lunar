@@ -63,7 +63,7 @@ export const siteContent = {
         category: "Experiência Web",
         livePreview: "LIVE PREVIEW",
         name: "CAPI Digital",
-        description: "Landing page e plataforma de apresentação para o cérebro operacional de produção de conteúdo assistido por IA.",
+        description: "Site institucional e plataforma de apresentação para o cérebro operacional de produção de conteúdo assistido por IA.",
         buttonText: "Ver Projeto",
         image: "/printcapi.webp",
         size: "large",
