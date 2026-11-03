@@ -1,6 +1,6 @@
 export interface ProgrammaticPageData {
   slug: string;
-  type: 'service-city' | 'niche' | 'niche-city';
+  type: 'service-city' | 'niche' | 'niche-city' | 'versus';
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -138,7 +138,7 @@ export const CITIES_DATA: CityInfo[] = [
     state: 'SC',
     region: 'Sul',
     economicProfile: 'Ilha do Silício, capital nacional com maior densidade de startups, turismo premium e mercado imobiliário valorizado',
-    localInsight: 'Em uma cidade movida pela tecnologia e pelo alto padrão imobiliário, sua empresa precisa de uma página com design impecável e carregamento instantâneo no 5G.',
+    localInsight: 'Em uma cidade movida pela tecnologia e pelo alto padrão imobiliário — onde a Web Lunar desenvolveu o portal oficial do Sinapro/SC (Sindicato das Agências de Propaganda de Santa Catarina) —, sua empresa precisa de uma página com design impecável e carregamento instantâneo no 5G.',
     keySectors: 'imobiliárias de luxo, empresas SaaS, clínicas de estética, turismo e gastronomia',
   },
   {
@@ -201,7 +201,7 @@ export const CITIES_DATA: CityInfo[] = [
     state: 'SC',
     region: 'Sul',
     economicProfile: 'maior cidade de Santa Catarina e um dos principais polos industriais metalmecânicos, químicos e plásticos do país',
-    localInsight: 'Indústrias e prestadores de serviços de Joinville precisam de sites institucionais sólidos que transmitam capacidade técnica para compradores de todo o Brasil.',
+    localInsight: 'Com autoridade comprovada em Santa Catarina — incluindo o desenvolvimento do portal oficial do Sinapro/SC —, entregamos para indústrias e prestadores de serviços de Joinville sites institucionais sólidos que transmitem capacidade técnica para compradores de todo o Brasil.',
     keySectors: 'indústria B2B, automação, engenharia, clínicas e contabilidade corporativa',
   },
   {
@@ -255,7 +255,7 @@ export const CITIES_DATA: CityInfo[] = [
     state: 'SC',
     region: 'Sul',
     economicProfile: 'metro quadrado mais valorizado do Brasil, capital de imóveis de luxo, turismo internacional e estética avançada',
-    localInsight: 'Para vender imóveis de alto padrão, procedimentos estéticos ou serviços premium em Balneário Camboriú e Praia Brava, seu site precisa transmitir sofisticação imediata.',
+    localInsight: 'Para vender imóveis de alto padrão, procedimentos estéticos ou serviços premium em Balneário Camboriú e Praia Brava, seu site precisa transmitir sofisticação imediata — com o padrão de engenharia da Web Lunar, desenvolvedora do portal oficial do Sinapro/SC.',
     keySectors: 'construtoras, imobiliárias de luxo, harmonização e odontologia estética, náutica e gastronomia',
   },
   {
@@ -345,7 +345,7 @@ export const CITIES_DATA: CityInfo[] = [
     state: 'SC',
     region: 'Sul',
     economicProfile: 'polo nacional de tecnologia (Vale Europeu), indústria têxtil e eventos no estado de Santa Catarina',
-    localInsight: 'Em uma cidade com forte cultura de tecnologia e indústria têxtil, ter uma loja virtual ou site corporativo veloz destaca sua marca nacionalmente.',
+    localInsight: 'Em uma cidade com forte cultura de tecnologia e indústria têxtil, ter uma loja virtual ou site corporativo veloz destaca sua marca nacionalmente — com a expertise de quem construiu o portal oficial do Sinapro/SC em Santa Catarina.',
     keySectors: 'indústria têxtil e moda, empresas de software, contabilidade e saúde',
   },
   {
@@ -1486,8 +1486,400 @@ function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
     });
   });
 
+  // 4. High-Intent Versus / Comparison Pages (Dual-Stack Authority: Next.js + WordPress / SNEWS + Sinapro/SC)
+  VERSUS_PAGES_DATA.forEach((versusPage) => {
+    pages[versusPage.slug] = versusPage;
+  });
+
   return pages;
 }
+
+export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
+  {
+    slug: 'wordpress-vs-nextjs-qual-escolher',
+    type: 'versus',
+    serviceName: 'Consultoria e Desenvolvimento WordPress & Next.js',
+    title: 'WordPress vs Next.js: Qual a Melhor Tecnologia para o seu Site em 2026?',
+    metaTitle: 'WordPress vs Next.js: Comparativo Real de Velocidade, SEO e Preço | Web Lunar',
+    metaDescription: 'Em dúvida entre WordPress e Next.js? Veja o comparativo técnico de quem domina os dois mundos (criadores do portal Sinapro/SC em WordPress e SNEWS em Next.js).',
+    badge: 'COMPARATIVO TÉCNICO · AUTORIDADE DUPLA',
+    heroTitle: 'WordPress vs Next.js:',
+    heroHighlight: 'Qual Escolher para o seu Negócio?',
+    heroSubtitle: 'Diferente de agências que só conhecem uma ferramenta, nós dominamos as duas engenharias na prática — do portal oficial do Sinapro/SC (WordPress) à plataforma global SNEWS (Next.js). Veja qual gera mais retorno para o seu momento.',
+    contextHeading: 'A verdade imparcial de quem constrói grandes projetos tanto em WordPress quanto em Next.js',
+    contextParagraphs: [
+      'A maioria das discussões sobre WordPress vs Next.js na internet é enviesada: quem só sabe usar WordPress diz que código é caro; quem só programa em React diz que WordPress não presta. Na Web Lunar, nós entregamos projetos de referência em ambas as tecnologias.',
+      'Desenvolvemos o portal institucional oficial do Sinapro/SC (Sindicato das Agências de Propaganda de Santa Catarina) em WordPress + Elementor Pro porque a equipe do sindicato precisava de autonomia diária imediata para publicar notícias, tabelas referenciais e eventos.',
+      'Por outro lado, construímos os ecossistemas da SNEWS e do VOLK Presenter em Next.js + TypeScript porque exigiam carregamento sub-segundo em 3 idiomas, animações a 60 FPS e escala global imune a falhas de plugins. A escolha certa depende exclusivamente do seu modelo de operação e meta de vendas.',
+    ],
+    painPointsTitle: 'Quando escolher cada tecnologia (Sem errar no investimento)',
+    painPoints: [
+      {
+        title: 'Quando o WordPress Corporativo é a melhor escolha',
+        desc: 'Ideal para portais institucionais, sindicatos (como o Sinapro/SC), associações e empresas com equipe de redação que publica conteúdos semanais e precisa editar blocos visuais sem depender de programador.',
+      },
+      {
+        title: 'Quando o Next.js (React) é imbatível em vendas e SEO',
+        desc: 'Indispensável para Landing Pages de tráfego pago, empresas que buscam nota 98–100 no Google PageSpeed, sistemas sob medida e estratégias de SEO Programático para dominar centenas de cidades no Google.',
+      },
+      {
+        title: 'O erro fatal: WordPress amador cheio de plugins lentos',
+        desc: 'O problema nunca foi o WordPress em si, mas instalações amadoras com 40 plugins piratas que demoram 8 segundos para abrir no celular e derrubam suas campanhas no Google Ads.',
+      },
+    ],
+    deliverablesTitle: 'O que entregamos independentemente da tecnologia escolhida',
+    deliverables: [
+      'Consultoria arquitetural sincera para definir se o seu projeto terá maior ROI em WordPress ou Next.js',
+      'Performance otimizada no celular com estrutura aprovada no Core Web Vitals do Google',
+      'SEO técnico completo com Schema.org, Sitemap automático e integração ao Google Search Console',
+      'Qualificador inteligente de leads integrado ao seu WhatsApp comercial',
+      'Design autoral de alto padrão (sem cara de template genérico)',
+      'Código e propriedade intelectual 100% em nome da sua empresa',
+    ],
+    faqs: [
+      {
+        question: 'Qual ranqueia melhor no Google: WordPress ou Next.js?',
+        answer: 'Para páginas de alta concorrência e SEO Programático em larga escala, o Next.js leva vantagem pela velocidade extrema de carregamento (LCP < 0.8s) e código limpo. Já para portais editoriais com publicação diária manual, um WordPress bem engenheirado (como fizemos no Sinapro/SC) ranqueia muito bem com Yoast/RankMath.',
+      },
+      {
+        question: 'Qual tem menor custo de manutenção mensal?',
+        answer: 'Projetos estáticos em Next.js têm manutenção praticamente zero e não sofrem com quebras de plugins ou invasões. O WordPress exige atualizações periódicas de segurança, mas oferece edição visual direta.',
+      },
+      {
+        question: 'Posso simular qual das duas tecnologias é ideal para mim agora?',
+        answer: 'Sim! Você pode acessar nossa Calculadora Interativa (/calculadora) ou chamar nossa equipe no WhatsApp para receber uma recomendação técnica gratuita em 5 minutos.',
+      },
+    ],
+    relatedSlugs: [
+      'elementor-vs-codigo-sob-medida-performance',
+      'landing-page-vs-site-institucional-qual-melhor',
+      'wix-vs-site-profissional-sob-medida',
+      'criacao-de-sites-em-florianopolis',
+      'criacao-de-sites-em-sao-paulo',
+      'criacao-de-sites-em-brasilia',
+    ],
+  },
+  {
+    slug: 'landing-page-vs-site-institucional-qual-melhor',
+    type: 'versus',
+    serviceName: 'Landing Pages e Sites Institucionais',
+    title: 'Landing Page vs Site Institucional: Qual Gera Mais Clientes e Vendas?',
+    metaTitle: 'Landing Page vs Site Institucional: Qual Escolher para Vender Mais? | Web Lunar',
+    metaDescription: 'Saiba exatamente quando investir em uma Landing Page de alta conversão ou em um Site Institucional completo para sua clínica, escritório ou empresa.',
+    badge: 'GUIA DE DECISÃO COMERCIAL · CONVERSÃO',
+    heroTitle: 'Landing Page vs Site Institucional:',
+    heroHighlight: 'Qual Dá Mais Lucro?',
+    heroSubtitle: 'Entenda a diferença prática entre uma máquina de conversão de página única para anúncios e um portal completo de autoridade e SEO orgânico.',
+    contextHeading: 'Dois objetivos diferentes: Conversão Imediata de Tráfego Pago vs Autoridade Orgânica Duradoura',
+    contextParagraphs: [
+      'Uma das dúvidas mais comuns de empresários, médicos, dentistas e advogados é se vale mais a pena criar uma Landing Page enxuta ou um Site Institucional completo com várias páginas.',
+      'A resposta está na origem do seu cliente: se você vai investir imediatamente em anúncios no Google Ads ou Instagram focados em um único serviço campeão (ex: Implantes Dentários ou Consultoria Tributária), a Landing Page converte até 3x mais porque elimina distrações.',
+      'Porém, se a sua empresa oferece múltiplos serviços, atende clientes corporativos (B2B) ou quer aparecer gratuitamente no Google para dezenas de termos de busca locais, o Site Institucional é o ativo que constrói patrimônio digital.',
+    ],
+    painPointsTitle: 'Como saber qual dos dois modelos você precisa hoje',
+    painPoints: [
+      {
+        title: 'Escolha uma Landing Page se você quer leads imediatos via anúncios',
+        desc: 'Perfeita para validar ofertas, captar pacientes para procedimentos específicos e transformar cliques de campanhas em conversas qualificadas no WhatsApp em 7 a 14 dias úteis.',
+      },
+      {
+        title: 'Escolha um Site Institucional se você busca autoridade e tráfego orgânico',
+        desc: 'Essencial para apresentar história, portfólio, múltiplos serviços, blog e conquistar as primeiras posições do Google na sua cidade sem pagar por cada clique.',
+      },
+      {
+        title: 'A combinação perfeita: Site Institucional + Landing Pages de Campanha',
+        desc: 'Empresas líderes usam um portal institucional forte na raiz do domínio e páginas de aterrissagem dedicadas para cada campanha de tráfego pago.',
+      },
+    ],
+    deliverablesTitle: 'Como estruturamos seu projeto na Web Lunar',
+    deliverables: [
+      'Arquitetura pensada para a jornada real de compra do seu cliente',
+      'Copywriting persuasivo incluso (você não precisa escrever os textos sozinho)',
+      'Filtro qualificador anti-curioso integrado ao botão de WhatsApp',
+      'Carregamento instantâneo no celular (nota 90+ no Google PageSpeed)',
+      'Rastreamento pronto para Google Analytics 4, Google Ads e Meta Pixel',
+      'Possibilidade de começar com uma Landing Page e expandir para Site Completo depois',
+    ],
+    faqs: [
+      {
+        question: 'Uma Landing Page também aparece nas buscas gratuitas do Google?',
+        answer: 'Sim, para a palavra-chave principal do seu serviço. Contudo, um Site Institucional permite criar páginas separadas para cada serviço e cidade, multiplicando seu alcance orgânico no Google.',
+      },
+      {
+        question: 'Qual a diferença de prazo entre Landing Page e Site Institucional?',
+        answer: 'Uma Landing Page de alta conversão fica pronta entre 7 a 14 dias úteis, enquanto um Site Institucional completo leva em média de 10 a 20 dias úteis.',
+      },
+      {
+        question: 'Posso começar com uma Landing Page e transformar em site completo no futuro?',
+        answer: 'Com certeza! Desenvolvemos sua estrutura de forma modular para que você possa adicionar novas páginas e seções conforme o retorno comercial crescer.',
+      },
+    ],
+    relatedSlugs: [
+      'wordpress-vs-nextjs-qual-escolher',
+      'anuncio-direto-whatsapp-vs-landing-page',
+      'wix-vs-site-profissional-sob-medida',
+      'criacao-de-landing-page-em-florianopolis',
+      'criacao-de-landing-page-em-sao-paulo',
+      'criacao-de-landing-page-em-brasilia',
+    ],
+  },
+  {
+    slug: 'wix-vs-site-profissional-sob-medida',
+    type: 'versus',
+    serviceName: 'Redesign e Criação de Sites Profissionais',
+    title: 'Wix / Criadores Gratuitos vs Site Profissional Sob Medida: A Conta que Ninguém Faz',
+    metaTitle: 'Wix vs Site Profissional: Por Que Sites Caseiros Perdem Clientes no Google?',
+    metaDescription: 'Descubra por que sites feitos em criadores arrasta-e-solta como Wix e Canva travam no celular, não ranqueiam no Google e custam caro em vendas perdidas.',
+    badge: 'DIAGNÓSTICO DE PERFORMANCE · ROI REAL',
+    heroTitle: 'Wix e Criadores Caseiros vs',
+    heroHighlight: 'Site Profissional Sob Medida',
+    heroSubtitle: 'O "barato" de um construtor genérico sai caro quando seu site demora 6 segundos para abrir, fica invisível no Google e passa amadorismo para clientes de alto ticket.',
+    contextHeading: 'Por que empresas sérias migram de plataformas fechadas para engenharia profissional',
+    contextParagraphs: [
+      'Construtores como Wix, Google Sites ou páginas exportadas do Canva parecem tentadores no primeiro dia, mas escondem três armadilhas técnicas graves: excesso de scripts proprietários lentos, limitações severas de SEO técnico e aluguel eterno de uma estrutura que nunca é sua.',
+      'Quando um cliente pesquisa pelo seu serviço no celular e encontra uma página que demora para carregar ou desconfigura na tela, a percepção de valor da sua empresa despenca instantaneamente.',
+      'Na Web Lunar, substituímos páginas amadoras por estruturas profissionais de alta velocidade, com código limpo, domínio próprio blindado e comunicação desenhada para fechar negócios.',
+    ],
+    painPointsTitle: 'Os 3 prejuízos invisíveis de manter um site amador',
+    painPoints: [
+      {
+        title: 'Invisibilidade no Google para quem procura seu serviço',
+        desc: 'Criadores genéricos geram código inchado que dificulta a leitura do Googlebot, deixando sua empresa atrás de concorrentes com SEO técnico estruturado.',
+      },
+      {
+        title: 'Cliques caros desperdiçados no Google Ads e Instagram',
+        desc: 'Pagar por anúncio e jogar o visitante em um site lento faz mais da metade das pessoas fecharem a aba antes mesmo de lerem sua oferta.',
+      },
+      {
+        title: 'Falta de propriedade e dependência de mensalidades crescentes',
+        desc: 'Em plataformas fechadas você nunca é dono do código-fonte. Na Web Lunar, o ativo digital pertence 100% à sua empresa.',
+      },
+    ],
+    deliverablesTitle: 'O que muda quando você migra para um site Web Lunar',
+    deliverables: [
+      'Aumento imediato na velocidade de abertura em conexões móveis 4G/5G',
+      'Design exclusivo que transmite autoridade e justifica o valor do seu serviço',
+      'Estrutura de SEO local e Schema.org pronta para subir posições no Google',
+      'Formulário e botão de WhatsApp com qualificação prévia do cliente',
+      'Migração segura sem perder seu domínio ou e-mails profissionais',
+      'Propriedade vitalícia do código sem taxas ocultas de aprisionamento',
+    ],
+    faqs: [
+      {
+        question: 'Já tenho um domínio registrado no Registro.br ou Wix, posso manter o mesmo endereço?',
+        answer: 'Sim! Mantemos exatamente o seu domínio atual e fazemos toda a transição técnica sem tirar seu atendimento do ar.',
+      },
+      {
+        question: 'Um site profissional realmente traz mais contatos do que o meu atual?',
+        answer: 'Sim, porque atua nas duas pontas: atrai mais visitantes pelo Google devido ao SEO técnico e converte uma porcentagem muito maior de visitantes em chamadas no WhatsApp pela rapidez e clareza.',
+      },
+      {
+        question: 'Em quanto tempo vocês refazem o meu site atual?',
+        answer: 'Realizamos o redesign completo e publicação da nova estrutura entre 7 e 15 dias úteis.',
+      },
+    ],
+    relatedSlugs: [
+      'wordpress-vs-nextjs-qual-escolher',
+      'elementor-vs-codigo-sob-medida-performance',
+      'landing-page-vs-site-institucional-qual-melhor',
+      'criacao-de-sites-em-florianopolis',
+      'criacao-de-sites-em-curitiba',
+      'criacao-de-sites-em-belo-horizonte',
+    ],
+  },
+  {
+    slug: 'elementor-vs-codigo-sob-medida-performance',
+    type: 'versus',
+    serviceName: 'Engenharia Front-end e WordPress de Alta Performance',
+    title: 'Elementor vs Código Sob Medida (Next.js): Comparativo de Velocidade e Conversão',
+    metaTitle: 'Elementor vs Código Puro (React/Next.js): Qual o Impacto nas Vendas?',
+    metaDescription: 'Análise técnica real entre páginas construídas no Elementor e engenharia em código Next.js. Veja quando usar cada abordagem para escalar seu negócio.',
+    badge: 'ENGENHARIA WEB · CORE WEB VITALS',
+    heroTitle: 'Elementor vs Código Sob Medida:',
+    heroHighlight: 'O Que Muda no Bolso?',
+    heroSubtitle: 'Compare o impacto do tempo de carregamento, DOM Size e Core Web Vitals no custo por clique das suas campanhas e no posicionamento orgânico.',
+    contextHeading: 'Como extrair o máximo tanto do Elementor Pro quanto de código puro em Next.js',
+    contextParagraphs: [
+      'Como desenvolvedores do portal oficial do Sinapro/SC (feito em WordPress + Elementor Pro com arquitetura limpa) e de plataformas internacionais como SNEWS (feita em Next.js puro), conhecemos os bastidores técnicos das duas abordagens.',
+      'O Elementor Pro, quando configurado por engenheiros experientes sem excesso de add-ons, entrega excelente autonomia visual para portais institucionais. Porém, quando a meta é atingir 99/100 no PageSpeed Mobile e escalar centenas de páginas dinâmicas, o código em Next.js é imbatível.',
+      'A cada 1 segundo a menos no carregamento mobile, a taxa de conversão de uma campanha sobe até 20%. Por isso avaliamos o cenário de cada cliente antes de escrever a primeira linha.',
+    ],
+    painPointsTitle: 'Diferenças técnicas que afetam seu faturamento',
+    painPoints: [
+      {
+        title: 'Tamanho do DOM e Tempo de Hidratação no Celular',
+        desc: 'Construtores visuais geram mais camadas de HTML. Já o código em Next.js entrega apenas o essencial, abrindo instantaneamente mesmo em celulares intermediários.',
+      },
+      {
+        title: 'Índice de Qualidade no Google Ads (CPC mais barato)',
+        desc: 'O Google premia páginas rápidas na "Experiência na página de destino", reduzindo o valor que você paga por cada clique no leilão de anúncios.',
+      },
+      {
+        title: 'Escala Programática e Integrações de Sistema',
+        desc: 'Com Next.js e TypeScript, podemos conectar bancos de dados, calculadoras interativas e centenas de páginas regionais sem perder 1 milissegundo de performance.',
+      },
+    ],
+    deliverablesTitle: 'Nossa garantia técnica em qualquer arquitetura',
+    deliverables: [
+      'Auditoria completa de Core Web Vitals (LCP, INP e CLS)',
+      'Desenvolvimento limpo sem temas pesados ou plugins desnecessários',
+      'Otimização avançada de imagens em formato WebP/AVIF de última geração',
+      'Estrutura semântica H1-H3 e JSON-LD Schema para motores de busca e IAs',
+      'Integração nativa de conversão direta para o WhatsApp',
+      'Suporte técnico direto com quem desenvolveu o projeto',
+    ],
+    faqs: [
+      {
+        question: 'Vocês também otimizam ou refazem sites lentos que já estão em Elementor?',
+        answer: 'Sim! Podemos tanto reestruturar seu WordPress/Elementor atual com engenharia profissional (padrão Sinapro/SC) quanto migrar sua operação para Next.js de ultra-velocidade.',
+      },
+      {
+        question: 'Se eu escolher código em Next.js, consigo alterar textos depois?',
+        answer: 'Sim, estruturamos arquivos de conteúdo organizados ou conectamos um painel administrativo enxuto para que alterações de texto, fotos e artigos sejam simples e rápidas.',
+      },
+      {
+        question: 'Qual opção é melhor para clínicas, médicos e advogados?',
+        answer: 'Para captação via Google Ads e SEO local por bairro/cidade, recomendamos fortemente nossa estrutura em Next.js pela velocidade instantânea no smartphone dos pacientes e clientes.',
+      },
+    ],
+    relatedSlugs: [
+      'wordpress-vs-nextjs-qual-escolher',
+      'wix-vs-site-profissional-sob-medida',
+      'anuncio-direto-whatsapp-vs-landing-page',
+      'site-para-dentista-e-clinica-odontologica',
+      'site-para-advogado-e-escritorio-de-advocacia',
+      'site-para-clinica-medica-e-consultorio',
+    ],
+  },
+  {
+    slug: 'anuncio-direto-whatsapp-vs-landing-page',
+    type: 'versus',
+    serviceName: 'Landing Pages com Qualificador Anti-Curioso',
+    title: 'Anúncio Direto para o WhatsApp vs Landing Page Qualificadora: Por Que Seu Comercial Perde Tempo?',
+    metaTitle: 'Anúncio Direto pro WhatsApp vs Landing Page: Como Parar de Atrair Curiosos',
+    metaDescription: 'Cansado de receber "qual o valor?" no WhatsApp e levar vácuo? Veja por que uma Landing Page com filtro anti-curioso multiplica seu fechamento de vendas.',
+    badge: 'ESTRATÉGIA DE TRÁFEGO · FIM DOS CURIOSOS',
+    heroTitle: 'Anúncio Direto pro WhatsApp vs',
+    heroHighlight: 'Landing Page com Filtro',
+    heroSubtitle: 'Mandar tráfego frio direto para o WhatsApp lota seu celular de curiosos perguntando preço. Uma Landing Page educa, gera desejo e filtra quem realmente pode pagar.',
+    contextHeading: 'O erro que faz 80% das empresas acharem que "tráfego pago não funciona"',
+    contextParagraphs: [
+      'Quando você cria um anúncio no Instagram ou Google com botão direto para o WhatsApp, o clique é fácil demais: a pessoa clica por impulso sem saber como você trabalha, qual o seu diferencial ou para quem é o seu serviço.',
+      'O resultado é um time comercial exausto respondendo "bom dia, qual o preço?" dezenas de vezes para pessoas que visualizam e nunca mais respondem.',
+      'Ao colocar uma Landing Page ultrarrápida com o nosso Qualificador Anti-Curioso entre o anúncio e o WhatsApp, o visitante vê suas provas sociais, entende sua autoridade, seleciona o que precisa em 3 cliques e já chega no seu WhatsApp pronto para agendar ou fechar.',
+    ],
+    painPointsTitle: 'A diferença brutal no fim do mês',
+    painPoints: [
+      {
+        title: 'Anúncio Direto pro WhatsApp = Volume alto de curiosos desqualificados',
+        desc: 'Você gasta horas explicando o básico pelo celular para pessoas que não têm perfil nem orçamento para contratar seu serviço.',
+      },
+      {
+        title: 'Landing Page Web Lunar = Cliente educado e pré-qualificado',
+        desc: 'A página apresenta seus diferenciais, responde às objeções nas FAQs e solicita 3 informações rápidas antes de abrir a conversa no WhatsApp.',
+      },
+      {
+        title: 'Aprendizado inteligente do Pixel e da IA do Google Ads',
+        desc: 'Com uma Landing Page, você consegue disparar a tag de conversão apenas quando o usuário preenche o qualificador, ensinando o algoritmo a buscar clientes compradores.',
+      },
+    ],
+    deliverablesTitle: 'O que incluímos na sua Landing Page Qualificadora',
+    deliverables: [
+      'Dobra principal de alto impacto com proposta de valor cristalina',
+      'Módulo interativo de qualificação em 3 passos integrado ao WhatsApp',
+      'Seção de autoridade, diferenciais técnicos e provas sociais',
+      'Carregamento em menos de 1 segundo para zero perda de cliques do anúncio',
+      'Configuração de eventos de conversão para Meta Ads e Google Ads',
+      'Copywriting estratégico focado em eliminar curiosos e atrair decisores',
+    ],
+    faqs: [
+      {
+        question: 'Colocar uma página antes do WhatsApp não diminui a quantidade de mensagens?',
+        answer: 'Diminui apenas os curiosos que nunca comprariam de você e aumenta drasticamente a taxa de fechamento com clientes reais, economizando o tempo da sua equipe e otimizando seu orçamento de anúncios.',
+      },
+      {
+        question: 'Como funciona a mensagem que chega no meu WhatsApp?',
+        answer: 'Quando o visitante conclui os 3 cliques na página, ele é redirecionado para o seu WhatsApp com uma mensagem já montada contendo o nome dele, o serviço desejado e o momento de compra.',
+      },
+      {
+        question: 'Funciona tanto para Google Ads quanto para Instagram/Facebook Ads?',
+        answer: 'Sim! É a estrutura ideal tanto para quem pesquisa ativamente no Google quanto para quem clica nos seus anúncios do Instagram.',
+      },
+    ],
+    relatedSlugs: [
+      'landing-page-vs-site-institucional-qual-melhor',
+      'wordpress-vs-nextjs-qual-escolher',
+      'criacao-de-landing-page-em-florianopolis',
+      'criacao-de-landing-page-em-sao-paulo',
+      'criacao-de-landing-page-em-brasilia',
+      'criacao-de-landing-page-em-goiania',
+    ],
+  },
+  {
+    slug: 'seo-tradicional-vs-seo-programatico-ia',
+    type: 'versus',
+    serviceName: 'SEO Programático e GEO (Otimização para IAs)',
+    title: 'SEO Tradicional vs SEO Programático & GEO: Como Escalar 400+ Páginas no Google e nas IAs',
+    metaTitle: 'SEO Tradicional vs SEO Programático e GEO (IA): Como Dominar o Google em 2026',
+    metaDescription: 'Enquanto o SEO tradicional escreve 4 textos por mês, o SEO Programático da Web Lunar posiciona centenas de páginas locais e coloca sua marca no ChatGPT e Google.',
+    badge: 'ENGENHARIA DE TRÁFEGO · PSEO & GEO',
+    heroTitle: 'SEO Tradicional vs',
+    heroHighlight: 'SEO Programático & GEO',
+    heroSubtitle: 'Descubra como multiplicar as portas de entrada orgânicas da sua empresa dominando buscas por bairro, cidade e especialidade no Google e no ChatGPT.',
+    contextHeading: 'Por que publicar apenas 4 artigos genéricos de blog por mês não basta mais em 2026',
+    contextParagraphs: [
+      'No modelo antigo de agências de SEO, você paga uma mensalidade alta para receber 4 artigos de blog genéricos ("O que é implante dentário?") que disputam espaço com portais gigantes e raramente geram clientes locais.',
+      'O SEO Programático aliado ao GEO (Generative Engine Optimization) inverte o jogo: nós mapeamos todas as combinações de busca com intenção real de compra do seu cliente (ex: "Especialidade X no Bairro/Cidade Y" e comparativos decisivos) e construímos uma arquitetura de páginas ricas, ultrarrápidas e com dados locais reais.',
+      'Além disso, preparamos seu domínio com documentação estruturada (/llms.txt e Schema.org avançado) para que o ChatGPT, Perplexity e Google Gemini recomendem sua empresa como resposta oficial.',
+    ],
+    painPointsTitle: 'A diferença entre tentar a sorte e dominar o mercado',
+    painPoints: [
+      {
+        title: 'SEO Tradicional: Lento, genérico e focado em topo de funil',
+        desc: 'Leva mais de um ano para trazer tráfego informativo de pessoas de outros estados que só querem tirar dúvidas gratuitas.',
+      },
+      {
+        title: 'SEO Programático Web Lunar: Foco total em intenção de contratação',
+        desc: 'Criamos páginas específicas para cada serviço, nicho e região atendida pela sua empresa, capturando quem já está procurando um fornecedor para fechar negócio.',
+      },
+      {
+        title: 'GEO (Otimização para IAs): Visibilidade na nova geração de buscas',
+        desc: 'Mais de 30% dos decisores já pedem indicações de empresas diretamente ao ChatGPT e Perplexity. Estruturamos seus dados para que as IAs citem a sua marca.',
+      },
+    ],
+    deliverablesTitle: 'Como implementamos SEO Programático & GEO na sua empresa',
+    deliverables: [
+      'Mapeamento de palavras-chave de cauda longa com alta intenção comercial (Serviço x Localidade)',
+      'Arquitetura de banco de dados com insights locais reais para evitar thin content',
+      'Injeção automática de Schema.org (Service, LocalBusiness, MedicalBusiness, FAQPage)',
+      'Implementação de /llms.txt e /llms-full.txt para indexação em motores de IA',
+      'Integração do protocolo IndexNow para notificação instantânea de novas URLs',
+      'Monitoramento direto via API do Google Search Console e Google Analytics 4',
+    ],
+    faqs: [
+      {
+        question: 'O Google não penaliza sites com muitas páginas programáticas?',
+        answer: 'O Google penaliza páginas vazias sem valor. Nossa engenharia utiliza dados econômicos e regionais reais, FAQs exclusivas, velocidade máxima e Schema.org estruturado, fazendo o Google indexar e ranquear centenas de páginas em poucos dias.',
+      },
+      {
+        question: 'Em quanto tempo o SEO Programático começa a gerar impressões no Google?',
+        answer: 'Em nossos projetos próprios e de clientes, o Googlebot inicia a indexação nas primeiras 48 a 72 horas após o envio do Sitemap, gerando centenas de impressões qualificadas já na primeira semana.',
+      },
+      {
+        question: 'Serve para clínicas médicas, odontológicas, escritórios e empresas locais?',
+        answer: 'É o cenário mais lucrativo! Clínicas e prestadores de serviços podem ter páginas dedicadas para cada procedimento cruzado com cada bairro ou cidade vizinha onde seus clientes moram.',
+      },
+    ],
+    relatedSlugs: [
+      'wordpress-vs-nextjs-qual-escolher',
+      'agencia-de-seo-em-florianopolis',
+      'agencia-de-seo-em-sao-paulo',
+      'agencia-de-seo-em-maringa',
+      'agencia-de-seo-em-curitiba',
+      'agencia-de-seo-em-brasilia',
+    ],
+  },
+];
 
 export const PROGRAMMATIC_SEO_PAGES: Record<string, ProgrammaticPageData> = buildAllProgrammaticPages();
 

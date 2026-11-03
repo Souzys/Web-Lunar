@@ -59,6 +59,12 @@ const collectionSchema = {
       "hasPart": [
         {
           "@type": "CreativeWork",
+          "name": "Sinapro/SC",
+          "url": "https://weblunar.com.br/projetos/sinapro",
+          "description": "Portal institucional oficial para o Sindicato das Agências de Propaganda de Santa Catarina."
+        },
+        {
+          "@type": "CreativeWork",
           "name": "SNEWS Broadcast Solutions",
           "url": "https://weblunar.com.br/projetos/snews",
           "description": "Website institucional internacionalizado para líder em broadcast."
@@ -73,7 +79,7 @@ const collectionSchema = {
           "@type": "CreativeWork",
           "name": "CAPI Digital",
           "url": "https://weblunar.com.br/projetos/capi",
-          "description": "Landing page institucional para assistente editorial com IA."
+          "description": "Site institucional para assistente editorial com IA."
         },
         {
           "@type": "CreativeWork",

@@ -374,6 +374,30 @@ export default function SolucaoClient({ page, relatedPages }: Props) {
               </Link>
             ))}
           </div>
+
+          {/* Hub & Calculator Quick Bar (Topic Cluster & Engineering as Marketing) */}
+          <div className="mt-10 pt-8 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-3 text-xs font-semibold">
+              <Link
+                href="/calculadora"
+                className="px-4 py-2 rounded-lg bg-primary text-white hover:bg-blue-700 transition-colors"
+              >
+                ⚡ Simular Escopo e Prazo na Calculadora Interativa →
+              </Link>
+              <Link
+                href="/solucoes/wordpress-vs-nextjs-qual-escolher"
+                className="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 hover:border-primary hover:text-primary transition-colors"
+              >
+                WordPress vs Next.js: Qual escolher?
+              </Link>
+              <Link
+                href="/solucoes/landing-page-vs-site-institucional-qual-melhor"
+                className="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 hover:border-primary hover:text-primary transition-colors"
+              >
+                Landing Page vs Site Institucional
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

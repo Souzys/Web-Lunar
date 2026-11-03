@@ -117,7 +117,15 @@ const jsonLd = {
       "name": "Web Lunar",
       "url": "https://weblunar.com.br",
       "logo": "https://weblunar.com.br/icon.png",
-      "description": "Desenvolvimento de produtos digitais premium, sistemas web de alta performance e landing pages de alta conversão.",
+      "description": "Desenvolvimento de produtos digitais premium, sistemas web de alta performance, SEO programático e landing pages de alta conversão. Desenvolvedora do portal oficial do Sinapro/SC (Sindicato das Agências de Propaganda de Santa Catarina).",
+      "knowsAbout": [
+        "Criação de Sites Profissionais",
+        "Landing Pages de Alta Conversão",
+        "Next.js & React",
+        "WordPress & Elementor Pro",
+        "SEO Técnico e SEO Programático",
+        "Generative Engine Optimization (GEO)"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+55-61-98263-0397",
@@ -154,29 +162,43 @@ const jsonLd = {
           "@type": "SiteNavigationElement",
           "position": 2,
           "name": "Projetos",
-          "description": "Cases de sucesso de clientes como Volk, Snews, CAPI Digital, ACP Tax Advisory, ÔSA e Adansonea.",
+          "description": "Cases de sucesso de clientes como Sinapro/SC, Volk, Snews, CAPI Digital, ACP Tax Advisory, ÔSA e Adansonea.",
           "url": "https://weblunar.com.br/projetos"
         },
         {
           "@type": "SiteNavigationElement",
           "position": 3,
+          "name": "Soluções por Região e Setor",
+          "description": "Mais de 420 soluções digitais personalizadas por cidade, estado e nicho de mercado.",
+          "url": "https://weblunar.com.br/solucoes"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Simulador de Orçamento",
+          "description": "Calculadora interativa gratuita de escopo, tecnologia (Next.js vs WordPress) e prazo para o seu site.",
+          "url": "https://weblunar.com.br/calculadora"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
           "name": "Sobre Nós",
           "description": "Desenvolvimento full-stack, design autoral e engenharia de software de alta performance.",
           "url": "https://weblunar.com.br/sobre"
         },
         {
           "@type": "SiteNavigationElement",
-          "position": 4,
-          "name": "Contato",
-          "description": "Solicite um orçamento para seu projeto web ou sistema com nossa equipe de especialistas.",
-          "url": "https://weblunar.com.br/contato"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 5,
+          "position": 6,
           "name": "Blog",
           "description": "Artigos e insights sobre tecnologia, SEO, Next.js e conversão.",
           "url": "https://weblunar.com.br/blog"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 7,
+          "name": "Contato",
+          "description": "Solicite um orçamento para seu projeto web ou sistema com nossa equipe de especialistas.",
+          "url": "https://weblunar.com.br/contato"
         }
       ]
     }

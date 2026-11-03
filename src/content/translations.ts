@@ -459,6 +459,16 @@ export const translations: Record<Language, TranslationDictionary> = {
       scanning: 'Escaneando portfólio...',
       projects: [
         {
+          id: 'sinapro',
+          title: 'Sinapro/SC',
+          category: 'Portal Institucional',
+          categoryKey: 'siteInstitucional',
+          description: 'Portal institucional e ecossistema de serviços para o Sindicato das Agências de Propaganda de Santa Catarina.',
+          image: '/printsinapro.webp',
+          liveUrl: 'https://sinaprosc.com.br/',
+          tags: ['WordPress', 'Elementor Pro', 'Yoast SEO'],
+        },
+        {
           id: 'snews',
           title: 'SNEWS',
           category: 'Site Institucional',
@@ -1010,6 +1020,16 @@ export const translations: Record<Language, TranslationDictionary> = {
       scanning: 'Scanning portfolio...',
       projects: [
         {
+          id: 'sinapro',
+          title: 'Sinapro/SC',
+          category: 'Institutional Portal',
+          categoryKey: 'siteInstitucional',
+          description: 'Official institutional portal and service ecosystem for the Advertising Agencies Union of Santa Catarina.',
+          image: '/printsinapro.webp',
+          liveUrl: 'https://sinaprosc.com.br/',
+          tags: ['WordPress', 'Elementor Pro', 'Yoast SEO'],
+        },
+        {
           id: 'snews',
           title: 'SNEWS',
           category: 'Corporate Website',
@@ -1560,6 +1580,16 @@ export const translations: Record<Language, TranslationDictionary> = {
       sourceCode: 'Código Fuente',
       scanning: 'Escaneando portafolio...',
       projects: [
+        {
+          id: 'sinapro',
+          title: 'Sinapro/SC',
+          category: 'Portal Institucional',
+          categoryKey: 'siteInstitucional',
+          description: 'Portal institucional oficial y ecosistema de servicios para el Sindicato de Agencias de Publicidad de Santa Catarina.',
+          image: '/printsinapro.webp',
+          liveUrl: 'https://sinaprosc.com.br/',
+          tags: ['WordPress', 'Elementor Pro', 'Yoast SEO'],
+        },
         {
           id: 'snews',
           title: 'SNEWS',

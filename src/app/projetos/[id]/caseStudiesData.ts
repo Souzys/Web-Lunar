@@ -140,6 +140,41 @@ export const CASE_STUDIES_I18N: Record<Language, Record<string, CaseStudy>> = {
         awardSub: "Plataforma de Conteúdo Inteligente"
       }
     },
+    "sinapro": {
+      id: "sinapro",
+      title: "Sinapro/SC",
+      category: "CASE STUDY // PORTAL OFICIAL DAS AGÊNCIAS DE PROPAGANDA",
+      image: "/printsinapro.webp",
+      liveUrl: "https://sinaprosc.com.br/",
+      tags: ["WordPress", "Elementor Pro", "Yoast SEO", "Portal Institucional", "Custom CSS"],
+      client: "Sindicato das Agências de Propaganda de SC",
+      year: "2026",
+      scope: ["UX/UI Institucional", "Desenvolvimento WordPress", "Arquitetura da Informação", "Diretório de Agências", "SEO & Performance"],
+      stack: ["WordPress", "Elementor Pro", "PHP", "Yoast SEO", "Custom CSS"],
+      tagline: "Portal institucional e ecossistema de serviços para a entidade oficial que representa as agências de propaganda de Santa Catarina.",
+      overview: "Desenvolvemos o portal oficial do Sinapro/SC (integrante da Federação Nacional das Agências de Propaganda — FENAPRO), centralizando serviços essenciais para o mercado publicitário catarinense: catálogo de agências associadas, Tabela Referencial de Custos, assessoria jurídica, conteúdos do setor e fluxo digital de filiação.",
+      challenge: "Organizar um alto volume de informações institucionais, tabelas referenciais, notícias, eventos e benefícios exclusivos em uma navegação ágil, intuitiva e com autoridade visual à altura da entidade que representa as próprias agências de comunicação do estado.",
+      solution: "Arquitetura de informação estruturada em WordPress e Elementor Pro com mega-menus categorizados, busca facilitada, área dedicada para agências associadas, formulários de filiação integrados e identidade visual marcante no amarelo e preto oficial do Sistema Sinapro.",
+      results: [
+        "Centralização digital da Tabela Referencial de Custos e manuais para consulta rápida das agências.",
+        "Navegação intuitiva entre diretório de associadas, assessoria jurídica, notícias e benefícios.",
+        "Autonomia editorial completa para a equipe do sindicato publicar conteúdos, eventos e comunicados."
+      ],
+      showcaseHeroTitle: "Autoridade Institucional para o Mercado Publicitário Catarinense",
+      performance: {
+        speed: { title: "Arquitetura", score: "Portal Multi-Serviços", description: "Estrutura pensada para acesso rápido a tabelas, documentos e guias." },
+        tech: { title: "Tecnologia", tech: "WordPress + Elementor Pro", description: "Gestão dinâmica de conteúdo e páginas institucionais escaláveis." },
+        seo: { title: "Visibilidade", status: "Yoast SEO Estruturado", description: "Indexação otimizada para buscas do setor publicitário em SC." }
+      },
+      designSystemText: "Contraste de alto impacto entre o amarelo solar institucional (#FFB800) e o preto profundo (#111111), transmitindo energia criativa, representatividade e solidez institucional.",
+      designSystemComponents: {
+        ctaLabel: "Associe sua Agência",
+        cardTitle: "Tabela Referencial & Apoio",
+        cardDesc: "Consultoria jurídica, parâmetros técnicos e defesa do mercado publicitário.",
+        awardTitle: "Institutional Portal",
+        awardSub: "Sistema Nacional das Agências de Propaganda"
+      }
+    },
     "adansonea": {
       id: "adansonea",
       title: "Adansonea",
@@ -454,6 +489,41 @@ export const CASE_STUDIES_I18N: Record<Language, Record<string, CaseStudy>> = {
         awardSub: "Intelligent Content Platform"
       }
     },
+    "sinapro": {
+      id: "sinapro",
+      title: "Sinapro/SC",
+      category: "CASE STUDY // OFFICIAL ADVERTISING AGENCIES PORTAL",
+      image: "/printsinapro.webp",
+      liveUrl: "https://sinaprosc.com.br/",
+      tags: ["WordPress", "Elementor Pro", "Yoast SEO", "Institutional Portal", "Custom CSS"],
+      client: "Sinapro/SC (Advertising Agencies Union)",
+      year: "2026",
+      scope: ["Institutional UX/UI", "WordPress Engineering", "Information Architecture", "Agency Directory", "SEO & Performance"],
+      stack: ["WordPress", "Elementor Pro", "PHP", "Yoast SEO", "Custom CSS"],
+      tagline: "Institutional portal and service ecosystem for the official organization representing advertising agencies in Santa Catarina.",
+      overview: "We developed the official portal for Sinapro/SC (part of the National Federation of Advertising Agencies — FENAPRO), centralizing essential industry resources: member agency directory, Reference Pricing Tables, legal advisory, industry news, and digital membership onboarding.",
+      challenge: "Organize a vast repository of institutional documents, reference pricing tables, news, events, and member benefits into an intuitive, authoritative experience worthy of the entity that represents the state's creative industry.",
+      solution: "Structured information architecture built with WordPress and Elementor Pro featuring categorized mega-menus, member agency hub, integrated membership forms, and a bold visual identity using Sinapro's signature yellow and black palette.",
+      results: [
+        "Digital centralization of Reference Pricing Tables and industry guides for quick agency access.",
+        "Seamless navigation across member directories, legal advisory, news, and benefits.",
+        "Complete editorial autonomy for internal teams to publish news, events, and official notices."
+      ],
+      showcaseHeroTitle: "Institutional Authority for the Advertising Industry",
+      performance: {
+        speed: { title: "Architecture", score: "Multi-Service Portal", description: "Engineered for fast access to pricing tables, documents, and guides." },
+        tech: { title: "Technology", tech: "WordPress + Elementor Pro", description: "Dynamic content management and scalable institutional pages." },
+        seo: { title: "Visibility", status: "Structured Yoast SEO", description: "Optimized indexing for advertising industry searches." }
+      },
+      designSystemText: "High-impact contrast between institutional solar yellow (#FFB800) and deep black (#111111), conveying creative energy, leadership, and institutional solidity.",
+      designSystemComponents: {
+        ctaLabel: "Join as an Agency",
+        cardTitle: "Reference Table & Support",
+        cardDesc: "Legal advisory, technical benchmarks, and industry representation.",
+        awardTitle: "Institutional Portal",
+        awardSub: "National System of Advertising Agencies"
+      }
+    },
     "adansonea": {
       id: "adansonea",
       title: "Adansonea",
@@ -766,6 +836,41 @@ export const CASE_STUDIES_I18N: Record<Language, Record<string, CaseStudy>> = {
         cardDesc: "Flujos inteligentes de producción editorial.",
         awardTitle: "AI Innovation",
         awardSub: "Plataforma de Contenido Inteligente"
+      }
+    },
+    "sinapro": {
+      id: "sinapro",
+      title: "Sinapro/SC",
+      category: "CASE STUDY // PORTAL OFICIAL DE AGENCIAS DE PUBLICIDAD",
+      image: "/printsinapro.webp",
+      liveUrl: "https://sinaprosc.com.br/",
+      tags: ["WordPress", "Elementor Pro", "Yoast SEO", "Portal Institucional", "Custom CSS"],
+      client: "Sindicato de Agencias de Publicidad de SC",
+      year: "2026",
+      scope: ["Diseño UX/UI Institucional", "Desarrollo WordPress", "Arquitectura de Información", "Directorio de Agencias", "SEO y Rendimiento"],
+      stack: ["WordPress", "Elementor Pro", "PHP", "Yoast SEO", "Custom CSS"],
+      tagline: "Portal institucional y ecosistema de servicios para la entidad oficial que representa a las agencias de publicidad de Santa Catarina.",
+      overview: "Desarrollamos el portal oficial de Sinapro/SC (integrante de la Federación Nacional de Agencias de Publicidad — FENAPRO), centralizando servicios esenciales para el mercado publicitario: directorio de agencias asociadas, Tabla Referencial de Costos, asesoría legal, noticias del sector y afiliación digital.",
+      challenge: "Organizar un alto volumen de información institucional, tablas referenciales, noticias, eventos y beneficios exclusivos en una navegación ágil y con autoridad visual digna de la entidad que representa a las agencias de comunicación.",
+      solution: "Arquitectura de información estructurada en WordPress y Elementor Pro con megamenús categorizados, área para agencias asociadas, formularios de afiliación integrados e identidad visual impactante en el amarillo y negro oficial del Sistema Sinapro.",
+      results: [
+        "Centralización digital de la Tabla Referencial de Costos y manuales para consulta rápida de las agencias.",
+        "Navegación intuitiva entre directorio de asociadas, asesoría jurídica, noticias y beneficios.",
+        "Autonomía editorial completa para publicar noticias, eventos y comunicados oficiales."
+      ],
+      showcaseHeroTitle: "Autoridad Institucional para el Mercado Publicitario",
+      performance: {
+        speed: { title: "Arquitectura", score: "Portal Multiservicios", description: "Estructura pensada para acceso rápido a tablas, documentos y guías." },
+        tech: { title: "Tecnología", tech: "WordPress + Elementor Pro", description: "Gestión dinámica de contenidos y páginas institucionales escalables." },
+        seo: { title: "Visibilidad", status: "Yoast SEO Estructurado", description: "Indexación optimizada para búsquedas del sector publicitario." }
+      },
+      designSystemText: "Contraste de alto impacto entre el amarillo solar institucional (#FFB800) y el negro profundo (#111111), transmitiendo energía creativa, representatividad y solidez.",
+      designSystemComponents: {
+        ctaLabel: "Asociar Agencia",
+        cardTitle: "Tabla Referencial y Apoyo",
+        cardDesc: "Asesoría jurídica, parámetros técnicos y defensa del sector publicitario.",
+        awardTitle: "Institutional Portal",
+        awardSub: "Sistema Nacional de Agencias de Publicidad"
       }
     },
     "adansonea": {

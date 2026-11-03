@@ -190,7 +190,7 @@ export function ProjetoDetalheClient({ caseStudy: initialCaseStudy }: { caseStud
                 </div>
                 <div>
                   <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">{labels.stack}</p>
-                  <p className="text-primary font-mono font-semibold">Next.js & Motion</p>
+                  <p className="text-primary font-mono font-semibold">{activeCaseStudy.stack?.slice(0, 2).join(" & ") || "Next.js & Motion"}</p>
                 </div>
                 <div>
                   <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-1">{labels.year}</p>
@@ -248,7 +248,9 @@ export function ProjetoDetalheClient({ caseStudy: initialCaseStudy }: { caseStud
             </div>
             <div className="p-3 border-r border-white/5 last:border-none">
               <p className="text-xl font-bold font-mono text-blue-400">Design System</p>
-              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">React Modular</p>
+              <p className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">
+                {activeCaseStudy.stack?.[0]?.toLowerCase().includes('wordpress') ? 'WordPress & Elementor' : 'React Modular'}
+              </p>
             </div>
             <div className="p-3 col-span-2 sm:col-span-1 border-r border-white/5 last:border-none">
               <p className="text-xl font-bold font-mono text-purple-400">100/100</p>
@@ -418,10 +420,84 @@ export function ProjetoDetalheClient({ caseStudy: initialCaseStudy }: { caseStud
                     <span>{labels.startProjectBtn}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
+                  <Link
+                    href="/calculadora"
+                    className="mt-3 inline-flex items-center justify-center gap-2 w-full py-2.5 text-xs font-semibold rounded-full border border-neutral-300 text-neutral-700 hover:border-primary hover:text-primary transition-all"
+                  >
+                    <span>⚡ Simular Escopo e Orçamento</span>
+                  </Link>
                 </div>
               </AnimatedSection>
             </div>
 
+          </div>
+
+          {/* Silo Regional & Soluções Relacionadas (Internal PageRank Sculpting) */}
+          <div className="mt-20 pt-14 border-t border-neutral-200 text-left">
+            <p className="text-xs font-mono uppercase tracking-widest text-primary font-bold mb-2">
+              ECOSSISTEMA DE ENGENHARIA WEB LUNAR
+            </p>
+            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-6">
+              Soluções e Polos de Atendimento Relacionados a Este Case
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              <Link
+                href="/solucoes/wordpress-vs-nextjs-qual-escolher"
+                className="p-4 rounded-xl border border-neutral-200 hover:border-primary text-xs font-semibold text-neutral-800 hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>WordPress vs Next.js: Comparativo</span>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+              </Link>
+              <Link
+                href="/solucoes/criacao-de-sites-em-florianopolis"
+                className="p-4 rounded-xl border border-neutral-200 hover:border-primary text-xs font-semibold text-neutral-800 hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>Criação de Sites em Florianópolis (SC)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+              </Link>
+              <Link
+                href="/solucoes/agencia-de-seo-em-florianopolis"
+                className="p-4 rounded-xl border border-neutral-200 hover:border-primary text-xs font-semibold text-neutral-800 hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>Agência de SEO em Florianópolis (SC)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+              </Link>
+              <Link
+                href="/solucoes/criacao-de-sites-em-joinville"
+                className="p-4 rounded-xl border border-neutral-200 hover:border-primary text-xs font-semibold text-neutral-800 hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>Criação de Sites em Joinville (SC)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+              </Link>
+              <Link
+                href="/solucoes/criacao-de-sites-em-blumenau"
+                className="p-4 rounded-xl border border-neutral-200 hover:border-primary text-xs font-semibold text-neutral-800 hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>Criação de Sites em Blumenau (SC)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+              </Link>
+              <Link
+                href="/solucoes/criacao-de-sites-em-balneario-camboriu"
+                className="p-4 rounded-xl border border-neutral-200 hover:border-primary text-xs font-semibold text-neutral-800 hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>Sites em Balneário Camboriú (SC)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+              </Link>
+              <Link
+                href="/solucoes/criacao-de-sites-em-brasilia"
+                className="p-4 rounded-xl border border-neutral-200 hover:border-primary text-xs font-semibold text-neutral-800 hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>Criação de Sites em Brasília (DF)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+              </Link>
+              <Link
+                href="/solucoes/criacao-de-sites-em-sao-paulo"
+                className="p-4 rounded-xl border border-neutral-200 hover:border-primary text-xs font-semibold text-neutral-800 hover:text-primary transition-all flex items-center justify-between"
+              >
+                <span>Criação de Sites em São Paulo (SP)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -32,6 +32,19 @@ export const siteContent = {
     title: "Nosso trabalho",
     projects: [
       {
+        id: "sinapro",
+        year: "2026",
+        category: "Portal Institucional",
+        livePreview: "VER CASE",
+        name: "Sinapro/SC",
+        description: "Portal institucional e ecossistema de serviços para o Sindicato das Agências de Propaganda de Santa Catarina.",
+        buttonText: "Ver Projeto",
+        image: "/printsinapro.webp",
+        size: "large",
+        color: "#FFB800",
+        url: "/projetos/sinapro",
+      },
+      {
         id: "snews",
         year: "2026",
         category: "Site Institucional",

@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/servicos',
     '/solucoes',
+    '/calculadora',
     '/projetos',
     '/sobre',
     '/contato',
@@ -20,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}${route}`,
     lastModified: currentDate,
     changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
-    priority: route === '' ? 1.0 : (route === '/servicos' || route === '/solucoes' || route === '/projetos' ? 0.9 : 0.8),
+    priority: route === '' ? 1.0 : (route === '/servicos' || route === '/solucoes' || route === '/calculadora' || route === '/projetos' ? 0.9 : 0.8),
   }));
 
   // Active Project Case Studies (dynamic)

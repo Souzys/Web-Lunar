@@ -25,6 +25,7 @@ export function Footer() {
     { label: t.nav.projetos, href: '/projetos' },
     { label: t.nav.servicos, href: '/servicos' },
     { label: 'Soluções', href: '/solucoes' },
+    { label: 'Simulador de Orçamento', href: '/calculadora' },
     { label: t.nav.contato, href: '/contato' },
   ];
 
