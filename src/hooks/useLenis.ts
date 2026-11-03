@@ -1,5 +1,6 @@
+'use client';
+
 import { useEffect } from 'react';
-import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,36 +8,21 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+/**
+ * Hook de compatibilidade useLenis:
+ * Integra componentes à instância única global gerenciada pelo SmoothScrollProvider.
+ * Garante recalibração dos marcadores do ScrollTrigger na montagem de cada componente.
+ */
 export function useLenis() {
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.2,
-      syncTouch: false, // Preserva o scroll nativo ultra fluido a 120Hz em dispositivos móveis
-    });
-
-    (window as any).lenis = lenis;
-
-    lenis.on('scroll', ScrollTrigger.update);
-
-    const updateRaf = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-
-    gsap.ticker.add(updateRaf);
-    // lagSmoothing(0) é fundamental na integração Lenis + GSAP para eliminar micro-travamentos a 120Hz
-    gsap.ticker.lagSmoothing(0);
-
-    return () => {
-      delete (window as any).lenis;
-      lenis.destroy();
-      gsap.ticker.remove(updateRaf);
-      gsap.ticker.lagSmoothing(500, 33);
-    };
+    if (typeof window !== 'undefined') {
+      const lenis = (window as any).lenis;
+      if (lenis && (!window.location.hash || window.location.hash === '#')) {
+        lenis.scrollTo(0, { immediate: true });
+      }
+      ScrollTrigger.refresh();
+    }
   }, []);
+
+  return typeof window !== 'undefined' ? (window as any).lenis : null;
 }

@@ -10,6 +10,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LanguageProvider } from "@/context/LanguageContext";
 import ClarityInit from "@/components/analytics/ClarityInit";
+import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -212,10 +213,12 @@ export default function RootLayout({
         </Script>
         <LanguageProvider>
           <TRPCProvider>
-            <Navbar />
-            <main className="flex-1 w-full flex flex-col">{children}</main>
-            <Footer />
-            <WhatsAppFloat />
+            <SmoothScrollProvider>
+              <Navbar />
+              <main className="flex-1 w-full flex flex-col">{children}</main>
+              <Footer />
+              <WhatsAppFloat />
+            </SmoothScrollProvider>
           </TRPCProvider>
         </LanguageProvider>
         <Analytics />

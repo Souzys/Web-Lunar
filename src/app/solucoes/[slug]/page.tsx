@@ -131,7 +131,7 @@ export default async function SolucaoPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <SolucaoClient page={page} relatedPages={relatedPages} />
+      <SolucaoClient key={slug} page={page} relatedPages={relatedPages} />
     </>
   );
 }

@@ -136,7 +136,7 @@ export default async function ArtigoPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <ArtigoClient post={post} />
+      <ArtigoClient key={slug} post={post} />
     </>
   );
 }

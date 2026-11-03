@@ -28,6 +28,8 @@ next-env.d.ts
 .env.test.local
 .env.production.local
 !.env.example
+gsc-credentials.json
+*credentials*.json
 
 # Certificates & Private Keys
 *.pem

@@ -121,7 +121,7 @@ export default async function ProjetoDetalhePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }}
       />
-      <ProjetoDetalheClient caseStudy={project} />
+      <ProjetoDetalheClient key={id} caseStudy={project} />
     </>
   );
 }

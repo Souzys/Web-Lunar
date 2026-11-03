@@ -24,6 +24,15 @@ export function Navbar() {
     return null;
   }
 
+  // Detecta páginas que possuem fundo claro no topo (como os artigos individuais do blog)
+  const isLightHeader = Boolean(pathname && pathname.startsWith('/blog/') && pathname.replace(/\/+$/, '') !== '/blog');
+
+  // Reset do menu e do estado de scroll ao mudar de página
+  useEffect(() => {
+    setIsScrolled(false);
+    setIsOpen(false);
+  }, [pathname]);
+
   // Detecta o scroll para alternar entre o menu horizontal completo e a pílula pequena
   useEffect(() => {
     const handleScroll = () => {
@@ -150,7 +159,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="relative z-50 flex items-center shrink-0">
             <img 
-              src="/logo-web-lunar-light.png" 
+              src={isLightHeader ? "/logo-web-lunar-dark.png" : "/logo-web-lunar-light.png"} 
               alt="Web Lunar" 
               width={260} 
               height={65} 

@@ -21,6 +21,14 @@ export function ProjetoDetalheClient({ caseStudy: initialCaseStudy }: { caseStud
     : null;
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    const lenis = (window as any).lenis;
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    }
+  }, [activeCaseStudy?.id]);
+
+  useEffect(() => {
     const hero = heroRef.current;
     const glow = glowRef.current;
     if (!hero || !glow) return;

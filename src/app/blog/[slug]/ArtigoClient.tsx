@@ -24,6 +24,14 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
   const relatedPosts = allPosts.filter((p) => p.slug !== activePost?.slug).slice(0, 2);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    const lenis = (window as any).lenis;
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    }
+  }, [activePost?.slug]);
+
+  useEffect(() => {
     const hero = heroRef.current;
     const glow = glowRef.current;
     if (!hero || !glow) return;
