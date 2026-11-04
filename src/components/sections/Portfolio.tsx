@@ -126,6 +126,15 @@ export function Portfolio() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    // Sincroniza o ScrollTrigger e a altura de rolagem do Lenis quando os cards filtrados alteram a altura do DOM
+    ScrollTrigger.refresh();
+    const lenis = (window as any).lenis;
+    if (lenis && typeof lenis.resize === 'function') {
+      lenis.resize();
+    }
+  }, [activeFilterKey]);
+
   return (
     <section id="project" className="bg-[#FAFAFA] text-neutral-900 py-10 relative z-10 border-t border-black/5 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
       {/* ── Header ── */}

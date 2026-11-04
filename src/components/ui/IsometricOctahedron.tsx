@@ -37,22 +37,22 @@ export function IsometricOctahedron() {
 
     // Motor Matemático 3D Isolado da Renderização do React
     const project = (node: number[], angleY: number, angleX: number, angleZ: number) => {
-      let [x, y, z] = node;
+      const [x, y, z] = node;
       
       // Rotate Y
-      let cosY = Math.cos(angleY), sinY = Math.sin(angleY);
-      let x1 = x * cosY - z * sinY;
-      let z1 = x * sinY + z * cosY;
+      const cosY = Math.cos(angleY), sinY = Math.sin(angleY);
+      const x1 = x * cosY - z * sinY;
+      const z1 = x * sinY + z * cosY;
       
       // Rotate X
-      let cosX = Math.cos(angleX), sinX = Math.sin(angleX);
-      let y2 = y * cosX - z1 * sinX;
-      let z2 = y * sinX + z1 * cosX;
+      const cosX = Math.cos(angleX), sinX = Math.sin(angleX);
+      const y2 = y * cosX - z1 * sinX;
+      const z2 = y * sinX + z1 * cosX;
 
       // Rotate Z
-      let cosZ = Math.cos(angleZ), sinZ = Math.sin(angleZ);
-      let x3 = x1 * cosZ - y2 * sinZ;
-      let y3 = x1 * sinZ + y2 * cosZ;
+      const cosZ = Math.cos(angleZ), sinZ = Math.sin(angleZ);
+      const x3 = x1 * cosZ - y2 * sinZ;
+      const y3 = x1 * sinZ + y2 * cosZ;
 
       // Simple pseudo-perspective
       const scale = 300 / (300 + z2);
@@ -60,21 +60,37 @@ export function IsometricOctahedron() {
       return { x: x3 * scale, y: y3 * scale, z: z2 };
     };
 
-    // Timeline de Montagem/Desmontagem declarada aqui para o observer acessar
     const tl = gsap.timeline({ repeat: -1 });
     
     let isVisible = true;
-    
+    let isScrolledPast = false;
+
+    const checkVisibilityState = () => {
+      const shouldRun = isVisible && !isScrolledPast;
+      if (shouldRun) {
+        cancelAnimationFrame(animationFrame);
+        animate();
+        tl.play();
+      } else {
+        cancelAnimationFrame(animationFrame);
+        tl.pause();
+      }
+    };
+
+    const handleScroll = () => {
+      const scrolled = typeof window !== 'undefined' && window.scrollY > (window.innerHeight || 800);
+      if (scrolled !== isScrolledPast) {
+        isScrolledPast = scrolled;
+        checkVisibilityState();
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         isVisible = entry.isIntersecting;
-        if (isVisible) {
-          cancelAnimationFrame(animationFrame); // Impede loop duplicado Zumbi
-          animate();
-          tl.play(); // Retoma animação da linha
-        } else {
-          tl.pause(); // Congela os cálculos do GSAP enquanto invisível
-        }
+        checkVisibilityState();
       },
       { threshold: 0.05 }
     );
@@ -85,11 +101,10 @@ export function IsometricOctahedron() {
 
     // Atualização super rápida direto no DOM
     const animate = () => {
-      if (!isVisible) return; // Pause calculation and paint if off-screen
+      if (!isVisible || isScrolledPast) return;
 
       const time = Date.now() / 3000;
       
-      // Animação complexa de rotação em múltiplos eixos para um efeito orgânico e tecnológico
       const currentAngleY = time;
       const currentAngleX = Math.PI / 6 + Math.cos(time * 1.5) * 0.2;
       const currentAngleZ = Math.sin(time * 0.5) * 0.1;
@@ -100,25 +115,24 @@ export function IsometricOctahedron() {
         const p1 = projectedNodes[edge[0]];
         const p2 = projectedNodes[edge[1]];
         if (lines[i]) {
-          lines[i].setAttribute('x1', p1.x.toString());
-          lines[i].setAttribute('y1', p1.y.toString());
-          lines[i].setAttribute('x2', p2.x.toString());
-          lines[i].setAttribute('y2', p2.y.toString());
+          lines[i].setAttribute('x1', p1.x.toFixed(1));
+          lines[i].setAttribute('y1', p1.y.toFixed(1));
+          lines[i].setAttribute('x2', p2.x.toFixed(1));
+          lines[i].setAttribute('y2', p2.y.toFixed(1));
           
-          // Fading edge based on Z depth to enhance 3D effect
           const avgZ = (p1.z + p2.z) / 2;
           const opacity = Math.max(0.1, 1 - (avgZ + size) / (size * 2.5));
-          lines[i].setAttribute('opacity', opacity.toString());
+          lines[i].setAttribute('opacity', opacity.toFixed(2));
         }
       });
 
       projectedNodes.forEach((p, i) => {
         if (nodesG[i]) {
-          nodesG[i].setAttribute('x', (p.x - 4).toString());
-          nodesG[i].setAttribute('y', (p.y - 4).toString());
+          nodesG[i].setAttribute('x', (p.x - 4).toFixed(1));
+          nodesG[i].setAttribute('y', (p.y - 4).toFixed(1));
           
           const opacity = Math.max(0.2, 1 - (p.z + size) / (size * 2.5));
-          nodesG[i].setAttribute('opacity', opacity.toString());
+          nodesG[i].setAttribute('opacity', opacity.toFixed(2));
         }
       });
 
@@ -127,12 +141,11 @@ export function IsometricOctahedron() {
     
     animate();
 
-    // (A Timeline de Montagem/Desmontagem já foi inicializada lá em cima)
     tl.fromTo(lines,
       { strokeDasharray: 400, strokeDashoffset: 400 },
       { strokeDashoffset: 0, duration: 2.5, stagger: 0.1, ease: "power2.out" }
     )
-    .to({}, { duration: 1.5 }) // Pausa estática
+    .to({}, { duration: 1.5 })
     .to(lines,
       { strokeDashoffset: -400, duration: 2, stagger: { each: 0.1, from: "end" }, ease: "power2.inOut" }
     )
@@ -141,27 +154,36 @@ export function IsometricOctahedron() {
     return () => {
       cancelAnimationFrame(animationFrame);
       observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
       tl.kill();
     };
   }, []);
 
-  // Projeção estática inicial
   const initialProjected = nodes.map(n => {
-    return { x: n[0], y: n[1] }; // Dummy placeholder for server-side
+    return { x: n[0], y: n[1] };
   });
 
   return (
-    <div className="relative w-full max-w-[450px] md:max-w-[550px] lg:max-w-[650px] aspect-square flex items-center justify-center">
-      {/* Brilho de Fundo (Glow Tecnológico) */}
-      <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full animate-pulse opacity-60 pointer-events-none" />
+    <div className="relative w-full max-w-[450px] md:max-w-[550px] lg:max-w-[650px] aspect-square flex items-center justify-center transform-gpu">
+      {/* Brilho de Fundo otimizado com radial-gradient sem filtros pesados de blur */}
+      <div 
+        className="absolute inset-0 rounded-full opacity-60 pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(29, 77, 255, 0.28) 0%, rgba(29, 77, 255, 0.08) 45%, transparent 70%)',
+        }}
+      />
       
       {/* Círculos Orbitais de Fundo (Estética de Radar/Performance) */}
-      <div className="absolute w-3/4 h-3/4 border border-white/5 rounded-full" />
-      <div className="absolute w-[90%] h-[90%] border border-primary/20 rounded-full border-dashed animate-[spin_30s_linear_infinite]" />
+      <div className="absolute w-3/4 h-3/4 border border-white/5 rounded-full pointer-events-none" />
+      <div className="absolute w-[90%] h-[90%] border border-primary/20 rounded-full border-dashed animate-[spin_30s_linear_infinite] pointer-events-none" />
       
-      {/* Renderização Vetorial */}
-      <svg ref={svgRef} viewBox="-200 -200 400 400" className="w-full h-full overflow-visible relative z-10 pointer-events-none">
-        
+      {/* Renderização Vetorial com drop-shadow único no container, sem recalcular em cada frame */}
+      <svg 
+        ref={svgRef} 
+        viewBox="-200 -200 400 400" 
+        className="w-full h-full overflow-visible relative z-10 pointer-events-none"
+        style={{ filter: 'drop-shadow(0 0 10px rgba(29,77,255,0.75))' }}
+      >
         {/* Wireframe Animado */}
         <g className="text-primary" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
           {edges.map((edge, i) => {
@@ -173,7 +195,6 @@ export function IsometricOctahedron() {
                 className="wire-line"
                 x1={p1.x} y1={p1.y} 
                 x2={p2.x} y2={p2.y}
-                style={{ filter: 'drop-shadow(0 0 6px rgba(29,77,255,0.7))' }}
               />
             );
           })}
@@ -182,9 +203,8 @@ export function IsometricOctahedron() {
           {initialProjected.map((p, i) => (
             <rect 
               key={`node-${i}`} 
-              className="wire-node fill-bg stroke-primary stroke-2 transition-opacity duration-75"
+              className="wire-node fill-bg stroke-primary stroke-2"
               x={p.x - 4} y={p.y - 4} width="8" height="8" 
-              style={{ filter: 'drop-shadow(0 0 8px rgba(29,77,255,1))' }}
             />
           ))}
         </g>

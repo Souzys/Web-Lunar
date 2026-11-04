@@ -44,8 +44,9 @@ export function ServicosClient() {
   const heroRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
+  const cursorInnerRef = useRef<HTMLDivElement>(null);
+  const cursorIconRefs = useRef<(SVGSVGElement | null)[]>([]);
   const [activeService, setActiveService] = useState(-1);
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
 
   const servicesList = [
     { num: '01', ...t.services.items.landingPages, icon: SERVICE_ICONS[0] },
@@ -79,6 +80,17 @@ export function ServicosClient() {
     }
   }, []);
 
+  // Sincroniza ScrollTrigger e Lenis quando o acordeom abre/fecha
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+      if (typeof window !== 'undefined' && (window as any).lenis) {
+        (window as any).lenis.resize();
+      }
+    }, 520);
+    return () => clearTimeout(timer);
+  }, [activeService]);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const hero = heroRef.current;
@@ -86,8 +98,8 @@ export function ServicosClient() {
     if (!hero || !glow) return;
 
     gsap.set(glow, {
-      x: typeof window !== 'undefined' ? window.innerWidth / 2 - 400 : 0,
-      y: typeof window !== 'undefined' ? window.innerHeight / 4 - 400 : 0,
+      x: typeof window !== 'undefined' ? window.innerWidth / 2 - 350 : 0,
+      y: typeof window !== 'undefined' ? window.innerHeight / 4 - 350 : 0,
     });
     
     let xToCursor: gsap.QuickToFunc | null = null;
@@ -104,8 +116,8 @@ export function ServicosClient() {
 
     const handleMouseMove = (e: MouseEvent) => {
       if (window.scrollY < (window.innerHeight || 800)) {
-        xToGlow(e.clientX - 400);
-        yToGlow(e.clientY - 400);
+        xToGlow(e.clientX - 350);
+        yToGlow(e.clientY - 350);
       }
       
       if (xToCursor && yToCursor) {
@@ -138,24 +150,15 @@ export function ServicosClient() {
         );
       }
 
-      gsap.to(hero, {
-        yPercent: 30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".services-accordion-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        }
-      });
-
+      // Oculta completamente o container fixo do Hero quando a página é rolada para baixo,
+      // eliminando 100% da carga de composição e repaints na GPU.
       ScrollTrigger.create({
         trigger: ".services-accordion-section",
         start: "top top",
         end: "max",
         onToggle: self => {
           if (hero) {
-            hero.style.visibility = self.isActive ? 'hidden' : 'visible';
+            hero.style.display = self.isActive ? 'none' : 'flex';
           }
         }
       });
@@ -167,18 +170,43 @@ export function ServicosClient() {
     };
   }, []);
 
+  const handleRowEnter = (idx: number) => {
+    if (cursorRef.current && cursorInnerRef.current) {
+      cursorRef.current.style.opacity = '1';
+      cursorInnerRef.current.style.transform = 'scale(1)';
+      cursorIconRefs.current.forEach((icon, i) => {
+        if (icon) icon.style.display = i === idx ? 'block' : 'none';
+      });
+    }
+  };
+
+  const handleRowLeave = () => {
+    if (cursorRef.current && cursorInnerRef.current) {
+      cursorRef.current.style.opacity = '0';
+      cursorInnerRef.current.style.transform = 'scale(0)';
+    }
+  };
+
   return (
     <div className="bg-bg text-text min-h-screen font-sans selection:bg-primary selection:text-white">
 
       {/* ════════════════════════════════════════
-          HERO — FIXED BACKGROUND
+          HERO — FIXED BACKGROUND (Hardware Accelerated)
       ════════════════════════════════════════ */}
-      <div ref={heroRef} className="fixed top-0 left-0 h-screen w-full flex flex-col items-center justify-center z-0 overflow-hidden pt-20 bg-bg">
+      <div 
+        ref={heroRef} 
+        className="fixed top-0 left-0 h-screen w-full flex flex-col items-center justify-center z-0 overflow-hidden pt-20 bg-bg transform-gpu"
+      >
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div
             ref={glowRef}
-            className="absolute w-[800px] h-[800px] bg-primary/20 rounded-full blur-[90px] opacity-40 pointer-events-none transform-gpu"
-            style={{ left: 0, top: 0, willChange: 'transform' }}
+            className="absolute w-[700px] h-[700px] rounded-full opacity-40 pointer-events-none transform-gpu"
+            style={{
+              left: 0,
+              top: 0,
+              willChange: 'transform',
+              background: 'radial-gradient(circle, rgba(29, 77, 255, 0.28) 0%, rgba(29, 77, 255, 0.08) 45%, transparent 70%)',
+            }}
           />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
@@ -196,10 +224,11 @@ export function ServicosClient() {
             </AnimatedSection>
 
             <AnimatedSection options={{ delay: 0.1 }}>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-white mb-6 leading-tight">
-                {t.hero.title1}{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400 italic pr-2">{t.hero.title2}</span>{' '}
-                {t.services.items.sitesApps.tagline.split(' ')[0]}
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
+                <span className="block text-white/95">{t.hero.title1}</span>
+                <span className="inline-block pr-6 pb-1 pl-0.5 text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-primary italic">
+                  {t.hero.title2}
+                </span>
               </h1>
             </AnimatedSection>
 
@@ -268,21 +297,27 @@ export function ServicosClient() {
                       
                       {/* Lado Esquerdo: Título */}
                       <div className="relative flex items-center shrink-0">
-                        <button onClick={() => setActiveService(isOpen ? -1 : i)} className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight transition-all duration-300 text-left text-neutral-950 group-hover:translate-x-3">
+                        <button 
+                          onClick={() => setActiveService(isOpen ? -1 : i)} 
+                          className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight transition-all duration-300 text-left text-neutral-950 group-hover:translate-x-3"
+                        >
                           {service.title}
                         </button>
                       </div>
 
-                      {/* Espaço Vazio Central */}
+                      {/* Espaço Central com Custom Cursor */}
                       <div 
                         className="flex-1 h-12 lg:hover:cursor-none"
                         onClick={() => setActiveService(isOpen ? -1 : i)}
-                        onMouseEnter={() => setHoveredService(i)}
-                        onMouseLeave={() => setHoveredService(null)}
+                        onMouseEnter={() => handleRowEnter(i)}
+                        onMouseLeave={handleRowLeave}
                       />
 
                       {/* Lado Direito: Tagline & Chevron */}
-                      <button onClick={() => setActiveService(isOpen ? -1 : i)} className="flex items-center gap-6 shrink-0 ml-4">
+                      <button 
+                        onClick={() => setActiveService(isOpen ? -1 : i)} 
+                        className="flex items-center gap-6 shrink-0 ml-4"
+                      >
                         <span className={`hidden xl:block text-sm font-light italic max-w-[260px] text-right leading-snug transition-colors duration-300 ${
                           isOpen ? 'text-primary' : 'text-neutral-950'
                         }`}>
@@ -349,20 +384,24 @@ export function ServicosClient() {
             </div>
           </div>
 
-          {/* CUSTOM CURSOR */}
+          {/* CUSTOM CURSOR (Sem re-renderizações no estado do componente React) */}
           <div 
             ref={cursorRef} 
-            className="fixed top-0 left-0 w-24 h-24 pointer-events-none z-[100] hidden lg:flex items-center justify-center"
-            style={{ opacity: hoveredService !== null ? 1 : 0, transition: 'opacity 0.15s ease-out', willChange: 'transform' }}
+            className="fixed top-0 left-0 w-24 h-24 pointer-events-none z-[100] hidden lg:flex items-center justify-center opacity-0 transition-opacity duration-150"
+            style={{ willChange: 'transform' }}
           >
             <div 
-              className="relative w-[80%] h-[80%] bg-neutral-950 rounded-full flex items-center justify-center transition-transform duration-200 ease-out shadow-[0_0_20px_rgba(0,0,0,0.1)]"
-              style={{ transform: hoveredService !== null ? 'scale(1)' : 'scale(0)' }}
+              ref={cursorInnerRef}
+              className="relative w-[80%] h-[80%] bg-neutral-950 rounded-full flex items-center justify-center scale-0 transition-transform duration-200 ease-out shadow-[0_0_20px_rgba(0,0,0,0.1)]"
             >
-               {hoveredService !== null && React.createElement(servicesList[hoveredService].icon, { 
-                 className: "w-8 h-8 text-white animate-[pulse_2s_ease-in-out_infinite]", 
-                 strokeWidth: 1.5 
-               })}
+              {SERVICE_ICONS.map((Icon, idx) => (
+                <Icon
+                  key={idx}
+                  ref={el => { cursorIconRefs.current[idx] = el; }}
+                  className="w-8 h-8 text-white hidden animate-[pulse_2s_ease-in-out_infinite]" 
+                  strokeWidth={1.5} 
+                />
+              ))}
             </div>
           </div>
         </section>

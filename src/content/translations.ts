@@ -491,8 +491,8 @@ export const translations: Record<Language, TranslationDictionary> = {
         {
           id: 'capi',
           title: 'CAPI Digital',
-          category: 'Experiência Web',
-          categoryKey: 'experienciaWeb',
+          category: 'Site Institucional',
+          categoryKey: 'siteInstitucional',
           description: 'Site institucional e plataforma de apresentação para o cérebro operacional de produção de conteúdo assistido por IA.',
           image: '/printcapi.webp',
           liveUrl: 'https://capi.digital/pt',
@@ -1052,8 +1052,8 @@ export const translations: Record<Language, TranslationDictionary> = {
         {
           id: 'capi',
           title: 'CAPI Digital',
-          category: 'Web Experience',
-          categoryKey: 'experienciaWeb',
+          category: 'Corporate Website',
+          categoryKey: 'siteInstitucional',
           description: 'Institutional website and presentation platform for the AI-assisted editorial content production workspace.',
           image: '/printcapi.webp',
           liveUrl: 'https://capi.digital/pt',
@@ -1613,8 +1613,8 @@ export const translations: Record<Language, TranslationDictionary> = {
         {
           id: 'capi',
           title: 'CAPI Digital',
-          category: 'Experiencia Web',
-          categoryKey: 'experienciaWeb',
+          category: 'Sitio Institucional',
+          categoryKey: 'siteInstitucional',
           description: 'Sitio institucional y plataforma de presentación para el ecosistema editorial asistido por inteligencia artificial.',
           image: '/printcapi.webp',
           liveUrl: 'https://capi.digital/pt',

@@ -34,34 +34,38 @@ export function IntroSlider() {
         }
       });
 
-      // 1. Hero 1 (Design & Código) sai de cena (0s -> 0.7s)
+      // 1. Hero 1 (Design & Código) sai de cena com desativação de pointer-events ao sumir
       tl.to(hero, {
         opacity: 0,
         scale: 0.96,
         y: -40,
-        duration: 0.7,
+        duration: 0.5,
         ease: 'power2.inOut',
+        onUpdate: function() {
+          if (hero) {
+            hero.style.pointerEvents = this.progress() > 0.5 ? 'none' : 'auto';
+          }
+        }
       }, 0);
 
-      // 2. Hero 2 (IndustryCircles / Sobre Nós) entra limpo sem sobreposição (0.5s -> 1.2s)
+      // 2. Hero 2 (IndustryCircles / Sobre Nós) entra limpo sem sobreposição
       tl.fromTo(about,
         { opacity: 0, scale: 1.04, y: 40 },
         {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 0.7,
+          duration: 0.5,
           ease: 'power2.out',
         },
-        0.5
+        0.3
       );
 
-      // 3. PAUSA DE LEITURA (1.2s -> 2.5s):
-      // Mantém a 2ª Hero (Sobre Nós + Estatísticas) 100% fixada e legível antes do unpin para o Portfólio
+      // 3. Breve estabilização para leitura antes do Portfólio entrar suavemente
       tl.to(about, {
         opacity: 1,
-        duration: 1.3,
-      }, 1.2);
+        duration: 0.2,
+      }, 0.8);
     }, container);
 
     return () => ctx.revert();
@@ -77,8 +81,8 @@ export function IntroSlider() {
         </div>
       </div>
 
-      {/* LAYOUT DESKTOP: Pinned slider estagiado para leitura confortável */}
-      <div ref={containerRef} className="hidden md:block relative w-full h-[320vh] -mb-[100vh] bg-bg z-0">
+      {/* LAYOUT DESKTOP: Pinned slider estagiado e contínuo */}
+      <div ref={containerRef} className="hidden md:block relative w-full h-[200vh] -mb-[100vh] bg-bg z-0">
         <div className="sticky top-0 w-full h-screen overflow-hidden">
           <div ref={heroRef} className="absolute inset-0 w-full h-full z-10 flex flex-col justify-between will-change-[transform,opacity]">
             <Hero />
