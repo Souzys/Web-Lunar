@@ -12,16 +12,38 @@ export default function WhatsAppFloat() {
   }
 
   const phoneNumber = '5561982630397';
-  const defaultMessage = encodeURIComponent('Olá equipe Web Lunar! Vim pelo site e gostaria de conversar sobre um projeto.');
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;
+
+  // Mensagem dinâmica contextualizada de acordo com a página que o cliente está visitando
+  let dynamicMessage = 'Olá equipe Web Lunar! Vim pelo site e gostaria de conversar sobre um projeto.';
+  let dynamicLabel = 'Orçamento no WhatsApp';
+
+  if (pathname?.startsWith('/solucoes/')) {
+    const slug = pathname.replace('/solucoes/', '');
+    const cleanTopic = slug
+      .split('-')
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
+    dynamicMessage = `Olá Lucas! Estava vendo a solução de *${cleanTopic}* no site da Web Lunar e gostaria de um orçamento.`;
+    dynamicLabel = 'Falar com Especialista';
+  } else if (pathname?.startsWith('/blog/')) {
+    dynamicMessage = 'Olá Lucas! Estava lendo um artigo no blog da Web Lunar e gostaria de tirar uma dúvida sobre criação de site.';
+    dynamicLabel = 'Tirar Dúvida no WhatsApp';
+  } else if (pathname?.startsWith('/projetos')) {
+    dynamicMessage = 'Olá Lucas! Vi os projetos no portfólio da Web Lunar e gostaria de solicitar um orçamento para o meu negócio.';
+    dynamicLabel = 'Solicitar Orçamento';
+  } else if (pathname?.startsWith('/calculadora')) {
+    dynamicMessage = 'Olá Lucas! Fiz uma simulação na calculadora da Web Lunar e gostaria de alinhar o escopo do meu projeto.';
+    dynamicLabel = 'Enviar Simulação';
+  }
+
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(dynamicMessage)}`;
 
   const [isLightSection, setIsLightSection] = useState(false);
 
   useEffect(() => {
     // Detecta se o botão flutuante está sobre uma seção de fundo claro
-    // Usando IntersectionObserver para taxa de atualização a 120 FPS sem forçar layout reflow no scroll
     const lightElements = document.querySelectorAll<HTMLElement>(
-      'section.bg-white, section.bg-\\[\\#FAFAFA\\], div.bg-white, div.bg-\\[\\#FAFAFA\\], [data-light-section="true"]'
+      'section.bg-white, section.bg-\\[\\#FAFAFA\\], div.bg-white, div.bg-\\[\\#FAFAFA\\], section.bg-slate-50, section.bg-slate-100, [data-light-section="true"]'
     );
 
     if (lightElements.length === 0) {
@@ -43,7 +65,6 @@ export default function WhatsAppFloat() {
         setIsLightSection(intersectingElements.size > 0);
       },
       {
-        // Alinha a detecção exatamente com o canto inferior direito onde o botão reside
         rootMargin: '0px 0px -70px 0px',
         threshold: 0,
       }
@@ -71,7 +92,7 @@ export default function WhatsAppFloat() {
         className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-emerald-500/30 bg-[#0a0f1d]/90 text-white backdrop-blur-md hover:bg-neutral-900 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.4)] group"
       >
         <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse shrink-0" />
-        <span className="text-neutral-200 group-hover:text-white">Orçamento no WhatsApp</span>
+        <span className="text-neutral-200 group-hover:text-white">{dynamicLabel}</span>
       </a>
 
       <a
@@ -98,7 +119,7 @@ export default function WhatsAppFloat() {
           className="w-6 h-6 fill-current transition-colors duration-500 relative z-10"
           viewBox="0 0 24 24"
         >
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97-1.861-1.868-4.339-2.897-6.97-2.899-5.443 0-9.87 4.372-9.875 9.8.001 1.77.476 3.5 1.379 5.017l-.988 3.598 3.675-.952zm11.458-6.666c-.301-.15-1.785-.88-2.062-.98-.277-.1-.478-.15-.678.15-.2.3-.778.98-.953 1.18-.176.2-.352.226-.653.076-.301-.15-1.272-.469-2.423-1.496-.895-.798-1.5-1.784-1.676-2.084-.176-.3-.019-.462.132-.611.135-.134.301-.35.452-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.678-1.635-.93-2.245-.245-.59-.496-.51-.678-.52-.175-.008-.376-.01-.577-.01-.2 0-.527.075-.803.375-.276.3-1.054 1.03-1.054 2.512s1.08 2.916 1.23 3.116c.15.2 2.126 3.246 5.15 4.553.719.31 1.28.496 1.717.636.722.23 1.38.197 1.901.12.58-.087 1.785-.73 2.036-1.436.251-.706.251-1.314.176-1.436-.076-.123-.277-.2-.577-.35z" />
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.177 1.564 5.927l-1.564 5.729 5.864-1.538c1.701.933 3.654 1.468 5.733 1.468 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
         </svg>
       </a>
     </motion.div>

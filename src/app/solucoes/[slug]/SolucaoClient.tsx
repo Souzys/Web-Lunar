@@ -335,6 +335,32 @@ export default function SolucaoClient({ page, relatedPages }: Props) {
               </div>
             ))}
           </div>
+        
+          {/* QUICK BOTTOM CTA DIRECT TO WHATSAPP */}
+          <div className="mt-12 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 text-white p-8 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="max-w-xl text-center md:text-left">
+              <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-2">
+                Atendimento Imediato
+              </span>
+              <h3 className="font-display text-xl sm:text-2xl font-bold mb-2">
+                Deseja uma estimativa de prazo e valor para o seu projeto?
+              </h3>
+              <p className="text-sm text-slate-300">
+                Fale diretamente com o especialista responsável e receba uma análise detalhada para {page.title}.
+              </p>
+            </div>
+            <a
+              href={`https://wa.me/5561982630397?text=${encodeURIComponent(
+                `Olá Lucas! Gostaria de uma estimativa de prazo e valor para ${page.title}.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm shadow-[0_4px_16px_rgba(37,211,102,0.35)] transition-all hover:scale-105 shrink-0"
+            >
+              <span>Conversar no WhatsApp</span>
+              <span>→</span>
+            </a>
+          </div>
         </div>
       </section>
 
