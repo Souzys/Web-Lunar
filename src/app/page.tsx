@@ -91,7 +91,9 @@ export default function Home() {
           ]
         },
         "sameAs": [
-          "https://github.com/Souzys/Web-Lunar"
+          "https://github.com/Souzys",
+          "https://www.linkedin.com/in/lucas-souzys/",
+          "https://www.instagram.com/weblunar_dev/"
         ]
       },
       {

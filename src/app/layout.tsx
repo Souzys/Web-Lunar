@@ -133,7 +133,9 @@ const jsonLd = {
         "availableLanguage": ["Portuguese", "English", "Spanish"]
       },
       "sameAs": [
-        "https://github.com/Souzys/Web-Lunar"
+        "https://github.com/Souzys",
+        "https://www.linkedin.com/in/lucas-souzys/",
+        "https://www.instagram.com/weblunar_dev/"
       ]
     },
     {

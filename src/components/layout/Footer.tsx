@@ -137,9 +137,14 @@ export function Footer() {
           <h4 className="text-white text-xs font-mono uppercase tracking-[0.2em] mb-8 font-bold">SOCIAL</h4>
           <ul className="flex flex-col gap-4">
             {siteContent.footer.social.map(social => (
-              <li key={social}>
-                <a href="#" className="text-sm text-neutral-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group">
-                  {social}
+              <li key={social.name}>
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-neutral-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
+                >
+                  {social.name}
                   <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 text-primary" />
                 </a>
               </li>

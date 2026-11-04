@@ -154,6 +154,8 @@ export function Hero() {
             <a
               key={social.name}
               href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-text-muted hover:text-white transition-colors hover:scale-110 transform duration-300"
               aria-label={social.name}
             >

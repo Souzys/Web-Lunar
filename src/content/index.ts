@@ -15,9 +15,10 @@ export const siteContent = {
     },
     bottomText: "Sites profissionais, otimizados para o Google e feitos para converter visitantes em clientes.",
     socialButtons: [
-      { name: "Instagram", url: "https://instagram.com/" },
-      { name: "LinkedIn", url: "https://linkedin.com/in/" },
-      { name: "GitHub", url: "https://github.com/" },
+      { name: "Instagram", url: "https://www.instagram.com/weblunar_dev/" },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/lucas-souzys/" },
+      { name: "GitHub", url: "https://github.com/Souzys" },
+      { name: "WhatsApp", url: "https://wa.me/5561982630397" },
     ],
   },
 
@@ -386,6 +387,11 @@ export const siteContent = {
       single: ["Landing Pages", "Sites & Apps", "E-commerce", "Integrações"],
       utility: ["FAQ", "Depoimentos", "Planos", "Blog", "Política de Privacidade"],
     },
-    social: ["Instagram", "LinkedIn", "WhatsApp", "GitHub"],
+    social: [
+      { name: "Instagram", url: "https://www.instagram.com/weblunar_dev/" },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/lucas-souzys/" },
+      { name: "WhatsApp", url: "https://wa.me/5561982630397" },
+      { name: "GitHub", url: "https://github.com/Souzys" },
+    ],
   },
 };
