@@ -30,16 +30,16 @@ export function IntroSlider() {
           trigger: container,
           start: 'top top',
           end: 'bottom bottom',
-          scrub: true,
+          scrub: 0.5,
         }
       });
 
-      // 1. Hero 1 (Design & Código) sai de cena com desativação de pointer-events ao sumir
+      // 1. Hero 1 (Design & Código) sai de cena de forma limpa (0s -> 0.7s)
       tl.to(hero, {
         opacity: 0,
         scale: 0.96,
         y: -40,
-        duration: 0.5,
+        duration: 0.7,
         ease: 'power2.inOut',
         onUpdate: function() {
           if (hero) {
@@ -48,24 +48,26 @@ export function IntroSlider() {
         }
       }, 0);
 
-      // 2. Hero 2 (IndustryCircles / Sobre Nós) entra limpo sem sobreposição
+      // 2. Hero 2 (IndustryCircles / Sobre Nós) entra límpido e ganha foco total (0.5s -> 1.3s)
       tl.fromTo(about,
         { opacity: 0, scale: 1.04, y: 40 },
         {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 0.5,
+          duration: 0.8,
           ease: 'power2.out',
         },
-        0.3
+        0.5
       );
 
-      // 3. Breve estabilização para leitura antes do Portfólio entrar suavemente
+      // 3. PAUSA DE LEITURA COMPLETA (1.3s -> 2.6s):
+      // Mantém a seção Sobre Nós e os números (50+, 4+, 100%, 30+) 100% visíveis e estáveis
+      // antes do Portfólio (Nosso Trabalho) subir naturalmente.
       tl.to(about, {
         opacity: 1,
-        duration: 0.2,
-      }, 0.8);
+        duration: 1.3,
+      }, 1.3);
     }, container);
 
     return () => ctx.revert();
@@ -81,8 +83,8 @@ export function IntroSlider() {
         </div>
       </div>
 
-      {/* LAYOUT DESKTOP: Pinned slider estagiado e contínuo */}
-      <div ref={containerRef} className="hidden md:block relative w-full h-[200vh] -mb-[100vh] bg-bg z-0">
+      {/* LAYOUT DESKTOP: Pinned slider com tempo dedicado para Hero 1 e Sobre Nós */}
+      <div ref={containerRef} className="hidden md:block relative w-full h-[320vh] -mb-[100vh] bg-bg z-0">
         <div className="sticky top-0 w-full h-screen overflow-hidden">
           <div ref={heroRef} className="absolute inset-0 w-full h-full z-10 flex flex-col justify-between will-change-[transform,opacity]">
             <Hero />
