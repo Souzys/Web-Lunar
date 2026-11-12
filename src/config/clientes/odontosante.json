@@ -1,0 +1,125 @@
+{
+  "nomeClinica": "Odonto Santé",
+  "slogan": "Desde 1991 • Referência em Implantes Guiados e Reabilitação Oral em Anápolis",
+  "cidadeBairro": "Setor Central — Anápolis, GO",
+  "enderecoCompleto": "Rua Primeiro de Maio, nº 85 — Setor Central, Anápolis - GO",
+  "whatsappNumero": "5562992226998",
+  "telefoneExibicao": "(62) 99222-6998 | (62) 3098-2842",
+  "logoUrl": "/images/odonto/logo-odontosante.png",
+  "imagemHero": "/images/odonto/clinica-odontosante.png",
+  "instagramUrl": "https://www.instagram.com/clinicaodontosante/",
+  "instagramHandle": "@clinicaodontosante",
+  "croResponsavel": "Dra. Mônica Santa Brígida Nascimento — Especialista em Implantodontia e Prótese Dentária (CRO-GO 3746)",
+  "anosExperiencia": "Desde 1991 (+35 Anos de Experiência)",
+  "pacientesAtendidos": "+5.000 Implantes Realizados",
+  "notaGoogle": "4.9",
+  "totalAvaliacoesGoogle": "150+",
+  "vagasSemana": 4,
+  "horarioAtendimento": {
+    "abertura": 8,
+    "fechamento": 18,
+    "texto": "Seg a Sex: 08h às 18h | Sáb: Atendimento Agendado"
+  },
+  "linksMapas": {
+    "googleMaps": "https://www.google.com/maps/search/?api=1&query=Odonto+Sante+Rua+Primeiro+de+Maio+85+Setor+Central+Anapolis+GO",
+    "waze": "https://waze.com/ul?q=Rua%20Primeiro%20de%20Maio%2085%20Setor%20Central%20Anapolis%20GO"
+  },
+  "hero": {
+    "badge": "Desde 1991 • +5.000 Implantes Dentários Realizados em Anápolis",
+    "tituloPrincipal": "Excelência em Implantes Guiados e Prótese Dentária com Segurança Total",
+    "subtitulo": "Sede própria e ampla no Setor Central de Anápolis. Sob direção da Dra. Mônica Santa Brígida Nascimento (CRO-GO 3746), unimos mais de três décadas de tradição às técnicas mais modernas de reabilitação oral.",
+    "ctaTexto": "Agendar Avaliação com Especialista"
+  },
+  "procedimentos": [
+    {
+      "id": "Implantes Dentários Guiados",
+      "icone": "🦷",
+      "titulo": "Implantes Dentários Guiados",
+      "subCurto": "+5.000 implantes realizados com precisão",
+      "descricao": "Reabilitação oral com planejamento cirúrgico guiado conduzido pela Dra. Mônica Santa Brígida (CRO-GO 3746), garantindo pós-operatório mais rápido, seguro e confortável.",
+      "tempoEstimado": "Planejamento digital preciso",
+      "ancoraValor": "Condições especiais de parcelamento",
+      "destaque": "+5.000 Casos Realizados"
+    },
+    {
+      "id": "Prótese Dentária & Protocolo Fixo",
+      "icone": "💎",
+      "titulo": "Prótese Dentária & Protocolo",
+      "subCurto": "Mastigação firme e estética natural",
+      "descricao": "Próteses fixas sobre implantes e reabilitações estéticas de alta durabilidade para devolver sua segurança ao sorrir e conversar.",
+      "tempoEstimado": "Acompanhamento individualizado",
+      "ancoraValor": "Parcelamento facilitado",
+      "destaque": "Especialidade Principal"
+    },
+    {
+      "id": "Estética Dental & Clareamento",
+      "icone": "✨",
+      "titulo": "Estética Dental & Lentes",
+      "subCurto": "Harmonia, brilho e naturalidade",
+      "descricao": "Facetas, restaurações estéticas e protocolos seguros de clareamento dental que respeitam a estrutura natural dos seus dentes.",
+      "tempoEstimado": "Resultados rápidos e seguros",
+      "ancoraValor": "Planos sob medida",
+      "destaque": "Sorriso Renovado"
+    },
+    {
+      "id": "Especialidades Integradas",
+      "icone": "🛡️",
+      "titulo": "Clínica Geral, Endodontia & Ortodontia",
+      "subCurto": "Equipe completa de especialistas em um só lugar",
+      "descricao": "Amplo espaço de atendimento na Rua Primeiro de Maio com especialistas prontos para cuidar da saúde bucal de toda a sua família.",
+      "tempoEstimado": "Atendimento com hora marcada",
+      "ancoraValor": "Avaliação detalhada",
+      "destaque": "Tradição desde 1991"
+    }
+  ],
+  "antesDepois": [
+    {
+      "titulo": "Reabilitação com Implantes & Prótese de Alta Precisão",
+      "descricao": "Mais de 5.000 implantes realizados devolvendo função mastigatória, estética natural e qualidade de vida aos nossos pacientes.",
+      "tag": "Implantodontia & Estética",
+      "imagemAntes": "/images/odonto/lentes-antes.jpg",
+      "imagemDepois": "/images/odonto/lentes-depois.jpg"
+    }
+  ],
+  "depoimentos": [
+    {
+      "nome": "Roberto Almeida",
+      "bairro": "Setor Central, Anápolis",
+      "procedimento": "Implantes Guiados",
+      "texto": "Fiz meus implantes com a Dra. Mônica e toda a equipe da Odonto Santé. A segurança de uma clínica que está em Anápolis desde 1991 e a estrutura do prédio próprio fazem toda a diferença!",
+      "tempo": "Avaliação Verificada"
+    },
+    {
+      "nome": "Maria Helena Costa",
+      "bairro": "Bairro Jundiaí, Anápolis",
+      "procedimento": "Prótese Fixa",
+      "texto": "Atendimento humano, pontual e de extrema competência. Voltei a sorrir e mastigar sem medo. Recomendo a Dra. Mônica de olhos fechados para quem busca confiança.",
+      "tempo": "Avaliação Verificada"
+    },
+    {
+      "nome": "Carlos Eduardo Nunes",
+      "bairro": "Anápolis, GO",
+      "procedimento": "Reabilitação Oral",
+      "texto": "Clínica tradicionalíssima na Rua Primeiro de Maio, ambiente amplo, impecável e profissionais que explicam cada etapa do tratamento com total transparência.",
+      "tempo": "Avaliação Verificada"
+    }
+  ],
+  "faq": [
+    {
+      "pergunta": "Como funciona o Implante Guiado realizado na Odonto Santé?",
+      "resposta": "Com mais de 5.000 implantes realizados, utilizamos planejamento avançado que permite posicionar os implantes com máxima precisão, reduzindo o tempo de cirurgia e proporcionando uma recuperação muito mais confortável."
+    },
+    {
+      "pergunta": "Onde fica a sede da Odonto Santé em Anápolis?",
+      "resposta": "Nossa sede própria fica na Rua Primeiro de Maio, nº 85, no Setor Central de Anápolis - GO. Contamos com estrutura ampla, acessível e preparada para todas as especialidades."
+    },
+    {
+      "pergunta": "Quem é a responsável técnica pelos tratamentos de Implante e Prótese?",
+      "resposta": "Os tratamentos são conduzidos sob responsabilidade da Dra. Mônica Santa Brígida Nascimento (CRO-GO 3746), Especialista em Implantodontia e Prótese Dentária, atuando desde 1991."
+    },
+    {
+      "pergunta": "Como faço para agendar uma avaliação?",
+      "resposta": "Você pode simular seu horário em 3 cliques aqui na página ou falar diretamente com nossa recepção pelo WhatsApp (62) 99222-6998 ou pelos telefones fixos (62) 3098-2842 e 3315-2411."
+    }
+  ]
+}

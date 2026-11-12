@@ -34,7 +34,7 @@ export default function LandingPageTemplate({ cliente }: { cliente: ClienteData 
                 <img
                   src={cliente.logoUrl}
                   alt={`Logo ${cliente.nomeClinica}`}
-                  className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl object-contain p-0.5 border border-slate-200/90 shadow-sm shrink-0 bg-white"
+                  className="h-9 sm:h-12 w-auto max-w-[130px] sm:max-w-[180px] rounded-xl object-contain px-2 py-1 border border-slate-200/90 shadow-sm shrink-0 bg-white"
                 />
               ) : (
                 <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-teal-500 to-slate-900 text-white flex items-center justify-center font-bold text-sm sm:text-lg shadow-sm shrink-0">
@@ -141,16 +141,20 @@ export default function LandingPageTemplate({ cliente }: { cliente: ClienteData 
 
             {/* Imagem Principal + Card Flutuante de Confiança */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900">
+              <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-gradient-to-b from-slate-800/90 via-slate-900 to-slate-950">
                 <img
                   src={
                     cliente.imagemHero ||
                     "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80"
                   }
                   alt={`Clínica ${cliente.nomeClinica}`}
-                  className="w-full h-[320px] sm:h-[460px] object-cover"
+                  className={
+                    cliente.imagemHero?.endsWith(".png")
+                      ? "w-full h-[340px] sm:h-[460px] object-contain p-4 pb-24 sm:pb-24"
+                      : "w-full h-[320px] sm:h-[460px] object-cover"
+                  }
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/15 to-transparent pointer-events-none" />
 
                 <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-slate-950/90 backdrop-blur-md border border-slate-800 p-3.5 sm:p-4 rounded-2xl flex items-center justify-between gap-3">
                   <div className="min-w-0">
