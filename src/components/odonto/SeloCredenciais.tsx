@@ -40,9 +40,9 @@ export default function SeloCredenciais({ cliente }: { cliente: ClienteData }) {
                 <div className="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center shrink-0">
                   <Icone className="w-6 h-6 text-teal-400" />
                 </div>
-                <div>
-                  <div className="font-bold text-white text-sm">{item.titulo}</div>
-                  <div className="text-xs text-slate-400 mt-0.5">{item.sub}</div>
+                <div className="min-w-0 flex-1">
+                  <div className="font-bold text-white text-sm leading-snug break-words">{item.titulo}</div>
+                  <div className="text-xs text-slate-400 mt-0.5 leading-snug break-words">{item.sub}</div>
                 </div>
               </div>
             );

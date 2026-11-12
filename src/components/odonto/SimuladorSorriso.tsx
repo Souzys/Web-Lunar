@@ -97,11 +97,11 @@ Gostaria de verificar a disponibilidade e receber mais informações!`;
                             : "bg-slate-900/70 border-slate-800 hover:border-slate-700"
                         }`}
                       >
-                        <span className="text-xl sm:text-2xl">{item.icone}</span>
+                        <span className="text-xl sm:text-2xl shrink-0">{item.icone}</span>
                         <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-white text-xs sm:text-base flex items-center justify-between gap-1">
-                            <span className="truncate">{item.titulo}</span>
-                            {ativo && <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />}
+                          <div className="font-semibold text-white text-xs sm:text-base flex items-start justify-between gap-1.5">
+                            <span className="leading-snug break-words">{item.titulo}</span>
+                            {ativo && <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />}
                           </div>
                           <p className="text-[11px] sm:text-xs text-slate-400 mt-0.5 line-clamp-2">{item.sub}</p>
                         </div>
