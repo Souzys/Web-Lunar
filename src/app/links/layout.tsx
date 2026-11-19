@@ -4,6 +4,10 @@ export const metadata: Metadata = {
   title: "Tech Sem Hype (@tech.sem.hype) | Links Oficiais & Achados Tech",
   description:
     "Tecnologia descomplicada, reviews sinceros e as melhores promoções e achados tech sem enrolação. Confira as ofertas exclusivas e produtos recomendados.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
     title: "Tech Sem Hype (@tech.sem.hype) | Links & Achados Tech",
     description:

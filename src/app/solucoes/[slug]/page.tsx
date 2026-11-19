@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { PROGRAMMATIC_SEO_PAGES, PROGRAMMATIC_SEO_LIST } from '@/content/programmaticSeoData';
+import { notFound, permanentRedirect } from 'next/navigation';
+import { PROGRAMMATIC_SEO_PAGES, INDEXABLE_PROGRAMMATIC_SEO_LIST } from '@/content/programmaticSeoData';
 import SolucaoClient from './SolucaoClient';
 
 interface PageProps {
@@ -8,7 +8,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return PROGRAMMATIC_SEO_LIST.map((item) => ({
+  return INDEXABLE_PROGRAMMATIC_SEO_LIST.map((item) => ({
     slug: item.slug,
   }));
 }
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!page) {
     return {
-      title: 'Solução Não Encontrada | Web Lunar',
+      title: 'Solução Não Encontrada',
     };
   }
 
@@ -53,6 +53,18 @@ export default async function SolucaoPage({ params }: PageProps) {
 
   if (!page) {
     notFound();
+  }
+
+  // Permanently redirect legacy city-swapped doorway URLs to canonical niche or /servicos
+  if (page.type === 'niche-city') {
+    const baseNicheSlug = page.slug.split('-em-')[0];
+    if (PROGRAMMATIC_SEO_PAGES[baseNicheSlug]) {
+      permanentRedirect(`/solucoes/${baseNicheSlug}`);
+    }
+    permanentRedirect('/solucoes');
+  }
+  if (page.type === 'service-city') {
+    permanentRedirect('/servicos');
   }
 
   const relatedPages = page.relatedSlugs

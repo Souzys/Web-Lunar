@@ -9,7 +9,8 @@ import gsap from 'gsap';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
-export function Hero() {
+export function Hero({ asHeading = 'h1' }: { asHeading?: 'h1' | 'p' } = {}) {
+  const HeadingTag = asHeading;
   const { hero } = siteContent;
   const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
@@ -108,10 +109,10 @@ export function Hero() {
 
           {/* Massive Headline */}
           <AnimatedSection options={{ delay: 0.2, y: 40 }} className="w-full text-center sm:text-left">
-            <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-[5vw] lg:text-[4vw] xl:text-[4.5vw] leading-[1.1] tracking-tighter mb-4 text-center sm:text-left">
+            <HeadingTag className="font-display font-bold text-4xl sm:text-5xl md:text-[5vw] lg:text-[4vw] xl:text-[4.5vw] leading-[1.1] tracking-tighter mb-4 text-center sm:text-left">
               <span className="text-white/95">{t.hero.title1} </span>
               <span className="inline-block pr-3 sm:pr-4 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">{t.hero.title2}</span>
-            </h1>
+            </HeadingTag>
           </AnimatedSection>
 
           {/* Description & CTAs */}

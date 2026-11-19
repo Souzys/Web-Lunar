@@ -225,9 +225,9 @@ export function ServicosClient() {
 
             <AnimatedSection options={{ delay: 0.1 }}>
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
-                <span className="block text-white/95">{t.hero.title1}</span>
+                <span className="block text-white/95">Desenvolvimento Web &amp; Sistemas </span>
                 <span className="inline-block pr-6 pb-1 pl-0.5 text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-primary italic">
-                  {t.hero.title2}
+                  Sob Medida para Escalar
                 </span>
               </h1>
             </AnimatedSection>

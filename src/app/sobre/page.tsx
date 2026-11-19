@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SobreClient } from './SobreClient';
 
 export const metadata: Metadata = {
-  title: "Sobre a Web Lunar | Engenharia de Software & Design Digital de Elite",
+  title: "Sobre Nós — Engenharia de Software & Design Digital",
   description: "Conheça a Web Lunar: unimos design visual refinado e engenharia full-stack de alta performance para construir ecossistemas digitais escaláveis e à prova de falhas.",
   alternates: {
     canonical: "https://weblunar.com.br/sobre",

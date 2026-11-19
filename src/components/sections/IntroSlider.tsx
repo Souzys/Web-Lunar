@@ -77,7 +77,7 @@ export function IntroSlider() {
     <>
       {/* LAYOUT MOBILE: Sequencial, sem sobreposição de textos nem corte de números */}
       <div className="block md:hidden bg-bg w-full">
-        <Hero />
+        <Hero asHeading="p" />
         <div className="border-t border-white/10">
           <IndustryCircles />
         </div>

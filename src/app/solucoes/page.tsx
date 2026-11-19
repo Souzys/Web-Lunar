@@ -1,21 +1,34 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { CITIES_DATA, SERVICE_TYPES, NICHES_DATA, VERSUS_PAGES_DATA } from '@/content/programmaticSeoData';
+import { NICHES_DATA, VERSUS_PAGES_DATA } from '@/content/programmaticSeoData';
 
 export const metadata: Metadata = {
-  title: 'Mais de 420 Soluções Digitais por Segmento, Região e Comparativos | Web Lunar',
+  title: 'Soluções Digitais por Segmento e Comparativos',
   description:
-    'Criação de sites profissionais, landing pages de alta conversão, lojas virtuais, comparativos WordPress vs Next.js e sistemas web sob medida para todo o Brasil.',
+    'Criação de sites profissionais, landing pages de alta conversão, comparativos WordPress vs Next.js e sistemas web sob medida para empresas em todo o Brasil.',
   alternates: {
     canonical: 'https://weblunar.com.br/solucoes',
+  },
+  openGraph: {
+    title: 'Soluções Digitais por Segmento e Comparativos | Web Lunar',
+    description:
+      'Criação de sites profissionais, landing pages de alta conversão, comparativos WordPress vs Next.js e sistemas web sob medida para empresas em todo o Brasil.',
+    url: 'https://weblunar.com.br/solucoes',
+    siteName: 'Web Lunar',
+    locale: 'pt_BR',
+    type: 'website',
+    images: [
+      {
+        url: '/printvolk.webp',
+        width: 1902,
+        height: 885,
+        alt: 'Soluções Digitais Web Lunar',
+      },
+    ],
   },
 };
 
 export default function SolucoesHubPage() {
-  const topNiches = NICHES_DATA.slice(0, 12);
-  const topCities = CITIES_DATA.slice(0, 10);
-  const scCities = CITIES_DATA.filter((c) => c.state === 'SC');
-
   return (
     <div className="min-h-screen bg-bg text-text selection:bg-primary selection:text-white">
       {/* 1. DARK HERO HEADER */}
@@ -26,17 +39,17 @@ export default function SolucoesHubPage() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/30 bg-primary/10 mb-6">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-                ECOSSISTEMA DE SOLUÇÕES WEB LUNAR (+420 PÁGINAS)
+                ECOSSISTEMA DE SOLUÇÕES WEB LUNAR
               </span>
             </div>
             <h1 className="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
               Sites, Landing Pages e Sistemas por{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-white">
-                Segmento e Região
+                Segmento Profissional
               </span>
             </h1>
             <p className="text-base sm:text-lg text-white/80 font-light leading-relaxed mb-8">
-              Explore nossas soluções especializadas desenvolvidas sob medida para os 45 principais setores da economia e 50 maiores polos empresariais do Brasil.
+              Explore nossas soluções especializadas desenvolvidas sob medida para os principais setores da economia e comparativos técnicos para escolher a melhor arquitetura.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
@@ -64,7 +77,7 @@ export default function SolucoesHubPage() {
             <div className="border-b border-slate-200 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <span className="text-xs uppercase tracking-widest text-primary font-bold block mb-1">
-                  DECISÃO TÉCNICA & COMERCIAL · AUTORIDADE DUPLA
+                  DECISÃO TÉCNICA &amp; COMERCIAL · AUTORIDADE DUPLA
                 </span>
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900">
                   Comparativos: Qual a Melhor Escolha para o Seu Negócio?
@@ -101,18 +114,18 @@ export default function SolucoesHubPage() {
             </div>
           </section>
 
-          {/* Block 0.5: Santa Catarina Regional Authority Silo (Powered by Sinapro/SC Case) */}
+          {/* Block 0.5: Sinapro/SC Authority Highlight */}
           <section className="mb-20 rounded-2xl border border-amber-300/60 bg-gradient-to-br from-amber-50/70 via-white to-slate-50 p-6 sm:p-8 shadow-xs">
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6 pb-6 border-b border-slate-200/80">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div>
                 <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-[10px] font-bold uppercase tracking-widest mb-2">
-                  POLO DE AUTORIDADE · SANTA CATARINA (SC)
+                  CASE DE REFERÊNCIA · ENGENHARIA WEB
                 </span>
                 <h2 className="font-display text-xl sm:text-2xl font-bold text-slate-900">
                   Desenvolvedora do Portal Oficial do Sinapro/SC (Sindicato das Agências de Propaganda)
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-600 mt-1">
-                  Atendimento especializado de engenharia web, landing pages e SEO local para os principais polos econômicos catarinenses.
+                  Atendimento especializado de engenharia web, landing pages e SEO técnico para empresas em Brasília, Santa Catarina e todo o Brasil.
                 </p>
               </div>
               <Link
@@ -123,31 +136,10 @@ export default function SolucoesHubPage() {
                 <span>→</span>
               </Link>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-              {scCities.map((city) => (
-                <Link
-                  key={`sc-silo-${city.slug}`}
-                  href={`/solucoes/criacao-de-sites-em-${city.slug}`}
-                  className="rounded-xl border border-slate-200 bg-white hover:border-primary p-3.5 text-xs font-semibold text-slate-800 hover:text-primary transition-all flex items-center justify-between"
-                >
-                  <span>Sites em {city.name}</span>
-                  <span className="text-[10px] text-primary font-bold">SC →</span>
-                </Link>
-              ))}
-              {scCities.map((city) => (
-                <Link
-                  key={`sc-seo-${city.slug}`}
-                  href={`/solucoes/agencia-de-seo-em-${city.slug}`}
-                  className="rounded-xl border border-slate-200 bg-white hover:border-primary p-3.5 text-xs font-semibold text-slate-800 hover:text-primary transition-all flex items-center justify-between"
-                >
-                  <span>SEO em {city.name}</span>
-                  <span className="text-[10px] text-slate-400 font-bold">SC →</span>
-                </Link>
-              ))}
-            </div>
           </section>
+
           {/* Block 1: 45 Niches */}
-          <section className="mb-20">
+          <section className="mb-10">
             <div className="border-b border-slate-200 pb-4 mb-8">
               <span className="text-xs uppercase tracking-widest text-primary font-bold block mb-1">
                 45 ESPECIALIDADES POR SETOR
@@ -177,60 +169,6 @@ export default function SolucoesHubPage() {
               ))}
             </div>
           </section>
-
-          {/* Block 2: Niche x Top Capitals (120 combinations) */}
-          <section className="mb-20">
-            <div className="border-b border-slate-200 pb-4 mb-8">
-              <span className="text-xs uppercase tracking-widest text-primary font-bold block mb-1">
-                ESPECIALIDADES NAS CAPITAIS E POLOS
-              </span>
-              <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900">
-                Soluções por Profissão nas Maiores Cidades
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-              {topNiches.map((niche) =>
-                topCities.map((city) => (
-                  <Link
-                    key={`${niche.slug}-em-${city.slug}`}
-                    href={`/solucoes/${niche.slug}-em-${city.slug}`}
-                    className="rounded-lg border border-slate-200 bg-white hover:border-primary px-4 py-3 text-xs text-slate-700 hover:text-primary font-medium transition-all flex items-center justify-between shadow-2xs"
-                  >
-                    <span className="truncate">{niche.singular} em {city.name}</span>
-                    <span className="text-[10px] text-slate-400 ml-1 shrink-0">{city.state}</span>
-                  </Link>
-                ))
-              )}
-            </div>
-          </section>
-
-          {/* Block 3: 5 Services x 50 Cities (250 combinations) */}
-          {SERVICE_TYPES.map((service) => (
-            <section key={service.slugPrefix} className="mb-16">
-              <div className="border-b border-slate-200 pb-4 mb-8">
-                <span className="text-xs uppercase tracking-widest text-primary font-bold block mb-1">
-                  ATENDIMENTO NACIONAL · 50 POLOS ECONÔMICOS
-                </span>
-                <h2 className="font-display text-xl sm:text-2xl font-bold text-slate-900">
-                  {service.name} por Cidade
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                {CITIES_DATA.map((city) => (
-                  <Link
-                    key={`${service.slugPrefix}-${city.slug}`}
-                    href={`/solucoes/${service.slugPrefix}-${city.slug}`}
-                    className="rounded-lg border border-slate-200 bg-white hover:border-primary px-4 py-3 text-xs sm:text-sm text-slate-700 hover:text-primary font-medium transition-all flex items-center justify-between shadow-2xs"
-                  >
-                    <span className="truncate">{city.name}</span>
-                    <span className="text-[10px] text-slate-400 ml-1 shrink-0 font-bold">{city.state}</span>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          ))}
         </div>
       </div>
     </div>

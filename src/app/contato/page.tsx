@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { ContatoClient } from './ContatoClient';
 
 export const metadata: Metadata = {
-  title: "Solicite um Orçamento | Contato Web Lunar",
+  title: "Solicite um Orçamento — Contato",
   description: "Fale com nossa equipe de engenharia e design. Solicite um orçamento ágil para criação de landing pages, sites institucionais e sistemas digitais sob medida.",
   alternates: {
     canonical: "https://weblunar.com.br/contato",
   },
   openGraph: {
-    title: "Solicite um Orçamento | Contato Web Lunar",
+    title: "Solicite um Orçamento — Contato",
     description: "Fale com nossa equipe de engenharia e design. Solicite um orçamento ágil para criação de landing pages, sites institucionais e sistemas digitais sob medida.",
     url: "https://weblunar.com.br/contato",
     siteName: "Web Lunar",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solicite um Orçamento | Contato Web Lunar",
+    title: "Solicite um Orçamento — Contato",
     description: "Fale com nossa equipe de engenharia e design. Solicite um orçamento ágil para criação de landing pages, sites institucionais e sistemas digitais sob medida.",
     images: ["/printvolk.webp"],
   },

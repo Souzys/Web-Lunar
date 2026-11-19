@@ -19,12 +19,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!project) {
     return {
-      title: "Projeto não encontrado | Web Lunar",
+      title: "Projeto não encontrado",
       description: "Estudo de caso não encontrado.",
     };
   }
 
-  const title = `Case Study: ${project.title} | Web Lunar`;
+  const title = `Case Study: ${project.title}`;
   const description = project.tagline || project.overview.slice(0, 160);
   const url = `https://weblunar.com.br/projetos/${id}`;
   const ogImage = project.image.startsWith('http') ? project.image : `https://weblunar.com.br${project.image}`;

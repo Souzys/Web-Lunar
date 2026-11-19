@@ -38,6 +38,10 @@ export async function generateMetadata({
   return {
     title: `${cliente.nomeClinica.trim()} | ${cliente.cidadeBairro}`,
     description: cliente.hero.subtitulo,
+    robots: {
+      index: false,
+      follow: false,
+    },
     openGraph: {
       title: `${cliente.nomeClinica.trim()} | ${cliente.cidadeBairro}`,
       description: cliente.hero.subtitulo,

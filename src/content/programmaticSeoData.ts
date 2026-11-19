@@ -769,7 +769,7 @@ export const NICHES_DATA: NicheInfo[] = [
       'Otimização para buscas locais ("pilates perto de mim", "academia no bairro")',
       'Fotos e vídeos leves que mostram a energia do espaço sem travar o celular do aluno',
     ],
-    complianceOrDetail: 'Transforma pesquisas de moradores do seu bairro em alunos matriculados no plano anual.',
+    complianceOrDetail: 'A estrutura transforma pesquisas de moradores do seu bairro em alunos matriculados no plano anual.',
   },
   {
     slug: 'site-para-restaurantes-e-gastronomia',
@@ -1354,10 +1354,10 @@ function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
     const nextNiche1 = NICHES_DATA[(nicheIdx + 1) % NICHES_DATA.length];
     const nextNiche2 = NICHES_DATA[(nicheIdx + 2) % NICHES_DATA.length];
     const nextNiche3 = NICHES_DATA[(nicheIdx + 3) % NICHES_DATA.length];
-    const relatedCities = [
-      `criacao-de-sites-em-${CITIES_DATA[nicheIdx % CITIES_DATA.length].slug}`,
-      `criacao-de-landing-page-em-${CITIES_DATA[(nicheIdx + 1) % CITIES_DATA.length].slug}`,
-      `${niche.slug}-em-${CITIES_DATA[nicheIdx % 10].slug}`,
+    const relatedVersus = [
+      'wordpress-vs-nextjs-qual-escolher',
+      'landing-page-vs-site-institucional-qual-melhor',
+      'anuncio-direto-whatsapp-vs-landing-page',
     ];
 
     pages[slug] = {
@@ -1409,7 +1409,7 @@ function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
           answer: `Sim! Incluímos um qualificador rápido onde o cliente seleciona a necessidade principal antes de abrir a conversa no seu WhatsApp, garantindo que o contato já chegue contextualizado.`,
         },
       ],
-      relatedSlugs: [nextNiche1.slug, nextNiche2.slug, nextNiche3.slug, ...relatedCities],
+      relatedSlugs: [nextNiche1.slug, nextNiche2.slug, nextNiche3.slug, ...relatedVersus],
     };
   });
 
@@ -1500,7 +1500,7 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
     type: 'versus',
     serviceName: 'Consultoria e Desenvolvimento WordPress & Next.js',
     title: 'WordPress vs Next.js: Qual a Melhor Tecnologia para o seu Site em 2026?',
-    metaTitle: 'WordPress vs Next.js: Comparativo Real de Velocidade, SEO e Preço | Web Lunar',
+    metaTitle: 'WordPress vs Next.js: Velocidade, SEO e Preço',
     metaDescription: 'Em dúvida entre WordPress e Next.js? Veja o comparativo técnico de quem domina os dois mundos (criadores do portal Sinapro/SC em WordPress e SNEWS em Next.js).',
     badge: 'COMPARATIVO TÉCNICO · AUTORIDADE DUPLA',
     heroTitle: 'WordPress vs Next.js:',
@@ -1554,9 +1554,9 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
       'elementor-vs-codigo-sob-medida-performance',
       'landing-page-vs-site-institucional-qual-melhor',
       'wix-vs-site-profissional-sob-medida',
-      'criacao-de-sites-em-florianopolis',
-      'criacao-de-sites-em-sao-paulo',
-      'criacao-de-sites-em-brasilia',
+      'site-para-dentista-e-clinica-odontologica',
+      'site-para-advogado-e-escritorio-de-advocacia',
+      'site-para-clinica-medica-e-consultorio',
     ],
   },
   {
@@ -1564,7 +1564,7 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
     type: 'versus',
     serviceName: 'Landing Pages e Sites Institucionais',
     title: 'Landing Page vs Site Institucional: Qual Gera Mais Clientes e Vendas?',
-    metaTitle: 'Landing Page vs Site Institucional: Qual Escolher para Vender Mais? | Web Lunar',
+    metaTitle: 'Landing Page vs Site Institucional: Qual Vende Mais?',
     metaDescription: 'Saiba exatamente quando investir em uma Landing Page de alta conversão ou em um Site Institucional completo para sua clínica, escritório ou empresa.',
     badge: 'GUIA DE DECISÃO COMERCIAL · CONVERSÃO',
     heroTitle: 'Landing Page vs Site Institucional:',
@@ -1618,9 +1618,9 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
       'wordpress-vs-nextjs-qual-escolher',
       'anuncio-direto-whatsapp-vs-landing-page',
       'wix-vs-site-profissional-sob-medida',
-      'criacao-de-landing-page-em-florianopolis',
-      'criacao-de-landing-page-em-sao-paulo',
-      'criacao-de-landing-page-em-brasilia',
+      'site-para-clinica-de-estetica-e-harmonizacao',
+      'site-para-dentista-e-clinica-odontologica',
+      'site-para-clinica-medica-e-consultorio',
     ],
   },
   {
@@ -1682,9 +1682,9 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
       'wordpress-vs-nextjs-qual-escolher',
       'elementor-vs-codigo-sob-medida-performance',
       'landing-page-vs-site-institucional-qual-melhor',
-      'criacao-de-sites-em-florianopolis',
-      'criacao-de-sites-em-curitiba',
-      'criacao-de-sites-em-belo-horizonte',
+      'site-para-dentista-e-clinica-odontologica',
+      'site-para-contabilidade-e-escritorio-contabil',
+      'site-para-arquitetura-e-design-de-interiores',
     ],
   },
   {
@@ -1809,10 +1809,10 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
     relatedSlugs: [
       'landing-page-vs-site-institucional-qual-melhor',
       'wordpress-vs-nextjs-qual-escolher',
-      'criacao-de-landing-page-em-florianopolis',
-      'criacao-de-landing-page-em-sao-paulo',
-      'criacao-de-landing-page-em-brasilia',
-      'criacao-de-landing-page-em-goiania',
+      'site-para-clinica-de-estetica-e-harmonizacao',
+      'site-para-dentista-e-clinica-odontologica',
+      'site-para-clinica-medica-e-consultorio',
+      'site-para-energia-solar-e-engenharia',
     ],
   },
   {
@@ -1872,11 +1872,11 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
     ],
     relatedSlugs: [
       'wordpress-vs-nextjs-qual-escolher',
-      'agencia-de-seo-em-florianopolis',
-      'agencia-de-seo-em-sao-paulo',
-      'agencia-de-seo-em-maringa',
-      'agencia-de-seo-em-curitiba',
-      'agencia-de-seo-em-brasilia',
+      'elementor-vs-codigo-sob-medida-performance',
+      'landing-page-vs-site-institucional-qual-melhor',
+      'wix-vs-site-profissional-sob-medida',
+      'anuncio-direto-whatsapp-vs-landing-page',
+      'site-para-dentista-e-clinica-odontologica',
     ],
   },
 ];
@@ -1884,3 +1884,9 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
 export const PROGRAMMATIC_SEO_PAGES: Record<string, ProgrammaticPageData> = buildAllProgrammaticPages();
 
 export const PROGRAMMATIC_SEO_LIST: ProgrammaticPageData[] = Object.values(PROGRAMMATIC_SEO_PAGES);
+
+// Only high-value unique pages (45 base niches + 6 comparisons) are indexed.
+// City-swapped doorway pages (service-city & niche-city) permanently redirect.
+export const INDEXABLE_PROGRAMMATIC_SEO_LIST: ProgrammaticPageData[] = PROGRAMMATIC_SEO_LIST.filter(
+  (page) => page.type === 'niche' || page.type === 'versus'
+);

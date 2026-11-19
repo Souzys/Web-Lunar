@@ -19,12 +19,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!post) {
     return {
-      title: "Artigo não encontrado | Web Lunar",
+      title: "Artigo não encontrado",
       description: "Artigo do blog não encontrado.",
     };
   }
 
-  const title = `${post.title} | Blog Web Lunar`;
+  const title = post.title;
   const description = post.excerpt;
   const url = `https://weblunar.com.br/blog/${slug}`;
   const ogImage = post.image.startsWith('http') ? post.image : `https://weblunar.com.br${post.image}`;
