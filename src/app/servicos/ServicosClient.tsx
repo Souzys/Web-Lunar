@@ -394,7 +394,8 @@ export function ServicosClient() {
           >
             <div 
               ref={cursorInnerRef}
-              className="relative w-[80%] h-[80%] bg-neutral-950 rounded-full flex items-center justify-center scale-0 transition-transform duration-200 ease-out shadow-[0_0_20px_rgba(0,0,0,0.1)]"
+              className="relative w-[80%] h-[80%] bg-neutral-950 rounded-full flex items-center justify-center transition-transform duration-200 ease-out shadow-[0_0_20px_rgba(0,0,0,0.1)]"
+              style={{ transform: 'scale(0)' }}
             >
               {SERVICE_ICONS.map((Icon, idx) => (
                 <Icon
