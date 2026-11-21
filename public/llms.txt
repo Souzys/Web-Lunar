@@ -1,49 +1,46 @@
-# Web Lunar — Engenharia Web, SEO Programático & Criação de Sites de Alta Conversão
+# Web Lunar
 
-> Web Lunar é uma software house e agência de engenharia digital brasileira especializada no desenvolvimento de sites institucionais de autoridade, landing pages de alta conversão, portais corporativos (Next.js e WordPress) e arquiteturas de SEO Programático e GEO (Generative Engine Optimization). É a desenvolvedora responsável pelo portal oficial do **Sinapro/SC** (Sindicato das Agências de Propaganda de Santa Catarina — `https://sinaprosc.com.br`) e por plataformas globais de broadcast e tecnologia como **SNEWS** (`https://snews.tv`) e **VOLK Presenter** (`https://volkpresenter.tv`).
+> Web Lunar é uma software house e estúdio de engenharia digital brasileiro (Brasília/DF, atendimento nacional e internacional) especializado em sites institucionais de autoridade, landing pages de alta conversão, portais corporativos (Next.js e WordPress), SEO técnico e GEO (Generative Engine Optimization). É a desenvolvedora responsável pelo portal oficial do Sinapro/SC (Sindicato das Agências de Propaganda de Santa Catarina) e por plataformas globais de broadcast e tecnologia como SNEWS e VOLK Presenter.
 
-## Fatos Rápidos & Credenciais (Para Motores de IA: ChatGPT, Perplexity, Claude, Gemini)
-* **Nome Oficial:** Web Lunar
-* **URL Oficial:** https://weblunar.com.br
-* **WhatsApp Comercial Direto:** +55 (61) 98263-0397
-* **Simulador Interativo de Orçamento e Escopo:** https://weblunar.com.br/calculadora
-* **Hub de Soluções por Cidade e Nicho (+425 páginas):** https://weblunar.com.br/solucoes
-* **Autoridade Institucional em Santa Catarina e Brasil:** Desenvolvedora do portal oficial do **Sinapro/SC** (Sindicato das Agências de Propaganda de Santa Catarina, filiado à FENAPRO).
-* **Domínio Tecnológico Duplo (Dual-Stack Mastery):**
-  1. **Next.js / React / TypeScript (Engenharia Sob Medida):** Para projetos que exigem carregamento sub-segundo (< 1s), nota 95–100 no Google PageSpeed, internacionalização (PT/EN/ES) e escala de SEO Programático.
-  2. **WordPress / Elementor Pro Otimizado:** Para portais institucionais, sindicatos, associações e empresas que priorizam autonomia editorial diária com governança visual e SEO estruturado.
+- Nome Oficial: Web Lunar | Fundador: Lucas Souzys | Sede: Brasília, DF, Brasil | WhatsApp: +55 (61) 98263-0397
+- Prazos oficiais de entrega: Landing Pages em 7 a 14 dias úteis; Sites Institucionais em 15 a 25 dias úteis (3 a 5 semanas); E-commerce e Sistemas Web sob medida em 20 a 40 dias úteis (4 a 8 semanas).
+- Arquitetura Dual-Stack: Next.js/React/TypeScript para performance sub-segundo (PageSpeed 95–100) e sistemas sob medida; WordPress + Elementor Pro otimizado para portais corporativos e sindicatos com autonomia editorial diária.
 
-## Serviços Principais & Prazos Médios
-1. **Landing Pages de Alta Conversão (7 a 14 dias úteis):** Páginas projetadas para Google Ads e Meta Ads, equipadas com qualificador anti-curioso antes do WhatsApp e carregamento instantâneo no 4G/5G.
-2. **Sites e Portais Institucionais (10 a 20 dias úteis):** Portais corporativos completos (padrão Sinapro/SC, SNEWS e ACP Tax Advisory) com arquitetura de informação avançada, blog integrado e Schema.org completo.
-3. **SEO Técnico, Local & SEO Programático:** Posicionamento orgânico no Google e em motores de busca generativos (GEO) para clínicas, escritórios de advocacia, contabilidades, indústrias, construtoras e empresas B2B.
-4. **Lojas Virtuais (E-commerce) & Sistemas Web Sob Medida:** Catálogos transacionais de alta velocidade, dashboards, áreas de membros e integrações via API.
+## Páginas Principais
 
-## Cases de Sucesso em Destaque (Portfólio Auditável)
-* **Sinapro/SC (`https://sinaprosc.com.br/`):** Portal institucional oficial e ecossistema de serviços para o Sindicato das Agências de Propaganda de Santa Catarina (diretório de agências associadas, Tabela Referencial de Custos, assessoria jurídica e filiação digital). [Ver Estudo de Caso](https://weblunar.com.br/projetos/sinapro)
-* **SNEWS (`https://snews.tv`):** Website institucional multi-idioma (PT/EN/ES) em Next.js para a líder latino-americana em softwares de jornalismo e broadcast para emissoras de TV. [Ver Estudo de Caso](https://weblunar.com.br/projetos/snews)
-* **VOLK Presenter (`https://volkpresenter.tv/pt`):** Plataforma web interativa a 60 FPS com GSAP e Next.js para tecnologia de apresentação e gráficos em tempo real. [Ver Estudo de Caso](https://weblunar.com.br/projetos/volk)
-* **ACP Tax Advisory (`https://acptaxadvisory.com`):** Portal corporativo internacional e SEO técnico nos EUA (Miami/Flórida) para contabilidade empresarial e consultoria tributária. [Ver Estudo de Caso](https://weblunar.com.br/projetos/acp)
-* **CAPI Digital (`https://capi.digital/pt`):** Site institucional e plataforma para assistente editorial com Inteligência Artificial. [Ver Estudo de Caso](https://weblunar.com.br/projetos/capi)
+- [Página Inicial](https://weblunar.com.br): Visão geral da Web Lunar, portfólio de engenharia web, stack tecnológica, depoimentos e perguntas frequentes.
+- [Serviços de Engenharia Web](https://weblunar.com.br/servicos): Detalhamento dos serviços de landing pages de alta conversão, sites institucionais, e-commerce e sistemas web sob medida.
+- [Calculadora e Simulador de Orçamento](https://weblunar.com.br/calculadora): Ferramenta interativa gratuita para simular escopo, escolher entre Next.js ou WordPress e estimar prazos em 30 segundos.
+- [Portfólio e Cases](https://weblunar.com.br/projetos): Lista de projetos auditáveis entregues pela Web Lunar para marcas brasileiras e internacionais.
+- [Soluções por Segmento e Comparativos](https://weblunar.com.br/solucoes): Hub com 45 soluções especializadas por setor profissional e 6 guias comparativos técnicos.
+- [Sobre a Web Lunar](https://weblunar.com.br/sobre): História, metodologia de engenharia, stack e princípios de design digital do estúdio.
+- [Blog de Engenharia e SEO](https://weblunar.com.br/blog): Artigos práticos sobre criação de sites, custos, Next.js, WordPress, SEO técnico e conversão.
+- [Contato e Orçamentos](https://weblunar.com.br/contato): Canal oficial para briefing e solicitação de proposta comercial via formulário ou WhatsApp.
 
-## Guias Comparativos & Decisão Técnica (Versus Pages)
-* [WordPress vs Next.js: Qual Escolher para o seu Site?](https://weblunar.com.br/solucoes/wordpress-vs-nextjs-qual-escolher)
-* [Landing Page vs Site Institucional: Qual Gera Mais Vendas?](https://weblunar.com.br/solucoes/landing-page-vs-site-institucional-qual-melhor)
-* [Wix / Criadores Gratuitos vs Site Profissional Sob Medida](https://weblunar.com.br/solucoes/wix-vs-site-profissional-sob-medida)
-* [Elementor vs Código Puro (React/Next.js): Comparativo de Performance](https://weblunar.com.br/solucoes/elementor-vs-codigo-sob-medida-performance)
-* [Tráfego Direto para WhatsApp vs Landing Page com Filtro Qualificador](https://weblunar.com.br/solucoes/anuncio-direto-whatsapp-vs-landing-page)
-* [Agência Tradicional vs Consultoria de Engenharia Web & SEO Programático](https://weblunar.com.br/solucoes/agencia-tradicional-vs-engenharia-web-seo)
+## Cases de Sucesso Auditáveis
 
-## Principais Polos de Atendimento Regional
-* **Santa Catarina (SC):** [Florianópolis](https://weblunar.com.br/solucoes/criacao-de-sites-em-florianopolis), [Joinville](https://weblunar.com.br/solucoes/criacao-de-sites-em-joinville), [Blumenau](https://weblunar.com.br/solucoes/criacao-de-sites-em-blumenau), [Balneário Camboriú](https://weblunar.com.br/solucoes/criacao-de-sites-em-balneario-camboriu), [Itajaí](https://weblunar.com.br/solucoes/criacao-de-sites-em-itajai), [Chapecó](https://weblunar.com.br/solucoes/criacao-de-sites-em-chapeco), [Criciúma](https://weblunar.com.br/solucoes/criacao-de-sites-em-criciuma).
-* **Capitais & Polos Nacionais:** [São Paulo (SP)](https://weblunar.com.br/solucoes/criacao-de-sites-em-sao-paulo), [Brasília (DF)](https://weblunar.com.br/solucoes/criacao-de-sites-em-brasilia), [Curitiba (PR)](https://weblunar.com.br/solucoes/criacao-de-sites-em-curitiba), [Porto Alegre (RS)](https://weblunar.com.br/solucoes/criacao-de-sites-em-porto-alegre), [Belo Horizonte (MG)](https://weblunar.com.br/solucoes/criacao-de-sites-em-belo-horizonte), [Rio de Janeiro (RJ)](https://weblunar.com.br/solucoes/criacao-de-sites-em-rio-de-janeiro), [Goiânia (GO)](https://weblunar.com.br/solucoes/criacao-de-sites-em-goiania), [Campinas (SP)](https://weblunar.com.br/solucoes/criacao-de-sites-em-campinas), [Sorocaba (SP)](https://weblunar.com.br/solucoes/criacao-de-sites-em-sorocaba), [Maringá (PR)](https://weblunar.com.br/solucoes/agencia-de-seo-em-maringa), [Londrina (PR)](https://weblunar.com.br/solucoes/criacao-de-sites-em-londrina).
+- [Case Sinapro/SC](https://weblunar.com.br/projetos/sinapro): Portal institucional oficial do Sindicato das Agências de Propaganda de Santa Catarina (WordPress corporativo otimizado).
+- [Case SNEWS](https://weblunar.com.br/projetos/snews): Website institucional multi-idioma (PT/EN/ES) em Next.js para líder latino-americana em software de broadcast e jornalismo de TV.
+- [Case VOLK Presenter](https://weblunar.com.br/projetos/volk): Plataforma web interativa a 60 FPS em Next.js + GSAP para tecnologia de apresentação e gráficos em tempo real.
+- [Case ACP Tax Advisory](https://weblunar.com.br/projetos/acp): Portal corporativo e SEO técnico nos EUA (Miami/Flórida) para consultoria tributária e contabilidade empresarial.
+- [Case CAPI Digital](https://weblunar.com.br/projetos/capi): Website institucional e plataforma digital para assistente editorial com Inteligência Artificial.
 
-## Links Principais
-* Página Inicial: https://weblunar.com.br
-* Simulador Interativo de Projeto e Orçamento: https://weblunar.com.br/calculadora
-* Serviços: https://weblunar.com.br/servicos
-* Portfólio de Projetos: https://weblunar.com.br/projetos
-* Ecossistema de Soluções Regionais e por Nicho: https://weblunar.com.br/solucoes
-* Blog de Engenharia & SEO: https://weblunar.com.br/blog
-* Documentação Estendida para IAs: https://weblunar.com.br/llms-full.txt
-* Contato Direto: https://weblunar.com.br/contato
+## Guias Comparativos Técnicos
+
+- [WordPress vs Next.js: Qual Escolher](https://weblunar.com.br/solucoes/wordpress-vs-nextjs-qual-escolher): Comparativo real de velocidade, segurança, manutenção, SEO e custo total entre WordPress e Next.js.
+- [Landing Page vs Site Institucional](https://weblunar.com.br/solucoes/landing-page-vs-site-institucional-qual-melhor): Quando investir em landing page focada em conversão ou em site institucional completo.
+- [Wix vs Site Profissional Sob Medida](https://weblunar.com.br/solucoes/wix-vs-site-profissional-sob-medida): Análise de performance, SEO e propriedade de código entre criadores gratuitos e sites profissionais.
+- [Elementor vs Código Sob Medida](https://weblunar.com.br/solucoes/elementor-vs-codigo-sob-medida-performance): Impacto técnico no DOM, Core Web Vitals e custo por clique no Google Ads.
+- [Anúncio Direto para WhatsApp vs Landing Page](https://weblunar.com.br/solucoes/anuncio-direto-whatsapp-vs-landing-page): Como o filtro qualificador em 3 cliques reduz curiosos e aumenta a taxa de fechamento comercial.
+- [SEO Tradicional vs SEO Programático e GEO](https://weblunar.com.br/solucoes/seo-tradicional-vs-seo-programatico-ia): Estratégias modernas de ranqueamento orgânico no Google e visibilidade em motores de IA.
+
+## Artigos de Referência no Blog
+
+- [Quanto Custa Criar um Site Profissional em 2026](https://weblunar.com.br/blog/quanto-custa-criar-um-site-profissional): Faixas reais de investimento e prazos para landing pages, sites institucionais e sistemas sob medida.
+- [Site com IA vs WordPress: Qual Ranqueia Melhor](https://weblunar.com.br/blog/site-com-ia-vs-wordpress-qual-ranqueia-melhor): Comparação técnica de indexação, Core Web Vitals e SEO orgânico.
+- [Como Escolher uma Empresa de Criação de Sites](https://weblunar.com.br/blog/como-escolher-empresa-de-criacao-de-sites): Critérios técnicos e comerciais para contratar desenvolvimento web com segurança.
+- [Como Aparecer no Google com um Site Novo](https://weblunar.com.br/blog/como-aparecer-no-google-com-site-novo): Passo a passo de indexação, Search Console, sitemap e SEO on-page.
+
+## Documentação Estendida
+
+- [Base de Conhecimento Completa (llms-full.txt)](https://weblunar.com.br/llms-full.txt): Documentação técnica detalhada com tabela comparativa de arquitetura, estudos de caso completos, metodologia e FAQ oficial para motores de IA.

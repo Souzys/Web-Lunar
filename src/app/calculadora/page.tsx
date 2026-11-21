@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Web Lunar',
     type: 'website',
     locale: 'pt_BR',
+    images: [{ url: '/printvolk.webp', width: 1902, height: 885, alt: 'Simulador de Orçamento Web Lunar' }],
   },
 };
 
@@ -37,9 +38,7 @@ export default function CalculadoraPage() {
         description:
           'Ferramenta interativa gratuita para simular a arquitetura tecnológica (Next.js vs WordPress), prazo e recursos de sites institucionais, landing pages e sistemas web.',
         creator: {
-          '@type': 'Organization',
-          name: 'Web Lunar',
-          url: 'https://weblunar.com.br',
+          '@id': 'https://weblunar.com.br/#organization',
         },
       },
       {
@@ -58,7 +57,7 @@ export default function CalculadoraPage() {
             name: 'Quanto tempo leva para criar um site profissional na Web Lunar?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Landing pages levam de 5 a 12 dias úteis, enquanto sites institucionais completos levam de 10 a 20 dias úteis, conforme a urgência e os módulos escolhidos no simulador.',
+              text: 'Landing pages levam de 7 a 14 dias úteis, sites institucionais completos levam de 15 a 25 dias úteis (3 a 5 semanas) e e-commerces ou sistemas web sob medida levam de 20 a 40 dias úteis (4 a 8 semanas).',
             },
           },
         ],

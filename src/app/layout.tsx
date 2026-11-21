@@ -54,13 +54,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  alternates: {
-    languages: {
-      "pt-BR": "https://weblunar.com.br",
-      "en-US": "https://weblunar.com.br/?lang=en",
-      "es-ES": "https://weblunar.com.br/?lang=es",
-    },
-  },
   openGraph: {
     title: "Web Lunar | Criação de Sites Profissionais que Geram Resultados Reais",
     description: "Sites profissionais, rápidos, otimizados para o Google e feitos para converter visitantes em orçamentos no seu WhatsApp.",
@@ -107,7 +100,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Structured Data Schema.org (Google Sitelinks & Organization Rich Snippets)
+// Structured Data Schema.org (Organization + Founder + WebSite)
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -116,26 +109,56 @@ const jsonLd = {
       "@id": "https://weblunar.com.br/#organization",
       "name": "Web Lunar",
       "url": "https://weblunar.com.br",
-      "logo": "https://weblunar.com.br/icon.png",
-      "description": "Desenvolvimento de produtos digitais premium, sistemas web de alta performance, SEO programático e landing pages de alta conversão. Desenvolvedora do portal oficial do Sinapro/SC (Sindicato das Agências de Propaganda de Santa Catarina).",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://weblunar.com.br/#logo",
+        "url": "https://weblunar.com.br/icon.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://weblunar.com.br/printvolk.webp",
+      "description": "Desenvolvimento de produtos digitais premium, sistemas web de alta performance, SEO técnico e landing pages de alta conversão. Desenvolvedora do portal oficial do Sinapro/SC (Sindicato das Agências de Propaganda de Santa Catarina).",
+      "foundingDate": "2021",
+      "founder": {
+        "@id": "https://weblunar.com.br/#founder"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brasília",
+        "addressRegion": "DF",
+        "addressCountry": "BR"
+      },
       "knowsAbout": [
         "Criação de Sites Profissionais",
         "Landing Pages de Alta Conversão",
         "Next.js & React",
         "WordPress & Elementor Pro",
-        "SEO Técnico e SEO Programático",
+        "SEO Técnico",
         "Generative Engine Optimization (GEO)"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+55-61-98263-0397",
         "contactType": "customer service",
+        "areaServed": "BR",
         "availableLanguage": ["Portuguese", "English", "Spanish"]
       },
       "sameAs": [
-        "https://github.com/Souzys",
-        "https://www.linkedin.com/in/lucas-souzys/",
         "https://www.instagram.com/weblunar_dev/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://weblunar.com.br/#founder",
+      "name": "Lucas Souzys",
+      "jobTitle": "Fundador & Engenheiro de Software",
+      "worksFor": {
+        "@id": "https://weblunar.com.br/#organization"
+      },
+      "url": "https://weblunar.com.br/sobre",
+      "sameAs": [
+        "https://github.com/Souzys",
+        "https://www.linkedin.com/in/lucas-souzys/"
       ]
     },
     {
@@ -146,63 +169,7 @@ const jsonLd = {
       "publisher": {
         "@id": "https://weblunar.com.br/#organization"
       },
-      "inLanguage": ["pt-BR", "en-US", "es-ES"]
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://weblunar.com.br/#sitelinks",
-      "name": "Navegação Principal Web Lunar",
-      "itemListElement": [
-        {
-          "@type": "SiteNavigationElement",
-          "position": 1,
-          "name": "Serviços",
-          "description": "Landing Pages, Sites & Apps, E-commerce, Sistemas de Agendamento, Integrações & Performance.",
-          "url": "https://weblunar.com.br/servicos"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 2,
-          "name": "Projetos",
-          "description": "Cases de sucesso de clientes como Sinapro/SC, Volk, Snews, CAPI Digital, ACP Tax Advisory, ÔSA e Adansonea.",
-          "url": "https://weblunar.com.br/projetos"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 3,
-          "name": "Soluções por Região e Setor",
-          "description": "Mais de 420 soluções digitais personalizadas por cidade, estado e nicho de mercado.",
-          "url": "https://weblunar.com.br/solucoes"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 4,
-          "name": "Simulador de Orçamento",
-          "description": "Calculadora interativa gratuita de escopo, tecnologia (Next.js vs WordPress) e prazo para o seu site.",
-          "url": "https://weblunar.com.br/calculadora"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 5,
-          "name": "Sobre Nós",
-          "description": "Desenvolvimento full-stack, design autoral e engenharia de software de alta performance.",
-          "url": "https://weblunar.com.br/sobre"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 6,
-          "name": "Blog",
-          "description": "Artigos e insights sobre tecnologia, SEO, Next.js e conversão.",
-          "url": "https://weblunar.com.br/blog"
-        },
-        {
-          "@type": "SiteNavigationElement",
-          "position": 7,
-          "name": "Contato",
-          "description": "Solicite um orçamento para seu projeto web ou sistema com nossa equipe de especialistas.",
-          "url": "https://weblunar.com.br/contato"
-        }
-      ]
+      "inLanguage": "pt-BR"
     }
   ]
 };

@@ -593,7 +593,7 @@ export const translations: Record<Language, TranslationDictionary> = {
         },
         {
           q: 'Qual é o prazo médio de entrega de um projeto?',
-          a: 'Depende do escopo: landing pages ficam prontas em 7–14 dias, sites completos em 3–5 semanas, e-commerces e sistemas em 4–8 semanas. O prazo exato é definido no briefing inicial.',
+          a: 'Depende do escopo: landing pages ficam prontas em 7 a 14 dias úteis, sites institucionais completos em 15 a 25 dias úteis (3 a 5 semanas), e e-commerces ou sistemas web em 20 a 40 dias úteis (4 a 8 semanas). O prazo exato é definido no briefing inicial.',
         },
         {
           q: 'Vocês usam WordPress ou tecnologias mais modernas?',

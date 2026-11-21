@@ -101,15 +101,17 @@ export default async function ArtigoPage({ params }: Props) {
         "headline": post.title,
         "description": post.excerpt,
         "image": post.image,
+        "inLanguage": "pt-BR",
         "datePublished": "2026-08-12T10:00:00.000Z",
+        "dateModified": "2026-11-20T00:00:00.000Z",
         "author": {
-          "@type": "Organization",
-          "name": post.author.name
+          "@type": "Person",
+          "@id": "https://weblunar.com.br/#founder",
+          "name": "Lucas Souzys",
+          "url": "https://weblunar.com.br/sobre"
         },
         "publisher": {
-          "@type": "Organization",
-          "name": "Web Lunar",
-          "url": "https://weblunar.com.br"
+          "@id": "https://weblunar.com.br/#organization"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",

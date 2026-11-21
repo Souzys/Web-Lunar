@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: 'Web Lunar',
       type: 'website',
       locale: 'pt_BR',
+      images: [{ url: '/printvolk.webp', width: 1902, height: 885, alt: page.title }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -80,10 +81,7 @@ export default async function SolucaoPage({ params }: PageProps) {
         name: page.title,
         description: page.metaDescription,
         provider: {
-          '@type': 'Organization',
-          name: 'Web Lunar',
-          url: 'https://weblunar.com.br',
-          telephone: '+55-61-98263-0397',
+          '@id': 'https://weblunar.com.br/#organization',
         },
         areaServed: page.cityName
           ? {

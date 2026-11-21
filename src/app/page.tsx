@@ -44,7 +44,14 @@ export default function Home() {
         "@id": "https://weblunar.com.br/#service",
         "name": "Web Lunar",
         "url": "https://weblunar.com.br",
-        "logo": "https://weblunar.com.br/icon.png",
+        "logo": { "@id": "https://weblunar.com.br/#logo" },
+        "parentOrganization": { "@id": "https://weblunar.com.br/#organization" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Brasília",
+          "addressRegion": "DF",
+          "addressCountry": "BR"
+        },
         "image": "https://weblunar.com.br/printvolk.webp",
         "telephone": "+55-61-98263-0397",
         "priceRange": "R$ 700 - R$ 15.000",
@@ -91,8 +98,6 @@ export default function Home() {
           ]
         },
         "sameAs": [
-          "https://github.com/Souzys",
-          "https://www.linkedin.com/in/lucas-souzys/",
           "https://www.instagram.com/weblunar_dev/"
         ]
       },

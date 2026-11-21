@@ -57,15 +57,7 @@ const contactSchema = {
       "url": "https://weblunar.com.br/contato",
       "description": "Canal oficial para solicitações de propostas e atendimento técnico da Web Lunar.",
       "mainEntity": {
-        "@type": "Organization",
-        "name": "Web Lunar",
-        "url": "https://weblunar.com.br",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+55-61-98263-0397",
-          "contactType": "customer service",
-          "availableLanguage": ["Portuguese", "English", "Spanish"]
-        }
+        "@id": "https://weblunar.com.br/#organization"
       }
     }
   ]

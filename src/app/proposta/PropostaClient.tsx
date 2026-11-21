@@ -135,7 +135,7 @@ export function PropostaClient({ initialData = PROPOSTA_PADRAO }: { initialData?
             {/* Topo do Slide 1 */}
             <div className="relative z-10 flex justify-between items-center pb-6 border-b border-white/10">
               <div className="flex items-center gap-3">
-                <img src="/logo-web-lunar-light.png" alt="Web Lunar" className="h-10 w-auto" />
+                <img src="/logo-web-lunar-light.png" alt="Web Lunar" width={160} height={40} className="h-10 w-auto" />
               </div>
               <div className="flex items-center gap-3">
                 <span className="px-3.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-widest bg-primary/20 border border-primary/40 text-blue-300 shadow-[0_0_12px_rgba(29,77,255,0.3)]">

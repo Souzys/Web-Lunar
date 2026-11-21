@@ -57,21 +57,7 @@ const aboutSchema = {
       "url": "https://weblunar.com.br/sobre",
       "description": "Engenharia de software de elite e design digital focado em alta conversão e estabilidade de infraestrutura.",
       "mainEntity": {
-        "@type": "Organization",
-        "name": "Web Lunar",
-        "url": "https://weblunar.com.br",
-        "logo": "https://weblunar.com.br/icon.png",
-        "foundingDate": "2021",
-        "knowsAbout": [
-          "Next.js",
-          "React",
-          "TypeScript",
-          "Node.js",
-          "GSAP Animations",
-          "SEO Técnico",
-          "Arquitetura Full-Stack",
-          "Design System"
-        ]
+        "@id": "https://weblunar.com.br/#organization"
       }
     }
   ]

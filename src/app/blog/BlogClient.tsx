@@ -107,7 +107,11 @@ export function BlogClient() {
                         src={post.image}
                         alt={post.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        loading="lazy"
+                        width={800}
+                        height={600}
+                        loading={index === 0 ? "eager" : "lazy"}
+                        fetchPriority={index === 0 ? "high" : undefined}
+                        decoding="async"
                       />
                       <div className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300">
                         <ArrowUpRight className="w-4 h-4" />

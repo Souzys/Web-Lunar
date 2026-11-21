@@ -93,7 +93,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-2 pr-12">
             <div className="mb-8">
-              <img src="/logo-web-lunar-light.png" alt="Web Lunar" className="h-10 md:h-14 w-auto object-contain" />
+              <img src="/logo-web-lunar-light.png" alt="Web Lunar" width={180} height={56} loading="lazy" decoding="async" className="h-10 md:h-14 w-auto object-contain" />
             </div>
           <p className="text-sm font-light text-neutral-400 leading-relaxed max-w-sm mb-8">
             {t.footer.tagline}

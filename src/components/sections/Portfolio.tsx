@@ -63,7 +63,8 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
           alt={project.title}
           width={800}
           height={450}
-          loading="lazy"
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : undefined}
           decoding="async"
           className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
           style={{ transformOrigin: 'top center' }}

@@ -54,8 +54,12 @@ export function TechStack() {
             >
               <div className="w-16 h-16 rounded-2xl bg-white border border-black/5 flex items-center justify-center shadow-sm group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300">
                 <img 
-                  src={tech.icon} 
-                  alt={tech.name} 
+                  src={tech.icon}
+                  alt={tech.name}
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                  decoding="async"
                   className="w-8 h-8 object-contain transition-all duration-300 group-hover:scale-110"
                 />
               </div>
