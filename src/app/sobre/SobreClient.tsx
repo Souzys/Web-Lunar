@@ -346,110 +346,79 @@ export function SobreClient() {
       {/* =========================================
           BLOCO E-E-A-T: LIDERANÇA TÉCNICA & CREDENCIAIS
       ========================================= */}
-      <section className="py-24 bg-[#050814] text-white border-t border-white/10 relative overflow-hidden">
+      <section className="py-20 bg-[#050814] text-white border-t border-white/10 relative overflow-hidden">
         {(() => {
           const leaderCopy = {
             pt: {
-              eyebrow: 'LIDERANÇA TÉCNICA · BRASÍLIA, DF — ATENDIMENTO NACIONAL E INTERNACIONAL',
-              name: 'Lucas Souza — Fundador & Engenheiro de Software',
-              p1: 'Fundada em 2021 em Brasília (DF), a Web Lunar nasceu com um propósito direto: construir sites, landing pages, sistemas web, plataformas SaaS, e-commerces e integrações sob medida com rigor técnico real e atendimento direto com quem escreve o código.',
-              p2: 'Não nos prendemos a um único nicho nem a uma única ferramenta: escolhemos a arquitetura ideal para cada desafio. Entre os projetos auditáveis entregues estão o portal oficial do Sinapro/SC, as plataformas multi-idioma SNEWS e VOLK Presenter, o ecossistema de IA CAPI Digital e o portal internacional da ACP Tax Advisory (EUA).',
-              boxTitle: 'Dados & Compromissos Verificáveis',
-              hqLabel: 'Sede:',
-              hqVal: 'Brasília, Distrito Federal (BR)',
-              foundedLabel: 'Fundação:',
-              waLabel: 'WhatsApp Direto:',
-              ownerLabel: 'Propriedade:',
-              ownerVal: '100% do código e domínio pertencem ao cliente',
-              missionLabel: 'Atuação:',
-              missionVal: 'Sites, Landing Pages, Sistemas Web, SaaS, E-commerce e Integrações',
+              eyebrow: 'LIDERANÇA TÉCNICA · BRASÍLIA, DF',
+              name: 'Lucas Souza',
+              role: 'Fundador & Engenheiro de Software',
+              bio: 'Desde 2021 liderando a engenharia da Web Lunar em projetos de software, sistemas web e portais para marcas como Sinapro/SC, SNEWS, VOLK Presenter, CAPI Digital e ACP Tax Advisory.',
+              hq: 'Brasília, DF · Atendimento Global',
+              owner: '100% do código e domínio do cliente',
             },
             en: {
-              eyebrow: 'TECHNICAL LEADERSHIP · BRASÍLIA, BRAZIL — GLOBAL DELIVERY',
-              name: 'Lucas Souza — Founder & Software Engineer',
-              p1: 'Founded in 2021 in Brasília (Brazil), Web Lunar was built with one clear purpose: take on any digital engineering mission — from high-converting landing pages and corporate websites to custom web systems, SaaS platforms, e-commerce, and API integrations — with senior engineering rigor and direct communication.',
-              p2: 'We never box your project into a single template or tool: we choose the right architecture for each mission. Delivered auditable projects include the official Sinapro/SC portal, multilingual broadcast platforms SNEWS and VOLK Presenter, AI editorial platform CAPI Digital, and ACP Tax Advisory (USA).',
-              boxTitle: 'Verifiable Credentials & Commitments',
-              hqLabel: 'Headquarters:',
-              hqVal: 'Brasília, DF, Brazil',
-              foundedLabel: 'Founded:',
-              waLabel: 'Direct WhatsApp:',
-              ownerLabel: 'Ownership:',
-              ownerVal: '100% of source code and domain belong to the client',
-              missionLabel: 'Scope:',
-              missionVal: 'Websites, Landing Pages, Custom Web Systems, SaaS, E-commerce & Integrations',
+              eyebrow: 'TECHNICAL LEADERSHIP · BRASÍLIA, BRAZIL',
+              name: 'Lucas Souza',
+              role: 'Founder & Software Engineer',
+              bio: 'Leading Web Lunar engineering since 2021 across custom software, web systems, and portals for Sinapro/SC, SNEWS, VOLK Presenter, CAPI Digital, and ACP Tax Advisory.',
+              hq: 'Brasília, Brazil · Global Delivery',
+              owner: '100% client-owned code and domain',
             },
             es: {
-              eyebrow: 'LIDERAZGO TÉCNICO · BRASILIA, BRASIL — ALCANCE GLOBAL',
-              name: 'Lucas Souza — Fundador e Ingeniero de Software',
-              p1: 'Fundada en 2021 en Brasilia (Brasil), Web Lunar nació con una misión clara: asumir cualquier desafío de ingeniería digital — desde sitios corporativos y landing pages hasta sistemas web a medida, plataformas SaaS, e-commerce e integraciones — con rigor técnico real y trato directo.',
-              p2: 'No nos limitamos a un solo nicho ni a una sola herramienta: elegimos la arquitectura ideal para cada proyecto. Entre las entregas auditables destacan el portal oficial de Sinapro/SC, las plataformas multilingües SNEWS y VOLK Presenter, CAPI Digital y ACP Tax Advisory (EE. UU.).',
-              boxTitle: 'Datos y Compromisos Verificables',
-              hqLabel: 'Sede:',
-              hqVal: 'Brasilia, DF, Brasil',
-              foundedLabel: 'Fundación:',
-              waLabel: 'WhatsApp Directo:',
-              ownerLabel: 'Propiedad:',
-              ownerVal: '100% del código fuente y dominio pertenecen al cliente',
-              missionLabel: 'Alcance:',
-              missionVal: 'Sitios Web, Landing Pages, Sistemas a Medida, SaaS, E-commerce e Integraciones',
+              eyebrow: 'LIDERAZGO TÉCNICO · BRASILIA, BRASIL',
+              name: 'Lucas Souza',
+              role: 'Fundador e Ingeniero de Software',
+              bio: 'Liderando la ingeniería de Web Lunar desde 2021 en software a medida, sistemas web y portales para Sinapro/SC, SNEWS, VOLK Presenter, CAPI Digital y ACP Tax Advisory.',
+              hq: 'Brasilia, Brasil · Alcance Global',
+              owner: '100% código y dominio del cliente',
             },
           }[language];
 
           return (
-            <div className="container mx-auto max-w-[1280px] px-6 relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#0A0E23]/90 border border-white/10 rounded-3xl p-8 sm:p-12">
-                <div className="lg:col-span-8 space-y-5">
-                  <span className="inline-block text-xs font-mono uppercase tracking-widest text-indigo-400 font-semibold">
+            <div className="container mx-auto max-w-[1100px] px-6 relative z-10">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 bg-[#0A0E23]/80 border border-white/10 rounded-3xl p-8 sm:p-10">
+                <div className="max-w-2xl space-y-3">
+                  <span className="text-xs font-mono uppercase tracking-widest text-indigo-400 font-semibold block">
                     {leaderCopy.eyebrow}
                   </span>
-                  <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                    {leaderCopy.name}
+                  <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    {leaderCopy.name} <span className="text-neutral-400 font-normal text-lg sm:text-xl">— {leaderCopy.role}</span>
                   </h2>
-                  <p className="text-neutral-300 text-base leading-relaxed">
-                    {leaderCopy.p1}
+                  <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
+                    {leaderCopy.bio}
                   </p>
-                  <p className="text-neutral-300 text-base leading-relaxed">
-                    {leaderCopy.p2}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-3 pt-2">
-                    <a
-                      href="https://www.linkedin.com/in/lucas-souzys/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-full bg-white/10 hover:bg-primary text-white text-xs font-semibold transition-colors"
-                    >
-                      LinkedIn →
-                    </a>
-                    <a
-                      href="https://github.com/Souzys"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-full bg-white/10 hover:bg-primary text-white text-xs font-semibold transition-colors"
-                    >
-                      GitHub (@Souzys) →
-                    </a>
-                    <a
-                      href="https://www.instagram.com/weblunar_dev/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 rounded-full bg-white/10 hover:bg-primary text-white text-xs font-semibold transition-colors"
-                    >
-                      Instagram (@weblunar_dev) →
-                    </a>
+                  <div className="flex flex-wrap items-center gap-4 pt-1 text-xs text-neutral-400 font-mono">
+                    <span>{leaderCopy.hq}</span>
+                    <span>•</span>
+                    <span>{leaderCopy.owner}</span>
                   </div>
                 </div>
-                <div className="lg:col-span-4 space-y-4 bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-sm">
-                  <div className="text-xs font-mono uppercase tracking-widest text-indigo-400 font-bold">
-                    {leaderCopy.boxTitle}
-                  </div>
-                  <ul className="space-y-3 text-neutral-300">
-                    <li><strong className="text-white">{leaderCopy.hqLabel}</strong> {leaderCopy.hqVal}</li>
-                    <li><strong className="text-white">{leaderCopy.foundedLabel}</strong> 2021</li>
-                    <li><strong className="text-white">{leaderCopy.waLabel}</strong> +55 (61) 98263-0397</li>
-                    <li><strong className="text-white">{leaderCopy.ownerLabel}</strong> {leaderCopy.ownerVal}</li>
-                    <li><strong className="text-white">{leaderCopy.missionLabel}</strong> {leaderCopy.missionVal}</li>
-                  </ul>
+                <div className="flex flex-wrap lg:flex-col gap-2.5 shrink-0">
+                  <a
+                    href="https://www.linkedin.com/in/lucas-souzys/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-full bg-white/10 hover:bg-primary text-white text-xs font-semibold transition-colors text-center"
+                  >
+                    LinkedIn →
+                  </a>
+                  <a
+                    href="https://github.com/Souzys"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-full bg-white/10 hover:bg-primary text-white text-xs font-semibold transition-colors text-center"
+                  >
+                    GitHub →
+                  </a>
+                  <a
+                    href="https://www.instagram.com/weblunar_dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-full bg-white/10 hover:bg-primary text-white text-xs font-semibold transition-colors text-center"
+                  >
+                    Instagram →
+                  </a>
                 </div>
               </div>
             </div>

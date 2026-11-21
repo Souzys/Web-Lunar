@@ -448,130 +448,101 @@ export function ServicosClient() {
         </section>
 
         {/* ─────────────────────────────────────
-            BLOCO 03 — ARQUITETURA & PROCESSO (SEO / E-E-A-T)
+            BLOCO 03 — RESUMO DE PRAZOS & ARQUITETURA
         ───────────────────────────────────── */}
-        <section className="py-24 bg-white text-neutral-900 border-t border-neutral-200">
+        <section className="py-20 bg-white text-neutral-900 border-t border-neutral-200">
           {(() => {
             const copy = {
               pt: {
-                tag: 'ENGENHARIA SOB MEDIDA · TRANSPARÊNCIA TOTAL',
-                title: 'A Arquitetura Certa para Cada Projeto',
-                desc: 'Não engessamos seu projeto em uma única ferramenta ou segmento. Do portal institucional do Sinapro/SC às plataformas internacionais SNEWS e VOLK Presenter, estruturamos cada sistema com a stack que entrega mais velocidade, segurança e retorno comercial.',
-                headers: ['Frente de Projeto', 'Arquitetura & Tecnologias', 'Prazo Médio', 'Foco de Resultado'],
+                tag: 'ESCOPO & PRAZOS',
+                title: 'Arquitetura certa para cada projeto.',
+                desc: 'Escolhemos a stack conforme o objetivo do negócio — com prazo claro e 100% do código sob sua propriedade.',
+                headers: ['Frente', 'Prazo Médio', 'Foco'],
                 rows: [
-                  ['Landing Pages de Alta Conversão', 'Next.js, React, Tailwind CSS (SSG)', '7 a 14 dias úteis', 'Captação via Google Ads / Meta Ads com carregamento sub-segundo e qualificação de leads'],
-                  ['Sites e Portais Institucionais', 'Next.js ou WordPress Corporativo', '15 a 25 dias úteis', 'Autoridade de marca, SEO técnico/GEO e autonomia editorial completa'],
-                  ['E-commerce & Catálogos Online', 'Next.js, Shopify, WooCommerce, APIs', '20 a 40 dias úteis', 'Checkout rápido no celular, gestão de estoque e escalabilidade de vendas'],
-                  ['Sistemas Web, SaaS & Integrações', 'TypeScript, Node.js, PostgreSQL, Cloud', 'Sob escopo (20–40+ dias)', 'Dashboards, painéis administrativos, agendamentos, automações e APIs sob medida'],
+                  ['Landing Pages', '7–14 dias úteis', 'Velocidade no celular e conversão para anúncios'],
+                  ['Sites & Portais', '15–25 dias úteis', 'Autoridade institucional, SEO técnico e autonomia'],
+                  ['E-commerce', '20–40 dias úteis', 'Checkout rápido, pagamentos e gestão de catálogo'],
+                  ['Sistemas Web & SaaS', '20–40+ dias úteis', 'Dashboards, automações, painéis e APIs sob medida'],
                 ],
-                steps: [
-                  { step: '01', title: 'Diagnóstico & Arquitetura', desc: 'Entendemos a regra de negócio, público, integrações e metas para definir o desenho técnico mais eficiente.' },
-                  { step: '02', title: 'Design & Copy Estratégica', desc: 'Criamos interfaces sob medida com clareza, usabilidade impecável no celular e foco total em conversão.' },
-                  { step: '03', title: 'Engenharia & Performance', desc: 'Código limpo com renderização SSR/SSG, Core Web Vitals saudáveis, Schema.org e segurança reforçada.' },
-                  { step: '04', title: 'Publicação & Propriedade', desc: 'Entregamos em produção no seu domínio com SSL, monitoramento e 100% do código sob sua propriedade.' },
-                ],
-                cta1: 'Simular Escopo e Prazo em 30s',
-                cta2: 'Explorar Soluções & Comparativos',
+                cta1: 'Simular Escopo em 30s',
+                cta2: 'Ver Cases Reais',
               },
               en: {
-                tag: 'CUSTOM ENGINEERING · FULL TRANSPARENCY',
-                title: 'The Right Architecture for Any Digital Mission',
-                desc: 'We never force your project into a single template or narrow niche. From the official Sinapro/SC portal to global platforms like SNEWS and VOLK Presenter, we pick the exact engineering stack that maximizes speed, reliability, and ROI.',
-                headers: ['Project Track', 'Architecture & Stack', 'Typical Timeline', 'Business Outcome'],
+                tag: 'SCOPE & TIMELINES',
+                title: 'The right architecture for every project.',
+                desc: 'We choose the stack that fits your business goal — clear timelines and 100% code ownership.',
+                headers: ['Track', 'Typical Timeline', 'Focus'],
                 rows: [
-                  ['High-Converting Landing Pages', 'Next.js, React, Tailwind CSS (SSG)', '7–14 business days', 'Sub-second mobile speed for paid ads and qualified lead capture'],
-                  ['Corporate Websites & Portals', 'Next.js or Enterprise WordPress', '15–25 business days', 'Brand authority, technical SEO/GEO, and seamless editorial control'],
-                  ['E-commerce & Online Stores', 'Next.js, Shopify, WooCommerce, APIs', '20–40 business days', 'Fast mobile checkout, catalog control, and scalable conversions'],
-                  ['Custom Web Systems, SaaS & APIs', 'TypeScript, Node.js, PostgreSQL, Cloud', 'Scoped (20–40+ days)', 'Dashboards, client portals, scheduling engines, automations, and custom APIs'],
+                  ['Landing Pages', '7–14 business days', 'Sub-second mobile speed and paid-ad conversion'],
+                  ['Websites & Portals', '15–25 business days', 'Brand authority, technical SEO, and clean editing'],
+                  ['E-commerce', '20–40 business days', 'Fast mobile checkout and scalable catalog'],
+                  ['Web Systems & SaaS', '20–40+ business days', 'Dashboards, automations, portals, and custom APIs'],
                 ],
-                steps: [
-                  { step: '01', title: 'Discovery & Architecture', desc: 'We map business logic, user journeys, integrations, and goals before writing the first line of code.' },
-                  { step: '02', title: 'Design & Strategic Copy', desc: 'Bespoke interfaces built for mobile clarity, trust, and measurable conversion.' },
-                  { step: '03', title: 'Engineering & Performance', desc: 'Clean SSR/SSG architecture, green Core Web Vitals, structured Schema.org, and hardened security.' },
-                  { step: '04', title: 'Launch & Full Ownership', desc: 'Production launch on your domain with SSL, analytics, and 100% source code ownership.' },
-                ],
-                cta1: 'Estimate Scope & Timeline in 30s',
-                cta2: 'Explore Solutions & Comparisons',
+                cta1: 'Estimate Scope in 30s',
+                cta2: 'View Case Studies',
               },
               es: {
-                tag: 'INGENIERÍA A MEDIDA · TRANSPARENCIA TOTAL',
-                title: 'La Arquitectura Correcta para Cualquier Misión Digital',
-                desc: 'No limitamos tu proyecto a una sola herramienta o nicho. Desde el portal oficial de Sinapro/SC hasta plataformas globales como SNEWS y VOLK Presenter, elegimos la stack que entrega más velocidad, seguridad y retorno.',
-                headers: ['Tipo de Proyecto', 'Arquitectura y Stack', 'Plazo Estimado', 'Enfoque de Resultado'],
+                tag: 'ALCANCE Y PLAZOS',
+                title: 'La arquitectura justa para cada proyecto.',
+                desc: 'Elegimos la tecnología según tu objetivo — plazos claros y 100% de propiedad del código.',
+                headers: ['Frente', 'Plazo Estimado', 'Enfoque'],
                 rows: [
-                  ['Landing Pages de Alta Conversión', 'Next.js, React, Tailwind CSS (SSG)', '7 a 14 días hábiles', 'Carga sub-segundo para campañas pagas y captación de leads calificados'],
-                  ['Sitios y Portales Institucionales', 'Next.js o WordPress Corporativo', '15 a 25 días hábiles', 'Autoridad de marca, SEO técnico/GEO y autonomía editorial'],
-                  ['E-commerce y Tiendas Online', 'Next.js, Shopify, WooCommerce, APIs', '20 a 40 días hábiles', 'Checkout veloz en móvil, gestión de catálogo y ventas escalables'],
-                  ['Sistemas Web, SaaS e Integraciones', 'TypeScript, Node.js, PostgreSQL, Cloud', 'A medida (20–40+ días)', 'Dashboards, paneles, agendas, automatizaciones y APIs personalizadas'],
+                  ['Landing Pages', '7–14 días hábiles', 'Velocidad móvil y conversión para anuncios'],
+                  ['Sitios y Portales', '15–25 días hábiles', 'Autoridad de marca, SEO técnico y autonomía'],
+                  ['E-commerce', '20–40 días hábiles', 'Checkout rápido, pagos y gestión de catálogo'],
+                  ['Sistemas Web y SaaS', '20–40+ días hábiles', 'Dashboards, automatizaciones y APIs a medida'],
                 ],
-                steps: [
-                  { step: '01', title: 'Diagnóstico y Arquitectura', desc: 'Mapeamos reglas de negocio, integraciones y objetivos antes de programar.' },
-                  { step: '02', title: 'Diseño y Copy Estratégico', desc: 'Interfaces a medida con claridad móvil, confianza y enfoque en conversión.' },
-                  { step: '03', title: 'Ingeniería y Rendimiento', desc: 'Código limpio SSR/SSG, Core Web Vitals óptimos, Schema.org y seguridad.' },
-                  { step: '04', title: 'Lanzamiento y Propiedad', desc: 'Publicación en tu dominio con SSL y 100% de propiedad del código fuente.' },
-                ],
-                cta1: 'Simular Alcance y Plazo en 30s',
-                cta2: 'Ver Soluciones y Comparativos',
+                cta1: 'Simular Alcance en 30s',
+                cta2: 'Ver Proyectos',
               },
             }[language];
 
             return (
-              <div className="container mx-auto max-w-[1280px] px-6">
-                <div className="max-w-3xl mb-12">
-                  <p className="text-xs uppercase font-sans tracking-widest text-primary mb-3 font-semibold">
+              <div className="container mx-auto max-w-[1100px] px-6">
+                <div className="max-w-2xl mb-10">
+                  <p className="text-xs uppercase font-sans tracking-widest text-primary mb-2 font-semibold">
                     {copy.tag}
                   </p>
-                  <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-neutral-950 mb-4">
+                  <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-neutral-950 mb-3">
                     {copy.title}
                   </h2>
-                  <p className="text-neutral-600 text-base md:text-lg leading-relaxed">
+                  <p className="text-neutral-600 text-base leading-relaxed">
                     {copy.desc}
                   </p>
                 </div>
 
-                <div className="overflow-x-auto rounded-2xl border border-neutral-200 shadow-sm mb-16">
+                <div className="overflow-x-auto rounded-2xl border border-neutral-200 mb-10">
                   <table className="w-full text-left border-collapse text-sm sm:text-base">
                     <thead>
                       <tr className="bg-neutral-950 text-white">
                         {copy.headers.map((h) => (
-                          <th key={h} className="px-5 py-4 font-semibold">{h}</th>
+                          <th key={h} className="px-5 py-3.5 font-semibold">{h}</th>
                         ))}
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-neutral-200 bg-white">
                       {copy.rows.map((row) => (
                         <tr key={row[0]} className="hover:bg-neutral-50">
-                          <td className="px-5 py-4 font-semibold text-neutral-950">{row[0]}</td>
-                          <td className="px-5 py-4 text-neutral-700">{row[1]}</td>
-                          <td className="px-5 py-4 text-neutral-700 whitespace-nowrap">{row[2]}</td>
-                          <td className="px-5 py-4 text-neutral-700">{row[3]}</td>
+                          <td className="px-5 py-3.5 font-semibold text-neutral-950 whitespace-nowrap">{row[0]}</td>
+                          <td className="px-5 py-3.5 text-neutral-600 whitespace-nowrap font-mono text-xs sm:text-sm">{row[1]}</td>
+                          <td className="px-5 py-3.5 text-neutral-700">{row[2]}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-                  {copy.steps.map((item) => (
-                    <div key={item.step} className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200">
-                      <span className="font-mono text-xs font-bold text-primary block mb-2">0{item.step.slice(-1)}</span>
-                      <h3 className="font-display text-lg font-bold text-neutral-950 mb-2">{item.title}</h3>
-                      <p className="text-sm text-neutral-600 leading-relaxed">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/calculadora"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary hover:bg-blue-700 text-white text-sm font-semibold transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary hover:bg-blue-700 text-white text-sm font-semibold transition-colors"
                   >
                     <span>{copy.cta1}</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    href="/solucoes"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-neutral-300 hover:border-neutral-900 text-neutral-900 text-sm font-semibold transition-colors"
+                    href="/projetos"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-neutral-300 hover:border-neutral-900 text-neutral-900 text-sm font-semibold transition-colors"
                   >
                     <span>{copy.cta2}</span>
                   </Link>
