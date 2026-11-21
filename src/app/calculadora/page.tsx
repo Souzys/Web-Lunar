@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import CalculadoraClient from './CalculadoraClient';
 
 export const metadata: Metadata = {
-  title: 'Calculadora e Simulador de Orçamento de Site',
+  title: 'Simulador de Projeto, Prazo e Orçamento',
   description:
-    'Descubra em 30 segundos a tecnologia ideal (Next.js ou WordPress), o prazo estimado e o escopo recomendado para criar seu site profissional ou landing page.',
+    'Responda 4 perguntas rápidas e descubra o formato ideal, o prazo estimado e o escopo recomendado para seu site, loja virtual ou sistema sob medida.',
   alternates: {
     canonical: 'https://weblunar.com.br/calculadora',
   },

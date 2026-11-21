@@ -30,30 +30,30 @@ const PROJECT_OPTIONS: Array<{
 }> = [
   {
     id: 'landing',
-    title: 'Landing Page de Alta Conversão',
-    subtitle: 'Página única focada em transformar anúncios do Google e Instagram em clientes qualificados no WhatsApp.',
-    badge: 'Ideal para Tráfego Pago',
+    title: 'Landing Page de Vendas',
+    subtitle: 'Página focada em transformar cliques de anúncios no Google e Instagram em contatos no WhatsApp.',
+    badge: 'Foco em Anúncios',
     icon: <Zap className="w-5 h-5 text-primary" />,
   },
   {
     id: 'institucional',
     title: 'Site ou Portal Institucional',
-    subtitle: 'Múltiplas páginas de autoridade, serviços, blog e portfólio (padrão Sinapro/SC e SNEWS).',
-    badge: 'Autoridade & Google Orgânico',
+    subtitle: 'Presença completa com páginas de serviços, portfólio e blog para gerar autoridade no Google.',
+    badge: 'Autoridade & Google',
     icon: <Globe className="w-5 h-5 text-primary" />,
   },
   {
     id: 'ecommerce',
-    title: 'E-commerce / Catálogo Digital',
-    subtitle: 'Loja virtual rápida no celular com checkout fluido, gestão de produtos e SEO para categorias.',
+    title: 'Loja Virtual / Catálogo',
+    subtitle: 'Venda online com checkout rápido no celular, pagamento via Pix/cartão e gestão de produtos.',
     badge: 'Vendas Online 24h',
     icon: <ShoppingBag className="w-5 h-5 text-primary" />,
   },
   {
     id: 'pseo',
-    title: 'Sistema Web ou SEO Programático',
-    subtitle: 'Plataforma sob medida ou motor de 100+ páginas dinâmicas para dominar buscas por cidade e bairro.',
-    badge: 'Escala Extrema',
+    title: 'Sistema Web / Software sob Medida',
+    subtitle: 'Plataformas SaaS, painéis administrativos, agendamentos, área de clientes ou integrações.',
+    badge: 'Sob Medida',
     icon: <Layers className="w-5 h-5 text-primary" />,
   },
 ];
@@ -66,30 +66,30 @@ const TECH_OPTIONS: Array<{
 }> = [
   {
     id: 'nextjs',
-    title: 'Next.js + React (Velocidade & Escala Máxima)',
-    desc: 'Carregamento sub-segundo (< 0.8s), nota 98–100 no Google PageSpeed e blindagem total sem plugins.',
-    caseRef: 'Mesma engenharia dos nossos cases SNEWS e VOLK Presenter',
+    title: 'Máxima velocidade e zero dor de cabeça técnica',
+    desc: 'Ideal para quem busca abertura instantânea no celular, alta segurança e estabilidade sem precisar cuidar de atualizações.',
+    caseRef: 'Padrão utilizado em SNEWS e VOLK Presenter',
   },
   {
     id: 'wordpress',
-    title: 'WordPress + Elementor Pro Corporativo',
-    desc: 'Painel visual intuitivo para sua equipe publicar notícias, editar páginas e gerir conteúdos no dia a dia.',
-    caseRef: 'Mesma engenharia do portal oficial do Sinapro/SC',
+    title: 'Autonomia para minha equipe editar toda semana',
+    desc: 'Painel visual simples para publicar notícias, artigos e alterar textos ou fotos no dia a dia sem depender de programador.',
+    caseRef: 'Padrão utilizado no portal oficial do Sinapro/SC',
   },
   {
     id: 'auto',
-    title: 'Recomendação Automática da Engenharia',
-    desc: 'Deixe nosso simulador indicar a tecnologia com melhor custo-benefício para o seu objetivo.',
-    caseRef: 'Análise imparcial de quem domina as duas stacks',
+    title: 'Quero a recomendação da Web Lunar',
+    desc: 'Deixe nossa equipe indicar a estrutura com melhor custo-benefício para o seu momento atual.',
+    caseRef: 'Recomendação imparcial focada no seu objetivo',
   },
 ];
 
 const EXTRA_FEATURES = [
-  { id: 'qualificador', label: 'Filtro Anti-Curioso integrado ao WhatsApp', defaultChecked: true },
-  { id: 'copy', label: 'Copywriting Persuasivo (Textos escritos pela Web Lunar)', defaultChecked: true },
-  { id: 'seo_geo', label: 'SEO Técnico Local + Otimização para IAs (ChatGPT / GEO)', defaultChecked: true },
-  { id: 'i18n', label: 'Multi-idioma (Português, Inglês e Espanhol)', defaultChecked: false },
-  { id: 'ads_pixel', label: 'Configuração de Google Analytics 4, Google Ads e Meta Pixel', defaultChecked: false },
+  { id: 'qualificador', label: 'Filtro qualificador de clientes antes do WhatsApp', defaultChecked: true },
+  { id: 'copy', label: 'Textos estratégicos escritos pela nossa equipe', defaultChecked: true },
+  { id: 'seo_geo', label: 'Otimização para aparecer no Google e buscas por IA', defaultChecked: true },
+  { id: 'i18n', label: 'Versão em outros idiomas (Inglês / Espanhol)', defaultChecked: false },
+  { id: 'ads_pixel', label: 'Instalação de métricas de anúncios (Google e Instagram)', defaultChecked: false },
 ];
 
 const URGENCY_OPTIONS: Array<{
@@ -97,9 +97,9 @@ const URGENCY_OPTIONS: Array<{
   label: string;
   desc: string;
 }> = [
-  { id: 'urgente', label: 'Prioridade Máxima (Sprint Rápida)', desc: 'Preciso lançar campanha o quanto antes' },
-  { id: 'padrao', label: 'Prazo Padrão Planejado', desc: 'Equilíbrio ideal entre maturação visual e entrega ágil' },
-  { id: 'estrutural', label: 'Projeto Robusto em Etapas', desc: 'Portal grande ou sistema com múltiplos módulos' },
+  { id: 'urgente', label: 'O quanto antes', desc: 'Quero lançar rapidamente para iniciar campanhas' },
+  { id: 'padrao', label: 'Prazo planejado', desc: 'Equilíbrio ideal entre design cuidadoso e agilidade' },
+  { id: 'estrutural', label: 'Projeto em etapas', desc: 'Sistema ou portal maior com entregas progressivas' },
 ];
 
 export default function CalculadoraClient() {
@@ -119,74 +119,74 @@ export default function CalculadoraClient() {
     let recommendedStack = '';
     let referenceCase = { name: '', url: '', reason: '' };
     let deliveryDays = '';
-    let pageSpeedTarget = '96–100 / 100';
+    let pageSpeedTarget = 'Abertura < 1s no 4G';
 
     if (projectType === 'pseo') {
-      recommendedStack = 'Next.js 16 (App Router) + TypeScript + Geração Estática (SSG)';
+      recommendedStack = 'Software Web sob Medida (Arquitetura Escalável)';
       referenceCase = {
-        name: 'SNEWS & Motor pSEO Web Lunar',
+        name: 'SNEWS & CAPI Digital',
         url: '/projetos/snews',
-        reason: 'Indispensável para gerar centenas de páginas locais sem perder velocidade.',
+        reason: 'Estrutura feita sob medida para suportar regras de negócio, painéis e integrações com total estabilidade.',
       };
-      deliveryDays = urgency === 'urgente' ? '12 a 18 dias úteis' : '15 a 25 dias úteis';
-      pageSpeedTarget = '98–100 / 100';
+      deliveryDays = urgency === 'urgente' ? '20 a 30 dias úteis' : '20 a 40 dias úteis';
+      pageSpeedTarget = 'Alta Performance';
     } else if (projectType === 'landing') {
       if (techPref === 'wordpress') {
-        recommendedStack = 'WordPress Otimizado + Elementor Pro (Clean DOM)';
+        recommendedStack = 'Landing Page Rápida com Painel de Edição';
         referenceCase = {
           name: 'Sinapro/SC',
           url: '/projetos/sinapro',
-          reason: 'Excelente se sua equipe de marketing precisa duplicar páginas de campanha toda semana.',
+          reason: 'Prática para equipes de marketing que precisam criar e editar campanhas com autonomia.',
         };
-        pageSpeedTarget = '90–95 / 100';
+        pageSpeedTarget = 'Rápido no Celular';
       } else {
-        recommendedStack = 'Next.js + Tailwind CSS (Ultra-Fast Landing Engine)';
+        recommendedStack = 'Landing Page de Alta Velocidade e Conversão';
         referenceCase = {
           name: 'VOLK Presenter',
           url: '/projetos/volk',
-          reason: 'Carregamento instantâneo (< 0.8s) para reduzir o custo por clique no Google Ads e Instagram.',
+          reason: 'Carregamento quase instantâneo no celular para aproveitar 100% dos cliques dos seus anúncios.',
         };
-        pageSpeedTarget = '98–100 / 100';
+        pageSpeedTarget = 'Abertura < 1s no 4G';
       }
-      deliveryDays = urgency === 'urgente' ? '5 a 8 dias úteis' : '7 a 12 dias úteis';
+      deliveryDays = urgency === 'urgente' ? '7 a 10 dias úteis' : '7 a 14 dias úteis';
     } else if (projectType === 'institucional') {
       if (techPref === 'wordpress') {
-        recommendedStack = 'WordPress Corporativo + Elementor Pro + Yoast/RankMath SEO';
+        recommendedStack = 'Site Institucional com Painel Editorial Completo';
         referenceCase = {
-          name: 'Sinapro/SC (Sindicato das Agências de Propaganda de SC)',
+          name: 'Sinapro/SC',
           url: '/projetos/sinapro',
-          reason: 'Ideal para portais com notícias, diretórios e autonomia editorial diária.',
+          reason: 'Ideal para portais com notícias, blog ativo e atualizações frequentes pela sua equipe.',
         };
-        pageSpeedTarget = '90–96 / 100';
+        pageSpeedTarget = 'Rápido no Celular';
       } else if (techPref === 'nextjs') {
-        recommendedStack = 'Next.js App Router + TypeScript + Schema.org Avançado';
+        recommendedStack = 'Site Institucional Sob Medida de Alta Performance';
         referenceCase = {
-          name: 'SNEWS Broadcast',
+          name: 'SNEWS',
           url: '/projetos/snews',
-          reason: 'Segurança blindada, suporte multi-idioma nativo e velocidade máxima no Google.',
+          reason: 'Máxima velocidade no Google, segurança reforçada e suporte nativo para múltiplos idiomas.',
         };
-        pageSpeedTarget = '98–100 / 100';
+        pageSpeedTarget = 'Abertura < 1s no 4G';
       } else {
         recommendedStack = selectedFeatures.includes('i18n')
-          ? 'Next.js App Router + i18n Nativo (Padrão SNEWS)'
-          : 'Arquitetura Híbrida / Next.js ou WordPress Corporativo (Padrão Sinapro/SC)';
+          ? 'Site Institucional Multi-idioma Sob Medida'
+          : 'Site Institucional Sob Medida (Estrutura Recomendada)';
         referenceCase = {
           name: 'Sinapro/SC & SNEWS',
           url: '/projetos/sinapro',
-          reason: 'Definimos na reunião de alinhamento se sua prioridade maior é edição diária ou performance bruta.',
+          reason: 'Alinhamos na primeira conversa se sua prioridade maior é edição diária pela equipe ou velocidade máxima.',
         };
-        pageSpeedTarget = '95–100 / 100';
+        pageSpeedTarget = 'Abertura < 1s no 4G';
       }
-      deliveryDays = urgency === 'urgente' ? '10 a 14 dias úteis' : '12 a 20 dias úteis';
+      deliveryDays = urgency === 'urgente' ? '15 a 20 dias úteis' : '15 a 25 dias úteis';
     } else {
-      recommendedStack = 'E-commerce de Alta Conversão + Checkout Transparente';
+      recommendedStack = 'Loja Virtual Rápida com Checkout Otimizado';
       referenceCase = {
         name: 'KRONOS Store',
         url: '/projetos/kronos-store',
-        reason: 'Catálogo veloz focado em compra rápida pelo smartphone.',
+        reason: 'Catálogo leve pensado para facilitar a compra rápida direto pelo celular.',
       };
-      deliveryDays = urgency === 'urgente' ? '12 a 16 dias úteis' : '15 a 25 dias úteis';
-      pageSpeedTarget = '92–98 / 100';
+      deliveryDays = urgency === 'urgente' ? '20 a 30 dias úteis' : '20 a 40 dias úteis';
+      pageSpeedTarget = 'Alta Performance';
     }
 
     return {
@@ -204,10 +204,10 @@ export default function CalculadoraClient() {
       .join(', ');
 
     const text = [
-      'Olá! Fiz a simulação de projeto na Calculadora da Web Lunar:',
+      'Olá, equipe Web Lunar! Fiz a simulação do meu projeto no site:',
       '',
       `*Tipo de Projeto:* ${projectLabel}`,
-      `*Arquitetura Sugerida:* ${diagnostic.recommendedStack}`,
+      `*Formato Recomendado:* ${diagnostic.recommendedStack}`,
       `*Prazo Estimado:* ${diagnostic.deliveryDays}`,
       `*Recursos:* ${featuresLabels || 'Estrutura base'}`,
       companySector ? `*Meu Segmento/Cidade:* ${companySector}` : '',
@@ -234,18 +234,17 @@ export default function CalculadoraClient() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/30 bg-primary/10 mb-6">
               <Calculator className="w-3.5 h-3.5 text-primary" />
               <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-                FERRAMENTA INTERATIVA GRATUITA · ENGENHARIA WEB LUNAR
+                SIMULADOR GRATUITO · WEB LUNAR
               </span>
             </div>
             <h1 className="font-display font-bold text-3xl sm:text-5xl text-white leading-tight mb-5">
-              Simulador de Escopo, Tecnologia e{' '}
+              Simulador de Projeto e{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-white">
-                Orçamento de Site
+                Orçamento
               </span>
             </h1>
             <p className="text-base sm:text-lg text-white/80 font-light leading-relaxed">
-              Descubra em 30 segundos se o seu negócio terá mais resultado com <strong>Next.js</strong> ou{' '}
-              <strong>WordPress Corporativo</strong>, veja o prazo estimado de entrega e gere o diagnóstico técnico do seu projeto.
+              Responda 4 perguntas rápidas e receba o formato ideal, o prazo estimado e o resumo pronto para solicitar sua proposta.
             </p>
           </div>
         </div>
@@ -264,7 +263,7 @@ export default function CalculadoraClient() {
                     1
                   </span>
                   <h2 className="font-display text-lg sm:text-xl font-bold text-slate-900">
-                    Qual estrutura digital você precisa construir?
+                    O que você precisa construir?
                   </h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -304,7 +303,7 @@ export default function CalculadoraClient() {
                     2
                   </span>
                   <h2 className="font-display text-lg sm:text-xl font-bold text-slate-900">
-                    Qual é a sua preferência de tecnologia?
+                    Como sua equipe pretende usar e atualizar?
                   </h2>
                 </div>
                 <div className="space-y-3">
@@ -346,7 +345,7 @@ export default function CalculadoraClient() {
                     3
                   </span>
                   <h2 className="font-display text-lg sm:text-xl font-bold text-slate-900">
-                    Quais diferenciais de vendas e SEO deseja incluir?
+                    Quais recursos extras fazem sentido para você?
                   </h2>
                 </div>
                 <div className="space-y-2.5">
@@ -427,17 +426,17 @@ export default function CalculadoraClient() {
 
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold uppercase tracking-wider mb-5">
                   <Sparkles className="w-3.5 h-3.5" />
-                  Diagnóstico Técnico em Tempo Real
+                  Resumo em Tempo Real
                 </div>
 
                 <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-6">
-                  Arquitetura Recomendada para o Seu Projeto
+                  Formato Recomendado para o Seu Projeto
                 </h3>
 
                 <div className="space-y-4 mb-6">
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
                     <p className="text-[11px] uppercase tracking-wider text-white/50 font-semibold mb-1">
-                      Stack Tecnológica Ideal
+                      Formato Ideal
                     </p>
                     <p className="text-sm sm:text-base font-bold text-primary">
                       {diagnostic.recommendedStack}
@@ -456,7 +455,7 @@ export default function CalculadoraClient() {
                     <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
                       <div className="flex items-center gap-1.5 text-white/60 text-xs mb-1">
                         <Gauge className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>Meta PageSpeed</span>
+                        <span>Experiência Mobile</span>
                       </div>
                       <p className="text-sm font-bold text-emerald-400">{diagnostic.pageSpeedTarget}</p>
                     </div>
