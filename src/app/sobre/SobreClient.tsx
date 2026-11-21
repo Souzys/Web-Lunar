@@ -352,7 +352,7 @@ export function SobreClient() {
             pt: {
               eyebrow: 'LIDERANÇA TÉCNICA · BRASÍLIA, DF — ATENDIMENTO NACIONAL E INTERNACIONAL',
               name: 'Lucas Souza — Fundador & Engenheiro de Software',
-              p1: 'Fundada em 2021 em Brasília (DF), a Web Lunar nasceu com um propósito direto: assumir qualquer missão de engenharia digital — de sites institucionais e landing pages de alta conversão a sistemas web complexos, plataformas SaaS, e-commerces e integrações sob medida — com rigor técnico real e atendimento direto com quem constrói o produto.',
+              p1: 'Fundada em 2021 em Brasília (DF), a Web Lunar nasceu com um propósito direto: construir sites, landing pages, sistemas web, plataformas SaaS, e-commerces e integrações sob medida com rigor técnico real e atendimento direto com quem escreve o código.',
               p2: 'Não nos prendemos a um único nicho nem a uma única ferramenta: escolhemos a arquitetura ideal para cada desafio. Entre os projetos auditáveis entregues estão o portal oficial do Sinapro/SC, as plataformas multi-idioma SNEWS e VOLK Presenter, o ecossistema de IA CAPI Digital e o portal internacional da ACP Tax Advisory (EUA).',
               boxTitle: 'Dados & Compromissos Verificáveis',
               hqLabel: 'Sede:',

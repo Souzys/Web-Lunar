@@ -226,10 +226,10 @@ export function ServicosClient() {
             <AnimatedSection options={{ delay: 0.1 }}>
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
                 <span className="block text-white/95">
-                  {language === 'en' ? 'Web Engineering & Digital Systems ' : language === 'es' ? 'Ingeniería Web y Sistemas Digitales ' : 'Desenvolvimento Web & Sistemas '}
+                  {language === 'en' ? 'Software Engineering ' : language === 'es' ? 'Ingeniería de Software ' : 'Engenharia de Software '}
                 </span>
                 <span className="inline-block pr-6 pb-1 pl-0.5 text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-primary italic">
-                  {language === 'en' ? 'Built to Scale Any Mission' : language === 'es' ? 'A Medida para Escalar' : 'Sob Medida para Qualquer Missão'}
+                  {language === 'en' ? '& Digital Products.' : language === 'es' ? 'y Productos Digitales.' : 'e Produtos Digitais.'}
                 </span>
               </h1>
             </AnimatedSection>
@@ -455,7 +455,7 @@ export function ServicosClient() {
             const copy = {
               pt: {
                 tag: 'ENGENHARIA SOB MEDIDA · TRANSPARÊNCIA TOTAL',
-                title: 'A Arquitetura Certa para Qualquer Missão Digital',
+                title: 'A Arquitetura Certa para Cada Projeto',
                 desc: 'Não engessamos seu projeto em uma única ferramenta ou segmento. Do portal institucional do Sinapro/SC às plataformas internacionais SNEWS e VOLK Presenter, estruturamos cada sistema com a stack que entrega mais velocidade, segurança e retorno comercial.',
                 headers: ['Frente de Projeto', 'Arquitetura & Tecnologias', 'Prazo Médio', 'Foco de Resultado'],
                 rows: [
