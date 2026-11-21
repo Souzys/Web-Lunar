@@ -615,6 +615,14 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'Nenhum artigo encontrado para a sua busca.',
       posts: [
         {
+          slug: 'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo',
+          date: '21 de Novembro, 2026',
+          category: 'GEO & IA Search',
+          title: 'Como Fazer Sua Empresa Aparecer no ChatGPT, Perplexity e Google AI Overviews (Guia de GEO em 2026)',
+          excerpt: 'Guia prático de GEO baseado no Google Search Central e em estudos de citabilidade: como estruturar seu site e sua marca para ser recomendado por IAs.',
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+        },
+        {
           slug: 'seo-programatico-o-que-e-como-escalar-paginas-no-google',
           date: '28 de Outubro, 2026',
           category: 'SEO & Tecnologia',
@@ -1176,6 +1184,14 @@ export const translations: Record<Language, TranslationDictionary> = {
       noResults: 'No articles found matching your query.',
       posts: [
         {
+          slug: 'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo',
+          date: 'November 21, 2026',
+          category: 'GEO & AI Search',
+          title: 'How to Get Your Business Cited in ChatGPT, Perplexity & Google AI Overviews (2026 GEO Guide)',
+          excerpt: 'A practical GEO guide grounded in Google Search Central and citability research: how to structure your website and brand to be recommended by AI answer engines.',
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+        },
+        {
           slug: 'seo-programatico-o-que-e-como-escalar-paginas-no-google',
           date: 'October 28, 2026',
           category: 'SEO & Strategy',
@@ -1736,6 +1752,14 @@ export const translations: Record<Language, TranslationDictionary> = {
       searchPlaceholder: 'Buscar artículos...',
       noResults: 'No se encontraron artículos para tu búsqueda.',
       posts: [
+        {
+          slug: 'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo',
+          date: '21 de Noviembre, 2026',
+          category: 'GEO e IA Search',
+          title: 'Cómo Hacer Que Tu Empresa Aparezca en ChatGPT, Perplexity y Google AI Overviews (Guía GEO 2026)',
+          excerpt: 'Guía práctica de GEO basada en Google Search Central y estudios de citabilidad para posicionar tu sitio y tu marca en ChatGPT, Perplexity y Google AI Overviews.',
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+        },
         {
           slug: 'seo-programatico-o-que-e-como-escalar-paginas-no-google',
           date: '28 de Octubre, 2026',

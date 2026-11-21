@@ -35,6 +35,103 @@ export interface BlogPostDetail {
 
 export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> = {
   pt: {
+    'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo': {
+      slug: 'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo',
+      title: 'Como Fazer Sua Empresa Aparecer no ChatGPT, Perplexity e Google AI Overviews (Guia de GEO em 2026)',
+      date: '21 de Novembro, 2026',
+      readTime: '9 min de leitura',
+      category: 'GEO & IA Search',
+      excerpt: 'Guia prático de GEO (Generative Engine Optimization) baseado nas diretrizes do Google Search Central e estudos recentes de citabilidade: como estruturar seu site e sua marca para ser recomendado por ChatGPT, Perplexity e Google AI Overviews.',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
+      author: {
+        name: 'Lucas Souza',
+        role: 'Fundador & Engenheiro de Software — Web Lunar',
+      },
+      sections: [
+        {
+          heading: 'Resposta Direta: o que é GEO e como aparecer nas respostas de IA?',
+          paragraphs: [
+            'GEO (Generative Engine Optimization) é a prática de estruturar seu site, seu conteúdo e a presença externa da sua marca para que mecanismos de resposta com IA — como Google AI Overviews, Google AI Mode, ChatGPT Search e Perplexity — encontrem, compreendam e citem sua empresa como fonte confiável. Segundo o guia oficial do Google Search Central, otimizar para busca generativa continua sendo SEO bem feito: páginas rápidas com HTML renderizado no servidor (SSR/SSG), respostas diretas e verificáveis logo no topo, dados estruturados (Schema.org) e autoridade real de marca fora do próprio domínio.',
+            'A grande diferença em 2026 é o comportamento do comprador: em vez de abrir dez abas no Google, o decisor pergunta diretamente ao ChatGPT ou ao Perplexity "qual a melhor empresa para X" ou "quanto custa Y". Se o seu site depende de JavaScript pesado no cliente, bloqueia crawlers de IA ou só publica textos genéricos sem provas, sua empresa simplesmente não entra na resposta.',
+          ],
+          callout: 'Posição oficial do Google Search Central: Otimizar para IA generativa não exige truques secretos — os mesmos fundamentos de utilidade, E-E-A-T, rastreabilidade limpa e performance continuam determinando quem é citado.',
+        },
+        {
+          heading: 'Google AI Overviews vs ChatGPT Search vs Perplexity: como cada um escolhe quem citar',
+          paragraphs: [
+            'Um erro comum é achar que ranquear bem no Google garante automaticamente citações no ChatGPT ou no Perplexity. Estudos do mercado mostram que apenas cerca de 11% dos domínios são citados simultaneamente pelo ChatGPT e pelo Google AI Overviews para a mesma consulta. Entender como cada plataforma coleta e prioriza fontes evita desperdiçar esforço:',
+          ],
+          table: {
+            headers: ['Plataforma', 'Como descobre páginas', 'O que mais pesa na citação', 'Ação prioritária no site'],
+            rows: [
+              ['Google AI Overviews / AI Mode', 'Índice do Google (Googlebot)', 'Top 10 orgânico, E-E-A-T, Core Web Vitals e respostas claras', 'SEO técnico impecável + blocos de resposta direta no topo'],
+              ['ChatGPT Search', 'OAI-SearchBot + índice Bing + parceiros', 'Menções de marca, autoridade em portais, clareza factual e Bing', 'Liberar OAI-SearchBot no robots.txt + validar Bing Webmaster Tools'],
+              ['Perplexity', 'PerplexityBot + índice próprio em tempo real', 'Dados recentes, tabelas comparativas, fontes primárias e estrutura limpa', 'Liberar PerplexityBot + publicar dados objetivos e atualizados'],
+            ],
+          },
+        },
+        {
+          heading: 'Por que Menções de Marca pesam mais do que Backlinks tradicionais na IA?',
+          paragraphs: [
+            'Em um estudo da Ahrefs com 75.000 marcas (dezembro de 2025), menções de marca na web apresentaram correlação cerca de 3 vezes maior com visibilidade em respostas de IA do que o Domain Rating (backlinks) isolado. Modelos de linguagem aprendem e validam entidades cruzando sinais em múltiplos canais confiáveis — mesmo quando não existe um link clicável.',
+            'Para empresas de serviços, clínicas, indústrias e negócios B2B, isso significa que seu site precisa ser o hub oficial da entidade, mas sua presença consistente no Google Business Profile, YouTube, LinkedIn, portais setoriais e avaliações verificadas é o que confirma para a IA que sua marca é legítima.',
+          ],
+          list: [
+            'Consistência de entidade (NAP + mesma descrição): use exatamente o mesmo nome de marca, segmento, cidade e proposta de valor no site, LinkedIn, YouTube, Instagram e Google Business Profile.',
+            'Provas públicas verificáveis: cases reais com nome de cliente/projeto, depoimentos e conteúdo autoral assinado por um especialista identificável.',
+            'Schema.org conectado com sameAs: vincule o JSON-LD de Organization e Person do seu site diretamente aos perfis oficiais da empresa.',
+          ],
+        },
+        {
+          heading: 'Checklist Técnico de GEO: o que seu site precisa ter hoje',
+          paragraphs: [
+            'Antes de pensar em volume de conteúdo, a base técnica precisa permitir que os robôs de busca e de IA leiam sua página sem atrito. Grande parte dos crawlers de IA não executa JavaScript complexo como um navegador completo — se o texto principal só aparece depois de carregar scripts no cliente, a página fica praticamente invisível.',
+          ],
+          list: [
+            'HTML renderizado no servidor (SSR/SSG): páginas entregues prontas no HTML inicial (como em Next.js SSG/SSR), garantindo leitura imediata por Googlebot, OAI-SearchBot e PerplexityBot.',
+            'Política consciente no robots.txt: verifique se seu servidor, WAF ou Cloudflare não está bloqueando por engano OAI-SearchBot e PerplexityBot (você pode bloquear bots de treino se quiser, mantendo os bots de busca ativos).',
+            'Blocos de resposta autocontidos no primeiro 30% da página: responda à pergunta principal nos primeiros parágrafos com linguagem objetiva, definições claras ("X é...") e dados com fonte.',
+            'Estrutura escaneável: hierarquia limpa de H1 → H2 → H3 em formato de pergunta, parágrafos curtos, tabelas HTML reais para comparativos e seção de FAQ com Schema JSON-LD.',
+            'Sitemap XML limpo e IndexNow ativo: acelera a descoberta de novas páginas no Google e no Bing (que alimenta parte relevante das buscas do ChatGPT e Copilot).',
+          ],
+        },
+        {
+          heading: 'Mitos de GEO que o próprio Google já descartou',
+          paragraphs: [
+            'Com a popularização do termo GEO, surgiram dezenas de "fórmulas mágicas" que não resistem à documentação oficial. Investir tempo em atalhos artificiais atrasa o que realmente gera leads:',
+          ],
+          list: [
+            'Achar que um arquivo llms.txt resolve tudo sozinho: o Google já deixou claro que ignora llms.txt para ranqueamento. Ele pode existir como arquivo complementar de descoberta, mas não substitui HTML limpo e SEO sólido.',
+            'Reescrever páginas só para "parecer texto de IA" ou picotar frases artificialmente: o Google recomenda escrever para pessoas com clareza, profundidade e evidência — não fragmentar texto à força.',
+            'Comprar menções artificiais em massa (mention-farming): spam de menções sem contexto real não constrói autoridade sustentável e pode gerar desconfiança algorítmica.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'GEO substitui o SEO tradicional em 2026?',
+          answer: 'Não. GEO é a evolução natural do SEO aplicado a mecanismos de resposta com IA. Sem SEO técnico sólido (HTML SSR, velocidade, indexação limpa e autoridade), dificilmente sua empresa será citada no Google AI Overviews ou no ChatGPT.',
+        },
+        {
+          question: 'Como saber se o ChatGPT e o Perplexity conseguem ler meu site?',
+          answer: 'Verifique seu arquivo robots.txt para confirmar que OAI-SearchBot e PerplexityBot não estão bloqueados, e inspecione o código-fonte HTML da página (Ctrl+U) para garantir que os textos principais e tabelas já aparecem no HTML sem depender de JavaScript.',
+        },
+        {
+          question: 'Preciso criar um arquivo llms.txt no meu site?',
+          answer: 'É opcional. O Google Search não usa llms.txt como fator de ranqueamento, mas mantê-lo enxuto e atualizado não prejudica e ajuda agentes e ferramentas de IA a encontrarem rapidamente suas páginas principais.',
+        },
+        {
+          question: 'Quanto tempo leva para uma empresa começar a ser citada por IAs?',
+          answer: 'Páginas tecnicamente bem estruturadas com SSR, Schema.org e respostas objetivas podem ser indexadas e citadas em poucas semanas no Perplexity e no ChatGPT Search; para termos competitivos no Google AI Overviews, o ganho consistente costuma levar de 2 a 6 meses conforme a autoridade de marca cresce.',
+        },
+      ],
+      references: [
+        { label: 'Google Search Central — Succeeding in AI Search', url: 'https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search' },
+        { label: 'OpenAI — Overview of OpenAI Crawlers (OAI-SearchBot e GPTBot)', url: 'https://platform.openai.com/docs/bots' },
+        { label: 'Ahrefs — Brand Mentions and AI Visibility Study (75,000 Brands)', url: 'https://ahrefs.com/blog/' },
+      ],
+      conclusion: 'Aparecer nas respostas do ChatGPT, Perplexity e Google AI Overviews deixou de ser tendência futura e virou canal direto de aquisição de clientes. Na Web Lunar, desenvolvemos sites e sistemas em Next.js com HTML limpo, dados estruturados completos e arquitetura pensada desde o primeiro dia para ranquear no Google e ser citada por IAs.',
+    },
     'site-com-ia-vs-wordpress-qual-ranqueia-melhor': {
       slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
       title: 'Site com IA vs WordPress: Qual Ranqueia Melhor no Google em 2026?',
@@ -655,6 +752,103 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
     },
   },
   en: {
+    'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo': {
+      slug: 'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo',
+      title: 'How to Get Your Business Cited in ChatGPT, Perplexity & Google AI Overviews (2026 GEO Guide)',
+      date: 'November 21, 2026',
+      readTime: '9 min read',
+      category: 'GEO & AI Search',
+      excerpt: 'A practical GEO (Generative Engine Optimization) guide grounded in Google Search Central documentation and recent citability studies: how to engineer your website and brand to be recommended by AI answer engines.',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
+      author: {
+        name: 'Lucas Souza',
+        role: 'Founder & Software Engineer — Web Lunar',
+      },
+      sections: [
+        {
+          heading: 'Direct Answer: What is GEO and how do you appear in AI answers?',
+          paragraphs: [
+            'GEO (Generative Engine Optimization) is the practice of structuring your website, content, and external brand signals so AI answer engines — including Google AI Overviews, Google AI Mode, ChatGPT Search, and Perplexity — can crawl, verify, and cite your business. According to Google Search Central, optimizing for generative AI search is still fundamentally SEO: fast server-rendered HTML (SSR/SSG), clear and verifiable answers up front, structured data (Schema.org), and genuine off-site brand authority.',
+            'What changed in 2026 is buyer behavior: instead of opening ten tabs, decision-makers ask ChatGPT or Perplexity directly who to hire or how much a solution costs. If your site relies on heavy client-side JavaScript, blocks AI search crawlers, or publishes vague marketing copy without proof, your brand stays invisible.',
+          ],
+          callout: 'Google Search Central position: Optimizing for AI search does not require secret hacks — helpfulness, E-E-A-T, clean crawlability, and strong page experience remain the core drivers of visibility.',
+        },
+        {
+          heading: 'Google AI Overviews vs ChatGPT Search vs Perplexity: How each engine picks citations',
+          paragraphs: [
+            'Ranking on Google does not automatically guarantee citations in ChatGPT or Perplexity. Industry data indicates that only around 11% of domains are cited by both ChatGPT and Google AI Overviews for the same query. Understanding how each platform discovers sources helps you focus your engineering effort:',
+          ],
+          table: {
+            headers: ['Platform', 'Discovery Source', 'Primary Citation Signals', 'Top Technical Priority'],
+            rows: [
+              ['Google AI Overviews / AI Mode', 'Google Search index (Googlebot)', 'Top-10 organic rankings, E-E-A-T, Core Web Vitals, clear answers', 'Clean technical SEO + front-loaded direct answers'],
+              ['ChatGPT Search', 'OAI-SearchBot + Bing index + partners', 'Brand mentions, trusted publications, factual clarity, Bing visibility', 'Allow OAI-SearchBot in robots.txt + verify Bing Webmaster Tools'],
+              ['Perplexity', 'PerplexityBot + real-time web index', 'Fresh data, comparison tables, primary sources, clean HTML structure', 'Allow PerplexityBot + publish structured, up-to-date facts'],
+            ],
+          },
+        },
+        {
+          heading: 'Why Brand Mentions correlate more strongly than Backlinks in AI visibility',
+          paragraphs: [
+            'In Ahrefs’ December 2025 study of 75,000 brands, web brand mentions showed roughly 3x stronger correlation with AI visibility than Domain Rating (backlinks) alone. Language models validate entities by cross-referencing consistent signals across trusted channels — even when no hyperlink is present.',
+            'For B2B companies, clinics, and service providers, your website is the canonical entity hub, while consistent presence on Google Business Profile, YouTube, LinkedIn, industry press, and verified reviews confirms legitimacy.',
+          ],
+          list: [
+            'Entity consistency: use the exact same brand name, positioning, and core details across your website, LinkedIn, YouTube, and Google Business Profile.',
+            'Verifiable proof: real case studies, named authors with clear credentials, and concrete deliverables.',
+            'Connected Schema.org with sameAs: link your Organization and Person JSON-LD directly to your official profiles.',
+          ],
+        },
+        {
+          heading: 'Technical GEO Checklist for 2026',
+          paragraphs: [
+            'Before scaling content, make sure AI crawlers can actually read your pages. Many AI bots do not execute heavy client-side JavaScript reliably — if your core copy only renders after hydration, it is effectively invisible.',
+          ],
+          list: [
+            'Server-rendered HTML (SSR/SSG): deliver complete content in the initial HTML response (such as Next.js SSG/SSR).',
+            'Intentional robots.txt policy: confirm your firewall or CDN is not accidentally blocking OAI-SearchBot or PerplexityBot.',
+            'Front-loaded answer blocks: place a clear, self-contained answer in the first 30% of the page with verifiable sources.',
+            'Scannable hierarchy: clean H1 → H2 → H3 headings, short paragraphs, semantic HTML tables, and structured FAQs.',
+            'Clean XML Sitemap + IndexNow: speeds up discovery across both Google and Bing.',
+          ],
+        },
+        {
+          heading: 'GEO Myths Rejected by Google',
+          paragraphs: [
+            'As GEO became popular, several shortcuts spread online that contradict official documentation:',
+          ],
+          list: [
+            'Relying on llms.txt alone: Google Search ignores llms.txt for ranking. It is optional as a supplementary discovery file, never a replacement for clean HTML and SEO.',
+            'Artificial chunking or writing "for bots": Google explicitly advises writing clearly for humans with depth and evidence.',
+            'Mention-farming: low-quality, manufactured mentions do not build durable authority.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Does GEO replace traditional SEO in 2026?',
+          answer: 'No. GEO builds directly on technical SEO, E-E-A-T, and brand authority. Without fast server-rendered pages and clean indexing, AI engines rarely cite a domain.',
+        },
+        {
+          question: 'How can I check if ChatGPT and Perplexity can read my website?',
+          answer: 'Inspect your robots.txt to ensure OAI-SearchBot and PerplexityBot are allowed, and view the raw page source (Ctrl+U) to verify your main copy and tables exist in the initial HTML.',
+        },
+        {
+          question: 'Do I need an llms.txt file?',
+          answer: 'It is optional. Google Search does not use it for rankings, though keeping a clean llms.txt can help AI tools quickly locate your key pages.',
+        },
+        {
+          question: 'How long does it take to get cited by AI answer engines?',
+          answer: 'Well-structured SSR pages with clear answers can be picked up by Perplexity and ChatGPT Search within weeks; competitive Google AI Overviews citations typically build over 2 to 6 months alongside brand authority.',
+        },
+      ],
+      references: [
+        { label: 'Google Search Central — Succeeding in AI Search', url: 'https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search' },
+        { label: 'OpenAI — Overview of OpenAI Crawlers', url: 'https://platform.openai.com/docs/bots' },
+        { label: 'Ahrefs — Brand Mentions and AI Visibility Study', url: 'https://ahrefs.com/blog/' },
+      ],
+      conclusion: 'Being cited by ChatGPT, Perplexity, and Google AI Overviews is already a direct customer acquisition channel. At Web Lunar, we engineer Next.js websites and systems with clean server-rendered HTML, complete Schema.org graphs, and high-conversion architecture built for both search engines and AI answers.',
+    },
     'site-com-ia-vs-wordpress-qual-ranqueia-melhor': {
       slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
       title: 'AI Website vs WordPress: Which Ranks Better on Google in 2026?',
@@ -1233,6 +1427,102 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
     },
   },
   es: {
+    'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo': {
+      slug: 'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo',
+      title: 'Cómo Hacer Que Tu Empresa Aparezca en ChatGPT, Perplexity y Google AI Overviews (Guía GEO 2026)',
+      date: '21 de Noviembre, 2026',
+      readTime: '9 min de lectura',
+      category: 'GEO e IA Search',
+      excerpt: 'Guía práctica de GEO (Generative Engine Optimization) basada en la documentación oficial de Google Search Central y estudios recientes de citabilidad para posicionar tu marca en motores de respuesta con IA.',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
+      author: {
+        name: 'Lucas Souza',
+        role: 'Fundador e Ingeniero de Software — Web Lunar',
+      },
+      sections: [
+        {
+          heading: 'Respuesta Directa: ¿qué es GEO y cómo aparecer en respuestas de IA?',
+          paragraphs: [
+            'GEO (Generative Engine Optimization) es la práctica de estructurar tu sitio web, tu contenido y las señales externas de tu marca para que motores de respuesta con IA —como Google AI Overviews, Google AI Mode, ChatGPT Search y Perplexity— rastreen, validen y citen tu empresa. Según Google Search Central, optimizar para búsqueda generativa sigue siendo SEO bien ejecutado: HTML rápido renderizado en servidor (SSR/SSG), respuestas directas y verificables al inicio, datos estructurados (Schema.org) y autoridad real de marca.',
+            'Lo que cambió en 2026 es el hábito del comprador: en lugar de abrir diez pestañas, el cliente pregunta directamente a ChatGPT o Perplexity a quién contratar o cuánto cuesta un servicio. Si tu sitio depende de JavaScript pesado en el cliente o bloquea crawlers de IA, tu marca queda fuera de la conversación.',
+          ],
+          callout: 'Posición oficial de Google Search Central: Optimizar para IA generativa no requiere trucos ocultos; la utilidad real, E-E-A-T, rastreabilidad limpia y rendimiento siguen siendo la base.',
+        },
+        {
+          heading: 'Google AI Overviews vs ChatGPT Search vs Perplexity: cómo elige fuentes cada plataforma',
+          paragraphs: [
+            'Posicionar en Google no garantiza automáticamente menciones en ChatGPT o Perplexity. Estudios del sector indican que solo alrededor del 11% de los dominios son citados por ambos para la misma consulta:',
+          ],
+          table: {
+            headers: ['Plataforma', 'Fuente de descubrimiento', 'Señales principales de citación', 'Prioridad técnica'],
+            rows: [
+              ['Google AI Overviews / AI Mode', 'Índice de Google (Googlebot)', 'Top 10 orgánico, E-E-A-T, Core Web Vitals y claridad', 'SEO técnico sólido + respuesta directa al inicio'],
+              ['ChatGPT Search', 'OAI-SearchBot + índice Bing + socios', 'Menciones de marca, medios confiables, precisión factual y Bing', 'Permitir OAI-SearchBot en robots.txt + Bing Webmaster Tools'],
+              ['Perplexity', 'PerplexityBot + índice web en tiempo real', 'Datos recientes, tablas comparativas, fuentes primarias y HTML limpio', 'Permitir PerplexityBot + publicar datos claros y actualizados'],
+            ],
+          },
+        },
+        {
+          heading: 'Por qué las Menciones de Marca pesan más que los Backlinks en la IA',
+          paragraphs: [
+            'En el estudio de Ahrefs sobre 75.000 marcas (diciembre de 2025), las menciones de marca mostraron una correlación aproximada 3 veces mayor con la visibilidad en IA que el Domain Rating por sí solo. Los modelos validan entidades cruzando señales consistentes en toda la web.',
+          ],
+          list: [
+            'Consistencia de entidad: usa exactamente el mismo nombre de marca, propuesta y datos en tu web, LinkedIn, YouTube y Google Business Profile.',
+            'Pruebas verificables: casos reales, autoría clara y resultados documentados.',
+            'Schema.org conectado con sameAs: enlaza el JSON-LD de Organization y Person con tus perfiles oficiales.',
+          ],
+        },
+        {
+          heading: 'Checklist Técnico de GEO para 2026',
+          paragraphs: [
+            'Antes de escalar contenido, asegúrate de que los bots de IA puedan leer tu sitio sin fricción técnica:',
+          ],
+          list: [
+            'HTML renderizado en servidor (SSR/SSG): entrega el contenido completo en el HTML inicial (como en Next.js SSG/SSR).',
+            'Política clara en robots.txt: confirma que no bloqueas accidentalmente a OAI-SearchBot ni PerplexityBot.',
+            'Bloques de respuesta autocontenidos en el primer 30% de la página con datos y fuentes.',
+            'Jerarquía escaneable: H1 → H2 → H3 claros, párrafos breves, tablas HTML reales y FAQs estructuradas.',
+            'Sitemap XML limpio e IndexNow activo para acelerar el descubrimiento en Google y Bing.',
+          ],
+        },
+        {
+          heading: 'Mitos de GEO que el propio Google ya descartó',
+          paragraphs: [
+            'Con el auge del GEO surgieron atajos que contradicen la documentación oficial:',
+          ],
+          list: [
+            'Confiar solo en llms.txt: Google Search ignora llms.txt para posicionamiento. Es opcional, nunca un sustituto de buen SEO.',
+            'Fragmentar textos artificialmente para bots: escribe con claridad, profundidad y evidencia para personas.',
+            'Granjas de menciones (mention-farming): menciones artificiales sin contexto real no construyen autoridad sostenible.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: '¿El GEO reemplaza al SEO tradicional en 2026?',
+          answer: 'No. El GEO se apoya directamente en el SEO técnico, E-E-A-T y autoridad de marca. Sin páginas rápidas en SSR e indexación limpia, las IAs rara vez citan un dominio.',
+        },
+        {
+          question: '¿Cómo sé si ChatGPT y Perplexity pueden leer mi sitio?',
+          answer: 'Revisa tu robots.txt para confirmar que OAI-SearchBot y PerplexityBot están permitidos, y abre el código fuente HTML (Ctrl+U) para verificar que el texto principal aparece sin depender de JavaScript.',
+        },
+        {
+          question: '¿Necesito crear un archivo llms.txt?',
+          answer: 'Es opcional. Google Search no lo usa como factor de ranking, aunque mantenerlo limpio puede facilitar el descubrimiento a ciertas herramientas de IA.',
+        },
+        {
+          question: '¿Cuánto tarda una empresa en aparecer citada por IAs?',
+          answer: 'Páginas bien estructuradas en SSR pueden aparecer en Perplexity y ChatGPT Search en pocas semanas; en Google AI Overviews para términos competitivos suele consolidarse entre 2 y 6 meses.',
+        },
+      ],
+      references: [
+        { label: 'Google Search Central — Succeeding in AI Search', url: 'https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search' },
+        { label: 'OpenAI — Overview of OpenAI Crawlers', url: 'https://platform.openai.com/docs/bots' },
+        { label: 'Ahrefs — Brand Mentions and AI Visibility Study', url: 'https://ahrefs.com/blog/' },
+      ],
+      conclusion: 'Aparecer en las respuestas de ChatGPT, Perplexity y Google AI Overviews ya es un canal directo de captación de clientes. En Web Lunar desarrollamos sitios y sistemas en Next.js con HTML limpio, Schema.org completo y arquitectura preparada para Google y motores de IA.',
+    },
     'site-com-ia-vs-wordpress-qual-ranqueia-melhor': {
       slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
       title: 'Sitio Web con IA vs WordPress: ¿Cuál Posiciona Mejor en Google en 2026?',
