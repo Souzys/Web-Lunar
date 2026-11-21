@@ -44,7 +44,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Análise técnica baseada na documentação oficial do Google Search Central comparando sites criados com IA, WordPress tradicional e engenharia em Next.js.',
       image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'Fundador & Engenheiro de Software — Web Lunar',
       },
       sections: [
@@ -137,7 +137,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Tabela atualizada de preços, prazos oficiais e custos recorrentes para criar landing pages, sites institucionais, lojas virtuais e sistemas web em 2026.',
       image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'Fundador & Engenheiro de Software — Web Lunar',
       },
       sections: [
@@ -219,7 +219,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Aprenda como planejar um site do zero: o que colocar na página inicial profissional, estrutura de vendas, checklist completo e como atrair clientes no Google.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'Design & Estratégia de Conversão',
       },
       sections: [
@@ -277,7 +277,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Explorando os tipos de sites: entenda a diferença prática entre Landing Page e Site Institucional, quanto custa cada um e qual escolher para gerar clientes rápido.',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'Desenvolvimento & Performance',
       },
       sections: [
@@ -333,7 +333,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Vai contratar uma agência ou desenvolvedor de sites? Veja os 5 critérios essenciais para escolher uma empresa de criação de sites que entrega prazo, SEO e vendas.',
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'Consultoria & Engenharia Web',
       },
       sections: [
@@ -386,7 +386,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Criou um site mas ninguém encontra sua empresa nas buscas? Veja o passo a passo prático de SEO para indexar rápido e atrair clientes prontos para comprar.',
       image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'Especialistas em SEO & Performance',
       },
       sections: [
@@ -431,7 +431,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Design organizado, boa velocidade no celular e botão de WhatsApp visível. O essencial para começar com o pé direito.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'UX/UI & Engenharia Web',
       },
       sections: [
@@ -477,7 +477,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Por que tantas páginas bonitas não vendem nada? Conheça os 5 elementos indispensáveis de uma landing page de alta conversão para atrair contatos qualificados no WhatsApp todos os dias.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'Estratégia de Conversão & UX',
       },
       sections: [
@@ -535,7 +535,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Entenda como grandes marcas usam SEO programático com dados dinâmicos para dominar buscas de cauda longa no Google, multiplicar leads orgânicos e como aplicar no seu negócio.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'Engenharia Web & SEO Avançado',
       },
       sections: [
@@ -600,7 +600,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Descubra como os Core Web Vitals e a velocidade de carregamento impactam diretamente o faturamento da sua empresa e por que páginas que abrem abaixo de 1 segundo convertem até o dobro.',
       image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
       author: {
-        name: 'Lucas Souzys',
+        name: 'Lucas Souza',
         role: 'Engenharia Web & Otimização de Conversão',
       },
       sections: [

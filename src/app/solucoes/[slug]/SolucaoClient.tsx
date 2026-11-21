@@ -351,7 +351,7 @@ export default function SolucaoClient({ page, relatedPages }: Props) {
             </div>
             <a
               href={`https://wa.me/5561982630397?text=${encodeURIComponent(
-                `Olá Lucas! Gostaria de uma estimativa de prazo e valor para ${page.title}.`
+                `Olá, equipe Web Lunar! Gostaria de uma estimativa de prazo e valor para ${page.title}.`
               )}`}
               target="_blank"
               rel="noopener noreferrer"

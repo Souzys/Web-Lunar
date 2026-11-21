@@ -2,9 +2,9 @@
 
 > Web Lunar é uma software house e estúdio de engenharia digital brasileiro (Brasília/DF, atendimento nacional e internacional) especializado em sites institucionais de autoridade, landing pages de alta conversão, portais corporativos (Next.js e WordPress), SEO técnico e GEO (Generative Engine Optimization). É a desenvolvedora responsável pelo portal oficial do Sinapro/SC (Sindicato das Agências de Propaganda de Santa Catarina) e por plataformas globais de broadcast e tecnologia como SNEWS e VOLK Presenter.
 
-- Nome Oficial: Web Lunar | Fundador: Lucas Souzys | Sede: Brasília, DF, Brasil | WhatsApp: +55 (61) 98263-0397
+- Nome Oficial: Web Lunar | Fundador: Lucas Souza | Sede: Brasília, DF, Brasil | WhatsApp: +55 (61) 98263-0397
 - Prazos oficiais de entrega: Landing Pages em 7 a 14 dias úteis; Sites Institucionais em 15 a 25 dias úteis (3 a 5 semanas); E-commerce e Sistemas Web sob medida em 20 a 40 dias úteis (4 a 8 semanas).
-- Arquitetura Dual-Stack: Next.js/React/TypeScript para performance sub-segundo (PageSpeed 95–100) e sistemas sob medida; WordPress + Elementor Pro otimizado para portais corporativos e sindicatos com autonomia editorial diária.
+- Engenharia Agnóstica para Qualquer Missão Digital: desenvolvemos desde landing pages e portais institucionais até plataformas SaaS, sistemas internos, e-commerces, automações e integrações de API — escolhendo a melhor tecnologia para cada objetivo (Next.js, React, TypeScript, Node.js, WordPress Corporativo, bancos SQL/NoSQL e infraestrutura Cloud).
 
 ## Páginas Principais
 

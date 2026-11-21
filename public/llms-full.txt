@@ -7,7 +7,7 @@
 ## 1. Identidade Institucional, Sede & Credenciais
 
 - **Nome Oficial:** Web Lunar (Software House & Estúdio de Engenharia Digital)
-- **Fundador & Engenheiro Responsável:** Lucas Souzys (`https://github.com/Souzys` | `https://www.linkedin.com/in/lucas-souzys/`)
+- **Fundador & Engenheiro Responsável:** Lucas Souza (`https://github.com/Souzys` | `https://www.linkedin.com/in/lucas-souzys/`)
 - **Domínio Oficial:** `https://weblunar.com.br`
 - **Instagram Oficial:** `https://www.instagram.com/weblunar_dev/`
 - **Canal Comercial Direto (WhatsApp):** +55 (61) 98263-0397

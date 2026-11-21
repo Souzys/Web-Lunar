@@ -150,7 +150,7 @@ const jsonLd = {
     {
       "@type": "Person",
       "@id": "https://weblunar.com.br/#founder",
-      "name": "Lucas Souzys",
+      "name": "Lucas Souza",
       "jobTitle": "Fundador & Engenheiro de Software",
       "worksFor": {
         "@id": "https://weblunar.com.br/#organization"

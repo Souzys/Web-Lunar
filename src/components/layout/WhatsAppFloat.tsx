@@ -23,16 +23,16 @@ export default function WhatsAppFloat() {
       .split('-')
       .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
       .join(' ');
-    dynamicMessage = `Olá Lucas! Estava vendo a solução de *${cleanTopic}* no site da Web Lunar e gostaria de um orçamento.`;
+    dynamicMessage = `Olá, equipe Web Lunar! Estava vendo a solução de *${cleanTopic}* no site da Web Lunar e gostaria de um orçamento.`;
     dynamicLabel = 'Falar com Especialista';
   } else if (pathname?.startsWith('/blog/')) {
-    dynamicMessage = 'Olá Lucas! Estava lendo um artigo no blog da Web Lunar e gostaria de tirar uma dúvida sobre criação de site.';
+    dynamicMessage = 'Olá, equipe Web Lunar! Estava lendo um artigo no blog da Web Lunar e gostaria de tirar uma dúvida sobre criação de site.';
     dynamicLabel = 'Tirar Dúvida no WhatsApp';
   } else if (pathname?.startsWith('/projetos')) {
-    dynamicMessage = 'Olá Lucas! Vi os projetos no portfólio da Web Lunar e gostaria de solicitar um orçamento para o meu negócio.';
+    dynamicMessage = 'Olá, equipe Web Lunar! Vi os projetos no portfólio da Web Lunar e gostaria de solicitar um orçamento para o meu negócio.';
     dynamicLabel = 'Solicitar Orçamento';
   } else if (pathname?.startsWith('/calculadora')) {
-    dynamicMessage = 'Olá Lucas! Fiz uma simulação na calculadora da Web Lunar e gostaria de alinhar o escopo do meu projeto.';
+    dynamicMessage = 'Olá, equipe Web Lunar! Fiz uma simulação na calculadora da Web Lunar e gostaria de alinhar o escopo do meu projeto.';
     dynamicLabel = 'Enviar Simulação';
   }
 

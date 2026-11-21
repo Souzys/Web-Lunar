@@ -107,7 +107,7 @@ export default async function ArtigoPage({ params }: Props) {
         "author": {
           "@type": "Person",
           "@id": "https://weblunar.com.br/#founder",
-          "name": "Lucas Souzys",
+          "name": "Lucas Souza",
           "url": "https://weblunar.com.br/sobre"
         },
         "publisher": {
