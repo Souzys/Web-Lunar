@@ -778,7 +778,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           tag: 'Performance',
           num: '02',
           title: 'Performance Real',
-          desc: 'Abertura rápida no 4G e navegação fluida em qualquer aparelho, sem travamentos.',
+          desc: 'Abertura rápida no 5G e navegação fluida em qualquer aparelho, sem travamentos.',
         },
         {
           tag: 'Engineering',
