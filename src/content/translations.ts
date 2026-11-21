@@ -1405,8 +1405,8 @@ export const translations: Record<Language, TranslationDictionary> = {
       atendimento: 'Global · Atención Remota',
     },
     hero: {
-      title1: 'Ingeniería Web',
-      title2: 'y Software a Medida.',
+      title1: 'Software',
+      title2: 'a Medida.',
       subtitle: 'ESTUDIO DE INGENIERÍA WEB Y SOFTWARE',
       bottomText: 'Sitios, sistemas web y software a medida — rápidos, confiables y diseñados para escalar.',
       ctaButton: 'Iniciar Proyecto',
