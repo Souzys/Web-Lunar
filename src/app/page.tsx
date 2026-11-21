@@ -3,13 +3,13 @@ import { HomeClient } from "./HomeClient";
 import { translations } from "@/content/translations";
 
 export const metadata: Metadata = {
-  title: "Web Lunar | Sistemas Digitais, Sites & Landing Pages de Alta Conversão",
+  title: "Web Lunar | Criação de Sites, Landing Pages e Sistemas",
   description: "Criamos produtos digitais premium, sistemas web de alta performance, landing pages persuasivas e plataformas e-commerce de alto impacto visual.",
   alternates: {
     canonical: "https://weblunar.com.br",
   },
   openGraph: {
-    title: "Web Lunar | Sistemas Digitais, Sites & Landing Pages de Alta Conversão",
+    title: "Web Lunar | Criação de Sites, Landing Pages e Sistemas",
     description: "Criamos produtos digitais premium, sistemas web de alta performance, landing pages persuasivas e plataformas e-commerce de alto impacto visual.",
     url: "https://weblunar.com.br",
     siteName: "Web Lunar",

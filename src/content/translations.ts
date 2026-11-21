@@ -425,7 +425,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       ],
     },
     techStack: {
-      title: 'TECNOLOGIAS QUE UTILIZO',
+      title: 'TECNOLOGIAS QUE DOMINAMOS',
     },
     impact: {
       tag: 'AQUI VOCÊ ENCONTRA',

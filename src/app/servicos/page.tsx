@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { ServicosClient } from './ServicosClient';
 
 export const metadata: Metadata = {
-  title: "Serviços de Desenvolvimento Web, Landing Pages & Sistemas",
+  title: "Criação de Sites, Landing Pages e Sistemas Web",
   description: "Landing Pages de alta conversão, Sites Institucionais em Next.js, E-commerces escaláveis, Sistemas de Agendamento e Otimização de Performance.",
   alternates: {
     canonical: "https://weblunar.com.br/servicos",

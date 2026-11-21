@@ -343,6 +343,69 @@ export function SobreClient() {
         </div>
       </section>
 
+      {/* =========================================
+          BLOCO E-E-A-T: LIDERANÇA TÉCNICA & CREDENCIAIS
+      ========================================= */}
+      <section className="py-24 bg-[#050814] text-white border-t border-white/10 relative overflow-hidden">
+        <div className="container mx-auto max-w-[1280px] px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#0A0E23]/90 border border-white/10 rounded-3xl p-8 sm:p-12">
+            <div className="lg:col-span-8 space-y-5">
+              <span className="inline-block text-xs font-mono uppercase tracking-widest text-indigo-400 font-semibold">
+                LIDERANÇA TÉCNICA · BRASÍLIA, DF — ATENDIMENTO NACIONAL E INTERNACIONAL
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                Lucas Souzys — Fundador &amp; Engenheiro de Software
+              </h2>
+              <p className="text-neutral-300 text-base leading-relaxed">
+                Fundada em 2021 em Brasília (DF), a Web Lunar nasceu com uma proposta direta: entregar sites, landing pages e sistemas web com o mesmo rigor de engenharia usado em grandes plataformas de software — sem temas lentos, sem promessas vazias e com atendimento técnico direto com quem escreve o código.
+              </p>
+              <p className="text-neutral-300 text-base leading-relaxed">
+                Entre os projetos auditáveis entregues estão o portal oficial do <strong>Sinapro/SC</strong> (Sindicato das Agências de Propaganda de Santa Catarina), as plataformas multi-idioma de broadcast <strong>SNEWS</strong> e <strong>VOLK Presenter</strong>, o ecossistema editorial de IA <strong>CAPI Digital</strong> e o portal corporativo internacional da <strong>ACP Tax Advisory</strong> (EUA).
+              </p>
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                  href="https://www.linkedin.com/in/lucas-souzys/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-full bg-white/10 hover:bg-primary text-white text-xs font-semibold transition-colors"
+                >
+                  LinkedIn Oficial →
+                </a>
+                <a
+                  href="https://github.com/Souzys"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-full bg-white/10 hover:bg-primary text-white text-xs font-semibold transition-colors"
+                >
+                  GitHub (@Souzys) →
+                </a>
+                <a
+                  href="https://www.instagram.com/weblunar_dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-full bg-white/10 hover:bg-primary text-white text-xs font-semibold transition-colors"
+                >
+                  Instagram (@weblunar_dev) →
+                </a>
+              </div>
+            </div>
+            <div className="lg:col-span-4 space-y-4 bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-sm">
+              <div className="text-xs font-mono uppercase tracking-widest text-indigo-400 font-bold">
+                Dados &amp; Compromissos Verificáveis
+              </div>
+              <ul className="space-y-3 text-neutral-300">
+                <li><strong className="text-white">Sede:</strong> Brasília, Distrito Federal (BR)</li>
+                <li><strong className="text-white">Fundação:</strong> 2021</li>
+                <li><strong className="text-white">WhatsApp Direto:</strong> (61) 98263-0397</li>
+                <li><strong className="text-white">Propriedade:</strong> 100% do código e domínio do cliente</li>
+                <li><strong className="text-white">Especialidade:</strong> Next.js, TypeScript, WordPress Corporativo, SEO &amp; GEO</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       </div>
     </div>
   );

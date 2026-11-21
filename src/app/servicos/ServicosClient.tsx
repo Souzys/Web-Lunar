@@ -445,6 +445,89 @@ export function ServicosClient() {
           </div>
         </section>
 
+        {/* ─────────────────────────────────────
+            BLOCO 03 — ARQUITETURA & PROCESSO (SEO / E-E-A-T)
+        ───────────────────────────────────── */}
+        <section className="py-24 bg-white text-neutral-900 border-t border-neutral-200">
+          <div className="container mx-auto max-w-[1280px] px-6">
+            <div className="max-w-3xl mb-12">
+              <p className="text-xs uppercase font-sans tracking-widest text-primary mb-3 font-semibold">
+                ENGENHARIA DUAL-STACK · TRANSPARÊNCIA TOTAL
+              </p>
+              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-neutral-950 mb-4">
+                Next.js Sob Medida ou WordPress Corporativo?
+              </h2>
+              <p className="text-neutral-600 text-base md:text-lg leading-relaxed">
+                Não empurramos uma única ferramenta para todos os negócios. Como desenvolvedores tanto do portal institucional do <strong>Sinapro/SC</strong> (WordPress corporativo) quanto de plataformas internacionais como <strong>SNEWS</strong> e <strong>VOLK Presenter</strong> (Next.js + TypeScript), indicamos a arquitetura com maior retorno sobre investimento para a sua operação.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-neutral-200 shadow-sm mb-16">
+              <table className="w-full text-left border-collapse text-sm sm:text-base">
+                <thead>
+                  <tr className="bg-neutral-950 text-white">
+                    <th className="px-5 py-4 font-semibold">Modalidade</th>
+                    <th className="px-5 py-4 font-semibold">Stack Principal</th>
+                    <th className="px-5 py-4 font-semibold">Prazo Oficial</th>
+                    <th className="px-5 py-4 font-semibold">Foco de Resultado</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-200 bg-white">
+                  <tr className="hover:bg-neutral-50">
+                    <td className="px-5 py-4 font-semibold text-neutral-950">Landing Page de Alta Conversão</td>
+                    <td className="px-5 py-4 text-neutral-700">Next.js + Tailwind CSS (SSG)</td>
+                    <td className="px-5 py-4 text-neutral-700 whitespace-nowrap">7 a 14 dias úteis</td>
+                    <td className="px-5 py-4 text-neutral-700">Google Ads / Meta Ads com qualificador anti-curioso no WhatsApp e carregamento &lt; 1s</td>
+                  </tr>
+                  <tr className="hover:bg-neutral-50">
+                    <td className="px-5 py-4 font-semibold text-neutral-950">Site ou Portal Institucional</td>
+                    <td className="px-5 py-4 text-neutral-700">Next.js ou WordPress Corporativo</td>
+                    <td className="px-5 py-4 text-neutral-700 whitespace-nowrap">15 a 25 dias úteis</td>
+                    <td className="px-5 py-4 text-neutral-700">Autoridade de marca, ranqueamento orgânico no Google (SEO/GEO) e autonomia editorial</td>
+                  </tr>
+                  <tr className="hover:bg-neutral-50">
+                    <td className="px-5 py-4 font-semibold text-neutral-950">E-commerce &amp; Sistemas Web</td>
+                    <td className="px-5 py-4 text-neutral-700">Next.js Full-Stack, PostgreSQL, Shopify/Woo</td>
+                    <td className="px-5 py-4 text-neutral-700 whitespace-nowrap">20 a 40 dias úteis</td>
+                    <td className="px-5 py-4 text-neutral-700">Vendas online escaláveis, painéis administrativos, agendamentos e integrações de API</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+              {[
+                { step: '01', title: 'Diagnóstico & Briefing', desc: 'Mapeamos público-alvo, palavras-chave comerciais, concorrentes e metas de conversão antes de desenhar qualquer tela.' },
+                { step: '02', title: 'Design & Copy Persuasiva', desc: 'Criamos interface sob medida com hierarquia visual clara, prova social verificável e chamadas diretas para ação.' },
+                { step: '03', title: 'Engenharia & SEO Técnico', desc: 'Código limpo com renderização SSR/SSG, Core Web Vitals no verde, Schema.org JSON-LD e rastreamento GA4/Ads.' },
+                { step: '04', title: 'Publicação & Propriedade', desc: 'Subimos no seu domínio com SSL ativo, Google Search Console configurado e 100% do código sob sua propriedade.' },
+              ].map((item) => (
+                <div key={item.step} className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200">
+                  <span className="font-mono text-xs font-bold text-primary block mb-2">ETAPA {item.step}</span>
+                  <h3 className="font-display text-lg font-bold text-neutral-950 mb-2">{item.title}</h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/calculadora"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary hover:bg-blue-700 text-white text-sm font-semibold transition-colors"
+              >
+                <span>Simular Escopo e Prazo em 30s</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/solucoes"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-neutral-300 hover:border-neutral-900 text-neutral-900 text-sm font-semibold transition-colors"
+              >
+                <span>Ver Soluções por Segmento &amp; Comparativos</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
   );

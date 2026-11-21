@@ -26,6 +26,10 @@ export function LogosMarquee() {
             <img
               src={src}
               alt={`Logo parceiro ${i + 1}`}
+              width={140}
+              height={40}
+              loading="lazy"
+              decoding="async"
               className="h-8 md:h-10 w-auto object-contain brightness-0 opacity-40 hover:opacity-100 transition-all duration-300 cursor-pointer shrink-0"
             />
           </div>

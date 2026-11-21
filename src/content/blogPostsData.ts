@@ -17,6 +17,14 @@ export interface BlogPostDetail {
     paragraphs: string[];
     callout?: string;
     list?: string[];
+    table?: {
+      headers: string[];
+      rows: string[][];
+    };
+  }>;
+  references?: Array<{
+    label: string;
+    url: string;
   }>;
   faqs?: Array<{
     question: string;
@@ -30,135 +38,177 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
     'site-com-ia-vs-wordpress-qual-ranqueia-melhor': {
       slug: 'site-com-ia-vs-wordpress-qual-ranqueia-melhor',
       title: 'Site com IA vs WordPress: Qual Ranqueia Melhor no Google em 2026?',
-      date: '28 de Setembro, 2026',
-      readTime: '5 min de leitura',
+      date: '20 de Novembro, 2026',
+      readTime: '8 min de leitura',
       category: 'SEO & Tecnologia',
-      excerpt: 'A análise definitiva sobre como o algoritmo do Google realmente avalia sites criados por inteligência artificial versus o ecossistema tradicional do WordPress em 2026.',
+      excerpt: 'Análise técnica baseada na documentação oficial do Google Search Central comparando sites criados com IA, WordPress tradicional e engenharia em Next.js.',
       image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
-        role: 'Engenharia Web & Análise de Dados',
+        name: 'Lucas Souzys',
+        role: 'Fundador & Engenheiro de Software — Web Lunar',
       },
       sections: [
         {
-          heading: 'O mito da penalização: o que o Google realmente diz sobre IA?',
+          heading: 'Resposta Direta: o Google penaliza sites feitos com IA?',
           paragraphs: [
-            'Durante muito tempo circulou o boato de que o Google puniria qualquer página que utilizasse inteligência artificial. Em 2026, as diretrizes oficiais do Google Search Central deixam a regra muito clara: o buscador não avalia a ferramenta utilizada para construir o conteúdo ou o código, mas sim a utilidade real para quem pesquisa (critérios E-E-A-T: Experiência, Especialidade, Autoridade e Confiabilidade).',
-            'Se um site criado com auxílio de IA responde com exatidão à dúvida do visitante e carrega de forma instantânea no celular, ele frequentemente supera sites tradicionais cheios de conteúdo redundante.',
+            'Não. Segundo a documentação oficial do Google Search Central sobre conteúdo gerado por IA, o mecanismo de busca não penaliza páginas apenas pelo método de produção — seja código gerado com assistência de IA, WordPress ou desenvolvimento manual. O que determina o ranqueamento em 2026 é a combinação entre utilidade real para quem pesquisa (critérios E-E-A-T: Experiência, Especialidade, Autoridade e Confiabilidade), arquitetura rastreável no servidor (SSR/SSG), Core Web Vitals saudáveis (LCP abaixo de 2,5s, INP abaixo de 200ms e CLS abaixo de 0,1) e ausência de spam em escala. Na prática, sites leves em Next.js planejados com apoio de IA frequentemente superam instalações pesadas de WordPress porque entregam HTML limpo e carregamento sub-segundo no 4G, enquanto sites de IA genéricos sem prova real perdem espaço para portais bem estruturados.',
           ],
-          callout: 'Posicionamento oficial do Google: Criar conteúdo ou estrutura com IA não viola as políticas de busca, desde que não tenha como objetivo manipular rankings com spam em massa.',
+          callout: 'Regra oficial do Google Search Central: O uso de automação ou IA é avaliado pela utilidade para o usuário. O que gera penalização é o "Scaled Content Abuse" — gerar dezenas de páginas quase idênticas apenas para tentar manipular o ranking.',
         },
         {
-          heading: 'O WordPress em 2026: Autoridade consolidada ou peso excessivo?',
+          heading: 'Comparativo Técnico Real: IA Genérica vs WordPress vs Next.js Sob Medida',
           paragraphs: [
-            'O WordPress ainda comanda grande parte da internet por sua maturidade e ecossistema de plugins como Yoast e RankMath. No entanto, para o empresário contemporâneo, ele apresenta um desafio crítico: a sobrecarga técnica.',
-            'Temas pesados de construtores visuais (como Elementor ou Divi) acumulam dezenas de scripts, folhas de estilo gigantes e requisições no servidor. O resultado costuma ser um site lento no celular, e o Google rebaixa páginas lentas nas buscas locais e comerciais.',
+            'Na Web Lunar, operamos as duas pontas do mercado: desenvolvemos portais corporativos em WordPress (como o portal oficial do Sinapro/SC) e plataformas de alta escala em Next.js + TypeScript (como SNEWS e VOLK Presenter). Abaixo está o comparativo real de performance, segurança e SEO entre as três abordagens:',
+          ],
+          table: {
+            headers: ['Critério Técnico', 'Construtor de IA Genérico', 'WordPress + Elementor', 'Next.js Sob Medida (Web Lunar)'],
+            rows: [
+              ['LCP Mobile (Velocidade)', '2.5s a 5.5s (scripts proprietários)', '2.2s a 4.8s (varia com plugins)', '0.6s a 1.2s (SSG na CDN Edge)'],
+              ['INP (Interatividade)', 'Médio / instável', 'Frequentemente > 250ms com add-ons', 'Excelente (< 80ms)'],
+              ['HTML Rastreável (SSR)', 'Muitos dependem de JS no cliente', 'Sim (PHP server-side)', 'Sim (100% SSR / Prerendered)'],
+              ['Segurança & Manutenção', 'Plataforma fechada (sem acesso)', 'Exige updates constantes de plugins', 'Superfície mínima (sem PHP/plugins)'],
+              ['Propriedade do Código', 'Aluguel eterno (vendor lock-in)', '100% do cliente', '100% do cliente (Git + domínio)'],
+              ['Melhor Caso de Uso', 'Testes rápidos sem meta de SEO', 'Portais com equipe editorial diária', 'Empresas focadas em Google Ads, SEO e escala'],
+            ],
+          },
+        },
+        {
+          heading: 'O WordPress em 2026: Quando vale a pena e onde ele trava?',
+          paragraphs: [
+            'O WordPress continua sendo uma excelente plataforma quando bem engenheirado — especialmente para sindicatos, associações e portais de notícias onde redatores precisam publicar todos os dias sem depender de desenvolvedores. O problema não é o WordPress em si, mas o ecossistema de templates prontos empilhados com 25 ou 40 plugins.',
+            'Em auditorias técnicas reais que rodamos em clínicas e empresas brasileiras, é comum encontrar sites WordPress com Erro 500 ao receber cliques de Google Ads (quando parâmetros ?gclid furam o cache do LiteSpeed) ou tempos de resposta acima de 4 segundos no celular. Cada segundo extra de espera derruba drasticamente a taxa de conversão de quem veio de anúncio pago.',
           ],
           list: [
-            'Pontos Fortes do WordPress: Facilidade de publicação de blogs simples e familiaridade no mercado.',
-            'Onde o WordPress sofre: Vulnerabilidade frequente de segurança em plugins de terceiros, lentidão de carregamento no 4G e necessidade de manutenções constantes de banco de dados.',
+            'Quando o WordPress funciona bem: tema limpo, poucos plugins essenciais, cache configurado corretamente, imagens em WebP/AVIF e hospedagem de qualidade.',
+            'Quando o WordPress prejudica seu SEO: construtores pesados sem otimização, plugins vulneráveis desatualizados, imagens sem width/height causando layout shift (CLS) e TTFB lento.',
           ],
         },
         {
-          heading: 'Construtores com IA: Velocidade de prototipagem vs Limitações técnicas',
+          heading: 'Construtores "Site com IA em 30 Segundos": Onde mora a armadilha',
           paragraphs: [
-            'Por outro lado, ferramentas modernas de IA geram páginas inteiras em segundos, já organizando títulos e descrições de um jeito que o Google entende facilmente.',
-            'O ponto de atenção está nas ferramentas proprietárias de "site em 30 segundos": muitas delas geram layouts genéricos, aprisionam a empresa em mensalidades perpétuas e dificultam integrações analíticas profundas (pixels de conversão, tracking de funil e banco de dados proprietário).',
+            'Ferramentas que prometem gerar um site inteiro com um prompt aceleram protótipos, mas costumam falhar em três pontos decisivos para o Google: conteúdo raso e genérico (sem casos reais, sem autor identificável e sem diferenciação local), falta de controle fino de Schema.org (JSON-LD) e aprisionamento em hospedagens proprietárias onde você não tem acesso ao código nem ao servidor.',
+            'Para negócios locais, clínicas, escritórios e empresas B2B, o visitante compara credibilidade nos primeiros 5 segundos. Um layout idêntico ao de milhares de concorrentes reduz a confiança comercial antes mesmo da leitura da oferta.',
           ],
         },
         {
-          heading: 'A Convergência: Como empresas de alto nível estão unindo os dois mundos',
+          heading: 'A Terceira Via: Engenharia Sob Medida + IA no Processo',
           paragraphs: [
-            'A disputa entre "fazer no WordPress" ou "gerar tudo numa IA genérica" é uma falsa escolha. As empresas líderes em posicionamento orgânico e conversão adotam uma terceira via: o Desenvolvimento Híbrido de Alta Performance.',
-            'Utiliza-se a inteligência artificial para mapear intenções de busca do público e arquitetar copys persuasivas, mas a entrega final é feita sob medida, sem temas pesados nem plugins desnecessários. O resultado é um site que abre em menos de 1 segundo no celular, não trava e pertence 100% ao cliente.',
+            'A discussão entre "WordPress" ou "site feito por IA" ignora o modelo que realmente domina a primeira página do Google e as citações no ChatGPT/Gemini: usar inteligência artificial para pesquisa semântica, estruturação de intenção de busca e auditoria técnica, mas entregar a aplicação final em código limpo sob medida (Next.js + TypeScript) ou WordPress corporativo enxuto.',
+            'Nessa arquitetura, cada página sai com renderização estática no servidor, Core Web Vitals no verde, dados estruturados conectados em grafo JSON-LD, arquivo llms.txt padronizado e um qualificador de WhatsApp que filtra curiosos antes de chamar sua equipe comercial.',
           ],
           list: [
-            'Inteligência Artificial: Usada para pesquisa de mercado, semântica avançada e agilidade.',
-            'Desenvolvimento sob medida: site leve, que abre na hora no celular e com segurança reforçada.',
-            'Psicologia de Vendas: Botão direto de WhatsApp e formulário ágil para fechar contratos sem atrito.',
+            'Pesquisa & Auditoria assistida por IA: mapeamento de lacunas de concorrentes, intenção de busca real e validação automatizada de metadados.',
+            'Código limpo de alta performance: carregamento sub-segundo no 4G, zero dependência de plugins vulneráveis e 100% de propriedade intelectual.',
+            'Foco em conversão e GEO: textos objetivos com dados verificáveis, tabelas comparativas semânticas e CTAs diretos para orçamento.',
           ],
         },
       ],
       faqs: [
         {
-          question: 'O Google sabe se um site foi feito com IA?',
-          answer: 'Sim, os algoritmos do Google analisam padrões semânticos, mas a empresa já declarou oficialmente que não penaliza conteúdo apenas por ser gerado por IA, priorizando a utilidade prática e experiência da página.',
+          question: 'O Google sabe se um site foi feito com IA e penaliza por isso?',
+          answer: 'O Google declarou oficialmente em sua documentação do Search Central que não penaliza conteúdo ou código apenas por envolver IA. Penalizações ocorrem quando há abuso de conteúdo em escala (páginas rasas e repetitivas criadas só para manipular o buscador).',
         },
         {
-          question: 'Um site em WordPress ainda pode ranquear em 1º lugar?',
-          answer: 'Sim, desde que seja rigorosamente otimizado, sem excesso de plugins desnecessários e com servidor de alta velocidade que garanta bom desempenho no celular.',
+          question: 'Um site em WordPress ainda pode ranquear em 1º lugar no Google?',
+          answer: 'Sim. Um WordPress corporativo bem otimizado, com poucos plugins, hospedagem rápida, Core Web Vitals saudáveis e conteúdo original com forte E-E-A-T continua ranqueando perfeitamente na primeira posição.',
         },
         {
-          question: 'O que mais influencia o ranqueamento de um site hoje?',
-          answer: 'Velocidade no celular, tempo que o visitante passa na página, clareza na resposta da busca e segurança (HTTPS e ausência de scripts invasivos).',
+          question: 'Quais fatores técnicos mais influenciam o ranqueamento no Google hoje?',
+          answer: 'Segundo a documentação oficial do Google: relevância e utilidade do conteúdo (E-E-A-T), rastreabilidade e indexação limpas (HTML SSR, canonicals, sitemap fiel), autoridade externa (links e menções de marca), segurança HTTPS e Experiência da Página medida pelos Core Web Vitals (LCP, INP e CLS).',
         },
         {
-          question: 'Como a Web Lunar trabalha com essas tecnologias?',
-          answer: 'Nós unimos a precisão e velocidade da IA no processo de pesquisa e desenvolvimento com um desenvolvimento sob medida, entregando sites ultrarrápidos pensados para aparecer no Google e vender.',
+          question: 'Como a Web Lunar escolhe entre Next.js e WordPress para um cliente?',
+          answer: 'Avaliamos o objetivo comercial: recomendamos Next.js para landing pages de tráfego pago, sites institucionais de ultra-velocidade e sistemas sob medida; e WordPress corporativo otimizado quando a equipe do cliente precisa de autonomia editorial visual diária.',
         },
       ],
-      conclusion: 'Não importa se o seu site foi planejado com auxílio de IA ou construído em código tradicional: quem vence no Google é quem entrega a resposta mais rápida, confiável e agradável para o usuário final.',
+      references: [
+        { label: 'Google Search Central — Orientações sobre conteúdo gerado por IA', url: 'https://developers.google.com/search/blog/2023/02/google-search-and-ai-content' },
+        { label: 'Google Search Central — Como criar conteúdo útil, confiável e focado nas pessoas', url: 'https://developers.google.com/search/docs/fundamentals/creating-helpful-content' },
+        { label: 'web.dev — Métricas Core Web Vitals (LCP, INP e CLS)', url: 'https://web.dev/articles/vitals' },
+      ],
+      conclusion: 'Quem vence no Google e nas respostas de IA não é quem escolheu o "rótulo" da ferramenta, mas quem entrega a resposta mais útil, verificável e rápida no celular do cliente. Unir engenharia limpa (Next.js ou WordPress otimizado) com conteúdo autoral é o caminho mais seguro para escalar tráfego orgânico e vendas.',
     },
     'quanto-custa-criar-um-site-profissional': {
       slug: 'quanto-custa-criar-um-site-profissional',
       title: 'Quanto Custa Criar um Site Profissional em 2026? [Tabela de Preços e Prazos]',
-      date: '20 de Setembro, 2026',
-      readTime: '5 min de leitura',
+      date: '20 de Novembro, 2026',
+      readTime: '7 min de leitura',
       category: 'Preços & Estratégia',
-      excerpt: 'Descubra os valores reais para desenvolvimento de landing pages, sites institucionais e sistemas sob medida em 2026, sem surpresas no orçamento.',
+      excerpt: 'Tabela atualizada de preços, prazos oficiais e custos recorrentes para criar landing pages, sites institucionais, lojas virtuais e sistemas web em 2026.',
       image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
-        role: 'Engenharia & Precificação Digital',
+        name: 'Lucas Souzys',
+        role: 'Fundador & Engenheiro de Software — Web Lunar',
       },
       sections: [
         {
-          heading: 'O que define o valor de um site profissional?',
+          heading: 'Resposta Rápida: Quanto custa um site profissional no Brasil em 2026?',
           paragraphs: [
-            'O custo de desenvolvimento varia de acordo com o nível de personalização, tecnologia empregada, velocidade de carregamento e foco em conversão de clientes. Um site barato feito em templates genéricos costuma sair caro quando é lento, quebra no celular ou não gera nenhuma venda.',
-            'Na Web Lunar, cada site é feito sob medida para o seu negócio: abre em menos de 1 segundo no celular, passa confiança logo de cara e leva o visitante direto para o seu WhatsApp.',
+            'Em 2026, o investimento para criar um site profissional sob medida no Brasil varia entre R$ 700 e R$ 15.000+, dependendo do escopo, da stack tecnológica e do nível de personalização. Uma landing page de alta conversão focada em Google Ads e WhatsApp custa a partir de R$ 700 a R$ 2.500 (entregue em 7 a 14 dias úteis); um site institucional completo com SEO técnico e blog varia entre R$ 1.500 e R$ 5.000 (15 a 25 dias úteis); e lojas virtuais ou sistemas web sob medida partem de R$ 2.500 a R$ 15.000+ (20 a 40 dias úteis). Além do desenvolvimento, o único custo fixo obrigatório é o domínio (.com.br por ~R$ 40/ano no Registro.br) e a hospedagem — que em arquiteturas modernas como Next.js na Vercel pode começar em R$ 0/mês.',
           ],
         },
         {
-          heading: 'Tabela Média de Preços no Brasil (2026)',
+          heading: 'Tabela Oficial de Preços e Prazos (2026)',
           paragraphs: [
-            'Abaixo estão as faixas de investimento praticadas hoje. Para efeito de comparação, agências tradicionais costumam cobrar de R$ 1.500 a R$ 3.000 só por uma landing page:',
+            'Abaixo está a tabela comparativa com faixas reais de mercado, prazos oficiais da Web Lunar e o que deve estar obrigatoriamente incluso em cada modalidade para você não cair em pegadinhas:',
+          ],
+          table: {
+            headers: ['Tipo de Projeto', 'Faixa de Investimento', 'Prazo Oficial', 'Ideal Para'],
+            rows: [
+              ['Landing Page de Alta Conversão', 'A partir de R$ 700', '7 a 14 dias úteis', 'Campanhas de Google Ads e Instagram com filtro qualificador para WhatsApp'],
+              ['Site Institucional Completo', 'R$ 1.500 a R$ 3.500', '15 a 25 dias úteis (3–5 sem.)', 'Empresas, clínicas e escritórios que precisam de autoridade, blog e SEO no Google'],
+              ['Loja Virtual / Catálogo Online', 'A partir de R$ 2.500', '20 a 40 dias úteis (4–8 sem.)', 'Vendas online com Pix/cartão, gestão de estoque e checkout rápido no celular'],
+              ['Sistema Web / Plataforma sob Medida', 'Sob orçamento (R$ 4.000+)', '20 a 40 dias úteis (4–8 sem.)', 'Dashboards, áreas de membros, agendamentos complexos e integrações via API'],
+            ],
+          },
+          callout: 'Atenção aos custos ocultos: Desconfie de promessas de "site por R$ 300" presas a mensalidades perpétuas de R$ 150–R$ 300/mês. Em 24 meses você paga mais de R$ 5.000 por um template lento que nunca será seu.',
+        },
+        {
+          heading: 'O que realmente define o preço de um site profissional?',
+          paragraphs: [
+            'Dois orçamentos podem ter valores completamente diferentes porque entregam ativos diferentes. Um template genérico instalado em 2 horas costuma carregar em 5 ou 6 segundos no 4G, não tem dados estruturados (Schema.org), perde metade dos cliques do Google Ads e não gera contatos qualificados.',
+            'Já um projeto de engenharia web profissional inclui arquitetura focada em Core Web Vitals, copywriting orientado à conversão, SEO técnico desde o primeiro dia, responsividade mobile impecável e integração limpa com Google Analytics 4 e Google Search Console.',
           ],
           list: [
-            'Landing Page de Alta Conversão: a partir de R$ 700 (Ideal para anúncios no Google e Instagram e para receber orçamentos no WhatsApp, entregue em 5 a 10 dias).',
-            'Site Institucional Completo: R$ 1.500 a R$ 3.500 (Ideal para empresas com vários serviços, blog e presença forte no Google, 10 a 20 dias).',
-            'Loja Virtual / Catálogo: a partir de R$ 2.500 (Para vender produtos online com Pix e cartão, controle de estoque e carregamento rápido).',
-            'Sistemas sob medida (agendamentos, painéis, áreas de cliente): orçamento personalizado conforme o projeto.',
+            'Design autoral vs Template pronto: design exclusivo aumenta a percepção de valor e justifica tickets maiores do seu serviço.',
+            'Performance Mobile (LCP/INP/CLS): páginas que abrem em menos de 1 segundo reduzem o custo por clique (CPC) no Google Ads.',
+            'SEO Técnico & GEO inclusos: HTML renderizado no servidor, JSON-LD, sitemap limpo e estrutura legível por Google e IAs.',
+            'Qualificação de leads: simuladores ou formulários curtos que filtram curiosos antes de abrir o WhatsApp comercial.',
           ],
-          callout: 'Importante: Desconfie de orçamentos de R$ 300 a R$ 500 com mensalidades infinitas. Geralmente usam temas pesados piratas, não têm segurança e o site não pertence verdadeiramente à sua empresa.',
         },
         {
           heading: 'Custos Recorrentes Essenciais (Domínio e Hospedagem)',
           paragraphs: [
-            'Além do desenvolvimento inicial, existem custos de infraestrutura obrigatórios para qualquer site na internet:',
+            'Antes de contratar, exija transparência sobre os custos fixos anuais e mensais para manter o site no ar com segurança:',
           ],
           list: [
-            'Registro de Domínio (.com.br): cerca de R$ 40/ano no Registro.br.',
-            'Hospedagem: de R$ 0 a R$ 120/mês (muitos sites profissionais rodam em planos gratuitos de hospedagem moderna, já com cadeado de segurança incluso).',
-            'Manutenção e Evolução: sob demanda ou planos mensais para quem adiciona conteúdos e páginas frequentemente.',
+            'Registro de Domínio (.com.br): cerca de R$ 40/ano direto no Registro.br (sempre registrado no CNPJ/CPF do cliente).',
+            'Hospedagem Moderna (Next.js / Edge CDN): de R$ 0/mês (planos iniciais da Vercel/Cloudflare com SSL automático) até R$ 100/mês em tráfego alto.',
+            'Hospedagem WordPress / VPS: entre R$ 30 e R$ 120/mês para servidores rápidos com backup e SSL.',
+            'Manutenção e Evolução: opcional (sob demanda ou plano mensal) caso você queira adicionar novas páginas e campanhas continuamente.',
           ],
         },
       ],
       faqs: [
         {
-          question: 'Quanto tempo leva para meu site ficar pronto?',
-          answer: 'Uma landing page focada em conversão leva em média de 5 a 10 dias úteis. Sites institucionais completos levam entre 12 e 20 dias úteis, dependendo do envio das informações pelo cliente.',
+          question: 'Quanto tempo leva para meu site ficar pronto na Web Lunar?',
+          answer: 'Nossos prazos oficiais são: 7 a 14 dias úteis para Landing Pages de alta conversão; 15 a 25 dias úteis (3 a 5 semanas) para Sites Institucionais completos; e 20 a 40 dias úteis (4 a 8 semanas) para E-commerces e Sistemas Web sob medida.',
         },
         {
-          question: 'O site será meu ou fico preso a mensalidades?',
-          answer: 'Na Web Lunar, o código do projeto é 100% de sua propriedade. Você não paga mensalidades obrigatórias de manutenção após a entrega.',
+          question: 'O site será 100% meu ou fico preso a mensalidades obrigatórias?',
+          answer: 'Na Web Lunar, o domínio, a conta de hospedagem e o código-fonte são 100% de propriedade da sua empresa. Você não fica preso a mensalidades obrigatórias para manter o site no ar.',
         },
         {
-          question: 'Como faço para receber um orçamento rápido para o meu negócio?',
-          answer: 'Basta clicar no botão de WhatsApp do site ou acessar nossa página de contato para falar diretamente com nossos desenvolvedores em poucos minutos.',
+          question: 'Como simular o valor e o escopo ideal para o meu negócio agora?',
+          answer: 'Você pode usar nossa Calculadora Gratuita de Escopo em weblunar.com.br/calculadora (leva 30 segundos) ou chamar nossa equipe direto no WhatsApp para receber uma proposta fechada.',
         },
       ],
-      conclusion: 'Investir em um site de alto padrão não é um custo, mas um investimento comercial que se paga nas primeiras semanas de conversão de clientes qualificados.',
+      references: [
+        { label: 'Registro.br — Tabela oficial de registro de domínios .br', url: 'https://registro.br/dominio/preco/' },
+        { label: 'web.dev — Como a velocidade mobile impacta a conversão e Core Web Vitals', url: 'https://web.dev/articles/vitals' },
+        { label: 'Google Search Central — Guia de Introdução ao SEO', url: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide' },
+      ],
+      conclusion: 'Um site profissional bem planejado não é despesa fixa — é um ativo proprietário da sua empresa que trabalha 24h por dia captando clientes no Google e multiplicando o retorno dos seus anúncios pagos.',
     },
     'como-planejar-primeiro-site-profissional': {
       slug: 'como-planejar-primeiro-site-profissional',
@@ -169,7 +219,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Aprenda como planejar um site do zero: o que colocar na página inicial profissional, estrutura de vendas, checklist completo e como atrair clientes no Google.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
+        name: 'Lucas Souzys',
         role: 'Design & Estratégia de Conversão',
       },
       sections: [
@@ -227,7 +277,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Explorando os tipos de sites: entenda a diferença prática entre Landing Page e Site Institucional, quanto custa cada um e qual escolher para gerar clientes rápido.',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
+        name: 'Lucas Souzys',
         role: 'Desenvolvimento & Performance',
       },
       sections: [
@@ -283,7 +333,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Vai contratar uma agência ou desenvolvedor de sites? Veja os 5 critérios essenciais para escolher uma empresa de criação de sites que entrega prazo, SEO e vendas.',
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
+        name: 'Lucas Souzys',
         role: 'Consultoria & Engenharia Web',
       },
       sections: [
@@ -336,7 +386,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Criou um site mas ninguém encontra sua empresa nas buscas? Veja o passo a passo prático de SEO para indexar rápido e atrair clientes prontos para comprar.',
       image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
+        name: 'Lucas Souzys',
         role: 'Especialistas em SEO & Performance',
       },
       sections: [
@@ -381,7 +431,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Design organizado, boa velocidade no celular e botão de WhatsApp visível. O essencial para começar com o pé direito.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
+        name: 'Lucas Souzys',
         role: 'UX/UI & Engenharia Web',
       },
       sections: [
@@ -427,7 +477,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Por que tantas páginas bonitas não vendem nada? Conheça os 5 elementos indispensáveis de uma landing page de alta conversão para atrair contatos qualificados no WhatsApp todos os dias.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
+        name: 'Lucas Souzys',
         role: 'Estratégia de Conversão & UX',
       },
       sections: [
@@ -485,7 +535,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Entenda como grandes marcas usam SEO programático com dados dinâmicos para dominar buscas de cauda longa no Google, multiplicar leads orgânicos e como aplicar no seu negócio.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
+        name: 'Lucas Souzys',
         role: 'Engenharia Web & SEO Avançado',
       },
       sections: [
@@ -550,7 +600,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       excerpt: 'Descubra como os Core Web Vitals e a velocidade de carregamento impactam diretamente o faturamento da sua empresa e por que páginas que abrem abaixo de 1 segundo convertem até o dobro.',
       image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
       author: {
-        name: 'Equipe Web Lunar',
+        name: 'Lucas Souzys',
         role: 'Engenharia Web & Otimização de Conversão',
       },
       sections: [

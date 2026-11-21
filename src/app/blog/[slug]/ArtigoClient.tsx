@@ -192,7 +192,7 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
             <div className="flex items-center justify-between py-4 border-t border-b border-neutral-200 text-xs">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/25 flex items-center justify-center font-bold text-primary text-xs shadow-sm">
-                  WL
+                  LS
                 </div>
                 <div>
                   <p className="text-neutral-900 font-bold text-sm">{activePost.author.name}</p>
@@ -219,6 +219,9 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
             <img
               src={activePost.image}
               alt={activePost.title}
+              width={1200}
+              height={675}
+              fetchPriority="high"
               className="w-full h-full object-cover"
             />
           </div>
@@ -258,8 +261,60 @@ export function ArtigoClient({ post: initialPost }: { post: BlogPostDetail | nul
                   ))}
                 </div>
               )}
+
+              {section.table && (
+                <div className="my-8 overflow-x-auto rounded-2xl border border-neutral-200 bg-white shadow-sm">
+                  <table className="w-full text-left border-collapse text-sm sm:text-base">
+                    <thead>
+                      <tr className="bg-neutral-900 text-white">
+                        {section.table.headers.map((h, hIdx) => (
+                          <th key={hIdx} className="px-4 py-3.5 font-semibold whitespace-nowrap">
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-neutral-200">
+                      {section.table.rows.map((row, rIdx) => (
+                        <tr key={rIdx} className="hover:bg-neutral-50 transition-colors">
+                          {row.map((cell, cIdx) => (
+                            <td key={cIdx} className={`px-4 py-3.5 ${cIdx === 0 ? 'font-semibold text-neutral-900' : 'text-neutral-700'}`}>
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </AnimatedSection>
           ))}
+
+          {activePost.references && activePost.references.length > 0 && (
+            <AnimatedSection>
+              <div className="mt-10 p-6 rounded-2xl bg-neutral-100/80 border border-neutral-200">
+                <h2 className="font-display text-lg font-bold text-neutral-900 mb-3">
+                  Fontes e Documentação Oficial Consultada
+                </h2>
+                <ul className="space-y-2 text-sm text-neutral-700">
+                  {activePost.references.map((ref, rIdx) => (
+                    <li key={rIdx}>
+                      <a
+                        href={ref.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline inline-flex items-center gap-1 font-medium"
+                      >
+                        <span>{ref.label}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </AnimatedSection>
+          )}
 
           {/* Perguntas Frequentes (FAQ) com Design Limpo e Harmônico */}
           {activePost.faqs && activePost.faqs.length > 0 && (
