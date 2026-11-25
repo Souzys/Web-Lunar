@@ -559,8 +559,9 @@ function TypewriterRichText({ parts, delay = 0, speed = 20 }: { parts: TextPart[
     const startDelay = setTimeout(() => {
       let count = 0;
       const type = () => {
-        if (count <= totalChars) {
-          setCharCount(count);
+        const nextCount = Math.min(count, totalChars);
+        setCharCount(nextCount);
+        if (nextCount < totalChars) {
           count += 3;
           timeout = setTimeout(type, speed);
         }
