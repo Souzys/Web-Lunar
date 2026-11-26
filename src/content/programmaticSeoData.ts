@@ -1293,6 +1293,11 @@ function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
         NICHES_DATA[(cityIdx + 3) % NICHES_DATA.length].slug,
       ];
 
+      const rawServiceMeta = `${service.name} em ${city.name} (${city.state}) | Orçamento`;
+      const metaTitle = rawServiceMeta.length <= 48
+        ? rawServiceMeta
+        : `${service.name} em ${city.name} (${city.state})`.slice(0, 48);
+
       pages[slug] = {
         slug,
         type: 'service-city',
@@ -1300,7 +1305,7 @@ function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
         stateCode: city.state,
         serviceName: service.name,
         title: `${service.name} em ${city.name} (${city.state})`,
-        metaTitle: `${service.name} em ${city.name} (${city.state}) | Orçamento Rápido via WhatsApp`,
+        metaTitle,
         metaDescription: `Procurando ${service.name.toLowerCase()} em ${city.name} (${city.state})? Sites de alta velocidade, nota 90+ no Google e sem mensalidades. Solicite uma estimativa via WhatsApp!`,
         badge: `ATENDIMENTO EM ${city.name.toUpperCase()} · ${city.state}`,
         heroTitle: `${service.name} em`,
@@ -1360,17 +1365,32 @@ function buildAllProgrammaticPages(): Record<string, ProgrammaticPageData> {
       'anuncio-direto-whatsapp-vs-landing-page',
     ];
 
+    const isLawyerNiche = niche.slug === 'landing-page-para-advogados';
+    const compactNicheMeta = isLawyerNiche
+      ? 'Site para Advogado | Criação Profissional'
+      : `Site para ${niche.singular} | Orçamento`.length <= 48
+        ? `Site para ${niche.singular} | Orçamento`
+        : `Site para ${niche.singular}`.length <= 48
+          ? `Site para ${niche.singular}`
+          : `Site: ${niche.singular}`.slice(0, 48);
+
     pages[slug] = {
       slug,
       type: 'niche',
       nicheName: niche.name,
-      serviceName: `Sites e Landing Pages para ${niche.name}`,
-      title: `Criação de Sites e Landing Pages para ${niche.name}`,
-      metaTitle: `Site e Landing Page para ${niche.name} | Orçamento Rápido no WhatsApp`,
-      metaDescription: `Criação de site profissional e landing page para ${niche.name.toLowerCase()}. Estrutura rápida com filtro qualificador para receber orçamentos no WhatsApp. Simule agora!`,
+      serviceName: isLawyerNiche
+        ? 'Site para Advogado e Escritório de Advocacia'
+        : `Sites e Landing Pages para ${niche.name}`,
+      title: isLawyerNiche
+        ? 'Site para Advogado e Escritório de Advocacia'
+        : `Criação de Sites e Landing Pages para ${niche.name}`,
+      metaTitle: compactNicheMeta,
+      metaDescription: isLawyerNiche
+        ? 'Criação de site para advogado e escritório de advocacia dentro das normas da OAB. Página rápida no Google com triagem no WhatsApp. Peça orçamento!'
+        : `Criação de site profissional e landing page para ${niche.name.toLowerCase()}. Estrutura rápida com filtro qualificador para receber orçamentos no WhatsApp. Simule agora!`,
       badge: `SOLUÇÃO ESPECIALIZADA · ${niche.singular.toUpperCase()}`,
-      heroTitle: `Sites e Landing Pages para`,
-      heroHighlight: niche.name,
+      heroTitle: isLawyerNiche ? 'Criação de Site para' : `Sites e Landing Pages para`,
+      heroHighlight: isLawyerNiche ? 'Advogado e Advocacia' : niche.name,
       heroSubtitle: `Estrutura digital projetada especificamente para atrair ${niche.targetAudience} e gerar ${niche.conversionGoal}.`,
       contextHeading: `Como posicionar seu negócio de ${niche.singular} para captar os melhores clientes no Google`,
       contextParagraphs: [
@@ -1564,7 +1584,7 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
     type: 'versus',
     serviceName: 'Landing Pages e Sites Institucionais',
     title: 'Landing Page vs Site Institucional: Qual Gera Mais Clientes e Vendas?',
-    metaTitle: 'Landing Page vs Site Institucional: Qual Vende Mais?',
+    metaTitle: 'Landing Page vs Site Institucional (Guia)',
     metaDescription: 'Saiba exatamente quando investir em uma Landing Page de alta conversão ou em um Site Institucional completo para sua clínica, escritório ou empresa.',
     badge: 'GUIA DE DECISÃO COMERCIAL · CONVERSÃO',
     heroTitle: 'Landing Page vs Site Institucional:',
@@ -1628,7 +1648,7 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
     type: 'versus',
     serviceName: 'Redesign e Criação de Sites Profissionais',
     title: 'Wix / Criadores Gratuitos vs Site Profissional Sob Medida: A Conta que Ninguém Faz',
-    metaTitle: 'Wix vs Site Profissional: Por Que Sites Caseiros Perdem Clientes no Google?',
+    metaTitle: 'Wix vs Site Profissional: Qual Ranqueia Melhor?',
     metaDescription: 'Descubra por que sites feitos em criadores arrasta-e-solta como Wix e Canva travam no celular, não ranqueiam no Google e custam caro em vendas perdidas.',
     badge: 'DIAGNÓSTICO DE PERFORMANCE · ROI REAL',
     heroTitle: 'Wix e Criadores Caseiros vs',
@@ -1692,7 +1712,7 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
     type: 'versus',
     serviceName: 'Engenharia Front-end e WordPress de Alta Performance',
     title: 'Elementor vs Código Sob Medida (Next.js): Comparativo de Velocidade e Conversão',
-    metaTitle: 'Elementor vs Código Puro (React/Next.js): Qual o Impacto nas Vendas?',
+    metaTitle: 'Elementor vs Código Puro: Impacto nas Vendas',
     metaDescription: 'Análise técnica real entre páginas construídas no Elementor e engenharia em código Next.js. Veja quando usar cada abordagem para escalar seu negócio.',
     badge: 'ENGENHARIA WEB · CORE WEB VITALS',
     heroTitle: 'Elementor vs Código Sob Medida:',
@@ -1756,7 +1776,7 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
     type: 'versus',
     serviceName: 'Landing Pages com Qualificador Anti-Curioso',
     title: 'Anúncio Direto para o WhatsApp vs Landing Page Qualificadora: Por Que Seu Comercial Perde Tempo?',
-    metaTitle: 'Anúncio Direto pro WhatsApp vs Landing Page: Como Parar de Atrair Curiosos',
+    metaTitle: 'Anúncio no WhatsApp vs Landing Page de Vendas',
     metaDescription: 'Cansado de receber "qual o valor?" no WhatsApp e levar vácuo? Veja por que uma Landing Page com filtro anti-curioso multiplica seu fechamento de vendas.',
     badge: 'ESTRATÉGIA DE TRÁFEGO · FIM DOS CURIOSOS',
     heroTitle: 'Anúncio Direto pro WhatsApp vs',
@@ -1820,7 +1840,7 @@ export const VERSUS_PAGES_DATA: ProgrammaticPageData[] = [
     type: 'versus',
     serviceName: 'SEO Programático e GEO (Otimização para IAs)',
     title: 'SEO Tradicional vs SEO Programático & GEO: Como Escalar 400+ Páginas no Google e nas IAs',
-    metaTitle: 'SEO Tradicional vs SEO Programático e GEO (IA): Como Dominar o Google em 2026',
+    metaTitle: 'SEO Tradicional vs SEO Programático e IA',
     metaDescription: 'Enquanto o SEO tradicional escreve 4 textos por mês, o SEO Programático da Web Lunar posiciona centenas de páginas locais e coloca sua marca no ChatGPT e Google.',
     badge: 'ENGENHARIA DE TRÁFEGO · PSEO & GEO',
     heroTitle: 'SEO Tradicional vs',
@@ -1885,8 +1905,17 @@ export const PROGRAMMATIC_SEO_PAGES: Record<string, ProgrammaticPageData> = buil
 
 export const PROGRAMMATIC_SEO_LIST: ProgrammaticPageData[] = Object.values(PROGRAMMATIC_SEO_PAGES);
 
-// Only high-value unique pages (45 base niches + 6 comparisons) are indexed.
-// City-swapped doorway pages (service-city & niche-city) permanently redirect.
+export const GOLDEN_CITY_SLUGS = new Set([
+  'criacao-de-sites-em-brasilia',
+  'criacao-de-sites-em-curitiba',
+  'criacao-de-sites-em-goiania',
+  'criacao-de-sites-em-sorocaba',
+  'criacao-de-sites-em-niteroi',
+  'criacao-de-sites-em-sao-paulo',
+]);
+
+// High-value unique pages (45 base niches + 6 comparisons + 6 high-demand regional hubs) are indexed.
+// Remaining city-swapped doorway pages permanently redirect.
 export const INDEXABLE_PROGRAMMATIC_SEO_LIST: ProgrammaticPageData[] = PROGRAMMATIC_SEO_LIST.filter(
-  (page) => page.type === 'niche' || page.type === 'versus'
+  (page) => page.type === 'niche' || page.type === 'versus' || GOLDEN_CITY_SLUGS.has(page.slug)
 );

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const title = post.title;
+  const title = post.seoTitle || post.title;
   const description = post.excerpt;
   const url = `https://weblunar.com.br/blog/${slug}`;
   const ogImage = post.image.startsWith('http') ? post.image : `https://weblunar.com.br${post.image}`;

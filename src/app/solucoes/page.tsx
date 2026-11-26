@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { NICHES_DATA, VERSUS_PAGES_DATA } from '@/content/programmaticSeoData';
+import { NICHES_DATA, VERSUS_PAGES_DATA, PROGRAMMATIC_SEO_PAGES, GOLDEN_CITY_SLUGS } from '@/content/programmaticSeoData';
 
 export const metadata: Metadata = {
   title: 'Soluções Digitais por Segmento e Comparativos',
@@ -139,7 +139,7 @@ export default function SolucoesHubPage() {
           </section>
 
           {/* Block 1: 45 Niches */}
-          <section className="mb-10">
+          <section className="mb-16">
             <div className="border-b border-slate-200 pb-4 mb-8">
               <span className="text-xs uppercase tracking-widest text-primary font-bold block mb-1">
                 45 ESPECIALIDADES POR SETOR
@@ -160,13 +160,50 @@ export default function SolucoesHubPage() {
                     {niche.singular}
                   </span>
                   <h3 className="font-display text-base font-bold text-slate-900 group-hover:text-primary transition-colors mb-2">
-                    Sites e Landing Pages para {niche.name}
+                    {niche.slug === 'landing-page-para-advogados'
+                      ? 'Site para Advogado e Escritório de Advocacia'
+                      : `Sites e Landing Pages para ${niche.name}`}
                   </h3>
                   <p className="text-xs text-slate-500 line-clamp-2">
                     Foco em {niche.conversionGoal}.
                   </p>
                 </Link>
               ))}
+            </div>
+          </section>
+
+          {/* Block 2: 6 High-Demand Regional Hubs */}
+          <section className="mb-10">
+            <div className="border-b border-slate-200 pb-4 mb-8">
+              <span className="text-xs uppercase tracking-widest text-primary font-bold block mb-1">
+                ATENDIMENTO REGIONAL ESTRATÉGICO
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-slate-900">
+                Principais Polos de Criação de Sites
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {Array.from(GOLDEN_CITY_SLUGS)
+                .map((slug) => PROGRAMMATIC_SEO_PAGES[slug])
+                .filter(Boolean)
+                .map((cityPage) => (
+                  <Link
+                    key={cityPage.slug}
+                    href={`/solucoes/${cityPage.slug}`}
+                    className="group rounded-xl border border-slate-200 bg-white hover:border-primary hover:shadow-md p-5 transition-all"
+                  >
+                    <span className="text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">
+                      {cityPage.badge}
+                    </span>
+                    <h3 className="font-display text-base font-bold text-slate-900 group-hover:text-primary transition-colors mb-1.5">
+                      {cityPage.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 line-clamp-2">
+                      {cityPage.metaDescription}
+                    </p>
+                  </Link>
+                ))}
             </div>
           </section>
         </div>

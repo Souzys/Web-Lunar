@@ -6,10 +6,10 @@ import { INDEXABLE_PROGRAMMATIC_SEO_LIST } from '@/content/programmaticSeoData';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://weblunar.com.br';
 
-  const coreLastMod = new Date('2026-11-19T00:00:00.000Z');
+  const coreLastMod = new Date('2026-11-26T00:00:00.000Z');
   const projectLastMod = new Date('2026-10-15T00:00:00.000Z');
-  const blogLastMod = new Date('2026-08-12T00:00:00.000Z');
-  const solucoesLastMod = new Date('2026-11-19T00:00:00.000Z');
+  const blogLastMod = new Date('2026-11-26T00:00:00.000Z');
+  const solucoesLastMod = new Date('2026-11-26T00:00:00.000Z');
 
   // Core routes
   const routes: MetadataRoute.Sitemap = [

@@ -3,6 +3,7 @@ import { Language } from './translations';
 export interface BlogPostDetail {
   slug: string;
   title: string;
+  seoTitle?: string;
   date: string;
   readTime: string;
   category: string;
@@ -37,11 +38,12 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
   pt: {
     'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo': {
       slug: 'como-aparecer-no-chatgpt-perplexity-google-ai-overviews-geo',
-      title: 'Como Fazer Sua Empresa Aparecer no ChatGPT, Perplexity e Google AI Overviews (Guia de GEO em 2026)',
+      title: 'SEO para IA e GEO em 2026: Como Aparecer no ChatGPT, Perplexity e Google AI Overviews',
+      seoTitle: 'SEO para IA e GEO: Apareça no ChatGPT e Google',
       date: '21 de Novembro, 2026',
       readTime: '9 min de leitura',
       category: 'GEO & IA Search',
-      excerpt: 'Guia prático de GEO (Generative Engine Optimization) baseado nas diretrizes do Google Search Central e estudos recentes de citabilidade: como estruturar seu site e sua marca para ser recomendado por ChatGPT, Perplexity e Google AI Overviews.',
+      excerpt: 'Guia prático de SEO para IA e GEO (Generative Engine Optimization): como estruturar seu site e sua marca para ser recomendado pelo ChatGPT, Perplexity e Google AI Overviews em 2026.',
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
       author: {
         name: 'Lucas Souza',
@@ -49,7 +51,7 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
       },
       sections: [
         {
-          heading: 'Resposta Direta: o que é GEO e como aparecer nas respostas de IA?',
+          heading: 'Resposta Direta: o que é SEO para IA (GEO) e como aparecer nas respostas?',
           paragraphs: [
             'GEO (Generative Engine Optimization) é a prática de estruturar seu site, seu conteúdo e a presença externa da sua marca para que mecanismos de resposta com IA — como Google AI Overviews, Google AI Mode, ChatGPT Search e Perplexity — encontrem, compreendam e citem sua empresa como fonte confiável. Segundo o guia oficial do Google Search Central, otimizar para busca generativa continua sendo SEO bem feito: páginas rápidas com HTML renderizado no servidor (SSR/SSG), respostas diretas e verificáveis logo no topo, dados estruturados (Schema.org) e autoridade real de marca fora do próprio domínio.',
             'A grande diferença em 2026 é o comportamento do comprador: em vez de abrir dez abas no Google, o decisor pergunta diretamente ao ChatGPT ou ao Perplexity "qual a melhor empresa para X" ou "quanto custa Y". Se o seu site depende de JavaScript pesado no cliente, bloqueia crawlers de IA ou só publica textos genéricos sem provas, sua empresa simplesmente não entra na resposta.',
@@ -227,11 +229,12 @@ export const BLOG_POSTS_I18N: Record<Language, Record<string, BlogPostDetail>> =
     },
     'quanto-custa-criar-um-site-profissional': {
       slug: 'quanto-custa-criar-um-site-profissional',
-      title: 'Quanto Custa Criar um Site Profissional em 2026? [Tabela de Preços e Prazos]',
+      title: 'Quanto Custa Criar um Site Profissional em 2026? Tabela de Preços e Prazos',
+      seoTitle: 'Quanto Custa Criar um Site em 2026? [Preços]',
       date: '20 de Novembro, 2026',
       readTime: '7 min de leitura',
       category: 'Preços & Estratégia',
-      excerpt: 'Tabela atualizada de preços, prazos oficiais e custos recorrentes para criar landing pages, sites institucionais, lojas virtuais e sistemas web em 2026.',
+      excerpt: 'Descubra quanto custa criar um site em 2026: tabela atualizada de preços, prazos oficiais e custos de domínio e hospedagem para landing pages, sites institucionais e lojas virtuais.',
       image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80',
       author: {
         name: 'Lucas Souza',

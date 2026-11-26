@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
-import { PROGRAMMATIC_SEO_PAGES, INDEXABLE_PROGRAMMATIC_SEO_LIST } from '@/content/programmaticSeoData';
+import { PROGRAMMATIC_SEO_PAGES, INDEXABLE_PROGRAMMATIC_SEO_LIST, GOLDEN_CITY_SLUGS } from '@/content/programmaticSeoData';
 import SolucaoClient from './SolucaoClient';
 
 interface PageProps {
@@ -64,13 +64,16 @@ export default async function SolucaoPage({ params }: PageProps) {
     }
     permanentRedirect('/solucoes');
   }
-  if (page.type === 'service-city') {
+  if (page.type === 'service-city' && !GOLDEN_CITY_SLUGS.has(page.slug)) {
     permanentRedirect('/servicos');
   }
 
   const relatedPages = page.relatedSlugs
     .map((relSlug) => PROGRAMMATIC_SEO_PAGES[relSlug])
-    .filter(Boolean);
+    .filter(
+      (rel): rel is NonNullable<typeof rel> =>
+        Boolean(rel) && (rel.type === 'niche' || rel.type === 'versus' || GOLDEN_CITY_SLUGS.has(rel.slug))
+    );
 
   // Structured Data (Schema.org) for Google Search & AI Assistants (ChatGPT, Gemini, Perplexity)
   const jsonLd = {
